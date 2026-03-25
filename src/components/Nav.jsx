@@ -25,13 +25,13 @@ export default function Nav() {
         </Link>
         <nav className="flex items-center gap-1">
           {links.map(l => (
-            <a
+            <Link
               key={l.href}
-              href={l.href}
+              to={l.href}
               className="text-sm text-slate-300 hover:text-white px-3 py-1.5 rounded transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
