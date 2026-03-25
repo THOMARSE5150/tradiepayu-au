@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-brand-dark antialiased; }
+}
+
+@layer components {
+  .container-page { @apply max-w-5xl mx-auto px-5; }
+  .section        { @apply py-14; }
+  .section-alt    { @apply bg-slate-50; }
+
+  /* Hero */
+  .hero { @apply bg-brand-dark text-white py-16; }
+  .hero-sub { @apply text-lg text-slate-300 mt-3 max-w-2xl; }
+  .hero-meta { @apply flex items-center gap-2 text-sm text-slate-400 mb-3; }
+
+  /* Badge */
+  .badge        { @apply inline-block px-2 py-0.5 rounded text-xs font-semibold; }
+  .badge-gold   { @apply bg-amber-100 text-amber-800; }
+  .badge-purple { @apply bg-purple-100 text-purple-800; }
+  .badge-muted  { @apply bg-slate-100 text-slate-600; }
+
+  /* Buttons */
+  .btn-primary   { @apply inline-block bg-brand-blue text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-colors; }
+  .btn-secondary { @apply inline-block bg-white text-brand-dark font-semibold px-5 py-2.5 rounded-lg border border-slate-200 hover:border-slate-400 transition-colors; }
+  .btn-tertiary  { @apply inline-block text-brand-blue font-semibold px-5 py-2.5 rounded-lg border border-brand-blue hover:bg-blue-50 transition-colors; }
+
+  /* Provider card */
+  .provider-card          { @apply bg-white rounded-xl border border-slate-200 p-6 flex flex-col gap-4; }
+  .provider-card-featured { @apply ring-2 ring-brand-blue; }
+
+  /* Comparison table */
+  .comparison-table { @apply w-full text-sm border-collapse; }
+  .comparison-table th { @apply text-left py-3 px-4 bg-slate-100 font-semibold text-slate-600 border-b border-slate-200; }
+  .comparison-table td { @apply py-3 px-4 border-b border-slate-100; }
+  .comparison-table tr.row-highlight td { @apply bg-blue-50; }
+
+  /* Stats */
+  .stat-grid  { @apply grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4; }
+  .stat-box   { @apply bg-slate-50 rounded-lg p-3 text-center; }
+  .stat-label { @apply block text-xs text-slate-500 mb-1; }
+  .stat-value { @apply block text-base font-bold text-brand-dark; }
+  .stat-value.highlight { @apply text-brand-blue; }
+
+  /* Breadcrumb */
+  .breadcrumb ol { @apply flex items-center gap-2 text-sm text-slate-500 py-3 flex-wrap; }
+  .breadcrumb li::after { content: '›'; @apply mx-1 text-slate-300; }
+  .breadcrumb li:last-child::after { content: ''; }
+  .breadcrumb a { @apply text-brand-blue hover:underline; }
+
+  /* Jump links */
+  .jump-links { @apply flex flex-wrap gap-3 mt-6; }
+  .jump-links a { @apply text-sm text-white/80 hover:text-white border border-white/20 rounded-full px-3 py-1 transition-colors; }
+
+  /* FAQ */
+  .faq-item summary { @apply font-semibold cursor-pointer py-3 text-brand-dark; }
+  .faq-item { @apply border-b border-slate-200 last:border-0; }
+  .faq-item[open] summary { @apply text-brand-blue; }
+  .faq-item p { @apply text-slate-600 pb-4 text-sm leading-relaxed; }
+
+  /* Setup steps (counter) */
+  .setup-steps { @apply space-y-4 counter-reset-steps; }
+  .setup-step  { @apply pl-10 relative; }
+  .setup-step::before {
+    content: counter(steps);
+    counter-increment: steps;
+    @apply absolute left-0 top-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center;
+  }
+
+  /* Pros/cons */
+  .pick-pros-cons { @apply space-y-1 text-sm list-none p-0; }
+  .pick-pros-cons .pro::before { content: '✓ '; @apply text-brand-green font-bold; }
+  .pick-pros-cons .con::before { content: '✗ '; @apply text-red-500 font-bold; }
+
+  /* Infobox */
+  .infobox { @apply bg-blue-50 border border-blue-100 rounded-xl p-5 text-sm; }
+
+  /* Breakeven box */
+  .breakeven-box { @apply bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm mt-6; }
+}

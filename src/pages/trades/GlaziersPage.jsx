@@ -1,0 +1,154 @@
+import { Link } from 'react-router-dom'
+import Breadcrumb from '../../components/Breadcrumb'
+import FaqSection from '../../components/FaqSection'
+import ComparisonTable from '../../components/ComparisonTable'
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Best EFTPOS for Tradies', href: '/#compare-all' },
+  { label: 'Best EFTPOS for Glaziers' },
+]
+
+const challenges = [
+  { title: 'Dead zones in buildings', body: 'Glaziers often work in stairwells, lift shafts, high floors of steel-framed buildings, and mechanical rooms — environments with weak or no mobile coverage. A WiFi-dependent terminal is useless here.', rec: 'SIM terminal (primary) + Square Terminal offline mode (backup).' },
+  { title: 'Emergency call-outs at any hour', body: 'Broken windows, shopfront smash-and-grabs, storm damage — glazing emergencies happen at 2am. Payment infrastructure needs to work the same at midnight as at midday.', rec: 'Zeller Tap to Pay on your phone. No hardware to forget, works 24/7.' },
+  { title: 'Building management and property managers', body: 'Commercial glazing jobs are often billed to the building manager or property management company, not the person on site. Remote billing is the standard workflow.', rec: 'Zeller payment links or Stripe invoicing — email to accounts department.' },
+  { title: 'High job values with split billing', body: 'Large glazing jobs — shopfronts, curtain walls, full-floor installations — may require a deposit at quote acceptance and balance on completion.', rec: 'Zeller payment link for deposit, terminal for balance on completion.' },
+]
+
+const faqs = [
+  { q: 'What is the best EFTPOS for glaziers?', a: 'Zeller Terminal 1 with the SIM plan is the primary pick. For dead zones inside buildings — stairwells, lift shafts, mechanical rooms — add Square Terminal as a backup for its offline mode. The two-device strategy costs ~$428 hardware total and covers every scenario.' },
+  { q: 'What EFTPOS works in building dead zones?', a: 'Square Terminal\'s offline mode is the only option for genuine zero-connectivity sites. Accept the payment, reconnect when you leave the building. There\'s a risk of later decline, but it\'s the only way to take payment in a dead zone.' },
+  { q: 'How do glaziers bill property managers?', a: 'Send a Zeller or Stripe payment link to the property manager\'s email or accounts department. Include your ABN, job description, and GST breakdown. Stripe invoicing is more polished for commercial billing.' },
+  { q: 'How do glaziers handle emergency call-out payment?', a: 'Zeller Tap to Pay on your phone is the easiest emergency payment method — no hardware to forget, always on you, 1.4% rate, same-day settlement.' },
+]
+
+export default function GlaziersPage() {
+  return (
+    <>
+      <Breadcrumb crumbs={crumbs} />
+
+      <header className="hero">
+        <div className="container-page">
+          <div className="hero-meta">
+            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
+            <span>·</span><span>Updated March 2026</span>
+          </div>
+          <h1 className="text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Glaziers in Australia (2026)</h1>
+          <p className="hero-sub">Dead zones, emergency call-outs, and property manager billing. Here's the payment setup that works for glazing.</p>
+          <nav className="jump-links">
+            <a href="#challenges">Key Challenges</a>
+            <a href="#picks">Top Picks</a>
+            <a href="#scenarios">Job Scenarios</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="challenges" className="section container-page">
+        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Glazing Different</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {challenges.map((c, i) => (
+            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
+              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="picks" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Glaziers</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="bg-white border-2 border-brand-blue rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-brand-dark text-white flex items-center justify-center font-bold">Z</div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">Zeller Terminal 1 + SIM</h3>
+                  <span className="badge badge-gold">Best for Glaziers</span>
+                </div>
+              </div>
+              <p className="text-sm text-slate-600 mb-4">SIM plan (Optus, $15/mo) handles most building coverage. 1.4% rate and same-day settlement. Payment links for property manager billing.</p>
+              <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                {[['Rate', '1.4%'], ['Terminal', '$99'], ['SIM', '$15/mo'], ['Settlement', 'Same day']].map(([l, v], i) => (
+                  <div key={i} className="bg-slate-50 rounded p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
+                ))}
+              </div>
+              <Link to="/providers/zeller" className="btn-primary block text-center text-sm">Full Zeller Review →</Link>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-brand-blue text-white flex items-center justify-center font-bold text-sm">Sq</div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">Square Terminal</h3>
+                  <span className="badge badge-muted">Dead Zone Backup</span>
+                </div>
+              </div>
+              <p className="text-sm text-slate-600 mb-4">Offline mode for zero-connectivity sites — stairwells, mechanical rooms, underground. Accept payment, reconnect later. 24-hour window applies.</p>
+              <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                {[['Rate', '1.6%'], ['Terminal', '$329'], ['Offline', '✓ Yes'], ['Settlement', 'Next day']].map(([l, v], i) => (
+                  <div key={i} className="bg-slate-50 rounded p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
+                ))}
+              </div>
+              <Link to="/providers/square" className="btn-tertiary block text-center text-sm">Full Square Review →</Link>
+            </div>
+          </div>
+          <div className="mt-5 bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700">
+            <strong>Two-device strategy:</strong> Carry both. Zeller Terminal 1 + SIM ($99 + $15/mo) as primary. Square Terminal ($329, no monthly fee) as dead-zone backup. Total hardware investment: $428. No ongoing monthly cost on Square.
+          </div>
+        </div>
+      </section>
+
+      <section id="scenarios" className="section container-page">
+        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <div className="space-y-4">
+          {[
+            { title: 'Emergency residential call-out', body: 'Use Zeller Tap to Pay on your phone. You\'re already carrying your phone. 1.4% rate, same-day settlement. If the client pays by card on site, tap and go. If they need to pay remotely, send a payment link.' },
+            { title: 'Shopfront / commercial job, building management billing', body: 'Complete the job. Email a Zeller payment link or Stripe invoice to the property manager\'s accounts department. Include ABN, job description, materials, labour, and GST breakdown. Set 7–14 day payment terms for commercial accounts.' },
+            { title: 'High-rise installation, upper floors (SIM coverage)', body: 'Zeller Terminal 1 + SIM is your primary. Most upper floors of buildings have adequate Optus signal. Test on the first visit and note coverage for your records.' },
+            { title: 'Mechanical room / basement — zero connectivity', body: 'Switch to Square Terminal. Enable offline mode before you go into the dead zone. Take payment on site. Reconnect when you return to ground level. Funds process that day.' },
+            { title: 'Large job, deposit + balance', body: 'Collect 30–50% deposit by Zeller payment link at quote acceptance. Don\'t start glazing until the deposit clears. On completion, tap for the balance (client present) or send a final payment link (billing accounts department).' },
+          ].map((s, i) => (
+            <div key={i} className="flex gap-4">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+              <div>
+                <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">Glazier EFTPOS Comparison</h2>
+          <ComparisonTable
+            headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
+            rows={[
+              { highlight: true, cells: [<><strong>Zeller Terminal 1 + SIM</strong> <span className="ml-1 badge badge-gold">Top pick</span></>, '1.4%', '$99', '✓ $15/mo', '✗', 'All glazing — primary device'] },
+              { cells: ['Zeller Tap to Pay', '1.4%', '$0', '✗ (phone data)', '✗', 'Emergency call-outs, low volume'] },
+              { cells: ['Square Terminal', '1.6%', '$329', '✗', '✓', 'Dead zones — mechanical rooms, basements'] },
+              { cells: ['Stripe', '1.7% + $0.10', '~$98', '✓ optional', '✗', 'Commercial invoicing, property manager billing'] },
+            ]}
+          />
+        </div>
+      </section>
+
+      <FaqSection items={faqs} title="FAQ for Glaziers" />
+
+      <section className="section section-alt container-page">
+        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
+        <div className="flex flex-wrap gap-3">
+          <Link to="/" className="btn-secondary text-sm">Full EFTPOS comparison</Link>
+          <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
+          <Link to="/providers/square" className="btn-secondary text-sm">Square full review</Link>
+          <Link to="/trades/electricians" className="btn-secondary text-sm">Best EFTPOS for Electricians</Link>
+          <Link to="/trades/plumbers" className="btn-secondary text-sm">Best EFTPOS for Plumbers</Link>
+        </div>
+      </section>
+    </>
+  )
+}

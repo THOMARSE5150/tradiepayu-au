@@ -1,0 +1,106 @@
+import { Link } from 'react-router-dom'
+import Breadcrumb from '../../components/Breadcrumb'
+import FaqSection from '../../components/FaqSection'
+import ComparisonTable from '../../components/ComparisonTable'
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Best EFTPOS for Tradies', href: '/#compare-all' },
+  { label: 'Best EFTPOS for Plumbers' },
+]
+
+const faqs = [
+  { q: 'What is the best EFTPOS for plumbers?', a: 'Zeller Terminal 1 with the SIM plan is the top pick. Emergency call-outs happen at any hour and in locations without WiFi — the SIM terminal handles both. Same-day settlement is critical when you\'re buying parts same-day as the repair.' },
+  { q: 'How do plumbers get paid for emergency call-outs?', a: 'Zeller Tap to Pay on your phone is the default emergency payment method — always on you, 1.4% rate. If the client isn\'t available, send a Zeller payment link. Same-day settlement means you can buy parts that evening if needed.' },
+  { q: 'Does EFTPOS work underground for plumbing work?', a: 'Mobile signal is usually unavailable underground or in enclosed below-grade environments. Square Terminal offline mode is the only option for taking payment in these locations.' },
+]
+
+export default function PlumbersPage() {
+  return (
+    <>
+      <Breadcrumb crumbs={crumbs} />
+
+      <header className="hero">
+        <div className="container-page">
+          <div className="hero-meta">
+            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
+            <span>·</span><span>Updated March 2026</span>
+          </div>
+          <h1 className="text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Plumbers in Australia (2026)</h1>
+          <p className="hero-sub">After-hours emergencies, underground work, and same-day parts. Here's the payment setup for plumbing businesses.</p>
+          <nav className="jump-links">
+            <a href="#challenges">Key Challenges</a>
+            <a href="#picks">Top Picks</a>
+            <a href="#scenarios">Job Scenarios</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="challenges" className="section container-page">
+        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Plumbing Different</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { title: 'After-hours emergency call-outs', body: 'Burst pipes, no hot water, blocked drains — plumbing emergencies don\'t wait for business hours. Payment infrastructure must work at 11pm with minimal friction.', rec: 'Zeller Tap to Pay on your phone — always available, 1.4% rate.' },
+            { title: 'Underground and enclosed spaces', body: 'Inspecting or repairing underground pipes, working in slab voids, or under-floor access areas often means zero mobile signal.', rec: 'Square Terminal offline mode for confirmed zero-signal sites.' },
+            { title: 'Same-day parts purchasing', body: 'A blocked drain or burst pipe often means a same-day run to the trade supplier. Same-day settlement is the difference between buying today and waiting until tomorrow.', rec: 'Zeller — same-day settlement to Zeller account.' },
+            { title: 'Variable job values', body: 'From a $95 blocked drain clearance to a $12,000 hot water system replacement. The payment system needs to handle both without friction or high fixed fees.', rec: 'Flat-rate percentage (Zeller 1.4%) beats fixed-fee models at all job sizes.' },
+          ].map((c, i) => (
+            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
+              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="picks" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Plumbers</h2>
+          <ComparisonTable
+            headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
+            rows={[
+              { highlight: true, cells: [<><strong>Zeller Terminal 1 + SIM</strong> <span className="ml-1 badge badge-gold">Primary</span></>, '1.4%', '$99', '✓ $15/mo', '✗', 'All plumbing — primary device'] },
+              { cells: ['Zeller Tap to Pay', '1.4%', '$0', '✗ (phone data)', '✗', 'After-hours emergencies'] },
+              { cells: ['Square Terminal', '1.6%', '$329', '✗', '✓', 'Underground, enclosed dead zones'] },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section id="scenarios" className="section container-page">
+        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <div className="space-y-4">
+          {[
+            { title: 'Emergency call-out — burst pipe, owner home', body: 'Tap with Zeller on your phone or Terminal before leaving. Same-day settlement into your Zeller account means you can order replacement parts that evening.' },
+            { title: 'Emergency call-out — owner not home', body: 'Complete the repair, send a Zeller payment link via SMS. Add a photo of the completed work to the message for client confidence. Most clients pay within the hour.' },
+            { title: 'Underground drain work — no signal', body: 'Use Square Terminal offline mode. Enable it before descending. Take payment in the pit, reconnect at surface. Ensure you reconnect within 24 hours.' },
+            { title: 'Hot water system replacement — large job', body: 'Collect 30–50% deposit by Zeller payment link when the job is booked. Don\'t order the system until the deposit clears. Balance on completion via terminal or payment link.' },
+            { title: 'Commercial plumbing — invoice to building manager', body: 'Email a Zeller or Stripe invoice to the facilities manager. Include ABN, job description, materials, labour, and GST. 14–30 day terms for commercial accounts.' },
+          ].map((s, i) => (
+            <div key={i} className="flex gap-4">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+              <div>
+                <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <FaqSection items={faqs} title="FAQ for Plumbers" />
+
+      <section className="section section-alt container-page">
+        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
+        <div className="flex flex-wrap gap-3">
+          <Link to="/" className="btn-secondary text-sm">Full EFTPOS comparison</Link>
+          <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
+          <Link to="/trades/electricians" className="btn-secondary text-sm">Best EFTPOS for Electricians</Link>
+          <Link to="/trades/glaziers" className="btn-secondary text-sm">Best EFTPOS for Glaziers</Link>
+        </div>
+      </section>
+    </>
+  )
+}

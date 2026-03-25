@@ -1,0 +1,420 @@
+[
+  {
+    "id": "zeller",
+    "name": "Zeller",
+    "slug": "zeller-for-tradies",
+    "tagline": "Best overall for most tradies",
+    "badge": "Best Overall",
+    "badge_class": "badge-gold",
+    "logo_text": "Z",
+    "logo_colour": "#1a1a2e",
+    "website": "https://www.myzeller.com/au",
+    "affiliate_url": "https://www.myzeller.com/au",
+    "founded": 2020,
+    "hq": "Melbourne, VIC",
+    "type": "Australian fintech",
+    "overall_rank": 1,
+    "score_overall": 9.1,
+    "score_fees": 9.5,
+    "score_connectivity": 8.0,
+    "score_invoicing": 8.5,
+    "score_settlement": 9.0,
+    "fees": {
+      "in_person_percent": 1.4,
+      "remote_percent": 1.7,
+      "remote_fixed_cents": 25,
+      "invoice_percent": 1.7,
+      "invoice_fixed_cents": 25,
+      "monthly_fee": 0,
+      "notes": "No monthly fees, no lock-in"
+    },
+    "hardware": [
+      {
+        "name": "Terminal 1",
+        "price_aud": 99,
+        "connectivity": ["WiFi", "Ethernet", "SIM"],
+        "receipt_types": ["printed", "digital"],
+        "battery_tx_capacity": 1300,
+        "notes": "Best for tradies who need printed receipts on site"
+      },
+      {
+        "name": "Terminal 2",
+        "price_aud": 199,
+        "connectivity": ["WiFi", "Ethernet", "SIM"],
+        "receipt_types": ["digital (QR/email/SMS)"],
+        "battery_tx_capacity": 1300,
+        "notes": "Paperless; lighter; no magstripe"
+      }
+    ],
+    "tap_to_pay": {
+      "available": true,
+      "device": "iPhone/Android",
+      "surcharge_per_auth_cents": 0
+    },
+    "sim_plan": {
+      "available": true,
+      "cost_monthly_aud": 15,
+      "network": "Optus",
+      "no_lock_in": true
+    },
+    "offline_mode": {
+      "available": false,
+      "notes": "Requires active internet connection. No offline mode. SIM plan available as backup."
+    },
+    "settlement": {
+      "same_day_available": true,
+      "same_day_condition": "Settling to Zeller Transaction Account",
+      "standard_days": 1,
+      "notes": "Next business day to external bank account"
+    },
+    "invoicing": true,
+    "payment_links": true,
+    "recurring_billing": false,
+    "contract": "No lock-in",
+    "support_hours": "Business hours (verify for 24/7)",
+    "pros": [
+      "Lowest published in-person rate (1.4%)",
+      "SIM-enabled terminals — not dependent on customer WiFi",
+      "Fast same-day settlement to Zeller account",
+      "Mobile invoicing and payment links built in",
+      "No monthly fees, no lock-in",
+      "Australian company with local support"
+    ],
+    "cons": [
+      "No offline mode — requires active internet",
+      "Terminal 2 is paperless only (may not suit commercial clients)",
+      "Newer brand — less brand recognition than Square/Stripe"
+    ],
+    "best_for": ["Most tradies", "High volume", "Low fees", "SIM connectivity"],
+    "not_ideal_for": ["Zero-signal job sites"],
+    "sources": [
+      "https://www.myzeller.com/au/pricing",
+      "https://www.myzeller.com/au/shop/zeller-terminal-black",
+      "https://www.myzeller.com/au/support/does-the-zeller-terminal-need-a-sim-card-or-wi-fi-to-accept-payments"
+    ]
+  },
+  {
+    "id": "square",
+    "name": "Square",
+    "slug": "square-for-tradies",
+    "tagline": "Best for offline job sites",
+    "badge": "Best Offline",
+    "badge_class": "badge-blue",
+    "logo_text": "Sq",
+    "logo_colour": "#006aff",
+    "website": "https://squareup.com/au",
+    "affiliate_url": "https://squareup.com/au",
+    "founded": 2009,
+    "hq": "San Francisco (AU operations)",
+    "type": "Global fintech",
+    "overall_rank": 2,
+    "score_overall": 8.4,
+    "score_fees": 8.0,
+    "score_connectivity": 9.5,
+    "score_invoicing": 8.5,
+    "score_settlement": 8.0,
+    "fees": {
+      "in_person_percent": 1.6,
+      "remote_percent": 2.2,
+      "remote_fixed_cents": 0,
+      "invoice_percent": 2.2,
+      "invoice_fixed_cents": 0,
+      "monthly_fee": 0,
+      "notes": "No monthly fees. Older accounts may have different rates."
+    },
+    "hardware": [
+      {
+        "name": "Square Terminal",
+        "price_aud": 329,
+        "connectivity": ["WiFi", "Ethernet (via hub)"],
+        "receipt_types": ["printed", "digital"],
+        "battery_tx_capacity": null,
+        "notes": "Built-in receipt printer. Supports offline payments with constraints."
+      }
+    ],
+    "tap_to_pay": {
+      "available": true,
+      "device": "iPhone/Android",
+      "surcharge_per_auth_cents": 0
+    },
+    "sim_plan": {
+      "available": false,
+      "notes": "Square Terminal is WiFi/Ethernet only. Use phone hotspot or external router for cellular."
+    },
+    "offline_mode": {
+      "available": true,
+      "notes": "Offline payments supported on Square Terminal. Must reconnect within 24 hours. Some card types excluded. Risk of later decline exists."
+    },
+    "settlement": {
+      "same_day_available": false,
+      "standard_days": 1,
+      "notes": "Next-day transfers by default. Weekend/holiday caveats apply."
+    },
+    "invoicing": true,
+    "payment_links": true,
+    "recurring_billing": true,
+    "contract": "No long-term commitments",
+    "support_hours": "Mon–Fri 9am–5pm AET (live). Some 24/7 pathways exist.",
+    "pros": [
+      "Offline payment mode — works with zero connectivity",
+      "Built-in receipt printer on Terminal",
+      "Mature platform with strong invoicing tools",
+      "Excellent developer API if you need website integration",
+      "No monthly fees, no lock-in",
+      "Well-known brand — customers trust the terminal"
+    ],
+    "cons": [
+      "Higher in-person rate (1.6% vs Zeller's 1.4%)",
+      "Terminal is expensive ($329)",
+      "No built-in SIM — WiFi/hotspot only",
+      "Offline mode has 24-hour window and declined-payment risk"
+    ],
+    "best_for": ["Zero-signal job sites", "Offline capability", "Tradies needing printed receipts"],
+    "not_ideal_for": ["Cost-sensitive high-volume operations"],
+    "sources": [
+      "https://squareup.com/au/en/payments/our-fees",
+      "https://squareup.com/au/en/hardware/terminal/specs",
+      "https://squareup.com/au/en/payments/features/offline"
+    ]
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "slug": "stripe-for-tradies",
+    "tagline": "Best for website and API integration",
+    "badge": "Best for Web",
+    "badge_class": "badge-purple",
+    "logo_text": "St",
+    "logo_colour": "#635bff",
+    "website": "https://stripe.com/au",
+    "affiliate_url": "https://stripe.com/au",
+    "founded": 2010,
+    "hq": "San Francisco (AU operations)",
+    "type": "Global fintech",
+    "overall_rank": 3,
+    "score_overall": 7.8,
+    "score_fees": 7.0,
+    "score_connectivity": 7.5,
+    "score_invoicing": 9.0,
+    "score_settlement": 7.5,
+    "fees": {
+      "in_person_percent": 1.7,
+      "in_person_fixed_cents": 10,
+      "tap_to_pay_auth_surcharge_cents": 15,
+      "online_percent": 1.7,
+      "online_fixed_cents": 30,
+      "international_percent": 3.5,
+      "international_fixed_cents": 30,
+      "monthly_fee": 0,
+      "notes": "Tap to Pay on phone adds $0.15 per authorisation on top of standard rate. Reader eliminates this add-on."
+    },
+    "hardware": [
+      {
+        "name": "BBPOS WisePad 3",
+        "price_aud": 89,
+        "price_aud_incl_gst": 97.90,
+        "connectivity": ["Bluetooth"],
+        "receipt_types": ["digital"],
+        "notes": "Pairs with phone. Optional mobile data plan $15/reader/month."
+      }
+    ],
+    "tap_to_pay": {
+      "available": true,
+      "device": "Compatible iPhone/Android",
+      "surcharge_per_auth_cents": 15,
+      "notes": "Tap to Pay adds $0.15 per authorisation — use a reader above ~650 transactions to save money"
+    },
+    "sim_plan": {
+      "available": true,
+      "cost_monthly_aud": 15,
+      "notes": "Optional mobile data plan available for enabled readers"
+    },
+    "offline_mode": {
+      "available": false,
+      "notes": "Stripe Terminal requires active connection"
+    },
+    "settlement": {
+      "same_day_available": false,
+      "standard_days": 2,
+      "notes": "Typically 2 business days for Australia. Faster payout options available."
+    },
+    "invoicing": true,
+    "payment_links": true,
+    "recurring_billing": true,
+    "contract": "No setup or monthly fees",
+    "support_hours": "24/7 phone/chat/email (stated on AU pricing page)",
+    "pros": [
+      "Best-in-class API and website integration",
+      "Payment Links, Invoicing and Billing all excellent",
+      "24/7 support",
+      "Trusted globally — good for mixed AU/international payments",
+      "No monthly fees"
+    ],
+    "cons": [
+      "Highest in-person rate among the main three (1.7% + $0.10)",
+      "Tap to Pay adds $0.15/auth — can be expensive at volume",
+      "2-day settlement is slower than Zeller/Square",
+      "More 'developer-first' — less tradie-friendly out of the box",
+      "No offline mode"
+    ],
+    "best_for": ["Website/API integration", "Online bookings and deposits", "Recurring billing", "Mixed AU/international"],
+    "not_ideal_for": ["Simple on-site tap-and-go use cases", "Cost-sensitive tradies"],
+    "sources": [
+      "https://stripe.com/au/pricing",
+      "https://docs.stripe.com/payments/balances"
+    ]
+  },
+  {
+    "id": "tyro",
+    "name": "Tyro",
+    "slug": "tyro-for-tradies",
+    "tagline": "Strong Australian footprint with flexible payment links",
+    "badge": "Best Aussie Footprint",
+    "badge_class": "badge-green",
+    "logo_text": "Ty",
+    "logo_colour": "#00a651",
+    "website": "https://www.tyro.com",
+    "affiliate_url": "https://www.tyro.com",
+    "founded": 2003,
+    "hq": "Sydney, NSW",
+    "type": "Australian fintech / bank",
+    "overall_rank": 4,
+    "score_overall": 7.5,
+    "score_fees": 7.5,
+    "score_connectivity": 6.5,
+    "score_invoicing": 8.0,
+    "score_settlement": 8.5,
+    "fees": {
+      "in_person_percent": null,
+      "payment_links_percent": 1.4,
+      "notes": "In-person merchant service fee is turnover/card-mix dependent — not a single published flat rate. Payment Links: 1.4% incl. GST including premium and international cards."
+    },
+    "hardware": [
+      {
+        "name": "Mobile EFTPOS Terminal",
+        "price_aud": null,
+        "connectivity": ["WiFi", "SIM"],
+        "receipt_types": ["printed", "digital"],
+        "notes": "Details vary by device/product. Contact Tyro for current hardware options."
+      }
+    ],
+    "tap_to_pay": {
+      "available": false,
+      "notes": "Not confirmed in available sources"
+    },
+    "sim_plan": {
+      "available": true,
+      "notes": "SIM/WiFi switching supported; details vary by device"
+    },
+    "offline_mode": {
+      "available": false,
+      "notes": "Offline transactions explicitly not available per Tyro troubleshooting guidance"
+    },
+    "settlement": {
+      "same_day_available": true,
+      "same_day_condition": "Settling to Tyro transaction account",
+      "standard_days": 1,
+      "notes": "Same-day into Tyro account; next-day to external bank"
+    },
+    "invoicing": false,
+    "payment_links": true,
+    "recurring_billing": false,
+    "contract": "No setup fee, no lock-in, no cancellation fees",
+    "support_hours": "7am–9pm Sydney time, 7 days. Emergency after-hours pathway available.",
+    "pros": [
+      "Strong Australian bank-grade footprint",
+      "Payment Links at competitive 1.4% incl. GST",
+      "Good POS partner ecosystem",
+      "Same-day settlement to Tyro account",
+      "No lock-in, no cancellation fees",
+      "7-day support including evenings"
+    ],
+    "cons": [
+      "In-person rate not publicly listed — requires quote",
+      "No offline mode",
+      "No recurring billing",
+      "Less transparent on hardware pricing",
+      "Hosted payments recurring: not supported"
+    ],
+    "best_for": ["Tradies who invoice heavily via payment links", "POS-integrated setups", "Those wanting Aussie bank-backed reliability"],
+    "not_ideal_for": ["DIY setup without a Tyro sales conversation", "Zero-signal sites"],
+    "sources": [
+      "https://www.tyro.com/knowledge-hub/what-are-tyros-merchant-service-fees/",
+      "https://www.tyro.com/products/payment-links/",
+      "https://help.tyro.com/s/article/How-to-troubleshoot-connection-issues-on-a-Tyro-EFTPOS-machine"
+    ]
+  },
+  {
+    "id": "shift4",
+    "name": "Shift4",
+    "slug": "shift4-for-tradies",
+    "tagline": "Zero-cost EFTPOS via customer surcharging",
+    "badge": "Zero-Cost Option",
+    "badge_class": "badge-orange",
+    "logo_text": "S4",
+    "logo_colour": "#f26522",
+    "website": "https://www.shift4-au.com.au",
+    "affiliate_url": "https://www.shift4-au.com.au",
+    "founded": null,
+    "hq": "AU operations",
+    "type": "Payments company",
+    "overall_rank": 5,
+    "score_overall": 6.5,
+    "score_fees": 8.0,
+    "score_connectivity": 7.0,
+    "score_invoicing": 5.0,
+    "score_settlement": 6.0,
+    "fees": {
+      "in_person_percent": null,
+      "notes": "Surcharging-led model — fees passed to customer. Merchant rate is quote-dependent. 'Zero cost EFTPOS' positioning means you pay nothing but customers pay a surcharge."
+    },
+    "hardware": [
+      {
+        "name": "Rental terminal",
+        "price_aud": null,
+        "rental": true,
+        "connectivity": ["Mobile (built-in)", "WiFi"],
+        "notes": "Rental model — no upfront purchase. Built-in mobile connectivity promoted."
+      }
+    ],
+    "tap_to_pay": {
+      "available": false,
+      "notes": "Not confirmed in available sources"
+    },
+    "sim_plan": {
+      "available": true,
+      "notes": "Built-in cellular connectivity promoted for mobile terminals"
+    },
+    "offline_mode": {
+      "available": null,
+      "notes": "Not specified in available sources"
+    },
+    "settlement": {
+      "same_day_available": null,
+      "standard_days": null,
+      "notes": "Settlement timing not specified in available sources — request in writing before signing"
+    },
+    "invoicing": null,
+    "payment_links": null,
+    "recurring_billing": null,
+    "contract": "Quote-dependent. Tradies should request written terms and early termination costs.",
+    "support_hours": "Not specified in available sources",
+    "pros": [
+      "Zero out-of-pocket processing cost (surcharging model)",
+      "Rental hardware — no upfront capital",
+      "Built-in cellular connectivity on promoted terminals"
+    ],
+    "cons": [
+      "Customers pay the surcharge — some tradies' customers won't accept this",
+      "Fee specifics are not publicly transparent — requires quote",
+      "Contract terms less clear than flat-rate providers",
+      "Limited public information on invoicing, payment links, or settlement"
+    ],
+    "best_for": ["Tradies whose customers accept surcharging", "Those who want zero upfront cost", "Cash-flow-sensitive new businesses"],
+    "not_ideal_for": ["Price-sensitive customers or premium service contexts where surcharges feel unprofessional"],
+    "warning": "Always request written contract terms, early termination costs, and total cost of ownership before signing.",
+    "sources": [
+      "https://www.shift4-au.com.au/blog/cost-of-eftpos-machine/"
+    ]
+  }
+]

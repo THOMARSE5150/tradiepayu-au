@@ -1,0 +1,110 @@
+import { Link } from 'react-router-dom'
+import Breadcrumb from '../../components/Breadcrumb'
+import FaqSection from '../../components/FaqSection'
+import ComparisonTable from '../../components/ComparisonTable'
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Best EFTPOS for Tradies', href: '/#compare-all' },
+  { label: 'Best EFTPOS for Electricians' },
+]
+
+const faqs = [
+  { q: 'What is the best EFTPOS for electricians?', a: 'Zeller Terminal 1 with the SIM plan is the top pick. Switchboards, plant rooms, and commercial electrical work are common dead zones — the SIM terminal handles most building coverage. For genuine zero-signal sites, carry Square Terminal as a backup for its offline mode.' },
+  { q: 'What EFTPOS works in switchboard rooms?', a: 'It depends on the building. Zeller Terminal 1 with SIM (Optus) covers most switchboard rooms in suburban and metro buildings. For underground switchboards and large concrete structures, Square Terminal offline mode is the fallback.' },
+  { q: 'How do electricians get paid for emergency call-outs?', a: 'Zeller Tap to Pay on your phone is the simplest option — always on you, no hardware to forget, 1.4% rate, same-day settlement. If the client isn\'t home, send a Zeller payment link via SMS.' },
+]
+
+export default function ElectriciansPage() {
+  return (
+    <>
+      <Breadcrumb crumbs={crumbs} />
+
+      <header className="hero">
+        <div className="container-page">
+          <div className="hero-meta">
+            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
+            <span>·</span><span>Updated March 2026</span>
+          </div>
+          <h1 className="text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Electricians in Australia (2026)</h1>
+          <p className="hero-sub">Switchboards, plant rooms, and dead zones. The payment setup for electricians who need connectivity where there isn't any.</p>
+          <nav className="jump-links">
+            <a href="#challenges">Key Challenges</a>
+            <a href="#picks">Top Picks</a>
+            <a href="#scenarios">Job Scenarios</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="challenges" className="section container-page">
+        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Electrical Work Different</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { title: 'Switchboards and meter rooms', body: 'Steel enclosures and concrete voids in commercial and industrial buildings frequently kill mobile signal. These are exactly the environments electricians work in daily.', rec: 'SIM terminal (Optus, most metro buildings covered) + Square offline backup.' },
+            { title: 'Commercial and industrial dead zones', body: 'Factories, warehouses, plant rooms, underground carparks — these environments combine thick concrete, steel shielding, and no customer WiFi.', rec: 'Square Terminal offline mode for guaranteed zero-connectivity sites.' },
+            { title: 'Domestic after-hours emergencies', body: 'Fault-finding at 10pm, emergency hot water repairs, storm damage. Payment needs to work when office support is unavailable.', rec: 'Zeller Tap to Pay on your phone — always on you, 24/7.' },
+            { title: 'New estate rough-in work', body: 'New estates have no WiFi and often patchy coverage. Multiple stages of the same build require reliable payment across visits.', rec: 'Zeller Terminal 1 + SIM — Optus covers most metro new estates.' },
+          ].map((c, i) => (
+            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
+              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="picks" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Electricians</h2>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm mb-6">
+            <strong>Two-device strategy:</strong> Zeller Terminal 1 + SIM ($99, primary) + Square Terminal ($329, dead-zone backup). No monthly fee on Square. Total hardware: $428.
+          </div>
+          <ComparisonTable
+            headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
+            rows={[
+              { highlight: true, cells: [<><strong>Zeller Terminal 1 + SIM</strong> <span className="ml-1 badge badge-gold">Primary</span></>, '1.4%', '$99', '✓ $15/mo', '✗', 'Most job sites — lowest rate'] },
+              { cells: ['Square Terminal', '1.6%', '$329', '✗', '✓', 'Plant rooms, underground, dead zones'] },
+              { cells: ['Zeller Tap to Pay', '1.4%', '$0', '✗ (phone data)', '✗', 'After-hours emergencies, residential'] },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section id="scenarios" className="section container-page">
+        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <div className="space-y-4">
+          {[
+            { title: 'Residential fault-finding — owner at home', body: 'Tap with Zeller Terminal 1 or your phone before leaving. 1.4% rate, same-day settlement.' },
+            { title: 'Residential emergency — owner not home', body: 'Complete the job, send a Zeller payment link via SMS. Message: "Hi [name], job done at [address]. Here\'s your payment link." Client pays from their phone.' },
+            { title: 'Commercial switchboard room — no signal', body: 'Switch to Square Terminal with offline mode enabled. Take payment in the dead zone, reconnect in the lobby or carpark. Process within 24 hours.' },
+            { title: 'New estate rough-in or fit-off', body: 'Zeller Terminal 1 with SIM. Optus covers most metro new estates. No need for the homeowner\'s WiFi or a hotspot.' },
+            { title: 'Large commercial job — invoice to accounts', body: 'Send a Zeller or Stripe invoice to the building manager\'s accounts email. Include ABN, job description, labour, materials, and GST breakdown. 14–30 day payment terms for commercial accounts.' },
+          ].map((s, i) => (
+            <div key={i} className="flex gap-4">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+              <div>
+                <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <FaqSection items={faqs} title="FAQ for Electricians" />
+
+      <section className="section section-alt container-page">
+        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
+        <div className="flex flex-wrap gap-3">
+          <Link to="/" className="btn-secondary text-sm">Full EFTPOS comparison</Link>
+          <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
+          <Link to="/providers/square" className="btn-secondary text-sm">Square full review</Link>
+          <Link to="/trades/glaziers" className="btn-secondary text-sm">Best EFTPOS for Glaziers</Link>
+          <Link to="/trades/plumbers" className="btn-secondary text-sm">Best EFTPOS for Plumbers</Link>
+        </div>
+      </section>
+    </>
+  )
+}
