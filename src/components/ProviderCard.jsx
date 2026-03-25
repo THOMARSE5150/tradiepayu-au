@@ -14,7 +14,7 @@ export default function ProviderCard({ provider, featured = false }) {
   const badgeCls = badgeClasses[badge_class] || badgeClasses['badge-muted']
 
   return (
-    <article className={`bg-white rounded-xl border p-6 flex flex-col gap-4 ${featured ? 'border-brand-blue ring-2 ring-brand-blue' : 'border-slate-200'}`}>
+    <article className={`bg-white rounded-xl border p-6 flex flex-col gap-4 transition-shadow ${featured ? 'border-brand-blue ring-2 ring-brand-blue shadow-lg shadow-blue-100' : 'border-slate-200 hover:shadow-md hover:shadow-slate-200'}`}>
       <div className="flex items-start gap-3">
         <div
           className="w-11 h-11 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
@@ -68,7 +68,7 @@ export default function ProviderCard({ provider, featured = false }) {
 
       <Link
         to={`/providers/${id}`}
-        className="mt-auto block text-center bg-brand-blue text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-blue-700 transition-colors text-sm"
+        className="mt-auto block text-center bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold px-4 py-2.5 rounded-lg hover:from-blue-600 hover:to-blue-800 transition-all shadow-sm text-sm"
       >
         Full {name} Review →
       </Link>

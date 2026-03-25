@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 const links = [
   { label: 'All Providers', href: '/#compare-all' },
@@ -8,9 +9,16 @@ const links = [
 
 export default function Nav() {
   const { pathname } = useLocation()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
-    <header className="bg-brand-dark text-white sticky top-0 z-50 shadow">
+    <header className={`text-white sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-brand-dark/80 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-brand-dark shadow'}`}>
       <div className="container-page flex items-center justify-between h-14">
         <Link to="/" className="font-bold text-white hover:text-blue-300 transition-colors">
           TradiePay<span className="text-brand-blue">AU</span>

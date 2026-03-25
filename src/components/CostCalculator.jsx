@@ -103,7 +103,7 @@ export default function CostCalculator() {
                   </div>
                   <div className="w-full bg-slate-100 rounded-full h-2">
                     <div
-                      className={`h-2 rounded-full transition-all ${i === 0 ? 'bg-brand-blue' : 'bg-slate-300'}`}
+                      className={`h-2 rounded-full transition-all ${i === 0 ? 'bg-gradient-to-r from-brand-blue to-blue-400' : 'bg-slate-300'}`}
                       style={{ width: `${Math.min(100, (pct) * 50)}%` }}
                     />
                   </div>

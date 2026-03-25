@@ -15,7 +15,7 @@ export default function ComparisonTable({ headers, rows, highlightCol = 0 }) {
           {rows.map((row, ri) => (
             <tr key={ri} className={row.highlight ? 'bg-blue-50' : 'hover:bg-slate-50'}>
               {row.cells.map((cell, ci) => (
-                <td key={ci} className="py-3 px-4 border-b border-slate-100 last:border-0">
+                <td key={ci} className={`py-3 px-4 border-b border-slate-100 last:border-0 ${row.highlight && ci === 0 ? 'border-l-4 border-l-brand-blue' : ''}`}>
                   {cell}
                 </td>
               ))}
