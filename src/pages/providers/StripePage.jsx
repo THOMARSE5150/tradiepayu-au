@@ -184,6 +184,23 @@ export default function StripePage() {
         </div>
       </section>
 
+      {/* CTA — TODO: replace href with affiliate referral link when approved */}
+      <section className="section container-page">
+        <div className="max-w-md">
+          <h2 className="text-xl font-bold text-brand-dark mb-2">Ready to get started with Stripe?</h2>
+          <p className="text-slate-600 text-sm mb-4">Create a free Stripe account on their website — no monthly fee, pay only when you take a payment.</p>
+          <a
+            href="https://stripe.com/au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Visit Stripe website →
+          </a>
+          <p className="text-xs text-slate-400 mt-3">Link goes directly to Stripe's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+        </div>
+      </section>
+
       <FaqSection items={faqs} title="Stripe FAQ" />
 
       <section className="section section-alt container-page">
@@ -193,6 +210,8 @@ export default function StripePage() {
           <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
           <Link to="/trades/cleaners" className="btn-secondary text-sm">Best EFTPOS for Cleaners</Link>
           <Link to="/trades/landscapers" className="btn-secondary text-sm">Best EFTPOS for Landscapers</Link>
+          <Link to="/trades/pest-controllers" className="btn-secondary text-sm">Best EFTPOS for Pest Controllers</Link>
+          <Link to="/trades/pool-builders" className="btn-secondary text-sm">Best EFTPOS for Pool Builders</Link>
         </div>
       </section>
     </>

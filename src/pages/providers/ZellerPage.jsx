@@ -278,6 +278,23 @@ export default function ZellerPage() {
       </section>
 
       {/* FAQ */}
+      {/* CTA — TODO: replace href with affiliate referral link when approved */}
+      <section className="section container-page">
+        <div className="max-w-md">
+          <h2 className="text-xl font-bold text-brand-dark mb-2">Ready to get started with Zeller?</h2>
+          <p className="text-slate-600 text-sm mb-4">Apply on Zeller's website — approval and account setup typically takes one business day.</p>
+          <a
+            href="https://www.myzeller.com/au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Visit Zeller website →
+          </a>
+          <p className="text-xs text-slate-400 mt-3">Link goes directly to Zeller's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+        </div>
+      </section>
+
       <FaqSection items={faqs} title="Zeller FAQ" />
 
       {/* Related */}
@@ -289,6 +306,11 @@ export default function ZellerPage() {
           <Link to="/trades/glaziers" className="btn-secondary text-sm">Best EFTPOS for Glaziers</Link>
           <Link to="/trades/electricians" className="btn-secondary text-sm">Best EFTPOS for Electricians</Link>
           <Link to="/trades/plumbers" className="btn-secondary text-sm">Best EFTPOS for Plumbers</Link>
+          <Link to="/trades/roofers" className="btn-secondary text-sm">Best EFTPOS for Roofers</Link>
+          <Link to="/trades/painters" className="btn-secondary text-sm">Best EFTPOS for Painters</Link>
+          <Link to="/trades/builders" className="btn-secondary text-sm">Best EFTPOS for Builders</Link>
+          <Link to="/trades/carpenters" className="btn-secondary text-sm">Best EFTPOS for Carpenters</Link>
+          <Link to="/trades/tilers" className="btn-secondary text-sm">Best EFTPOS for Tilers</Link>
         </div>
       </section>
     </>

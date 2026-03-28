@@ -175,6 +175,23 @@ export default function Shift4Page() {
         </div>
       </section>
 
+      {/* CTA — TODO: replace href with affiliate referral link when approved */}
+      <section className="section container-page">
+        <div className="max-w-md">
+          <h2 className="text-xl font-bold text-brand-dark mb-2">Interested in Shift4?</h2>
+          <p className="text-slate-600 text-sm mb-4">Contact Shift4 AU directly to get a quote — rates and terminal costs vary by business type and volume.</p>
+          <a
+            href="https://www.shift4-au.com.au"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Visit Shift4 AU website →
+          </a>
+          <p className="text-xs text-slate-400 mt-3">Link goes directly to Shift4's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+        </div>
+      </section>
+
       <FaqSection items={faqs} title="Shift4 FAQ" />
 
       <section className="section section-alt container-page">
@@ -185,6 +202,9 @@ export default function Shift4Page() {
           <Link to="/providers/square" className="btn-secondary text-sm">Square full review</Link>
           <Link to="/trades/glaziers" className="btn-secondary text-sm">Best EFTPOS for Glaziers</Link>
           <Link to="/trades/builders" className="btn-secondary text-sm">Best EFTPOS for Builders</Link>
+          <Link to="/trades/concreters" className="btn-secondary text-sm">Best EFTPOS for Concreters</Link>
+          <Link to="/trades/pool-builders" className="btn-secondary text-sm">Best EFTPOS for Pool Builders</Link>
+          <Link to="/trades/fencers" className="btn-secondary text-sm">Best EFTPOS for Fencers</Link>
         </div>
       </section>
     </>

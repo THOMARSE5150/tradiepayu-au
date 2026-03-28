@@ -186,6 +186,23 @@ export default function SquarePage() {
         </div>
       </section>
 
+      {/* CTA — TODO: replace href with affiliate referral link when approved */}
+      <section className="section container-page">
+        <div className="max-w-md">
+          <h2 className="text-xl font-bold text-brand-dark mb-2">Ready to get started with Square?</h2>
+          <p className="text-slate-600 text-sm mb-4">Order a Square Terminal from Square's website — ships within a few business days, no monthly fee.</p>
+          <a
+            href="https://squareup.com/au/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Visit Square website →
+          </a>
+          <p className="text-xs text-slate-400 mt-3">Link goes directly to Square's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+        </div>
+      </section>
+
       <FaqSection items={faqs} title="Square FAQ" />
 
       <section className="section section-alt container-page">
@@ -195,6 +212,9 @@ export default function SquarePage() {
           <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
           <Link to="/trades/glaziers" className="btn-secondary text-sm">Best EFTPOS for Glaziers</Link>
           <Link to="/trades/electricians" className="btn-secondary text-sm">Best EFTPOS for Electricians</Link>
+          <Link to="/trades/plumbers" className="btn-secondary text-sm">Best EFTPOS for Plumbers</Link>
+          <Link to="/trades/builders" className="btn-secondary text-sm">Best EFTPOS for Builders</Link>
+          <Link to="/trades/concreters" className="btn-secondary text-sm">Best EFTPOS for Concreters</Link>
         </div>
       </section>
     </>

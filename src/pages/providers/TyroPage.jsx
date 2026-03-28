@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
+import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -130,6 +131,49 @@ export default function TyroPage() {
         </div>
       </section>
 
+      {/* Fees table */}
+      <section id="fees" className="section section-alt">
+        <div className="container-page">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-2"
+          >
+            Tyro Fees
+          </motion.h2>
+          <p className="text-sm text-slate-500 mb-5">In-person rate requires a quote — all other rates are publicly listed.</p>
+          <ComparisonTable
+            headers={['Payment type', 'Rate', 'Fixed fee', 'Notes']}
+            rows={[
+              { cells: ['In-person (terminal)', 'Quote required', '—', 'Depends on turnover, card mix, business type'] },
+              { highlight: true, cells: ['Payment links', '1.4% incl. GST', '$0', 'Includes premium + international cards'] },
+              { cells: ['Monthly fee', 'Varies', '—', 'Account type dependent — confirm before signing'] },
+              { cells: ['Settlement (Tyro a/c)', 'Same day', '—', 'Into Tyro transaction account'] },
+              { cells: ['Settlement (external)', 'Next day', '—', 'To your own bank account'] },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* CTA — TODO: replace href with affiliate referral link when approved */}
+      <section className="section container-page">
+        <div className="max-w-md">
+          <h2 className="text-xl font-bold text-brand-dark mb-2">Interested in Tyro?</h2>
+          <p className="text-slate-600 text-sm mb-4">Contact Tyro directly to get your in-person rate quote — ask for your merchant service fee in writing before signing.</p>
+          <a
+            href="https://www.tyro.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            Visit Tyro website →
+          </a>
+          <p className="text-xs text-slate-400 mt-3">Link goes directly to Tyro's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+        </div>
+      </section>
+
       <FaqSection items={faqs} title="Tyro FAQ" />
 
       <section className="section section-alt container-page">
@@ -138,6 +182,9 @@ export default function TyroPage() {
           <Link to="/" className="btn-secondary text-sm">Full provider comparison</Link>
           <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
           <Link to="/providers/square" className="btn-secondary text-sm">Square full review</Link>
+          <Link to="/trades/cleaners" className="btn-secondary text-sm">Best EFTPOS for Cleaners</Link>
+          <Link to="/trades/landscapers" className="btn-secondary text-sm">Best EFTPOS for Landscapers</Link>
+          <Link to="/trades/pest-controllers" className="btn-secondary text-sm">Best EFTPOS for Pest Controllers</Link>
         </div>
       </section>
     </>
