@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Logo from './Logo'
 
 const providers = [
   { label: 'Zeller', href: '/providers/zeller' },
@@ -22,7 +23,7 @@ export default function Footer() {
     <footer className="bg-brand-dark text-slate-400 mt-auto">
       <div className="container-page py-12 grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <p className="text-white font-semibold mb-3">TradiePay<span className="text-brand-blue">AU</span></p>
+          <Logo className="mb-3" />
           <p className="text-sm leading-relaxed text-slate-400">Independent comparison of mobile card payment systems for Australian tradies. Updated March 2026.</p>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">

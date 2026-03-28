@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Logo from './Logo'
 
 const links = [
   { label: 'All Providers', href: '/#compare-all' },
@@ -24,9 +25,7 @@ export default function Nav() {
         : 'bg-brand-dark'
     }`}>
       <div className="container-page flex items-center justify-between h-14">
-        <Link to="/" className="font-bold text-white hover:text-blue-300 transition-colors">
-          <span className="font-display tracking-tight">TradiePay<span className="text-brand-blue">AU</span></span>
-        </Link>
+        <Logo />
         <nav className="flex items-center gap-1">
           {links.map(l => (
             <Link
