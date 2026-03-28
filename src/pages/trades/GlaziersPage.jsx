@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -23,13 +25,38 @@ const faqs = [
   { q: 'How do glaziers handle emergency call-out payment?', a: 'Zeller Tap to Pay on your phone is the easiest emergency payment method — no hardware to forget, always on you, 1.4% rate, same-day settlement.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  name: 'Best EFTPOS for Glaziers in Australia (2026)',
+  description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.',
+  url: 'https://tradiepayu-au.up.railway.app/trades/glaziers',
+}
+
 export default function GlaziersPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Best EFTPOS for Glaziers in Australia (2026)"
+        description="Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses."
+        canonical="/trades/glaziers"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Trade hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
             <span>·</span><span>Updated March 2026</span>
@@ -46,23 +73,54 @@ export default function GlaziersPage() {
       </header>
 
       <section id="challenges" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Glazing Different</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Glazing Different
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {challenges.map((c, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-5"
+            >
               <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </div>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Glaziers</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Top Picks for Glaziers
+          </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="bg-white border-2 border-brand-blue rounded-xl p-6">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0 }}
+              whileHover={{ y: -3 }}
+              className="lg-blue rounded-2xl p-6"
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-dark text-white flex items-center justify-center font-bold">Z</div>
                 <div>
@@ -73,12 +131,19 @@ export default function GlaziersPage() {
               <p className="text-sm text-slate-600 mb-4">SIM plan (Optus, $15/mo) handles most building coverage. 1.4% rate and same-day settlement. Payment links for property manager billing.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.4%'], ['Terminal', '$99'], ['SIM', '$15/mo'], ['Settlement', 'Same day']].map(([l, v], i) => (
-                  <div key={i} className="bg-slate-50 rounded p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
+                  <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
                 ))}
               </div>
               <Link to="/providers/zeller" className="btn-primary block text-center text-sm">Full Zeller Review →</Link>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-6"
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-blue text-white flex items-center justify-center font-bold text-sm">Sq</div>
                 <div>
@@ -89,20 +154,28 @@ export default function GlaziersPage() {
               <p className="text-sm text-slate-600 mb-4">Offline mode for zero-connectivity sites — stairwells, mechanical rooms, underground. Accept payment, reconnect later. 24-hour window applies.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.6%'], ['Terminal', '$329'], ['Offline', '✓ Yes'], ['Settlement', 'Next day']].map(([l, v], i) => (
-                  <div key={i} className="bg-slate-50 rounded p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
+                  <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
                 ))}
               </div>
               <Link to="/providers/square" className="btn-tertiary block text-center text-sm">Full Square Review →</Link>
-            </div>
+            </motion.div>
           </div>
-          <div className="mt-5 bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700">
+          <div className="mt-5 lg-light rounded-2xl p-4 text-sm text-slate-700">
             <strong>Two-device strategy:</strong> Carry both. Zeller Terminal 1 + SIM ($99 + $15/mo) as primary. Square Terminal ($329, no monthly fee) as dead-zone backup. Total hardware investment: $428. No ongoing monthly cost on Square.
           </div>
         </div>
       </section>
 
       <section id="scenarios" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          Payment Playbook by Job Type
+        </motion.h2>
         <div className="space-y-4">
           {[
             { title: 'Emergency residential call-out', body: 'Use Zeller Tap to Pay on your phone. You\'re already carrying your phone. 1.4% rate, same-day settlement. If the client pays by card on site, tap and go. If they need to pay remotely, send a payment link.' },
@@ -111,20 +184,35 @@ export default function GlaziersPage() {
             { title: 'Mechanical room / basement — zero connectivity', body: 'Switch to Square Terminal. Enable offline mode before you go into the dead zone. Take payment on site. Reconnect when you return to ground level. Funds process that day.' },
             { title: 'Large job, deposit + balance', body: 'Collect 30–50% deposit by Zeller payment link at quote acceptance. Don\'t start glazing until the deposit clears. On completion, tap for the balance (client present) or send a final payment link (billing accounts department).' },
           ].map((s, i) => (
-            <div key={i} className="flex gap-4">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="flex gap-4"
+            >
               <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
               <div>
                 <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Glazier EFTPOS Comparison</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Glazier EFTPOS Comparison
+          </motion.h2>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
             rows={[

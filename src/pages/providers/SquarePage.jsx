@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { Check, X } from 'lucide-react'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -16,13 +19,38 @@ const faqs = [
   { q: 'When should a tradie choose Square over Zeller?', a: 'Specifically for zero-signal job sites: underground, deep basements, large concrete structures with no Optus coverage. Square\'s offline mode is the only way to take a payment in these environments. For all other scenarios, Zeller\'s lower rate wins.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  name: 'Square for Tradies — Full Review (2026)',
+  description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.',
+  url: 'https://tradiepayu-au.up.railway.app/providers/square',
+}
+
 export default function SquarePage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Square for Tradies — Full Review (2026)"
+        description="Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones."
+        canonical="/providers/square"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Provider hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span><span>Updated March 2026</span>
@@ -46,10 +74,17 @@ export default function SquarePage() {
             { label: 'Terminal price', value: '$329' },
             { label: 'Offline mode', value: '✓ Yes', highlight: true },
           ].map((s, i) => (
-            <div key={i} className="bg-slate-50 rounded-lg p-4 text-center">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="lg-light rounded-xl p-4 text-center"
+            >
               <span className="block text-xs text-slate-500 mb-1">{s.label}</span>
               <span className={`block text-lg font-bold ${s.highlight ? 'text-brand-green' : 'text-brand-dark'}`}>{s.value}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="text-sm text-slate-600 space-y-3">
@@ -60,7 +95,15 @@ export default function SquarePage() {
 
       <section id="fees" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Square Fees</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Square Fees
+          </motion.h2>
           <ComparisonTable
             headers={['Payment type', 'Rate', 'Notes']}
             rows={[
@@ -74,8 +117,16 @@ export default function SquarePage() {
 
       <section id="offline" className="section container-page">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4">Offline Mode — How It Works</h2>
-          <div className="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-6 text-sm">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-4"
+          >
+            Offline Mode — How It Works
+          </motion.h2>
+          <div className="infobox mb-6">
             <p className="font-semibold text-brand-dark mb-2">When to use it: underground work, concrete basements, switchboard rooms, remote properties beyond Optus coverage.</p>
           </div>
           <ol className="space-y-4">
@@ -85,16 +136,23 @@ export default function SquarePage() {
               { title: 'Reconnect within 24 hours', body: 'The Terminal must reconnect to Square\'s servers within 24 hours. If you don\'t reconnect in time, transactions will expire.' },
               { title: 'Transactions are processed', body: 'Once reconnected, Square processes the stored transactions. Most will succeed — but there is a risk of later decline if the card was cancelled or had insufficient funds while offline.' },
             ].map((step, i) => (
-              <li key={i} className="flex gap-4">
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.07 }}
+                className="flex gap-4"
+              >
                 <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
                 <div>
                   <h4 className="font-semibold text-brand-dark text-sm mb-1">{step.title}</h4>
                   <p className="text-sm text-slate-600">{step.body}</p>
                 </div>
-              </li>
+              </motion.li>
             ))}
           </ol>
-          <div className="mt-5 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900">
+          <div className="mt-5 breakeven-box">
             <strong>Important warnings:</strong> Some card types are excluded from offline mode. For high-value jobs in dead zones, consider requesting a deposit payment link before arriving on site (requires connectivity at quote time) and only taking the balance offline.
           </div>
         </div>
@@ -102,20 +160,28 @@ export default function SquarePage() {
 
       <section id="vs-zeller" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Square vs Zeller for Tradies</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Square vs Zeller for Tradies
+          </motion.h2>
           <ComparisonTable
             headers={['Feature', 'Zeller Terminal 1 + SIM', 'Square Terminal']}
             rows={[
               { highlight: false, cells: ['In-person rate', <strong className="text-brand-blue">1.4%</strong>, '1.6%'] },
               { cells: ['Hardware cost', <strong className="text-brand-blue">$99</strong>, '$329'] },
-              { cells: ['SIM / cellular', <span className="text-green-700 font-semibold">✓ $15/mo (Optus)</span>, '✗ WiFi only'] },
-              { cells: ['Offline mode', '✗ No', <span className="text-green-700 font-semibold">✓ Yes (24hr window)</span>] },
+              { cells: ['SIM / cellular', <span className="text-green-700 font-semibold flex items-center gap-1"><Check size={14} className="text-brand-green" /> $15/mo (Optus)</span>, <span className="flex items-center gap-1"><X size={14} className="text-red-400" /> WiFi only</span>] },
+              { cells: ['Offline mode', <span className="flex items-center gap-1"><X size={14} className="text-red-400" /> No</span>, <span className="text-green-700 font-semibold flex items-center gap-1"><Check size={14} className="text-brand-green" /> Yes (24hr window)</span>] },
               { cells: ['Settlement', <span className="text-green-700 font-semibold">Same day</span>, 'Next day'] },
               { cells: ['Receipt printer', '✓ Terminal 1', '✓ Built-in'] },
               { cells: ['Recommendation', 'Primary for most job sites', 'Backup for dead zones'] },
             ]}
           />
-          <div className="mt-5 bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700">
+          <div className="mt-5 lg-light rounded-2xl p-4 text-sm text-slate-700">
             <strong>The two-device strategy:</strong> Many glaziers, electricians, and plumbers carry both. Zeller Terminal 1 ($99, SIM, 1.4%) as primary. Square Terminal ($329, offline) as backup for known dead zones. Neither has a monthly fee — you only pay when you use them.
           </div>
         </div>

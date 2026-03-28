@@ -6,6 +6,7 @@ import ZellerPage from './pages/providers/ZellerPage'
 import SquarePage from './pages/providers/SquarePage'
 import StripePage from './pages/providers/StripePage'
 import TyroPage from './pages/providers/TyroPage'
+import Shift4Page from './pages/providers/Shift4Page'
 import GlaziersPage from './pages/trades/GlaziersPage'
 import ElectriciansPage from './pages/trades/ElectriciansPage'
 import PlumbersPage from './pages/trades/PlumbersPage'
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/providers/square" element={<SquarePage />} />
         <Route path="/providers/stripe" element={<StripePage />} />
         <Route path="/providers/tyro" element={<TyroPage />} />
+        <Route path="/providers/shift4" element={<Shift4Page />} />
         <Route path="/trades/glaziers" element={<GlaziersPage />} />
         <Route path="/trades/electricians" element={<ElectriciansPage />} />
         <Route path="/trades/plumbers" element={<PlumbersPage />} />

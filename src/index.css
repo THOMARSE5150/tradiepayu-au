@@ -45,15 +45,9 @@
   .stat-value { @apply block text-base font-bold text-brand-dark; }
   .stat-value.highlight { @apply text-brand-blue; }
 
-  /* Breadcrumb */
-  .breadcrumb ol { @apply flex items-center gap-2 text-sm text-slate-500 py-3 flex-wrap; }
-  .breadcrumb li::after { content: '›'; @apply mx-1 text-slate-300; }
-  .breadcrumb li:last-child::after { content: ''; }
-  .breadcrumb a { @apply text-brand-blue hover:underline; }
-
   /* Jump links */
   .jump-links { @apply flex flex-wrap gap-3 mt-6; }
-  .jump-links a { @apply text-sm text-white/80 hover:text-white border border-white/20 rounded-full px-3 py-1 transition-colors; }
+  .jump-links a { @apply text-sm text-white font-medium bg-white/10 border border-white/20 rounded-full px-4 py-1.5 transition-all hover:bg-white/20 hover:border-white/50 hover:shadow-[0_0_12px_rgba(255,255,255,0.12)] active:scale-95; }
 
   /* FAQ */
   .faq-item summary { @apply font-semibold cursor-pointer py-3 text-brand-dark; }
@@ -76,13 +70,52 @@
   .pick-pros-cons .con::before { content: '✗ '; @apply text-red-500 font-bold; }
 
   /* Infobox */
-  .infobox { @apply bg-blue-50 border border-blue-100 rounded-xl p-5 text-sm; }
+  .infobox { @apply rounded-xl p-5 text-sm; background: rgba(239,246,255,0.8); border: 1px solid rgba(147,197,253,0.5); box-shadow: inset 0 1px 0 rgba(255,255,255,0.8); }
 
   /* Breakeven box */
-  .breakeven-box { @apply bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm mt-6; }
+  .breakeven-box { @apply rounded-xl p-5 text-sm mt-6; background: rgba(255,251,235,0.9); border: 1px solid rgba(252,211,77,0.4); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); }
+}
 
-  /* Glassmorphism */
-  .glass       { @apply backdrop-blur-md bg-white/70 border border-white/40 shadow-sm; }
-  .glass-dark  { @apply backdrop-blur-md bg-brand-dark/70 border border-white/10 shadow-sm; }
-  .glass-stat  { @apply backdrop-blur-sm bg-white/60 border border-white/40 rounded-xl p-3 shadow-sm; }
+/* ─── Liquid Glass system ─── */
+
+/* Dark variant — use on dark/gradient backgrounds */
+.lg-dark {
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.28),
+    inset 0 1.5px 0 rgba(255,255,255,0.22),
+    inset 0 -1px 0 rgba(0,0,0,0.14);
+}
+
+/* Light variant — refined depth on white/light surfaces */
+.lg-light {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.07),
+    inset 0 1px 0 rgba(255,255,255,1),
+    inset 0 -0.5px 0 rgba(0,0,0,0.05);
+}
+
+/* Blue variant — featured/highlighted elements */
+.lg-blue {
+  background: rgba(0,106,255,0.04);
+  border: 1px solid rgba(0,106,255,0.22);
+  box-shadow:
+    0 6px 28px rgba(0,106,255,0.13),
+    inset 0 1px 0 rgba(255,255,255,0.65),
+    inset 0 -0.5px 0 rgba(0,106,255,0.08);
+}
+
+/* Diagonal sheen pseudo — add to elements with position:relative overflow:hidden */
+.lg-sheen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.13) 0%, transparent 55%);
+  pointer-events: none;
 }

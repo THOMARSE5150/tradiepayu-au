@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -15,13 +17,38 @@ const faqs = [
   { q: 'What EFTPOS works on new building estates with no WiFi?', a: 'Zeller Terminal 1 with SIM (Optus, $15/mo). New estates in metro areas have Optus coverage without any site WiFi or internet installed.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  name: 'Best EFTPOS for Builders in Australia (2026)',
+  description: 'Progress payments, new estate sites, and subcontractor cash flow — the best payment setup for Australian building businesses.',
+  url: 'https://tradiepayu-au.up.railway.app/trades/builders',
+}
+
 export default function BuildersPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Best EFTPOS for Builders in Australia (2026)"
+        description="Progress payments, new estate sites, and subcontractor cash flow — the best payment setup for Australian building businesses."
+        canonical="/trades/builders"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Trade hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
             <span>·</span><span>Updated March 2026</span>
@@ -38,7 +65,15 @@ export default function BuildersPage() {
       </header>
 
       <section id="challenges" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Building Different</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Building Different
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: 'Progress payment schedules', body: 'Building contracts have multiple payment milestones — slab, frame, lockup, fixing, practical completion. Each milestone requires a professional invoice and reliable payment method.', rec: 'Zeller or Stripe invoicing — milestone-by-milestone via email payment links.' },
@@ -46,18 +81,34 @@ export default function BuildersPage() {
             { title: 'Subcontractor cash flow', body: 'Builders often pay subbies on the same day the client pays them. Same-day settlement is critical to avoid fronting cash between client payment and subbie payment.', rec: 'Zeller — same-day settlement to Zeller account.' },
             { title: 'High job values and deposits', body: 'Builder contracts range from $40,000 to millions. Deposits of 5–20% are standard. Secure deposit collection before work starts is essential for builder cash flow.', rec: 'Zeller payment link or Stripe for deposit at contract signing.' },
           ].map((c, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-5"
+            >
               <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </div>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Builders</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Top Picks for Builders
+          </motion.h2>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Best use', 'Notes']}
             rows={[
@@ -70,7 +121,15 @@ export default function BuildersPage() {
       </section>
 
       <section id="scenarios" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          Payment Playbook by Job Type
+        </motion.h2>
         <div className="space-y-4">
           {[
             { title: 'Contract deposit — pre-start', body: 'Send a Zeller payment link at contract signing. Don\'t commence work until the deposit clears. Same-day settlement means you have funds available immediately.' },
@@ -78,13 +137,20 @@ export default function BuildersPage() {
             { title: 'On-site payment — new estate, no WiFi', body: 'Zeller Terminal 1 with SIM. New estate = no internet. The SIM terminal runs on Optus data without any site infrastructure.' },
             { title: 'Subcontractor same-day settlement', body: 'Client pays at noon. Zeller settles to your Zeller account same business day. You can transfer to your subbie that afternoon, or use your Zeller debit card directly.' },
           ].map((s, i) => (
-            <div key={i} className="flex gap-4">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="flex gap-4"
+            >
               <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
               <div>
                 <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

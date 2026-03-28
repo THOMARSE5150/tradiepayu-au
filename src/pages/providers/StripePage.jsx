@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -16,13 +18,38 @@ const faqs = [
   { q: 'When should I use Stripe instead of Zeller?', a: 'Use Stripe when: (1) you have a website or booking system that needs payment API integration, (2) you have regular weekly/fortnightly clients and want fully automated recurring billing, or (3) you process international cards regularly.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  name: 'Stripe for Tradies — Full Review (2026)',
+  description: 'Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first Australian tradie operations.',
+  url: 'https://tradiepayu-au.up.railway.app/providers/stripe',
+}
+
 export default function StripePage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Stripe for Tradies — Full Review (2026)"
+        description="Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first Australian tradie operations."
+        canonical="/providers/stripe"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Provider hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span><span>Updated March 2026</span>
@@ -46,17 +73,32 @@ export default function StripePage() {
             { label: 'Settlement', value: '2 days' },
             { label: 'Recurring billing', value: '✓ Automated', highlight: true },
           ].map((s, i) => (
-            <div key={i} className="bg-slate-50 rounded-lg p-4 text-center">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="lg-light rounded-xl p-4 text-center"
+            >
               <span className="block text-xs text-slate-500 mb-1">{s.label}</span>
               <span className={`block text-lg font-bold ${s.highlight ? 'text-brand-purple' : 'text-brand-dark'}`}>{s.value}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="fees" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Stripe Fees</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Stripe Fees
+          </motion.h2>
           <ComparisonTable
             headers={['Payment type', 'Rate', 'Fixed fee', 'Notes']}
             rows={[
@@ -68,14 +110,22 @@ export default function StripePage() {
               { cells: ['Monthly fee', '$0', '—', 'No monthly account fee'] },
             ]}
           />
-          <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm">
+          <div className="mt-4 breakeven-box">
             <strong>Tap to Pay note:</strong> At $0.15/auth, Stripe Tap to Pay adds up. Breakeven vs the reader (~$98): approximately 653 transactions. If you do more than ~55 transactions/month, the reader pays for itself within 12 months.
           </div>
         </div>
       </section>
 
       <section id="when-to-use" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">When to Choose Stripe</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          When to Choose Stripe
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: 'You have a website with online booking', body: 'Stripe\'s API is industry-leading. If your booking platform (ServiceM8, Tradify, or a custom site) needs payment integration, Stripe is the standard.' },
@@ -83,17 +133,33 @@ export default function StripePage() {
             { title: 'You process international clients', body: 'Stripe handles multi-currency and international cards better than Zeller or Square. If you have overseas-based property owners as clients, Stripe handles it cleanly.' },
             { title: 'You need 24/7 support', body: 'Stripe offers 24/7 phone, chat, and email support. Zeller is business hours only. For high-stakes payment operations, Stripe\'s support coverage is a genuine advantage.' },
           ].map((item, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-5"
+            >
               <h3 className="font-semibold text-brand-dark mb-2 text-sm">{item.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="recurring" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4">Automated Recurring Billing for Tradies</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-4"
+          >
+            Automated Recurring Billing for Tradies
+          </motion.h2>
           <p className="text-slate-600 text-sm mb-6">For cleaners, landscapers, and maintenance contractors with regular clients — Stripe Billing removes the manual send-and-wait step entirely.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
@@ -101,11 +167,19 @@ export default function StripePage() {
               { step: '2', title: 'Client enters card once', body: 'Send the client a Stripe checkout link. They enter their card once via a secure Stripe-hosted page.' },
               { step: '3', title: 'Auto-charged on schedule', body: 'Stripe charges the card automatically every week / fortnight / month. You get notified when each charge succeeds.' },
             ].map((s, i) => (
-              <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.07 }}
+                whileHover={{ y: -3 }}
+                className="lg-light rounded-2xl p-5"
+              >
                 <div className="w-8 h-8 rounded-full bg-brand-purple text-white text-sm font-bold flex items-center justify-center mb-3">{s.step}</div>
                 <h4 className="font-semibold text-brand-dark mb-1 text-sm">{s.title}</h4>
                 <p className="text-xs text-slate-600 leading-relaxed">{s.body}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

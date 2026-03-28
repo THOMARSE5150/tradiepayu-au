@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom'
+import { ChevronRight } from 'lucide-react'
 
 export default function Breadcrumb({ crumbs }) {
   return (
-    <nav aria-label="Breadcrumb" className="bg-white border-b border-slate-100">
-      <div className="container-page">
-        <ol className="breadcrumb">
-          {crumbs.map((c, i) => (
-            <li key={i} aria-current={i === crumbs.length - 1 ? 'page' : undefined}>
-              {i < crumbs.length - 1
-                ? <Link to={c.href} className="text-brand-blue hover:underline">{c.label}</Link>
-                : <span className="text-slate-500">{c.label}</span>
+    <nav aria-label="Breadcrumb" className="mb-5">
+      <ol className="flex items-center flex-wrap gap-1 text-xs text-white/40">
+        {crumbs.map((c, i) => {
+          const isLast = i === crumbs.length - 1
+          return (
+            <li key={i} className="flex items-center gap-1" aria-current={isLast ? 'page' : undefined}>
+              {i > 0 && <ChevronRight size={11} className="text-white/25 flex-shrink-0" />}
+              {isLast
+                ? <span className="text-white/50">{c.label}</span>
+                : <Link to={c.href} className="text-white/60 hover:text-white transition-colors">{c.label}</Link>
               }
             </li>
-          ))}
-        </ol>
-      </div>
+          )
+        })}
+      </ol>
     </nav>
   )
 }

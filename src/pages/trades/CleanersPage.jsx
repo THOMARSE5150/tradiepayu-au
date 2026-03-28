@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -16,13 +18,38 @@ const faqs = [
   { q: 'Should cleaners surcharge on card?', a: 'At high frequency, surcharging adds friction and can feel petty on a $150 job. Many cleaning businesses absorb the 1.4% and factor it into their rate. On $15,000/month volume, that\'s $210 — worth building into pricing rather than adding invoice friction.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  name: 'Best EFTPOS for Cleaners in Australia (2026)',
+  description: 'High-frequency, lower-value jobs with recurring clients — the best EFTPOS setup to minimise fees and make regular clients frictionless.',
+  url: 'https://tradiepayu-au.up.railway.app/trades/cleaners',
+}
+
 export default function CleanersPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Best EFTPOS for Cleaners in Australia (2026)"
+        description="High-frequency, lower-value jobs with recurring clients — the best EFTPOS setup to minimise fees and make regular clients frictionless."
+        canonical="/trades/cleaners"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Trade hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
             <span>·</span><span>Updated March 2026</span>
@@ -39,7 +66,15 @@ export default function CleanersPage() {
       </header>
 
       <section id="challenges" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Cleaning Different</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Cleaning Different
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: 'High transaction frequency', body: '5 jobs/day at $150 average = $3,750/week. At 1.4% (Zeller) vs 1.6% (Square), the 0.2% gap is $7.50/week — $390/year. Rate difference compounds fast at volume.', rec: 'Lowest rate wins: Zeller at 1.4%.' },
@@ -47,18 +82,34 @@ export default function CleanersPage() {
             { title: 'Client not home at completion', body: 'Residential clients are often at work when you finish the clean. Payment needs to happen without them being there.', rec: 'Zeller payment link sent via SMS on completion.' },
             { title: 'Low hardware overhead', body: 'Cleaning businesses often operate lean. Spending $329 on a terminal when you can tap from a phone at the same rate doesn\'t make sense at lower volumes.', rec: 'Start with Zeller Tap to Pay (phone). Upgrade when volume justifies it.' },
           ].map((c, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-5"
+            >
               <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </div>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Cleaners</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Top Picks for Cleaners
+          </motion.h2>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'Recurring', 'Settlement', 'Best for']}
             rows={[
@@ -68,7 +119,7 @@ export default function CleanersPage() {
               { cells: ['Square Tap to Pay', '1.6%', '$0', 'Invoicing only', 'Next day', 'If you specifically need Square\'s ecosystem'] },
             ]}
           />
-          <div className="mt-4 bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm">
+          <div className="mt-4 lg-light rounded-2xl p-4 text-sm">
             <strong>Rate comparison at typical cleaning volume:</strong><br />
             5 jobs/day × $150 avg × 20 days/month = $15,000/month in card revenue.<br />
             Zeller (1.4%): $210/month. Square (1.6%): $240/month. Saving: $30/month — covers Zeller's SIM plan twice over.
@@ -77,23 +128,38 @@ export default function CleanersPage() {
       </section>
 
       <section id="recurring" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">Handling Recurring Clients</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          Handling Recurring Clients
+        </motion.h2>
         <div className="space-y-4">
           {[
             { title: 'Option 1: Zeller Payment Links (simple)', body: 'After each clean, send a Zeller payment link via SMS. Client taps on their phone. Works well for clients who prefer control — they pay when ready. Slight admin overhead (send per job) but fast and familiar.' },
             { title: 'Option 2: Stripe recurring billing (automated)', body: 'Set up a recurring payment schedule in Stripe. Client enters their card once via a secure link. Stripe charges automatically on the schedule — weekly, fortnightly, monthly. Zero manual effort once configured. Rate is 1.7% + $0.30 online.' },
             { title: 'Option 3: Direct debit / bank transfer', body: 'For clients who prefer not to use a card, offer PayID or bank transfer. Zero processing fee. Manual reconciliation required, but for large monthly commercial accounts, absorbing 0% vs 1.4% is worth the admin.' },
           ].map((s, i) => (
-            <div key={i} className="flex gap-4">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="flex gap-4"
+            >
               <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
               <div>
                 <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        <div className="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5 text-sm">
+        <div className="mt-6 infobox">
           <h3 className="font-semibold text-brand-dark mb-2">Cleaners' recommended stack</h3>
           <p><strong>Residential one-off and irregular clients:</strong> Zeller Tap to Pay or payment link — 1.4%, instant.<br />
           <strong>Regular weekly/fortnightly clients:</strong> Stripe recurring billing — set up once, runs automatically.<br />

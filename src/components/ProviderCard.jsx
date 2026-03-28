@@ -13,8 +13,8 @@ const badgeClasses = {
 
 function StatCell({ label, value, positive }) {
   return (
-    <div className="backdrop-blur-sm bg-white/60 border border-white/40 rounded-xl p-3 shadow-sm">
-      <span className="block text-xs text-slate-500 mb-0.5">{label}</span>
+    <div className="lg-light rounded-xl p-3">
+      <span className="block text-xs text-slate-400 mb-0.5">{label}</span>
       <span className={`font-bold text-sm ${positive === true ? 'text-brand-blue' : positive === false ? 'text-slate-400' : 'text-brand-dark'}`}>
         {value}
       </span>
@@ -36,10 +36,10 @@ export default function ProviderCard({ provider, featured = false, index = 0 }) 
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.08, ease: 'easeOut' }}
-      className={`bg-white rounded-2xl border overflow-hidden flex flex-col transition-shadow duration-300 ${
+      className={`relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ${
         featured
-          ? 'border-brand-blue ring-2 ring-brand-blue shadow-xl shadow-blue-100'
-          : 'border-slate-200 hover:shadow-lg hover:shadow-slate-200 hover:-translate-y-0.5 hover:transition-transform'
+          ? 'lg-blue lg-sheen shadow-[0_16px_48px_rgba(0,106,255,0.13)]'
+          : 'bg-white border border-slate-200 hover:shadow-[0_12px_32px_rgba(0,0,0,0.09),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1'
       }`}
     >
       {/* Product image */}
@@ -90,11 +90,11 @@ export default function ProviderCard({ provider, featured = false, index = 0 }) 
           />
           <StatCell
             label="Settlement"
-            value={settlement.same_day_available ? 'Same day' : `${settlement.standard_days}d`}
+            value={settlement.same_day_available ? 'Same day' : settlement.standard_days != null ? `${settlement.standard_days}d` : '—'}
           />
           <StatCell
             label="SIM plan"
-            value={sim_plan.available ? `$${sim_plan.cost_monthly_aud}/mo` : 'No'}
+            value={sim_plan.available ? (sim_plan.cost_monthly_aud != null ? `$${sim_plan.cost_monthly_aud}/mo` : 'Included') : 'No'}
             positive={sim_plan.available}
           />
           <StatCell

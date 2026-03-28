@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { Check } from 'lucide-react'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import SetupSteps from '../../components/SetupSteps'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -27,13 +30,38 @@ const setupSteps = [
   { title: 'Add Zeller Invoice (optional)', body: 'Enable invoicing from the dashboard. Send itemised tax invoices with a built-in payment link — client pays directly from the invoice.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  name: 'Zeller for Tradies — Full Review (2026)',
+  description: 'Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.',
+  url: 'https://tradiepayu-au.up.railway.app/providers/zeller',
+}
+
 export default function ZellerPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Zeller for Tradies — Full Review (2026)"
+        description="Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS."
+        canonical="/providers/zeller"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Provider hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span><span>Updated March 2026</span>
@@ -60,10 +88,17 @@ export default function ZellerPage() {
             { label: 'Monthly fee', value: '$0' },
             { label: 'Contract', value: 'No lock-in' },
           ].map((s, i) => (
-            <div key={i} className="bg-slate-50 rounded-lg p-4 text-center">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="lg-light rounded-xl p-4 text-center"
+            >
               <span className="block text-xs text-slate-500 mb-1">{s.label}</span>
               <span className={`block text-lg font-bold ${s.highlight ? 'text-brand-blue' : 'text-brand-dark'}`}>{s.value}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -76,7 +111,15 @@ export default function ZellerPage() {
       {/* Fees */}
       <section id="fees" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Zeller Fees</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Zeller Fees
+          </motion.h2>
           <ComparisonTable
             headers={['Payment type', 'Rate', 'Fixed fee', 'Notes']}
             rows={[
@@ -92,7 +135,15 @@ export default function ZellerPage() {
 
       {/* Hardware */}
       <section id="hardware" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">Hardware Options</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          Hardware Options
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             {
@@ -117,7 +168,15 @@ export default function ZellerPage() {
               features: ['Use your iPhone or Android', '1.4% rate, same as Terminal', 'No hardware to carry', 'Phone battery is your dependency'],
             },
           ].map((hw, i) => (
-            <div key={i} className={`bg-white rounded-xl border p-5 ${hw.featured ? 'border-brand-blue ring-2 ring-brand-blue' : 'border-slate-200'}`}>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className={hw.featured ? 'lg-blue rounded-2xl p-5' : 'lg-light rounded-2xl p-5'}
+            >
               <div className="flex items-center justify-between mb-1">
                 <h3 className="font-bold text-brand-dark">{hw.name}</h3>
                 {hw.featured && <span className="badge badge-gold">Best pick</span>}
@@ -125,9 +184,13 @@ export default function ZellerPage() {
               <p className="text-2xl font-bold text-brand-blue mb-3">{hw.price}</p>
               <p className="text-xs text-slate-500 mb-3">{hw.best}</p>
               <ul className="space-y-1.5 text-xs text-slate-600">
-                {hw.features.map((f, j) => <li key={j} className="flex gap-1.5"><span className="text-brand-green">✓</span>{f}</li>)}
+                {hw.features.map((f, j) => (
+                  <li key={j} className="flex gap-1.5 items-center">
+                    <Check size={14} className="text-brand-green inline mr-1 flex-shrink-0" />{f}
+                  </li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -135,7 +198,15 @@ export default function ZellerPage() {
       {/* Connectivity */}
       <section id="connectivity" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Connectivity for Tradie Job Sites</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Connectivity for Tradie Job Sites
+          </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { site: 'Residential suburban', rec: 'WiFi or Tap to Pay — customer WiFi or phone data both reliable', icon: '🏠' },
@@ -145,16 +216,24 @@ export default function ZellerPage() {
               { site: 'Underground / basement', rec: 'SIM will likely have no signal. Square Terminal offline mode is the only option', icon: '🕳️' },
               { site: 'Rural / remote', rec: 'Optus rural coverage varies. Check Optus coverage map. Backup: Square Terminal offline mode', icon: '🌾' },
             ].map((row, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-4 flex gap-3">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.07 }}
+                whileHover={{ y: -3 }}
+                className="lg-light rounded-2xl p-4 flex gap-3"
+              >
                 <span className="text-2xl">{row.icon}</span>
                 <div>
                   <h4 className="font-semibold text-brand-dark text-sm mb-1">{row.site}</h4>
                   <p className="text-xs text-slate-600 leading-relaxed">{row.rec}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="mt-5 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900">
+          <div className="mt-5 breakeven-box">
             <strong>Two-device strategy:</strong> For glaziers and electricians working in known dead zones, carry a Zeller Terminal 1 (SIM) as your primary and a Square Terminal (offline mode) as your backup. Both have no monthly fee — you only pay when you use them.
           </div>
         </div>
@@ -162,13 +241,21 @@ export default function ZellerPage() {
 
       {/* Settlement */}
       <section id="settlement" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-4">Settlement Speed</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-4"
+        >
+          Settlement Speed
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="bg-green-50 border border-green-200 rounded-xl p-5">
             <h3 className="font-bold text-green-800 mb-2">Same-day settlement ✓</h3>
             <p className="text-sm text-green-700">Payments settle same business day into your <strong>Zeller Transaction Account</strong>. If you buy materials same-day as your client pays, the funds are available when you need them.</p>
           </div>
-          <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
+          <div className="lg-light rounded-xl p-5">
             <h3 className="font-bold text-brand-dark mb-2">External bank: next business day</h3>
             <p className="text-sm text-slate-600">Transfers from your Zeller Transaction Account to your external bank account settle next business day. For fastest cash flow, use your Zeller account for day-to-day payments.</p>
           </div>
@@ -178,7 +265,15 @@ export default function ZellerPage() {
       {/* Setup */}
       <section id="setup" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">How to Get Set Up</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            How to Get Set Up
+          </motion.h2>
           <SetupSteps steps={setupSteps} />
         </div>
       </section>

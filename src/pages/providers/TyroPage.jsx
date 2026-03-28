@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -15,13 +17,38 @@ const faqs = [
   { q: 'Does Tyro have same-day settlement?', a: 'Yes — payments settle same business day into a Tyro transaction account. Next business day to an external bank account.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  name: 'Tyro for Tradies — Full Review (2026)',
+  description: 'Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here\'s what tradies need to know.',
+  url: 'https://tradiepayu-au.up.railway.app/providers/tyro',
+}
+
 export default function TyroPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Tyro for Tradies — Full Review (2026)"
+        description="Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know."
+        canonical="/providers/tyro"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Provider hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span><span>Updated March 2026</span>
@@ -44,14 +71,21 @@ export default function TyroPage() {
             { label: 'Settlement', value: 'Same day (Tyro a/c)' },
             { label: 'Support', value: '7 days, 7am–9pm' },
           ].map((s, i) => (
-            <div key={i} className="bg-slate-50 rounded-lg p-4 text-center">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="lg-light rounded-xl p-4 text-center"
+            >
               <span className="block text-xs text-slate-500 mb-1">{s.label}</span>
               <span className={`block text-lg font-bold ${s.highlight ? 'text-brand-green' : 'text-brand-dark'}`}>{s.value}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm mb-8">
+        <div className="breakeven-box mb-8">
           <h3 className="font-bold text-amber-900 mb-2">Transparency warning</h3>
           <p className="text-amber-800">Tyro's in-person merchant service fee is not published as a flat rate. Before signing up, request your specific rate in writing, including the early termination conditions and any monthly fees for your account type.</p>
         </div>
@@ -64,7 +98,15 @@ export default function TyroPage() {
 
       <section id="when-to-use" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">When Tyro Makes Sense</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            When Tyro Makes Sense
+          </motion.h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { title: 'You invoice more than you tap on site', body: 'If 80%+ of your revenue comes via payment links (remote invoicing, quote acceptance deposits), Tyro\'s 1.4% including GST payment links rate is highly competitive.' },
@@ -72,10 +114,18 @@ export default function TyroPage() {
               { title: 'You want bank-grade security', body: 'Tyro is a fully licensed Australian bank, not just a payment processor. If bank-grade regulatory oversight matters to your business, Tyro provides it.' },
               { title: 'You need 7-day phone support', body: 'Tyro\'s support is available 7am–9pm Sydney time, 7 days a week, with an emergency after-hours pathway. Better coverage than Zeller\'s business hours.' },
             ].map((item, i) => (
-              <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.07 }}
+                whileHover={{ y: -3 }}
+                className="lg-light rounded-2xl p-5"
+              >
                 <h3 className="font-semibold text-brand-dark mb-2 text-sm">{item.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,11 +1,16 @@
 import { useState, useMemo } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
+// Rates last audited March 2026.
+// Verified live: Zeller 1.4%, Square 1.6% + $0 fixed, Square Terminal $329, Zeller Terminal 1 $99.
+// Stripe: 1.7% + A$0.10/tx, WisePad 3 A$98 (incl. GST) — stripe.com/au/pricing (JS-rendered, verify in browser).
+// Tyro: 1.4% payment links — tyro.com/pricing (bot-blocked, verify in browser).
 const PROVIDERS = [
-  { id: 'zeller', name: 'Zeller (Terminal 1 + SIM)', rate: 0.014, fixed: 0, hardware: 99, sim: 15 },
-  { id: 'zeller-tap', name: 'Zeller (Tap to Pay)', rate: 0.014, fixed: 0, hardware: 0, sim: 0 },
-  { id: 'square', name: 'Square Terminal', rate: 0.016, fixed: 0, hardware: 329, sim: 0 },
-  { id: 'stripe', name: 'Stripe Reader', rate: 0.017, fixed: 0.10, hardware: 98, sim: 15 },
-  { id: 'tyro', name: 'Tyro Payment Links', rate: 0.014, fixed: 0, hardware: 0, sim: 0 },
+  { id: 'zeller',     name: 'Zeller (Terminal 1 + SIM)', rate: 0.014, fixed: 0,    hardware: 99,  sim: 15 },
+  { id: 'zeller-tap', name: 'Zeller (Tap to Pay)',       rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
+  { id: 'square',     name: 'Square Terminal',           rate: 0.016, fixed: 0,    hardware: 329, sim: 0  },
+  { id: 'stripe',     name: 'Stripe (WisePad 3)',         rate: 0.017, fixed: 0.10, hardware: 98,  sim: 0  },
+  { id: 'tyro',       name: 'Tyro Payment Links',        rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
 ]
 
 export default function CostCalculator() {
@@ -91,39 +96,67 @@ export default function CostCalculator() {
           </label>
         </div>
 
-        <div className="space-y-3">
-          {results.map((p, i) => {
-            const pct = cheapest > 0 ? (p.total / cheapest) : 1
-            return (
-              <div key={p.id} className={`bg-white rounded-xl border p-4 flex flex-col sm:flex-row sm:items-center gap-3 ${i === 0 ? 'border-brand-blue ring-2 ring-brand-blue' : 'border-slate-200'}`}>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="font-semibold text-brand-dark text-sm">{p.name}</span>
-                    {i === 0 && <span className="badge badge-gold text-xs">Cheapest</span>}
+        <motion.div className="space-y-3" layout>
+          <AnimatePresence>
+            {results.map((p, i) => {
+              const pct = cheapest > 0 ? (p.total / cheapest) : 1
+              const barWidth = `${Math.min(100, pct * 50)}%`
+              return (
+                <motion.div
+                  key={p.id}
+                  layout
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, delay: i * 0.07, ease: 'easeOut' }}
+                  whileHover={{ y: -2 }}
+                  className={`rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-3 ${i === 0 ? 'lg-blue' : 'bg-white border border-slate-200'}`}
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="font-semibold text-brand-dark text-sm">{p.name}</span>
+                      {i === 0 && <span className="badge badge-gold text-xs">Cheapest</span>}
+                    </div>
+                    <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                      <motion.div
+                        className={`h-2 rounded-full ${i === 0 ? 'bg-gradient-to-r from-brand-blue to-blue-400' : 'bg-slate-300'}`}
+                        initial={{ width: 0 }}
+                        animate={{ width: barWidth }}
+                        transition={{ duration: 0.7, delay: i * 0.07 + 0.15, ease: [0.34, 1.1, 0.64, 1] }}
+                      />
+                    </div>
+                    <motion.div
+                      className="flex gap-4 mt-2 text-xs text-slate-500"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3, delay: i * 0.07 + 0.25 }}
+                    >
+                      <span>Processing: ${p.processing.toFixed(2)}</span>
+                      {p.hwMonthly > 0 && <span>Hardware: ${p.hwMonthly.toFixed(2)}/mo</span>}
+                      {p.simMonthly > 0 && <span>SIM: ${p.simMonthly.toFixed(2)}/mo</span>}
+                    </motion.div>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-full h-2">
-                    <div
-                      className={`h-2 rounded-full transition-all ${i === 0 ? 'bg-gradient-to-r from-brand-blue to-blue-400' : 'bg-slate-300'}`}
-                      style={{ width: `${Math.min(100, (pct) * 50)}%` }}
-                    />
+                  <div className="text-right flex-shrink-0">
+                    <motion.div
+                      className={`text-xl font-bold ${i === 0 ? 'text-brand-blue' : 'text-brand-dark'}`}
+                      key={p.total.toFixed(2)}
+                      initial={{ opacity: 0, scale: 0.85 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.25, ease: 'easeOut' }}
+                    >
+                      ${p.total.toFixed(2)}
+                    </motion.div>
+                    <div className="text-xs text-slate-500">per month</div>
                   </div>
-                  <div className="flex gap-4 mt-2 text-xs text-slate-500">
-                    <span>Processing: ${p.processing.toFixed(2)}</span>
-                    {p.hwMonthly > 0 && <span>Hardware: ${p.hwMonthly.toFixed(2)}/mo</span>}
-                    {p.simMonthly > 0 && <span>SIM: ${p.simMonthly.toFixed(2)}/mo</span>}
-                  </div>
-                </div>
-                <div className="text-right flex-shrink-0">
-                  <div className={`text-xl font-bold ${i === 0 ? 'text-brand-blue' : 'text-brand-dark'}`}>
-                    ${p.total.toFixed(2)}
-                  </div>
-                  <div className="text-xs text-slate-500">per month</div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-        <p className="text-xs text-slate-400 mt-4">* Hardware amortised over {amortMonths} months. Assumes all transactions are in-person. Verify rates with providers.</p>
+                </motion.div>
+              )
+            })}
+          </AnimatePresence>
+        </motion.div>
+        <p className="text-xs text-slate-400 mt-4">
+          * Hardware amortised over {amortMonths} months. Assumes all transactions are in-person.
+          Zeller and Square rates verified March 2026. Stripe (1.7% + $0.10, Reader M2 $69) and Tyro (1.4% payment links) could not be live-verified — confirm at provider websites before signing up.
+        </p>
       </div>
     </section>
   )

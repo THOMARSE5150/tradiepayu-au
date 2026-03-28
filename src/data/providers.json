@@ -381,6 +381,9 @@
     "badge_class": "badge-orange",
     "logo_text": "S4",
     "logo_colour": "#f26522",
+    "product_image": "https://www.shift4-au.com.au/wp-content/uploads/Shift4-A920-AngleLeft.webp",
+    "product_image_alt": "Shift4 PAX A920 Android EFTPOS terminal",
+    "product_image_bg": "#f0f0ee",
     "website": "https://www.shift4-au.com.au",
     "affiliate_url": "https://www.shift4-au.com.au",
     "founded": null,
@@ -411,7 +414,8 @@
     },
     "sim_plan": {
       "available": true,
-      "notes": "Built-in cellular connectivity promoted for mobile terminals"
+      "cost_monthly_aud": null,
+      "notes": "Built-in cellular connectivity included in rental — no separate SIM cost"
     },
     "offline_mode": {
       "available": null,

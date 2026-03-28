@@ -18,7 +18,11 @@ export default function Nav() {
   }, [])
 
   return (
-    <header className={`text-white sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-brand-dark/80 backdrop-blur-md shadow-lg shadow-black/20' : 'bg-brand-dark shadow'}`}>
+    <header className={`text-white sticky top-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? 'bg-brand-dark/60 backdrop-blur-xl backdrop-saturate-[180%] border-b border-white/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.4),inset_0_-1px_0_rgba(255,255,255,0.04)]'
+        : 'bg-brand-dark'
+    }`}>
       <div className="container-page flex items-center justify-between h-14">
         <Link to="/" className="font-bold text-white hover:text-blue-300 transition-colors">
           TradiePay<span className="text-brand-blue">AU</span>
@@ -28,7 +32,7 @@ export default function Nav() {
             <Link
               key={l.href}
               to={l.href}
-              className="text-sm text-slate-300 hover:text-white px-3 py-1.5 rounded transition-colors"
+              className="text-sm text-slate-300 hover:text-white px-3 py-1.5 rounded-lg transition-all hover:bg-white/[0.07]"
             >
               {l.label}
             </Link>

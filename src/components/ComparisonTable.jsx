@@ -1,28 +1,77 @@
-export default function ComparisonTable({ headers, rows, highlightCol = 0 }) {
+import { motion } from 'framer-motion'
+
+const rowVariants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, delay: i * 0.07, ease: 'easeOut' },
+  }),
+}
+
+export default function ComparisonTable({ headers, rows }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-slate-200">
+    <motion.div
+      className="overflow-x-auto rounded-2xl lg-light"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
+    >
       <table className="w-full text-sm border-collapse">
         <thead>
-          <tr>
+          <motion.tr
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+          >
             {headers.map((h, i) => (
-              <th key={i} className="text-left py-3 px-4 bg-slate-100 font-semibold text-slate-600 border-b border-slate-200 whitespace-nowrap">
+              <th
+                key={i}
+                className="text-left py-3 px-4 text-xs font-semibold text-slate-500 uppercase tracking-wide border-b border-slate-200/80 whitespace-nowrap bg-white/40"
+              >
                 {h}
               </th>
             ))}
-          </tr>
+          </motion.tr>
         </thead>
         <tbody>
           {rows.map((row, ri) => (
-            <tr key={ri} className={row.highlight ? 'bg-blue-50' : 'hover:bg-slate-50'}>
+            <motion.tr
+              key={ri}
+              custom={ri}
+              variants={rowVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-40px' }}
+              whileHover={{ backgroundColor: row.highlight ? 'rgba(239,246,255,0.9)' : 'rgba(248,250,252,0.8)' }}
+              className={`group transition-colors ${row.highlight ? 'bg-blue-50/60' : ''}`}
+            >
               {row.cells.map((cell, ci) => (
-                <td key={ci} className={`py-3 px-4 border-b border-slate-100 last:border-0 ${row.highlight && ci === 0 ? 'border-l-4 border-l-brand-blue' : ''}`}>
-                  {cell}
+                <td
+                  key={ci}
+                  className={`py-3.5 px-4 border-b border-slate-100/80 last:border-0 ${
+                    row.highlight && ci === 0
+                      ? 'border-l-[3px] border-l-brand-blue font-medium'
+                      : ''
+                  }`}
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: ri * 0.07 + ci * 0.02 }}
+                    className="block"
+                  >
+                    {cell}
+                  </motion.span>
                 </td>
               ))}
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </motion.div>
   )
 }

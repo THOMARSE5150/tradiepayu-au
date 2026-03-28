@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -15,13 +17,38 @@ const faqs = [
   { q: 'How do electricians get paid for emergency call-outs?', a: 'Zeller Tap to Pay on your phone is the simplest option — always on you, no hardware to forget, 1.4% rate, same-day settlement. If the client isn\'t home, send a Zeller payment link via SMS.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  name: 'Best EFTPOS for Electricians in Australia (2026)',
+  description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there isn\'t any.',
+  url: 'https://tradiepayu-au.up.railway.app/trades/electricians',
+}
+
 export default function ElectriciansPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Best EFTPOS for Electricians in Australia (2026)"
+        description="Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there isn't any."
+        canonical="/trades/electricians"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Trade hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
             <span>·</span><span>Updated March 2026</span>
@@ -38,7 +65,15 @@ export default function ElectriciansPage() {
       </header>
 
       <section id="challenges" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Electrical Work Different</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Electrical Work Different
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: 'Switchboards and meter rooms', body: 'Steel enclosures and concrete voids in commercial and industrial buildings frequently kill mobile signal. These are exactly the environments electricians work in daily.', rec: 'SIM terminal (Optus, most metro buildings covered) + Square offline backup.' },
@@ -46,19 +81,35 @@ export default function ElectriciansPage() {
             { title: 'Domestic after-hours emergencies', body: 'Fault-finding at 10pm, emergency hot water repairs, storm damage. Payment needs to work when office support is unavailable.', rec: 'Zeller Tap to Pay on your phone — always on you, 24/7.' },
             { title: 'New estate rough-in work', body: 'New estates have no WiFi and often patchy coverage. Multiple stages of the same build require reliable payment across visits.', rec: 'Zeller Terminal 1 + SIM — Optus covers most metro new estates.' },
           ].map((c, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-5"
+            >
               <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </div>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Electricians</h2>
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm mb-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Top Picks for Electricians
+          </motion.h2>
+          <div className="breakeven-box mb-6">
             <strong>Two-device strategy:</strong> Zeller Terminal 1 + SIM ($99, primary) + Square Terminal ($329, dead-zone backup). No monthly fee on Square. Total hardware: $428.
           </div>
           <ComparisonTable
@@ -73,7 +124,15 @@ export default function ElectriciansPage() {
       </section>
 
       <section id="scenarios" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          Payment Playbook by Job Type
+        </motion.h2>
         <div className="space-y-4">
           {[
             { title: 'Residential fault-finding — owner at home', body: 'Tap with Zeller Terminal 1 or your phone before leaving. 1.4% rate, same-day settlement.' },
@@ -82,13 +141,20 @@ export default function ElectriciansPage() {
             { title: 'New estate rough-in or fit-off', body: 'Zeller Terminal 1 with SIM. Optus covers most metro new estates. No need for the homeowner\'s WiFi or a hotspot.' },
             { title: 'Large commercial job — invoice to accounts', body: 'Send a Zeller or Stripe invoice to the building manager\'s accounts email. Include ABN, job description, labour, materials, and GST breakdown. 14–30 day payment terms for commercial accounts.' },
           ].map((s, i) => (
-            <div key={i} className="flex gap-4">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="flex gap-4"
+            >
               <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
               <div>
                 <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

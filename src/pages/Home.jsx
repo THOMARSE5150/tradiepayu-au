@@ -49,7 +49,7 @@ const tableRows = providers.map(p => ({
     p.hardware[0]?.price_aud ? `$${p.hardware[0].price_aud}` : 'Rental',
     p.sim_plan.available   ? <Check size={14} className="text-green-600" /> : <X size={14} className="text-slate-300" />,
     p.offline_mode.available ? <Check size={14} className="text-green-600" /> : <X size={14} className="text-slate-300" />,
-    p.settlement.same_day_available ? <span className="text-green-700 font-semibold text-xs">Same day</span> : `${p.settlement.standard_days}d`,
+    p.settlement.same_day_available ? <span className="text-green-700 font-semibold text-xs">Same day</span> : p.settlement.standard_days != null ? `${p.settlement.standard_days}d` : '—',
   ]
 }))
 
@@ -97,23 +97,34 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Glassmorphism stat pills */}
-          <motion.div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-          >
+          {/* Liquid glass stat pills */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
             {heroStats.map((s, i) => (
-              <div key={i} className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl px-4 py-3 flex items-center gap-3">
-                <s.icon size={18} className="text-white/70 flex-shrink-0" />
-                <div>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 28, scale: 0.88 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 + i * 0.08, ease: [0.34, 1.56, 0.64, 1] }}
+                whileHover={{ y: -5, scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                style={{ transition: 'box-shadow 0.2s' }}
+                className="relative overflow-hidden rounded-2xl px-4 py-3 flex items-center gap-3 cursor-default select-none
+                  backdrop-blur-xl backdrop-saturate-[180%]
+                  bg-white/[0.08]
+                  border border-white/[0.18]
+                  shadow-[0_8px_32px_rgba(0,0,0,0.25),inset_0_1.5px_0_rgba(255,255,255,0.22),inset_0_-1px_0_rgba(0,0,0,0.15)]
+                  hover:shadow-[0_12px_40px_rgba(0,0,0,0.35),inset_0_1.5px_0_rgba(255,255,255,0.3),inset_0_-1px_0_rgba(0,0,0,0.2)]"
+              >
+                {/* Specular sheen overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.12] via-transparent to-transparent pointer-events-none rounded-2xl" />
+                <s.icon size={18} className="text-white/75 flex-shrink-0 relative z-10" />
+                <div className="relative z-10">
                   <p className="text-white/50 text-xs">{s.label}</p>
                   <p className="text-white font-bold text-sm">{s.value}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           <nav className="jump-links mt-6">
             <Link to="/#compare-all">Compare All</Link>
@@ -172,7 +183,7 @@ export default function Home() {
             >
               <Link
                 to={t.href}
-                className="flex items-start gap-4 bg-white border border-slate-200 rounded-2xl p-5 hover:border-brand-blue hover:shadow-md transition-all h-full"
+                className="flex items-start gap-4 lg-light rounded-2xl p-5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-0.5 transition-all h-full"
               >
                 <span className="text-2xl">{t.icon}</span>
                 <div>
@@ -200,12 +211,20 @@ export default function Home() {
             { q: 'I have recurring clients (weekly cleans etc)', a: 'Stripe Billing — automated card charges' },
             { q: 'I need same-day settlement',                 a: 'Zeller (to Zeller account) or Tyro (to Tyro account)' },
           ].map((item, i) => (
-            <div key={i} className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.06 }}
+              whileHover={{ y: -2 }}
+              className="lg-light rounded-2xl p-4"
+            >
               <p className="font-semibold text-brand-dark text-sm mb-1 flex gap-2 items-start">
                 <span className="text-slate-400 mt-0.5">If:</span> {item.q}
               </p>
               <p className="text-sm text-brand-blue font-medium">→ {item.a}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

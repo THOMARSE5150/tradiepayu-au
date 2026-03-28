@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -16,13 +18,38 @@ const faqs = [
   { q: 'How do landscapers get paid when the client isn\'t home?', a: 'Send a Zeller payment link via SMS as you finish the job. Most clients pay within the hour. For regular maintenance clients, set up Stripe automated billing — charges their card automatically on the day of service.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  name: 'Best EFTPOS for Landscapers in Australia (2026)',
+  description: 'Outdoor sites, variable job values, and deposit-on-booking models — the best payment setup for Australian landscaping and garden service businesses.',
+  url: 'https://tradiepayu-au.up.railway.app/trades/landscapers',
+}
+
 export default function LandscapersPage() {
   return (
     <>
-      <Breadcrumb crumbs={crumbs} />
+      <Meta
+        title="Best EFTPOS for Landscapers in Australia (2026)"
+        description="Outdoor sites, variable job values, and deposit-on-booking models — the best payment setup for Australian landscaping and garden service businesses."
+        canonical="/trades/landscapers"
+        ogType="article"
+        jsonLd={jsonLd}
+      />
 
-      <header className="hero">
-        <div className="container-page">
+      <header className="hero relative overflow-hidden">
+        {/* Trade hero image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&h=560&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+        </div>
+        <div className="container-page relative z-10">
+          <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
             <span>·</span><span>Updated March 2026</span>
@@ -39,7 +66,15 @@ export default function LandscapersPage() {
       </header>
 
       <section id="challenges" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">What Makes Landscaping Different</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Landscaping Different
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
             { title: 'Outdoor sites — coverage is usually fine', body: 'Landscapers work outdoors, which means mobile coverage is generally better than most trade environments. But no-WiFi sites (new builds, rural properties) still require a SIM-enabled terminal.', rec: 'SIM terminal for independence from site WiFi.' },
@@ -47,18 +82,34 @@ export default function LandscapersPage() {
             { title: 'Client not always present at completion', body: 'Regular maintenance clients are often at work when you complete the job. Payment needs to happen without them being there.', rec: 'Send payment link on completion, client pays from their phone.' },
             { title: 'Materials and subcontractor costs', body: 'Large jobs involve materials (plants, mulch, pavers, irrigation) and sometimes subcontractors. Same-day settlement matters when you\'re fronting significant material costs.', rec: 'Same-day settlement for materials cash flow.' },
           ].map((c, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl p-5">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-5"
+            >
               <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="bg-blue-50 rounded-lg p-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </div>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
-          <h2 className="text-2xl font-bold text-brand-dark mb-6">Top Picks for Landscapers</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Top Picks for Landscapers
+          </motion.h2>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Settlement', 'Best for']}
             rows={[
@@ -72,7 +123,15 @@ export default function LandscapersPage() {
       </section>
 
       <section id="scenarios" className="section container-page">
-        <h2 className="text-2xl font-bold text-brand-dark mb-6">Payment Playbook by Job Type</h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          Payment Playbook by Job Type
+        </motion.h2>
         <div className="space-y-4">
           {[
             { title: 'Regular lawn maintenance — client not home', body: 'Finish the job. Send a Zeller payment link via SMS before packing up the trailer. Most regular clients pay within the hour. For your most reliable recurring clients, consider Stripe automated billing to remove the send-and-wait step entirely.' },
@@ -81,13 +140,20 @@ export default function LandscapersPage() {
             { title: 'New estate — no WiFi', body: 'Zeller Terminal 1 with SIM. Outdoor sites on new estates have Optus coverage in most metro and near-metro areas. The SIM terminal doesn\'t need the homeowner\'s WiFi or your phone hotspot. Tap on site, drive away.' },
             { title: 'Rural and acreage properties', body: 'Optus coverage can be patchy on large rural properties. If you regularly work in known no-coverage areas, Square Terminal\'s offline mode is the backup. For most rural residential work within 60km of a capital city, Zeller\'s SIM will cover it.' },
           ].map((s, i) => (
-            <div key={i} className="flex gap-4">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.07 }}
+              className="flex gap-4"
+            >
               <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
               <div>
                 <h4 className="font-semibold text-brand-dark mb-1">{s.title}</h4>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.body}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
