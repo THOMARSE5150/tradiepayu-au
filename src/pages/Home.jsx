@@ -104,10 +104,10 @@ const tableRows = providers.map(p => ({
 }))
 
 const heroStats = [
-  { icon: TrendingDown, label: 'Lowest rate', value: '1.4%' },
-  { icon: Zap,          label: 'Settlement',  value: 'Same day' },
-  { icon: Wifi,         label: 'SIM ready',   value: '$15/mo' },
-  { icon: Shield,       label: 'Providers',   value: '5 reviewed' },
+  { icon: TrendingDown, label: 'Lowest rate',      value: '1.4%' },
+  { icon: Zap,          label: 'Settlement',        value: 'Same day' },
+  { icon: Shield,       label: 'Can surcharge',     value: '0% cost' },
+  { icon: Wifi,         label: 'SIM-enabled',       value: 'From $15/mo' },
 ]
 
 export default function Home() {

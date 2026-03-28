@@ -16,6 +16,9 @@ const faqs = [
   { q: 'What is the best EFTPOS for builders?', a: 'Zeller Terminal 1 with SIM is the primary pick for on-site payments. For progress payment invoicing and deposit management, Zeller payment links or Stripe invoicing handle the remote billing workflow. Stripe is better if you need automated payment schedules tied to build milestones.' },
   { q: 'How do builders manage progress payments?', a: 'The most reliable workflow: Zeller or Stripe invoice per progress stage, sent to the client\'s email with a payment link. Client pays online — no need to be on site. Same-day settlement on Zeller lets you pay subcontractors the same day the client pays.' },
   { q: 'What EFTPOS works on new building estates with no WiFi?', a: 'Zeller Terminal 1 with SIM (Optus, $15/mo). New estates in metro areas have Optus coverage without any site WiFi or internet installed.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
+  { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
+  { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'

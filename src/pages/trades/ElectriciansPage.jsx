@@ -16,6 +16,9 @@ const faqs = [
   { q: 'What is the best EFTPOS for electricians?', a: 'Zeller Terminal 1 with the SIM plan is the top pick. Switchboards, plant rooms, and commercial electrical work are common dead zones — the SIM terminal handles most building coverage. For genuine zero-signal sites, carry Square Terminal as a backup for its offline mode.' },
   { q: 'What EFTPOS works in switchboard rooms?', a: 'It depends on the building. Zeller Terminal 1 with SIM (Optus) covers most switchboard rooms in suburban and metro buildings. For underground switchboards and large concrete structures, Square Terminal offline mode is the fallback.' },
   { q: 'How do electricians get paid for emergency call-outs?', a: 'Zeller Tap to Pay on your phone is the simplest option — always on you, no hardware to forget, 1.4% rate, same-day settlement. If the client isn\'t home, send a Zeller payment link via SMS.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
+  { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
+  { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'

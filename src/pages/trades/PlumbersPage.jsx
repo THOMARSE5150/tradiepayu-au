@@ -16,6 +16,9 @@ const faqs = [
   { q: 'What is the best EFTPOS for plumbers?', a: 'Zeller Terminal 1 with the SIM plan is the top pick. Emergency call-outs happen at any hour and in locations without WiFi — the SIM terminal handles both. Same-day settlement is critical when you\'re buying parts same-day as the repair.' },
   { q: 'How do plumbers get paid for emergency call-outs?', a: 'Zeller Tap to Pay on your phone is the default emergency payment method — always on you, 1.4% rate. If the client isn\'t available, send a Zeller payment link. Same-day settlement means you can buy parts that evening if needed.' },
   { q: 'Does EFTPOS work underground for plumbing work?', a: 'Mobile signal is usually unavailable underground or in enclosed below-grade environments. Square Terminal offline mode is the only option for taking payment in these locations.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
+  { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
+  { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'

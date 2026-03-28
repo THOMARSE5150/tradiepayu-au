@@ -24,6 +24,9 @@ const faqs = [
   { q: 'How do roofers handle insurance billing?', a: 'Send a Zeller payment link or Stripe invoice to the assessor or insurance case manager\'s email. Include your ABN, scope of work, materials, labour, and GST breakdown. Stripe\'s invoicing is more polished for formal insurance claims.' },
   { q: 'How do roofers collect deposits?', a: 'Send a Zeller payment link via SMS or email at quote acceptance. Don\'t order materials or start work until the deposit clears — same-day settlement on Zeller means you can confirm the deposit quickly.' },
   { q: 'What EFTPOS works on new estate building sites?', a: 'Zeller Terminal 1 with SIM (Optus, $15/mo). New estates have no site WiFi, but Optus mobile coverage reaches most metro and suburban estates. The terminal works entirely on mobile data — no hotspot or WiFi required.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
+  { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
+  { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'

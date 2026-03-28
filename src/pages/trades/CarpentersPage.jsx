@@ -24,6 +24,9 @@ const faqs = [
   { q: 'How do carpenter sub-contractors get paid by builders?', a: 'Send a Stripe invoice or Zeller payment link to the builder\'s accounts payable contact. Include your ABN, licence number, scope of works (materials and labour), and GST breakdown. Set 14-day payment terms. Builders typically pay on schedule — follow up before day 14 if unpaid.' },
   { q: 'Do carpenters need a SIM terminal?', a: 'Yes, for new build sites. Framing and rough carpentry happens before any site WiFi exists. Zeller Terminal 1 with SIM (Optus, $15/mo) works entirely on mobile data — no site infrastructure required.' },
   { q: 'How do carpenters collect deposits on renovation work?', a: 'Send a Zeller payment link via SMS at quote acceptance. For multi-week renovation jobs, collect 30–40% deposit before starting. Same-day settlement confirms funds before you order timber or hardware.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
+  { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
+  { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'

@@ -77,11 +77,12 @@ function AmortSelect({ value, onChange }) {
 // Stripe: 1.7% + A$0.10/tx, Reader M2 A$69 (incl. GST) — stripe.com/au/pricing (JS-rendered, verify in browser).
 // Tyro: 1.4% payment links — tyro.com/pricing (bot-blocked, verify in browser).
 const PROVIDERS = [
-  { id: 'zeller',     name: 'Zeller (Terminal 1 + SIM)', rate: 0.014, fixed: 0,    hardware: 99,  sim: 15 },
-  { id: 'zeller-tap', name: 'Zeller (Tap to Pay)',       rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
-  { id: 'square',     name: 'Square Terminal',           rate: 0.016, fixed: 0,    hardware: 329, sim: 0  },
-  { id: 'stripe',     name: 'Stripe (Reader M2)',          rate: 0.017, fixed: 0.10, hardware: 69,  sim: 0  },
-  { id: 'tyro',       name: 'Tyro Payment Links',        rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
+  { id: 'zeller',       name: 'Zeller (Terminal 1 + SIM)', rate: 0.014, fixed: 0,    hardware: 99,  sim: 15 },
+  { id: 'zeller-tap',   name: 'Zeller (Tap to Pay)',       rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
+  { id: 'zeller-surcharge', name: 'Zeller (Surcharge on)',  rate: 0,     fixed: 0,    hardware: 99,  sim: 0, note: 'Customer pays the fee' },
+  { id: 'square',       name: 'Square Terminal',           rate: 0.016, fixed: 0,    hardware: 329, sim: 0  },
+  { id: 'stripe',       name: 'Stripe (Reader M2)',        rate: 0.017, fixed: 0.10, hardware: 69,  sim: 0  },
+  { id: 'tyro',         name: 'Tyro Payment Links',        rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
 ]
 
 export default function CostCalculator() {
@@ -183,6 +184,7 @@ export default function CostCalculator() {
                     <div className="flex items-center gap-2 mb-2">
                       <span className="font-semibold text-brand-dark text-sm">{p.name}</span>
                       {i === 0 && <span className="badge badge-gold text-xs">Cheapest</span>}
+                      {p.note && <span className="badge badge-muted text-xs">{p.note}</span>}
                     </div>
                     <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                       <motion.div

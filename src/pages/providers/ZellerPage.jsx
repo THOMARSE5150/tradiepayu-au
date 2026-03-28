@@ -20,6 +20,10 @@ const faqs = [
   { q: 'Does Zeller have same-day settlement?', a: 'Yes — payments settle same business day into your Zeller Transaction Account. Transfers to an external bank account are next business day.' },
   { q: 'What is the Zeller Terminal 1 price?', a: '$99 AUD. The Terminal 2 (paperless, no receipt printer) is $199. Tap to Pay on your phone is $0 hardware cost.' },
   { q: 'Is Zeller good for glaziers and electricians?', a: 'Yes — the SIM plan is the key advantage. Dead zones in buildings are a reality for glaziers (high floors, mechanical rooms) and electricians (switchboards, underground). The SIM terminal eliminates WiFi dependency.' },
+  { q: 'Can my whole team use Zeller?', a: 'Yes — you can issue multiple Zeller Terminals to different team members. All payments settle centrally into your Zeller Transaction Account, with a full transaction log per device. No expensive per-terminal rental fees — you just buy the hardware outright.' },
+  { q: 'Can I accept payments over the phone?', a: 'Yes — Zeller supports MOTO (mail order / telephone order) payments via the Virtual Terminal in your dashboard. The rate is 1.75% + $0.25 per transaction. Useful for deposits, quotes accepted by phone, or clients who can\'t be present.' },
+  { q: 'Can I get a lower rate than 1.4%?', a: 'Possibly — Zeller offers custom rates for businesses processing more than $250,000 per year in card payments. Contact Zeller\'s sales team to discuss. For most sole traders and small trade businesses, the standard 1.4% is already the lowest published flat rate available in Australia.' },
+  { q: 'Can I pass the fee on to my customer?', a: 'Yes — Zeller supports surcharging. You can configure a surcharge so the 1.4% fee is added to the customer\'s total rather than absorbed by you. This brings your effective processing cost to 0%. You must disclose the surcharge to customers before they pay.' },
 ]
 
 const setupSteps = [
@@ -53,12 +57,12 @@ export default function ZellerPage() {
         {/* Provider hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&h=560&fit=crop&crop=center&q=80"
-            alt=""
-            fetchPriority="high" className="w-full h-full object-cover"
+            src="/zeller-hero.webp"
+            alt="Tradie holding a Zeller Terminal beside his work ute"
+            fetchPriority="high" className="w-full h-full object-cover object-center"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/75 to-brand-dark/30" />
         </div>
         <div className="container-page relative z-10">
           <Breadcrumb crumbs={crumbs} />
@@ -84,9 +88,9 @@ export default function ZellerPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
           {[
             { label: 'In-person rate', value: '1.4%', highlight: true },
-            { label: 'Remote rate', value: '1.7% + $0.25' },
             { label: 'Monthly fee', value: '$0' },
-            { label: 'Contract', value: 'No lock-in' },
+            { label: 'Settlement', value: 'Same day' },
+            { label: 'Aussie businesses', value: '100,000+' },
           ].map((s, i) => (
             <motion.div
               key={i}
@@ -103,9 +107,38 @@ export default function ZellerPage() {
         </div>
 
         <div className="prose-sm max-w-none text-slate-600 space-y-4">
-          <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and same-day settlement into a Zeller account.</p>
-          <p>As of March 2026, Zeller is our top pick for most Australian tradies — particularly those doing on-site work where connectivity is variable.</p>
+          <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and same-day settlement into a Zeller account. More than 100,000 Australian businesses are already using it.</p>
+          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval takes minutes online with just your ABN. As of March 2026, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
         </div>
+
+        {/* Product ecosystem */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+          {[
+            { emoji: '📱', title: 'Free invoicing', body: 'Send itemised tax invoices with a built-in pay-now link' },
+            { emoji: '🏦', title: 'Transaction account', body: 'Free business account — same-day settlement lands here' },
+            { emoji: '💳', title: 'Debit card', body: 'Free Mastercard to spend your settled funds immediately' },
+            { emoji: '👥', title: 'Team terminals', body: 'Multiple devices, one account — no per-terminal rental' },
+          ].map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.07 }}
+              className="lg-light rounded-xl p-4"
+            >
+              <span className="text-2xl mb-2 block">{p.emoji}</span>
+              <h4 className="font-semibold text-brand-dark text-sm mb-1">{p.title}</h4>
+              <p className="text-xs text-slate-500 leading-relaxed">{p.body}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Testimonial */}
+        <blockquote className="mt-8 infobox">
+          <p className="text-slate-700 text-sm leading-relaxed italic">"Setting up merchant facilities with a bank is a complex process — Zeller was better commercially than any bank. From purchase through set-up, the experience was seamless from the very first transaction."</p>
+          <footer className="mt-2 text-xs text-slate-500 not-italic">— Tim, Zeller merchant</footer>
+        </blockquote>
       </section>
 
       {/* Fees */}
@@ -128,6 +161,7 @@ export default function ZellerPage() {
               { cells: ['Invoicing', '1.7%', '+$0.25', 'Built-in Zeller Invoice'] },
               { cells: ['Monthly fee', '$0', '—', 'No monthly or account fee'] },
               { cells: ['SIM plan', '$15/mo', '—', 'Optus network, no lock-in, optional'] },
+              { cells: ['Surcharge to customer', '0%', '$0', 'Pass the 1.4% fee to customer — disclose before payment'] },
             ]}
           />
         </div>
