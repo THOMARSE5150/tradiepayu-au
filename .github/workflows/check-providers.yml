@@ -37,3 +37,17 @@ jobs:
             git commit -m "chore: weekly provider rate check $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      - name: Purge Cloudflare cache
+        if: ${{ secrets.CF_API_TOKEN != '' }}
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' \
+            | grep -q '"success":true' && echo "✓ Cloudflare cache purged" || echo "✗ Cache purge failed (check CF_API_TOKEN secret)"
+
+      - name: Ping Google + Bing sitemaps
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://tradiepayau.directory/sitemap.xml" -o /dev/null -w "Google ping: %{http_code}\n"
+          curl -s "https://www.bing.com/ping?sitemap=https://tradiepayau.directory/sitemap.xml" -o /dev/null -w "Bing ping: %{http_code}\n"
