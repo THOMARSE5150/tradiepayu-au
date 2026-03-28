@@ -51,3 +51,22 @@ jobs:
         run: |
           curl -s "https://www.google.com/ping?sitemap=https://tradiepayau.directory/sitemap.xml" -o /dev/null -w "Google ping: %{http_code}\n"
           curl -s "https://www.bing.com/ping?sitemap=https://tradiepayau.directory/sitemap.xml" -o /dev/null -w "Bing ping: %{http_code}\n"
+
+      - name: IndexNow — notify Bing of updated URLs
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "tradiepayau.directory",
+              "key": "9cywg6a6kxcywvx9k5gnnftccut97f7q",
+              "keyLocation": "https://tradiepayau.directory/9cywg6a6kxcywvx9k5gnnftccut97f7q.txt",
+              "urlList": [
+                "https://tradiepayau.directory/",
+                "https://tradiepayau.directory/providers/zeller",
+                "https://tradiepayau.directory/providers/square",
+                "https://tradiepayau.directory/providers/stripe",
+                "https://tradiepayau.directory/providers/tyro",
+                "https://tradiepayau.directory/providers/shift4"
+              ]
+            }' \
+            -w "IndexNow: %{http_code}\n" -o /dev/null
