@@ -13,6 +13,12 @@ import PlumbersPage from './pages/trades/PlumbersPage'
 import BuildersPage from './pages/trades/BuildersPage'
 import CleanersPage from './pages/trades/CleanersPage'
 import LandscapersPage from './pages/trades/LandscapersPage'
+import RoofersPage from './pages/trades/RoofersPage'
+import PaintersPage from './pages/trades/PaintersPage'
+import TilersPage from './pages/trades/TilersPage'
+import ConcretersPage from './pages/trades/ConcretersPage'
+import CarpentersPage from './pages/trades/CarpentersPage'
+import HVACPage from './pages/trades/HVACPage'
 
 export default function App() {
   return (
@@ -30,6 +36,12 @@ export default function App() {
         <Route path="/trades/builders" element={<BuildersPage />} />
         <Route path="/trades/cleaners" element={<CleanersPage />} />
         <Route path="/trades/landscapers" element={<LandscapersPage />} />
+        <Route path="/trades/roofers" element={<RoofersPage />} />
+        <Route path="/trades/painters" element={<PaintersPage />} />
+        <Route path="/trades/tilers" element={<TilersPage />} />
+        <Route path="/trades/concreters" element={<ConcretersPage />} />
+        <Route path="/trades/carpenters" element={<CarpentersPage />} />
+        <Route path="/trades/hvac" element={<HVACPage />} />
       </Routes>
     </Layout>
   )

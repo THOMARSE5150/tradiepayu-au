@@ -18,13 +18,12 @@ const faqs = [
   { q: 'Should cleaners surcharge on card?', a: 'At high frequency, surcharging adds friction and can feel petty on a $150 job. Many cleaning businesses absorb the 1.4% and factor it into their rate. On $15,000/month volume, that\'s $210 — worth building into pricing rather than adding invoice friction.' },
 ]
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  name: 'Best EFTPOS for Cleaners in Australia (2026)',
-  description: 'High-frequency, lower-value jobs with recurring clients — the best EFTPOS setup to minimise fees and make regular clients frictionless.',
-  url: 'https://tradiepayu-au.up.railway.app/trades/cleaners',
-}
+const SITE = 'https://tradiepayu-au.up.railway.app'
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Cleaners in Australia (2026)', description: 'High-frequency, lower-value jobs with recurring clients — the best EFTPOS setup to minimise fees and make regular clients frictionless.', url: `${SITE}/trades/cleaners`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Cleaners in Australia (2026)', item: `${SITE}/trades/cleaners` }] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+]
 
 export default function CleanersPage() {
   return (

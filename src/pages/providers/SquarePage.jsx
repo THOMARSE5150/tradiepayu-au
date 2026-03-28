@@ -19,13 +19,12 @@ const faqs = [
   { q: 'When should a tradie choose Square over Zeller?', a: 'Specifically for zero-signal job sites: underground, deep basements, large concrete structures with no Optus coverage. Square\'s offline mode is the only way to take a payment in these environments. For all other scenarios, Zeller\'s lower rate wins.' },
 ]
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  name: 'Square for Tradies — Full Review (2026)',
-  description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.',
-  url: 'https://tradiepayu-au.up.railway.app/providers/square',
-}
+const SITE = 'https://tradiepayu-au.up.railway.app'
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Square for Tradies — Full Review (2026)', description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.', url: `${SITE}/providers/square`, reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Square', url: 'https://squareup.com/au' }, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Square Review', item: `${SITE}/providers/square` }] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+]
 
 export default function SquarePage() {
   return (

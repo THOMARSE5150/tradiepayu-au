@@ -25,13 +25,12 @@ const faqs = [
   { q: 'How do glaziers handle emergency call-out payment?', a: 'Zeller Tap to Pay on your phone is the easiest emergency payment method — no hardware to forget, always on you, 1.4% rate, same-day settlement.' },
 ]
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  name: 'Best EFTPOS for Glaziers in Australia (2026)',
-  description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.',
-  url: 'https://tradiepayu-au.up.railway.app/trades/glaziers',
-}
+const SITE = 'https://tradiepayu-au.up.railway.app'
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Glaziers in Australia (2026)', description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.', url: `${SITE}/trades/glaziers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Glaziers in Australia (2026)', item: `${SITE}/trades/glaziers` }] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+]
 
 export default function GlaziersPage() {
   return (

@@ -17,13 +17,12 @@ const faqs = [
   { q: 'How do electricians get paid for emergency call-outs?', a: 'Zeller Tap to Pay on your phone is the simplest option — always on you, no hardware to forget, 1.4% rate, same-day settlement. If the client isn\'t home, send a Zeller payment link via SMS.' },
 ]
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  name: 'Best EFTPOS for Electricians in Australia (2026)',
-  description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there isn\'t any.',
-  url: 'https://tradiepayu-au.up.railway.app/trades/electricians',
-}
+const SITE = 'https://tradiepayu-au.up.railway.app'
+const jsonLd = [
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Electricians in Australia (2026)', description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there is none.', url: `${SITE}/trades/electricians`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Electricians', item: `${SITE}/trades/electricians` }] },
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+]
 
 export default function ElectriciansPage() {
   return (

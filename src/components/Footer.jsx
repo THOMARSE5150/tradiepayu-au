@@ -16,6 +16,12 @@ const trades = [
   { label: 'Builders', href: '/trades/builders' },
   { label: 'Cleaners', href: '/trades/cleaners' },
   { label: 'Landscapers', href: '/trades/landscapers' },
+  { label: 'Roofers', href: '/trades/roofers' },
+  { label: 'Painters', href: '/trades/painters' },
+  { label: 'Tilers', href: '/trades/tilers' },
+  { label: 'Concreters', href: '/trades/concreters' },
+  { label: 'Carpenters', href: '/trades/carpenters' },
+  { label: 'HVAC Technicians', href: '/trades/hvac' },
 ]
 
 export default function Footer() {
