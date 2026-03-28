@@ -35,8 +35,18 @@ const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
   return (
-    <div className="min-h-[50vh] flex items-center justify-center">
-      <div className="w-6 h-6 border-2 border-brand-blue border-t-transparent rounded-full animate-spin" />
+    <div className="animate-pulse">
+      <div className="bg-brand-dark h-52 sm:h-64 w-full" />
+      <div className="container-page py-10 space-y-3">
+        <div className="h-3 bg-slate-200 rounded-full w-24" />
+        <div className="h-6 bg-slate-200 rounded-full w-2/3" />
+        <div className="h-4 bg-slate-100 rounded-full w-1/2 mt-1" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-6">
+          {[0,1,2].map(i => (
+            <div key={i} className="h-64 bg-slate-100 rounded-2xl" />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

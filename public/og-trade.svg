@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f23"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00a651"/>
+      <stop offset="100%" style="stop-color:#006aff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  <!-- Glow -->
+  <circle cx="900" cy="200" r="300" fill="#00a651" fill-opacity="0.05"/>
+  <!-- Logo -->
+  <rect x="80" y="72" width="48" height="48" rx="14" fill="#006aff" fill-opacity="0.15"/>
+  <rect x="80" y="72" width="48" height="48" rx="14" fill="none" stroke="#006aff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="104" y="103" font-family="system-ui,sans-serif" font-size="22" font-weight="900" fill="#006aff" text-anchor="middle">⚡</text>
+  <text x="146" y="105" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="white">TradiePay AU</text>
+  <!-- Headline -->
+  <text x="80" y="220" font-family="system-ui,sans-serif" font-size="58" font-weight="900" fill="white">Trade Payment Guide</text>
+  <text x="80" y="295" font-family="system-ui,sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.55)">Best EFTPOS options for your trade — on the job site</text>
+  <!-- Badges -->
+  <rect x="80" y="360" width="170" height="44" rx="22" fill="#006aff" fill-opacity="0.15" stroke="#006aff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="165" y="387" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#60a5fa" text-anchor="middle">From 1.4% rate</text>
+  <rect x="266" y="360" width="170" height="44" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="351" y="387" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle">SIM-enabled options</text>
+  <rect x="452" y="360" width="180" height="44" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="542" y="387" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle">Same-day settlement</text>
+  <!-- URL -->
+  <text x="80" y="560" font-family="system-ui,sans-serif" font-size="20" fill="rgba(255,255,255,0.3)">tradiepayau.directory</text>
+</svg>

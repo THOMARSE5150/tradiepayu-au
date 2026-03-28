@@ -85,7 +85,7 @@ export default function AboutPage() {
               We built this site to answer a simple question honestly: <strong className="text-brand-dark">which EFTPOS setup actually works on a tradie's job site?</strong> That means looking at connectivity (SIM vs WiFi), offline capability for dead zones, settlement speed for cash flow, and real fees — not promotional rates buried in footnotes.
             </p>
             <p>
-              The site covers 5 major Australian providers and 12 trades with specific payment challenges. Every page is written from the perspective of the tradie, not the provider.
+              The site covers 5 major Australian providers and 18 trades with specific payment challenges. Every page is written from the perspective of the tradie, not the provider.
             </p>
           </div>
         </div>

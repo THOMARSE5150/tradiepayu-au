@@ -3,6 +3,15 @@ import { Helmet } from 'react-helmet-async'
 const SITE_URL = 'https://tradiepayau.directory'
 const SITE_NAME = 'TradiePay AU'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
+const PROVIDER_OG_IMAGE = `${SITE_URL}/og-provider.svg`
+const TRADE_OG_IMAGE    = `${SITE_URL}/og-trade.svg`
+
+function resolveOgImage(canonical) {
+  if (!canonical) return DEFAULT_OG_IMAGE
+  if (canonical.startsWith('/providers/')) return PROVIDER_OG_IMAGE
+  if (canonical.startsWith('/trades/'))    return TRADE_OG_IMAGE
+  return DEFAULT_OG_IMAGE
+}
 
 export default function Meta({
   title,
@@ -13,6 +22,7 @@ export default function Meta({
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Best EFTPOS for Australian Tradies`
   const fullCanonical = canonical ? `${SITE_URL}${canonical}` : SITE_URL
+  const ogImage = resolveOgImage(canonical)
 
   // Accept single object or array of JSON-LD blocks
   const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
@@ -28,7 +38,7 @@ export default function Meta({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+      <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content="en_AU" />
 
@@ -36,7 +46,7 @@ export default function Meta({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
+      <meta name="twitter:image" content={ogImage} />
 
       {/* Mobile */}
       <meta name="theme-color" content="#1a1a2e" />

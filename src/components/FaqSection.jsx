@@ -1,4 +1,46 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Plus, Minus } from 'lucide-react'
+
+function FaqItem({ item, index }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, delay: index * 0.06 }}
+      className="border-b border-slate-100 last:border-0"
+    >
+      <button
+        onClick={() => setOpen(v => !v)}
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-colors"
+        aria-expanded={open}
+      >
+        <span className={`font-semibold text-sm sm:text-base transition-colors duration-200 ${open ? 'text-brand-blue' : 'text-brand-dark'}`}>
+          {item.q}
+        </span>
+        <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors duration-200 ${open ? 'bg-brand-blue text-white' : 'bg-slate-100 text-slate-400'}`}>
+          {open ? <Minus size={12} strokeWidth={3} /> : <Plus size={12} strokeWidth={3} />}
+        </span>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: [0.04, 0.62, 0.23, 0.98] }}
+            style={{ overflow: 'hidden' }}
+          >
+            <p className="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{item.a}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  )
+}
 
 export default function FaqSection({ items, title = 'Frequently Asked Questions' }) {
   return (
@@ -12,21 +54,9 @@ export default function FaqSection({ items, title = 'Frequently Asked Questions'
       >
         {title}
       </motion.h2>
-      <div className="divide-y divide-slate-100 lg-light rounded-2xl overflow-hidden">
+      <div className="lg-light rounded-2xl overflow-hidden">
         {items.map((item, i) => (
-          <details
-            key={i}
-            className="faq-item group px-5 transition-all"
-            style={{ overflow: 'hidden' }}
-          >
-            <summary className="faq-item-summary py-4 font-semibold cursor-pointer text-brand-dark group-open:text-brand-blue flex justify-between items-center transition-colors duration-200">
-              {item.q}
-              <span className="text-slate-400 group-open:rotate-180 transition-transform duration-300">▾</span>
-            </summary>
-            <div className="overflow-hidden transition-all duration-300">
-              <p className="pb-4 text-sm text-slate-600 leading-relaxed">{item.a}</p>
-            </div>
-          </details>
+          <FaqItem key={i} item={item} index={i} />
         ))}
       </div>
     </section>

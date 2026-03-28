@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import Footer from './Footer'
 import BottomNav from './BottomNav'
+import BackToTop from './BackToTop'
 import ScrollHandler from './ScrollHandler'
 
 export default function Layout({ children }) {
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
       <main className="flex-1 pb-16 sm:pb-0">{children}</main>
       <Footer />
       <BottomNav />
+      <BackToTop />
     </div>
   )
 }
