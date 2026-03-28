@@ -73,7 +73,13 @@ const trades = [
   { label: 'Tilers',       href: '/trades/tilers',       icon: '🔲', desc: 'Bathroom renos, developer billing, deposits' },
   { label: 'Concreters',   href: '/trades/concreters',   icon: '🧱', desc: 'Remote estates, large values, materials upfront' },
   { label: 'Carpenters',   href: '/trades/carpenters',   icon: '🪚', desc: 'New builds, framing stage, progress billing' },
-  { label: 'HVAC',         href: '/trades/hvac',         icon: '❄️', desc: 'Commercial rooftop units, emergency service, parts + labour' },
+  { label: 'HVAC',            href: '/trades/hvac',             icon: '❄️', desc: 'Commercial rooftop units, emergency service, parts + labour' },
+  { label: 'Gas Fitters',    href: '/trades/gas-fitters',     icon: '🔥', desc: 'Underground dead zones, emergency call-outs, licence on invoice' },
+  { label: 'Fencers',        href: '/trades/fencers',         icon: '🚧', desc: 'Remote rural sites, large deposits, absent landowners' },
+  { label: 'Plasterers',     href: '/trades/plasterers',      icon: '🪣', desc: 'Builder sub-contracting, stage billing, dusty environments' },
+  { label: 'Pool Builders',  href: '/trades/pool-builders',   icon: '🏊', desc: 'High job values, staged payments, compliance hold-points' },
+  { label: 'Pest Controllers', href: '/trades/pest-controllers', icon: '🐛', desc: 'High-frequency jobs, pre-purchase reports, recurring billing' },
+  { label: 'Welders',        href: '/trades/welders',         icon: '⚙️', desc: 'Commercial fabrication, B2B invoicing, material deposits' },
 ]
 
 const faqs = [

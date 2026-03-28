@@ -22,6 +22,12 @@ const trades = [
   { label: 'Concreters', href: '/trades/concreters' },
   { label: 'Carpenters', href: '/trades/carpenters' },
   { label: 'HVAC Technicians', href: '/trades/hvac' },
+  { label: 'Gas Fitters', href: '/trades/gas-fitters' },
+  { label: 'Fencers', href: '/trades/fencers' },
+  { label: 'Plasterers', href: '/trades/plasterers' },
+  { label: 'Pool Builders', href: '/trades/pool-builders' },
+  { label: 'Pest Controllers', href: '/trades/pest-controllers' },
+  { label: 'Welders', href: '/trades/welders' },
 ]
 
 const legal = [

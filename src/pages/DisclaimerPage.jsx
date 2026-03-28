@@ -64,14 +64,14 @@ export default function DisclaimerPage() {
             <p>All rates and fees should be verified directly with the relevant provider before you sign up or make any financial commitment. The "Updated" date on each page reflects when we last verified the information — not a guarantee of current accuracy.</p>
           </Section>
 
-          <Section title="Affiliate and referral disclosure">
-            <p>TradiePay AU may earn a referral commission or affiliate fee when you sign up to a payment provider through a link on this site. Where this is the case:</p>
+          <Section title="Referral link disclosure">
+            <p>Some links on this site may be referral links. If you sign up to a provider through one, we may receive a small commission from that provider. Any amount received goes entirely toward the cost of running this site — hosting, research, and keeping provider data up to date. Where this is the case:</p>
             <ul className="list-disc list-inside space-y-1 ml-2">
               <li>The commission is paid by the provider, not by you</li>
               <li>Your pricing and terms with the provider are not affected</li>
-              <li>Affiliate relationships are disclosed on the relevant page</li>
+              <li>Referral links are disclosed on the relevant page</li>
             </ul>
-            <p>Our rankings and editorial content are produced independently of any affiliate arrangements. Providers cannot pay to improve their ranking or editorial treatment. See our <a href="/about" className="text-brand-blue hover:underline">methodology</a> for details.</p>
+            <p>Our rankings and editorial content are produced independently of any referral arrangements. Providers cannot pay to improve their ranking or editorial treatment. See our <a href="/about" className="text-brand-blue hover:underline">methodology</a> for details.</p>
           </Section>
 
           <Section title="Third-party links">

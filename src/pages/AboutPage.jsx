@@ -159,9 +159,12 @@ export default function AboutPage() {
 
       <section className="section section-alt container-page">
         <div className="max-w-xl">
-          <h2 className="text-xl font-bold text-brand-dark mb-4">A note on affiliate links</h2>
+          <h2 className="text-xl font-bold text-brand-dark mb-4">A note on referral links</h2>
           <p className="text-slate-600 leading-relaxed text-sm mb-4">
-            TradiePay AU may in future earn a referral commission if you sign up to a provider through a link on this site. Where this is the case, it will be clearly disclosed on the relevant page. Affiliate relationships do not influence rankings — our methodology remains independent of any commercial arrangement.
+            Some links on this site may be referral links — if you sign up to a provider through one, we may receive a small commission from that provider. Any amount received goes entirely toward the cost of running this site: hosting, research time, and keeping provider data accurate and up to date.
+          </p>
+          <p className="text-slate-600 leading-relaxed text-sm mb-4">
+            Referral links are always disclosed on the relevant page. They never influence our rankings or editorial content — a provider cannot improve their position by paying us. Our methodology is applied consistently regardless of any commercial arrangement.
           </p>
           <p className="text-slate-600 leading-relaxed text-sm">
             For questions about our methodology, corrections to provider data, or partnership enquiries, use the <Link to="/contact" className="text-brand-blue hover:underline">contact page</Link>.

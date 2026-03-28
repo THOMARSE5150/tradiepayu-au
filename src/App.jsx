@@ -19,6 +19,13 @@ import TilersPage from './pages/trades/TilersPage'
 import ConcretersPage from './pages/trades/ConcretersPage'
 import CarpentersPage from './pages/trades/CarpentersPage'
 import HVACPage from './pages/trades/HVACPage'
+import GasFittersPage from './pages/trades/GasFittersPage'
+import FencersPage from './pages/trades/FencersPage'
+import PlasterersPage from './pages/trades/PlasterersPage'
+import PoolBuildersPage from './pages/trades/PoolBuildersPage'
+import PestControllersPage from './pages/trades/PestControllersPage'
+import WeldersPage from './pages/trades/WeldersPage'
+import NotFoundPage from './pages/NotFoundPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import PrivacyPage from './pages/PrivacyPage'
@@ -50,6 +57,13 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/disclaimer" element={<DisclaimerPage />} />
+        <Route path="/trades/gas-fitters" element={<GasFittersPage />} />
+        <Route path="/trades/fencers" element={<FencersPage />} />
+        <Route path="/trades/plasterers" element={<PlasterersPage />} />
+        <Route path="/trades/pool-builders" element={<PoolBuildersPage />} />
+        <Route path="/trades/pest-controllers" element={<PestControllersPage />} />
+        <Route path="/trades/welders" element={<WeldersPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   )

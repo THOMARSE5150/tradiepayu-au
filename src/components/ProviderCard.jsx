@@ -22,12 +22,32 @@ function StatCell({ label, value, positive }) {
   )
 }
 
+function StarRating({ rating }) {
+  const full = Math.floor(rating)
+  const half = rating % 1 >= 0.3
+  const empty = 5 - full - (half ? 1 : 0)
+  return (
+    <div className="flex items-center gap-0.5">
+      {Array(full).fill(null).map((_, i) => (
+        <svg key={`f${i}`} className="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.376 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.538 1.118L10 14.347l-3.958 2.704c-.783.57-1.838-.197-1.538-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69L9.049 2.927z" /></svg>
+      ))}
+      {half && (
+        <svg className="w-3 h-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><defs><linearGradient id="hg"><stop offset="50%" stopColor="currentColor"/><stop offset="50%" stopColor="transparent"/></linearGradient></defs><path fill="url(#hg)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.376 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.538 1.118L10 14.347l-3.958 2.704c-.783.57-1.838-.197-1.538-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69L9.049 2.927z" /></svg>
+      )}
+      {Array(empty).fill(null).map((_, i) => (
+        <svg key={`e${i}`} className="w-3 h-3 text-slate-200" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.174c.969 0 1.371 1.24.588 1.81l-3.376 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.538 1.118L10 14.347l-3.958 2.704c-.783.57-1.838-.197-1.538-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.174a1 1 0 00.95-.69L9.049 2.927z" /></svg>
+      ))}
+      <span className="text-[11px] text-slate-400 ml-1 font-medium">{rating.toFixed(1)}</span>
+    </div>
+  )
+}
+
 export default function ProviderCard({ provider, featured = false, index = 0 }) {
   const {
     id, name, badge, badge_class, logo_text, logo_colour, tagline,
     fees, settlement, sim_plan, offline_mode, pros, cons,
     product_image, product_image_alt, product_image_bg,
-    apple_pay, google_pay,
+    apple_pay, google_pay, rating,
   } = provider
   const badgeCls = badgeClasses[badge_class] || badgeClasses['badge-muted']
 
@@ -76,6 +96,7 @@ export default function ProviderCard({ provider, featured = false, index = 0 }) 
           <div>
             <h3 className="font-bold text-brand-dark text-base leading-tight">{name}</h3>
             <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold mt-1 ${badgeCls}`}>{badge}</span>
+            {rating && <div className="mt-1.5"><StarRating rating={rating} /></div>}
           </div>
         </div>
 
