@@ -1,6 +1,76 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronDown, Check } from 'lucide-react'
 import { haptic } from '../utils/haptic'
+
+const AMORT_OPTIONS = [
+  { value: 12, label: '12 months' },
+  { value: 24, label: '24 months' },
+  { value: 36, label: '36 months' },
+]
+
+function AmortSelect({ value, onChange }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+  const selected = AMORT_OPTIONS.find(o => o.value === value)
+
+  useEffect(() => {
+    const handler = e => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => { haptic('light'); setOpen(v => !v) }}
+        className={`w-full flex items-center justify-between px-3 py-2.5 border rounded-lg text-sm font-medium transition-all duration-150 bg-white ${
+          open ? 'border-brand-blue ring-2 ring-brand-blue/20 text-brand-dark' : 'border-slate-200 text-brand-dark hover:border-slate-300'
+        }`}
+      >
+        {selected?.label}
+        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+          <ChevronDown size={15} className="text-slate-400" />
+        </motion.span>
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -6, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -6, scale: 0.97 }}
+            transition={{ duration: 0.15, ease: 'easeOut' }}
+            className="absolute z-20 left-0 right-0 mt-1.5 rounded-xl overflow-hidden"
+            style={{
+              background: 'rgba(255,255,255,0.95)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(0,0,0,0.08)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06)',
+            }}
+          >
+            {AMORT_OPTIONS.map(opt => (
+              <button
+                key={opt.value}
+                type="button"
+                onClick={() => { haptic('light'); onChange(opt.value); setOpen(false) }}
+                className={`w-full flex items-center justify-between px-4 py-3 text-sm transition-colors text-left ${
+                  opt.value === value
+                    ? 'text-brand-blue font-semibold bg-brand-blue/5'
+                    : 'text-brand-dark hover:bg-slate-50'
+                }`}
+              >
+                {opt.label}
+                {opt.value === value && <Check size={14} strokeWidth={2.5} className="text-brand-blue" />}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 // Rates last audited March 2026.
 // Verified live: Zeller 1.4%, Square 1.6% + $0 fixed, Square Terminal $329, Zeller Terminal 1 $99.
@@ -79,15 +149,7 @@ export default function CostCalculator() {
               <label className="block text-sm font-semibold text-brand-dark mb-1.5">
                 Hardware amortised over
               </label>
-              <select
-                value={amortMonths}
-                onChange={e => { haptic('light'); setAmortMonths(+e.target.value) }}
-                className="w-full px-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
-              >
-                <option value={12}>12 months</option>
-                <option value={24}>24 months</option>
-                <option value={36}>36 months</option>
-              </select>
+              <AmortSelect value={amortMonths} onChange={setAmortMonths} />
             </div>
           </div>
           <label className="flex items-center gap-2 mt-4 text-sm text-slate-600 cursor-pointer">
