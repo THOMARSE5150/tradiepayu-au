@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useForm, ValidationError } from '@formspree/react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 
@@ -8,26 +8,8 @@ const crumbs = [
   { label: 'Contact' },
 ]
 
-// Sign up at formspree.io and replace YOUR_FORM_ID with your form endpoint ID
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
-
 export default function ContactPage() {
-  const [status, setStatus] = useState('idle') // idle | sending | sent | error
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: new FormData(e.target),
-        headers: { Accept: 'application/json' },
-      })
-      setStatus(res.ok ? 'sent' : 'error')
-    } catch {
-      setStatus('error')
-    }
-  }
+  const [state, handleSubmit] = useForm('xjgpglnz')
 
   return (
     <>
@@ -47,13 +29,13 @@ export default function ContactPage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Contact</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Get in touch</h1>
-          <p className="hero-sub">Rate correction? Data error? Partnership enquiry? Use the form below — we aim to respond within 2 business days.</p>
+          <p className="hero-sub">Rate correction? Data error? Partnership enquiry? We aim to respond within 2 business days.</p>
         </div>
       </header>
 
       <section className="section container-page">
         <div className="max-w-lg">
-          {status === 'sent' ? (
+          {state.succeeded ? (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -82,6 +64,7 @@ export default function ContactPage() {
                   placeholder="Your name"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand-dark placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue transition-all"
                 />
+                <ValidationError prefix="Name" field="name" errors={state.errors} className="text-xs text-red-600 mt-1" />
               </div>
 
               <div>
@@ -96,6 +79,7 @@ export default function ContactPage() {
                   placeholder="you@example.com"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand-dark placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue transition-all"
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-red-600 mt-1" />
               </div>
 
               <div>
@@ -108,20 +92,15 @@ export default function ContactPage() {
                   placeholder="What's your question or feedback?"
                   className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand-dark placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue/40 focus:border-brand-blue transition-all resize-none"
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-red-600 mt-1" />
               </div>
-
-              {status === 'error' && (
-                <p className="text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3">
-                  Something went wrong — please try again or email us directly.
-                </p>
-              )}
 
               <button
                 type="submit"
-                disabled={status === 'sending'}
+                disabled={state.submitting}
                 className="w-full btn-primary py-3 text-sm font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {status === 'sending' ? 'Sending…' : 'Send message'}
+                {state.submitting ? 'Sending…' : 'Send message'}
               </button>
 
               <p className="text-xs text-slate-400 text-center">We don't share your details with anyone.</p>
