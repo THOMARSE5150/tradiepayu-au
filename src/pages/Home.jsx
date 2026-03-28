@@ -153,20 +153,36 @@ export default function Home() {
             <p className="hero-sub">
               5 providers. Real rates. No fluff. Ranked by what matters on the job site — connectivity, fees, and cash flow.
             </p>
-            <div className="flex flex-wrap gap-3 mt-6">
-              <a
+            <div className="flex flex-wrap gap-3 mt-7">
+              <motion.a
                 href="/#compare-all"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue hover:bg-blue-600 text-white font-semibold rounded-xl text-sm transition-colors"
-                style={{ boxShadow: '0 8px 24px rgba(0,106,255,0.35)' }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.15, ease: [0.34, 1.2, 0.64, 1] }}
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] transition-colors hover:bg-blue-600"
+                style={{ boxShadow: '0 8px 28px rgba(0,106,255,0.40), inset 0 1px 0 rgba(255,255,255,0.15)' }}
               >
                 Compare providers →
-              </a>
-              <Link
-                to="/trades"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.1] hover:bg-white/[0.16] border border-white/[0.18] text-white font-semibold rounded-xl text-sm transition-colors backdrop-blur-sm"
+              </motion.a>
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.22, ease: [0.34, 1.2, 0.64, 1] }}
               >
-                Browse by trade
-              </Link>
+                <Link
+                  to="/trades"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 font-semibold rounded-2xl text-[15px] transition-all
+                    text-white/90 hover:text-white
+                    backdrop-blur-xl backdrop-saturate-[180%]
+                    bg-white/[0.08] hover:bg-white/[0.14]
+                    border border-white/[0.15] hover:border-white/[0.28]
+                    shadow-[0_4px_20px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.12)]"
+                >
+                  Browse by trade
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -199,12 +215,6 @@ export default function Home() {
             ))}
           </div>
 
-          <nav className="jump-links mt-6">
-            <Link to="/#compare-all">Compare All</Link>
-            <Link to="/#calculator">Cost Calculator</Link>
-            <Link to="/#by-trade">By Trade</Link>
-            <Link to="/#faq">FAQ</Link>
-          </nav>
         </div>
       </section>
 
