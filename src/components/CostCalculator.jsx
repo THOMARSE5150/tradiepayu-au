@@ -48,6 +48,8 @@ export default function CostCalculator() {
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
                 <input
                   type="number"
+                  inputMode="decimal"
+                  enterKeyHint="done"
                   value={monthly}
                   onChange={e => setMonthly(+e.target.value)}
                   min="0"
@@ -63,6 +65,8 @@ export default function CostCalculator() {
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
                 <input
                   type="number"
+                  inputMode="decimal"
+                  enterKeyHint="done"
                   value={avgTx}
                   onChange={e => setAvgTx(+e.target.value)}
                   min="1"
