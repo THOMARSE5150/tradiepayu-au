@@ -100,7 +100,7 @@ export default function ContactPage() {
           <img
             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&h=900&fit=crop&crop=center&q=80"
             alt=""
-            className="w-full h-full object-cover"
+            fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />
           {/* Heavier overlay than other pages — keeps form legible */}

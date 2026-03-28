@@ -54,7 +54,7 @@ export default function ZellerPage() {
           <img
             src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&h=560&fit=crop&crop=center&q=80"
             alt=""
-            className="w-full h-full object-cover"
+            fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />

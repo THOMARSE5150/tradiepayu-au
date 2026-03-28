@@ -71,6 +71,7 @@ export default function ProviderCard({ provider, featured = false, index = 0 }) 
           <img
             src={product_image}
             alt={product_image_alt || `${name} hardware`}
+            loading="lazy"
             className="h-full w-full object-contain p-6 drop-shadow-xl"
             onError={e => { e.currentTarget.style.display = 'none' }}
           />

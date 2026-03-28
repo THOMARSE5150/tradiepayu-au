@@ -122,12 +122,12 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="sm:hidden flex items-center justify-center w-9 h-9 rounded-lg text-slate-300 hover:text-white hover:bg-white/[0.07] transition-all"
+            className="sm:hidden flex items-center justify-center w-12 h-12 rounded-xl text-slate-300 hover:text-white hover:bg-white/[0.07] transition-all"
             onClick={() => setOpen(v => !v)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </header>

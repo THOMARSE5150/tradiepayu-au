@@ -1,5 +1,6 @@
 import Nav from './Nav'
 import Footer from './Footer'
+import BottomNav from './BottomNav'
 import ScrollHandler from './ScrollHandler'
 
 export default function Layout({ children }) {
@@ -7,8 +8,9 @@ export default function Layout({ children }) {
     <div className="min-h-screen flex flex-col">
       <ScrollHandler />
       <Nav />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 pb-16 sm:pb-0">{children}</main>
       <Footer />
+      <BottomNav />
     </div>
   )
 }
