@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#006aff;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#006aff;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Blue glow accent -->
+  <ellipse cx="950" cy="150" rx="400" ry="300" fill="url(#glow)"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="200" width="4" height="120" rx="2" fill="#006aff" opacity="0.8"/>
+
+  <!-- Brand name -->
+  <text x="108" y="268" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="52" font-weight="700" fill="white">TradiePay AU</text>
+
+  <!-- Tagline -->
+  <text x="108" y="318" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="400" fill="rgba(255,255,255,0.55)">Best EFTPOS for Australian Tradies</text>
+
+  <!-- Divider -->
+  <rect x="108" y="348" width="480" height="1" fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Key points -->
+  <circle cx="120" cy="382" r="4" fill="#006aff"/>
+  <text x="136" y="388" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">No sponsored rankings</text>
+
+  <circle cx="120" cy="418" r="4" fill="#006aff"/>
+  <text x="136" y="424" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">Independent research · Updated monthly</text>
+
+  <circle cx="120" cy="454" r="4" fill="#006aff"/>
+  <text x="136" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="rgba(255,255,255,0.45)">18 trades · 5 providers compared</text>
+
+  <!-- Provider rate badges -->
+  <rect x="700" y="220" width="180" height="72" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="790" y="252" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Zeller</text>
+  <text x="790" y="278" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="#22c55e">1.4%</text>
+
+  <rect x="900" y="220" width="180" height="72" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="990" y="252" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Square</text>
+  <text x="990" y="278" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="rgba(255,255,255,0.7)">1.6%</text>
+
+  <rect x="700" y="312" width="180" height="72" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="790" y="344" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Stripe</text>
+  <text x="790" y="370" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="rgba(255,255,255,0.7)">1.7%</text>
+
+  <rect x="900" y="312" width="180" height="72" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="990" y="344" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="rgba(255,255,255,0.4)">Tyro</text>
+  <text x="990" y="370" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="700" fill="rgba(255,255,255,0.7)">Quote</text>
+
+  <!-- URL -->
+  <text x="108" y="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" fill="rgba(255,255,255,0.2)">tradiepayau.directory</text>
+</svg>

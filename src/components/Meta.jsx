@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 
 const SITE_URL = 'https://tradiepayu-au.up.railway.app'
 const SITE_NAME = 'TradiePay AU'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.png`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
 
 export default function Meta({
   title,
