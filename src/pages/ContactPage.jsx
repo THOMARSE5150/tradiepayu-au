@@ -4,6 +4,7 @@ import { useForm, ValidationError } from '@formspree/react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
+import { haptic } from '../utils/haptic'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -12,12 +13,6 @@ const crumbs = [
 
 const TOPICS = ['Rate correction', 'Data error', 'Partnership']
 const MAX_MSG = 1000
-
-function haptic(type = 'light') {
-  if (!('vibrate' in navigator)) return
-  const p = { light: 8, success: [12, 40, 12], error: [60, 40, 60, 40, 60] }
-  navigator.vibrate(p[type] ?? 8)
-}
 
 // Floating label input
 function Field({ id, name, label, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, errors }) {

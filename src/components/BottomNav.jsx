@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Home, SlidersHorizontal, Calculator, Mail } from 'lucide-react'
+import { haptic } from '../utils/haptic'
 
 const items = [
   { label: 'Home',       href: '/',            icon: Home },
@@ -29,6 +30,7 @@ export default function BottomNav() {
             <Link
               key={href}
               to={href}
+              onClick={() => haptic('light')}
               className={`flex flex-col items-center justify-center gap-1 py-2 min-h-[56px] text-[10px] font-semibold tracking-wide transition-colors ${
                 active ? 'text-brand-blue' : 'text-white/40 active:text-white/80'
               }`}

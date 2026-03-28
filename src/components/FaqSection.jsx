@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
+import { haptic } from '../utils/haptic'
 
 function FaqItem({ item, index }) {
   const [open, setOpen] = useState(false)
@@ -13,7 +14,7 @@ function FaqItem({ item, index }) {
       className="border-b border-slate-100 last:border-0"
     >
       <button
-        onClick={() => setOpen(v => !v)}
+        onClick={() => { haptic('light'); setOpen(v => !v) }}
         className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-colors"
         aria-expanded={open}
       >

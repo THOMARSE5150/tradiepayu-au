@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Logo from './Logo'
+import { haptic } from '../utils/haptic'
 
 const topLinks = [
   { label: 'Compare All', href: '/#compare-all' },
@@ -43,7 +44,7 @@ function MobileGroup({ title, items, defaultOpen = false }) {
   return (
     <div>
       <button
-        onClick={() => setOpen(v => !v)}
+        onClick={() => { haptic('light'); setOpen(v => !v) }}
         className="w-full flex items-center justify-between px-4 py-2.5 text-xs font-semibold uppercase tracking-widest text-white/40 hover:text-white/60 transition-colors"
       >
         {title}
@@ -123,7 +124,7 @@ export default function Nav() {
           {/* Mobile hamburger */}
           <button
             className="sm:hidden flex items-center justify-center w-12 h-12 rounded-xl text-slate-300 hover:text-white hover:bg-white/[0.07] transition-all"
-            onClick={() => setOpen(v => !v)}
+            onClick={() => { haptic('light'); setOpen(v => !v) }}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >

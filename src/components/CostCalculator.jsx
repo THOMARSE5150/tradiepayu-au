@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { haptic } from '../utils/haptic'
 
 // Rates last audited March 2026.
 // Verified live: Zeller 1.4%, Square 1.6% + $0 fixed, Square Terminal $329, Zeller Terminal 1 $99.
@@ -51,7 +52,7 @@ export default function CostCalculator() {
                   inputMode="decimal"
                   enterKeyHint="done"
                   value={monthly}
-                  onChange={e => setMonthly(+e.target.value)}
+                  onChange={e => { haptic('light'); setMonthly(+e.target.value) }}
                   min="0"
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
@@ -68,7 +69,7 @@ export default function CostCalculator() {
                   inputMode="decimal"
                   enterKeyHint="done"
                   value={avgTx}
-                  onChange={e => setAvgTx(+e.target.value)}
+                  onChange={e => { haptic('light'); setAvgTx(+e.target.value) }}
                   min="1"
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
@@ -80,7 +81,7 @@ export default function CostCalculator() {
               </label>
               <select
                 value={amortMonths}
-                onChange={e => setAmortMonths(+e.target.value)}
+                onChange={e => { haptic('light'); setAmortMonths(+e.target.value) }}
                 className="w-full px-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue bg-white"
               >
                 <option value={12}>12 months</option>
@@ -93,7 +94,7 @@ export default function CostCalculator() {
             <input
               type="checkbox"
               checked={includeSim}
-              onChange={e => setIncludeSim(e.target.checked)}
+              onChange={e => { haptic('light'); setIncludeSim(e.target.checked) }}
               className="rounded"
             />
             Include SIM plan cost where available
