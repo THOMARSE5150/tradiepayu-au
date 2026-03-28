@@ -126,7 +126,7 @@ export default function CostCalculator() {
                       />
                     </div>
                     <motion.div
-                      className="flex gap-4 mt-2 text-xs text-slate-500"
+                      className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-slate-500"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3, delay: i * 0.07 + 0.25 }}

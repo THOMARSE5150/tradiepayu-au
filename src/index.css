@@ -21,14 +21,14 @@
 }
 
 @layer components {
-  .container-page { @apply max-w-5xl mx-auto px-5; }
-  .section        { @apply py-14; }
+  .container-page { @apply max-w-5xl mx-auto px-4 sm:px-5; }
+  .section        { @apply py-10 sm:py-14; }
   .section-alt    { @apply bg-slate-50; }
 
   /* Hero */
-  .hero { @apply bg-gradient-to-br from-brand-dark via-slate-800 to-slate-900 text-white py-16; }
-  .hero-sub { @apply text-lg text-slate-300 mt-4 max-w-2xl font-sans font-normal leading-relaxed; }
-  .hero-meta { @apply flex items-center gap-2 text-sm text-slate-400 mb-4 font-sans; }
+  .hero { @apply bg-gradient-to-br from-brand-dark via-slate-800 to-slate-900 text-white py-12 sm:py-16; }
+  .hero-sub { @apply text-base sm:text-lg text-slate-300 mt-3 sm:mt-4 max-w-2xl font-sans font-normal leading-relaxed; }
+  .hero-meta { @apply flex items-center gap-2 text-sm text-slate-400 mb-3 sm:mb-4 font-sans; }
 
   /* Badge */
   .badge        { @apply inline-block px-2 py-0.5 rounded text-xs font-semibold; }

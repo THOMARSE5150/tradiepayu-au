@@ -55,7 +55,7 @@ export default function SquarePage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span><span>Updated March 2026</span>
           </div>
-          <h1 className="text-4xl font-bold text-white leading-tight mt-3">Square for Tradies — Full Review (2026)</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Square for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best offline capability in the market. The right backup terminal for tradies who work in dead zones.</p>
           <nav className="jump-links">
             <a href="#fees">Fees</a>
