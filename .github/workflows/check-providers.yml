@@ -1,0 +1,39 @@
+name: Weekly provider check
+
+on:
+  schedule:
+    # Every Monday at 2am UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # allow manual trigger
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run provider check
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        working-directory: site
+        run: node scripts/check-providers.js
+
+      - name: Commit and push if changed
+        working-directory: site
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/providers.json src/data/site-meta.json scripts/change-log.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: weekly provider rate check $(date -u +%Y-%m-%d)"
+            git push
+          fi

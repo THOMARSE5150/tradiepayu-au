@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
+import siteMeta from '../data/site-meta.json'
 
 const providers = [
   { label: 'Zeller', href: '/providers/zeller' },
@@ -43,7 +44,7 @@ export default function Footer() {
       <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="col-span-2 lg:col-span-1 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
-          <p className="text-sm leading-relaxed text-slate-400 mb-3">Independent comparison of mobile card payment systems for Australian tradies. Updated March 2026.</p>
+          <p className="text-sm leading-relaxed text-slate-400 mb-3">Independent comparison of mobile card payment systems for Australian tradies. Updated {siteMeta.lastVerifiedDisplay}.</p>
           <p className="text-xs text-slate-600">No sponsored rankings. Not financial advice.</p>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
@@ -72,7 +73,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/[0.06] py-4 text-center text-xs text-slate-600 space-y-1 px-4">
-        <p>Rates correct as of March 2026. Verify with providers before signing up.</p>
+        <p>Rates correct as of {siteMeta.lastVerifiedDisplay}. Verify with providers before signing up.</p>
         <p>
           <Link to="/disclaimer" className="hover:text-slate-400 transition-colors">General information only — not financial advice.</Link>
           {' '}·{' '}

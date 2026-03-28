@@ -93,9 +93,24 @@ export default function ContactPage() {
         canonical="/contact"
       />
 
-      {/* Minimal dark header — flows into the form section */}
-      <div className="bg-brand-dark">
-        <div className="container-page pt-8 pb-0">
+      {/* Full-bleed background covering header + form — unique to contact page */}
+      <section className="relative overflow-hidden pb-20">
+        {/* Background image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&h=900&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          {/* Heavier overlay than other pages — keeps form legible */}
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/97 via-brand-dark/95 to-brand-dark/98" />
+          {/* Subtle blue accent glow bottom-right */}
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl" />
+        </div>
+
+        {/* Header content */}
+        <div className="relative z-10 container-page pt-8 pb-10">
           <Breadcrumb crumbs={crumbs} />
           <div className="flex flex-wrap gap-2 mt-4">
             {TOPICS.map(t => (
@@ -103,13 +118,11 @@ export default function ContactPage() {
             ))}
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mt-4 mb-1">Get in touch</h1>
-          <p className="text-white/50 text-sm mb-0">We respond within 2 business days.</p>
+          <p className="text-white/50 text-sm">We respond within 2 business days.</p>
         </div>
-      </div>
 
-      {/* Dark form section — seamless with header */}
-      <section className="bg-brand-dark pb-20 pt-8">
-        <div className="container-page">
+        {/* Form — inside same section, same background */}
+        <div className="relative z-10 container-page">
           <div className="w-full max-w-sm mx-auto sm:max-w-md">
             <AnimatePresence mode="wait">
 
@@ -244,6 +257,7 @@ export default function ContactPage() {
             </AnimatePresence>
           </div>
         </div>
+        {/* close .container-page and section */}
       </section>
     </>
   )
