@@ -1,70 +1,82 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
-
 import Home from './pages/Home'
-import ZellerPage from './pages/providers/ZellerPage'
-import SquarePage from './pages/providers/SquarePage'
-import StripePage from './pages/providers/StripePage'
-import TyroPage from './pages/providers/TyroPage'
-import Shift4Page from './pages/providers/Shift4Page'
-import GlaziersPage from './pages/trades/GlaziersPage'
-import ElectriciansPage from './pages/trades/ElectriciansPage'
-import PlumbersPage from './pages/trades/PlumbersPage'
-import BuildersPage from './pages/trades/BuildersPage'
-import CleanersPage from './pages/trades/CleanersPage'
-import LandscapersPage from './pages/trades/LandscapersPage'
-import RoofersPage from './pages/trades/RoofersPage'
-import PaintersPage from './pages/trades/PaintersPage'
-import TilersPage from './pages/trades/TilersPage'
-import ConcretersPage from './pages/trades/ConcretersPage'
-import CarpentersPage from './pages/trades/CarpentersPage'
-import HVACPage from './pages/trades/HVACPage'
-import GasFittersPage from './pages/trades/GasFittersPage'
-import FencersPage from './pages/trades/FencersPage'
-import PlasterersPage from './pages/trades/PlasterersPage'
-import PoolBuildersPage from './pages/trades/PoolBuildersPage'
-import PestControllersPage from './pages/trades/PestControllersPage'
-import WeldersPage from './pages/trades/WeldersPage'
-import NotFoundPage from './pages/NotFoundPage'
-import AboutPage from './pages/AboutPage'
-import ContactPage from './pages/ContactPage'
-import PrivacyPage from './pages/PrivacyPage'
-import DisclaimerPage from './pages/DisclaimerPage'
+
+// Lazy-load all non-home pages so the initial bundle only ships Home + Layout
+const ZellerPage        = lazy(() => import('./pages/providers/ZellerPage'))
+const SquarePage        = lazy(() => import('./pages/providers/SquarePage'))
+const StripePage        = lazy(() => import('./pages/providers/StripePage'))
+const TyroPage          = lazy(() => import('./pages/providers/TyroPage'))
+const Shift4Page        = lazy(() => import('./pages/providers/Shift4Page'))
+const GlaziersPage      = lazy(() => import('./pages/trades/GlaziersPage'))
+const ElectriciansPage  = lazy(() => import('./pages/trades/ElectriciansPage'))
+const PlumbersPage      = lazy(() => import('./pages/trades/PlumbersPage'))
+const BuildersPage      = lazy(() => import('./pages/trades/BuildersPage'))
+const CleanersPage      = lazy(() => import('./pages/trades/CleanersPage'))
+const LandscapersPage   = lazy(() => import('./pages/trades/LandscapersPage'))
+const RoofersPage       = lazy(() => import('./pages/trades/RoofersPage'))
+const PaintersPage      = lazy(() => import('./pages/trades/PaintersPage'))
+const TilersPage        = lazy(() => import('./pages/trades/TilersPage'))
+const ConcretersPage    = lazy(() => import('./pages/trades/ConcretersPage'))
+const CarpentersPage    = lazy(() => import('./pages/trades/CarpentersPage'))
+const HVACPage          = lazy(() => import('./pages/trades/HVACPage'))
+const GasFittersPage    = lazy(() => import('./pages/trades/GasFittersPage'))
+const FencersPage       = lazy(() => import('./pages/trades/FencersPage'))
+const PlasterersPage    = lazy(() => import('./pages/trades/PlasterersPage'))
+const PoolBuildersPage  = lazy(() => import('./pages/trades/PoolBuildersPage'))
+const PestControllersPage = lazy(() => import('./pages/trades/PestControllersPage'))
+const WeldersPage       = lazy(() => import('./pages/trades/WeldersPage'))
+const AboutPage         = lazy(() => import('./pages/AboutPage'))
+const ContactPage       = lazy(() => import('./pages/ContactPage'))
+const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
+const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
+const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
+
+function PageLoader() {
+  return (
+    <div className="min-h-[50vh] flex items-center justify-center">
+      <div className="w-6 h-6 border-2 border-brand-blue border-t-transparent rounded-full animate-spin" />
+    </div>
+  )
+}
 
 export default function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/providers/zeller" element={<ZellerPage />} />
-        <Route path="/providers/square" element={<SquarePage />} />
-        <Route path="/providers/stripe" element={<StripePage />} />
-        <Route path="/providers/tyro" element={<TyroPage />} />
-        <Route path="/providers/shift4" element={<Shift4Page />} />
-        <Route path="/trades/glaziers" element={<GlaziersPage />} />
-        <Route path="/trades/electricians" element={<ElectriciansPage />} />
-        <Route path="/trades/plumbers" element={<PlumbersPage />} />
-        <Route path="/trades/builders" element={<BuildersPage />} />
-        <Route path="/trades/cleaners" element={<CleanersPage />} />
-        <Route path="/trades/landscapers" element={<LandscapersPage />} />
-        <Route path="/trades/roofers" element={<RoofersPage />} />
-        <Route path="/trades/painters" element={<PaintersPage />} />
-        <Route path="/trades/tilers" element={<TilersPage />} />
-        <Route path="/trades/concreters" element={<ConcretersPage />} />
-        <Route path="/trades/carpenters" element={<CarpentersPage />} />
-        <Route path="/trades/hvac" element={<HVACPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/disclaimer" element={<DisclaimerPage />} />
-        <Route path="/trades/gas-fitters" element={<GasFittersPage />} />
-        <Route path="/trades/fencers" element={<FencersPage />} />
-        <Route path="/trades/plasterers" element={<PlasterersPage />} />
-        <Route path="/trades/pool-builders" element={<PoolBuildersPage />} />
-        <Route path="/trades/pest-controllers" element={<PestControllersPage />} />
-        <Route path="/trades/welders" element={<WeldersPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/providers/zeller" element={<ZellerPage />} />
+          <Route path="/providers/square" element={<SquarePage />} />
+          <Route path="/providers/stripe" element={<StripePage />} />
+          <Route path="/providers/tyro" element={<TyroPage />} />
+          <Route path="/providers/shift4" element={<Shift4Page />} />
+          <Route path="/trades/glaziers" element={<GlaziersPage />} />
+          <Route path="/trades/electricians" element={<ElectriciansPage />} />
+          <Route path="/trades/plumbers" element={<PlumbersPage />} />
+          <Route path="/trades/builders" element={<BuildersPage />} />
+          <Route path="/trades/cleaners" element={<CleanersPage />} />
+          <Route path="/trades/landscapers" element={<LandscapersPage />} />
+          <Route path="/trades/roofers" element={<RoofersPage />} />
+          <Route path="/trades/painters" element={<PaintersPage />} />
+          <Route path="/trades/tilers" element={<TilersPage />} />
+          <Route path="/trades/concreters" element={<ConcretersPage />} />
+          <Route path="/trades/carpenters" element={<CarpentersPage />} />
+          <Route path="/trades/hvac" element={<HVACPage />} />
+          <Route path="/trades/gas-fitters" element={<GasFittersPage />} />
+          <Route path="/trades/fencers" element={<FencersPage />} />
+          <Route path="/trades/plasterers" element={<PlasterersPage />} />
+          <Route path="/trades/pool-builders" element={<PoolBuildersPage />} />
+          <Route path="/trades/pest-controllers" element={<PestControllersPage />} />
+          <Route path="/trades/welders" element={<WeldersPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </Layout>
   )
 }
