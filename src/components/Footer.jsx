@@ -38,9 +38,46 @@ const legal = [
   { label: 'Disclaimer', href: '/disclaimer' },
 ]
 
+function RateAlerts() {
+  return (
+    <div className="bg-brand-dark border-t border-white/[0.06]">
+      <div className="container-page py-8">
+        <div className="lg-dark lg-sheen relative rounded-2xl p-5 sm:p-6 max-w-xl">
+          <p className="text-white font-semibold text-sm mb-0.5">Get rate change alerts</p>
+          <p className="text-slate-400 text-xs mb-4">We'll notify you when a provider changes their rates or hardware pricing — no spam, just useful updates.</p>
+          {/* Replace ACTION_URL with your Formspree endpoint, e.g. https://formspree.io/f/YOUR_FORM_ID */}
+          <form
+            action="https://formspree.io/f/xjgpglnz"
+            method="POST"
+            className="flex gap-2"
+          >
+            <input type="hidden" name="_subject" value="Rate alert signup" />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              inputMode="email"
+              autoComplete="email"
+              className="flex-1 min-w-0 px-3.5 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.10] text-white text-sm placeholder-white/30 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 transition-all"
+            />
+            <button
+              type="submit"
+              className="px-4 py-2.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold rounded-xl text-sm transition-colors flex-shrink-0"
+            >
+              Notify me
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-slate-400 mt-auto">
+      <RateAlerts />
       <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
         <div className="col-span-2 lg:col-span-1 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />

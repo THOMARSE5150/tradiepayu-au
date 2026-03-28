@@ -6,6 +6,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import SetupSteps from '../../components/SetupSteps'
 import ComparisonTable from '../../components/ComparisonTable'
+import ShareButton from '../../components/ShareButton'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -72,6 +73,13 @@ export default function ZellerPage() {
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Zeller for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller.</p>
+          <div className="mt-4 mb-1">
+            <ShareButton
+              title="Zeller for Tradies — Full Review (2026)"
+              text="Lowest rate, SIM-enabled terminals, and same-day settlement. See if Zeller is right for your trade."
+              url="https://tradiepayau.directory/providers/zeller"
+            />
+          </div>
           <nav className="jump-links">
             <a href="#fees">Fees</a>
             <a href="#hardware">Hardware</a>

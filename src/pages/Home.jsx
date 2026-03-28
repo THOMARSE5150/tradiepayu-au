@@ -153,6 +153,21 @@ export default function Home() {
             <p className="hero-sub">
               5 providers. Real rates. No fluff. Ranked by what matters on the job site — connectivity, fees, and cash flow.
             </p>
+            <div className="flex flex-wrap gap-3 mt-6">
+              <a
+                href="/#compare-all"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue hover:bg-blue-600 text-white font-semibold rounded-xl text-sm transition-colors"
+                style={{ boxShadow: '0 8px 24px rgba(0,106,255,0.35)' }}
+              >
+                Compare providers →
+              </a>
+              <Link
+                to="/trades"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-white/[0.1] hover:bg-white/[0.16] border border-white/[0.18] text-white font-semibold rounded-xl text-sm transition-colors backdrop-blur-sm"
+              >
+                Browse by trade
+              </Link>
+            </div>
           </motion.div>
 
           {/* Liquid glass stat pills */}

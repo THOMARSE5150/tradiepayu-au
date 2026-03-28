@@ -27,6 +27,9 @@ const PlasterersPage    = lazy(() => import('./pages/trades/PlasterersPage'))
 const PoolBuildersPage  = lazy(() => import('./pages/trades/PoolBuildersPage'))
 const PestControllersPage = lazy(() => import('./pages/trades/PestControllersPage'))
 const WeldersPage       = lazy(() => import('./pages/trades/WeldersPage'))
+const ProvidersIndexPage = lazy(() => import('./pages/ProvidersIndexPage'))
+const TradesIndexPage    = lazy(() => import('./pages/TradesIndexPage'))
+const ComparePage        = lazy(() => import('./pages/ComparePage'))
 const AboutPage         = lazy(() => import('./pages/AboutPage'))
 const ContactPage       = lazy(() => import('./pages/ContactPage'))
 const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
@@ -57,6 +60,9 @@ export default function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/providers" element={<ProvidersIndexPage />} />
+          <Route path="/trades" element={<TradesIndexPage />} />
+          <Route path="/compare/:slug" element={<ComparePage />} />
           <Route path="/providers/zeller" element={<ZellerPage />} />
           <Route path="/providers/square" element={<SquarePage />} />
           <Route path="/providers/stripe" element={<StripePage />} />
