@@ -26,6 +26,7 @@ export default function ProviderCard({ provider, featured = false }) {
             src={product_image}
             alt={product_image_alt || `${name} hardware`}
             className="h-full w-full object-contain p-4 drop-shadow-lg"
+            onError={e => { e.currentTarget.style.display = 'none' }}
           />
         ) : (
           <span className="text-5xl font-black text-white/20 select-none">{logo_text}</span>
