@@ -118,7 +118,9 @@ export default function ContactPage() {
             ))}
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mt-4 mb-1">Get in touch</h1>
-          <p className="text-white/50 text-sm">We respond within 2 business days.</p>
+          <p className="text-white/50 text-sm">We respond within 2 business days. Or email us directly at{' '}
+            <a href="mailto:hello@tradiepayau.directory" className="text-brand-blue hover:underline">hello@tradiepayau.directory</a>.
+          </p>
         </div>
 
         {/* Form — inside same section, same background */}

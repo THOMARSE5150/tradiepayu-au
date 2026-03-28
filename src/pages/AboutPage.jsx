@@ -167,7 +167,7 @@ export default function AboutPage() {
             Referral links are always disclosed on the relevant page. They never influence our rankings or editorial content — a provider cannot improve their position by paying us. Our methodology is applied consistently regardless of any commercial arrangement.
           </p>
           <p className="text-slate-600 leading-relaxed text-sm">
-            For questions about our methodology, corrections to provider data, or partnership enquiries, use the <Link to="/contact" className="text-brand-blue hover:underline">contact page</Link>.
+            For questions about our methodology, corrections to provider data, or partnership enquiries, use the <Link to="/contact" className="text-brand-blue hover:underline">contact page</Link> or email <a href="mailto:hello@tradiepayau.directory" className="text-brand-blue hover:underline">hello@tradiepayau.directory</a>.
           </p>
         </div>
       </section>

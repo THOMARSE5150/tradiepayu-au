@@ -1,8 +1,4 @@
-# TradiePay AU — not ready for indexing yet
-# TO ENABLE INDEXING: change Disallow: / to Allow: /
-# then submit sitemap to Google Search Console
-
 User-agent: *
-Disallow: /
+Allow: /
 
 Sitemap: https://tradiepayau.directory/sitemap.xml
