@@ -74,13 +74,13 @@ function AmortSelect({ value, onChange }) {
 
 // Rates last audited March 2026.
 // Verified live: Zeller 1.4%, Square 1.6% + $0 fixed, Square Terminal $329, Zeller Terminal 1 $99.
-// Stripe: 1.7% + A$0.10/tx, WisePad 3 A$98 (incl. GST) — stripe.com/au/pricing (JS-rendered, verify in browser).
+// Stripe: 1.7% + A$0.10/tx, Reader M2 A$69 (incl. GST) — stripe.com/au/pricing (JS-rendered, verify in browser).
 // Tyro: 1.4% payment links — tyro.com/pricing (bot-blocked, verify in browser).
 const PROVIDERS = [
   { id: 'zeller',     name: 'Zeller (Terminal 1 + SIM)', rate: 0.014, fixed: 0,    hardware: 99,  sim: 15 },
   { id: 'zeller-tap', name: 'Zeller (Tap to Pay)',       rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
   { id: 'square',     name: 'Square Terminal',           rate: 0.016, fixed: 0,    hardware: 329, sim: 0  },
-  { id: 'stripe',     name: 'Stripe (WisePad 3)',         rate: 0.017, fixed: 0.10, hardware: 98,  sim: 0  },
+  { id: 'stripe',     name: 'Stripe (Reader M2)',          rate: 0.017, fixed: 0.10, hardware: 69,  sim: 0  },
   { id: 'tyro',       name: 'Tyro Payment Links',        rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
 ]
 
@@ -118,12 +118,12 @@ export default function CostCalculator() {
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
                 <input
-                  type="number"
-                  inputMode="decimal"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   enterKeyHint="done"
                   value={monthly}
-                  onChange={e => { haptic('light'); setMonthly(+e.target.value) }}
-                  min="0"
+                  onChange={e => { haptic('light'); setMonthly(+e.target.value.replace(/[^0-9]/g, '')) }}
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
               </div>
@@ -135,12 +135,12 @@ export default function CostCalculator() {
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
                 <input
-                  type="number"
-                  inputMode="decimal"
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   enterKeyHint="done"
                   value={avgTx}
-                  onChange={e => { haptic('light'); setAvgTx(+e.target.value) }}
-                  min="1"
+                  onChange={e => { haptic('light'); setAvgTx(+e.target.value.replace(/[^0-9]/g, '') || 1) }}
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
               </div>
@@ -222,7 +222,7 @@ export default function CostCalculator() {
         </motion.div>
         <p className="text-xs text-slate-400 mt-4">
           * Hardware amortised over {amortMonths} months. Assumes all transactions are in-person.
-          Zeller and Square rates verified March 2026. Stripe (1.7% + $0.10, Reader M2 $69) and Tyro (1.4% payment links) could not be live-verified — confirm at provider websites before signing up.
+          Zeller (1.4%, Terminal 1 $99, SIM $15/mo) and Square Terminal ($329) verified March 2026. Stripe (1.7% + $0.10, Reader M2 $69) and Tyro (1.4% payment links) could not be live-verified due to JS-rendered pricing pages — confirm at provider websites before signing up.
         </p>
       </div>
     </section>
