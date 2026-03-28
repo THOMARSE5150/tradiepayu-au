@@ -91,24 +91,33 @@ export default function Nav() {
           ? 'bg-brand-dark/60 backdrop-blur-xl backdrop-saturate-[180%] border-b border-white/[0.07] shadow-[0_4px_24px_rgba(0,0,0,0.4),inset_0_-1px_0_rgba(255,255,255,0.04)]'
           : 'bg-brand-dark'
       }`}>
-        <div className="container-page flex items-center justify-between h-14">
+        <div className="container-page flex items-center justify-between h-16">
           <Logo />
 
           {/* Desktop nav */}
-          <nav className="hidden sm:flex items-center gap-1">
+          <nav className="hidden sm:flex items-center gap-0.5">
             {topLinks.map(l => (
               <Link
                 key={l.href}
                 to={l.href}
-                className="text-sm text-slate-300 hover:text-white px-3 py-1.5 rounded-lg transition-all hover:bg-white/[0.07]"
+                className="text-[13px] font-semibold text-white/70 hover:text-white px-4 py-2 rounded-lg transition-all duration-150 hover:bg-white/[0.08] tracking-wide"
               >
                 {l.label}
               </Link>
             ))}
-            {/* Desktop: providers dropdown hint */}
-            <Link to="/providers/zeller" className="text-sm text-slate-300 hover:text-white px-3 py-1.5 rounded-lg transition-all hover:bg-white/[0.07]">
+            <Link
+              to="/providers/zeller"
+              className="text-[13px] font-semibold text-white/70 hover:text-white px-4 py-2 rounded-lg transition-all duration-150 hover:bg-white/[0.08] tracking-wide"
+            >
               Providers
             </Link>
+            <a
+              href="/#compare-all"
+              className="ml-2 text-[13px] font-semibold bg-brand-blue/90 hover:bg-brand-blue text-white px-4 py-2 rounded-lg transition-all duration-150"
+              style={{ boxShadow: '0 0 0 1px rgba(0,106,255,0.4)' }}
+            >
+              Compare →
+            </a>
           </nav>
 
           {/* Mobile hamburger */}
@@ -125,10 +134,10 @@ export default function Nav() {
 
       {/* Mobile slide-down menu */}
       {open && (
-        <div className="sm:hidden fixed inset-0 z-40 flex flex-col" style={{ top: '56px' }}>
+        <div className="sm:hidden fixed inset-0 z-40 flex flex-col" style={{ top: '64px' }}>
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setOpen(false)} />
           <nav
-            className="relative z-10 bg-brand-dark border-b border-white/[0.08] flex flex-col overflow-y-auto max-h-[calc(100vh-56px)]"
+            className="relative z-10 bg-brand-dark border-b border-white/[0.08] flex flex-col overflow-y-auto max-h-[calc(100vh-64px)]"
             style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.5)' }}
           >
             {/* Top links */}

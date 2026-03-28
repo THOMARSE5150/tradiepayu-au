@@ -19,7 +19,7 @@ const faqs = [
   { q: 'How does Shift4 compare to Zeller for tradies?', a: "Zeller charges you 1.4% — transparent, no lock-in, no contract. Shift4 charges your customers a surcharge — you pay nothing, but the fee is opaque and contract terms vary. If your customers are comfortable with surcharging and you're cash-flow constrained, Shift4 has merit. If you want simplicity and transparency, Zeller wins." },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Shift4 for Tradies — Full Review (2026)', description: 'Independent review of Shift4 (formerly Smartpay) EFTPOS for Australian tradies. Zero-cost surcharging model, PAX A920 terminal, built-in mobile connectivity.', url: `${SITE}/providers/shift4`, reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Shift4', url: 'https://www.shift4.com/au' }, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Shift4 Review', item: `${SITE}/providers/shift4` }] },

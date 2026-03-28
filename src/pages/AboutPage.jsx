@@ -9,7 +9,7 @@ const crumbs = [
   { label: 'About TradiePay AU' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',

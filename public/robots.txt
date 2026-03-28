@@ -5,4 +5,4 @@
 User-agent: *
 Disallow: /
 
-Sitemap: https://tradiepayu-au.up.railway.app/sitemap.xml
+Sitemap: https://tradiepayau.directory/sitemap.xml

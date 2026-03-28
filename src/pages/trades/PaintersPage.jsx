@@ -25,7 +25,7 @@ const faqs = [
   { q: 'Should painters use Zeller Tap to Pay or a terminal?', a: 'Tap to Pay on your phone works well for small touch-up jobs and single-day jobs where you have good mobile signal. For multi-day jobs on empty premises, upgrade to Terminal 1 with SIM — the dedicated hardware is more reliable all day.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Painters in Australia (2026)', description: 'Empty houses with no WiFi, deposit collection, and body corporate billing — the best EFTPOS and payment setup for Australian painting businesses.', url: `${SITE}/trades/painters`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Painters', item: `${SITE}/trades/painters` }] },

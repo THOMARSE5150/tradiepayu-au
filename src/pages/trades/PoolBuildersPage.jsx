@@ -25,7 +25,7 @@ const faqs = [
   { q: 'How do pool builders collect deposits on new projects?', a: 'Send a Zeller payment link or Stripe invoice for the contract deposit (typically 10–20% of contract value) immediately after the contract is signed. For a $60,000 pool, that\'s a $6,000–$12,000 deposit. Same-day Zeller settlement means funds are available next business day to cover your initial equipment deposits and design costs.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Pool Builders in Australia (2026)', description: 'High-value staged payments, remote estate sites, council compliance hold-points, and equipment cash flow — the best EFTPOS and payment setup for Australian pool builders.', url: `${SITE}/trades/pool-builders`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Pool Builders', item: `${SITE}/trades/pool-builders` }] },
@@ -44,7 +44,7 @@ export default function PoolBuildersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1572168696553-9e5f8a06dbfa?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1572168696553-9e5f8a06dbfa?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

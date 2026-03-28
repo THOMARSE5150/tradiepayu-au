@@ -18,7 +18,7 @@ const faqs = [
   { q: 'Does Tyro have same-day settlement?', a: 'Yes — payments settle same business day into a Tyro transaction account. Next business day to an external bank account.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Tyro for Tradies — Full Review (2026)', description: "Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know.", url: `${SITE}/providers/tyro`, reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Tyro', url: 'https://www.tyro.com' }, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Tyro Review', item: `${SITE}/providers/tyro` }] },

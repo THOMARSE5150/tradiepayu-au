@@ -25,7 +25,7 @@ const faqs = [
   { q: 'How does HVAC warranty service billing work?', a: 'Warranty service is billed to the manufacturer or service distributor, not the end user. Send a Stripe invoice to the manufacturer\'s Australian service department email — include the unit serial number, fault description, parts replaced (with part numbers), and labour time. Most manufacturers pay net 30 days.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for HVAC Technicians in Australia (2026)', description: 'Commercial rooftop dead zones, after-hours emergencies, and split parts/labour billing — the best EFTPOS setup for Australian HVAC and refrigeration businesses.', url: `${SITE}/trades/hvac`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for HVAC', item: `${SITE}/trades/hvac` }] },
@@ -44,7 +44,7 @@ export default function HVACPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

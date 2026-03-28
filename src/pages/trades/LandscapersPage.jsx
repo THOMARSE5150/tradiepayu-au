@@ -18,7 +18,7 @@ const faqs = [
   { q: 'How do landscapers get paid when the client isn\'t home?', a: 'Send a Zeller payment link via SMS as you finish the job. Most clients pay within the hour. For regular maintenance clients, set up Stripe automated billing — charges their card automatically on the day of service.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Landscapers in Australia (2026)', description: 'Outdoor sites, variable job values, and deposit-on-booking models — the best payment setup for Australian landscaping and garden service businesses.', url: `${SITE}/trades/landscapers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Landscapers in Australia (2026)', item: `${SITE}/trades/landscapers` }] },

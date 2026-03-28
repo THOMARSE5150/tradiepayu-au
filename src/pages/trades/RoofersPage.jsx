@@ -25,7 +25,7 @@ const faqs = [
   { q: 'What EFTPOS works on new estate building sites?', a: 'Zeller Terminal 1 with SIM (Optus, $15/mo). New estates have no site WiFi, but Optus mobile coverage reaches most metro and suburban estates. The terminal works entirely on mobile data — no hotspot or WiFi required.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Roofers in Australia (2026)', description: 'Large job values, insurance billing, and new estate sites with no WiFi — the best EFTPOS and payment setup for Australian roofing businesses.', url: `${SITE}/trades/roofers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Roofers', item: `${SITE}/trades/roofers` }] },

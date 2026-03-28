@@ -6,7 +6,7 @@ const crumbs = [
   { label: 'Privacy Policy' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const LAST_UPDATED = 'March 2026'
 
 function Section({ title, children }) {

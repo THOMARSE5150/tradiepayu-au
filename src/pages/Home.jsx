@@ -8,7 +8,7 @@ import FaqSection from '../components/FaqSection'
 import ComparisonTable from '../components/ComparisonTable'
 import Meta from '../components/Meta'
 
-const SITE_URL = 'https://tradiepayu-au.up.railway.app'
+const SITE_URL = 'https://tradiepayau.directory'
 
 const jsonLd = [
   {

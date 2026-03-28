@@ -25,7 +25,7 @@ const faqs = [
   { q: 'How do carpenters collect deposits on renovation work?', a: 'Send a Zeller payment link via SMS at quote acceptance. For multi-week renovation jobs, collect 30–40% deposit before starting. Same-day settlement confirms funds before you order timber or hardware.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Carpenters in Australia (2026)', description: 'New build sites with no WiFi, builder invoicing, and high-value custom joinery — the best EFTPOS and payment setup for Australian carpenters.', url: `${SITE}/trades/carpenters`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Carpenters', item: `${SITE}/trades/carpenters` }] },
@@ -44,7 +44,7 @@ export default function CarpentersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

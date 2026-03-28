@@ -25,7 +25,7 @@ const faqs = [
   { q: 'How do pest controllers handle body corporate and strata billing?', a: 'Body corporate and strata managers require formal tax invoices with the lot or complex address, a PO or work order reference, your ABN, and GST. Use Stripe invoicing with custom fields for PO numbers. Set 14-day terms for strata accounts. Keep a consistent invoice format across all properties managed by the same manager — it makes their reconciliation easier and gets you paid faster.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Pest Controllers in Australia (2026)', description: 'High-frequency jobs, conveyancer billing, recurring treatment plans, and body corporate invoicing — the best EFTPOS and payment setup for Australian pest controllers.', url: `${SITE}/trades/pest-controllers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Pest Controllers', item: `${SITE}/trades/pest-controllers` }] },
@@ -44,7 +44,7 @@ export default function PestControllersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

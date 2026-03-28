@@ -25,7 +25,7 @@ const faqs = [
   { q: 'Do gas fitters need their licence number on invoices?', a: 'Yes. In all Australian states and territories, gas fitting work must be carried out by a licensed gas fitter, and invoices for licensed work must include the licence number. Stripe invoicing lets you add custom fields for your licence number and ABN on every invoice template, ensuring you never omit this detail.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Gas Fitters in Australia (2026)', description: 'Underground dead zones, emergency call-outs, and dual billing on gas connections — the best EFTPOS and payment setup for Australian gas fitters.', url: `${SITE}/trades/gas-fitters`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Gas Fitters', item: `${SITE}/trades/gas-fitters` }] },
@@ -44,7 +44,7 @@ export default function GasFittersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1609205807107-b6cf6be5b6c9?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1609205807107-b6cf6be5b6c9?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

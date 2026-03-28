@@ -25,7 +25,7 @@ const faqs = [
   { q: 'How should fencers handle staged payments on large contracts?', a: 'Use Stripe invoicing with a clear stage breakdown — for example, Stage 1: posts set and concrete (100m), Stage 2: rails and palings (100m), Stage 3: gates and finishes. Issue each invoice at stage completion with a brief description and photo. Set 7-day payment terms per stage to maintain cash flow across a multi-week contract.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Fencers in Australia (2026)', description: 'Remote rural sites, large material deposits, absent landowners, and staged payment contracts — the best EFTPOS and payment setup for Australian fencers.', url: `${SITE}/trades/fencers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Fencers', item: `${SITE}/trades/fencers` }] },
@@ -44,7 +44,7 @@ export default function FencersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

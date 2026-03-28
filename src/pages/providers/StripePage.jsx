@@ -18,7 +18,7 @@ const faqs = [
   { q: 'When should I use Stripe instead of Zeller?', a: 'Use Stripe when: (1) you have a website or booking system that needs payment API integration, (2) you have regular weekly/fortnightly clients and want fully automated recurring billing, or (3) you process international cards regularly.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Stripe for Tradies — Full Review (2026)', description: 'Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first Australian tradie operations.', url: `${SITE}/providers/stripe`, reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Stripe', url: 'https://stripe.com/au' }, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Stripe Review', item: `${SITE}/providers/stripe` }] },

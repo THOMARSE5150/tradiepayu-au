@@ -25,7 +25,7 @@ const faqs = [
   { q: 'Does EFTPOS work in bathrooms mid-renovation?', a: 'Zeller Terminal 1 with SIM (Optus) works on mobile data — it does not need the home WiFi or NBN. Even in a stripped-out bathroom with no internet connected, you can process payment on the Zeller terminal.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Tilers in Australia (2026)', description: 'Bathroom renos with no WiFi, materials deposits, and developer billing — the best EFTPOS and payment setup for Australian tiling businesses.', url: `${SITE}/trades/tilers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Tilers', item: `${SITE}/trades/tilers` }] },
@@ -44,7 +44,7 @@ export default function TilersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&h=560&fit=crop&crop=center&q=80" alt="" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

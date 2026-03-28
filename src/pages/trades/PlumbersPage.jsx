@@ -17,7 +17,7 @@ const faqs = [
   { q: 'Does EFTPOS work underground for plumbing work?', a: 'Mobile signal is usually unavailable underground or in enclosed below-grade environments. Square Terminal offline mode is the only option for taking payment in these locations.' },
 ]
 
-const SITE = 'https://tradiepayu-au.up.railway.app'
+const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Plumbers in Australia (2026)', description: 'After-hours emergencies, underground work, and same-day parts — the best EFTPOS payment setup for Australian plumbing businesses.', url: `${SITE}/trades/plumbers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Plumbers in Australia (2026)', item: `${SITE}/trades/plumbers` }] },
