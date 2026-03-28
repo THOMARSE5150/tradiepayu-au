@@ -14,6 +14,9 @@ export default function Meta({
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Best EFTPOS for Australian Tradies`
   const fullCanonical = canonical ? `${SITE_URL}${canonical}` : SITE_URL
 
+  // Accept single object or array of JSON-LD blocks
+  const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
@@ -40,12 +43,12 @@ export default function Meta({
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-      {/* JSON-LD */}
-      {jsonLd && (
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
+      {/* JSON-LD — supports multiple blocks */}
+      {jsonLdArray.map((block, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(block)}
         </script>
-      )}
+      ))}
     </Helmet>
   )
 }

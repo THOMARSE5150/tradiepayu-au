@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tradiepayu-au.up.railway.app/sitemap.xml

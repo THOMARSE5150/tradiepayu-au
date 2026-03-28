@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import { Zap } from 'lucide-react'
+import { Wrench } from 'lucide-react'
 
 export default function Logo({ className = '' }) {
   return (
     <Link to="/" className={`flex items-center gap-2.5 group select-none ${className}`}>
-      {/* Icon mark — gradient square with zap */}
+      {/* Icon mark — gradient square with wrench */}
       <div className="relative w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-200 group-hover:scale-105"
         style={{
           background: 'linear-gradient(135deg, #3b8dff 0%, #006aff 50%, #004fd4 100%)',
@@ -13,7 +13,7 @@ export default function Logo({ className = '' }) {
       >
         {/* Inner sheen */}
         <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
-        <Zap size={15} className="text-white relative z-10" fill="white" strokeWidth={0} />
+        <Wrench size={14} className="text-white relative z-10" strokeWidth={2.5} />
       </div>
 
       {/* Wordmark */}

@@ -8,20 +8,58 @@ import FaqSection from '../components/FaqSection'
 import ComparisonTable from '../components/ComparisonTable'
 import Meta from '../components/Meta'
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Best Mobile Card Payment Systems for Australian Tradies',
-  description: 'Independent comparison of EFTPOS and mobile payment providers for Australian tradies — fees, connectivity, settlement speed.',
-  url: 'https://tradiepayu-au.up.railway.app',
-  numberOfItems: providers.length,
-  itemListElement: providers.map((p, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    name: p.name,
-    url: `https://tradiepayu-au.up.railway.app/providers/${p.id}`,
-  })),
-}
+const SITE_URL = 'https://tradiepayu-au.up.railway.app'
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'TradiePay AU',
+    url: SITE_URL,
+    description: 'Independent comparison of EFTPOS and mobile payment providers for Australian tradies.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${SITE_URL}/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'TradiePay AU',
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.svg`,
+    description: 'Independent comparison site for mobile card payment systems for Australian tradies.',
+    areaServed: { '@type': 'Country', name: 'Australia' },
+    audience: { '@type': 'Audience', audienceType: 'Australian tradies and small business owners' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Mobile Card Payment Systems for Australian Tradies',
+    description: 'Independent comparison of EFTPOS and mobile payment providers for Australian tradies — fees, connectivity, settlement speed.',
+    url: SITE_URL,
+    numberOfItems: providers.length,
+    itemListElement: providers.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.name,
+      url: `${SITE_URL}/providers/${p.id}`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is the best EFTPOS for tradies in Australia?', acceptedAnswer: { '@type': 'Answer', text: 'Zeller Terminal 1 with the SIM plan is the top pick for most tradies in 2026. At 1.4% in-person rate, same-day settlement, and SIM connectivity that works independently of customer WiFi, it covers the widest range of tradie scenarios. Square Terminal is the best backup for zero-signal job sites due to its offline mode.' } },
+      { '@type': 'Question', name: 'Which EFTPOS has the lowest fees for tradies?', acceptedAnswer: { '@type': 'Answer', text: "Zeller has the lowest published flat-rate in-person fee at 1.4%. Square is 1.6%, Stripe is 1.7% + $0.10. Tyro's Payment Links are 1.4% including GST, but in-person rates require a quote." } },
+      { '@type': 'Question', name: 'Do tradies need a SIM-enabled terminal?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, for most tradie work. Customer WiFi is unreliable, unavailable on new estates, and non-existent in commercial mechanical rooms, underground, or mid-renovation sites. A SIM-enabled terminal like Zeller Terminal 1 works on Optus mobile data independently of any site WiFi.' } },
+      { '@type': 'Question', name: 'Can tradies take card payments offline?', acceptedAnswer: { '@type': 'Answer', text: "Square Terminal supports offline payments — cards are accepted with no connectivity, then processed when you reconnect within 24 hours. There's a risk of later decline, but it's the best option for zero-signal sites. Zeller, Stripe, and Tyro all require active connectivity." } },
+      { '@type': 'Question', name: 'Is surcharging legal for tradies in Australia?', acceptedAnswer: { '@type': 'Answer', text: 'Tradies can pass on card processing fees as a surcharge, but the surcharge must not exceed the actual cost of acceptance. Excessive surcharging is banned by ASIC/ACCC. Most tradies absorb the 1.4% at Zeller rates rather than adding surcharge friction to their invoices.' } },
+      { '@type': 'Question', name: 'What is the best EFTPOS for emergency call-outs?', acceptedAnswer: { '@type': 'Answer', text: 'For emergency work like glaziers, plumbers, and electricians, you need a payment system that works at any hour without WiFi. Zeller Terminal 1 with SIM (Optus, $15/mo) is the primary pick. Square Terminal with offline mode is the backup for known dead zones.' } },
+    ],
+  },
+]
 
 const trades = [
   { label: 'Glaziers',     href: '/trades/glaziers',     icon: '🪟', desc: 'Dead zones, emergency call-outs, two-device strategy' },
@@ -30,6 +68,12 @@ const trades = [
   { label: 'Builders',     href: '/trades/builders',     icon: '🏗️', desc: 'Progress payments, new estates, subcontractors' },
   { label: 'Cleaners',     href: '/trades/cleaners',     icon: '🧹', desc: 'High-frequency jobs, recurring billing, low overhead' },
   { label: 'Landscapers',  href: '/trades/landscapers',  icon: '🌿', desc: 'Outdoor sites, deposits, absent-client payments' },
+  { label: 'Roofers',      href: '/trades/roofers',      icon: '🏠', desc: 'Weather events, insurance jobs, large job values' },
+  { label: 'Painters',     href: '/trades/painters',     icon: '🖌️', desc: 'Multi-day jobs, deposits, empty-house WiFi problem' },
+  { label: 'Tilers',       href: '/trades/tilers',       icon: '🔲', desc: 'Bathroom renos, developer billing, deposits' },
+  { label: 'Concreters',   href: '/trades/concreters',   icon: '🧱', desc: 'Remote estates, large values, materials upfront' },
+  { label: 'Carpenters',   href: '/trades/carpenters',   icon: '🪚', desc: 'New builds, framing stage, progress billing' },
+  { label: 'HVAC',         href: '/trades/hvac',         icon: '❄️', desc: 'Commercial rooftop units, emergency service, parts + labour' },
 ]
 
 const faqs = [
@@ -72,10 +116,18 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero relative overflow-hidden">
-        {/* Glassmorphism background blobs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -left-20 w-80 h-80 bg-brand-blue/20 rounded-full blur-3xl" />
-          <div className="absolute top-10 right-10 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl" />
+        {/* Hero background image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=700&fit=crop&crop=center&q=80"
+            alt=""
+            className="w-full h-full object-cover"
+            onError={e => { e.currentTarget.style.opacity = '0' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/85 to-slate-900/75" />
+          {/* Subtle blue accent glow */}
+          <div className="absolute -top-20 -left-20 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl" />
         </div>
 
         <div className="container-page relative z-10">
