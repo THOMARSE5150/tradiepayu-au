@@ -4,7 +4,18 @@
 
 @layer base {
   html { scroll-behavior: smooth; }
-  body { @apply bg-white text-brand-dark antialiased; }
+  body { @apply bg-white text-brand-dark antialiased font-sans; }
+
+  /* Display headings use Plus Jakarta Sans */
+  h1, h2, h3, h4 { @apply font-display; }
+
+  /* Tighter tracking on large headings */
+  h1 { @apply tracking-tighter leading-[1.1]; }
+  h2 { @apply tracking-tight leading-snug; }
+  h3 { @apply tracking-snug; }
+
+  /* Slightly improved body legibility */
+  p, li { @apply leading-relaxed; }
 }
 
 @layer components {
@@ -14,8 +25,8 @@
 
   /* Hero */
   .hero { @apply bg-gradient-to-br from-brand-dark via-slate-800 to-slate-900 text-white py-16; }
-  .hero-sub { @apply text-lg text-slate-300 mt-3 max-w-2xl; }
-  .hero-meta { @apply flex items-center gap-2 text-sm text-slate-400 mb-3; }
+  .hero-sub { @apply text-lg text-slate-300 mt-4 max-w-2xl font-sans font-normal leading-relaxed; }
+  .hero-meta { @apply flex items-center gap-2 text-sm text-slate-400 mb-4 font-sans; }
 
   /* Badge */
   .badge        { @apply inline-block px-2 py-0.5 rounded text-xs font-semibold; }

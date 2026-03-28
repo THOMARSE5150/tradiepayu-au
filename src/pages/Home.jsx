@@ -89,7 +89,7 @@ export default function Home() {
               <span>·</span>
               <span>Updated March 2026</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.08] max-w-3xl">
               Best Mobile Card Payment Systems for Australian Tradies
             </h1>
             <p className="hero-sub">

@@ -25,7 +25,7 @@ export default function Nav() {
     }`}>
       <div className="container-page flex items-center justify-between h-14">
         <Link to="/" className="font-bold text-white hover:text-blue-300 transition-colors">
-          TradiePay<span className="text-brand-blue">AU</span>
+          <span className="font-display tracking-tight">TradiePay<span className="text-brand-blue">AU</span></span>
         </Link>
         <nav className="flex items-center gap-1">
           {links.map(l => (
