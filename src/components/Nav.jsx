@@ -7,6 +7,7 @@ const links = [
   { label: 'All Providers', href: '/#compare-all' },
   { label: 'Cost Calculator', href: '/#calculator' },
   { label: 'By Trade', href: '/#by-trade' },
+  { label: 'About', href: '/about' },
 ]
 
 export default function Nav() {

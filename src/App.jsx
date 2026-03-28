@@ -19,6 +19,10 @@ import TilersPage from './pages/trades/TilersPage'
 import ConcretersPage from './pages/trades/ConcretersPage'
 import CarpentersPage from './pages/trades/CarpentersPage'
 import HVACPage from './pages/trades/HVACPage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import PrivacyPage from './pages/PrivacyPage'
+import DisclaimerPage from './pages/DisclaimerPage'
 
 export default function App() {
   return (
@@ -42,6 +46,10 @@ export default function App() {
         <Route path="/trades/concreters" element={<ConcretersPage />} />
         <Route path="/trades/carpenters" element={<CarpentersPage />} />
         <Route path="/trades/hvac" element={<HVACPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/disclaimer" element={<DisclaimerPage />} />
       </Routes>
     </Layout>
   )

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Check, X, Zap, Shield, Wifi, TrendingDown } from 'lucide-react'
+import { Check, X, Zap, Shield, Wifi, TrendingDown, Search, RefreshCw } from 'lucide-react'
 import providers from '../data/providers.json'
 import ProviderCard from '../components/ProviderCard'
 import CostCalculator from '../components/CostCalculator'
@@ -184,6 +184,26 @@ export default function Home() {
             <Link to="/#by-trade">By Trade</Link>
             <Link to="/#faq">FAQ</Link>
           </nav>
+        </div>
+      </section>
+
+      {/* Trust strip */}
+      <section className="bg-slate-50 border-b border-slate-100 py-4">
+        <div className="container-page">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-slate-500">
+            <div className="flex items-center gap-2">
+              <Shield size={14} className="text-brand-blue flex-shrink-0" />
+              <span><strong className="text-slate-700">No paid placements</strong> — rankings based on criteria only</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Search size={14} className="text-brand-blue flex-shrink-0" />
+              <span><strong className="text-slate-700">Independent research</strong> — rates sourced from provider sites</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <RefreshCw size={14} className="text-brand-blue flex-shrink-0" />
+              <span><strong className="text-slate-700">Verified March 2026</strong> — <Link to="/about" className="text-brand-blue hover:underline">our methodology →</Link></span>
+            </div>
+          </div>
         </div>
       </section>
 
