@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
@@ -137,15 +138,7 @@ export default function GasFittersPage() {
 
       <FaqSection items={faqs} title="FAQ for Gas Fitters" />
 
-      <section className="section section-alt container-page">
-        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
-        <div className="flex flex-wrap gap-3">
-          <Link to="/" className="btn-secondary text-sm">Full EFTPOS comparison</Link>
-          <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
-          <Link to="/trades/plumbers" className="btn-secondary text-sm">Best EFTPOS for Plumbers</Link>
-          <Link to="/trades/electricians" className="btn-secondary text-sm">Best EFTPOS for Electricians</Link>
-        </div>
-      </section>
+      <RelatedLinks slug="gas-fitters" type="trade" />
     </>
   )
 }

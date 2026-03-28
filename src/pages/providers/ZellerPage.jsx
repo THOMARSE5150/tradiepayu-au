@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import Breadcrumb from '../../components/Breadcrumb'
@@ -298,21 +299,7 @@ export default function ZellerPage() {
       <FaqSection items={faqs} title="Zeller FAQ" />
 
       {/* Related */}
-      <section className="section section-alt container-page">
-        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
-        <div className="flex flex-wrap gap-3">
-          <Link to="/" className="btn-secondary text-sm">Full provider comparison</Link>
-          <Link to="/providers/square" className="btn-secondary text-sm">Square vs Zeller</Link>
-          <Link to="/trades/glaziers" className="btn-secondary text-sm">Best EFTPOS for Glaziers</Link>
-          <Link to="/trades/electricians" className="btn-secondary text-sm">Best EFTPOS for Electricians</Link>
-          <Link to="/trades/plumbers" className="btn-secondary text-sm">Best EFTPOS for Plumbers</Link>
-          <Link to="/trades/roofers" className="btn-secondary text-sm">Best EFTPOS for Roofers</Link>
-          <Link to="/trades/painters" className="btn-secondary text-sm">Best EFTPOS for Painters</Link>
-          <Link to="/trades/builders" className="btn-secondary text-sm">Best EFTPOS for Builders</Link>
-          <Link to="/trades/carpenters" className="btn-secondary text-sm">Best EFTPOS for Carpenters</Link>
-          <Link to="/trades/tilers" className="btn-secondary text-sm">Best EFTPOS for Tilers</Link>
-        </div>
-      </section>
+      <RelatedLinks slug="zeller" type="provider" />
     </>
   )
 }

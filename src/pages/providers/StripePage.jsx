@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
@@ -203,17 +204,7 @@ export default function StripePage() {
 
       <FaqSection items={faqs} title="Stripe FAQ" />
 
-      <section className="section section-alt container-page">
-        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
-        <div className="flex flex-wrap gap-3">
-          <Link to="/" className="btn-secondary text-sm">Full provider comparison</Link>
-          <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
-          <Link to="/trades/cleaners" className="btn-secondary text-sm">Best EFTPOS for Cleaners</Link>
-          <Link to="/trades/landscapers" className="btn-secondary text-sm">Best EFTPOS for Landscapers</Link>
-          <Link to="/trades/pest-controllers" className="btn-secondary text-sm">Best EFTPOS for Pest Controllers</Link>
-          <Link to="/trades/pool-builders" className="btn-secondary text-sm">Best EFTPOS for Pool Builders</Link>
-        </div>
-      </section>
+      <RelatedLinks slug="stripe" type="provider" />
     </>
   )
 }

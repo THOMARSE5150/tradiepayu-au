@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
@@ -176,17 +177,7 @@ export default function TyroPage() {
 
       <FaqSection items={faqs} title="Tyro FAQ" />
 
-      <section className="section section-alt container-page">
-        <h2 className="text-xl font-bold text-brand-dark mb-4">Related Pages</h2>
-        <div className="flex flex-wrap gap-3">
-          <Link to="/" className="btn-secondary text-sm">Full provider comparison</Link>
-          <Link to="/providers/zeller" className="btn-secondary text-sm">Zeller full review</Link>
-          <Link to="/providers/square" className="btn-secondary text-sm">Square full review</Link>
-          <Link to="/trades/cleaners" className="btn-secondary text-sm">Best EFTPOS for Cleaners</Link>
-          <Link to="/trades/landscapers" className="btn-secondary text-sm">Best EFTPOS for Landscapers</Link>
-          <Link to="/trades/pest-controllers" className="btn-secondary text-sm">Best EFTPOS for Pest Controllers</Link>
-        </div>
-      </section>
+      <RelatedLinks slug="tyro" type="provider" />
     </>
   )
 }
