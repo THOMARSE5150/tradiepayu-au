@@ -10,11 +10,34 @@ const badgeClasses = {
 }
 
 export default function ProviderCard({ provider, featured = false }) {
-  const { id, name, badge, badge_class, logo_text, logo_colour, tagline, fees, settlement, sim_plan, offline_mode, pros, cons } = provider
+  const { id, name, badge, badge_class, logo_text, logo_colour, tagline, fees, settlement, sim_plan, offline_mode, pros, cons, product_image, product_image_alt, product_image_bg } = provider
   const badgeCls = badgeClasses[badge_class] || badgeClasses['badge-muted']
 
   return (
-    <article className={`bg-white rounded-xl border p-6 flex flex-col gap-4 transition-shadow ${featured ? 'border-brand-blue ring-2 ring-brand-blue shadow-lg shadow-blue-100' : 'border-slate-200 hover:shadow-md hover:shadow-slate-200'}`}>
+    <article className={`bg-white rounded-xl border overflow-hidden flex flex-col transition-shadow ${featured ? 'border-brand-blue ring-2 ring-brand-blue shadow-lg shadow-blue-100' : 'border-slate-200 hover:shadow-md hover:shadow-slate-200'}`}>
+
+      {/* Product image banner */}
+      <div
+        className="h-44 flex items-center justify-center overflow-hidden relative"
+        style={{ background: product_image_bg || logo_colour }}
+      >
+        {product_image ? (
+          <img
+            src={product_image}
+            alt={product_image_alt || `${name} hardware`}
+            className="h-full w-full object-contain p-4 drop-shadow-lg"
+          />
+        ) : (
+          <span className="text-5xl font-black text-white/20 select-none">{logo_text}</span>
+        )}
+        {featured && (
+          <div className="absolute top-3 right-3 bg-brand-blue text-white text-xs font-bold px-2 py-1 rounded-full shadow">
+            #1 Pick
+          </div>
+        )}
+      </div>
+
+      <div className="p-6 flex flex-col gap-4 flex-1">
       <div className="flex items-start gap-3">
         <div
           className="w-11 h-11 rounded-lg flex items-center justify-center text-white font-bold text-sm flex-shrink-0"
@@ -72,6 +95,7 @@ export default function ProviderCard({ provider, featured = false }) {
       >
         Full {name} Review →
       </Link>
+      </div>
     </article>
   )
 }
