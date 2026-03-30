@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Check } from 'lucide-react'
 import { haptic } from '../utils/haptic'
 import { trackCalculatorUsed } from '../utils/analytics'
+import rawProviders from '../data/providers.json'
 
 const AMORT_OPTIONS = [
   { value: 12, label: '12 months' },
@@ -73,18 +74,34 @@ function AmortSelect({ value, onChange }) {
   )
 }
 
-// Rates last audited March 2026.
-// Verified live: Zeller 1.4%, Square 1.6% + $0 fixed, Square Terminal $329, Zeller Terminal 1 $99.
-// Stripe: 1.7% + A$0.10/tx, Reader M2 A$69 (incl. GST) — stripe.com/au/pricing (JS-rendered, verify in browser).
-// Tyro: 1.4% payment links — tyro.com/pricing (bot-blocked, verify in browser).
-const PROVIDERS = [
-  { id: 'zeller',       name: 'Zeller (Terminal 1 + SIM)', rate: 0.014, fixed: 0,    hardware: 99,  sim: 15 },
-  { id: 'zeller-tap',   name: 'Zeller (Tap to Pay)',       rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
-  { id: 'zeller-surcharge', name: 'Zeller (Surcharge on)',  rate: 0,     fixed: 0,    hardware: 99,  sim: 0, note: 'Customer pays the fee' },
-  { id: 'square',       name: 'Square Terminal',           rate: 0.016, fixed: 0,    hardware: 329, sim: 0  },
-  { id: 'stripe',       name: 'Stripe (Reader M2)',        rate: 0.017, fixed: 0.10, hardware: 69,  sim: 0  },
-  { id: 'tyro',         name: 'Tyro Payment Links',        rate: 0.014, fixed: 0,    hardware: 0,   sim: 0  },
-]
+// Calculator rows derived from providers.json — rates stay in sync automatically.
+// Shift4 omitted: surcharging model means merchant cost = $0 (customer pays).
+function buildCalcProviders(providers) {
+  const rows = []
+  for (const p of providers) {
+    if (p.id === 'shift4') continue // quote-only surcharging model, not comparable on rate
+    const rate    = (p.fees.in_person_percent || 0) / 100
+    const fixed   = (p.fees.in_person_fixed_cents || 0) / 100
+    const hw      = p.hardware[0]?.price_aud || 0
+    const simCost = p.sim_plan.available && p.sim_plan.cost_monthly_aud ? p.sim_plan.cost_monthly_aud : 0
+    if (p.id === 'zeller') {
+      rows.push({ id: 'zeller',           name: 'Zeller (Terminal 1 + SIM)', rate, fixed, hardware: hw,  sim: simCost })
+      rows.push({ id: 'zeller-tap',       name: 'Zeller (Tap to Pay)',       rate, fixed, hardware: 0,   sim: 0 })
+      rows.push({ id: 'zeller-surcharge', name: 'Zeller (Surcharge on)',     rate: 0, fixed: 0, hardware: hw, sim: 0, note: 'Customer pays the fee' })
+    } else if (p.id === 'tyro') {
+      // In-person rate is quote-only; use payment links rate as proxy
+      const tyroRate = (p.fees.payment_links_percent || 1.4) / 100
+      rows.push({ id: 'tyro', name: 'Tyro Payment Links', rate: tyroRate, fixed: 0, hardware: 0, sim: 0 })
+    } else if (p.id === 'square') {
+      rows.push({ id: 'square', name: 'Square Terminal', rate, fixed, hardware: hw, sim: 0 })
+    } else {
+      rows.push({ id: p.id, name: p.name, rate, fixed, hardware: hw, sim: 0 })
+    }
+  }
+  return rows
+}
+
+const PROVIDERS = buildCalcProviders(rawProviders)
 
 export default function CostCalculator() {
   const [monthly, setMonthly] = useState(5000)
