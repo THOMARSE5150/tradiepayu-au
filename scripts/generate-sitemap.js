@@ -35,6 +35,8 @@ const tradeSlugs = [
   'plasterers', 'pool-builders', 'pest-controllers', 'welders', 'cleaners', 'landscapers',
 ]
 
+const stateSlugs = ['nsw', 'vic', 'qld', 'wa', 'sa', 'tas']
+
 function url(loc, priority, changefreq = 'monthly') {
   return `
   <url>
@@ -61,6 +63,9 @@ ${combos(providerIds).map(slug => url(`/compare/${slug}`, '0.7')).join('\n')}
 
   <!-- Trade pages -->
 ${tradeSlugs.map(slug => url(`/trades/${slug}`, '0.8')).join('\n')}
+
+  <!-- State-level trade pages (${tradeSlugs.length} trades × ${stateSlugs.length} states = ${tradeSlugs.length * stateSlugs.length} pages) -->
+${tradeSlugs.flatMap(t => stateSlugs.map(s => url(`/trades/${t}/${s}`, '0.6'))).join('\n')}
 
   <!-- Static pages -->
 ${url('/about',      '0.6')}

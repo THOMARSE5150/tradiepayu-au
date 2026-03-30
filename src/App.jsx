@@ -35,6 +35,7 @@ const AboutPage         = lazy(() => import('./pages/AboutPage'))
 const ContactPage       = lazy(() => import('./pages/ContactPage'))
 const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
 const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
+const StateTradePage    = lazy(() => import('./pages/StateTradePage'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -88,6 +89,7 @@ export default function App() {
           <Route path="/trades/pool-builders" element={<PoolBuildersPage />} />
           <Route path="/trades/pest-controllers" element={<PestControllersPage />} />
           <Route path="/trades/welders" element={<WeldersPage />} />
+          <Route path="/trades/:tradeSlug/:stateSlug" element={<StateTradePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
