@@ -219,21 +219,24 @@ export default function Home() {
       </section>
 
       {/* Trust strip */}
-      <section className="bg-slate-50 border-b border-slate-100 py-4">
+      <section className="bg-white border-b border-slate-100 py-6 sm:py-8">
         <div className="container-page">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs text-slate-500">
-            <div className="flex items-center gap-2">
-              <Shield size={14} className="text-brand-blue flex-shrink-0" />
-              <span><strong className="text-slate-700">No paid placements</strong> — rankings based on criteria only</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Search size={14} className="text-brand-blue flex-shrink-0" />
-              <span><strong className="text-slate-700">Independent research</strong> — rates sourced from provider sites</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <RefreshCw size={14} className="text-brand-blue flex-shrink-0" />
-              <span><strong className="text-slate-700">Verified March 2026</strong> — <Link to="/about" className="text-brand-blue hover:underline">our methodology →</Link></span>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { icon: Shield,    title: 'No paid placements',   body: 'Rankings are based on criteria only — no provider has paid for position.' },
+              { icon: Search,    title: 'Independent research', body: 'Rates sourced directly from provider websites and verified by hand.' },
+              { icon: RefreshCw, title: 'Verified March 2026',  body: <><Link to="/about" className="text-brand-blue hover:underline font-medium">See our methodology →</Link></> },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="flex items-start gap-4 px-5 py-4 rounded-2xl bg-slate-50 border border-slate-100">
+                <div className="w-9 h-9 rounded-xl bg-brand-blue/[0.08] flex items-center justify-center flex-shrink-0">
+                  <Icon size={16} className="text-brand-blue" strokeWidth={2} />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-brand-dark leading-snug">{title}</p>
+                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{body}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
