@@ -78,11 +78,21 @@ export default function ProviderVerdict({ providerId }) {
               ))}
             </ul>
             <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Best for</p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5 mb-4">
               {p.best_for.map((tag, i) => (
                 <span key={i} className="text-[11px] font-medium px-2 py-0.5 bg-blue-50 text-brand-blue rounded-lg">{tag}</span>
               ))}
             </div>
+            {p.not_ideal_for?.length > 0 && (
+              <>
+                <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">Not ideal for</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {p.not_ideal_for.map((tag, i) => (
+                    <span key={i} className="text-[11px] font-medium px-2 py-0.5 bg-slate-100 text-slate-500 rounded-lg">{tag}</span>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
         </div>

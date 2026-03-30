@@ -48,7 +48,7 @@ export default function PaintersPage() {
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=1400&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}

@@ -42,7 +42,7 @@ export default function CleanersPage() {
         {/* Trade hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
@@ -93,6 +93,7 @@ export default function CleanersPage() {
               { cells: ['Square Tap to Pay', '1.6%', '$0', 'Invoicing only', 'Next day', 'If you specifically need Square\'s ecosystem'] },
             ]}
           />
+          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
           <div className="mt-4 lg-light rounded-2xl p-4 text-sm">
             <strong>Rate comparison at typical cleaning volume:</strong><br />
             5 jobs/day × $150 avg × 20 days/month = $15,000/month in card revenue.<br />

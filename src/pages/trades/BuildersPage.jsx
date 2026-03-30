@@ -44,7 +44,7 @@ export default function BuildersPage() {
         {/* Trade hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
@@ -94,6 +94,7 @@ export default function BuildersPage() {
               { cells: ['Stripe', '1.7% + $0.30', 'Milestone invoicing, large contracts', 'Better for automated payment schedules'] },
             ]}
           />
+          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-stripe" className="text-brand-blue font-medium hover:underline">Zeller vs Stripe — full head-to-head →</Link></p>
         </div>
       </section>
 

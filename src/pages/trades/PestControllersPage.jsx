@@ -46,7 +46,7 @@ export default function PestControllersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1400&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

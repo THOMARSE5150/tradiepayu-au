@@ -51,7 +51,7 @@ export default function RoofersPage() {
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1400&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
