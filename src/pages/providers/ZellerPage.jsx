@@ -7,6 +7,7 @@ import FaqSection from '../../components/FaqSection'
 import SetupSteps from '../../components/SetupSteps'
 import ComparisonTable from '../../components/ComparisonTable'
 import ShareButton from '../../components/ShareButton'
+import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -90,6 +91,7 @@ export default function ZellerPage() {
           </nav>
         </div>
       </header>
+      <ProviderVerdict providerId="zeller" />
 
       {/* Overview */}
       <section className="section container-page">

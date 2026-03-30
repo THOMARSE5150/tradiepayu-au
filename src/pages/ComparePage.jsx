@@ -4,6 +4,7 @@ import { Check, X, ArrowRight } from 'lucide-react'
 import providers from '../data/providers.json'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
+import RelatedLinks from '../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -107,6 +108,35 @@ export default function ComparePage() {
         </div>
       </header>
 
+      {/* Verdict strip */}
+      {(() => {
+        const winner  = p1.score_overall >= p2.score_overall ? p1 : p2
+        const loser   = winner.id === p1.id ? p2 : p1
+        return (
+          <div className="bg-white border-b border-slate-100">
+            <div className="container-page max-w-2xl py-4 sm:py-5">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+                <span className="flex-shrink-0 text-[11px] font-bold uppercase tracking-widest text-slate-400 hidden sm:block">Verdict</span>
+                <div className="flex items-start sm:items-center gap-3 flex-1 min-w-0">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ background: winner.logo_colour }}>{winner.logo_text}</div>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                      <span className="font-bold text-brand-dark text-sm sm:text-[15px]">{winner.name} wins for most tradies</span>
+                      <span className="text-xs font-semibold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded">{winner.score_overall}/10</span>
+                    </div>
+                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">{winner.best_for[0]} · {loser.name} is better for: {loser.best_for[0].toLowerCase()}</p>
+                  </div>
+                </div>
+                <Link to={`/providers/${winner.id}`} className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 hover:border-brand-blue/50 transition-all px-3.5 py-2 rounded-xl">
+                  Full review
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
+
       {/* Comparison table */}
       <section className="section">
         <div className="container-page max-w-2xl">
@@ -206,6 +236,8 @@ export default function ComparePage() {
           </p>
         </div>
       </section>
+
+      <RelatedLinks slug={p1.id} type="provider" />
     </>
   )
 }

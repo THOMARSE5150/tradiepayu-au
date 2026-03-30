@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import ShareButton from '../../components/ShareButton'
+import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 
 const crumbs = [
