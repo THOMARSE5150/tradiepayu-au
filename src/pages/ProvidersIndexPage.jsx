@@ -29,9 +29,13 @@ const comparisons = [
   { slug: 'zeller-vs-square',  label: 'Zeller vs Square' },
   { slug: 'zeller-vs-stripe',  label: 'Zeller vs Stripe' },
   { slug: 'zeller-vs-tyro',    label: 'Zeller vs Tyro' },
+  { slug: 'zeller-vs-shift4',  label: 'Zeller vs Shift4' },
   { slug: 'square-vs-stripe',  label: 'Square vs Stripe' },
   { slug: 'square-vs-tyro',    label: 'Square vs Tyro' },
-  { slug: 'zeller-vs-shift4',  label: 'Zeller vs Shift4' },
+  { slug: 'square-vs-shift4',  label: 'Square vs Shift4' },
+  { slug: 'stripe-vs-tyro',    label: 'Stripe vs Tyro' },
+  { slug: 'stripe-vs-shift4',  label: 'Stripe vs Shift4' },
+  { slug: 'tyro-vs-shift4',    label: 'Tyro vs Shift4' },
 ]
 
 export default function ProvidersIndexPage() {
