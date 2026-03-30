@@ -8,6 +8,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
+import AffiliateButton from '../../components/AffiliateButton'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -204,14 +205,9 @@ export default function SquarePage() {
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Square?</h2>
               <p className="text-slate-400 text-sm">Sign up free online — no monthly fees, no contracts.</p>
             </div>
-            <a
-              href="https://squareup.com/au"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary flex-shrink-0"
-            >
+            <AffiliateButton providerId="square" label="page-cta" className="btn-primary flex-shrink-0">
               Visit Square →
-            </a>
+            </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
 
