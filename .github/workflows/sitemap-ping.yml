@@ -1,0 +1,14 @@
+name: Ping sitemap on deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Cloudflare sitemap worker
+        run: |
+          curl -s -o /dev/null -w "%{http_code}" \
+            https://tradiepayau-sitemap-ping.5p5ccbcgnr.workers.dev
