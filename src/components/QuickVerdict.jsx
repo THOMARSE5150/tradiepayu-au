@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import VerifiedBadge from './VerifiedBadge'
 
 /**
  * QuickVerdict — answer-first banner for trade pages.
@@ -41,16 +42,19 @@ export default function QuickVerdict({ pick, rate, hardware, reason, providerSlu
             </div>
           </div>
 
-          {/* CTA */}
-          <Link
-            to={`/providers/${providerSlug}`}
-            className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 hover:border-brand-blue/50 transition-all px-3.5 py-2.5 rounded-xl self-stretch sm:self-auto items-center"
-          >
-            Full review
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
+          {/* CTA + verified badge */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 flex-shrink-0">
+            <VerifiedBadge />
+            <Link
+              to={`/providers/${providerSlug}`}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 hover:border-brand-blue/50 transition-all px-3.5 py-2.5 rounded-xl"
+            >
+              Full review
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
 
         </div>
       </div>

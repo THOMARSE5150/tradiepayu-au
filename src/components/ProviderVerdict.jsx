@@ -1,4 +1,5 @@
 import providers from '../data/providers.json'
+import VerifiedBadge from './VerifiedBadge'
 
 const SCORE_LABELS = [
   { key: 'score_fees',         label: 'Fees' },
@@ -36,6 +37,10 @@ export default function ProviderVerdict({ providerId }) {
   return (
     <div className="bg-white border-b border-slate-100">
       <div className="container-page py-5 sm:py-6">
+        <div className="flex items-center justify-between mb-4 sm:mb-5">
+          <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">Our Verdict</p>
+          <VerifiedBadge size="lg" />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8">
 
           {/* Scores */}
