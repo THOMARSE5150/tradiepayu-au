@@ -11,24 +11,15 @@ const providers = [
 ]
 
 const trades = [
-  { label: 'Glaziers', href: '/trades/glaziers' },
   { label: 'Electricians', href: '/trades/electricians' },
-  { label: 'Plumbers', href: '/trades/plumbers' },
-  { label: 'Builders', href: '/trades/builders' },
-  { label: 'Cleaners', href: '/trades/cleaners' },
-  { label: 'Landscapers', href: '/trades/landscapers' },
-  { label: 'Roofers', href: '/trades/roofers' },
-  { label: 'Painters', href: '/trades/painters' },
-  { label: 'Tilers', href: '/trades/tilers' },
-  { label: 'Concreters', href: '/trades/concreters' },
-  { label: 'Carpenters', href: '/trades/carpenters' },
-  { label: 'HVAC Technicians', href: '/trades/hvac' },
-  { label: 'Gas Fitters', href: '/trades/gas-fitters' },
-  { label: 'Fencers', href: '/trades/fencers' },
-  { label: 'Plasterers', href: '/trades/plasterers' },
-  { label: 'Pool Builders', href: '/trades/pool-builders' },
-  { label: 'Pest Controllers', href: '/trades/pest-controllers' },
-  { label: 'Welders', href: '/trades/welders' },
+  { label: 'Plumbers',     href: '/trades/plumbers' },
+  { label: 'Builders',     href: '/trades/builders' },
+  { label: 'Glaziers',     href: '/trades/glaziers' },
+  { label: 'Roofers',      href: '/trades/roofers' },
+  { label: 'Painters',     href: '/trades/painters' },
+  { label: 'Cleaners',     href: '/trades/cleaners' },
+  { label: 'Landscapers',  href: '/trades/landscapers' },
+  { label: 'HVAC',         href: '/trades/hvac' },
 ]
 
 const legal = [
@@ -85,19 +76,24 @@ export default function Footer() {
           <p className="text-xs text-slate-600">No sponsored rankings. Not financial advice.</p>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <p className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest">Providers</p>
-          <ul className="space-y-2 text-sm">
+          <Link to="/providers" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+            Providers <span className="text-white/30">→</span>
+          </Link>
+          <ul className="space-y-2 text-sm mt-3">
             {providers.map(p => (
               <li key={p.href}><Link to={p.href} className="text-slate-400 hover:text-white transition-colors">{p.label}</Link></li>
             ))}
           </ul>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <p className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest">By Trade</p>
-          <ul className="space-y-2 text-sm">
+          <Link to="/trades" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+            By Trade <span className="text-white/30">→</span>
+          </Link>
+          <ul className="space-y-2 text-sm mt-3">
             {trades.map(t => (
               <li key={t.href}><Link to={t.href} className="text-slate-400 hover:text-white transition-colors">{t.label}</Link></li>
             ))}
+            <li><Link to="/trades" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">All 18 trades →</Link></li>
           </ul>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
