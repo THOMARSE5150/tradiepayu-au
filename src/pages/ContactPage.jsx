@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useForm, ValidationError } from '@formspree/react'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
@@ -13,9 +12,9 @@ const crumbs = [
 
 const TOPICS = ['Rate correction', 'Data error', 'Partnership']
 const MAX_MSG = 1000
+const FORM_ID = 'xjgpglnz'
 
-// Floating label input
-function Field({ id, name, label, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, errors }) {
+function Field({ id, name, label, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, error }) {
   return (
     <div className="relative">
       <input
@@ -54,23 +53,53 @@ function Field({ id, name, label, type = 'text', inputMode, autoComplete, autoCa
       >
         {label}
       </label>
-      <ValidationError prefix={label} field={name} errors={errors} className="text-xs text-red-400 mt-1.5 ml-1" />
+      {error && <p className="text-xs text-red-400 mt-1.5 ml-1">{error}</p>}
     </div>
   )
 }
 
 export default function ContactPage() {
-  const [state, handleSubmit] = useForm('xjgpglnz')
+  const [status, setStatus] = useState('idle') // idle | submitting | success | error
+  const [fieldErrors, setFieldErrors] = useState({})
   const [msgLen, setMsgLen] = useState(0)
   const textareaRef = useRef(null)
+  const formRef = useRef(null)
 
-  // Haptic feedback on state transitions
-  useEffect(() => { if (state.succeeded) haptic('success') }, [state.succeeded])
-  useEffect(() => { if (state.errors?.length) haptic('error') }, [state.errors])
+  useEffect(() => { if (status === 'success') haptic('success') }, [status])
+  useEffect(() => { if (status === 'error') haptic('error') }, [status])
 
-  function onSubmit(e) {
+  async function handleSubmit(e) {
+    e.preventDefault()
     haptic('light')
-    handleSubmit(e)
+    setStatus('submitting')
+    setFieldErrors({})
+
+    const data = Object.fromEntries(new FormData(e.target))
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORM_ID}`, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      const json = await res.json()
+
+      if (res.ok) {
+        setStatus('success')
+        formRef.current?.reset()
+        setMsgLen(0)
+      } else {
+        // Formspree returns field-level errors under json.errors
+        if (json.errors) {
+          const errs = {}
+          json.errors.forEach(err => { if (err.field) errs[err.field] = err.message })
+          setFieldErrors(errs)
+        }
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   function handleTextareaInput(e) {
@@ -80,6 +109,8 @@ export default function ContactPage() {
     el.style.height = `${Math.min(el.scrollHeight, 300)}px`
   }
 
+  const submitting = status === 'submitting'
+
   return (
     <>
       <Meta
@@ -88,9 +119,7 @@ export default function ContactPage() {
         canonical="/contact"
       />
 
-      {/* Full-bleed background covering header + form — unique to contact page */}
       <section className="relative overflow-hidden pb-20">
-        {/* Background image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
             src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=700&fit=crop&crop=center&q=80"
@@ -98,13 +127,10 @@ export default function ContactPage() {
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />
-          {/* Heavier overlay than other pages — keeps form legible */}
           <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/97 via-brand-dark/95 to-brand-dark/98" />
-          {/* Subtle blue accent glow bottom-right */}
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl" />
         </div>
 
-        {/* Header content */}
         <div className="relative z-10 container-page pt-8 pb-10">
           <Breadcrumb crumbs={crumbs} />
           <div className="flex flex-wrap gap-2 mt-4">
@@ -118,12 +144,11 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Form — inside same section, same background */}
         <div className="relative z-10 container-page">
           <div className="w-full max-w-sm mx-auto sm:max-w-md">
             <AnimatePresence mode="wait">
 
-              {state.succeeded ? (
+              {status === 'success' ? (
                 <motion.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.93, y: 24 }}
@@ -147,10 +172,11 @@ export default function ContactPage() {
               ) : (
                 <motion.form
                   key="form"
+                  ref={formRef}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  onSubmit={onSubmit}
+                  onSubmit={handleSubmit}
                   className="bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] rounded-3xl p-6 sm:p-8 space-y-4"
                   style={{ boxShadow: '0 32px 64px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05)' }}
                   noValidate
@@ -158,7 +184,7 @@ export default function ContactPage() {
                   <Field
                     id="name" name="name" label="Full name"
                     autoComplete="name" autoCapitalize="words"
-                    enterKeyHint="next" errors={state.errors}
+                    enterKeyHint="next" error={fieldErrors.name}
                   />
 
                   <Field
@@ -166,10 +192,9 @@ export default function ContactPage() {
                     type="email" inputMode="email"
                     autoComplete="email" autoCapitalize="none"
                     autoCorrect="off" spellCheck={false}
-                    enterKeyHint="next" errors={state.errors}
+                    enterKeyHint="next" error={fieldErrors.email}
                   />
 
-                  {/* Message — floating label + auto-resize + char count */}
                   <div className="relative">
                     <textarea
                       id="message"
@@ -208,11 +233,10 @@ export default function ContactPage() {
                     <span className={`absolute bottom-3 right-4 text-[11px] select-none transition-colors ${msgLen > MAX_MSG * 0.9 ? 'text-amber-400' : 'text-white/20'}`}>
                       {msgLen}/{MAX_MSG}
                     </span>
-                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-red-400 mt-1.5 ml-1" />
+                    {fieldErrors.message && <p className="text-xs text-red-400 mt-1.5 ml-1">{fieldErrors.message}</p>}
                   </div>
 
-                  {/* Global error */}
-                  {state.errors?.filter(e => !e.field).length > 0 && (
+                  {status === 'error' && Object.keys(fieldErrors).length === 0 && (
                     <motion.p
                       initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -224,7 +248,7 @@ export default function ContactPage() {
 
                   <motion.button
                     type="submit"
-                    disabled={state.submitting}
+                    disabled={submitting}
                     whileTap={{ scale: 0.97 }}
                     className="
                       w-full flex items-center justify-center gap-2.5
@@ -237,7 +261,7 @@ export default function ContactPage() {
                     "
                     style={{ boxShadow: '0 8px 24px rgba(0,106,255,0.35)' }}
                   >
-                    {state.submitting ? (
+                    {submitting ? (
                       <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
@@ -254,7 +278,6 @@ export default function ContactPage() {
             </AnimatePresence>
           </div>
         </div>
-        {/* close .container-page and section */}
       </section>
     </>
   )
