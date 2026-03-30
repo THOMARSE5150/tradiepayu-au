@@ -58,9 +58,10 @@
   .stat-value { @apply block text-base font-bold text-brand-dark; }
   .stat-value.highlight { @apply text-brand-blue; }
 
-  /* Jump links */
-  .jump-links { @apply flex flex-wrap gap-1 mt-5; }
-  .jump-links a { @apply text-[13px] text-white/50 font-medium px-3 py-1.5 rounded-lg transition-all duration-150 hover:text-white hover:bg-white/[0.09] active:scale-[0.97] active:bg-white/[0.13]; }
+  /* Jump links — horizontal scroll strip on mobile */
+  .jump-links { @apply flex gap-1 mt-5 overflow-x-auto pb-0.5 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap; scrollbar-width: none; }
+  .jump-links::-webkit-scrollbar { display: none; }
+  .jump-links a { @apply text-[13px] text-white/50 font-medium px-3 py-2 rounded-lg transition-all duration-150 hover:text-white hover:bg-white/[0.09] active:scale-[0.97] active:bg-white/[0.13] whitespace-nowrap flex-shrink-0; }
 
   /* FAQ */
   .faq-item summary { @apply font-semibold cursor-pointer py-3 text-brand-dark; }

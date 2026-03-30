@@ -114,15 +114,24 @@ export default function Nav() {
 
           {/* Desktop nav */}
           <nav className="hidden sm:flex items-center gap-0.5">
-            {topLinks.map(l => (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="text-[13px] font-semibold text-white/70 hover:text-white px-4 py-2 rounded-lg transition-all duration-150 hover:bg-white/[0.08] tracking-wide"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {topLinks.map(l => {
+              const isActive = l.href.startsWith('/#')
+                ? false
+                : pathname === l.href || pathname.startsWith(l.href + '/')
+              return (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  className={`text-[13px] font-semibold px-4 py-2 rounded-lg transition-all duration-150 tracking-wide ${
+                    isActive
+                      ? 'text-white bg-white/[0.12]'
+                      : 'text-white/70 hover:text-white hover:bg-white/[0.08]'
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              )
+            })}
             <a
               href="/#compare"
               className="ml-2 text-[13px] font-semibold bg-brand-blue/90 hover:bg-brand-blue text-white px-4 py-2 rounded-lg transition-all duration-150"

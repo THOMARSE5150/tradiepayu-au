@@ -44,7 +44,7 @@ export default function QuickVerdict({ pick, rate, hardware, reason, providerSlu
           {/* CTA */}
           <Link
             to={`/providers/${providerSlug}`}
-            className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 hover:border-brand-blue/50 transition-all px-3.5 py-2 rounded-xl"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 hover:border-brand-blue/50 transition-all px-3.5 py-2.5 rounded-xl self-stretch sm:self-auto items-center"
           >
             Full review
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
