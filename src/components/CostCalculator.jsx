@@ -2,6 +2,7 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Check } from 'lucide-react'
 import { haptic } from '../utils/haptic'
+import { trackCalculatorUsed } from '../utils/analytics'
 
 const AMORT_OPTIONS = [
   { value: 12, label: '12 months' },
@@ -125,6 +126,11 @@ export default function CostCalculator() {
                   enterKeyHint="done"
                   value={monthly}
                   onChange={e => { haptic('light'); setMonthly(+e.target.value.replace(/[^0-9]/g, '')) }}
+                  onBlur={() => {
+                    if (monthly > 0 && results[0]) {
+                      trackCalculatorUsed({ monthly, avgTx, winner: results[0].id, winnerCost: results[0].total })
+                    }
+                  }}
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
               </div>

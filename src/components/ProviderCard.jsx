@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Check, X, Wifi, Clock, Smartphone } from 'lucide-react'
+import { trackProviderClick } from '../utils/analytics'
 
 const badgeClasses = {
   'badge-gold':   'bg-amber-100 text-amber-800',
@@ -42,7 +43,7 @@ function StarRating({ rating }) {
   )
 }
 
-export default function ProviderCard({ provider, featured = false, index = 0 }) {
+export default function ProviderCard({ provider, featured = false, index = 0, source = 'providers-index' }) {
   const {
     id, name, badge, badge_class, logo_text, logo_colour, tagline,
     fees, settlement, sim_plan, offline_mode, pros, cons,
@@ -169,6 +170,7 @@ export default function ProviderCard({ provider, featured = false, index = 0 }) 
         {/* CTA */}
         <Link
           to={`/providers/${id}`}
+          onClick={() => trackProviderClick(id, source)}
           className="mt-auto block text-center bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl hover:from-blue-600 hover:to-blue-800 transition-all shadow-sm text-sm"
         >
           Full {name} Review →
