@@ -4,7 +4,15 @@ import { TRADE_MAP } from '../data/tradesMeta'
 const SITE_URL = 'https://tradiepayau.directory'
 const SITE_NAME = 'TradiePay AU'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
-const PROVIDER_OG_IMAGE = `${SITE_URL}/og-provider.svg`
+
+// Hero photo IDs for provider pages
+const PROVIDER_HERO = {
+  zeller:  null, // uses local webp — fall back to svg
+  square:  'photo-1556742031-c6961e8560b0',
+  stripe:  'photo-1601597111158-2fceff292cdc',
+  tyro:    'photo-1563013544-824ae1b704d3',
+  shift4:  'photo-1559526324-4b87b5e36e44',
+}
 
 function resolveOgImage(canonical, ogImageOverride) {
   if (ogImageOverride) return ogImageOverride
@@ -13,14 +21,28 @@ function resolveOgImage(canonical, ogImageOverride) {
   // Trade pages — use the actual hero photo for this trade
   if (canonical.startsWith('/trades/')) {
     const parts = canonical.split('/').filter(Boolean)
-    const tradeSlug = parts[1] // '/trades/electricians' or '/trades/electricians/nsw'
+    const tradeSlug = parts[1]
     const trade = tradeSlug ? TRADE_MAP[tradeSlug] : null
     if (trade) return `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`
     return `${SITE_URL}/og-trade.svg`
   }
 
-  if (canonical.startsWith('/providers/')) return PROVIDER_OG_IMAGE
-  if (canonical.startsWith('/compare/'))   return PROVIDER_OG_IMAGE
+  // Provider pages — use each provider's hero photo
+  if (canonical.startsWith('/providers/')) {
+    const slug = canonical.split('/')[2]
+    const photo = PROVIDER_HERO[slug]
+    if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
+    return `${SITE_URL}/og-provider.svg`
+  }
+
+  // Compare pages — use the first provider's photo if resolvable
+  if (canonical.startsWith('/compare/')) {
+    const firstId = canonical.split('/')[2]?.split('-vs-')[0]
+    const photo = firstId ? PROVIDER_HERO[firstId] : null
+    if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
+    return `${SITE_URL}/og-provider.svg`
+  }
+
   return DEFAULT_OG_IMAGE
 }
 

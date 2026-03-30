@@ -103,7 +103,7 @@ export default function PoolBuildersPage() {
         <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-2xl font-bold text-brand-dark mb-6">What Makes Pool Building Different</motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {challenges.map((c, i) => (
-            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+            <details key={i} className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
               <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
                 <span>{c.title}</span>
                 <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>

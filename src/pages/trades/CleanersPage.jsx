@@ -119,7 +119,7 @@ export default function CleanersPage() {
             { title: 'Client not home at completion', body: 'Residential clients are often at work when you finish the clean. Payment needs to happen without them being there.', rec: 'Zeller payment link sent via SMS on completion.' },
             { title: 'Low hardware overhead', body: 'Cleaning businesses often operate lean. Spending $329 on a terminal when you can tap from a phone at the same rate doesn\'t make sense at lower volumes.', rec: 'Start with Zeller Tap to Pay (phone). Upgrade when volume justifies it.' },
           ].map((c, i) => (
-            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+            <details key={i} className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
               <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
                 <span>{c.title}</span>
                 <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>

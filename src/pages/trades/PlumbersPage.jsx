@@ -116,7 +116,7 @@ export default function PlumbersPage() {
             { title: 'Same-day parts purchasing', body: 'A blocked drain or burst pipe often means a same-day run to the trade supplier. Same-day settlement is the difference between buying today and waiting until tomorrow.', rec: 'Zeller — same-day settlement to Zeller account.' },
             { title: 'Variable job values', body: 'From a $95 blocked drain clearance to a $12,000 hot water system replacement. The payment system needs to handle both without friction or high fixed fees.', rec: 'Flat-rate percentage (Zeller 1.4%) beats fixed-fee models at all job sizes.' },
           ].map((c, i) => (
-            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+            <details key={i} className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
               <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
                 <span>{c.title}</span>
                 <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>

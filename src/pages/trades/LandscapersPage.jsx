@@ -114,7 +114,7 @@ export default function LandscapersPage() {
             { title: 'Client not always present at completion', body: 'Regular maintenance clients are often at work when you complete the job. Payment needs to happen without them being there.', rec: 'Send payment link on completion, client pays from their phone.' },
             { title: 'Materials and subcontractor costs', body: 'Large jobs involve materials (plants, mulch, pavers, irrigation) and sometimes subcontractors. Same-day settlement matters when you\'re fronting significant material costs.', rec: 'Same-day settlement for materials cash flow.' },
           ].map((c, i) => (
-            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+            <details key={i} className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
               <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
                 <span>{c.title}</span>
                 <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
