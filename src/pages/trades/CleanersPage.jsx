@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
+import QuickVerdict from '../../components/QuickVerdict'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -57,47 +58,20 @@ export default function CleanersPage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Cleaners in Australia (2026)</h1>
           <p className="hero-sub">High-frequency, lower-value jobs with recurring clients. The right setup minimises fees across volume and makes regular clients frictionless.</p>
           <nav className="jump-links">
-            <a href="#challenges">Key Challenges</a>
-            <a href="#picks">Top Picks</a>
+            <a href="#picks">Comparison</a>
+            <a href="#challenges">Context</a>
             <a href="#recurring">Recurring Clients</a>
             <a href="#faq">FAQ</a>
           </nav>
         </div>
       </header>
-
-      <section id="challenges" className="section container-page">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-2xl font-bold text-brand-dark mb-6"
-        >
-          What Makes Cleaning Different
-        </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            { title: 'High transaction frequency', body: '5 jobs/day at $150 average = $3,750/week. At 1.4% (Zeller) vs 1.6% (Square), the 0.2% gap is $7.50/week — $390/year. Rate difference compounds fast at volume.', rec: 'Lowest rate wins: Zeller at 1.4%.' },
-            { title: 'Recurring weekly clients', body: 'Regular domestic cleans, office cleans, strata areas — repeat clients prefer set-and-forget payment. Manual invoicing every week creates admin overhead and payment delays.', rec: 'Stripe automated billing for recurring clients.' },
-            { title: 'Client not home at completion', body: 'Residential clients are often at work when you finish the clean. Payment needs to happen without them being there.', rec: 'Zeller payment link sent via SMS on completion.' },
-            { title: 'Low hardware overhead', body: 'Cleaning businesses often operate lean. Spending $329 on a terminal when you can tap from a phone at the same rate doesn\'t make sense at lower volumes.', rec: 'Start with Zeller Tap to Pay (phone). Upgrade when volume justifies it.' },
-          ].map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.07 }}
-              whileHover={{ y: -3 }}
-              className="lg-light rounded-2xl p-5"
-            >
-              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <QuickVerdict
+        pick="Zeller Tap to Pay"
+        rate="1.4%"
+        hardware="$0 (phone)"
+        reason="Zero hardware cost — start immediately. Upgrade to Terminal 1 at higher volume."
+        providerSlug="zeller"
+      />
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
@@ -124,6 +98,35 @@ export default function CleanersPage() {
             5 jobs/day × $150 avg × 20 days/month = $15,000/month in card revenue.<br />
             Zeller (1.4%): $210/month. Square (1.6%): $240/month. Saving: $30/month — covers Zeller's SIM plan twice over.
           </div>
+        </div>
+      </section>
+
+      <section id="challenges" className="section container-page">
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Cleaning Different
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { title: 'High transaction frequency', body: '5 jobs/day at $150 average = $3,750/week. At 1.4% (Zeller) vs 1.6% (Square), the 0.2% gap is $7.50/week — $390/year. Rate difference compounds fast at volume.', rec: 'Lowest rate wins: Zeller at 1.4%.' },
+            { title: 'Recurring weekly clients', body: 'Regular domestic cleans, office cleans, strata areas — repeat clients prefer set-and-forget payment. Manual invoicing every week creates admin overhead and payment delays.', rec: 'Stripe automated billing for recurring clients.' },
+            { title: 'Client not home at completion', body: 'Residential clients are often at work when you finish the clean. Payment needs to happen without them being there.', rec: 'Zeller payment link sent via SMS on completion.' },
+            { title: 'Low hardware overhead', body: 'Cleaning businesses often operate lean. Spending $329 on a terminal when you can tap from a phone at the same rate doesn\'t make sense at lower volumes.', rec: 'Start with Zeller Tap to Pay (phone). Upgrade when volume justifies it.' },
+          ].map((c, i) => (
+            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+              <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
+                <span>{c.title}</span>
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p className="text-sm text-slate-600 leading-relaxed mt-3 mb-2">{c.body}</p>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </details>
+          ))}
         </div>
       </section>
 

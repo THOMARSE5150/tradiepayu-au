@@ -19,6 +19,16 @@ const jsonLd = [
   },
   {
     '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'TradiePay AU',
+    url: SITE_URL,
+    description: 'Independent comparison site for EFTPOS and mobile card payment systems for Australian tradies.',
+    areaServed: { '@type': 'Country', 'name': 'Australia' },
+    knowsAbout: ['EFTPOS terminals', 'mobile card payments', 'tradie payments', 'merchant services', 'payment processing Australia'],
+    sameAs: [],
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Best EFTPOS for Australian Tradies',
     url: SITE_URL,

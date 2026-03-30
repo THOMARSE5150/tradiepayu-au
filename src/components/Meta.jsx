@@ -10,6 +10,7 @@ function resolveOgImage(canonical) {
   if (!canonical) return DEFAULT_OG_IMAGE
   if (canonical.startsWith('/providers/')) return PROVIDER_OG_IMAGE
   if (canonical.startsWith('/trades/'))    return TRADE_OG_IMAGE
+  if (canonical.startsWith('/compare/'))   return PROVIDER_OG_IMAGE
   return DEFAULT_OG_IMAGE
 }
 
@@ -47,6 +48,11 @@ export default function Meta({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+
+      {/* Geographic targeting */}
+      <meta name="geo.region" content="AU" />
+      <meta name="geo.country" content="Australia" />
+      <meta name="ICBM" content="-25.2744, 133.7751" />
 
       {/* Mobile */}
       <meta name="theme-color" content="#1a1a2e" />

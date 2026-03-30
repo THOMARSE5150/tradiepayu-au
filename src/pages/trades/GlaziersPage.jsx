@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
+import QuickVerdict from '../../components/QuickVerdict'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -64,42 +65,20 @@ export default function GlaziersPage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Glaziers in Australia (2026)</h1>
           <p className="hero-sub">Dead zones, emergency call-outs, and property manager billing. Here's the payment setup that works for glazing.</p>
           <nav className="jump-links">
-            <a href="#challenges">Key Challenges</a>
-            <a href="#picks">Top Picks</a>
+            <a href="#picks">Comparison</a>
+            <a href="#challenges">Context</a>
             <a href="#scenarios">Job Scenarios</a>
             <a href="#faq">FAQ</a>
           </nav>
         </div>
       </header>
-
-      <section id="challenges" className="section container-page">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-2xl font-bold text-brand-dark mb-6"
-        >
-          What Makes Glazing Different
-        </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {challenges.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.07 }}
-              whileHover={{ y: -3 }}
-              className="lg-light rounded-2xl p-5"
-            >
-              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <QuickVerdict
+        pick="Zeller Terminal 1 + SIM"
+        rate="1.4%"
+        hardware="$99 + $15/mo SIM"
+        reason="Reliable SIM across commercial and residential sites. Lowest flat rate on the market."
+        providerSlug="zeller"
+      />
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
@@ -163,6 +142,30 @@ export default function GlaziersPage() {
           <div className="mt-5 lg-light rounded-2xl p-4 text-sm text-slate-700">
             <strong>Two-device strategy:</strong> Carry both. Zeller Terminal 1 + SIM ($99 + $15/mo) as primary. Square Terminal ($329, no monthly fee) as dead-zone backup. Total hardware investment: $428. No ongoing monthly cost on Square.
           </div>
+        </div>
+      </section>
+
+      <section id="challenges" className="section container-page">
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Glazing Different
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {challenges.map((c, i) => (
+            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+              <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
+                <span>{c.title}</span>
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p className="text-sm text-slate-600 leading-relaxed mt-3 mb-2">{c.body}</p>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </details>
+          ))}
         </div>
       </section>
 

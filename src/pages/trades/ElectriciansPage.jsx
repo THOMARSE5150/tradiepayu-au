@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
+import QuickVerdict from '../../components/QuickVerdict'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -59,47 +60,21 @@ export default function ElectriciansPage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Electricians in Australia (2026)</h1>
           <p className="hero-sub">Switchboards, plant rooms, and dead zones. The payment setup for electricians who need connectivity where there isn't any.</p>
           <nav className="jump-links">
-            <a href="#challenges">Key Challenges</a>
-            <a href="#picks">Top Picks</a>
+            <a href="#picks">Comparison</a>
+            <a href="#challenges">Context</a>
             <a href="#scenarios">Job Scenarios</a>
             <a href="#faq">FAQ</a>
           </nav>
         </div>
       </header>
-
-      <section id="challenges" className="section container-page">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-2xl font-bold text-brand-dark mb-6"
-        >
-          What Makes Electrical Work Different
-        </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            { title: 'Switchboards and meter rooms', body: 'Steel enclosures and concrete voids in commercial and industrial buildings frequently kill mobile signal. These are exactly the environments electricians work in daily.', rec: 'SIM terminal (Optus, most metro buildings covered) + Square offline backup.' },
-            { title: 'Commercial and industrial dead zones', body: 'Factories, warehouses, plant rooms, underground carparks — these environments combine thick concrete, steel shielding, and no customer WiFi.', rec: 'Square Terminal offline mode for guaranteed zero-connectivity sites.' },
-            { title: 'Domestic after-hours emergencies', body: 'Fault-finding at 10pm, emergency hot water repairs, storm damage. Payment needs to work when office support is unavailable.', rec: 'Zeller Tap to Pay on your phone — always on you, 24/7.' },
-            { title: 'New estate rough-in work', body: 'New estates have no WiFi and often patchy coverage. Multiple stages of the same build require reliable payment across visits.', rec: 'Zeller Terminal 1 + SIM — Optus covers most metro new estates.' },
-          ].map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.07 }}
-              whileHover={{ y: -3 }}
-              className="lg-light rounded-2xl p-5"
-            >
-              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <QuickVerdict
+        pick="Zeller Terminal 1 + SIM"
+        rate="1.4%"
+        hardware="$99 + $15/mo SIM"
+        reason="SIM coverage for switchboards and plant rooms."
+        backup="Square Terminal for underground dead zones"
+        providerSlug="zeller"
+      />
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
@@ -123,6 +98,35 @@ export default function ElectriciansPage() {
               { cells: ['Zeller Tap to Pay', '1.4%', '$0', '✗ (phone data)', '✗', 'After-hours emergencies, residential'] },
             ]}
           />
+        </div>
+      </section>
+
+      <section id="challenges" className="section container-page">
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Electrical Work Different
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { title: 'Switchboards and meter rooms', body: 'Steel enclosures and concrete voids in commercial and industrial buildings frequently kill mobile signal. These are exactly the environments electricians work in daily.', rec: 'SIM terminal (Optus, most metro buildings covered) + Square offline backup.' },
+            { title: 'Commercial and industrial dead zones', body: 'Factories, warehouses, plant rooms, underground carparks — these environments combine thick concrete, steel shielding, and no customer WiFi.', rec: 'Square Terminal offline mode for guaranteed zero-connectivity sites.' },
+            { title: 'Domestic after-hours emergencies', body: 'Fault-finding at 10pm, emergency hot water repairs, storm damage. Payment needs to work when office support is unavailable.', rec: 'Zeller Tap to Pay on your phone — always on you, 24/7.' },
+            { title: 'New estate rough-in work', body: 'New estates have no WiFi and often patchy coverage. Multiple stages of the same build require reliable payment across visits.', rec: 'Zeller Terminal 1 + SIM — Optus covers most metro new estates.' },
+          ].map((c, i) => (
+            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+              <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
+                <span>{c.title}</span>
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p className="text-sm text-slate-600 leading-relaxed mt-3 mb-2">{c.body}</p>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </details>
+          ))}
         </div>
       </section>
 

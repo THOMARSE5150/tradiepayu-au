@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
+import QuickVerdict from '../../components/QuickVerdict'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -57,47 +58,20 @@ export default function LandscapersPage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Landscapers in Australia (2026)</h1>
           <p className="hero-sub">Outdoor sites, variable job values, deposit-on-booking models. Here's the payment setup that works for landscaping and garden services.</p>
           <nav className="jump-links">
-            <a href="#challenges">Key Challenges</a>
-            <a href="#picks">Top Picks</a>
+            <a href="#picks">Comparison</a>
+            <a href="#challenges">Context</a>
             <a href="#scenarios">Job Scenarios</a>
             <a href="#faq">FAQ</a>
           </nav>
         </div>
       </header>
-
-      <section id="challenges" className="section container-page">
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-2xl font-bold text-brand-dark mb-6"
-        >
-          What Makes Landscaping Different
-        </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {[
-            { title: 'Outdoor sites — coverage is usually fine', body: 'Landscapers work outdoors, which means mobile coverage is generally better than most trade environments. But no-WiFi sites (new builds, rural properties) still require a SIM-enabled terminal.', rec: 'SIM terminal for independence from site WiFi.' },
-            { title: 'Wide job value range', body: 'From a $120 lawn mow to a $15,000 full garden makeover. Low-value repeat clients benefit from tap-and-go. High-value projects need deposit management.', rec: 'Flexible — tap for small jobs, deposit + balance for big projects.' },
-            { title: 'Client not always present at completion', body: 'Regular maintenance clients are often at work when you complete the job. Payment needs to happen without them being there.', rec: 'Send payment link on completion, client pays from their phone.' },
-            { title: 'Materials and subcontractor costs', body: 'Large jobs involve materials (plants, mulch, pavers, irrigation) and sometimes subcontractors. Same-day settlement matters when you\'re fronting significant material costs.', rec: 'Same-day settlement for materials cash flow.' },
-          ].map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.07 }}
-              whileHover={{ y: -3 }}
-              className="lg-light rounded-2xl p-5"
-            >
-              <h3 className="font-semibold text-brand-dark mb-2">{c.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed mb-3">{c.body}</p>
-              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <QuickVerdict
+        pick="Zeller Terminal 1 + SIM"
+        rate="1.4%"
+        hardware="$99 + $15/mo SIM"
+        reason="SIM for new estates and rural properties. Tap to Pay for mow-and-go routes."
+        providerSlug="zeller"
+      />
 
       <section id="picks" className="section section-alt">
         <div className="container-page">
@@ -119,6 +93,35 @@ export default function LandscapersPage() {
               { cells: ['Stripe (recurring)', '1.7% + $0.30', '~$98', '✓ optional', '2 days', 'Regular maintenance contracts, automated billing'] },
             ]}
           />
+        </div>
+      </section>
+
+      <section id="challenges" className="section container-page">
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="text-2xl font-bold text-brand-dark mb-6"
+        >
+          What Makes Landscaping Different
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {[
+            { title: 'Outdoor sites — coverage is usually fine', body: 'Landscapers work outdoors, which means mobile coverage is generally better than most trade environments. But no-WiFi sites (new builds, rural properties) still require a SIM-enabled terminal.', rec: 'SIM terminal for independence from site WiFi.' },
+            { title: 'Wide job value range', body: 'From a $120 lawn mow to a $15,000 full garden makeover. Low-value repeat clients benefit from tap-and-go. High-value projects need deposit management.', rec: 'Flexible — tap for small jobs, deposit + balance for big projects.' },
+            { title: 'Client not always present at completion', body: 'Regular maintenance clients are often at work when you complete the job. Payment needs to happen without them being there.', rec: 'Send payment link on completion, client pays from their phone.' },
+            { title: 'Materials and subcontractor costs', body: 'Large jobs involve materials (plants, mulch, pavers, irrigation) and sometimes subcontractors. Same-day settlement matters when you\'re fronting significant material costs.', rec: 'Same-day settlement for materials cash flow.' },
+          ].map((c, i) => (
+            <details className="lg-light rounded-2xl p-4 group open:ring-1 open:ring-brand-blue/20 transition-all">
+              <summary className="font-semibold text-brand-dark cursor-pointer list-none flex items-center justify-between gap-3">
+                <span>{c.title}</span>
+                <svg className="w-4 h-4 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p className="text-sm text-slate-600 leading-relaxed mt-3 mb-2">{c.body}</p>
+              <div className="infobox py-2 px-2 text-xs text-brand-blue font-medium">Payment need: {c.rec}</div>
+            </details>
+          ))}
         </div>
       </section>
 
