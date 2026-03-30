@@ -44,7 +44,7 @@ export default function ProviderVerdict({ providerId }) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8">
 
           {/* Scores */}
-          <div>
+          <div className="pb-5 border-b border-slate-100 sm:pb-0 sm:border-0">
             <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">Scores</p>
             <div className="space-y-2">
               {SCORE_LABELS.map(s => (
@@ -54,7 +54,7 @@ export default function ProviderVerdict({ providerId }) {
           </div>
 
           {/* Pros */}
-          <div>
+          <div className="pb-5 border-b border-slate-100 sm:pb-0 sm:border-0">
             <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">Pros</p>
             <ul className="space-y-1.5">
               {p.pros.slice(0, 4).map((pro, i) => (

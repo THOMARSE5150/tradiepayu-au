@@ -105,12 +105,12 @@ export default function TradesIndexPage() {
                   <Link
                     key={t.href}
                     to={t.href}
-                    className="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
+                    className="flex items-start gap-3 p-3 sm:p-4 bg-white border border-slate-200 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
                   >
                     <span className="text-2xl flex-shrink-0 mt-0.5">{t.icon}</span>
                     <div>
                       <p className="font-semibold text-brand-dark text-sm group-hover:text-brand-blue transition-colors">{t.label}</p>
-                      <p className="text-xs text-slate-400 mt-0.5 leading-relaxed">{t.desc}</p>
+                      <p className="text-xs text-slate-400 mt-0.5 leading-relaxed line-clamp-2">{t.desc}</p>
                     </div>
                   </Link>
                 ))}

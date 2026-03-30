@@ -15,7 +15,7 @@ function FaqItem({ item, index }) {
     >
       <button
         onClick={() => { haptic('light'); setOpen(v => !v) }}
-        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left transition-colors"
+        className="w-full flex items-center justify-between gap-3 px-4 py-3.5 sm:px-5 sm:py-4 text-left transition-colors"
         aria-expanded={open}
       >
         <span className={`font-semibold text-sm sm:text-base transition-colors duration-200 ${open ? 'text-brand-blue' : 'text-brand-dark'}`}>
@@ -35,7 +35,7 @@ function FaqItem({ item, index }) {
             transition={{ duration: 0.28, ease: [0.04, 0.62, 0.23, 0.98] }}
             style={{ overflow: 'hidden' }}
           >
-            <p className="px-5 pb-5 text-sm text-slate-600 leading-relaxed">{item.a}</p>
+            <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-sm text-slate-600 leading-relaxed">{item.a}</p>
           </motion.div>
         )}
       </AnimatePresence>

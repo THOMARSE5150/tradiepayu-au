@@ -48,7 +48,7 @@ export default function RelatedLinks({ slug, type }) {
                 <Link
                   key={t.slug}
                   to={`/trades/${t.slug}`}
-                  className="px-3 py-2 bg-white border border-slate-100 rounded-xl text-sm text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all truncate"
+                  className="px-3 py-2.5 bg-white border border-slate-100 rounded-xl text-sm text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all truncate"
                 >
                   {t.label}
                 </Link>

@@ -155,7 +155,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20, scale: 0.92 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.45, delay: 0.2 + i * 0.07, ease: [0.34, 1.4, 0.64, 1] }}
-                className="relative overflow-hidden rounded-2xl px-4 py-3 flex items-center gap-3 select-none
+                className="relative overflow-hidden rounded-2xl px-3 sm:px-4 py-3 flex items-center gap-2.5 sm:gap-3 select-none
                   backdrop-blur-xl bg-white/[0.08] border border-white/[0.18]
                   shadow-[0_8px_32px_rgba(0,0,0,0.25),inset_0_1.5px_0_rgba(255,255,255,0.22)]"
               >
@@ -200,7 +200,7 @@ export default function Home() {
               All 18 trades →
             </Link>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-9 gap-2">
             {trades.map(t => (
               <Link
                 key={t.href}
