@@ -321,20 +321,35 @@ export default function ZellerPage() {
       </section>
 
       {/* FAQ */}
-      {/* CTA — TODO: replace href with affiliate referral link when approved */}
-      <section className="section container-page">
-        <div className="max-w-md">
-          <h2 className="text-xl font-bold text-brand-dark mb-2">Ready to get started with Zeller?</h2>
-          <p className="text-slate-600 text-sm mb-4">Apply on Zeller's website — approval and account setup typically takes one business day.</p>
-          <a
-            href="https://www.myzeller.com/au"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Visit Zeller website →
-          </a>
-          <p className="text-xs text-slate-400 mt-3">Link goes directly to Zeller's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+
+      {/* CTA */}
+      <section className="section section-alt">
+        <div className="container-page">
+          <div className="bg-brand-dark rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="flex-1">
+              <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Zeller?</h2>
+              <p className="text-slate-400 text-sm">Apply online with your ABN — approval typically within 24 hours.</p>
+            </div>
+            <a
+              href="https://www.myzeller.com/au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex-shrink-0"
+            >
+              Visit Zeller →
+            </a>
+          </div>
+          <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+
+          {/* Head-to-head */}
+          <div className="mt-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Compare Zeller head-to-head</p>
+            <div className="flex flex-wrap gap-2">
+              <Link to="/compare/zeller-vs-square" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Zeller vs Square →</Link>
+            <Link to="/compare/zeller-vs-stripe" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Zeller vs Stripe →</Link>
+            <Link to="/compare/zeller-vs-tyro" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Zeller vs Tyro →</Link>
+            </div>
+          </div>
         </div>
       </section>
 

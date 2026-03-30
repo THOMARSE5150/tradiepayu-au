@@ -193,20 +193,34 @@ export default function StripePage() {
         </div>
       </section>
 
-      {/* CTA — TODO: replace href with affiliate referral link when approved */}
-      <section className="section container-page">
-        <div className="max-w-md">
-          <h2 className="text-xl font-bold text-brand-dark mb-2">Ready to get started with Stripe?</h2>
-          <p className="text-slate-600 text-sm mb-4">Create a free Stripe account on their website — no monthly fee, pay only when you take a payment.</p>
-          <a
-            href="https://stripe.com/au"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Visit Stripe website →
-          </a>
-          <p className="text-xs text-slate-400 mt-3">Link goes directly to Stripe's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+      {/* CTA */}
+      <section className="section section-alt">
+        <div className="container-page">
+          <div className="bg-brand-dark rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="flex-1">
+              <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Stripe?</h2>
+              <p className="text-slate-400 text-sm">Create an account in minutes — no monthly fees.</p>
+            </div>
+            <a
+              href="https://stripe.com/au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex-shrink-0"
+            >
+              Visit Stripe →
+            </a>
+          </div>
+          <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+
+          {/* Head-to-head */}
+          <div className="mt-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Compare Stripe head-to-head</p>
+            <div className="flex flex-wrap gap-2">
+              <Link to="/compare/zeller-vs-stripe" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Zeller vs Stripe →</Link>
+            <Link to="/compare/square-vs-stripe" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Square vs Stripe →</Link>
+            <Link to="/compare/stripe-vs-tyro" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Stripe vs Tyro →</Link>
+            </div>
+          </div>
         </div>
       </section>
 

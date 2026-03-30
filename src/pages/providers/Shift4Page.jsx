@@ -184,20 +184,34 @@ export default function Shift4Page() {
         </div>
       </section>
 
-      {/* CTA — TODO: replace href with affiliate referral link when approved */}
-      <section className="section container-page">
-        <div className="max-w-md">
-          <h2 className="text-xl font-bold text-brand-dark mb-2">Interested in Shift4?</h2>
-          <p className="text-slate-600 text-sm mb-4">Contact Shift4 AU directly to get a quote — rates and terminal costs vary by business type and volume.</p>
-          <a
-            href="https://www.shift4-au.com.au"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Visit Shift4 AU website →
-          </a>
-          <p className="text-xs text-slate-400 mt-3">Link goes directly to Shift4's website. TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+      {/* CTA */}
+      <section className="section section-alt">
+        <div className="container-page">
+          <div className="bg-brand-dark rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-5">
+            <div className="flex-1">
+              <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Shift4?</h2>
+              <p className="text-slate-400 text-sm">Contact Shift4 for a quote — request written terms before signing.</p>
+            </div>
+            <a
+              href="https://www.shift4-au.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex-shrink-0"
+            >
+              Visit Shift4 →
+            </a>
+          </div>
+          <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+
+          {/* Head-to-head */}
+          <div className="mt-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Compare Shift4 head-to-head</p>
+            <div className="flex flex-wrap gap-2">
+              <Link to="/compare/zeller-vs-shift4" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Zeller vs Shift4 →</Link>
+            <Link to="/compare/square-vs-shift4" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Square vs Shift4 →</Link>
+            <Link to="/compare/stripe-vs-shift4" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Stripe vs Shift4 →</Link>
+            </div>
+          </div>
         </div>
       </section>
 
