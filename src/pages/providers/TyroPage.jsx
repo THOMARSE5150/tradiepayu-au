@@ -44,7 +44,7 @@ export default function TyroPage() {
         {/* Provider hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1400&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}

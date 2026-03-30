@@ -93,7 +93,7 @@ export default function ContactPage() {
         {/* Background image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&h=900&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=700&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
