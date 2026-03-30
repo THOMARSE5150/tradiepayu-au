@@ -50,14 +50,26 @@ export default function ComparePage() {
     { label: `${p1.name} vs ${p2.name}` },
   ]
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    name: title,
-    description,
-    url: `${SITE}${canonical}`,
-    author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
-  }
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      name: title,
+      description,
+      url: `${SITE}${canonical}`,
+      author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+      publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Providers', item: `${SITE}/providers` },
+        { '@type': 'ListItem', position: 3, name: `${p1.name} vs ${p2.name}`, item: `${SITE}${canonical}` },
+      ],
+    },
+  ]
 
   const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Quote'
   const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Quote'

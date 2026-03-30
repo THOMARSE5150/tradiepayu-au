@@ -1,1 +1,6 @@
-/* /index.html 200
+# Common URL corrections (singular → plural, old paths)
+/trade/*       /trades/:splat  301
+/provider/*    /providers/:splat  301
+
+# SPA fallback — must be last
+/*  /index.html  200
