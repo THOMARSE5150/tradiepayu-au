@@ -211,7 +211,7 @@ export default function StateTradePage() {
 
       <FaqSection items={faqs} title={`FAQ — ${trade.label} in ${state.name}`} />
 
-      <RelatedLinks slug={tradeSlug} type="trade" />
+      <RelatedLinks slug={tradeSlug} type="trade" currentState={stateSlug} />
     </>
   )
 }

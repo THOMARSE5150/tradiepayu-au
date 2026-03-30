@@ -1,16 +1,20 @@
 import { Link } from 'react-router-dom'
 import { PROVIDERS, TRADES, relatedTrades, otherProviders } from '../data/siteLinks'
+import { STATES } from '../data/states'
 
-export default function RelatedLinks({ slug, type }) {
+const STATE_ABBRS = { nsw: 'NSW', vic: 'VIC', qld: 'QLD', wa: 'WA', sa: 'SA', tas: 'TAS' }
+
+export default function RelatedLinks({ slug, type, currentState }) {
   const isProvider = type === 'provider'
+  const isTrade = type === 'trade'
 
   const providerLinks = isProvider ? otherProviders(slug) : PROVIDERS
-  // For provider pages show 9 trades; for trade pages show same-group related
   const tradeLinks = isProvider ? TRADES.slice(0, 9) : relatedTrades(slug)
 
   return (
     <section className="section section-alt">
-      <div className="container-page">
+      <div className="container-page space-y-8">
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
           {/* Providers */}
@@ -63,6 +67,27 @@ export default function RelatedLinks({ slug, type }) {
           </div>
 
         </div>
+
+        {/* State guides — shown on all trade pages */}
+        {isTrade && slug && (
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+              {currentState ? 'Other states' : 'Browse by state'}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {STATES.filter(s => s.slug !== currentState).map(s => (
+                <Link
+                  key={s.slug}
+                  to={`/trades/${slug}/${s.slug}`}
+                  className="px-3.5 py-2 bg-white border border-slate-100 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all"
+                >
+                  {s.name} <span className="text-slate-400 text-xs">({s.abbr})</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   )

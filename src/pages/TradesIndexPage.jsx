@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
+import { STATES } from '../data/states'
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
@@ -117,6 +118,30 @@ export default function TradesIndexPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section-alt py-10 sm:py-12">
+        <div className="container-page">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Browse by state</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {STATES.map(s => (
+              <div key={s.slug} className="bg-white border border-slate-200 rounded-xl p-3">
+                <p className="font-semibold text-brand-dark text-sm mb-2">{s.name}</p>
+                <div className="space-y-1">
+                  {['electricians', 'plumbers', 'builders', 'cleaners', 'glaziers'].map(t => (
+                    <Link
+                      key={t}
+                      to={`/trades/${t}/${s.slug}`}
+                      className="block text-xs text-slate-500 hover:text-brand-blue transition-colors capitalize"
+                    >
+                      {t.replace('-', ' ')}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
