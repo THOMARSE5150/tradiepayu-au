@@ -482,8 +482,8 @@
       "notes": "Built-in cellular connectivity included in rental \u2014 no separate SIM cost"
     },
     "offline_mode": {
-      "available": null,
-      "notes": "Not specified in available sources"
+      "available": false,
+      "notes": "PAX A920 requires connectivity \u2014 no documented offline mode"
     },
     "settlement": {
       "same_day_available": null,
