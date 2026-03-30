@@ -4,6 +4,22 @@ import ProviderCard from '../components/ProviderCard'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 
+const SITE = 'https://tradiepayau.directory'
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Best EFTPOS Providers for Australian Tradies 2026',
+  url: `${SITE}/providers`,
+  numberOfItems: 5,
+  itemListElement: providers.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.name,
+    url: `${SITE}/providers/${p.id}`,
+  })),
+}
+
+
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'All Providers' },
@@ -25,6 +41,7 @@ export default function ProvidersIndexPage() {
         title="All EFTPOS Providers for Australian Tradies (2026)"
         description="Compare all 5 mobile card payment providers for Australian tradies — Zeller, Square, Stripe, Tyro, and Shift4. Real fees, hardware costs, connectivity, and settlement speed."
         canonical="/providers"
+        jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">

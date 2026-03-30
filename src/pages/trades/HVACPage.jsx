@@ -148,6 +148,7 @@ export default function HVACPage() {
               { cells: ['Zeller Tap to Pay', '1.4%', '$0', '✗ (phone data)', '✗', 'After-hours emergency call-outs'] },
             ]}
           />
+          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
         </div>
       </section>
 

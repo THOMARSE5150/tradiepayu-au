@@ -2,6 +2,25 @@ import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 
+const SITE = 'https://tradiepayau.directory'
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best EFTPOS by Trade — Australian Tradies 2026',
+    url: `${SITE}/trades`,
+    numberOfItems: 18,
+    itemListElement: [
+      ...['electricians','plumbers','builders','carpenters','concreters','roofers','plasterers','tilers','painters','glaziers','fencers','landscapers','pool-builders','cleaners','pest-controllers','gas-fitters','hvac','welders'].map((slug, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE}/trades/${slug}`,
+      }))
+    ],
+  },
+]
+
+
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'By Trade' },
@@ -50,6 +69,7 @@ export default function TradesIndexPage() {
         title="Best EFTPOS by Trade — Australian Tradies (2026)"
         description="Find the best mobile card payment system for your trade. Electricians, plumbers, builders, and 15 more Australian trades — tailored EFTPOS advice for each."
         canonical="/trades"
+        jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">

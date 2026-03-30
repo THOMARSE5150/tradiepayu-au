@@ -144,6 +144,7 @@ export default function PoolBuildersPage() {
               { cells: ['Square Terminal', '1.6%', '$329', '✗', '✓', 'Showroom deposit or consultation payments'] },
             ]}
           />
+          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
         </div>
       </section>
 

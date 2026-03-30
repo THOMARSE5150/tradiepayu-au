@@ -225,6 +225,7 @@ export default function GlaziersPage() {
               { cells: ['Stripe', '1.7% + $0.10', '~$98', '✓ optional', '✗', 'Commercial invoicing, property manager billing'] },
             ]}
           />
+          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
         </div>
       </section>
 
