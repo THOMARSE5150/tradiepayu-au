@@ -108,7 +108,7 @@ export default function Nav() {
               </Link>
             ))}
             <a
-              href="/#compare-all"
+              href="/#compare"
               className="ml-2 text-[13px] font-semibold bg-brand-blue/90 hover:bg-brand-blue text-white px-4 py-2 rounded-lg transition-all duration-150"
               style={{ boxShadow: '0 0 0 1px rgba(0,106,255,0.4)' }}
             >

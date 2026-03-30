@@ -8,7 +8,7 @@ import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
-  { label: 'Best EFTPOS for Tradies', href: '/#compare-all' },
+  { label: 'By Trade', href: '/trades' },
   { label: 'Best EFTPOS for Roofers' },
 ]
 
@@ -32,7 +32,7 @@ const faqs = [
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Roofers in Australia (2026)', description: 'Large job values, insurance billing, and new estate sites with no WiFi — the best EFTPOS and payment setup for Australian roofing businesses.', url: `${SITE}/trades/roofers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
-  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Roofers', item: `${SITE}/trades/roofers` }] },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Roofers', item: `${SITE}/trades/roofers` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
 

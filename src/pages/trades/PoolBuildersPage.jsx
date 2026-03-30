@@ -8,7 +8,7 @@ import Meta from '../../components/Meta'
 
 const crumbs = [
   { label: 'Home', href: '/' },
-  { label: 'Best EFTPOS for Tradies', href: '/#compare-all' },
+  { label: 'By Trade', href: '/trades' },
   { label: 'Best EFTPOS for Pool Builders' },
 ]
 
@@ -29,7 +29,7 @@ const faqs = [
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Pool Builders in Australia (2026)', description: 'High-value staged payments, remote estate sites, council compliance hold-points, and equipment cash flow — the best EFTPOS and payment setup for Australian pool builders.', url: `${SITE}/trades/pool-builders`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
-  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Best EFTPOS for Tradies', item: `${SITE}/#compare-all` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Pool Builders', item: `${SITE}/trades/pool-builders` }] },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Pool Builders', item: `${SITE}/trades/pool-builders` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
 

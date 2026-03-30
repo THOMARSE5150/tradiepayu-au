@@ -4,7 +4,7 @@ import { Home, ArrowLeft, Search } from 'lucide-react'
 import Meta from '../components/Meta'
 
 const suggestions = [
-  { label: 'Compare all providers', href: '/#compare-all' },
+  { label: 'Compare all providers', href: '/providers' },
   { label: 'Best EFTPOS for Electricians', href: '/trades/electricians' },
   { label: 'Best EFTPOS for Plumbers', href: '/trades/plumbers' },
   { label: 'Zeller full review', href: '/providers/zeller' },
