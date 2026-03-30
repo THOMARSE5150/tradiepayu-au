@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
 import { haptic } from '../utils/haptic'
 
@@ -40,30 +41,43 @@ const trades = [
   { label: 'Landscapers', href: '/trades/landscapers' },
 ]
 
-function MobileGroup({ title, items, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen)
+function SubList({ title, items, onClose }) {
+  const [open, setOpen] = useState(false)
   return (
-    <div>
+    <div className="border-b border-white/[0.06]">
       <button
         onClick={() => { haptic('light'); setOpen(v => !v) }}
-        className="w-full flex items-center justify-between px-4 py-2.5 text-xs font-semibold uppercase tracking-widest text-white/40 hover:text-white/60 transition-colors"
+        className="w-full flex items-center justify-between px-6 py-4 text-white/80 active:bg-white/[0.05] transition-colors"
       >
-        {title}
-        <ChevronDown size={14} className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+        <span className="text-base font-semibold">{title}</span>
+        <motion.span animate={{ rotate: open ? 90 : 0 }} transition={{ duration: 0.2 }}>
+          <ChevronRight size={18} className="text-white/30" />
+        </motion.span>
       </button>
-      {open && (
-        <div className="grid grid-cols-2 gap-1 px-2 pb-2">
-          {items.map(item => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-all hover:bg-white/[0.07] active:bg-white/[0.12]"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.22, ease: 'easeInOut' }}
+            style={{ overflow: 'hidden' }}
+          >
+            <div className="grid grid-cols-2 gap-1 px-4 pb-4">
+              {items.map(item => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  onClick={onClose}
+                  className="text-sm text-slate-300 hover:text-white px-3 py-2.5 rounded-xl transition-all hover:bg-white/[0.07] active:bg-white/[0.12]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
@@ -85,6 +99,8 @@ export default function Nav() {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
+
+  const close = () => { haptic('light'); setOpen(false) }
 
   return (
     <>
@@ -128,42 +144,102 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* Mobile slide-down menu */}
-      {open && (
-        <div className="sm:hidden fixed inset-0 z-40 flex flex-col" style={{ top: '64px' }}>
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <nav
-            className="relative z-10 bg-brand-dark border-b border-white/[0.08] flex flex-col overflow-y-auto max-h-[calc(100vh-64px)]"
-            style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.5)' }}
-          >
-            {/* Top links */}
-            <div className="flex flex-col gap-1 px-2 pt-3 pb-2 border-b border-white/[0.06]">
-              {topLinks.map(l => (
-                <Link
-                  key={l.href}
-                  to={l.href}
-                  className="text-base text-slate-200 hover:text-white px-4 py-3 rounded-xl transition-all hover:bg-white/[0.07] active:bg-white/[0.12]"
+      {/* Mobile bottom-sheet menu */}
+      <AnimatePresence>
+        {open && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.22 }}
+              className="sm:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+              onClick={close}
+            />
+
+            {/* Sheet */}
+            <motion.div
+              key="sheet"
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'spring', damping: 30, stiffness: 320 }}
+              className="sm:hidden fixed bottom-0 left-0 right-0 z-50 flex flex-col rounded-t-3xl overflow-hidden"
+              style={{
+                background: 'rgba(20,20,36,0.97)',
+                backdropFilter: 'blur(32px)',
+                maxHeight: '88vh',
+                boxShadow: '0 -8px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)',
+              }}
+            >
+              {/* Drag handle */}
+              <div className="flex justify-center pt-3 pb-1 flex-shrink-0">
+                <div className="w-10 h-1 rounded-full bg-white/20" />
+              </div>
+
+              {/* Header */}
+              <div className="flex items-center justify-between px-6 py-3 border-b border-white/[0.07] flex-shrink-0">
+                <span className="text-white font-bold text-base">Menu</span>
+                <button
+                  onClick={close}
+                  className="w-8 h-8 rounded-full bg-white/[0.08] flex items-center justify-center text-white/60 hover:text-white transition-colors"
+                  aria-label="Close menu"
                 >
-                  {l.label}
+                  <X size={16} />
+                </button>
+              </div>
+
+              {/* Scrollable content */}
+              <div className="overflow-y-auto flex-1">
+                {/* Main links */}
+                {topLinks.map(l => (
+                  <Link
+                    key={l.href}
+                    to={l.href}
+                    onClick={close}
+                    className="flex items-center justify-between px-6 py-4 text-white/80 hover:text-white border-b border-white/[0.06] active:bg-white/[0.05] transition-colors"
+                  >
+                    <span className="text-base font-semibold">{l.label}</span>
+                    <ChevronRight size={18} className="text-white/25" />
+                  </Link>
+                ))}
+
+                {/* Expandable sub-lists */}
+                <SubList title="Providers" items={providers} onClose={close} />
+                <SubList title="By Trade" items={trades} onClose={close} />
+
+                {/* Legal */}
+                <div className="flex gap-5 px-6 py-4">
+                  <Link to="/contact" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">Contact</Link>
+                  <Link to="/disclaimer" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">Disclaimer</Link>
+                  <Link to="/privacy" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">Privacy</Link>
+                </div>
+              </div>
+
+              {/* Pinned CTAs */}
+              <div className="flex-shrink-0 px-4 pb-6 pt-3 grid grid-cols-2 gap-3 border-t border-white/[0.07]">
+                <Link
+                  to="/providers"
+                  onClick={close}
+                  className="flex items-center justify-center gap-1.5 py-3 rounded-2xl bg-brand-blue text-white font-semibold text-sm transition-colors hover:bg-blue-600"
+                  style={{ boxShadow: '0 4px 16px rgba(0,106,255,0.35)' }}
+                >
+                  Compare →
                 </Link>
-              ))}
-            </div>
-
-            {/* Grouped sections */}
-            <div className="divide-y divide-white/[0.06]">
-              <MobileGroup title="Providers" items={providers} defaultOpen={false} />
-              <MobileGroup title="By Trade" items={trades} defaultOpen={false} />
-            </div>
-
-            {/* Legal footer */}
-            <div className="flex gap-4 px-4 py-3 border-t border-white/[0.06]">
-              <Link to="/contact" className="text-xs text-white/30 hover:text-white/60 transition-colors">Contact</Link>
-              <Link to="/disclaimer" className="text-xs text-white/30 hover:text-white/60 transition-colors">Disclaimer</Link>
-              <Link to="/privacy" className="text-xs text-white/30 hover:text-white/60 transition-colors">Privacy</Link>
-            </div>
-          </nav>
-        </div>
-      )}
+                <Link
+                  to="/trades"
+                  onClick={close}
+                  className="flex items-center justify-center gap-1.5 py-3 rounded-2xl bg-white/[0.08] border border-white/[0.12] text-white font-semibold text-sm transition-colors hover:bg-white/[0.12]"
+                >
+                  By Trade →
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   )
 }
