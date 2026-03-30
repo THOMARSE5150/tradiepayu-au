@@ -1,15 +1,25 @@
 import { Helmet } from 'react-helmet-async'
+import { TRADE_MAP } from '../data/tradesMeta'
 
 const SITE_URL = 'https://tradiepayau.directory'
 const SITE_NAME = 'TradiePay AU'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
 const PROVIDER_OG_IMAGE = `${SITE_URL}/og-provider.svg`
-const TRADE_OG_IMAGE    = `${SITE_URL}/og-trade.svg`
 
-function resolveOgImage(canonical) {
+function resolveOgImage(canonical, ogImageOverride) {
+  if (ogImageOverride) return ogImageOverride
   if (!canonical) return DEFAULT_OG_IMAGE
+
+  // Trade pages — use the actual hero photo for this trade
+  if (canonical.startsWith('/trades/')) {
+    const parts = canonical.split('/').filter(Boolean)
+    const tradeSlug = parts[1] // '/trades/electricians' or '/trades/electricians/nsw'
+    const trade = tradeSlug ? TRADE_MAP[tradeSlug] : null
+    if (trade) return `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`
+    return `${SITE_URL}/og-trade.svg`
+  }
+
   if (canonical.startsWith('/providers/')) return PROVIDER_OG_IMAGE
-  if (canonical.startsWith('/trades/'))    return TRADE_OG_IMAGE
   if (canonical.startsWith('/compare/'))   return PROVIDER_OG_IMAGE
   return DEFAULT_OG_IMAGE
 }
@@ -19,11 +29,12 @@ export default function Meta({
   description,
   canonical,
   ogType = 'website',
+  ogImage: ogImageOverride,
   jsonLd,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Best EFTPOS for Australian Tradies`
   const fullCanonical = canonical ? `${SITE_URL}${canonical}` : SITE_URL
-  const ogImage = resolveOgImage(canonical)
+  const ogImage = resolveOgImage(canonical, ogImageOverride)
 
   // Accept single object or array of JSON-LD blocks
   const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
