@@ -3,6 +3,7 @@ import RelatedLinks from '../../components/RelatedLinks'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import ShareButton from '../../components/ShareButton'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -57,7 +58,14 @@ export default function Shift4Page() {
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Shift4 for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Zero-cost EFTPOS via customer surcharging. No upfront hardware. Built-in mobile connectivity. Here's what tradies need to know before signing.</p>
-          <nav className="jump-links">
+          <div className="mt-4 mb-1">
+            <ShareButton
+              title="Shift4 for Tradies — Full Review (2026)"
+              text="Zero-cost EFTPOS via surcharging — what tradies need to know before signing."
+              url="https://tradiepayau.directory/providers/shift4"
+            />
+          </div>
+                    <nav className="jump-links">
             <a href="#how-it-works">How It Works</a>
             <a href="#hardware">Hardware</a>
             <a href="#vs-zeller">vs Zeller</a>

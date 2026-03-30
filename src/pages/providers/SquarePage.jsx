@@ -5,6 +5,7 @@ import { Check, X } from 'lucide-react'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import ShareButton from '../../components/ShareButton'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -57,7 +58,14 @@ export default function SquarePage() {
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Square for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best offline capability in the market. The right backup terminal for tradies who work in dead zones.</p>
-          <nav className="jump-links">
+          <div className="mt-4 mb-1">
+            <ShareButton
+              title="Square for Tradies — Full Review (2026)"
+              text="Best offline capability in the market — is Square right for your trade?"
+              url="https://tradiepayau.directory/providers/square"
+            />
+          </div>
+                    <nav className="jump-links">
             <a href="#fees">Fees</a>
             <a href="#offline">Offline Mode</a>
             <a href="#vs-zeller">vs Zeller</a>

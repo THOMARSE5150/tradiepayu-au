@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import ShareButton from '../../components/ShareButton'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -56,7 +57,14 @@ export default function StripePage() {
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Stripe for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first operations.</p>
-          <nav className="jump-links">
+          <div className="mt-4 mb-1">
+            <ShareButton
+              title="Stripe for Tradies — Full Review (2026)"
+              text="API-first payments with invoicing and recurring billing for Australian tradies."
+              url="https://tradiepayau.directory/providers/stripe"
+            />
+          </div>
+                    <nav className="jump-links">
             <a href="#fees">Fees</a>
             <a href="#when-to-use">When to Use</a>
             <a href="#recurring">Recurring Billing</a>

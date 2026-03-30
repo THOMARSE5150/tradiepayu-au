@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import ShareButton from '../../components/ShareButton'
 import Meta from '../../components/Meta'
 
 const crumbs = [
@@ -56,7 +57,14 @@ export default function TyroPage() {
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Tyro for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Strong Australian bank-grade footprint. Competitive payment links. In-person rate requires a quote.</p>
-          <nav className="jump-links">
+          <div className="mt-4 mb-1">
+            <ShareButton
+              title="Tyro for Tradies — Full Review (2026)"
+              text="Australian bank-grade EFTPOS with competitive payment links for tradies."
+              url="https://tradiepayau.directory/providers/tyro"
+            />
+          </div>
+                    <nav className="jump-links">
             <a href="#fees">Fees</a>
             <a href="#when-to-use">When to Use</a>
             <a href="#faq">FAQ</a>

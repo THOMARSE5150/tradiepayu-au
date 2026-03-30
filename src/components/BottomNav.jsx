@@ -1,12 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Home, SlidersHorizontal, Calculator, Mail } from 'lucide-react'
+import { Home, SlidersHorizontal, HardHat, Mail } from 'lucide-react'
 import { haptic } from '../utils/haptic'
 
 const items = [
-  { label: 'Home',       href: '/',            icon: Home },
-  { label: 'Compare',    href: '/#compare-all', icon: SlidersHorizontal },
-  { label: 'Calculator', href: '/#calculator',  icon: Calculator },
-  { label: 'Contact',    href: '/contact',      icon: Mail },
+  { label: 'Home',      href: '/',          icon: Home },
+  { label: 'Providers', href: '/providers', icon: SlidersHorizontal },
+  { label: 'Trades',    href: '/trades',    icon: HardHat },
+  { label: 'Contact',   href: '/contact',   icon: Mail },
 ]
 
 export default function BottomNav() {

@@ -5,7 +5,8 @@ import Logo from './Logo'
 import { haptic } from '../utils/haptic'
 
 const topLinks = [
-  { label: 'Compare All', href: '/#compare-all' },
+  { label: 'Providers', href: '/providers' },
+  { label: 'Trades',    href: '/trades' },
   { label: 'Calculator', href: '/#calculator' },
   { label: 'About', href: '/about' },
 ]
@@ -106,18 +107,6 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              to="/providers"
-              className="text-[13px] font-semibold text-white/70 hover:text-white px-4 py-2 rounded-lg transition-all duration-150 hover:bg-white/[0.08] tracking-wide"
-            >
-              Providers
-            </Link>
-            <Link
-              to="/trades"
-              className="text-[13px] font-semibold text-white/70 hover:text-white px-4 py-2 rounded-lg transition-all duration-150 hover:bg-white/[0.08] tracking-wide"
-            >
-              Trades
-            </Link>
             <a
               href="/#compare-all"
               className="ml-2 text-[13px] font-semibold bg-brand-blue/90 hover:bg-brand-blue text-white px-4 py-2 rounded-lg transition-all duration-150"

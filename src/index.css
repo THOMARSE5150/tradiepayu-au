@@ -59,8 +59,8 @@
   .stat-value.highlight { @apply text-brand-blue; }
 
   /* Jump links */
-  .jump-links { @apply flex flex-wrap gap-3 mt-6; }
-  .jump-links a { @apply text-sm text-white font-medium bg-white/10 border border-white/20 rounded-full px-4 py-1.5 transition-all hover:bg-white/20 hover:border-white/50 hover:shadow-[0_0_12px_rgba(255,255,255,0.12)] active:scale-95; }
+  .jump-links { @apply flex flex-wrap gap-1 mt-5; }
+  .jump-links a { @apply text-[13px] text-white/50 font-medium px-3 py-1.5 rounded-lg transition-all duration-150 hover:text-white hover:bg-white/[0.09] active:scale-[0.97] active:bg-white/[0.13]; }
 
   /* FAQ */
   .faq-item summary { @apply font-semibold cursor-pointer py-3 text-brand-dark; }
