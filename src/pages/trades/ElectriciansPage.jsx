@@ -28,7 +28,7 @@ const faqs = [
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Electricians in Australia (2026)', description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there is none.', url: `${SITE}/trades/electricians`, datePublished: '2026-01-15', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Electricians in Australia (2026)', description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there is none.', url: `${SITE}/trades/electricians`, datePublished: '2026-01-15', dateModified: '2026-03-31', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Electricians', item: `${SITE}/trades/electricians` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
