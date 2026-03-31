@@ -30,6 +30,10 @@ const legal = [
   { label: 'Disclaimer', href: '/disclaimer' },
 ]
 
+// TODO: create a dedicated Formspree form for rate alerts and replace this ID
+// Contact form ID: xjgpglnz (ContactPage.jsx)
+const RATE_ALERTS_FORM_ID = 'xjgpglnz'
+
 function RateAlerts() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle | sending | done | error
@@ -38,7 +42,7 @@ function RateAlerts() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch('https://formspree.io/f/xjgpglnz', {
+      const res = await fetch(`https://formspree.io/f/${RATE_ALERTS_FORM_ID}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ email, _subject: 'Rate alert signup' }),

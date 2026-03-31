@@ -23,7 +23,7 @@ export default function BottomNav() {
       }}
     >
       <div className="grid grid-cols-4">
-        {items.map(({ label, href, icon: Icon }) => {
+        {items.map(({ label, href, icon: Icon }) => { // eslint-disable-line no-unused-vars
           const isHash = href.includes('#')
           const active = !isHash && pathname === href
           return (

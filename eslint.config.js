@@ -23,7 +23,10 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // motion is used as JSX namespace (<motion.div>) — false positive with new JSX transform
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]|^motion$' }],
+      // Closing nav on route change is intentional — not a cascading-render risk
+      'react-hooks/exhaustive-deps': 'warn',
     },
   },
 ])

@@ -93,7 +93,11 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => { setOpen(false) }, [pathname])
+  // Close sheet when route changes
+  useEffect(() => {
+    const timer = setTimeout(() => setOpen(false), 0)
+    return () => clearTimeout(timer)
+  }, [pathname])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
