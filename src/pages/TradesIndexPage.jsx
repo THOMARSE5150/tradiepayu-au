@@ -126,20 +126,16 @@ export default function TradesIndexPage() {
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Browse by state</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {STATES.map(s => (
-              <div key={s.slug} className="bg-white border border-slate-200 rounded-xl p-3">
-                <p className="font-semibold text-brand-dark text-sm mb-2">{s.name}</p>
-                <div className="space-y-1">
-                  {['electricians', 'plumbers', 'builders', 'cleaners', 'glaziers'].map(t => (
-                    <Link
-                      key={t}
-                      to={`/trades/${t}/${s.slug}`}
-                      className="block text-xs text-slate-500 hover:text-brand-blue transition-colors capitalize"
-                    >
-                      {t.replace('-', ' ')}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <Link
+                key={s.slug}
+                to={`/states/${s.slug}`}
+                className="block bg-white border border-slate-200 rounded-xl p-3 hover:border-brand-blue hover:shadow-sm transition-all group"
+              >
+                <p className="font-bold text-brand-blue text-xs mb-1">{s.abbr}</p>
+                <p className="font-semibold text-brand-dark text-sm group-hover:text-brand-blue transition-colors leading-tight">{s.name}</p>
+                <p className="text-[11px] text-slate-400 mt-1 leading-tight">{s.cities[0]} · {s.cities[1]}</p>
+                <p className="text-[10px] text-brand-blue mt-2 font-medium">All 18 trades →</p>
+              </Link>
             ))}
           </div>
         </div>

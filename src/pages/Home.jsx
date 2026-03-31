@@ -224,7 +224,7 @@ export default function Home() {
             {STATES.map(s => (
               <Link
                 key={s.slug}
-                to={`/trades/electricians/${s.slug}`}
+                to={`/states/${s.slug}`}
                 className="flex flex-col gap-1 p-3 rounded-2xl bg-white border border-slate-100 hover:border-brand-blue hover:shadow-sm transition-all group"
               >
                 <span className="text-xs font-bold text-brand-blue">{s.abbr}</span>
