@@ -10,14 +10,61 @@ const crumbs = [
 ]
 
 const SITE = 'https://tradiepayau.directory'
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'AboutPage',
-  name: 'About TradiePay AU',
-  description: 'TradiePay AU is an independent comparison site for mobile card payment systems for Australian tradies.',
-  url: `${SITE}/about`,
-  publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+
+const ORG = {
+  '@type': 'Organization',
+  '@id': `${SITE}/#organization`,
+  name: 'TradiePay AU',
+  url: SITE,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE}/favicon.svg`,
+    width: 512,
+    height: 512,
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'editorial',
+    email: 'hello@tradiepayau.directory',
+    areaServed: 'AU',
+    availableLanguage: 'en-AU',
+  },
+  foundingDate: '2025',
+  description: 'Independent comparison of mobile card payment systems for Australian tradies. No paid placements, no sponsored rankings.',
+  address: { '@type': 'PostalAddress', addressCountry: 'AU' },
 }
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About TradiePay AU — Independent EFTPOS Comparison for Tradies',
+    description: 'TradiePay AU is an independent comparison site for mobile card payment systems for Australian tradies. No sponsored rankings, no financial advice.',
+    url: `${SITE}/about`,
+    datePublished: '2025-01-01',
+    dateModified: '2026-03-31',
+    publisher: ORG,
+    author: ORG,
+  },
+  {
+    '@context': 'https://schema.org',
+    ...ORG,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE}/#website`,
+    url: SITE,
+    name: 'TradiePay AU',
+    description: 'Independent comparison of EFTPOS and mobile card payment systems for Australian tradies.',
+    publisher: { '@id': `${SITE}/#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${SITE}/trades/{search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+]
 
 const pillars = [
   {
@@ -154,6 +201,35 @@ export default function AboutPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="section container-page">
+        <div className="max-w-2xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-4"
+          >
+            Who runs this site
+          </motion.h2>
+          <div className="space-y-4 text-slate-600 leading-relaxed">
+            <p>
+              TradiePay AU is run by an Australian small business operator with direct experience across the tradie payment space — having used Zeller, Square, and Stripe in field conditions and evaluated the others through provider documentation, community forums, and direct support testing.
+            </p>
+            <p>
+              The site is not affiliated with, funded by, or editorially controlled by any payment provider. All ranking decisions are made independently using the criteria described below.
+            </p>
+            <p>
+              Provider data is reviewed and updated on a rolling basis. Where rates are ambiguous or require direct negotiation (e.g. Tyro in-person rates), we note this explicitly rather than present a fabricated figure.
+            </p>
+          </div>
+          <div className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl">
+            <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Last reviewed</span>
+            <span className="text-sm font-bold text-brand-dark">March 2026</span>
+          </div>
         </div>
       </section>
 

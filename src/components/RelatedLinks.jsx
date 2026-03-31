@@ -101,6 +101,26 @@ export default function RelatedLinks({ slug, type, currentState }) {
           </div>
         )}
 
+        {/* State guides — shown on provider pages */}
+        {isProvider && (
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+              Browse by state
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {STATES.map(s => (
+                <Link
+                  key={s.slug}
+                  to={`/states/${s.slug}`}
+                  className="px-3.5 py-2 bg-white border border-slate-100 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all"
+                >
+                  {s.name} <span className="text-slate-400 text-xs">({s.abbr})</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Compare section — shown on trade pages */}
         {isTrade && slug && (() => {
           const tradeLabel = TRADES.find(t => t.slug === slug)?.label || 'tradies'
