@@ -8,7 +8,7 @@ const suggestions = [
   { label: 'Best EFTPOS for Electricians', href: '/trades/electricians' },
   { label: 'Best EFTPOS for Plumbers', href: '/trades/plumbers' },
   { label: 'Zeller full review', href: '/providers/zeller' },
-  { label: 'Cost calculator', href: '/#calculator' },
+  { label: 'Cost calculator', href: '/calculator' },
 ]
 
 export default function NotFoundPage() {

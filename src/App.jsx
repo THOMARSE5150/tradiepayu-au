@@ -33,6 +33,7 @@ const TradesIndexPage    = lazy(() => import('./pages/TradesIndexPage'))
 const ComparePage        = lazy(() => import('./pages/ComparePage'))
 const CompareIndexPage   = lazy(() => import('./pages/CompareIndexPage'))
 const AboutPage         = lazy(() => import('./pages/AboutPage'))
+const CalculatorPage    = lazy(() => import('./pages/CalculatorPage'))
 const ContactPage       = lazy(() => import('./pages/ContactPage'))
 const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
 const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
@@ -96,6 +97,7 @@ export default function App() {
           <Route path="/trades/:tradeSlug/:stateSlug" element={<StateTradePage />} />
           <Route path="/states" element={<StatesIndexPage />} />
           <Route path="/states/:stateSlug" element={<StateIndexPage />} />
+          <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />

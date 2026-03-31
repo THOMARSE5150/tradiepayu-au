@@ -81,6 +81,7 @@ ${tradeSlugs.flatMap(t => stateSlugs.map(s => {
 })).join('\n')}
 
   <!-- Static pages -->
+${url('/calculator', '0.7')}
 ${url('/about',      '0.6')}
 ${url('/contact',    '0.4', 'yearly')}
 ${url('/privacy',    '0.3', 'yearly')}
