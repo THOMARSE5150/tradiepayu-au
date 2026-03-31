@@ -170,6 +170,10 @@ export default function RoofersPage() {
           <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-2xl font-bold text-brand-dark mb-6">
             Roofer EFTPOS Comparison
           </motion.h2>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A roofing business doing <strong>$20,000/month</strong> in card revenue saves <strong>$480/year</strong> with Zeller (1.4%) vs Square (1.6%). After a storm event with 20 jobs in a week, same-day settlement means cash is in your account overnight — critical when ordering materials at pace.</p>
+          </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Payment Links', 'Best for']}
             rows={[

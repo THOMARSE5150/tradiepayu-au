@@ -138,6 +138,10 @@ export default function CarpentersPage() {
       <section className="section section-alt">
         <div className="container-page">
           <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-2xl font-bold text-brand-dark mb-6">Carpenter EFTPOS Comparison</motion.h2>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A carpenter doing <strong>$10,000/month</strong> in card revenue saves <strong>$240/year</strong> with Zeller (1.4%) vs Square (1.6%). For builder sub-contract invoicing via Stripe, switch high-value invoices to bank transfer (0.8%) to cut processing fees by more than half.</p>
+          </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Invoicing', 'Best for']}
             rows={[
