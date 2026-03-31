@@ -68,7 +68,8 @@ ${combos(providerIds).map(slug => url(`/compare/${slug}`, '0.7')).join('\n')}
   <!-- Trade pages -->
 ${tradeSlugs.map(slug => url(`/trades/${slug}`, '0.8')).join('\n')}
 
-  <!-- State hub pages -->
+  <!-- State index + hub pages -->
+${url('/states', '0.8')}
 ${stateSlugs.map(s => url(`/states/${s}`, STATE_PRIORITY[s] || '0.7', 'monthly')).join('\n')}
 
   <!-- State-level trade pages (${tradeSlugs.length} trades × ${stateSlugs.length} states = ${tradeSlugs.length * stateSlugs.length} pages) -->

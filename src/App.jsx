@@ -37,6 +37,7 @@ const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
 const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
 const StateTradePage    = lazy(() => import('./pages/StateTradePage'))
 const StateIndexPage    = lazy(() => import('./pages/StateIndexPage'))
+const StatesIndexPage   = lazy(() => import('./pages/StatesIndexPage'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -91,6 +92,7 @@ export default function App() {
           <Route path="/trades/pest-controllers" element={<PestControllersPage />} />
           <Route path="/trades/welders" element={<WeldersPage />} />
           <Route path="/trades/:tradeSlug/:stateSlug" element={<StateTradePage />} />
+          <Route path="/states" element={<StatesIndexPage />} />
           <Route path="/states/:stateSlug" element={<StateIndexPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import { PROVIDERS, TRADES, relatedTrades, otherProviders } from '../data/siteLinks'
-import { STATES } from '../data/states'
+import { STATES, STATE_MAP } from '../data/states'
 
-const STATE_ABBRS = { nsw: 'NSW', vic: 'VIC', qld: 'QLD', wa: 'WA', sa: 'SA', tas: 'TAS' }
+const COMPARE_PAIRS = [
+  { slug: 'zeller-vs-square',  label: 'Zeller vs Square' },
+  { slug: 'zeller-vs-stripe',  label: 'Zeller vs Stripe' },
+  { slug: 'zeller-vs-tyro',    label: 'Zeller vs Tyro' },
+  { slug: 'square-vs-stripe',  label: 'Square vs Stripe' },
+]
 
 export default function RelatedLinks({ slug, type, currentState }) {
   const isProvider = type === 'provider'
@@ -75,6 +80,14 @@ export default function RelatedLinks({ slug, type, currentState }) {
               {currentState ? 'Other states' : 'Browse by state'}
             </p>
             <div className="flex flex-wrap gap-2">
+              {currentState && (
+                <Link
+                  to={`/states/${currentState}`}
+                  className="px-3.5 py-2 bg-brand-blue/5 border border-brand-blue/20 rounded-xl text-sm font-semibold text-brand-blue hover:bg-brand-blue/10 transition-all"
+                >
+                  All {STATE_MAP[currentState]?.name} trades →
+                </Link>
+              )}
               {STATES.filter(s => s.slug !== currentState).map(s => (
                 <Link
                   key={s.slug}
@@ -87,6 +100,29 @@ export default function RelatedLinks({ slug, type, currentState }) {
             </div>
           </div>
         )}
+
+        {/* Compare section — shown on trade pages */}
+        {isTrade && slug && (() => {
+          const tradeLabel = TRADES.find(t => t.slug === slug)?.label || 'tradies'
+          return (
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+                Provider comparisons for {tradeLabel}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {COMPARE_PAIRS.map(p => (
+                  <Link
+                    key={p.slug}
+                    to={`/compare/${p.slug}`}
+                    className="px-3.5 py-2 bg-white border border-slate-100 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all"
+                  >
+                    {p.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )
+        })()}
 
       </div>
     </section>
