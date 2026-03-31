@@ -37,6 +37,10 @@ const tradeSlugs = [
 
 const stateSlugs = ['nsw', 'vic', 'qld', 'wa', 'sa', 'tas']
 
+// Higher-population states and higher-intent trades get a priority boost
+const STATE_PRIORITY  = { nsw: '0.7', vic: '0.7', qld: '0.7', wa: '0.6', sa: '0.6', tas: '0.5' }
+const HIGH_INTENT_TRADES = new Set(['electricians', 'plumbers', 'builders', 'painters', 'concreters'])
+
 function url(loc, priority, changefreq = 'monthly') {
   return `
   <url>
@@ -65,7 +69,11 @@ ${combos(providerIds).map(slug => url(`/compare/${slug}`, '0.7')).join('\n')}
 ${tradeSlugs.map(slug => url(`/trades/${slug}`, '0.8')).join('\n')}
 
   <!-- State-level trade pages (${tradeSlugs.length} trades × ${stateSlugs.length} states = ${tradeSlugs.length * stateSlugs.length} pages) -->
-${tradeSlugs.flatMap(t => stateSlugs.map(s => url(`/trades/${t}/${s}`, '0.6'))).join('\n')}
+${tradeSlugs.flatMap(t => stateSlugs.map(s => {
+  const base = parseFloat(STATE_PRIORITY[s] || '0.6')
+  const boost = HIGH_INTENT_TRADES.has(t) ? 0.05 : 0
+  return url(`/trades/${t}/${s}`, (Math.min(base + boost, 0.9)).toFixed(2))
+})).join('\n')}
 
   <!-- Static pages -->
 ${url('/about',      '0.6')}

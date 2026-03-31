@@ -18,8 +18,10 @@ export default function StateTradePage() {
 
   if (!trade || !state) return <NotFoundPage />
 
-  const title = `Best EFTPOS for ${trade.label} in ${state.name} (2026)`
-  const description = `${trade.heroSub} Updated guide for ${state.name} ${trade.label.toLowerCase()}.`
+  const leadCity = state.cities[0]
+  const city2    = state.cities[1]
+  const title       = `Best EFTPOS for ${trade.label} in ${leadCity} & ${state.abbr} (2026)`
+  const description = `Best EFTPOS terminal for ${trade.label.toLowerCase()} in ${leadCity}${city2 ? ` and ${city2}` : ''}, ${state.name}. ${trade.heroSub} No lock-in, same-day settlement.`
   const canonical = `/trades/${tradeSlug}/${stateSlug}`
 
   const faqs = [
@@ -48,8 +50,26 @@ export default function StateTradePage() {
       name: title,
       description,
       url: `${SITE}${canonical}`,
+      datePublished: '2026-01-15',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: `EFTPOS Payment Solutions for ${trade.label} in ${state.name}`,
+      description,
+      url: `${SITE}${canonical}`,
+      provider: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+      areaServed: [
+        {
+          '@type': 'AdministrativeArea',
+          name: state.name,
+          address: { '@type': 'PostalAddress', addressRegion: state.abbr, addressCountry: 'AU' },
+        },
+        ...state.cities.map(city => ({ '@type': 'City', name: city })),
+      ],
+      audience: { '@type': 'BusinessAudience', audienceType: `${trade.label} businesses in ${state.name}` },
     },
     {
       '@context': 'https://schema.org',
@@ -86,6 +106,8 @@ export default function StateTradePage() {
         description={description}
         canonical={canonical}
         ogType="article"
+        geoRegion={`AU-${state.abbr}`}
+        geoPlacename={`${leadCity}, ${state.name}`}
         jsonLd={jsonLd}
       />
 
@@ -107,7 +129,7 @@ export default function StateTradePage() {
             <span>·</span><span>Updated March 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">{title}</h1>
-          <p className="hero-sub">{trade.heroSub}</p>
+          <p className="hero-sub">{trade.heroSub} Covering {state.cities.slice(0, 3).join(', ')} and across {state.abbr}.</p>
           <nav className="jump-links">
             <a href="#verdict">Top Pick</a>
             <a href="#coverage">Coverage</a>

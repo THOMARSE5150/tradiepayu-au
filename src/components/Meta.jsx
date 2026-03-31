@@ -54,6 +54,8 @@ export default function Meta({
   canonical,
   ogType = 'website',
   ogImage: ogImageOverride,
+  geoRegion,
+  geoPlacename,
   jsonLd,
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Best EFTPOS for Australian Tradies`
@@ -85,8 +87,9 @@ export default function Meta({
       <meta name="twitter:image" content={ogImage} />
 
       {/* Geographic targeting */}
-      <meta name="geo.region" content="AU" />
+      <meta name="geo.region" content={geoRegion || 'AU'} />
       <meta name="geo.country" content="Australia" />
+      {geoPlacename && <meta name="geo.placename" content={geoPlacename} />}
       <meta name="ICBM" content="-25.2744, 133.7751" />
 
       {/* Mobile */}
