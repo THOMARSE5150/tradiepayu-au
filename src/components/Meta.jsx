@@ -5,14 +5,15 @@ const SITE_URL = 'https://tradiepayau.directory'
 const SITE_NAME = 'TradiePay AU'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
 
-// Hero photo IDs for provider pages
+// Hero photo IDs for provider pages (Zeller uses branded SVG; others use Unsplash hero)
 const PROVIDER_HERO = {
-  zeller:  null, // uses local webp — fall back to svg
+  zeller:  null,
   square:  'photo-1556742031-c6961e8560b0',
   stripe:  'photo-1601597111158-2fceff292cdc',
   tyro:    'photo-1563013544-824ae1b704d3',
   shift4:  'photo-1559526324-4b87b5e36e44',
 }
+const ZELLER_OG = `${SITE_URL}/og-zeller.svg`
 
 function resolveOgImage(canonical, ogImageOverride) {
   if (ogImageOverride) return ogImageOverride
@@ -31,6 +32,7 @@ function resolveOgImage(canonical, ogImageOverride) {
   if (canonical.startsWith('/providers/')) {
     const slug = canonical.split('/')[2]
     const photo = PROVIDER_HERO[slug]
+    if (slug === 'zeller') return ZELLER_OG
     if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
     return `${SITE_URL}/og-provider.svg`
   }

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f23"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00a651"/>
+      <stop offset="100%" style="stop-color:#006aff"/>
+    </linearGradient>
+    <linearGradient id="zellerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00a651;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#006aff;stop-opacity:0.06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  <!-- Glow blobs -->
+  <circle cx="950" cy="180" r="320" fill="url(#zellerGlow)"/>
+  <circle cx="100" cy="500" r="200" fill="#006aff" fill-opacity="0.04"/>
+
+  <!-- TradiePay logo -->
+  <rect x="80" y="68" width="44" height="44" rx="12" fill="#006aff" fill-opacity="0.15"/>
+  <rect x="80" y="68" width="44" height="44" rx="12" fill="none" stroke="#006aff" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="102" y="97" font-family="system-ui,sans-serif" font-size="20" font-weight="900" fill="#006aff" text-anchor="middle">⚡</text>
+  <text x="138" y="99" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="rgba(255,255,255,0.7)">TradiePay AU</text>
+
+  <!-- Provider label -->
+  <rect x="80" y="148" width="110" height="30" rx="15" fill="#00a651" fill-opacity="0.15" stroke="#00a651" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="135" y="168" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#4ade80" text-anchor="middle">Provider Review</text>
+
+  <!-- Main headline -->
+  <text x="80" y="260" font-family="system-ui,sans-serif" font-size="72" font-weight="900" fill="white" letter-spacing="-2">Zeller</text>
+  <text x="80" y="330" font-family="system-ui,sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.5)">Best EFTPOS for Australian Tradies</text>
+
+  <!-- Stat pills -->
+  <rect x="80" y="390" width="148" height="48" rx="24" fill="#006aff" fill-opacity="0.15" stroke="#006aff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="154" y="419" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#60a5fa" text-anchor="middle">1.4% rate</text>
+
+  <rect x="244" y="390" width="168" height="48" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="328" y="419" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle">SIM-enabled</text>
+
+  <rect x="428" y="390" width="188" height="48" rx="24" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="522" y="419" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle">Same-day settlement</text>
+
+  <!-- Score badge -->
+  <rect x="80" y="466" width="120" height="40" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="140" y="491" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="rgba(255,255,255,0.5)" text-anchor="middle">Overall 9.4/10</text>
+
+  <!-- URL -->
+  <text x="80" y="570" font-family="system-ui,sans-serif" font-size="18" fill="rgba(255,255,255,0.25)">tradiepayau.directory/providers/zeller</text>
+</svg>
