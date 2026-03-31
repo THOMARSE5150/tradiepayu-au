@@ -31,6 +31,7 @@ const WeldersPage       = lazy(() => import('./pages/trades/WeldersPage'))
 const ProvidersIndexPage = lazy(() => import('./pages/ProvidersIndexPage'))
 const TradesIndexPage    = lazy(() => import('./pages/TradesIndexPage'))
 const ComparePage        = lazy(() => import('./pages/ComparePage'))
+const CompareIndexPage   = lazy(() => import('./pages/CompareIndexPage'))
 const AboutPage         = lazy(() => import('./pages/AboutPage'))
 const ContactPage       = lazy(() => import('./pages/ContactPage'))
 const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/providers" element={<ProvidersIndexPage />} />
           <Route path="/trades" element={<TradesIndexPage />} />
+          <Route path="/compare" element={<CompareIndexPage />} />
           <Route path="/compare/:slug" element={<ComparePage />} />
           <Route path="/providers/zeller" element={<ZellerPage />} />
           <Route path="/providers/square" element={<SquarePage />} />

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import siteMeta from '../data/site-meta.json'
+import { STATES } from '../data/states'
 
 const providers = [
   { label: 'Zeller', href: '/providers/zeller' },
@@ -93,7 +94,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark text-slate-400 mt-auto">
       <RateAlerts />
-      <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-5 gap-5">
         <div className="col-span-2 lg:col-span-1 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
           <p className="text-sm leading-relaxed text-slate-400 mb-3">Independent comparison of mobile card payment systems for Australian tradies. Updated {siteMeta.lastVerifiedDisplay}.</p>
@@ -118,6 +119,16 @@ export default function Footer() {
               <li key={t.href}><Link to={t.href} className="text-slate-400 hover:text-white transition-colors">{t.label}</Link></li>
             ))}
             <li><Link to="/trades" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">All 18 trades →</Link></li>
+          </ul>
+        </div>
+        <div className="lg-dark lg-sheen relative rounded-2xl p-5">
+          <Link to="/states" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+            By State <span className="text-white/30">→</span>
+          </Link>
+          <ul className="space-y-2 text-sm mt-3">
+            {STATES.map(s => (
+              <li key={s.slug}><Link to={`/states/${s.slug}`} className="text-slate-400 hover:text-white transition-colors">{s.name} <span className="text-slate-600">({s.abbr})</span></Link></li>
+            ))}
           </ul>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">

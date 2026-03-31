@@ -1,13 +1,15 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronRight, ChevronDown } from 'lucide-react' // eslint-disable-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion'
 import Logo from './Logo'
 import { haptic } from '../utils/haptic'
+import { STATES } from '../data/states'
 
 const topLinks = [
   { label: 'Providers', href: '/providers' },
   { label: 'Trades',    href: '/trades' },
+  { label: 'States',    href: '/states' },
   { label: 'Calculator', href: '/#calculator' },
   { label: 'About', href: '/about' },
 ]
@@ -222,6 +224,11 @@ export default function Nav() {
                 {/* Expandable sub-lists */}
                 <SubList title="Providers" items={providers} onClose={close} />
                 <SubList title="By Trade" items={trades} onClose={close} />
+                <SubList
+                  title="By State"
+                  items={STATES.map(s => ({ label: `${s.name} (${s.abbr})`, href: `/states/${s.slug}` }))}
+                  onClose={close}
+                />
 
                 {/* Legal */}
                 <div className="flex gap-5 px-6 py-4">

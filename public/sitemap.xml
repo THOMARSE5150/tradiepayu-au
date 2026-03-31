@@ -24,6 +24,20 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://tradiepayau.directory/compare</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/states</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Provider pages -->
 
   <url>
@@ -261,14 +275,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- State index + hub pages -->
-
-  <url>
-    <loc>https://tradiepayau.directory/states</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- State hub pages -->
 
   <url>
     <loc>https://tradiepayau.directory/states/nsw</loc>
