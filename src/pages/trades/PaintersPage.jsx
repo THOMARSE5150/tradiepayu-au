@@ -25,11 +25,14 @@ const faqs = [
   { q: 'How do painters collect deposits?', a: 'Send a Zeller payment link via SMS or email at the time of quote acceptance. Most clients pay within a few hours. Same-day settlement means you can confirm the deposit and order materials the same day.' },
   { q: 'How do painters bill body corporates and property managers?', a: 'Use Zeller payment links or Stripe invoicing. Send to the accounts department email with your ABN, scope of work, and GST breakdown. Stripe invoicing is the more polished option for formal B2B billing.' },
   { q: 'Should painters use Zeller Tap to Pay or a terminal?', a: 'Tap to Pay on your phone works well for small touch-up jobs and single-day jobs where you have good mobile signal. For multi-day jobs on empty premises, upgrade to Terminal 1 with SIM — the dedicated hardware is more reliable all day.' },
+  { q: 'How much does EFTPOS cost a painting business per month?', a: 'At $8,000/month in card revenue, Zeller costs $112/month (1.4%) plus $15 SIM = $127 total. Square costs $128 (1.6%) with no SIM required. For a painting business doing $8k/month the rate difference is about $19/month. The real value is the SIM plan eliminating the need to chase bank transfers on empty-house jobs.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
+  { q: 'Can I take EFTPOS on a heritage property job?', a: 'Yes — Zeller Tap to Pay works anywhere you have phone signal. Heritage properties often have homeowner WiFi, so the standard Terminal 1 without SIM is fine. Carry Tap to Pay as a fallback for older buildings with thick stone or brick walls that can kill signal.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Painters in Australia (2026)', description: 'Empty houses with no WiFi, deposit collection, and body corporate billing — the best EFTPOS and payment setup for Australian painting businesses.', url: `${SITE}/trades/painters`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Painters in Australia (2026)', description: 'Empty houses with no WiFi, deposit collection, and body corporate billing — the best EFTPOS and payment setup for Australian painting businesses.', url: `${SITE}/trades/painters`, datePublished: '2026-01-15', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Painters', item: `${SITE}/trades/painters` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -166,6 +169,10 @@ export default function PaintersPage() {
           <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-2xl font-bold text-brand-dark mb-6">
             Painter EFTPOS Comparison
           </motion.h2>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A painting business doing <strong>$8,000/month</strong> in card payments saves <strong>$228/year</strong> with Zeller (1.4% + $15 SIM) vs Square (1.6%, no SIM). Same-day settlement means deposit funds clear the day a client accepts your quote.</p>
+          </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Payment Links', 'Best for']}
             rows={[

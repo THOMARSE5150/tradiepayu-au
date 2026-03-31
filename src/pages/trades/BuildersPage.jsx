@@ -20,11 +20,15 @@ const faqs = [
   { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
   { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
   { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
+  { q: 'How much does EFTPOS cost a building company per month?', a: 'At $50,000/month in card revenue (typical for a small volume builder), Zeller costs $700/month in processing fees + $15 SIM = $715. Square at that volume is $800. That\'s $1,020/year saved with Zeller — enough to justify the two-terminal setup. At higher volumes, the rate gap compounds further.' },
+  { q: 'How do I collect a contract deposit before starting a build?', a: 'Send a Zeller or Stripe payment link to the client before work begins. For contract deposits over $1,000, Stripe is preferred — it supports card, bank transfer, and BPAY in one invoice. Client pays at their own pace, you get notified when funds clear. No terminal hardware needed for the deposit stage.' },
+  { q: 'Can builders split payments between EFTPOS and bank transfer?', a: 'Yes — many builders take deposits by bank transfer (BPAY or EFT) and then take progress/final payments by EFTPOS on site. The split is common when clients have arranged finance: the bank pays direct, the client pays the remainder by card.' },
+  { q: 'Do I need a separate merchant account for each building project?', a: 'No — Zeller and Square let you manage all your jobs from a single account. Transaction notes and reference numbers allow you to track which payment belongs to which job. For larger operations with multiple project managers, Zeller supports sub-accounts and separate logins per user.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Builders in Australia (2026)', description: 'Progress payments, new estate sites, and subcontractor cash flow — the best payment setup for Australian building businesses.', url: `${SITE}/trades/builders`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Builders in Australia (2026)', description: 'Progress payments, new estate sites, and subcontractor cash flow — the best payment setup for Australian building businesses.', url: `${SITE}/trades/builders`, datePublished: '2026-01-15', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Builders in Australia (2026)', item: `${SITE}/trades/builders` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -86,6 +90,10 @@ export default function BuildersPage() {
           >
             Top Picks for Builders
           </motion.h2>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A builder processing <strong>$50,000/month</strong> in card payments saves <strong>$1,020/year</strong> with Zeller (1.4%) vs Square (1.6%). At $100k/month, that gap reaches <strong>$2,040/year</strong> — a meaningful line item for any building business.</p>
+          </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Best use', 'Notes']}
             rows={[

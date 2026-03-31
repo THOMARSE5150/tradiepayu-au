@@ -25,11 +25,14 @@ const faqs = [
   { q: 'How do concreters collect deposits before pouring?', a: 'Send a Zeller payment link via SMS or email at quote acceptance. Same-day settlement confirms funds before you order ready-mix or materials. Don\'t mobilise until the deposit is cleared — concrete is non-reversible.' },
   { q: 'What EFTPOS works on new estate building sites?', a: 'Zeller Terminal 1 with SIM (Optus, $15/mo). New estates have Optus mobile coverage without any site WiFi. The terminal processes payments entirely on mobile data — independent of any site infrastructure.' },
   { q: 'How do concreters handle large commercial jobs?', a: 'For commercial warehouse floors, carparks, or industrial slabs, use Stripe invoicing addressed to the developer or head contractor. Include your ABN, scope of works (area, thickness, mix), and GST. Request a purchase order number before mobilising on large commercial jobs.' },
+  { q: 'How much does EFTPOS cost a concreting business per month?', a: 'At $15,000/month in card revenue, Zeller costs $210/month (1.4%) plus $15 SIM = $225 total. Square at the same volume is $240 (1.6%). That\'s $180/year saved. More importantly: Zeller same-day settlement means your deposit clears the day you take it — critical when you\'re ordering ready-mix the following morning.' },
+  { q: 'Is it hard to set up compared to a bank?', a: 'No — Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks. For a new concreting business, Zeller is the fastest path to accepting card payments.' },
+  { q: 'Can I take a card payment on-site with wet or dirty hands?', a: 'Zeller Tap to Pay on an iPhone in a rugged case is the cleanest option — the client taps their own card or phone to your screen. For terminal hardware, the Zeller Terminal 1 has a sealed design that handles dusty environments better than most alternatives.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Concreters in Australia (2026)', description: 'Remote estate sites with no WiFi, large deposits, and materials cash flow — the best EFTPOS and payment setup for Australian concreting businesses.', url: `${SITE}/trades/concreters`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Concreters in Australia (2026)', description: 'Remote estate sites with no WiFi, large deposits, and materials cash flow — the best EFTPOS and payment setup for Australian concreting businesses.', url: `${SITE}/trades/concreters`, datePublished: '2026-01-15', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Concreters', item: `${SITE}/trades/concreters` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -135,6 +138,10 @@ export default function ConcretersPage() {
       <section className="section section-alt">
         <div className="container-page">
           <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-2xl font-bold text-brand-dark mb-6">Concreter EFTPOS Comparison</motion.h2>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A concreter doing <strong>$15,000/month</strong> in card payments saves <strong>$180/year</strong> with Zeller (1.4%) vs Square (1.6%). Same-day settlement is the bigger win — deposit funds clear the day you take them, so you can order ready-mix the next morning without waiting for funds.</p>
+          </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Settlement', 'Best for']}
             rows={[

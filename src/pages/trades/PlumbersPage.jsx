@@ -20,11 +20,15 @@ const faqs = [
   { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
   { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
   { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
+  { q: 'How much does EFTPOS cost a plumber per month?', a: 'At $6,000/month in card revenue (common for a sole-trader plumber), Zeller costs $84/month in processing fees plus $15 SIM = $99 total. Square at the same volume is $96 (1.6%, no SIM). The gap is small — for most plumbers the settlement speed and connectivity matter more than the rate difference.' },
+  { q: 'Should I take a deposit before arriving for a plumbing job?', a: 'For large jobs (hot water system replacement, drain relining, bathroom renovation), yes. Send a Zeller or Stripe payment link for 20–50% upfront. Reduces no-shows and covers parts cost. The remaining balance is taken on completion with the terminal.' },
+  { q: 'What if I need to buy parts mid-job and need funds immediately?', a: 'Zeller settles the same business day. Complete the first stage payment at the property, then your Zeller account reflects the funds within hours. This is the main reason plumbers prefer Zeller over Square (next-business-day) for emergency work.' },
+  { q: 'Can I use EFTPOS for commercial plumbing invoices?', a: 'Yes — for body corporates, commercial tenancies, and property managers, send a Zeller or Stripe invoice to the accounts email. Include your ABN, job description, parts, labour, and GST. Most commercial accounts pay within 14–30 days. Stripe supports automated payment reminders if invoices go unpaid.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Plumbers in Australia (2026)', description: 'After-hours emergencies, underground work, and same-day parts — the best EFTPOS payment setup for Australian plumbing businesses.', url: `${SITE}/trades/plumbers`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Plumbers in Australia (2026)', description: 'After-hours emergencies, underground work, and same-day parts — the best EFTPOS payment setup for Australian plumbing businesses.', url: `${SITE}/trades/plumbers`, datePublished: '2026-01-15', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Plumbers in Australia (2026)', item: `${SITE}/trades/plumbers` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -87,6 +91,10 @@ export default function PlumbersPage() {
           >
             Top Picks for Plumbers
           </motion.h2>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A plumber doing <strong>$6,000/month</strong> in card payments saves <strong>$120/year</strong> switching to Zeller (1.4%) from Square (1.6%). At $10,000/month the saving is <strong>$240/year</strong> — enough to cover the SIM plan cost twice over.</p>
+          </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
             rows={[

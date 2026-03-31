@@ -20,11 +20,15 @@ const faqs = [
   { q: 'Is it hard to set up compared to a bank?', a: 'No — this is one of the biggest advantages of modern EFTPOS providers over banks. Providers like Zeller and Square approve accounts online in minutes with just your ABN. Bank merchant accounts require paperwork, branch visits, and often take days or weeks.' },
   { q: 'Can my team all use the same account?', a: 'Yes — Zeller and Square both support multiple terminals on one account. Payments from all devices settle centrally, with a full transaction log per terminal. No per-terminal rental fees — you purchase the hardware outright.' },
   { q: 'Can I take payments over the phone?', a: 'Yes — Zeller supports MOTO (phone) payments at 1.75% + $0.25 via the Virtual Terminal. Stripe is also strong for remote payments. Useful for taking deposits from customers who can\'t be on site.' },
+  { q: 'How much does EFTPOS actually cost an electrician per month?', a: 'At $8,000/month in card revenue (typical for a sole-trader electrician), Zeller costs $112/month in processing fees plus $15 SIM = $127 total. Square at the same volume is $128 (1.6%, no SIM needed). The difference is small — connectivity reliability matters more than the rate difference at this volume.' },
+  { q: 'Should electricians charge a surcharge for card payments?', a: 'Most electricians don\'t surcharge — it creates friction at payment time when the job is already done. At 1.4% (Zeller), the fee on a $500 job is $7. Factor this into your hourly rate rather than itemising it on the invoice. Shift4 is the exception: it passes the fee to the customer entirely (0% merchant cost), which suits some commercial operators.' },
+  { q: 'Can I send an invoice and get paid before arriving on site?', a: 'Yes — Zeller and Stripe both support pre-job payment links. Send the invoice URL via SMS, customer pays online, funds clear before you arrive. Useful for large-ticket jobs: hot water systems, switchboard upgrades, solar installations where the parts cost is significant.' },
+  { q: 'What happens if I take an offline payment and it declines later?', a: 'Square Terminal offline payments are processed when connectivity is restored. Square assumes the risk — if a card is declined after the fact, Square covers the loss (up to their offline transaction limits). Always check that offline mode is enabled in the app before entering a dead zone.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Electricians in Australia (2026)', description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there is none.', url: `${SITE}/trades/electricians`, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', name: 'Best EFTPOS for Electricians in Australia (2026)', description: 'Switchboards, plant rooms, and dead zones — the best EFTPOS payment setup for Australian electricians who need connectivity where there is none.', url: `${SITE}/trades/electricians`, datePublished: '2026-01-15', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Electricians', item: `${SITE}/trades/electricians` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -89,6 +93,10 @@ export default function ElectriciansPage() {
           </motion.h2>
           <div className="breakeven-box mb-6">
             <strong>Two-device strategy:</strong> Zeller Terminal 1 + SIM ($99, primary) + Square Terminal ($329, dead-zone backup). No monthly fee on Square. Total hardware: $428.
+          </div>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">An electrician processing <strong>$10,000/month</strong> in card payments pays <strong>$140/month</strong> with Zeller (1.4%) vs $160 with Square (1.6%) — saving <strong>$240/year</strong> on rate alone. Add $15/mo SIM and Zeller still wins at most volumes under $150k/year.</p>
           </div>
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
