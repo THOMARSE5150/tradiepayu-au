@@ -59,8 +59,10 @@ export default function StateTradePage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Article',
+      headline: title,
       name: title,
       description,
+      image: { '@type': 'ImageObject', url: `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
       dateModified: '2026-03-31',

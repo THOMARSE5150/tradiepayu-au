@@ -55,8 +55,10 @@ export default function ComparePage() {
     {
       '@context': 'https://schema.org',
       '@type': 'Article',
+      headline: title,
       name: title,
       description,
+      image: { '@type': 'ImageObject', url: p1.product_image?.startsWith('http') ? p1.product_image : `${SITE}/og-provider.svg`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
       dateModified: '2026-03-31',
