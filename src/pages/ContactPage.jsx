@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, CheckCircle2, X } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { haptic } from '../utils/haptic'
@@ -13,6 +14,100 @@ const crumbs = [
 const TOPICS = ['Rate correction', 'Data error', 'Partnership']
 const MAX_MSG = 1000
 const FORM_ID = 'xjgpglnz'
+
+const NEXT_STEPS = [
+  { label: 'Compare all providers', href: '/providers', note: 'Zeller, Square, Stripe, Tyro, Shift4' },
+  { label: 'EFTPOS cost calculator', href: '/calculator', note: 'See real monthly costs at your volume' },
+  { label: 'Zeller vs Square', href: '/compare/zeller-vs-square', note: 'The most common tradie question' },
+]
+
+function SuccessModal({ onClose }) {
+  // Close on Escape
+  useEffect(() => {
+    function onKey(e) { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 sm:p-6"
+      onClick={onClose}
+    >
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-brand-dark/60 backdrop-blur-sm" />
+
+      {/* Sheet */}
+      <motion.div
+        initial={{ opacity: 0, y: 48, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 24, scale: 0.97 }}
+        transition={{ duration: 0.35, ease: [0.34, 1.1, 0.64, 1] }}
+        className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden"
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
+          aria-label="Close"
+        >
+          <X size={15} className="text-slate-500" />
+        </button>
+
+        {/* Header */}
+        <div className="px-6 pt-8 pb-6 text-center border-b border-slate-100">
+          <motion.div
+            initial={{ scale: 0, rotate: -12 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ delay: 0.15, duration: 0.4, ease: [0.34, 1.5, 0.64, 1] }}
+            className="w-14 h-14 rounded-2xl bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-4"
+          >
+            <CheckCircle2 size={26} className="text-green-500" />
+          </motion.div>
+          <h2 className="text-xl font-bold text-brand-dark mb-1">Message sent</h2>
+          <p className="text-slate-500 text-sm leading-relaxed">
+            We&apos;ll respond within 2 business days. Keep an eye on your inbox — we reply from hello@tradiepayau.directory.
+          </p>
+        </div>
+
+        {/* Next steps */}
+        <div className="px-6 py-5">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">While you wait</p>
+          <div className="space-y-2">
+            {NEXT_STEPS.map(step => (
+              <Link
+                key={step.href}
+                to={step.href}
+                onClick={onClose}
+                className="flex items-center justify-between px-4 py-3 bg-slate-50 hover:bg-blue-50 border border-slate-100 hover:border-brand-blue/30 rounded-2xl transition-all group"
+              >
+                <div>
+                  <p className="text-sm font-semibold text-brand-dark group-hover:text-brand-blue transition-colors">{step.label}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">{step.note}</p>
+                </div>
+                <ArrowRight size={15} className="text-slate-300 group-hover:text-brand-blue transition-colors flex-shrink-0 ml-3" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="px-6 pb-6">
+          <button
+            onClick={onClose}
+            className="w-full py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-brand-dark text-sm font-semibold transition-colors"
+          >
+            Done
+          </button>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
 
 function Field({ id, name, label, placeholder, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, error }) {
   return (
@@ -44,10 +139,13 @@ export default function ContactPage() {
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
   const [fieldErrors, setFieldErrors] = useState({})
   const [msgLen, setMsgLen] = useState(0)
+  const [showModal, setShowModal] = useState(false)
   const textareaRef = useRef(null)
   const formRef = useRef(null)
 
-  useEffect(() => { if (status === 'success') haptic('success') }, [status])
+  useEffect(() => {
+    if (status === 'success') { haptic('success'); setShowModal(true) }
+  }, [status])
   useEffect(() => { if (status === 'error') haptic('error') }, [status])
 
   async function handleSubmit(e) {
@@ -128,116 +226,94 @@ export default function ContactPage() {
       <section className="section section-alt">
         <div className="container-page">
           <div className="max-w-lg mx-auto">
-            <AnimatePresence mode="wait">
+            <motion.form
+              ref={formRef}
+              action={`https://formspree.io/f/${FORM_ID}`}
+              method="POST"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+              onSubmit={handleSubmit}
+              className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 space-y-5 shadow-sm"
+            >
+              <Field
+                id="name" name="name" label="Full name"
+                placeholder="Jane Smith"
+                autoComplete="name" autoCapitalize="words"
+                enterKeyHint="next" error={fieldErrors.name}
+              />
 
-              {status === 'success' ? (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.95, y: 16 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.4, ease: [0.34, 1.2, 0.64, 1] }}
-                  className="bg-white rounded-3xl border border-slate-100 p-12 text-center shadow-sm"
-                >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -10 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 0.15, duration: 0.4, ease: [0.34, 1.5, 0.64, 1] }}
-                    className="w-16 h-16 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mx-auto mb-5"
-                  >
-                    <CheckCircle2 size={30} className="text-green-500" />
-                  </motion.div>
-                  <h2 className="text-lg font-bold text-brand-dark mb-2">Message sent</h2>
-                  <p className="text-slate-500 text-sm leading-relaxed">Thanks — we&apos;ll be in touch within 2 business days.</p>
-                </motion.div>
+              <Field
+                id="email" name="email" label="Email address"
+                placeholder="jane@example.com.au"
+                type="email" inputMode="email"
+                autoComplete="email" autoCapitalize="none"
+                autoCorrect="off" spellCheck={false}
+                enterKeyHint="next" error={fieldErrors.email}
+              />
 
-              ) : (
-                <motion.form
-                  key="form"
-                  ref={formRef}
-                  action={`https://formspree.io/f/${FORM_ID}`}
-                  method="POST"
-                  initial={{ opacity: 0, y: 16 }}
+              <div>
+                <label htmlFor="message" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                  Message
+                </label>
+                <div className="relative">
+                  <textarea
+                    id="message"
+                    name="message"
+                    ref={textareaRef}
+                    required
+                    rows={5}
+                    maxLength={MAX_MSG}
+                    placeholder="What would you like to tell us?"
+                    enterKeyHint="send"
+                    autoComplete="off"
+                    onInput={handleTextareaInput}
+                    onFocus={() => haptic('light')}
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-brand-dark text-sm placeholder-slate-400 resize-none focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all pb-7"
+                  />
+                  <span className={`absolute bottom-2.5 right-3.5 text-[11px] select-none transition-colors ${msgLen > MAX_MSG * 0.9 ? 'text-amber-500' : 'text-slate-300'}`}>
+                    {msgLen}/{MAX_MSG}
+                  </span>
+                </div>
+                {fieldErrors.message && <p className="text-xs text-red-500 mt-1.5">{fieldErrors.message}</p>}
+              </div>
+
+              {status === 'error' && Object.keys(fieldErrors).length === 0 && (
+                <motion.p
+                  initial={{ opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35 }}
-                  onSubmit={handleSubmit}
-                  className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 space-y-5 shadow-sm"
+                  className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
                 >
-                  <Field
-                    id="name" name="name" label="Full name"
-                    placeholder="Jane Smith"
-                    autoComplete="name" autoCapitalize="words"
-                    enterKeyHint="next" error={fieldErrors.name}
-                  />
-
-                  <Field
-                    id="email" name="email" label="Email address"
-                    placeholder="jane@example.com.au"
-                    type="email" inputMode="email"
-                    autoComplete="email" autoCapitalize="none"
-                    autoCorrect="off" spellCheck={false}
-                    enterKeyHint="next" error={fieldErrors.email}
-                  />
-
-                  <div>
-                    <label htmlFor="message" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
-                      Message
-                    </label>
-                    <div className="relative">
-                      <textarea
-                        id="message"
-                        name="message"
-                        ref={textareaRef}
-                        required
-                        rows={5}
-                        maxLength={MAX_MSG}
-                        placeholder="What would you like to tell us?"
-                        enterKeyHint="send"
-                        autoComplete="off"
-                        onInput={handleTextareaInput}
-                        onFocus={() => haptic('light')}
-                        className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-brand-dark text-sm placeholder-slate-400 resize-none focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all pb-7"
-                      />
-                      <span className={`absolute bottom-2.5 right-3.5 text-[11px] select-none transition-colors ${msgLen > MAX_MSG * 0.9 ? 'text-amber-500' : 'text-slate-300'}`}>
-                        {msgLen}/{MAX_MSG}
-                      </span>
-                    </div>
-                    {fieldErrors.message && <p className="text-xs text-red-500 mt-1.5">{fieldErrors.message}</p>}
-                  </div>
-
-                  {status === 'error' && Object.keys(fieldErrors).length === 0 && (
-                    <motion.p
-                      initial={{ opacity: 0, y: -8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
-                    >
-                      Something went wrong — please try again.
-                    </motion.p>
-                  )}
-
-                  <motion.button
-                    type="submit"
-                    disabled={submitting}
-                    whileTap={{ scale: 0.97 }}
-                    className="w-full flex items-center justify-center gap-2.5 bg-brand-blue hover:bg-blue-600 active:bg-blue-700 text-white font-semibold rounded-xl py-3.5 px-6 text-sm transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {submitting ? (
-                      <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                      </svg>
-                    ) : (
-                      <>Send message <ArrowRight size={15} strokeWidth={2.5} /></>
-                    )}
-                  </motion.button>
-
-                  <p className="text-[11px] text-slate-400 text-center">We don&apos;t share your details with anyone.</p>
-                </motion.form>
+                  Something went wrong — please try again or email us directly.
+                </motion.p>
               )}
 
-            </AnimatePresence>
+              <motion.button
+                type="submit"
+                disabled={submitting}
+                whileTap={{ scale: 0.97 }}
+                className="w-full flex items-center justify-center gap-2.5 bg-brand-blue hover:bg-blue-600 active:bg-blue-700 text-white font-semibold rounded-xl py-3.5 px-6 text-sm transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {submitting ? (
+                  <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                  </svg>
+                ) : (
+                  <>Send message <ArrowRight size={15} strokeWidth={2.5} /></>
+                )}
+              </motion.button>
+
+              <p className="text-[11px] text-slate-400 text-center">We don&apos;t share your details with anyone.</p>
+            </motion.form>
           </div>
         </div>
       </section>
+
+      {/* Success modal */}
+      <AnimatePresence>
+        {showModal && <SuccessModal onClose={() => setShowModal(false)} />}
+      </AnimatePresence>
     </>
   )
 }
