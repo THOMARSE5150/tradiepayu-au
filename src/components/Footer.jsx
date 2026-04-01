@@ -31,8 +31,9 @@ const legal = [
   { label: 'Disclaimer', href: '/disclaimer' },
 ]
 
-// Cloudflare Worker endpoint — see scripts/cloudflare-worker-rate-alerts.js
-const RATE_ALERTS_WORKER_URL = 'https://tradiepayau-rate-alerts.5p5ccbcgnr.workers.dev'
+// Using Formspree until Cloudflare Worker (scripts/cloudflare-worker-rate-alerts.js) is deployed
+// Contact form ID: xjgpglnz (ContactPage.jsx)
+const RATE_ALERTS_FORM_ID = 'xjgpglnz'
 
 function RateAlerts() {
   const [email, setEmail] = useState('')
@@ -42,10 +43,10 @@ function RateAlerts() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch(RATE_ALERTS_WORKER_URL, {
+      const res = await fetch(`https://formspree.io/f/${RATE_ALERTS_FORM_ID}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ email, _subject: 'Rate alert signup' }),
       })
       setStatus(res.ok ? 'done' : 'error')
     } catch {
