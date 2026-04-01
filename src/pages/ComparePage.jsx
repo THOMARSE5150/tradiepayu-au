@@ -5,6 +5,7 @@ import providers from '../data/providers.json'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import RelatedLinks from '../components/RelatedLinks'
+import FaqSection from '../components/FaqSection'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -57,6 +58,8 @@ export default function ComparePage() {
       name: title,
       description,
       url: `${SITE}${canonical}`,
+      datePublished: '2026-01-15',
+      dateModified: '2026-03-31',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },
@@ -69,7 +72,111 @@ export default function ComparePage() {
         { '@type': 'ListItem', position: 3, name: `${p1.name} vs ${p2.name}`, item: `${SITE}${canonical}` },
       ],
     },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
   ]
+
+  // Dynamic FAQs built from provider data
+  const faqs = (() => {
+    const items = []
+
+    // Rate comparison
+    if (p1.fees.in_person_percent && p2.fees.in_person_percent) {
+      const cheaper = p1.fees.in_person_percent <= p2.fees.in_person_percent ? p1 : p2
+      const pricier = cheaper.id === p1.id ? p2 : p1
+      items.push({
+        q: `Is ${p1.name} or ${p2.name} cheaper for tradies?`,
+        a: `${cheaper.name} has the lower in-person rate at ${cheaper.fees.in_person_percent}% vs ${pricier.name}'s ${pricier.fees.in_person_percent}%. At $10,000/month in card revenue, ${cheaper.name} saves $${Math.round((pricier.fees.in_person_percent - cheaper.fees.in_person_percent) * 100)} per month — $${Math.round((pricier.fees.in_person_percent - cheaper.fees.in_person_percent) * 1200)}/year. The better choice depends on your volume and connectivity needs.`,
+      })
+    } else {
+      items.push({
+        q: `Which is cheaper — ${p1.name} or ${p2.name}?`,
+        a: `${p1.fees.in_person_percent ? p1.name + ' has a flat ' + p1.fees.in_person_percent + '% rate' : p1.name + ' uses a quote-based pricing model'}. ${p2.fees.in_person_percent ? p2.name + ' charges ' + p2.fees.in_person_percent + '%' : p2.name + ' also requires a quote'}. Get written terms from both before committing.`,
+      })
+    }
+
+    // SIM / connectivity
+    const simProvider = [p1, p2].find(p => p.sim_plan.available)
+    const noSimProvider = [p1, p2].find(p => !p.sim_plan.available)
+    if (simProvider && noSimProvider) {
+      items.push({
+        q: `Which works better in dead zones and buildings without WiFi?`,
+        a: `${simProvider.name} has a built-in SIM plan (${simProvider.sim_plan.cost_monthly_aud ? '$' + simProvider.sim_plan.cost_monthly_aud + '/month' : 'included'}) that works independently of customer WiFi — ideal for switchboard rooms, plant rooms, and new estate sites. ${noSimProvider.name} requires WiFi or a phone hotspot. ${noSimProvider.offline_mode?.available ? `${noSimProvider.name}'s offline mode compensates for zero-signal sites.` : ''}`,
+      })
+    } else if (p1.sim_plan.available && p2.sim_plan.available) {
+      items.push({
+        q: `Do both ${p1.name} and ${p2.name} work without WiFi?`,
+        a: `Both offer SIM or mobile connectivity options. ${p1.name}: ${p1.sim_plan.notes || 'SIM available'}. ${p2.name}: ${p2.sim_plan.notes || 'SIM available'}. Compare costs and network coverage before deciding.`,
+      })
+    }
+
+    // Offline mode
+    const offlineProvider = [p1, p2].find(p => p.offline_mode.available)
+    const noOfflineProvider = [p1, p2].find(p => !p.offline_mode.available)
+    if (offlineProvider && noOfflineProvider) {
+      items.push({
+        q: `Which works in zero-signal environments — underground, tunnels, or thick concrete?`,
+        a: `${offlineProvider.name} supports offline payment mode — you can take payments without any connectivity and process them when signal is restored. ${noOfflineProvider.name} requires an active connection at all times. For electricians working in underground switchboards or glaziers replacing windows in basement car parks, ${offlineProvider.name} is the safer choice.`,
+      })
+    }
+
+    // Settlement
+    const fasterSettle = p1.settlement.same_day_available && !p2.settlement.same_day_available ? p1
+      : p2.settlement.same_day_available && !p1.settlement.same_day_available ? p2 : null
+    if (fasterSettle) {
+      const other = fasterSettle.id === p1.id ? p2 : p1
+      items.push({
+        q: `Which settles funds faster — ${p1.name} or ${p2.name}?`,
+        a: `${fasterSettle.name} offers same-day settlement${fasterSettle.settlement.same_day_condition ? ' when settling to ' + fasterSettle.settlement.same_day_condition : ''}. ${other.name} settles in ${other.settlement.standard_days != null ? other.settlement.standard_days + ' business day(s)' : 'a standard timeframe'}. For cash-flow-sensitive sole traders, same-day access to funds can make a meaningful difference.`,
+      })
+    } else {
+      items.push({
+        q: `How quickly do ${p1.name} and ${p2.name} settle funds?`,
+        a: `${p1.name} settles in ${p1.settlement.same_day_available ? 'same day (to ' + (p1.settlement.same_day_condition || 'account') + ')' : (p1.settlement.standard_days != null ? p1.settlement.standard_days + ' business day(s)' : 'a standard timeframe')}. ${p2.name} settles in ${p2.settlement.same_day_available ? 'same day (to ' + (p2.settlement.same_day_condition || 'account') + ')' : (p2.settlement.standard_days != null ? p2.settlement.standard_days + ' business day(s)' : 'a standard timeframe')}.`,
+      })
+    }
+
+    // Invoicing
+    if (p1.invoicing !== p2.invoicing) {
+      const hasInvoice = p1.invoicing ? p1 : p2
+      const noInvoice = hasInvoice.id === p1.id ? p2 : p1
+      items.push({
+        q: `Which is better for sending invoices to builders and commercial clients?`,
+        a: `${hasInvoice.name} has built-in invoicing — you can send professional tax invoices with a payment link directly from the app. ${noInvoice.name} does not include an invoicing feature. For builders, concreters, or any trade billing to commercial accounts on 14–30 day terms, ${hasInvoice.name} is the stronger choice.`,
+      })
+    } else if (p1.invoicing && p2.invoicing) {
+      items.push({
+        q: `Do both ${p1.name} and ${p2.name} support invoicing?`,
+        a: `Yes — both providers support sending invoices with payment links. ${p1.name} charges ${p1.fees.invoice_percent ? p1.fees.invoice_percent + '%' + (p1.fees.invoice_fixed_cents ? ' + $' + (p1.fees.invoice_fixed_cents / 100).toFixed(2) : '') : 'a variable rate'} for invoice payments. ${p2.name} charges ${p2.fees.invoice_percent ? p2.fees.invoice_percent + '%' + (p2.fees.invoice_fixed_cents ? ' + $' + (p2.fees.invoice_fixed_cents / 100).toFixed(2) : '') : 'a variable rate'}.`,
+      })
+    }
+
+    // Monthly fee / contract
+    const noFeeProviders = [p1, p2].filter(p => p.fees.monthly_fee === 0)
+    if (noFeeProviders.length === 2) {
+      items.push({
+        q: `Do ${p1.name} or ${p2.name} charge a monthly fee?`,
+        a: `Neither ${p1.name} nor ${p2.name} charges a monthly fee. Both are pay-as-you-go — you only pay when you take a card payment. ${p1.contract ? p1.name + ': ' + p1.contract + '. ' : ''}${p2.contract ? p2.name + ': ' + p2.contract + '.' : ''}`,
+      })
+    }
+
+    // Overall winner
+    const winner = p1.score_overall >= p2.score_overall ? p1 : p2
+    const loser = winner.id === p1.id ? p2 : p1
+    items.push({
+      q: `Which should a sole-trader tradie choose — ${p1.name} or ${p2.name}?`,
+      a: `For most sole-trader tradies, ${winner.name} is the better default (${winner.score_overall}/10 vs ${loser.score_overall}/10). ${winner.best_for.slice(0, 2).join(', ')}. However, ${loser.name} is the better fit if you need: ${loser.best_for.slice(0, 2).join(', ')}. If you work in genuine zero-signal environments, prioritise connectivity features over rate.`,
+    })
+
+    return items
+  })()
 
   const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Quote'
   const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Quote'
@@ -248,6 +355,8 @@ export default function ComparePage() {
           </p>
         </div>
       </section>
+
+      <FaqSection items={faqs} title={`${p1.name} vs ${p2.name} — FAQ`} />
 
       <RelatedLinks slug={p1.id} type="provider" />
     </>
