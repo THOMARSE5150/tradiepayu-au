@@ -40,10 +40,13 @@ const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
 const StateTradePage    = lazy(() => import('./pages/StateTradePage'))
 const StateIndexPage    = lazy(() => import('./pages/StateIndexPage'))
 const StatesIndexPage   = lazy(() => import('./pages/StatesIndexPage'))
-const BlogIndexPage     = lazy(() => import('./pages/blog/BlogIndexPage'))
-const EftposFeesPost    = lazy(() => import('./pages/blog/EftposFeesPost'))
-const ZellerVsSquarePost = lazy(() => import('./pages/blog/ZellerVsSquarePost'))
-const SoleTraderPost    = lazy(() => import('./pages/blog/SoleTraderCardPaymentsPost'))
+const BlogIndexPage          = lazy(() => import('./pages/blog/BlogIndexPage'))
+const EftposFeesPost         = lazy(() => import('./pages/blog/EftposFeesPost'))
+const ZellerVsSquarePost     = lazy(() => import('./pages/blog/ZellerVsSquarePost'))
+const SoleTraderPost         = lazy(() => import('./pages/blog/SoleTraderCardPaymentsPost'))
+const ZellerTerminalPost     = lazy(() => import('./pages/blog/ZellerTerminalReviewPost'))
+const SquareTerminalPost     = lazy(() => import('./pages/blog/SquareTerminalReviewPost'))
+const BestEftposSoleTradersPost = lazy(() => import('./pages/blog/BestEftposSoleTradersPost'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -105,6 +108,9 @@ export default function App() {
           <Route path="/blog/eftpos-fees-tradies-australia-2026" element={<EftposFeesPost />} />
           <Route path="/blog/zeller-vs-square-eftpos-tradies" element={<ZellerVsSquarePost />} />
           <Route path="/blog/accept-card-payments-sole-trader-australia" element={<SoleTraderPost />} />
+          <Route path="/blog/zeller-terminal-1-review-2026" element={<ZellerTerminalPost />} />
+          <Route path="/blog/square-terminal-review-2026" element={<SquareTerminalPost />} />
+          <Route path="/blog/best-eftpos-sole-traders-australia-2026" element={<BestEftposSoleTradersPost />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

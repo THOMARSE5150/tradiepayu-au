@@ -82,6 +82,9 @@ ${tradeSlugs.flatMap(t => stateSlugs.map(s => {
 
   <!-- Blog -->
 ${url('/blog', '0.8', 'weekly')}
+${url('/blog/zeller-terminal-1-review-2026',             '0.8')}
+${url('/blog/square-terminal-review-2026',               '0.8')}
+${url('/blog/best-eftpos-sole-traders-australia-2026',   '0.8')}
 ${url('/blog/eftpos-fees-tradies-australia-2026',        '0.8')}
 ${url('/blog/zeller-vs-square-eftpos-tradies',           '0.8')}
 ${url('/blog/accept-card-payments-sole-trader-australia','0.8')}

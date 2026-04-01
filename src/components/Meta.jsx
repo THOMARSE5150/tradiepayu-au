@@ -7,9 +7,12 @@ const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
 
 // Blog post hero photos
 const BLOG_HERO = {
-  'eftpos-fees-tradies-australia-2026':        'photo-1554224155-6726b3ff858f',
-  'zeller-vs-square-eftpos-tradies':           'photo-1556742031-c6961e8560b0',
-  'accept-card-payments-sole-trader-australia':'photo-1607472586893-edb57bdc0e39',
+  'eftpos-fees-tradies-australia-2026':           'photo-1554224155-6726b3ff858f',
+  'zeller-vs-square-eftpos-tradies':              'photo-1556742031-c6961e8560b0',
+  'accept-card-payments-sole-trader-australia':   'photo-1607472586893-edb57bdc0e39',
+  'zeller-terminal-1-review-2026':                'photo-1556742049-0cfed4f6a45d',
+  'square-terminal-review-2026':                  'photo-1556742031-c6961e8560b0',
+  'best-eftpos-sole-traders-australia-2026':      'photo-1521791136064-7986c2920216',
 }
 
 // Hero photo IDs for provider pages (Zeller uses branded SVG; others use Unsplash hero)

@@ -27,6 +27,9 @@ const trades = [
 const blog = [
   { label: 'EFTPOS Fees Breakdown', href: '/blog/eftpos-fees-tradies-australia-2026' },
   { label: 'Zeller vs Square', href: '/blog/zeller-vs-square-eftpos-tradies' },
+  { label: 'Zeller Terminal 1 Review', href: '/blog/zeller-terminal-1-review-2026' },
+  { label: 'Square Terminal Review', href: '/blog/square-terminal-review-2026' },
+  { label: 'Best EFTPOS for Sole Traders', href: '/blog/best-eftpos-sole-traders-australia-2026' },
   { label: 'Sole Trader Card Payments', href: '/blog/accept-card-payments-sole-trader-australia' },
 ]
 

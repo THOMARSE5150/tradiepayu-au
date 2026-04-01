@@ -7,6 +7,30 @@ const SITE = 'https://tradiepayau.directory'
 
 const posts = [
   {
+    slug: 'zeller-terminal-1-review-2026',
+    title: 'Zeller Terminal 1 Review (2026) — The Best EFTPOS for Australian Tradies?',
+    description: 'Independent review of the Zeller Terminal 1. Rate: 1.4%. Hardware: $99. SIM plan: $15/mo. Is it the best EFTPOS terminal in Australia?',
+    date: '10 Feb 2026',
+    readTime: '7 min read',
+    image: 'photo-1556742049-0cfed4f6a45d',
+  },
+  {
+    slug: 'square-terminal-review-2026',
+    title: 'Square Terminal Review (2026) — Is It Worth It for Australian Tradies?',
+    description: 'Independent review of the Square Terminal. Rate: 1.6%. Hardware: $329. Best-in-class offline mode. Is it worth the premium over Zeller?',
+    date: '17 Feb 2026',
+    readTime: '6 min read',
+    image: 'photo-1556742031-c6961e8560b0',
+  },
+  {
+    slug: 'best-eftpos-sole-traders-australia-2026',
+    title: 'Best EFTPOS for Sole Traders in Australia (2026)',
+    description: 'The best EFTPOS options for Australian sole traders — compared by rate, cost, and setup time. No contracts, no lock-in.',
+    date: '24 Feb 2026',
+    readTime: '7 min read',
+    image: 'photo-1521791136064-7986c2920216',
+  },
+  {
     slug: 'eftpos-fees-tradies-australia-2026',
     title: 'EFTPOS Fees for Tradies in Australia (2026) — Full Breakdown',
     description: 'Zeller 1.4%, Square 1.6%, Stripe 1.7%. What those percentages actually cost a tradie per month — and which provider wins at every volume.',
