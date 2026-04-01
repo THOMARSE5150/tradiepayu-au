@@ -181,7 +181,7 @@ export default function ZellerVsSquarePost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Rate difference — real money</h2>
           <p className="text-slate-600 leading-relaxed mb-6">
-            A 0.2% rate difference sounds small. Over a month of trade work it becomes real money.
+            A 0.2% rate difference sounds small. Over a month of trade work it becomes real money. <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> charges 1.4% in-person; <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> charges 1.6%.
           </p>
         </motion.div>
         <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -250,7 +250,7 @@ export default function ZellerVsSquarePost() {
               Cards are stored locally on the device and processed in batch when you reconnect within 24 hours. The acceptance rate for deferred offline transactions is very high for domestic Visa and Mastercard. AMEX and some international cards carry higher risk of later decline in offline mode.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Outside of zero-signal environments, there is no scenario where Square produces a better outcome for a tradie than Zeller. The rate is higher, the hardware costs three times as much, and settlement is a day slower.
+              Outside of zero-signal environments, there is no scenario where Square produces a better outcome for a tradie than Zeller. The rate is higher, the hardware costs three times as much, and settlement is a day slower. If your work also involves online invoicing or website payments, see how <Link to="/providers/stripe" className="text-brand-blue hover:underline font-medium">Stripe</Link> compares.
             </p>
           </motion.div>
         </div>

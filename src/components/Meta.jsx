@@ -63,6 +63,19 @@ function resolveOgImage(canonical, ogImageOverride) {
     return `${SITE_URL}/og-provider.svg`
   }
 
+  // Static index pages
+  const INDEX_IMAGES = {
+    '/providers':  'photo-1556742049-0cfed4f6a45d',
+    '/trades':     'photo-1621905252507-b35492cc74b4',
+    '/states':     'photo-1494522855154-9297ac14b55f',
+    '/compare':    'photo-1556742031-c6961e8560b0',
+    '/calculator': 'photo-1554224155-6726b3ff858f',
+    '/blog':       'photo-1521791136064-7986c2920216',
+  }
+  if (INDEX_IMAGES[canonical]) {
+    return `https://images.unsplash.com/${INDEX_IMAGES[canonical]}?w=1200&h=630&fit=crop&crop=center&q=80`
+  }
+
   return DEFAULT_OG_IMAGE
 }
 

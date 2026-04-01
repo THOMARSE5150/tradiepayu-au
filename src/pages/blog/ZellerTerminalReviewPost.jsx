@@ -276,14 +276,14 @@ export default function ZellerTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">The one thing Square does better</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Square Terminal has an offline mode for genuine zero-signal environments — underground drainage, deep basements, large concrete structures where even Optus mobile data can't reach. Zeller Terminal 1 does not have offline mode. If there is no mobile or WiFi signal, Zeller cannot process a payment.
+            <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> has an offline mode for genuine zero-signal environments — underground drainage, deep basements, large concrete structures where even Optus mobile data can't reach. Zeller Terminal 1 does not have offline mode. If there is no mobile or WiFi signal, Zeller cannot process a payment.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
             For most tradies, this is not a real-world limitation. Optus 4G reaches the vast majority of residential and commercial job sites in Australia. But if your work regularly takes you underground — stormwater, sewer, communications tunnels, deep car park basements — Square Terminal's offline capability is the only solution in this market.
           </p>
           <div className="lg-light rounded-2xl p-5">
             <p className="text-sm text-slate-600 leading-relaxed">
-              <strong className="text-brand-dark">Practical recommendation:</strong> If you work underground regularly, carry a Square Terminal as backup ($329, no monthly fee). Use Zeller as your primary device for the lower rate and SIM convenience. Square stays in the van until you need it.
+              <strong className="text-brand-dark">Practical recommendation:</strong> If you work underground regularly, carry a Square Terminal as backup ($329, no monthly fee). Use Zeller as your primary device for the lower rate and SIM convenience. Square stays in the van until you need it. High-volume operators ($20k+/month) should also request a quote from <Link to="/providers/tyro" className="text-brand-blue hover:underline font-medium">Tyro</Link> — their negotiated rates can compete with Zeller's at volume.
             </p>
           </div>
         </motion.div>

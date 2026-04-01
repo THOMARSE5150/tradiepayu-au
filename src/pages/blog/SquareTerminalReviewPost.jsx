@@ -155,7 +155,7 @@ export default function SquareTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Quick verdict</h2>
           <div className="infobox">
-            Square Terminal is the right choice for one specific scenario: job sites with no mobile signal. Its offline mode is genuinely unique — no other terminal in Australia matches it. For everything else, Zeller's lower rate and SIM plan win.
+            Square Terminal is the right choice for one specific scenario: job sites with no mobile signal. Its offline mode is genuinely unique — no other terminal in Australia matches it. For everything else, <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link>'s lower rate and SIM plan win.
           </div>
         </motion.div>
       </section>
@@ -246,7 +246,7 @@ export default function SquareTerminalReviewPost() {
               },
               {
                 heading: 'No SIM card',
-                body: 'Square Terminal has no built-in SIM. Connected payments require customer WiFi, a hotspot from your phone, or an Ethernet connection. This is the biggest practical friction point on job sites.',
+                body: 'Square Terminal has no built-in SIM. Connected payments require customer WiFi, a hotspot from your phone, or an Ethernet connection. This is the biggest practical friction point on job sites — and the main reason most tradies choose Zeller Terminal 1 (which includes an Optus SIM for $15/month) as their primary device.',
               },
               {
                 heading: 'Settlement speed',

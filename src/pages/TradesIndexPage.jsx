@@ -2,8 +2,33 @@ import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { STATES } from '../data/states'
+import FaqSection from '../components/FaqSection'
 
 const SITE = 'https://tradiepayau.directory'
+
+const faqs = [
+  {
+    q: 'Do all trades need different EFTPOS setups?',
+    a: 'The core setup is the same — Zeller Terminal 1 with SIM is the right starting point for most trades. But the specific challenges vary: electricians and plumbers face dead zones that need Square Terminal backup; builders and concreters deal with new estate connectivity issues; painters and landscapers often work at properties without WiFi. Each trade guide covers the specific scenarios relevant to that trade.',
+  },
+  {
+    q: 'What EFTPOS setup works best for sole-trader tradies?',
+    a: 'Zeller Terminal 1 with the Optus SIM plan ($99 hardware + $15/month) is the top pick. It works independently of customer WiFi, settles same-day, and has the lowest in-person rate (1.4%) of any flat-rate provider. For starting out with zero hardware cost, Zeller Tap to Pay uses your phone as a terminal at the same 1.4% rate.',
+  },
+  {
+    q: 'Can tradies accept card payments without WiFi?',
+    a: 'Yes — two options: (1) Zeller Terminal 1 with SIM connects via Optus 4G mobile data, independent of any WiFi. (2) Square Terminal offline mode stores payments locally and processes them when signal is restored. For most job sites, the Zeller SIM is sufficient. For underground or zero-signal environments, Square offline mode is the only option.',
+  },
+  {
+    q: 'What is the cheapest EFTPOS option for a tradie just starting out?',
+    a: 'Zeller Tap to Pay: $0 hardware, 1.4% rate, no monthly fee. Uses your existing iPhone or Android phone as a card reader. It\'s the fastest way to start accepting card payments — account approval is typically same-day with just an ABN.',
+  },
+  {
+    q: 'Do tradies need a merchant account with their bank?',
+    a: 'No — Zeller, Square, and Stripe are independent payment providers that do not require a bank merchant account. They approve accounts online with just an ABN, typically within 24 hours. Bank merchant accounts through major banks take 5–10 business days, require paperwork, and generally charge higher fees for lower volumes.',
+  },
+]
+
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -18,6 +43,15 @@ const jsonLd = [
         url: `${SITE}/trades/${slug}`,
       }))
     ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   },
 ]
 
@@ -140,6 +174,7 @@ export default function TradesIndexPage() {
           </div>
         </div>
       </section>
+      <FaqSection items={faqs} title="EFTPOS for tradies — common questions" />
     </>
   )
 }

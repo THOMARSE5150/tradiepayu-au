@@ -186,7 +186,7 @@ export default function BestEftposSoleTradersPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Quick answer</h2>
           <div className="infobox">
-            Zeller Tap to Pay is the cheapest starting point (no hardware cost, 1.4%). For regular on-site work, upgrade to Zeller Terminal 1 with SIM ($99 + $15/mo). Both have no monthly fee and no contract.
+            <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Tap to Pay</Link> is the cheapest starting point — no hardware cost, 1.4% rate, no monthly fee, no contract. For regular on-site work, upgrade to Zeller Terminal 1 with SIM ($99 + $15/mo). Both have no monthly fee and no contract.
           </div>
         </motion.div>
       </section>
@@ -247,7 +247,7 @@ export default function BestEftposSoleTradersPost() {
         </motion.h2>
         <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
         <p className="text-xs text-slate-500 mt-3">
-          Rates current as of March 2026. Tyro and Shift4 rates are indicative — request a quote. ★ Primary recommendation for most sole traders.
+          Rates current as of March 2026. <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> and <Link to="/providers/shift4" className="text-brand-blue hover:underline">Shift4</Link> rates are indicative — request a quote. ★ Primary recommendation for most sole traders.
         </p>
       </section>
 
@@ -406,12 +406,24 @@ export default function BestEftposSoleTradersPost() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link
             to="/providers/zeller"
             className="inline-flex items-center gap-2 bg-brand-blue text-white font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-colors"
           >
             Read the full Zeller review →
+          </Link>
+          <Link
+            to="/providers/square"
+            className="inline-flex items-center gap-2 border border-brand-blue text-brand-blue font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+          >
+            Square Terminal review →
+          </Link>
+          <Link
+            to="/calculator"
+            className="inline-flex items-center gap-2 border border-slate-300 text-slate-600 font-semibold text-sm px-5 py-2.5 rounded-xl hover:border-brand-blue hover:text-brand-blue transition-colors"
+          >
+            Cost calculator →
           </Link>
         </div>
       </section>
