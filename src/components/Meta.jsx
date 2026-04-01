@@ -13,6 +13,9 @@ const BLOG_HERO = {
   'zeller-terminal-1-review-2026':                'photo-1556742049-0cfed4f6a45d',
   'square-terminal-review-2026':                  'photo-1556742031-c6961e8560b0',
   'best-eftpos-sole-traders-australia-2026':      'photo-1521791136064-7986c2920216',
+  'stripe-terminal-review-2026':                  'photo-1601597111158-2fceff292cdc',
+  'tyro-eftpos-review-2026':                      'photo-1563013544-824ae1b704d3',
+  'shift4-eftpos-review-2026':                    'photo-1559526324-4b87b5e36e44',
 }
 
 // Hero photo IDs for provider pages (Zeller uses branded SVG; others use Unsplash hero)

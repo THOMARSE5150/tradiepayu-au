@@ -70,15 +70,18 @@ export const BLOG_POSTS = [
   { slug: 'square-terminal-review-2026',                 label: 'Square Terminal Review' },
   { slug: 'best-eftpos-sole-traders-australia-2026',     label: 'Best EFTPOS for Sole Traders' },
   { slug: 'accept-card-payments-sole-trader-australia',  label: 'How to Accept Card Payments' },
+  { slug: 'stripe-terminal-review-2026',                 label: 'Stripe Terminal Review' },
+  { slug: 'tyro-eftpos-review-2026',                     label: 'Tyro EFTPOS Review' },
+  { slug: 'shift4-eftpos-review-2026',                   label: 'Shift4 EFTPOS Review' },
 ]
 
 /** Blog posts most relevant to each provider */
 const PROVIDER_BLOG_MAP = {
   zeller:  ['zeller-terminal-1-review-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
   square:  ['square-terminal-review-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
-  stripe:  ['eftpos-fees-tradies-australia-2026', 'accept-card-payments-sole-trader-australia', 'best-eftpos-sole-traders-australia-2026'],
-  tyro:    ['eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026', 'accept-card-payments-sole-trader-australia'],
-  shift4:  ['eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026', 'accept-card-payments-sole-trader-australia'],
+  stripe:  ['stripe-terminal-review-2026', 'eftpos-fees-tradies-australia-2026', 'accept-card-payments-sole-trader-australia'],
+  tyro:    ['tyro-eftpos-review-2026', 'eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026'],
+  shift4:  ['shift4-eftpos-review-2026', 'eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026'],
 }
 
 /** Default blog posts for trade/compare pages */

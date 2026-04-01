@@ -47,6 +47,9 @@ const SoleTraderPost         = lazy(() => import('./pages/blog/SoleTraderCardPay
 const ZellerTerminalPost     = lazy(() => import('./pages/blog/ZellerTerminalReviewPost'))
 const SquareTerminalPost     = lazy(() => import('./pages/blog/SquareTerminalReviewPost'))
 const BestEftposSoleTradersPost = lazy(() => import('./pages/blog/BestEftposSoleTradersPost'))
+const StripeTerminalPost = lazy(() => import('./pages/blog/StripeTerminalReviewPost'))
+const TyroReviewPost    = lazy(() => import('./pages/blog/TyroReviewPost'))
+const Shift4ReviewPost  = lazy(() => import('./pages/blog/Shift4ReviewPost'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -111,6 +114,9 @@ export default function App() {
           <Route path="/blog/zeller-terminal-1-review-2026" element={<ZellerTerminalPost />} />
           <Route path="/blog/square-terminal-review-2026" element={<SquareTerminalPost />} />
           <Route path="/blog/best-eftpos-sole-traders-australia-2026" element={<BestEftposSoleTradersPost />} />
+          <Route path="/blog/stripe-terminal-review-2026" element={<StripeTerminalPost />} />
+          <Route path="/blog/tyro-eftpos-review-2026" element={<TyroReviewPost />} />
+          <Route path="/blog/shift4-eftpos-review-2026" element={<Shift4ReviewPost />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

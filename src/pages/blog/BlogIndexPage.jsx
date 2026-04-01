@@ -54,6 +54,30 @@ const posts = [
     readTime: '8 min read',
     image: 'photo-1607472586893-edb57bdc0e39',
   },
+  {
+    slug: 'stripe-terminal-review-2026',
+    title: 'Stripe Terminal Review (2026) — Is Stripe Worth It for Australian Tradies?',
+    description: 'Stripe Terminal: 1.7% + $0.10 in-person, 24/7 support, best API. How it compares to Zeller and Square for Australian tradies.',
+    date: '2 Apr 2026',
+    readTime: '7 min read',
+    image: 'photo-1601597111158-2fceff292cdc',
+  },
+  {
+    slug: 'tyro-eftpos-review-2026',
+    title: 'Tyro EFTPOS Review (2026) — Is Tyro Good for Tradies?',
+    description: 'Tyro is a fully licensed Australian bank with competitive payment links (1.4% incl. GST). But the in-person rate requires a quote. Full review for tradies.',
+    date: '2 Apr 2026',
+    readTime: '7 min read',
+    image: 'photo-1563013544-824ae1b704d3',
+  },
+  {
+    slug: 'shift4-eftpos-review-2026',
+    title: 'Shift4 EFTPOS Review (2026) — Is Shift4 Worth It for Australian Tradies?',
+    description: 'Shift4 offers surcharging that passes fees to customers. No monthly fee. Is it right for your trade business? Full independent review.',
+    date: '2 Apr 2026',
+    readTime: '6 min read',
+    image: 'photo-1559526324-4b87b5e36e44',
+  },
 ]
 
 const crumbs = [
