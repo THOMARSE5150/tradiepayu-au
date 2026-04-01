@@ -107,6 +107,7 @@ export default function App() {
           <Route path="/trades/:tradeSlug/:stateSlug" element={<StateTradePage />} />
           <Route path="/states" element={<StatesIndexPage />} />
           <Route path="/states/:stateSlug" element={<StateIndexPage />} />
+          <Route path="/states/:stateSlug/:tradeSlug" element={<StateTradePage />} />
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/eftpos-fees-tradies-australia-2026" element={<EftposFeesPost />} />
           <Route path="/blog/zeller-vs-square-eftpos-tradies" element={<ZellerVsSquarePost />} />
