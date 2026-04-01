@@ -80,6 +80,12 @@ ${tradeSlugs.flatMap(t => stateSlugs.map(s => {
   return url(`/trades/${t}/${s}`, (Math.min(base + boost, 0.9)).toFixed(2))
 })).join('\n')}
 
+  <!-- Blog -->
+${url('/blog', '0.8', 'weekly')}
+${url('/blog/eftpos-fees-tradies-australia-2026',        '0.8')}
+${url('/blog/zeller-vs-square-eftpos-tradies',           '0.8')}
+${url('/blog/accept-card-payments-sole-trader-australia','0.8')}
+
   <!-- Static pages -->
 ${url('/calculator', '0.7')}
 ${url('/about',      '0.6')}

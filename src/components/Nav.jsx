@@ -10,6 +10,7 @@ const topLinks = [
   { label: 'Providers', href: '/providers' },
   { label: 'Trades',    href: '/trades' },
   { label: 'States',    href: '/states' },
+  { label: 'Blog',      href: '/blog' },
   { label: 'Calculator', href: '/calculator' },
   { label: 'About', href: '/about' },
 ]

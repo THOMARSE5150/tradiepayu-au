@@ -40,6 +40,10 @@ const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
 const StateTradePage    = lazy(() => import('./pages/StateTradePage'))
 const StateIndexPage    = lazy(() => import('./pages/StateIndexPage'))
 const StatesIndexPage   = lazy(() => import('./pages/StatesIndexPage'))
+const BlogIndexPage     = lazy(() => import('./pages/blog/BlogIndexPage'))
+const EftposFeesPost    = lazy(() => import('./pages/blog/EftposFeesPost'))
+const ZellerVsSquarePost = lazy(() => import('./pages/blog/ZellerVsSquarePost'))
+const SoleTraderPost    = lazy(() => import('./pages/blog/SoleTraderCardPaymentsPost'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -97,6 +101,10 @@ export default function App() {
           <Route path="/trades/:tradeSlug/:stateSlug" element={<StateTradePage />} />
           <Route path="/states" element={<StatesIndexPage />} />
           <Route path="/states/:stateSlug" element={<StateIndexPage />} />
+          <Route path="/blog" element={<BlogIndexPage />} />
+          <Route path="/blog/eftpos-fees-tradies-australia-2026" element={<EftposFeesPost />} />
+          <Route path="/blog/zeller-vs-square-eftpos-tradies" element={<ZellerVsSquarePost />} />
+          <Route path="/blog/accept-card-payments-sole-trader-australia" element={<SoleTraderPost />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
