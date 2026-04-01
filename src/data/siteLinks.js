@@ -62,3 +62,37 @@ export function relatedTrades(currentSlug) {
 export function otherProviders(currentSlug) {
   return PROVIDERS.filter(p => p.slug !== currentSlug)
 }
+
+export const BLOG_POSTS = [
+  { slug: 'eftpos-fees-tradies-australia-2026',          label: 'EFTPOS Fees Breakdown (2026)' },
+  { slug: 'zeller-vs-square-eftpos-tradies',             label: 'Zeller vs Square for Tradies' },
+  { slug: 'zeller-terminal-1-review-2026',               label: 'Zeller Terminal 1 Review' },
+  { slug: 'square-terminal-review-2026',                 label: 'Square Terminal Review' },
+  { slug: 'best-eftpos-sole-traders-australia-2026',     label: 'Best EFTPOS for Sole Traders' },
+  { slug: 'accept-card-payments-sole-trader-australia',  label: 'How to Accept Card Payments' },
+]
+
+/** Blog posts most relevant to each provider */
+const PROVIDER_BLOG_MAP = {
+  zeller:  ['zeller-terminal-1-review-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
+  square:  ['square-terminal-review-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
+  stripe:  ['eftpos-fees-tradies-australia-2026', 'accept-card-payments-sole-trader-australia', 'best-eftpos-sole-traders-australia-2026'],
+  tyro:    ['eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026', 'accept-card-payments-sole-trader-australia'],
+  shift4:  ['eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026', 'accept-card-payments-sole-trader-australia'],
+}
+
+/** Default blog posts for trade/compare pages */
+const DEFAULT_BLOG_SLUGS = [
+  'eftpos-fees-tradies-australia-2026',
+  'zeller-vs-square-eftpos-tradies',
+  'best-eftpos-sole-traders-australia-2026',
+]
+
+export function blogPostsForProvider(providerSlug) {
+  const slugs = PROVIDER_BLOG_MAP[providerSlug] || DEFAULT_BLOG_SLUGS
+  return slugs.map(s => BLOG_POSTS.find(b => b.slug === s)).filter(Boolean)
+}
+
+export function defaultBlogPosts() {
+  return DEFAULT_BLOG_SLUGS.map(s => BLOG_POSTS.find(b => b.slug === s)).filter(Boolean)
+}

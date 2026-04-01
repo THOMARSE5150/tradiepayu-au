@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Meta from '../components/Meta'
 import Breadcrumb from '../components/Breadcrumb'
+import FaqSection from '../components/FaqSection'
 import providers from '../data/providers.json'
 
 const SITE = 'https://tradiepayau.directory'
@@ -9,6 +10,29 @@ const SITE = 'https://tradiepayau.directory'
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'Provider Comparisons' },
+]
+
+const faqs = [
+  {
+    q: 'Which EFTPOS provider wins most head-to-head comparisons for tradies?',
+    a: 'Zeller Terminal 1 wins the most head-to-head comparisons for Australian tradies in 2026. At 1.4% in-person rate, same-day settlement to a Zeller Transaction Account, and an optional Optus SIM plan ($15/month) for job-site connectivity, it outperforms Square (1.6%), Stripe (1.7% + $0.10), and Tyro (quote-based) on total monthly cost for most tradie volumes.',
+  },
+  {
+    q: 'What is the main difference between Zeller and Square for tradies?',
+    a: "Zeller is cheaper on rate (1.4% vs 1.6%) and offers same-day settlement. Square has a built-in offline mode — it can accept payments with zero connectivity and process them when signal is restored. For most tradies, Zeller + SIM handles 90% of job sites. Square is the recommended backup for underground, plant rooms, and remote areas where even SIM coverage fails.",
+  },
+  {
+    q: 'Is Stripe good for tradies compared to Zeller and Square?',
+    a: "Stripe is best for tradies who also need online invoicing, website payment integration, or subscription billing — not primarily for in-person terminal use. At 1.7% + $0.10 per transaction, Stripe is more expensive than Zeller and Square for in-person work. Stripe has no SIM-enabled terminal option and no offline mode. It's a strong second device for tradies who send payment links.",
+  },
+  {
+    q: 'Is Tyro worth comparing against Zeller and Square?',
+    a: "Tyro is worth considering for high-volume tradie businesses (above ~$20,000/month in card revenue) where negotiated rates can beat Zeller's 1.4%. Tyro also integrates with major trade management software (simPRO, ServiceM8, Tradify). For sole traders and small operators, Tyro's quote-based pricing and lack of a published flat rate make it harder to compare directly.",
+  },
+  {
+    q: 'What does Shift4 offer that the others do not?',
+    a: "Shift4 passes the processing fee to the customer (surcharging model), meaning your merchant cost is effectively $0. For commercial operators and builders who regularly invoice large jobs and accept surcharging, this can be significant. The trade-off is contract lock-in and less pricing transparency compared to Zeller, Square, and Stripe.",
+  },
 ]
 
 // All combinations of 2 providers
@@ -49,6 +73,15 @@ const jsonLd = [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
       { '@type': 'ListItem', position: 2, name: 'Comparisons', item: `${SITE}/compare` },
     ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   },
 ]
 
@@ -144,13 +177,38 @@ export default function CompareIndexPage() {
         </div>
       </section>
 
-      <section className="section section-alt">
-        <div className="container-page max-w-xl text-center">
-          <h2 className="text-xl font-bold text-brand-dark mb-3">Looking for trade-specific advice?</h2>
-          <p className="text-slate-500 text-sm mb-6">
-            Browse guides tailored to your trade — electricians, plumbers, builders, and 15 more.
-          </p>
-          <Link to="/trades" className="btn-primary">Browse by trade →</Link>
+      <FaqSection items={faqs} title="EFTPOS comparison — FAQ" />
+
+      <section className="section container-page">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Related guides</p>
+            <div className="space-y-1">
+              {[
+                { slug: 'eftpos-fees-tradies-australia-2026',      label: 'EFTPOS Fees Breakdown (2026)' },
+                { slug: 'zeller-vs-square-eftpos-tradies',         label: 'Zeller vs Square — Deep Dive' },
+                { slug: 'zeller-terminal-1-review-2026',           label: 'Zeller Terminal 1 Review' },
+                { slug: 'square-terminal-review-2026',             label: 'Square Terminal Review' },
+                { slug: 'best-eftpos-sole-traders-australia-2026', label: 'Best EFTPOS for Sole Traders' },
+              ].map(post => (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="flex items-center justify-between px-4 py-2.5 bg-white border border-slate-100 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
+                >
+                  <span className="text-sm text-slate-600 group-hover:text-brand-blue transition-colors">{post.label}</span>
+                  <span className="text-xs text-slate-400 group-hover:text-brand-blue transition-colors ml-2">→</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Trade-specific guides</p>
+            <p className="text-slate-500 text-sm mb-4">
+              Browse payment guides tailored to your trade — electricians, plumbers, builders, and 15 more.
+            </p>
+            <Link to="/trades" className="btn-primary">Browse by trade →</Link>
+          </div>
         </div>
       </section>
     </>

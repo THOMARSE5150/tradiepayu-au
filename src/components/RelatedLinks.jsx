@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PROVIDERS, TRADES, relatedTrades, otherProviders } from '../data/siteLinks'
+import { PROVIDERS, TRADES, relatedTrades, otherProviders, blogPostsForProvider, defaultBlogPosts } from '../data/siteLinks'
 import { STATES, STATE_MAP } from '../data/states'
 
 const COMPARE_PAIRS = [
@@ -15,6 +15,7 @@ export default function RelatedLinks({ slug, type, currentState }) {
 
   const providerLinks = isProvider ? otherProviders(slug) : PROVIDERS
   const tradeLinks = isProvider ? TRADES.slice(0, 9) : relatedTrades(slug)
+  const blogPosts = isProvider ? blogPostsForProvider(slug) : defaultBlogPosts()
 
   return (
     <section className="section section-alt">
@@ -143,6 +144,31 @@ export default function RelatedLinks({ slug, type, currentState }) {
             </div>
           )
         })()}
+
+        {/* Blog guides */}
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+            From the blog
+          </p>
+          <div className="space-y-1">
+            {blogPosts.map(post => (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="flex items-center justify-between px-4 py-2.5 bg-white border border-slate-100 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
+              >
+                <span className="text-sm text-slate-600 group-hover:text-brand-blue transition-colors">{post.label}</span>
+                <span className="text-xs text-slate-400 group-hover:text-brand-blue transition-colors flex-shrink-0 ml-2">→</span>
+              </Link>
+            ))}
+            <Link
+              to="/blog"
+              className="flex items-center px-4 py-2.5 text-sm font-semibold text-brand-blue hover:underline"
+            >
+              All guides →
+            </Link>
+          </div>
+        </div>
 
       </div>
     </section>
