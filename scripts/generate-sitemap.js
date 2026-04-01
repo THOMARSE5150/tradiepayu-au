@@ -27,8 +27,19 @@ const blogPosts = [
   { slug: 'best-eftpos-sole-traders-australia-2026',     lastmod: '2026-03-31', changefreq: 'monthly' },
   { slug: 'accept-card-payments-sole-trader-australia',  lastmod: '2026-03-31', changefreq: 'monthly' },
   { slug: 'stripe-terminal-review-2026',                 lastmod: TODAY,        changefreq: 'monthly' },
-  { slug: 'tyro-eftpos-review-2026',                     lastmod: TODAY,        changefreq: 'monthly' },
-  { slug: 'shift4-eftpos-review-2026',                   lastmod: TODAY,        changefreq: 'monthly' },
+  { slug: 'tyro-eftpos-review-2026',                           lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'shift4-eftpos-review-2026',                         lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'zeller-vs-tyro-eftpos-tradies',                     lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'surcharging-eftpos-tradies-australia-2026',         lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-builders-australia-2026',               lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'zeller-vs-square-vs-stripe-eftpos-tradies-2026',    lastmod: TODAY, changefreq: 'monthly', priority: '0.9' },
+  { slug: 'best-eftpos-plumbers-australia-2026',               lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'stripe-vs-square-eftpos-australia-2026',            lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'how-to-get-paid-faster-sole-trader-australia',      lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-electricians-australia-2026',           lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-glaziers-australia-2026',               lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-roofers-australia-2026',                lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-hvac-australia-2026',                   lastmod: TODAY, changefreq: 'monthly' },
 ]
 
 // All combinations of 2 providers
@@ -95,7 +106,7 @@ ${tradeSlugs.flatMap(t => stateSlugs.map(s => {
 
   <!-- Blog -->
 ${url('/blog', '0.8', 'weekly')}
-${blogPosts.map(p => url(`/blog/${p.slug}`, '0.8', p.changefreq, p.lastmod)).join('\n')}
+${blogPosts.map(p => url(`/blog/${p.slug}`, p.priority || '0.8', p.changefreq, p.lastmod)).join('\n')}
 
   <!-- Static pages -->
 ${url('/calculator', '0.7')}

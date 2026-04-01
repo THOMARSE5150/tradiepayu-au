@@ -54,9 +54,13 @@ const ZellerVsTyroPost  = lazy(() => import('./pages/blog/ZellerVsTyroPost'))
 const SurchargingPost   = lazy(() => import('./pages/blog/SurchargingTradiesPost'))
 const BuildersPost           = lazy(() => import('./pages/blog/BestEftposBuildersPost'))
 const ZellerSquareStripePost = lazy(() => import('./pages/blog/ZellerSquareStripePost'))
-const BestEftposPlumbersPost = lazy(() => import('./pages/blog/BestEftposPlumbersPost'))
-const StripeVsSquarePost     = lazy(() => import('./pages/blog/StripeVsSquarePost'))
-const GetPaidFasterPost      = lazy(() => import('./pages/blog/GetPaidFasterPost'))
+const BestEftposPlumbersPost      = lazy(() => import('./pages/blog/BestEftposPlumbersPost'))
+const StripeVsSquarePost          = lazy(() => import('./pages/blog/StripeVsSquarePost'))
+const GetPaidFasterPost           = lazy(() => import('./pages/blog/GetPaidFasterPost'))
+const BestEftposElectriciansPost  = lazy(() => import('./pages/blog/BestEftposElectriciansPost'))
+const BestEftposGlaziersPost      = lazy(() => import('./pages/blog/BestEftposGlaziersPost'))
+const BestEftposRoofersPost       = lazy(() => import('./pages/blog/BestEftposRoofersPost'))
+const BestEftposHVACPost          = lazy(() => import('./pages/blog/BestEftposHVACPost'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -132,6 +136,10 @@ export default function App() {
           <Route path="/blog/best-eftpos-plumbers-australia-2026" element={<BestEftposPlumbersPost />} />
           <Route path="/blog/stripe-vs-square-eftpos-australia-2026" element={<StripeVsSquarePost />} />
           <Route path="/blog/how-to-get-paid-faster-sole-trader-australia" element={<GetPaidFasterPost />} />
+          <Route path="/blog/best-eftpos-electricians-australia-2026" element={<BestEftposElectriciansPost />} />
+          <Route path="/blog/best-eftpos-glaziers-australia-2026" element={<BestEftposGlaziersPost />} />
+          <Route path="/blog/best-eftpos-roofers-australia-2026" element={<BestEftposRoofersPost />} />
+          <Route path="/blog/best-eftpos-hvac-australia-2026" element={<BestEftposHVACPost />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

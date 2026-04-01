@@ -134,6 +134,38 @@ const posts = [
     readTime: '6 min read',
     image: 'photo-1563013544-824ae1b704d3',
   },
+  {
+    slug: 'best-eftpos-electricians-australia-2026',
+    title: 'Best EFTPOS for Electricians in Australia (2026)',
+    description: 'Switchboard rooms, roof voids, and new estates without WiFi. Here is the EFTPOS setup that works where electricians actually work.',
+    date: '2 Apr 2026',
+    readTime: '6 min read',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
+  {
+    slug: 'best-eftpos-glaziers-australia-2026',
+    title: 'Best EFTPOS for Glaziers in Australia (2026)',
+    description: 'Emergency glazing is 24/7, in high-rise buildings, and on sites without WiFi. The EFTPOS setup that works at any hour.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  {
+    slug: 'best-eftpos-roofers-australia-2026',
+    title: 'Best EFTPOS for Roofers in Australia (2026)',
+    description: 'Storm-damage call-outs, rooftop work, and large residential jobs. The best EFTPOS for Australian roofers in 2026.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    image: 'photo-1558618666-fcd25c85cd64',
+  },
+  {
+    slug: 'best-eftpos-hvac-australia-2026',
+    title: 'Best EFTPOS for HVAC Technicians in Australia (2026)',
+    description: 'Plant rooms, rooftop units, and commercial buildings after hours. The EFTPOS that works where HVAC technicians actually work.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    image: 'photo-1558618047-3c8c76ca7d13',
+  },
 ]
 
 const crumbs = [
