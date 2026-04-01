@@ -27,7 +27,7 @@ function combos(ids) {
 }
 
 const providerIds = providers.map(p => p.id)
-const tradeSlugs  = ['electricians','plumbers','gas-fitters','hvac','builders','carpenters','concreters','painters','plasterers','tilers','roofers','landscapers','fencers','glaziers','tilers','arborists','pest-control','solar-installers']
+const tradeSlugs  = ['electricians','plumbers','gas-fitters','hvac','builders','carpenters','concreters','painters','plasterers','tilers','roofers','landscapers','fencers','glaziers','pool-builders','pest-controllers','welders','cleaners']
 const stateSlugs  = ['nsw','vic','qld','wa','sa','tas','act','nt']
 
 const urls = [

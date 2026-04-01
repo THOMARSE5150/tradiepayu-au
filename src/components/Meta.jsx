@@ -5,6 +5,13 @@ const SITE_URL = 'https://tradiepayau.directory'
 const SITE_NAME = 'TradiePay AU'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
 
+// Blog post hero photos
+const BLOG_HERO = {
+  'eftpos-fees-tradies-australia-2026':        'photo-1554224155-6726b3ff858f',
+  'zeller-vs-square-eftpos-tradies':           'photo-1556742031-c6961e8560b0',
+  'accept-card-payments-sole-trader-australia':'photo-1607472586893-edb57bdc0e39',
+}
+
 // Hero photo IDs for provider pages (Zeller uses branded SVG; others use Unsplash hero)
 const PROVIDER_HERO = {
   zeller:  null,
@@ -35,6 +42,14 @@ function resolveOgImage(canonical, ogImageOverride) {
     if (slug === 'zeller') return ZELLER_OG
     if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
     return `${SITE_URL}/og-provider.svg`
+  }
+
+  // Blog pages — use each post's hero photo
+  if (canonical.startsWith('/blog/')) {
+    const slug = canonical.split('/')[2]
+    const photo = slug ? BLOG_HERO[slug] : null
+    if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
+    return DEFAULT_OG_IMAGE
   }
 
   // Compare pages — use the first provider's photo if resolvable
