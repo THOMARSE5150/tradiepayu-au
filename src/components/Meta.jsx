@@ -26,7 +26,7 @@ const PROVIDER_HERO = {
   tyro:    'photo-1563013544-824ae1b704d3',
   shift4:  'photo-1559526324-4b87b5e36e44',
 }
-const ZELLER_OG = `${SITE_URL}/og-zeller.svg`
+const ZELLER_OG = `${SITE_URL}/og-zeller.png`
 
 function resolveOgImage(canonical, ogImageOverride) {
   if (ogImageOverride) return ogImageOverride

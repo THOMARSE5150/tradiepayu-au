@@ -85,24 +85,48 @@ const crumbs = [
   { label: 'Blog' },
 ]
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Blog',
-  name: 'TradiePay AU Blog',
-  description: 'In-depth guides on EFTPOS terminals, payment fees, and card payment setup for Australian tradies.',
-  url: `${SITE}/blog`,
-  publisher: {
-    '@type': 'Organization',
-    name: 'TradiePay AU',
-    url: SITE,
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'TradiePay AU Blog',
+    description: 'In-depth guides on EFTPOS terminals, payment fees, and card payment setup for Australian tradies.',
+    url: `${SITE}/blog`,
+    publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+    blogPost: posts.map(p => ({
+      '@type': 'BlogPosting',
+      headline: p.title,
+      description: p.description,
+      url: `${SITE}/blog/${p.slug}`,
+      image: `https://images.unsplash.com/${p.image}?w=1200&h=630&fit=crop&crop=center&q=80`,
+      author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+      publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+    })),
   },
-  blogPost: posts.map(p => ({
-    '@type': 'BlogPosting',
-    headline: p.title,
-    description: p.description,
-    url: `${SITE}/blog/${p.slug}`,
-  })),
-}
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'EFTPOS Guides for Australian Tradies',
+    description: 'All blog posts from TradiePay AU — reviews, comparisons, and setup guides for tradie payment systems.',
+    url: `${SITE}/blog`,
+    numberOfItems: posts.length,
+    itemListElement: posts.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: p.title,
+      url: `${SITE}/blog/${p.slug}`,
+      description: p.description,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+    ],
+  },
+]
 
 export default function BlogIndexPage() {
   return (
