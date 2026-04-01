@@ -353,6 +353,25 @@ export default function ZellerPage() {
 
       <FaqSection items={faqs} title="Zeller FAQ" />
 
+      {/* Compare chips */}
+      <section className="section-alt py-8">
+        <div className="container-page max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Compare Zeller vs.</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Square', href: '/compare/zeller-vs-square' },
+              { label: 'Stripe', href: '/compare/zeller-vs-stripe' },
+              { label: 'Tyro', href: '/compare/zeller-vs-tyro' },
+              { label: 'Shift4', href: '/compare/zeller-vs-shift4' },
+            ].map(c => (
+              <Link key={c.href} to={c.href} className="inline-flex items-center gap-1 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-semibold text-brand-dark hover:border-brand-blue hover:text-brand-blue transition-all">
+                Zeller vs {c.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Related */}
       <RelatedLinks slug="zeller" type="provider" />
     </>

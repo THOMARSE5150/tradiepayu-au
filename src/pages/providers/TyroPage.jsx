@@ -201,6 +201,25 @@ export default function TyroPage() {
 
       <FaqSection items={faqs} title="Tyro FAQ" />
 
+      {/* Compare chips */}
+      <section className="section-alt py-8">
+        <div className="container-page max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Compare Tyro vs.</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Zeller', href: '/compare/zeller-vs-tyro' },
+              { label: 'Square', href: '/compare/square-vs-tyro' },
+              { label: 'Stripe', href: '/compare/stripe-vs-tyro' },
+              { label: 'Shift4', href: '/compare/tyro-vs-shift4' },
+            ].map(c => (
+              <Link key={c.href} to={c.href} className="inline-flex items-center gap-1 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-semibold text-brand-dark hover:border-brand-blue hover:text-brand-blue transition-all">
+                Tyro vs {c.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <RelatedLinks slug="tyro" type="provider" />
     </>
   )

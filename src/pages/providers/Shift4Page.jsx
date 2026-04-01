@@ -217,6 +217,25 @@ export default function Shift4Page() {
 
       <FaqSection items={faqs} title="Shift4 FAQ" />
 
+      {/* Compare chips */}
+      <section className="section-alt py-8">
+        <div className="container-page max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Compare Shift4 vs.</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Zeller', href: '/compare/zeller-vs-shift4' },
+              { label: 'Square', href: '/compare/square-vs-shift4' },
+              { label: 'Stripe', href: '/compare/stripe-vs-shift4' },
+              { label: 'Tyro', href: '/compare/tyro-vs-shift4' },
+            ].map(c => (
+              <Link key={c.href} to={c.href} className="inline-flex items-center gap-1 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-semibold text-brand-dark hover:border-brand-blue hover:text-brand-blue transition-all">
+                Shift4 vs {c.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <RelatedLinks slug="shift4" type="provider" />
     </>
   )
