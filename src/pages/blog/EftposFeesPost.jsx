@@ -245,7 +245,7 @@ export default function EftposFeesPost() {
             {[
               {
                 heading: 'Chargeback fees',
-                body: 'All three providers charge a fee when a customer disputes a payment with their bank. Zeller and Square charge $15 per chargeback. Stripe charges $15 USD (~$23 AUD). Chargebacks are rare in trade work — jobs are in person and the customer is present — but it's worth knowing.',
+                body: 'All three providers charge a fee when a customer disputes a payment with their bank. Zeller and Square charge $15 per chargeback. Stripe charges $15 USD (~$23 AUD). Chargebacks are rare in trade work — jobs are in person and the customer is present — but it\'s worth knowing.',
               },
               {
                 heading: 'MOTO rates',
