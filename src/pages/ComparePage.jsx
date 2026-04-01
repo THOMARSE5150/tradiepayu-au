@@ -51,41 +51,7 @@ export default function ComparePage() {
     { label: `${p1.name} vs ${p2.name}` },
   ]
 
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: title,
-      name: title,
-      description,
-      image: { '@type': 'ImageObject', url: p1.product_image?.startsWith('http') ? p1.product_image : `${SITE}/og-provider.svg`, width: 1200, height: 630 },
-      url: `${SITE}${canonical}`,
-      datePublished: '2026-01-15',
-      dateModified: '2026-03-31',
-      author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
-      publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-        { '@type': 'ListItem', position: 2, name: 'Providers', item: `${SITE}/providers` },
-        { '@type': 'ListItem', position: 3, name: `${p1.name} vs ${p2.name}`, item: `${SITE}${canonical}` },
-      ],
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map(f => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    },
-  ]
-
-  // Dynamic FAQs built from provider data
+  // Dynamic FAQs built from provider data — must be declared before jsonLd
   const faqs = (() => {
     const items = []
 
@@ -179,6 +145,40 @@ export default function ComparePage() {
 
     return items
   })()
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      name: title,
+      description,
+      image: { '@type': 'ImageObject', url: p1.product_image?.startsWith('http') ? p1.product_image : `${SITE}/og-provider.svg`, width: 1200, height: 630 },
+      url: `${SITE}${canonical}`,
+      datePublished: '2026-01-15',
+      dateModified: '2026-03-31',
+      author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+      publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+        { '@type': 'ListItem', position: 2, name: 'Providers', item: `${SITE}/providers` },
+        { '@type': 'ListItem', position: 3, name: `${p1.name} vs ${p2.name}`, item: `${SITE}${canonical}` },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ]
 
   const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Quote'
   const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Quote'
