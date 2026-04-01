@@ -11,7 +11,13 @@ const crumbs = [
   { label: 'Contact' },
 ]
 
-const TOPICS = ['Rate correction', 'Data error', 'Partnership']
+const TOPICS = [
+  { value: '', label: 'Select a topic…' },
+  { value: 'Rate correction', label: 'Rate correction' },
+  { value: 'Data error', label: 'Data error' },
+  { value: 'Partnership', label: 'Partnership enquiry' },
+  { value: 'General', label: 'General question' },
+]
 const MAX_MSG = 1000
 const FORM_ID = 'xjgpglnz'
 
@@ -109,10 +115,12 @@ function SuccessModal({ onClose }) {
   )
 }
 
+const fieldCls = "w-full h-12 bg-slate-50 border border-slate-200 rounded-xl px-4 text-brand-dark text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all"
+
 function Field({ id, name, label, placeholder, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, error }) {
   return (
     <div>
-      <label htmlFor={id} className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+      <label htmlFor={id} className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
         {label}
       </label>
       <input
@@ -128,7 +136,7 @@ function Field({ id, name, label, placeholder, type = 'text', inputMode, autoCom
         placeholder={placeholder}
         required
         onFocus={() => haptic('light')}
-        className="w-full h-12 bg-white border border-slate-200 rounded-xl px-4 text-brand-dark text-sm placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all"
+        className={fieldCls}
       />
       {error && <p className="text-xs text-red-500 mt-1.5">{error}</p>}
     </div>
@@ -211,8 +219,8 @@ export default function ContactPage() {
         <div className="container-page relative z-10">
           <Breadcrumb crumbs={crumbs} />
           <div className="flex flex-wrap gap-2 mt-3 mb-3">
-            {TOPICS.map(t => (
-              <span key={t} className="inline-block px-3 py-1 bg-white/10 text-white/60 rounded-full text-xs tracking-wide">{t}</span>
+            {TOPICS.filter(t => t.value).map(t => (
+              <span key={t.value} className="inline-block px-3 py-1 bg-white/10 text-white/60 rounded-full text-xs tracking-wide">{t.label}</span>
             ))}
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight">Get in touch</h1>
@@ -234,7 +242,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
               onSubmit={handleSubmit}
-              className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 space-y-5 shadow-sm"
+              className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 space-y-4 shadow-sm"
             >
               <Field
                 id="name" name="name" label="Full name"
@@ -252,8 +260,27 @@ export default function ContactPage() {
                 enterKeyHint="next" error={fieldErrors.email}
               />
 
+              {/* Topic — native select triggers iOS picker wheel */}
               <div>
-                <label htmlFor="message" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">
+                <label htmlFor="topic" className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
+                  Topic
+                </label>
+                <select
+                  id="topic"
+                  name="topic"
+                  required
+                  onFocus={() => haptic('light')}
+                  className={`${fieldCls} appearance-none cursor-pointer`}
+                  style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center', paddingRight: '40px' }}
+                >
+                  {TOPICS.map(t => (
+                    <option key={t.value} value={t.value} disabled={!t.value}>{t.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                   Message
                 </label>
                 <div className="relative">
@@ -262,14 +289,14 @@ export default function ContactPage() {
                     name="message"
                     ref={textareaRef}
                     required
-                    rows={5}
+                    rows={4}
                     maxLength={MAX_MSG}
                     placeholder="What would you like to tell us?"
                     enterKeyHint="send"
                     autoComplete="off"
                     onInput={handleTextareaInput}
                     onFocus={() => haptic('light')}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-brand-dark text-sm placeholder-slate-400 resize-none focus:outline-none focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all pb-7"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-brand-dark text-sm placeholder-slate-400 resize-none focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all pb-7"
                   />
                   <span className={`absolute bottom-2.5 right-3.5 text-[11px] select-none transition-colors ${msgLen > MAX_MSG * 0.9 ? 'text-amber-500' : 'text-slate-300'}`}>
                     {msgLen}/{MAX_MSG}
