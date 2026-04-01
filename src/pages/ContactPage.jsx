@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, CheckCircle2, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -19,16 +19,19 @@ const TOPICS = [
   { value: 'General', label: 'General question' },
 ]
 const MAX_MSG = 1000
-const FORM_ID = 'xjgpglnz'
+
+// Worker URL — update after deploying workers/contact-form
+// Dev fallback: Formspree (admin notification only, no user confirmation email)
+const WORKER_URL  = import.meta.env.VITE_CONTACT_WORKER_URL || ''
+const FORMSPREE_URL = 'https://formspree.io/f/xjgpglnz'
 
 const NEXT_STEPS = [
   { label: 'Compare all providers', href: '/providers', note: 'Zeller, Square, Stripe, Tyro, Shift4' },
   { label: 'EFTPOS cost calculator', href: '/calculator', note: 'See real monthly costs at your volume' },
-  { label: 'Zeller vs Square', href: '/compare/zeller-vs-square', note: 'The most common tradie question' },
+  { label: 'Zeller vs Square vs Stripe', href: '/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026', note: '3-way comparison with real cost tables' },
 ]
 
 function SuccessModal({ onClose }) {
-  // Close on Escape
   useEffect(() => {
     function onKey(e) { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', onKey)
@@ -44,10 +47,8 @@ function SuccessModal({ onClose }) {
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 sm:p-6"
       onClick={onClose}
     >
-      {/* Backdrop */}
       <div className="absolute inset-0 bg-brand-dark/60 backdrop-blur-sm" />
 
-      {/* Sheet */}
       <motion.div
         initial={{ opacity: 0, y: 48, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -56,7 +57,6 @@ function SuccessModal({ onClose }) {
         className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors"
@@ -65,7 +65,6 @@ function SuccessModal({ onClose }) {
           <X size={15} className="text-slate-500" />
         </button>
 
-        {/* Header */}
         <div className="px-6 pt-8 pb-6 text-center border-b border-slate-100">
           <motion.div
             initial={{ scale: 0, rotate: -12 }}
@@ -77,11 +76,10 @@ function SuccessModal({ onClose }) {
           </motion.div>
           <h2 className="text-xl font-bold text-brand-dark mb-1">Message sent</h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            We&apos;ll respond within 2 business days. Keep an eye on your inbox — we reply from hello@tradiepayau.directory.
+            Check your inbox — we just sent you a confirmation with your message details and next steps. We reply within 2 business days from hello@tradiepayau.directory.
           </p>
         </div>
 
-        {/* Next steps */}
         <div className="px-6 py-5">
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">While you wait</p>
           <div className="space-y-2">
@@ -144,17 +142,25 @@ function Field({ id, name, label, placeholder, type = 'text', inputMode, autoCom
 }
 
 export default function ContactPage() {
-  const [status, setStatus] = useState('idle') // idle | submitting | success | error
+  const [status, setStatus] = useState('idle')
   const [fieldErrors, setFieldErrors] = useState({})
   const [msgLen, setMsgLen] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const textareaRef = useRef(null)
-  const formRef = useRef(null)
+  const submitRef   = useRef(null)
+  const formRef     = useRef(null)
 
   useEffect(() => {
     if (status === 'success') { haptic('success'); setShowModal(true) }
   }, [status])
   useEffect(() => { if (status === 'error') haptic('error') }, [status])
+
+  // Scroll submit button into view after keyboard animation settles
+  const scrollToSubmit = useCallback(() => {
+    setTimeout(() => {
+      submitRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }, 350)
+  }, [])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -163,9 +169,10 @@ export default function ContactPage() {
     setFieldErrors({})
 
     const data = Object.fromEntries(new FormData(e.target))
+    const endpoint = WORKER_URL || FORMSPREE_URL
 
     try {
-      const res = await fetch(`https://formspree.io/f/${FORM_ID}`, {
+      const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -176,6 +183,9 @@ export default function ContactPage() {
         setStatus('success')
         formRef.current?.reset()
         setMsgLen(0)
+        if (textareaRef.current) {
+          textareaRef.current.style.height = ''
+        }
       } else {
         if (json.errors) {
           const errs = {}
@@ -193,7 +203,9 @@ export default function ContactPage() {
     setMsgLen(e.target.value.length)
     const el = e.target
     el.style.height = 'auto'
-    el.style.height = `${Math.min(el.scrollHeight, 300)}px`
+    // Cap tighter on small screens to leave room for submit button
+    const isMobile = window.innerWidth < 640
+    el.style.height = `${Math.min(el.scrollHeight, isMobile ? 130 : 260)}px`
   }
 
   const submitting = status === 'submitting'
@@ -236,13 +248,11 @@ export default function ContactPage() {
           <div className="max-w-lg mx-auto">
             <motion.form
               ref={formRef}
-              action={`https://formspree.io/f/${FORM_ID}`}
-              method="POST"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
               onSubmit={handleSubmit}
-              className="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 space-y-4 shadow-sm"
+              className="bg-white rounded-3xl border border-slate-100 p-5 sm:p-8 space-y-4 shadow-sm"
             >
               <Field
                 id="name" name="name" label="Full name"
@@ -260,7 +270,7 @@ export default function ContactPage() {
                 enterKeyHint="next" error={fieldErrors.email}
               />
 
-              {/* Topic — native select triggers iOS picker wheel */}
+              {/* Topic — native select for iOS picker */}
               <div>
                 <label htmlFor="topic" className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                   Topic
@@ -279,6 +289,7 @@ export default function ContactPage() {
                 </select>
               </div>
 
+              {/* Message */}
               <div>
                 <label htmlFor="message" className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
                   Message
@@ -289,14 +300,15 @@ export default function ContactPage() {
                     name="message"
                     ref={textareaRef}
                     required
-                    rows={4}
+                    rows={3}
                     maxLength={MAX_MSG}
                     placeholder="What would you like to tell us?"
                     enterKeyHint="send"
                     autoComplete="off"
                     onInput={handleTextareaInput}
-                    onFocus={() => haptic('light')}
+                    onFocus={() => { haptic('light'); scrollToSubmit() }}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-brand-dark text-sm placeholder-slate-400 resize-none focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all pb-7"
+                    style={{ minHeight: '88px', maxHeight: '130px' }}
                   />
                   <span className={`absolute bottom-2.5 right-3.5 text-[11px] select-none transition-colors ${msgLen > MAX_MSG * 0.9 ? 'text-amber-500' : 'text-slate-300'}`}>
                     {msgLen}/{MAX_MSG}
@@ -316,6 +328,7 @@ export default function ContactPage() {
               )}
 
               <motion.button
+                ref={submitRef}
                 type="submit"
                 disabled={submitting}
                 whileTap={{ scale: 0.97 }}
@@ -331,13 +344,14 @@ export default function ContactPage() {
                 )}
               </motion.button>
 
-              <p className="text-[11px] text-slate-400 text-center">We don&apos;t share your details with anyone.</p>
+              <p className="text-[11px] text-slate-400 text-center">
+                We&apos;ll send a confirmation to your email. We don&apos;t share your details with anyone.
+              </p>
             </motion.form>
           </div>
         </div>
       </section>
 
-      {/* Success modal */}
       <AnimatePresence>
         {showModal && <SuccessModal onClose={() => setShowModal(false)} />}
       </AnimatePresence>
