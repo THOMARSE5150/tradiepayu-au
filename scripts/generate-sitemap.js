@@ -18,6 +18,19 @@ const meta      = JSON.parse(readFileSync(resolve(root, 'src/data/site-meta.json
 const SITE    = 'https://tradiepayau.directory'
 const TODAY   = meta.lastVerified
 
+// Blog posts with individual lastmod dates (dateModified from each post's Article schema)
+const blogPosts = [
+  { slug: 'eftpos-fees-tradies-australia-2026',          lastmod: '2026-03-31', changefreq: 'monthly' },
+  { slug: 'zeller-vs-square-eftpos-tradies',             lastmod: '2026-03-31', changefreq: 'monthly' },
+  { slug: 'zeller-terminal-1-review-2026',               lastmod: '2026-03-31', changefreq: 'monthly' },
+  { slug: 'square-terminal-review-2026',                 lastmod: '2026-03-31', changefreq: 'monthly' },
+  { slug: 'best-eftpos-sole-traders-australia-2026',     lastmod: '2026-03-31', changefreq: 'monthly' },
+  { slug: 'accept-card-payments-sole-trader-australia',  lastmod: '2026-03-31', changefreq: 'monthly' },
+  { slug: 'stripe-terminal-review-2026',                 lastmod: TODAY,        changefreq: 'monthly' },
+  { slug: 'tyro-eftpos-review-2026',                     lastmod: TODAY,        changefreq: 'monthly' },
+  { slug: 'shift4-eftpos-review-2026',                   lastmod: TODAY,        changefreq: 'monthly' },
+]
+
 // All combinations of 2 providers
 function combos(ids) {
   const out = []
@@ -41,11 +54,11 @@ const stateSlugs = ['nsw', 'vic', 'qld', 'wa', 'sa', 'tas', 'act', 'nt']
 const STATE_PRIORITY  = { nsw: '0.7', vic: '0.7', qld: '0.7', wa: '0.6', sa: '0.6', tas: '0.5', act: '0.5', nt: '0.5' }
 const HIGH_INTENT_TRADES = new Set(['electricians', 'plumbers', 'builders', 'painters', 'concreters'])
 
-function url(loc, priority, changefreq = 'monthly') {
+function url(loc, priority, changefreq = 'monthly', lastmod = TODAY) {
   return `
   <url>
     <loc>${SITE}${loc}</loc>
-    <lastmod>${TODAY}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`
@@ -82,12 +95,7 @@ ${tradeSlugs.flatMap(t => stateSlugs.map(s => {
 
   <!-- Blog -->
 ${url('/blog', '0.8', 'weekly')}
-${url('/blog/zeller-terminal-1-review-2026',             '0.8')}
-${url('/blog/square-terminal-review-2026',               '0.8')}
-${url('/blog/best-eftpos-sole-traders-australia-2026',   '0.8')}
-${url('/blog/eftpos-fees-tradies-australia-2026',        '0.8')}
-${url('/blog/zeller-vs-square-eftpos-tradies',           '0.8')}
-${url('/blog/accept-card-payments-sole-trader-australia','0.8')}
+${blogPosts.map(p => url(`/blog/${p.slug}`, '0.8', p.changefreq, p.lastmod)).join('\n')}
 
   <!-- Static pages -->
 ${url('/calculator', '0.7')}
