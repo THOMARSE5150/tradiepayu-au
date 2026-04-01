@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
@@ -12,6 +13,7 @@ const posts = [
     description: 'Independent review of the Zeller Terminal 1. Rate: 1.4%. Hardware: $99. SIM plan: $15/mo. Is it the best EFTPOS terminal in Australia?',
     date: '10 Feb 2026',
     readTime: '7 min read',
+    category: 'providers',
     image: 'photo-1556742049-0cfed4f6a45d',
   },
   {
@@ -20,6 +22,7 @@ const posts = [
     description: 'Independent review of the Square Terminal. Rate: 1.6%. Hardware: $329. Best-in-class offline mode. Is it worth the premium over Zeller?',
     date: '17 Feb 2026',
     readTime: '6 min read',
+    category: 'providers',
     image: 'photo-1556742031-c6961e8560b0',
   },
   {
@@ -28,6 +31,7 @@ const posts = [
     description: 'The best EFTPOS options for Australian sole traders — compared by rate, cost, and setup time. No contracts, no lock-in.',
     date: '24 Feb 2026',
     readTime: '7 min read',
+    category: 'guides',
     image: 'photo-1521791136064-7986c2920216',
   },
   {
@@ -36,6 +40,7 @@ const posts = [
     description: 'Zeller 1.4%, Square 1.6%, Stripe 1.7%. What those percentages actually cost a tradie per month — and which provider wins at every volume.',
     date: '15 Jan 2026',
     readTime: '6 min read',
+    category: 'guides',
     image: 'photo-1554224155-6726b3ff858f',
   },
   {
@@ -44,6 +49,7 @@ const posts = [
     description: 'Rate, SIM card, offline mode, settlement speed. A straight head-to-head for Australian tradies who need to pick one terminal.',
     date: '22 Jan 2026',
     readTime: '7 min read',
+    category: 'providers',
     image: 'photo-1556742031-c6961e8560b0',
   },
   {
@@ -52,6 +58,7 @@ const posts = [
     description: 'Everything a sole-trader tradie needs to know: ABN setup, choosing a provider, hardware costs, and what the fees actually mean for your take-home pay.',
     date: '1 Feb 2026',
     readTime: '8 min read',
+    category: 'guides',
     image: 'photo-1607472586893-edb57bdc0e39',
   },
   {
@@ -60,6 +67,7 @@ const posts = [
     description: 'Stripe Terminal: 1.7% + $0.10 in-person, 24/7 support, best API. How it compares to Zeller and Square for Australian tradies.',
     date: '2 Apr 2026',
     readTime: '7 min read',
+    category: 'providers',
     image: 'photo-1601597111158-2fceff292cdc',
   },
   {
@@ -68,6 +76,7 @@ const posts = [
     description: 'Tyro is a fully licensed Australian bank with competitive payment links (1.4% incl. GST). But the in-person rate requires a quote. Full review for tradies.',
     date: '2 Apr 2026',
     readTime: '7 min read',
+    category: 'providers',
     image: 'photo-1563013544-824ae1b704d3',
   },
   {
@@ -76,6 +85,7 @@ const posts = [
     description: 'Shift4 offers surcharging that passes fees to customers. No monthly fee. Is it right for your trade business? Full independent review.',
     date: '2 Apr 2026',
     readTime: '6 min read',
+    category: 'providers',
     image: 'photo-1559526324-4b87b5e36e44',
   },
   {
@@ -84,6 +94,7 @@ const posts = [
     description: 'Transparent pricing vs negotiated rates. SIM connectivity vs WiFi-only. Same-day vs next-day settlement. A head-to-head for Australian tradies.',
     date: '2 Apr 2026',
     readTime: '6 min read',
+    category: 'providers',
     image: 'photo-1556742031-c6961e8560b0',
   },
   {
@@ -92,6 +103,7 @@ const posts = [
     description: 'What surcharging is, how to set it up on Zeller and Square, what the RBA rules say, and when it makes sense for Australian tradies.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'guides',
     image: 'photo-1554224155-6726b3ff858f',
   },
   {
@@ -100,6 +112,7 @@ const posts = [
     description: 'A full 3-way comparison. Rates, hardware, SIM connectivity, offline mode, and settlement speed — plus real monthly cost at every volume.',
     date: '2 Apr 2026',
     readTime: '8 min read',
+    category: 'providers',
     image: 'photo-1556742049-0cfed4f6a45d',
   },
   {
@@ -108,6 +121,7 @@ const posts = [
     description: 'Builders need deposits, progress payments, multi-worker sites, and connectivity on early-stage builds. Here is the best EFTPOS setup for Australian builders.',
     date: '2 Apr 2026',
     readTime: '7 min read',
+    category: 'trades',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -116,6 +130,7 @@ const posts = [
     description: 'Plumbers work in basements, plant rooms, new estates, and emergency call-outs at any hour. Here is the EFTPOS setup that works without customer WiFi.',
     date: '2 Apr 2026',
     readTime: '6 min read',
+    category: 'trades',
     image: 'photo-1585771724684-38269d6639fd',
   },
   {
@@ -124,6 +139,7 @@ const posts = [
     description: 'Stripe and Square are both available in Australia. We compare in-person rates, hardware, connectivity, and the one area where each wins.',
     date: '2 Apr 2026',
     readTime: '7 min read',
+    category: 'providers',
     image: 'photo-1556742049-0cfed4f6a45d',
   },
   {
@@ -132,6 +148,7 @@ const posts = [
     description: 'Same-day settlement, payment links at job completion, and on-site EFTPOS. The five changes that cut debtor days from weeks to hours.',
     date: '2 Apr 2026',
     readTime: '6 min read',
+    category: 'guides',
     image: 'photo-1563013544-824ae1b704d3',
   },
   {
@@ -140,6 +157,7 @@ const posts = [
     description: 'Switchboard rooms, roof voids, and new estates without WiFi. Here is the EFTPOS setup that works where electricians actually work.',
     date: '2 Apr 2026',
     readTime: '6 min read',
+    category: 'trades',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -148,6 +166,7 @@ const posts = [
     description: 'Emergency glazing is 24/7, in high-rise buildings, and on sites without WiFi. The EFTPOS setup that works at any hour.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1504307651254-35680f356dfd',
   },
   {
@@ -156,6 +175,7 @@ const posts = [
     description: 'Storm-damage call-outs, rooftop work, and large residential jobs. The best EFTPOS for Australian roofers in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618666-fcd25c85cd64',
   },
   {
@@ -164,6 +184,7 @@ const posts = [
     description: 'Plant rooms, rooftop units, and commercial buildings after hours. The EFTPOS that works where HVAC technicians actually work.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618047-3c8c76ca7d13',
   },
   {
@@ -172,6 +193,7 @@ const posts = [
     description: 'Painters work in empty buildings under renovation with no WiFi. The best EFTPOS for Australian painters in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1589939705384-5185137a7f0f',
   },
   {
@@ -180,6 +202,7 @@ const posts = [
     description: 'Tilers work in bathrooms and kitchens under renovation with no WiFi. The best EFTPOS for Australian tilers in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618666-fcd25c85cd64',
   },
   {
@@ -188,6 +211,7 @@ const posts = [
     description: 'Concreters work on driveways and slabs without WiFi. Large job amounts mean getting deposits right matters.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1504307651254-35680f356dfd',
   },
   {
@@ -196,6 +220,7 @@ const posts = [
     description: 'Carpenters work on new builds, renovations, and remote sites. The best EFTPOS for Australian carpenters in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -204,6 +229,7 @@ const posts = [
     description: 'Gas fitters handle emergency call-outs in plant rooms and underground infrastructure. The best EFTPOS for Australian gas fitters in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1585771724684-38269d6639fd',
   },
   {
@@ -212,6 +238,7 @@ const posts = [
     description: 'Fencers work on new estates, rural properties, and construction sites without WiFi. The best EFTPOS for Australian fencers in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618047-3c8c76ca7d13',
   },
   {
@@ -220,6 +247,7 @@ const posts = [
     description: 'Plasterers work in new builds and renovation sites with no WiFi during construction. The best EFTPOS for Australian plasterers in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -228,6 +256,7 @@ const posts = [
     description: 'Pool builders manage large staged payments on residential sites without WiFi. The best EFTPOS for Australian pool builders in 2026.',
     date: '2 Apr 2026',
     readTime: '6 min read',
+    category: 'trades',
     image: 'photo-1504307651254-35680f356dfd',
   },
   {
@@ -236,6 +265,7 @@ const posts = [
     description: 'Pest controllers access roof voids, subfloors, and commercial buildings without WiFi. The best EFTPOS for Australian pest controllers in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618666-fcd25c85cd64',
   },
   {
@@ -244,6 +274,7 @@ const posts = [
     description: 'Welders work on industrial sites, remote locations, and in workshops. The best EFTPOS for Australian welders in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1504307651254-35680f356dfd',
   },
   {
@@ -252,6 +283,7 @@ const posts = [
     description: 'Cleaners work in occupied and unoccupied premises with recurring clients. The best EFTPOS for Australian cleaning businesses in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618047-3c8c76ca7d13',
   },
   {
@@ -260,6 +292,7 @@ const posts = [
     description: 'Landscapers work on new estates, rural properties, and large residential sites without WiFi. The best EFTPOS for Australian landscapers in 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'trades',
     image: 'photo-1558618666-fcd25c85cd64',
   },
   {
@@ -268,6 +301,7 @@ const posts = [
     description: 'Best EFTPOS for NSW electricians — Western Sydney estates, Sydney CBD switchboard rooms, and regional NSW. Lowest rate, SIM connectivity.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -276,6 +310,7 @@ const posts = [
     description: 'Best EFTPOS for Victorian electricians — Melbourne growth corridors, CBD fit-outs, and regional Victoria. Lowest rate, SIM connectivity.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -284,6 +319,7 @@ const posts = [
     description: 'Best EFTPOS for Queensland electricians — SEQ estates, Cairns tropical work, and outback QLD. SIM connectivity and lowest rate for 2026.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1621905252507-b35492cc74b4',
   },
   {
@@ -292,6 +328,7 @@ const posts = [
     description: 'Best EFTPOS for NSW plumbers — same-day settlement for material runs, SIM connectivity for emergency call-outs across Western Sydney and regional NSW.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1585771724684-38269d6639fd',
   },
   {
@@ -300,6 +337,7 @@ const posts = [
     description: 'Best EFTPOS for Victorian plumbers — Melbourne growth corridors, inner-city high-rise work, and regional Victoria. Same-day settlement and SIM connectivity.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1585771724684-38269d6639fd',
   },
   {
@@ -308,6 +346,7 @@ const posts = [
     description: 'Best EFTPOS for Queensland plumbers — SEQ growth areas, North Queensland, and outback QLD emergency call-outs. Same-day settlement and SIM connectivity.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1585771724684-38269d6639fd',
   },
   {
@@ -316,6 +355,7 @@ const posts = [
     description: 'Best EFTPOS for NSW builders — payment links for deposits, same-day settlement for material runs, and SIM connectivity across Western Sydney estates.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1504307651254-35680f356dfd',
   },
   {
@@ -324,6 +364,7 @@ const posts = [
     description: 'Best EFTPOS for Victorian builders — Melbourne growth corridors, inner-city apartment builds, and payment solutions for large progress invoices.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
     image: 'photo-1504307651254-35680f356dfd',
   },
   {
@@ -332,6 +373,200 @@ const posts = [
     description: 'Best EFTPOS for Queensland builders — SEQ housing boom, North Queensland cyclone work, and payment solutions for large project invoices.',
     date: '2 Apr 2026',
     readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  // City guides
+  {
+    slug: 'best-eftpos-electricians-sydney-2026',
+    title: 'Best EFTPOS for Electricians in Sydney (2026)',
+    description: 'Best EFTPOS for Sydney electricians — Western Sydney estates, CBD switchboard rooms, and suburban call-outs. Lowest rate and SIM connectivity.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
+  {
+    slug: 'best-eftpos-electricians-melbourne-2026',
+    title: 'Best EFTPOS for Electricians in Melbourne (2026)',
+    description: 'Best EFTPOS for Melbourne electricians — outer growth corridors, CBD fit-outs, and suburban call-outs. Lowest rate and SIM connectivity.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
+  {
+    slug: 'best-eftpos-electricians-brisbane-2026',
+    title: 'Best EFTPOS for Electricians in Brisbane (2026)',
+    description: 'Best EFTPOS for Brisbane electricians — SEQ estates, inner-city high-rise, and subtropical call-outs. Lowest rate and SIM connectivity.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
+  {
+    slug: 'best-eftpos-plumbers-sydney-2026',
+    title: 'Best EFTPOS for Plumbers in Sydney (2026)',
+    description: 'Best EFTPOS for Sydney plumbers — emergency call-outs across Western Sydney, high-rise strata, and new estate builds. Same-day settlement.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1585771724684-38269d6639fd',
+  },
+  {
+    slug: 'best-eftpos-plumbers-melbourne-2026',
+    title: 'Best EFTPOS for Plumbers in Melbourne (2026)',
+    description: 'Best EFTPOS for Melbourne plumbers — emergency call-outs, growth corridor builds, and CBD high-rise. Same-day settlement.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1585771724684-38269d6639fd',
+  },
+  {
+    slug: 'best-eftpos-plumbers-brisbane-2026',
+    title: 'Best EFTPOS for Plumbers in Brisbane (2026)',
+    description: 'Best EFTPOS for Brisbane plumbers — SEQ growth areas, flood-damage call-outs, and new estate builds. Same-day settlement.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1585771724684-38269d6639fd',
+  },
+  {
+    slug: 'best-eftpos-builders-sydney-2026',
+    title: 'Best EFTPOS for Builders in Sydney (2026)',
+    description: 'Best EFTPOS for Sydney builders — Western Sydney estates, inner-city apartment blocks, and payment solutions for large progress invoices.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  {
+    slug: 'best-eftpos-builders-melbourne-2026',
+    title: 'Best EFTPOS for Builders in Melbourne (2026)',
+    description: 'Best EFTPOS for Melbourne builders — outer growth corridors, inner-city apartment builds, and payment solutions for large progress invoices.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  {
+    slug: 'best-eftpos-builders-brisbane-2026',
+    title: 'Best EFTPOS for Builders in Brisbane (2026)',
+    description: 'Best EFTPOS for Brisbane builders — SEQ housing boom, Sunshine Coast growth, and payment solutions for large project invoices.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'cities',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  // WA / SA state posts
+  {
+    slug: 'best-eftpos-electricians-wa-2026',
+    title: 'Best EFTPOS for Electricians in Western Australia (2026)',
+    description: 'Best EFTPOS for WA electricians — Perth metro estates, remote mining regions, and regional WA. SIM connectivity and lowest rate.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
+  {
+    slug: 'best-eftpos-plumbers-wa-2026',
+    title: 'Best EFTPOS for Plumbers in Western Australia (2026)',
+    description: 'Best EFTPOS for WA plumbers — Perth metro, remote mining sites, and regional WA emergency call-outs. Same-day settlement and SIM connectivity.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1585771724684-38269d6639fd',
+  },
+  {
+    slug: 'best-eftpos-builders-wa-2026',
+    title: 'Best EFTPOS for Builders in Western Australia (2026)',
+    description: 'Best EFTPOS for WA builders — Perth growth corridors, remote construction sites, and payment solutions for large project invoices.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  {
+    slug: 'best-eftpos-electricians-sa-2026',
+    title: 'Best EFTPOS for Electricians in South Australia (2026)',
+    description: 'Best EFTPOS for SA electricians — Adelaide metro, regional SA, and remote outback sites. SIM connectivity and lowest rate.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
+  {
+    slug: 'best-eftpos-plumbers-sa-2026',
+    title: 'Best EFTPOS for Plumbers in South Australia (2026)',
+    description: 'Best EFTPOS for SA plumbers — Adelaide metro and regional SA emergency call-outs. Same-day settlement and SIM connectivity.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1585771724684-38269d6639fd',
+  },
+  {
+    slug: 'best-eftpos-builders-sa-2026',
+    title: 'Best EFTPOS for Builders in South Australia (2026)',
+    description: 'Best EFTPOS for SA builders — Adelaide growth suburbs and regional SA. Payment solutions for large progress invoices.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  // Painters × NSW/VIC/QLD
+  {
+    slug: 'best-eftpos-painters-nsw-2026',
+    title: 'Best EFTPOS for Painters in NSW (2026)',
+    description: 'Best EFTPOS for NSW painters — deposit collection before starting, empty house WiFi challenges, and same-day settlement for materials.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1589939705384-5185137a7f0f',
+  },
+  {
+    slug: 'best-eftpos-painters-vic-2026',
+    title: 'Best EFTPOS for Painters in Victoria (2026)',
+    description: 'Best EFTPOS for Victorian painters — deposits, empty-building WiFi issues, and same-day settlement across Melbourne and regional VIC.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1589939705384-5185137a7f0f',
+  },
+  {
+    slug: 'best-eftpos-painters-qld-2026',
+    title: 'Best EFTPOS for Painters in Queensland (2026)',
+    description: 'Best EFTPOS for Queensland painters — deposits, insurance work, and same-day settlement across SEQ and regional QLD.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1589939705384-5185137a7f0f',
+  },
+  // Concreters × NSW/VIC/QLD
+  {
+    slug: 'best-eftpos-concreters-nsw-2026',
+    title: 'Best EFTPOS for Concreters in NSW (2026)',
+    description: 'Best EFTPOS for NSW concreters — large deposits before the pour, new estate sites, and same-day settlement for material purchasing.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  {
+    slug: 'best-eftpos-concreters-vic-2026',
+    title: 'Best EFTPOS for Concreters in Victoria (2026)',
+    description: 'Best EFTPOS for Victorian concreters — large deposits, Melbourne growth estates, and same-day settlement for material purchasing.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
+    image: 'photo-1504307651254-35680f356dfd',
+  },
+  {
+    slug: 'best-eftpos-concreters-qld-2026',
+    title: 'Best EFTPOS for Concreters in Queensland (2026)',
+    description: 'Best EFTPOS for Queensland concreters — SEQ housing boom, large deposits, and same-day settlement for material purchasing.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    category: 'states',
     image: 'photo-1504307651254-35680f356dfd',
   },
 ]
@@ -384,7 +619,19 @@ const jsonLd = [
   },
 ]
 
+const FILTERS = [
+  { id: 'all',       label: 'All guides' },
+  { id: 'providers', label: 'Provider reviews' },
+  { id: 'trades',    label: 'By trade' },
+  { id: 'states',    label: 'By state' },
+  { id: 'cities',    label: 'By city' },
+  { id: 'guides',    label: 'Setup & fees' },
+]
+
 export default function BlogIndexPage() {
+  const [activeFilter, setActiveFilter] = useState('all')
+  const filtered = activeFilter === 'all' ? posts : posts.filter(p => p.category === activeFilter)
+
   return (
     <>
       <Meta
@@ -422,14 +669,36 @@ export default function BlogIndexPage() {
       </header>
 
       <section className="section container-page">
+        {/* Category filter */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {FILTERS.map(f => (
+            <button
+              key={f.id}
+              type="button"
+              onClick={() => setActiveFilter(f.id)}
+              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
+                activeFilter === f.id
+                  ? 'bg-brand-blue text-white shadow-sm'
+                  : 'bg-white border border-slate-200 text-slate-600 hover:border-brand-blue hover:text-brand-blue'
+              }`}
+            >
+              {f.label}
+              {f.id !== 'all' && (
+                <span className="ml-1.5 opacity-60">
+                  {posts.filter(p => p.category === f.id).length}
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, i) => (
+          {filtered.map((post, i) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              transition={{ duration: 0.4, delay: Math.min(i, 5) * 0.06 }}
               className="lg-light rounded-2xl overflow-hidden flex flex-col"
             >
               <Link to={`/blog/${post.slug}`} className="block overflow-hidden aspect-[16/9] bg-slate-100">

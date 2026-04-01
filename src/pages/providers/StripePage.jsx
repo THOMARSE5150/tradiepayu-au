@@ -9,6 +9,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
+import SetupSteps from '../../components/SetupSteps'
 import StickySignUpBar from '../../components/StickySignUpBar'
 
 const crumbs = [
@@ -17,6 +18,14 @@ const crumbs = [
   { label: 'Stripe Review' },
 ]
 
+
+const setupSteps = [
+  { title: 'Create a Stripe account', body: 'Sign up at stripe.com/au. ABN required. Approval is typically same-day. Stripe\'s verification is stricter than Zeller — have your ID ready.' },
+  { title: 'Order Stripe Reader M2', body: 'Purchase the Stripe Reader M2 ($69) from the Stripe dashboard. The M2 requires a device to operate — it connects via Bluetooth to your phone.' },
+  { title: 'Set up Stripe Invoicing', body: 'Enable Stripe Invoicing in the dashboard. Configure invoice templates with your ABN, payment terms, and automatic reminder schedules.' },
+  { title: 'Configure payment links', body: 'Create payment link templates for deposits and remote billing. Stripe payment links work on any device and can be embedded in your website or sent via SMS.' },
+  { title: 'Integrate with your website (optional)', body: 'If you have a booking site, use Stripe\'s plugin (WordPress, Squarespace) or API to accept payments directly. This is Stripe\'s key advantage over other providers.' },
+]
 const faqs = [
   { q: 'Is Stripe good for tradies?', a: 'Stripe is best for tradies who need website integration, online booking deposits, or automated recurring billing. For simple on-site tap-and-go, Zeller\'s 1.4% rate beats Stripe\'s 1.7% + $0.10. Use Stripe when you need its API, recurring billing, or 24/7 support.' },
   { q: 'What is Stripe\'s in-person rate in Australia?', a: '1.7% + $0.10 per transaction for the Stripe Reader. Tap to Pay on your phone adds $0.15 per authorisation on top — making phone-only Stripe more expensive at volume.' },
@@ -32,6 +41,7 @@ const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Stripe for Tradies — Full Review (2026)', description: 'Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first Australian tradie operations.', url: `${SITE}/providers/stripe`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Stripe', url: 'https://stripe.com/au', description: 'Global payments infrastructure provider offering API-first payment processing, EFTPOS readers, and automated invoicing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.2', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Stripe Review', item: `${SITE}/providers/stripe` }] },
+    { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Stripe for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
 
@@ -269,6 +279,15 @@ export default function StripePage() {
             <Link to="/compare/stripe-vs-tyro" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Stripe vs Tyro →</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      
+      {/* Setup */}
+      <section id="setup" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">How to Get Set Up with Stripe</h2>
+          <SetupSteps steps={setupSteps} collapsible />
         </div>
       </section>
 

@@ -3,11 +3,47 @@ import { motion } from 'framer-motion'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import QuickVerdict from '../components/QuickVerdict'
+import ComparisonTable from '../components/ComparisonTable'
 import FaqSection from '../components/FaqSection'
 import RelatedLinks from '../components/RelatedLinks'
 import NotFoundPage from './NotFoundPage'
 import { TRADE_MAP } from '../data/tradesMeta'
 import { STATE_MAP } from '../data/states'
+
+const COMPARISON_HEADERS = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader M2', 'Tyro']
+const COMPARISON_ROWS = [
+  { highlight: true, cells: ['In-person rate', '1.4%', '1.6%', '1.7% + $0.10', 'Quote'] },
+  { cells: ['Hardware cost', '$99', '$329', '$69', 'Quote'] },
+  { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗', '✗'] },
+  { cells: ['Offline mode', '✗', '✓', '✗', '✗'] },
+  { cells: ['Settlement', 'Same day', 'Next day', 'Next day', 'Next day'] },
+  { cells: ['Monthly fee', '$0', '$0', '$0', '$0'] },
+]
+
+// State-specific blog posts for the 9 published combos
+const STATE_TRADE_BLOG_MAP = {
+  'electricians-nsw': { slug: 'best-eftpos-electricians-nsw-2026', label: 'NSW electricians guide' },
+  'electricians-vic': { slug: 'best-eftpos-electricians-vic-2026', label: 'VIC electricians guide' },
+  'electricians-qld': { slug: 'best-eftpos-electricians-qld-2026', label: 'QLD electricians guide' },
+  'plumbers-nsw':     { slug: 'best-eftpos-plumbers-nsw-2026',     label: 'NSW plumbers guide' },
+  'plumbers-vic':     { slug: 'best-eftpos-plumbers-vic-2026',     label: 'VIC plumbers guide' },
+  'plumbers-qld':     { slug: 'best-eftpos-plumbers-qld-2026',     label: 'QLD plumbers guide' },
+  'builders-nsw':     { slug: 'best-eftpos-builders-nsw-2026',     label: 'NSW builders guide' },
+  'builders-vic':     { slug: 'best-eftpos-builders-vic-2026',     label: 'VIC builders guide' },
+  'builders-qld':     { slug: 'best-eftpos-builders-qld-2026',     label: 'QLD builders guide' },
+  'electricians-wa':  { slug: 'best-eftpos-electricians-wa-2026',  label: 'WA electricians guide' },
+  'electricians-sa':  { slug: 'best-eftpos-electricians-sa-2026',  label: 'SA electricians guide' },
+  'plumbers-wa':      { slug: 'best-eftpos-plumbers-wa-2026',      label: 'WA plumbers guide' },
+  'plumbers-sa':      { slug: 'best-eftpos-plumbers-sa-2026',      label: 'SA plumbers guide' },
+  'builders-wa':      { slug: 'best-eftpos-builders-wa-2026',      label: 'WA builders guide' },
+  'builders-sa':      { slug: 'best-eftpos-builders-sa-2026',      label: 'SA builders guide' },
+  'painters-nsw':     { slug: 'best-eftpos-painters-nsw-2026',     label: 'NSW painters guide' },
+  'painters-vic':     { slug: 'best-eftpos-painters-vic-2026',     label: 'VIC painters guide' },
+  'painters-qld':     { slug: 'best-eftpos-painters-qld-2026',     label: 'QLD painters guide' },
+  'concreters-nsw':   { slug: 'best-eftpos-concreters-nsw-2026',   label: 'NSW concreters guide' },
+  'concreters-vic':   { slug: 'best-eftpos-concreters-vic-2026',   label: 'VIC concreters guide' },
+  'concreters-qld':   { slug: 'best-eftpos-concreters-qld-2026',   label: 'QLD concreters guide' },
+}
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -20,6 +56,7 @@ export default function StateTradePage() {
 
   const leadCity = state.cities[0]
   const city2    = state.cities[1]
+  const stateBlogPost = STATE_TRADE_BLOG_MAP[`${tradeSlug}-${stateSlug}`] || null
   const title       = `Best EFTPOS for ${trade.label} in ${leadCity} & ${state.abbr} (2026)`
   const description = `Best EFTPOS terminal for ${trade.label.toLowerCase()} in ${leadCity}${city2 ? ` and ${city2}` : ''}, ${state.name}. ${trade.heroSub} No lock-in, same-day settlement.`
   const canonical = `/trades/${tradeSlug}/${stateSlug}`
@@ -65,7 +102,7 @@ export default function StateTradePage() {
       image: { '@type': 'ImageObject', url: `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
-      dateModified: '2026-03-31',
+      dateModified: '2026-04-02',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },
@@ -198,12 +235,19 @@ export default function StateTradePage() {
             </motion.div>
           ))}
         </div>
-        <p className="mt-5 text-sm text-slate-600">
-          Want the full trade-specific breakdown?{' '}
+        <div className="mt-6">
+          <ComparisonTable headers={COMPARISON_HEADERS} rows={COMPARISON_ROWS} />
+        </div>
+        <div className="mt-5 flex flex-wrap gap-4 text-sm">
           <Link to={`/trades/${tradeSlug}`} className="text-brand-blue font-medium hover:underline">
-            Best EFTPOS for {trade.label} — full guide →
+            Best EFTPOS for {trade.label} — national guide →
           </Link>
-        </p>
+          {stateBlogPost && (
+            <Link to={`/blog/${stateBlogPost.slug}`} className="text-brand-blue font-medium hover:underline">
+              In-depth {stateBlogPost.label} →
+            </Link>
+          )}
+        </div>
       </section>
 
       <section id="coverage" className="section section-alt">

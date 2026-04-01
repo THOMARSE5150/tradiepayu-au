@@ -82,7 +82,7 @@ export default function StateIndexPage() {
       description,
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
-      dateModified: '2026-03-31',
+      dateModified: '2026-04-02',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },
@@ -119,6 +119,18 @@ export default function StateIndexPage() {
         name: f.q,
         acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: `TradiePay AU — EFTPOS Guides for ${state.name}`,
+      description,
+      url: `${SITE}${canonical}`,
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: state.name },
+        ...state.cities.map(city => ({ '@type': 'City', name: city })),
+      ],
+      knowsAbout: ['EFTPOS terminals', 'card payment systems', 'tradie payments', `${state.name} tradespeople`],
     },
   ]
 

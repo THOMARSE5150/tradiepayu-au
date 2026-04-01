@@ -66,33 +66,82 @@ export function otherProviders(currentSlug) {
 export const BLOG_POSTS = [
   { slug: 'eftpos-fees-tradies-australia-2026',          label: 'EFTPOS Fees Breakdown (2026)' },
   { slug: 'zeller-vs-square-eftpos-tradies',             label: 'Zeller vs Square for Tradies' },
+  { slug: 'zeller-vs-square-vs-stripe-eftpos-tradies-2026', label: 'Zeller vs Square vs Stripe (2026)' },
+  { slug: 'stripe-vs-square-eftpos-australia-2026',      label: 'Stripe vs Square for Tradies' },
+  { slug: 'zeller-vs-tyro-eftpos-tradies',               label: 'Zeller vs Tyro for Tradies' },
   { slug: 'zeller-terminal-1-review-2026',               label: 'Zeller Terminal 1 Review' },
   { slug: 'square-terminal-review-2026',                 label: 'Square Terminal Review' },
-  { slug: 'best-eftpos-sole-traders-australia-2026',     label: 'Best EFTPOS for Sole Traders' },
-  { slug: 'accept-card-payments-sole-trader-australia',  label: 'How to Accept Card Payments' },
   { slug: 'stripe-terminal-review-2026',                 label: 'Stripe Terminal Review' },
   { slug: 'tyro-eftpos-review-2026',                     label: 'Tyro EFTPOS Review' },
   { slug: 'shift4-eftpos-review-2026',                   label: 'Shift4 EFTPOS Review' },
+  { slug: 'best-eftpos-sole-traders-australia-2026',     label: 'Best EFTPOS for Sole Traders' },
+  { slug: 'accept-card-payments-sole-trader-australia',  label: 'How to Accept Card Payments' },
+  { slug: 'how-to-get-paid-faster-sole-trader-australia', label: 'Get Paid Faster as a Sole Trader' },
+  { slug: 'surcharging-eftpos-tradies-australia-2026',   label: 'Surcharging Guide for Tradies' },
+  { slug: 'best-eftpos-electricians-australia-2026',     label: 'Best EFTPOS for Electricians' },
+  { slug: 'best-eftpos-plumbers-australia-2026',         label: 'Best EFTPOS for Plumbers' },
+  { slug: 'best-eftpos-builders-australia-2026',         label: 'Best EFTPOS for Builders' },
+  { slug: 'best-eftpos-painters-australia-2026',         label: 'Best EFTPOS for Painters' },
+  { slug: 'best-eftpos-roofers-australia-2026',          label: 'Best EFTPOS for Roofers' },
+  { slug: 'best-eftpos-glaziers-australia-2026',         label: 'Best EFTPOS for Glaziers' },
+  { slug: 'best-eftpos-hvac-australia-2026',             label: 'Best EFTPOS for HVAC Technicians' },
+  { slug: 'best-eftpos-concreters-australia-2026',       label: 'Best EFTPOS for Concreters' },
+  { slug: 'best-eftpos-carpenters-australia-2026',       label: 'Best EFTPOS for Carpenters' },
+  { slug: 'best-eftpos-tilers-australia-2026',           label: 'Best EFTPOS for Tilers' },
+  { slug: 'best-eftpos-gas-fitters-australia-2026',      label: 'Best EFTPOS for Gas Fitters' },
+  { slug: 'best-eftpos-fencers-australia-2026',          label: 'Best EFTPOS for Fencers' },
+  { slug: 'best-eftpos-plasterers-australia-2026',       label: 'Best EFTPOS for Plasterers' },
+  { slug: 'best-eftpos-pool-builders-australia-2026',    label: 'Best EFTPOS for Pool Builders' },
+  { slug: 'best-eftpos-pest-controllers-australia-2026', label: 'Best EFTPOS for Pest Controllers' },
+  { slug: 'best-eftpos-welders-australia-2026',          label: 'Best EFTPOS for Welders' },
+  { slug: 'best-eftpos-cleaners-australia-2026',         label: 'Best EFTPOS for Cleaners' },
+  { slug: 'best-eftpos-landscapers-australia-2026',      label: 'Best EFTPOS for Landscapers' },
 ]
 
 /** Blog posts most relevant to each provider */
 const PROVIDER_BLOG_MAP = {
-  zeller:  ['zeller-terminal-1-review-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
-  square:  ['square-terminal-review-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
-  stripe:  ['stripe-terminal-review-2026', 'eftpos-fees-tradies-australia-2026', 'accept-card-payments-sole-trader-australia'],
-  tyro:    ['tyro-eftpos-review-2026', 'eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026'],
-  shift4:  ['shift4-eftpos-review-2026', 'eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026'],
+  zeller:  ['zeller-terminal-1-review-2026', 'zeller-vs-square-eftpos-tradies', 'zeller-vs-square-vs-stripe-eftpos-tradies-2026', 'eftpos-fees-tradies-australia-2026'],
+  square:  ['square-terminal-review-2026', 'zeller-vs-square-eftpos-tradies', 'stripe-vs-square-eftpos-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  stripe:  ['stripe-terminal-review-2026', 'stripe-vs-square-eftpos-australia-2026', 'zeller-vs-square-vs-stripe-eftpos-tradies-2026', 'eftpos-fees-tradies-australia-2026'],
+  tyro:    ['tyro-eftpos-review-2026', 'zeller-vs-tyro-eftpos-tradies', 'eftpos-fees-tradies-australia-2026', 'surcharging-eftpos-tradies-australia-2026'],
+  shift4:  ['shift4-eftpos-review-2026', 'surcharging-eftpos-tradies-australia-2026', 'eftpos-fees-tradies-australia-2026', 'best-eftpos-sole-traders-australia-2026'],
 }
 
-/** Default blog posts for trade/compare pages */
+/** Blog posts most relevant to each trade */
+const TRADE_BLOG_MAP = {
+  electricians:     ['best-eftpos-electricians-australia-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
+  plumbers:         ['best-eftpos-plumbers-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
+  builders:         ['best-eftpos-builders-australia-2026', 'zeller-vs-square-vs-stripe-eftpos-tradies-2026', 'surcharging-eftpos-tradies-australia-2026'],
+  painters:         ['best-eftpos-painters-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
+  roofers:          ['best-eftpos-roofers-australia-2026', 'surcharging-eftpos-tradies-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  glaziers:         ['best-eftpos-glaziers-australia-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
+  hvac:             ['best-eftpos-hvac-australia-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
+  concreters:       ['best-eftpos-concreters-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'surcharging-eftpos-tradies-australia-2026'],
+  carpenters:       ['best-eftpos-carpenters-australia-2026', 'best-eftpos-builders-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  tilers:           ['best-eftpos-tilers-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
+  'gas-fitters':    ['best-eftpos-gas-fitters-australia-2026', 'best-eftpos-plumbers-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  fencers:          ['best-eftpos-fencers-australia-2026', 'surcharging-eftpos-tradies-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  plasterers:       ['best-eftpos-plasterers-australia-2026', 'best-eftpos-builders-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  'pool-builders':  ['best-eftpos-pool-builders-australia-2026', 'surcharging-eftpos-tradies-australia-2026', 'how-to-get-paid-faster-sole-trader-australia'],
+  'pest-controllers': ['best-eftpos-pest-controllers-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
+  welders:          ['best-eftpos-welders-australia-2026', 'surcharging-eftpos-tradies-australia-2026', 'eftpos-fees-tradies-australia-2026'],
+  cleaners:         ['best-eftpos-cleaners-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'best-eftpos-sole-traders-australia-2026'],
+  landscapers:      ['best-eftpos-landscapers-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
+}
+
 const DEFAULT_BLOG_SLUGS = [
+  'zeller-vs-square-vs-stripe-eftpos-tradies-2026',
   'eftpos-fees-tradies-australia-2026',
-  'zeller-vs-square-eftpos-tradies',
-  'best-eftpos-sole-traders-australia-2026',
+  'how-to-get-paid-faster-sole-trader-australia',
 ]
 
 export function blogPostsForProvider(providerSlug) {
   const slugs = PROVIDER_BLOG_MAP[providerSlug] || DEFAULT_BLOG_SLUGS
+  return slugs.map(s => BLOG_POSTS.find(b => b.slug === s)).filter(Boolean)
+}
+
+export function blogPostsForTrade(tradeSlug) {
+  const slugs = TRADE_BLOG_MAP[tradeSlug] || DEFAULT_BLOG_SLUGS
   return slugs.map(s => BLOG_POSTS.find(b => b.slug === s)).filter(Boolean)
 }
 

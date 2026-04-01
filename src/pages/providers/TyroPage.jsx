@@ -9,6 +9,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
+import SetupSteps from '../../components/SetupSteps'
 import StickySignUpBar from '../../components/StickySignUpBar'
 
 const crumbs = [
@@ -17,6 +18,14 @@ const crumbs = [
   { label: 'Tyro Review' },
 ]
 
+
+const setupSteps = [
+  { title: 'Request a Tyro quote', body: 'Contact Tyro at tyro.com or call their sales team. Provide your ABN, estimated monthly turnover, and card mix. The quote process takes 1–3 business days.' },
+  { title: 'Review the merchant agreement carefully', body: 'Tyro uses a contract model with terminal rental fees. Before signing, confirm: monthly rental fee, minimum contract term, and early termination cost.' },
+  { title: 'Integrate with your field service software', body: 'If you use ServiceM8, simPRO, AroFlo, or Fergus, connect Tyro in the software settings. Payments will sync automatically without manual reconciliation.' },
+  { title: 'Set up Tyro Payment Links', body: 'Enable Tyro\'s payment link feature for remote billing. The rate is 1.4% including GST — competitive for invoice-heavy trade businesses.' },
+  { title: 'Configure settlement account', body: 'Set your primary bank account for end-of-day settlement. Tyro settles same-day to a Tyro account, or next business day to your external bank.' },
+]
 const faqs = [
   { q: 'What is Tyro\'s in-person rate?', a: 'Tyro does not publish a single flat in-person rate — their merchant service fee is dependent on your turnover, card mix, and business type. You need to request a quote. This is the main transparency disadvantage vs Zeller and Square.' },
   { q: 'What is Tyro\'s Payment Links rate?', a: '1.4% including GST — this includes premium and international cards, which is unusually transparent and competitive for remote payment.' },
@@ -32,6 +41,7 @@ const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Tyro for Tradies — Full Review (2026)', description: "Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know.", url: `${SITE}/providers/tyro`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Tyro', url: 'https://www.tyro.com', description: 'Australian specialist bank offering EFTPOS terminals, payment links, and merchant services for SMEs with bank-grade infrastructure.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.8', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Tyro Review', item: `${SITE}/providers/tyro` }] },
+    { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Tyro for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
 
@@ -243,6 +253,15 @@ export default function TyroPage() {
             <Link to="/compare/tyro-vs-shift4" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Tyro vs Shift4 →</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      
+      {/* Setup */}
+      <section id="setup" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">How to Get Set Up with Tyro</h2>
+          <SetupSteps steps={setupSteps} collapsible />
         </div>
       </section>
 

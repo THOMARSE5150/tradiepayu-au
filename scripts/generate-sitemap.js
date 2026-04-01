@@ -61,6 +61,30 @@ const blogPosts = [
   { slug: 'best-eftpos-builders-nsw-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
   { slug: 'best-eftpos-builders-vic-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
   { slug: 'best-eftpos-builders-qld-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // City guides
+  { slug: 'best-eftpos-electricians-sydney-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-electricians-melbourne-2026',         lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-electricians-brisbane-2026',          lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-sydney-2026',                lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-melbourne-2026',             lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-brisbane-2026',              lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-sydney-2026',                lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-melbourne-2026',             lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-brisbane-2026',              lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // WA / SA state posts
+  { slug: 'best-eftpos-electricians-wa-2026',                lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-wa-2026',                    lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-wa-2026',                    lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-electricians-sa-2026',                lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-sa-2026',                    lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-sa-2026',                    lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // Painters & Concreters × NSW/VIC/QLD
+  { slug: 'best-eftpos-painters-nsw-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-painters-vic-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-painters-qld-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-nsw-2026',                 lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-vic-2026',                 lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-qld-2026',                 lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
 ]
 
 // All combinations of 2 providers

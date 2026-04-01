@@ -3,6 +3,7 @@ import Footer from './Footer'
 import BottomNav from './BottomNav'
 import BackToTop from './BackToTop'
 import ScrollHandler from './ScrollHandler'
+import BlogReadCapture from './BlogReadCapture'
 
 export default function Layout({ children }) {
   return (
@@ -13,6 +14,7 @@ export default function Layout({ children }) {
       <Footer />
       <BottomNav />
       <BackToTop />
+      <BlogReadCapture />
     </div>
   )
 }

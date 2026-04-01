@@ -4,6 +4,18 @@ import Meta from '../components/Meta'
 import { STATES } from '../data/states'
 import FaqSection from '../components/FaqSection'
 
+const FEATURED_GUIDES = [
+  { label: 'Best EFTPOS for Electricians', href: '/blog/best-eftpos-electricians-australia-2026' },
+  { label: 'Best EFTPOS for Plumbers', href: '/blog/best-eftpos-plumbers-australia-2026' },
+  { label: 'Best EFTPOS for Builders', href: '/blog/best-eftpos-builders-australia-2026' },
+  { label: 'Best EFTPOS for Painters', href: '/blog/best-eftpos-painters-australia-2026' },
+  { label: 'Best EFTPOS for Roofers', href: '/blog/best-eftpos-roofers-australia-2026' },
+  { label: 'Best EFTPOS for Concreters', href: '/blog/best-eftpos-concreters-australia-2026' },
+  { label: 'Zeller vs Square vs Stripe', href: '/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026' },
+  { label: 'EFTPOS Fees Breakdown', href: '/blog/eftpos-fees-tradies-australia-2026' },
+  { label: 'Get Paid Faster', href: '/blog/how-to-get-paid-faster-sole-trader-australia' },
+]
+
 const SITE = 'https://tradiepayau.directory'
 
 const faqs = [
@@ -157,6 +169,19 @@ export default function TradesIndexPage() {
 
       <section className="section-alt py-10 sm:py-12">
         <div className="container-page">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Featured guides</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-10">
+            {FEATURED_GUIDES.map(g => (
+              <Link
+                key={g.href}
+                to={g.href}
+                className="flex items-center justify-between px-4 py-3 bg-white border border-slate-200 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
+              >
+                <span className="text-sm font-medium text-slate-700 group-hover:text-brand-blue transition-colors">{g.label}</span>
+                <span className="text-slate-300 group-hover:text-brand-blue transition-colors text-xs ml-2">→</span>
+              </Link>
+            ))}
+          </div>
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Browse by state</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {STATES.map(s => (

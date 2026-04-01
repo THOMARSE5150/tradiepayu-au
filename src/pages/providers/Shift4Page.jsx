@@ -8,6 +8,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
+import SetupSteps from '../../components/SetupSteps'
 import StickySignUpBar from '../../components/StickySignUpBar'
 
 const crumbs = [
@@ -16,6 +17,14 @@ const crumbs = [
   { label: 'Shift4 Review' },
 ]
 
+
+const setupSteps = [
+  { title: 'Request a Shift4 quote', body: 'Contact Shift4 (formerly Smartpay) at shift4.com/au or via their local sales team. They will confirm eligibility and present a contract proposal.' },
+  { title: 'Review the contract terms carefully', body: 'Shift4 uses a rental contract model. Before signing, confirm in writing: the exact surcharge percentage passed to customers, the monthly terminal rental fee, the minimum contract term, and the early termination fee.' },
+  { title: 'Install the PAX A920 terminal', body: 'Shift4 deploys the PAX A920 — an Android EFTPOS terminal with SIM connectivity and a built-in printer. A Shift4 technician or courier will deliver and activate the terminal.' },
+  { title: 'Configure surcharging disclosure', body: 'You are legally required to disclose the surcharge to customers before they pay. Ensure the terminal displays the surcharge amount clearly on the payment screen, and add it to your invoices and price lists.' },
+  { title: 'Set up reporting', body: 'Log in to the Shift4 merchant portal to review daily settlements, transaction reports, and reconciliation. All settlements are processed through Shift4\'s system.' },
+]
 const faqs = [
   { q: 'What is Shift4 (formerly Smartpay)?', a: 'Shift4 is an Australian EFTPOS provider operating under the "zero-cost EFTPOS" model. The merchant pays nothing in processing fees — instead, customers pay a small surcharge at the point of sale. Hardware is rented rather than purchased outright.' },
   { q: 'Is "zero cost EFTPOS" actually free?', a: 'For the merchant, yes — in terms of processing costs. But your customers pay the surcharge. Whether this is appropriate depends on your clientele. Tradies working with price-sensitive residential customers or in premium service contexts may find surcharging damages the customer relationship.' },
@@ -31,6 +40,7 @@ const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Shift4 for Tradies — Full Review (2026)', description: 'Independent review of Shift4 (formerly Smartpay) EFTPOS for Australian tradies. Zero-cost surcharging model, PAX A920 terminal, built-in mobile connectivity.', url: `${SITE}/providers/shift4`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Shift4', url: 'https://www.shift4.com/au', description: 'EFTPOS provider (formerly Smartpay) offering zero-cost surcharging terminals on contract for Australian merchants.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Shift4 Review', item: `${SITE}/providers/shift4` }] },
+    { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Shift4 for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
 
@@ -259,6 +269,15 @@ export default function Shift4Page() {
             <Link to="/compare/tyro-vs-shift4" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Tyro vs Shift4 →</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      
+      {/* Setup */}
+      <section id="setup" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">How to Get Set Up with Shift4</h2>
+          <SetupSteps steps={setupSteps} collapsible />
         </div>
       </section>
 

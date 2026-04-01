@@ -1,6 +1,31 @@
 import { Link } from 'react-router-dom'
-import { PROVIDERS, TRADES, relatedTrades, otherProviders, blogPostsForProvider, defaultBlogPosts } from '../data/siteLinks'
+import { PROVIDERS, TRADES, relatedTrades, otherProviders, blogPostsForProvider, blogPostsForTrade, defaultBlogPosts } from '../data/siteLinks'
 import { STATES, STATE_MAP } from '../data/states'
+
+// State-specific blog posts for the 9 combos we've published
+const STATE_TRADE_BLOG = {
+  'electricians-nsw': 'best-eftpos-electricians-nsw-2026',
+  'electricians-vic': 'best-eftpos-electricians-vic-2026',
+  'electricians-qld': 'best-eftpos-electricians-qld-2026',
+  'plumbers-nsw':     'best-eftpos-plumbers-nsw-2026',
+  'plumbers-vic':     'best-eftpos-plumbers-vic-2026',
+  'plumbers-qld':     'best-eftpos-plumbers-qld-2026',
+  'builders-nsw':     'best-eftpos-builders-nsw-2026',
+  'builders-vic':     'best-eftpos-builders-vic-2026',
+  'builders-qld':     'best-eftpos-builders-qld-2026',
+  'electricians-wa':  'best-eftpos-electricians-wa-2026',
+  'electricians-sa':  'best-eftpos-electricians-sa-2026',
+  'plumbers-wa':      'best-eftpos-plumbers-wa-2026',
+  'plumbers-sa':      'best-eftpos-plumbers-sa-2026',
+  'builders-wa':      'best-eftpos-builders-wa-2026',
+  'builders-sa':      'best-eftpos-builders-sa-2026',
+  'painters-nsw':     'best-eftpos-painters-nsw-2026',
+  'painters-vic':     'best-eftpos-painters-vic-2026',
+  'painters-qld':     'best-eftpos-painters-qld-2026',
+  'concreters-nsw':   'best-eftpos-concreters-nsw-2026',
+  'concreters-vic':   'best-eftpos-concreters-vic-2026',
+  'concreters-qld':   'best-eftpos-concreters-qld-2026',
+}
 
 const COMPARE_PAIRS = [
   { slug: 'zeller-vs-square',  label: 'Zeller vs Square' },
@@ -15,7 +40,14 @@ export default function RelatedLinks({ slug, type, currentState }) {
 
   const providerLinks = isProvider ? otherProviders(slug) : PROVIDERS
   const tradeLinks = isProvider ? TRADES.slice(0, 9) : relatedTrades(slug)
-  const blogPosts = isProvider ? blogPostsForProvider(slug) : defaultBlogPosts()
+
+  // For trade pages: use trade-specific posts, and prepend state post if one exists
+  const stateTradeKey = isTrade && currentState ? `${slug}-${currentState}` : null
+  const stateTradeSlug = stateTradeKey ? STATE_TRADE_BLOG[stateTradeKey] : null
+  const baseBlogPosts = isProvider ? blogPostsForProvider(slug) : isTrade ? blogPostsForTrade(slug) : defaultBlogPosts()
+  const blogPosts = stateTradeSlug
+    ? [{ slug: stateTradeSlug, label: `${STATE_MAP[currentState]?.name} ${TRADES.find(t => t.slug === slug)?.label} guide →` }, ...baseBlogPosts]
+    : baseBlogPosts
 
   return (
     <section className="section section-alt">

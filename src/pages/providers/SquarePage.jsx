@@ -10,6 +10,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
+import SetupSteps from '../../components/SetupSteps'
 import StickySignUpBar from '../../components/StickySignUpBar'
 
 const crumbs = [
@@ -18,6 +19,14 @@ const crumbs = [
   { label: 'Square Review' },
 ]
 
+
+const setupSteps = [
+  { title: 'Create a Square account', body: 'Sign up at squareup.com/au. You need an ABN. Account approval is typically instant — no underwriting delay.' },
+  { title: 'Order Square Terminal', body: 'Add Square Terminal ($329 outright) to your cart. No monthly rental — you own the hardware.' },
+  { title: 'Enable offline mode', body: 'In the Square Point of Sale app, enable offline payments. This stores card data locally and processes automatically when reconnected within 24 hours.' },
+  { title: 'Set up payment links', body: 'In the Square Dashboard, create a payment link for deposits or remote invoicing at 2.2%. Send via SMS or email at booking time.' },
+  { title: 'Add team members', body: 'Invite team members in the Square Dashboard. Each can use their own login on a shared terminal, or you can assign individual terminals to workers.' },
+]
 const faqs = [
   { q: 'Does Square Terminal work offline?', a: 'Yes — Square Terminal supports offline payments. Cards are accepted with no connectivity and processed when you reconnect within 24 hours. Important: some card types are excluded, and there is a risk of later decline. Not suitable as your primary method, but excellent backup for known dead zones.' },
   { q: 'What is Square\'s in-person rate in Australia?', a: '1.6% for in-person tap, chip, or swipe. No fixed per-transaction fee. Invoice/remote payments are 2.2% with no fixed fee.' },
@@ -33,6 +42,7 @@ const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Review', name: 'Square for Tradies — Full Review (2026)', description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.', url: `${SITE}/providers/square`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Square', url: 'https://squareup.com/au', description: 'Global payments provider offering EFTPOS terminals with offline payment capability and flat-rate pricing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Square Review', item: `${SITE}/providers/square` }] },
+    { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Square Terminal for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
 
@@ -273,6 +283,15 @@ export default function SquarePage() {
             <Link to="/compare/square-vs-tyro" className="text-sm font-medium text-slate-500 hover:text-brand-blue border border-slate-200 hover:border-brand-blue px-3 py-2 rounded-xl transition-all">Square vs Tyro →</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      
+      {/* Setup */}
+      <section id="setup" className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-6">How to Get Set Up with Square</h2>
+          <SetupSteps steps={setupSteps} collapsible />
         </div>
       </section>
 
