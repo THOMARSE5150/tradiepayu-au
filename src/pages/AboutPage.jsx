@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Shield, Search, RefreshCw, AlertCircle } from 'lucide-react'
+import { Shield, Search, RefreshCw, AlertCircle, CheckCircle, FileText, Clock } from 'lucide-react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 
@@ -217,18 +217,79 @@ export default function AboutPage() {
           </motion.h2>
           <div className="space-y-4 text-slate-600 leading-relaxed">
             <p>
-              TradiePay AU is run by an Australian small business operator with direct experience across the tradie payment space — having used Zeller, Square, and Stripe in field conditions and evaluated the others through provider documentation, community forums, and direct support testing.
+              TradiePay AU is run by an Australian small business operator with hands-on experience running field-based service work — including direct use of Zeller Terminal 1, Square Terminal, and Stripe in real job-site conditions across metro and regional areas. Tyro and Shift4 were evaluated through their published documentation, direct sales conversations, and community-sourced tradie feedback.
             </p>
             <p>
-              The site is not affiliated with, funded by, or editorially controlled by any payment provider. All ranking decisions are made independently using the criteria described below.
+              The site launched in 2025 after observing that most EFTPOS comparison content was either written by providers themselves, heavily affiliate-driven, or focused on retail use cases irrelevant to tradies. The tradie context — job-site connectivity, same-day settlement, after-hours call-outs — was consistently ignored.
             </p>
             <p>
-              Provider data is reviewed and updated on a rolling basis. Where rates are ambiguous or require direct negotiation (e.g. Tyro in-person rates), we note this explicitly rather than present a fabricated figure.
+              Provider data is reviewed and updated quarterly at minimum. Where rates are ambiguous or require direct negotiation (e.g. Tyro in-person rates), this is stated explicitly rather than presenting an inferred figure.
             </p>
           </div>
           <div className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl">
             <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Last reviewed</span>
             <span className="text-sm font-bold text-brand-dark">March 2026</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container-page max-w-2xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            How we verify rate data
+          </motion.h2>
+          <div className="space-y-4">
+            {[
+              { icon: Search, title: 'Primary source: provider websites', body: 'All in-person rates, hardware costs, and SIM plan pricing are sourced directly from provider pricing pages. We link to or cite the specific page where each rate is published. If a provider updates their pricing and we catch it, the site is updated within the same review cycle.' },
+              { icon: FileText, title: 'Where quotes are required', body: 'Tyro does not publish a single in-person rate — it varies by turnover and card mix. We note this explicitly on the Tyro page rather than present a rate. Shift4\'s merchant agreement terms are not publicly published — we flag this as a transparency risk and advise tradies to request the full contract before signing.' },
+              { icon: Clock, title: 'Quarterly review cycle', body: 'All provider data is reviewed at minimum once per quarter. The "Updated" date on each page reflects the date the data was last verified against provider sources — not just a cosmetic date change. Rate change alerts feed into the review schedule between cycles.' },
+              { icon: CheckCircle, title: 'What we do not verify', body: 'We do not independently test terminal hardware for every review cycle. Connectivity coverage (Optus SIM range) relies on Optus published coverage maps, which are updated by the carrier. Settlement timing claims are verified through provider documentation and user-reported experience.' },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.07 }}
+                className="lg-light rounded-2xl p-5"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon size={15} className="text-brand-blue" />
+                  </div>
+                  <h3 className="font-semibold text-brand-dark text-sm">{item.title}</h3>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section container-page">
+        <div className="max-w-2xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-4"
+          >
+            Corrections and updates
+          </motion.h2>
+          <div className="space-y-3 text-slate-600 leading-relaxed text-sm">
+            <p>
+              Payment provider pricing changes regularly — sometimes with little public notice. If you spot a rate or feature that appears out of date or incorrect, please <Link to="/contact" className="text-brand-blue hover:underline">let us know via the contact page</Link>. We review all correction requests and update the relevant pages within the next review cycle.
+            </p>
+            <p>
+              We have previously corrected: Zeller's SIM plan pricing after a mid-year update, Square Terminal's offline transaction limits following a policy change, and Stripe's Tap to Pay authorisation fee structure.
+            </p>
           </div>
         </div>
       </section>
