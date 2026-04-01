@@ -196,7 +196,7 @@ export default function ComparePage() {
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-brand-dark" />
-          <div className="absolute -top-20 -left-20 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <div className="absolute top-10 right-10 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl" />
         </div>
         <div className="container-page relative z-10">

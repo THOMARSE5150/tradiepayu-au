@@ -129,7 +129,7 @@ export default function Home() {
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/95 via-brand-dark/85 to-slate-900/75" />
-          <div className="absolute -top-20 -left-20 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
         </div>
 
         <div className="container-page relative z-10">
