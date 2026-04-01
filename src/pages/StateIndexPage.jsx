@@ -243,6 +243,38 @@ export default function StateIndexPage() {
 
       <FaqSection items={faqs} title={`FAQ — Tradies in ${state.name}`} />
 
+      {/* By Trade grid */}
+      <section className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-xl font-bold text-brand-dark mb-4">EFTPOS Guides by Trade in {state.name}</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            {[
+              { label: 'Electricians', slug: 'electricians', icon: '⚡' },
+              { label: 'Plumbers', slug: 'plumbers', icon: '🔧' },
+              { label: 'Builders', slug: 'builders', icon: '🏗️' },
+              { label: 'Glaziers', slug: 'glaziers', icon: '🪟' },
+              { label: 'Roofers', slug: 'roofers', icon: '🏠' },
+              { label: 'Painters', slug: 'painters', icon: '🖌️' },
+              { label: 'Tilers', slug: 'tilers', icon: '🪵' },
+              { label: 'Concreters', slug: 'concreters', icon: '🏗️' },
+              { label: 'Carpenters', slug: 'carpenters', icon: '🪚' },
+              { label: 'HVAC', slug: 'hvac', icon: '❄️' },
+              { label: 'Gas Fitters', slug: 'gas-fitters', icon: '🔥' },
+              { label: 'Cleaners', slug: 'cleaners', icon: '🧹' },
+            ].map(t => (
+              <Link
+                key={t.slug}
+                to={`/states/${state.slug}/${t.slug}`}
+                className="flex flex-col items-center gap-1.5 p-3 rounded-2xl bg-white border border-slate-100 hover:border-brand-blue hover:shadow-sm transition-all text-center group"
+              >
+                <span className="text-xl">{t.icon}</span>
+                <span className="text-[11px] font-semibold text-slate-600 group-hover:text-brand-blue transition-colors leading-tight">{t.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Other states */}
       <section className="section container-page">
         <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">Other states</h2>

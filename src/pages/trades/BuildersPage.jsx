@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import RelatedLinks from '../../components/RelatedLinks'
+import { STATES } from '../../data/states'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
@@ -184,6 +185,24 @@ export default function BuildersPage() {
             <Link to="/trades/painters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Painters</Link>
             <Link to="/trades/concreters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Concreters</Link>
             <Link to="/trades/plasterers" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Plasterers</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-xl font-bold text-brand-dark mb-4">Best EFTPOS for Builders by State</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {STATES.map(s => (
+              <Link
+                key={s.slug}
+                to={`/states/${s.slug}/builders`}
+                className="flex flex-col gap-1 p-3 rounded-2xl bg-white border border-slate-100 hover:border-brand-blue hover:shadow-sm transition-all group"
+              >
+                <span className="text-xs font-bold text-brand-blue">{s.abbr}</span>
+                <span className="text-sm font-semibold text-brand-dark group-hover:text-brand-blue transition-colors leading-tight">{s.name}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -120,6 +120,11 @@ export default function Meta({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 
+      {/* Preload hero image for LCP */}
+      {ogImage && !ogImage.includes('og-default') && !ogImage.includes('og-provider') && !ogImage.includes('og-trade') && !ogImage.includes('og-zeller') && (
+        <link rel="preload" as="image" href={ogImage} fetchPriority="high" />
+      )}
+
       {/* Geographic targeting */}
       <meta name="geo.region" content={geoRegion || 'AU'} />
       <meta name="geo.country" content="Australia" />

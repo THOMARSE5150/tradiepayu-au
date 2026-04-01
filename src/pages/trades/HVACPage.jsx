@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import RelatedLinks from '../../components/RelatedLinks'
+import { STATES } from '../../data/states'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
@@ -157,6 +158,24 @@ export default function HVACPage() {
       </section>
 
       <FaqSection items={faqs} title="FAQ for HVAC Technicians" />
+
+      <section className="section section-alt">
+        <div className="container-page">
+          <h2 className="text-xl font-bold text-brand-dark mb-4">Best EFTPOS for HVAC Technicians by State</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {STATES.map(s => (
+              <Link
+                key={s.slug}
+                to={`/states/${s.slug}/hvac`}
+                className="flex flex-col gap-1 p-3 rounded-2xl bg-white border border-slate-100 hover:border-brand-blue hover:shadow-sm transition-all group"
+              >
+                <span className="text-xs font-bold text-brand-blue">{s.abbr}</span>
+                <span className="text-sm font-semibold text-brand-dark group-hover:text-brand-blue transition-colors leading-tight">{s.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <RelatedLinks slug="hvac" type="trade" />
     </>
