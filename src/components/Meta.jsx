@@ -18,7 +18,16 @@ const BLOG_HERO = {
   'shift4-eftpos-review-2026':                    'photo-1559526324-4b87b5e36e44',
 }
 
-// Hero photo IDs for provider pages (Zeller uses branded SVG; others use Unsplash hero)
+// Branded OG PNGs for all provider pages
+const PROVIDER_OG = {
+  zeller: `${SITE_URL}/og-zeller.png`,
+  square: `${SITE_URL}/og-square.png`,
+  stripe: `${SITE_URL}/og-stripe.png`,
+  tyro:   `${SITE_URL}/og-tyro.png`,
+  shift4: `${SITE_URL}/og-shift4.png`,
+}
+
+// Unsplash hero photos (used for preload only, not OG on provider pages)
 const PROVIDER_HERO = {
   zeller:  null,
   square:  'photo-1556742031-c6961e8560b0',
@@ -26,7 +35,6 @@ const PROVIDER_HERO = {
   tyro:    'photo-1563013544-824ae1b704d3',
   shift4:  'photo-1559526324-4b87b5e36e44',
 }
-const ZELLER_OG = `${SITE_URL}/og-zeller.png`
 
 function resolveOgImage(canonical, ogImageOverride) {
   if (ogImageOverride) return ogImageOverride
@@ -41,12 +49,10 @@ function resolveOgImage(canonical, ogImageOverride) {
     return `${SITE_URL}/og-trade.svg`
   }
 
-  // Provider pages — use each provider's hero photo
+  // Provider pages — use branded OG PNG for each provider
   if (canonical.startsWith('/providers/')) {
     const slug = canonical.split('/')[2]
-    const photo = PROVIDER_HERO[slug]
-    if (slug === 'zeller') return ZELLER_OG
-    if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
+    if (PROVIDER_OG[slug]) return PROVIDER_OG[slug]
     return `${SITE_URL}/og-provider.svg`
   }
 
