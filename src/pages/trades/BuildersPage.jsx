@@ -172,6 +172,21 @@ export default function BuildersPage() {
 
       <FaqSection items={faqs} title="FAQ for Builders" />
 
+      <section className="section container-page">
+        <div className="infobox">
+          <p className="text-sm font-semibold text-brand-dark mb-2">Subcontractors on your builds</p>
+          <p className="text-sm text-slate-600 mb-3">Builders coordinate multiple trades on every project. See the EFTPOS guides for the subbies you work with:</p>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/trades/electricians" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Electricians</Link>
+            <Link to="/trades/plumbers" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Plumbers</Link>
+            <Link to="/trades/carpenters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Carpenters</Link>
+            <Link to="/trades/painters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Painters</Link>
+            <Link to="/trades/concreters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Concreters</Link>
+            <Link to="/trades/plasterers" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Plasterers</Link>
+          </div>
+        </div>
+      </section>
+
       <RelatedLinks slug="builders" type="trade" />
     </>
   )

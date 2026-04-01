@@ -177,6 +177,21 @@ export default function ElectriciansPage() {
 
       <FaqSection items={faqs} title="FAQ for Electricians" />
 
+      <section className="section container-page">
+        <div className="infobox">
+          <p className="text-sm font-semibold text-brand-dark mb-2">Other trades on the same job sites</p>
+          <p className="text-sm text-slate-600 mb-3">Electricians typically work alongside other trades on new builds and renovations. See how they handle payments too:</p>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/trades/builders" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Builders</Link>
+            <Link to="/trades/plumbers" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Plumbers</Link>
+            <Link to="/trades/concreters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Concreters</Link>
+            <Link to="/trades/carpenters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Carpenters</Link>
+            <Link to="/trades/hvac" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">HVAC Technicians</Link>
+            <Link to="/trades/gas-fitters" className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-blue hover:border-brand-blue transition-all">Gas Fitters</Link>
+          </div>
+        </div>
+      </section>
+
       <RelatedLinks slug="electricians" type="trade" />
     </>
   )

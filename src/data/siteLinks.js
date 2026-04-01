@@ -27,8 +27,32 @@ export const TRADES = [
   { slug: 'pest-controllers', label: 'Pest Controllers', group: 'specialist' },
 ]
 
-/** Returns trades in the same group, excluding the current slug */
+/** Curated cross-group related trades for each trade (reflects real job-site co-occurrence) */
+const RELATED_TRADE_MAP = {
+  'electricians':     ['plumbers', 'gas-fitters', 'hvac', 'builders', 'carpenters', 'concreters'],
+  'plumbers':         ['electricians', 'gas-fitters', 'hvac', 'builders', 'tilers', 'concreters'],
+  'gas-fitters':      ['plumbers', 'electricians', 'hvac', 'builders', 'concreters', 'roofers'],
+  'hvac':             ['electricians', 'plumbers', 'gas-fitters', 'builders', 'carpenters', 'roofers'],
+  'welders':          ['builders', 'concreters', 'fencers', 'roofers', 'pool-builders', 'glaziers'],
+  'builders':         ['electricians', 'plumbers', 'carpenters', 'painters', 'concreters', 'plasterers'],
+  'carpenters':       ['builders', 'painters', 'plasterers', 'tilers', 'glaziers', 'roofers'],
+  'concreters':       ['builders', 'roofers', 'fencers', 'landscapers', 'pool-builders', 'carpenters'],
+  'roofers':          ['builders', 'carpenters', 'painters', 'glaziers', 'electricians', 'plumbers'],
+  'plasterers':       ['builders', 'painters', 'carpenters', 'tilers', 'glaziers', 'concreters'],
+  'tilers':           ['builders', 'plasterers', 'painters', 'carpenters', 'glaziers', 'pool-builders'],
+  'painters':         ['builders', 'plasterers', 'carpenters', 'tilers', 'glaziers', 'roofers'],
+  'glaziers':         ['builders', 'carpenters', 'painters', 'roofers', 'tilers', 'fencers'],
+  'fencers':          ['builders', 'concreters', 'landscapers', 'pool-builders', 'glaziers', 'carpenters'],
+  'landscapers':      ['concreters', 'fencers', 'pool-builders', 'builders', 'painters', 'tilers'],
+  'pool-builders':    ['landscapers', 'concreters', 'fencers', 'builders', 'tilers', 'electricians'],
+  'cleaners':         ['pest-controllers', 'painters', 'builders', 'glaziers', 'landscapers', 'tilers'],
+  'pest-controllers': ['cleaners', 'builders', 'glaziers', 'painters', 'landscapers', 'fencers'],
+}
+
+/** Returns curated cross-group related trades, falling back to same-group if not mapped */
 export function relatedTrades(currentSlug) {
+  const slugs = RELATED_TRADE_MAP[currentSlug]
+  if (slugs) return slugs.map(s => TRADES.find(t => t.slug === s)).filter(Boolean)
   const current = TRADES.find(t => t.slug === currentSlug)
   if (!current) return TRADES.filter(t => t.slug !== currentSlug).slice(0, 6)
   return TRADES.filter(t => t.group === current.group && t.slug !== currentSlug)
