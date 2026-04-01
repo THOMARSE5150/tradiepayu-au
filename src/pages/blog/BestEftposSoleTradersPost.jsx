@@ -4,6 +4,7 @@ import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import RelatedLinks from '../../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -429,6 +430,7 @@ export default function BestEftposSoleTradersPost() {
       </section>
 
       <FaqSection items={faqs} title="Best EFTPOS for sole traders — common questions" />
+      <RelatedLinks />
     </>
   )
 }

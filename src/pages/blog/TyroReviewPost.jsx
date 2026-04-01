@@ -4,6 +4,7 @@ import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import RelatedLinks from '../../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -404,6 +405,7 @@ export default function TyroReviewPost() {
       </section>
 
       <FaqSection items={faqs} title="Tyro EFTPOS — common questions" />
+      <RelatedLinks slug="tyro" type="provider" />
     </>
   )
 }

@@ -4,6 +4,7 @@ import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import RelatedLinks from '../../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -386,6 +387,7 @@ export default function ZellerTerminalReviewPost() {
       </section>
 
       <FaqSection items={faqs} title="Zeller Terminal 1 — common questions" />
+      <RelatedLinks slug="zeller" type="provider" />
     </>
   )
 }

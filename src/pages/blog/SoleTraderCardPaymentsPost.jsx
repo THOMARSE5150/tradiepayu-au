@@ -4,6 +4,7 @@ import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import RelatedLinks from '../../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -382,6 +383,7 @@ export default function SoleTraderCardPaymentsPost() {
       </section>
 
       <FaqSection items={faqs} title="Sole trader card payments — common questions" />
+      <RelatedLinks />
     </>
   )
 }

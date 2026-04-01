@@ -73,6 +73,21 @@ const jsonLd = [
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How to Calculate EFTPOS Costs for Your Tradie Business',
+    description: 'Compare monthly EFTPOS costs across Zeller, Square, Stripe, and Tyro by entering your card volume and transaction size.',
+    step: [
+      { '@type': 'HowToStep', position: 1, name: 'Enter your monthly card revenue', text: 'Type your estimated monthly card revenue into the calculator. This is the total amount customers pay by card each month — not your total revenue.' },
+      { '@type': 'HowToStep', position: 2, name: 'Set your average transaction value', text: 'Enter the typical value of a single card payment. This affects the per-transaction fee calculation for Stripe ($0.10 per transaction on top of 1.7%).' },
+      { '@type': 'HowToStep', position: 3, name: 'Choose your amortisation period', text: 'Set how many months you plan to use the terminal. This spreads the hardware cost across your expected usage period — Zeller Terminal 1 is $99, Square Terminal is $329.' },
+      { '@type': 'HowToStep', position: 4, name: 'Toggle the SIM plan option', text: 'Tick the SIM checkbox if you work on sites without reliable WiFi. Zeller\'s Optus SIM plan is $15/month and is essential for most on-site tradie work.' },
+      { '@type': 'HowToStep', position: 5, name: 'Compare the ranked results', text: 'The calculator ranks all providers from cheapest to most expensive for your specific volume, showing processing cost, amortised hardware, and SIM as separate line items.' },
+    ],
+    tool: [{ '@type': 'HowToTool', name: 'EFTPOS Cost Calculator' }],
+    supply: [{ '@type': 'HowToSupply', name: 'Monthly card revenue figure' }, { '@type': 'HowToSupply', name: 'Average transaction value' }],
+  },
 ]
 
 function FaqItem({ q, a }) {

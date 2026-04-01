@@ -4,6 +4,7 @@ import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import RelatedLinks from '../../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -408,6 +409,7 @@ export default function SquareTerminalReviewPost() {
       </section>
 
       <FaqSection items={faqs} title="Square Terminal — common questions" />
+      <RelatedLinks slug="square" type="provider" />
     </>
   )
 }

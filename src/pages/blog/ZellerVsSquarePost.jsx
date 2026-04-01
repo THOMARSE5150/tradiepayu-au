@@ -4,6 +4,7 @@ import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
+import RelatedLinks from '../../components/RelatedLinks'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -325,6 +326,7 @@ export default function ZellerVsSquarePost() {
       </section>
 
       <FaqSection items={faqs} title="Zeller vs Square — common questions" />
+      <RelatedLinks />
     </>
   )
 }

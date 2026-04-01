@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
+import RelatedLinks from '../../components/RelatedLinks'
 import ComparisonTable from '../../components/ComparisonTable'
 
 const SITE = 'https://tradiepayau.directory'
@@ -305,6 +306,7 @@ export default function EftposFeesPost() {
       </section>
 
       <FaqSection items={faqs} title="EFTPOS fees — common questions" />
+      <RelatedLinks />
     </>
   )
 }
