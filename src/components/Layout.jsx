@@ -6,7 +6,7 @@ import ScrollHandler from './ScrollHandler'
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full">
       <ScrollHandler />
       <Nav />
       <main className="flex-1 pb-16 sm:pb-0">{children}</main>
