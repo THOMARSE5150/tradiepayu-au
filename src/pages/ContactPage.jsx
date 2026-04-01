@@ -20,10 +20,8 @@ const TOPICS = [
 ]
 const MAX_MSG = 1000
 
-// Worker URL — update after deploying workers/contact-form
-// Dev fallback: Formspree (admin notification only, no user confirmation email)
-const WORKER_URL  = import.meta.env.VITE_CONTACT_WORKER_URL || ''
-const FORMSPREE_URL = 'https://formspree.io/f/xjgpglnz'
+const WORKER_URL    = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev'
+const FORMSPREE_URL = 'https://formspree.io/f/xjgpglnz' // fallback (no user confirmation)
 
 const NEXT_STEPS = [
   { label: 'Compare all providers', href: '/providers', note: 'Zeller, Square, Stripe, Tyro, Shift4' },

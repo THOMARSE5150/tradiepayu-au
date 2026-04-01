@@ -110,6 +110,30 @@ const posts = [
     readTime: '7 min read',
     image: 'photo-1621905252507-b35492cc74b4',
   },
+  {
+    slug: 'best-eftpos-plumbers-australia-2026',
+    title: 'Best EFTPOS for Plumbers in Australia (2026)',
+    description: 'Plumbers work in basements, plant rooms, new estates, and emergency call-outs at any hour. Here is the EFTPOS setup that works without customer WiFi.',
+    date: '2 Apr 2026',
+    readTime: '6 min read',
+    image: 'photo-1585771724684-38269d6639fd',
+  },
+  {
+    slug: 'stripe-vs-square-eftpos-australia-2026',
+    title: 'Stripe vs Square: Which Is Better for Australian Tradies? (2026)',
+    description: 'Stripe and Square are both available in Australia. We compare in-person rates, hardware, connectivity, and the one area where each wins.',
+    date: '2 Apr 2026',
+    readTime: '7 min read',
+    image: 'photo-1556742049-0cfed4f6a45d',
+  },
+  {
+    slug: 'how-to-get-paid-faster-sole-trader-australia',
+    title: 'How to Get Paid Faster as a Sole Trader in Australia',
+    description: 'Same-day settlement, payment links at job completion, and on-site EFTPOS. The five changes that cut debtor days from weeks to hours.',
+    date: '2 Apr 2026',
+    readTime: '6 min read',
+    image: 'photo-1563013544-824ae1b704d3',
+  },
 ]
 
 const crumbs = [

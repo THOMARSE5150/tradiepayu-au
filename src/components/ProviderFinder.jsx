@@ -55,7 +55,7 @@ function recommend(answers) {
         name: 'Zeller Terminal 1 + SIM',
         tag: 'Best overall',
         tagColour: 'bg-brand-blue',
-        reason: 'High volume + connectivity issues: Zeller's 1.4% rate saves significantly at your scale, and the Optus SIM plan handles variable WiFi without relying on customer internet.',
+        reason: "High volume + connectivity issues: Zeller\u2019s 1.4% rate saves significantly at your scale, and the Optus SIM plan handles variable WiFi without relying on customer internet.",
         href: '/providers/zeller',
         secondary: { label: 'High volume? Request a Tyro quote too', href: '/providers/tyro' },
       }
@@ -65,7 +65,7 @@ function recommend(answers) {
       name: 'Zeller Terminal 1 + SIM',
       tag: 'Best overall',
       tagColour: 'bg-brand-blue',
-      reason: 'The SIM plan ($15/mo) eliminates WiFi dependency on job sites — no need for the customer's password or a hotspot. Lowest rate (1.4%) and same-day settlement.',
+      reason: "The SIM plan ($15/mo) eliminates WiFi dependency on job sites \u2014 no need for the customer\u2019s password or a hotspot. Lowest rate (1.4%) and same-day settlement.",
       href: '/providers/zeller',
       secondary: { label: 'Compare Zeller vs Square', href: '/compare/zeller-vs-square' },
     }
@@ -78,7 +78,7 @@ function recommend(answers) {
       name: 'Zeller Terminal 1',
       tag: 'Best for your volume',
       tagColour: 'bg-brand-blue',
-      reason: 'At high volume, Zeller's 1.4% rate is the cheapest published option. You also have the option to contact Tyro for a negotiated in-person rate that may come in lower.',
+      reason: "At high volume, Zeller\u2019s 1.4% rate is the cheapest published option. You also have the option to contact Tyro for a negotiated in-person rate that may come in lower.",
       href: '/providers/zeller',
       secondary: { label: 'High volume? Request a Tyro quote', href: '/providers/tyro' },
     }
@@ -90,7 +90,7 @@ function recommend(answers) {
     name: 'Zeller Terminal 1',
     tag: 'Best overall',
     tagColour: 'bg-brand-blue',
-    reason: 'You have reliable WiFi and a normal volume — Zeller's 1.4% in-person rate, $99 hardware, and same-day settlement make it the most cost-effective pick.',
+      reason: "You have reliable WiFi and a normal volume — Zeller's 1.4% in-person rate, $99 hardware, and same-day settlement make it the most cost-effective pick.",
     href: '/providers/zeller',
     secondary: { label: 'Run the cost calculator for your exact numbers', href: '/calculator' },
   }

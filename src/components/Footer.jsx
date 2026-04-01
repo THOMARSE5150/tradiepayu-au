@@ -25,12 +25,12 @@ const trades = [
 ]
 
 const blog = [
+  { label: 'Zeller vs Square vs Stripe', href: '/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026' },
+  { label: 'Best EFTPOS for Plumbers', href: '/blog/best-eftpos-plumbers-australia-2026' },
+  { label: 'Stripe vs Square', href: '/blog/stripe-vs-square-eftpos-australia-2026' },
+  { label: 'Get Paid Faster', href: '/blog/how-to-get-paid-faster-sole-trader-australia' },
   { label: 'EFTPOS Fees Breakdown', href: '/blog/eftpos-fees-tradies-australia-2026' },
   { label: 'Zeller vs Square', href: '/blog/zeller-vs-square-eftpos-tradies' },
-  { label: 'Zeller Terminal 1 Review', href: '/blog/zeller-terminal-1-review-2026' },
-  { label: 'Square Terminal Review', href: '/blog/square-terminal-review-2026' },
-  { label: 'Best EFTPOS for Sole Traders', href: '/blog/best-eftpos-sole-traders-australia-2026' },
-  { label: 'Sole Trader Card Payments', href: '/blog/accept-card-payments-sole-trader-australia' },
 ]
 
 const legal = [
@@ -40,9 +40,7 @@ const legal = [
   { label: 'Disclaimer', href: '/disclaimer' },
 ]
 
-// Using Formspree until Cloudflare Worker (scripts/cloudflare-worker-rate-alerts.js) is deployed
-// Contact form ID: xjgpglnz (ContactPage.jsx)
-const RATE_ALERTS_FORM_ID = 'xjgpglnz'
+const RATE_ALERTS_URL = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev/rate-alerts'
 
 function RateAlerts() {
   const [email, setEmail] = useState('')
@@ -52,10 +50,10 @@ function RateAlerts() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch(`https://formspree.io/f/${RATE_ALERTS_FORM_ID}`, {
+      const res = await fetch(RATE_ALERTS_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email, _subject: 'Rate alert signup' }),
+        body: JSON.stringify({ email }),
       })
       setStatus(res.ok ? 'done' : 'error')
     } catch {
