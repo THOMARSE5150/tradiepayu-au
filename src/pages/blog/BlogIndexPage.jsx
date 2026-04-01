@@ -95,6 +95,14 @@ const posts = [
     image: 'photo-1554224155-6726b3ff858f',
   },
   {
+    slug: 'zeller-vs-square-vs-stripe-eftpos-tradies-2026',
+    title: 'Zeller vs Square vs Stripe: Best EFTPOS for Australian Tradies (2026)',
+    description: 'A full 3-way comparison. Rates, hardware, SIM connectivity, offline mode, and settlement speed — plus real monthly cost at every volume.',
+    date: '2 Apr 2026',
+    readTime: '8 min read',
+    image: 'photo-1556742049-0cfed4f6a45d',
+  },
+  {
     slug: 'best-eftpos-builders-australia-2026',
     title: 'Best EFTPOS for Builders in Australia (2026)',
     description: 'Builders need deposits, progress payments, multi-worker sites, and connectivity on early-stage builds. Here is the best EFTPOS setup for Australian builders.',

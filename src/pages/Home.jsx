@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Check, X, Zap, Shield, Wifi, TrendingDown } from 'lucide-react'
 import providers from '../data/providers.json'
 import CostCalculator from '../components/CostCalculator'
+import ProviderFinder from '../components/ProviderFinder'
 import FaqSection from '../components/FaqSection'
 import ComparisonTable from '../components/ComparisonTable'
 import Meta from '../components/Meta'
@@ -243,6 +244,13 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Provider Finder ── */}
+      <section className="section">
+        <div className="container-page max-w-xl">
+          <ProviderFinder />
         </div>
       </section>
 

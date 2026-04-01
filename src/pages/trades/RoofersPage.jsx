@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import RelatedLinks from '../../components/RelatedLinks'
+import TradeCompareLinks from '../../components/TradeCompareLinks'
 import { STATES } from '../../data/states'
 import { motion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
@@ -209,6 +210,7 @@ export default function RoofersPage() {
         </div>
       </section>
 
+      <TradeCompareLinks />
       <RelatedLinks slug="roofers" type="trade" />
     </>
   )

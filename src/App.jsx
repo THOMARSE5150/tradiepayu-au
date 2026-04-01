@@ -52,7 +52,8 @@ const TyroReviewPost    = lazy(() => import('./pages/blog/TyroReviewPost'))
 const Shift4ReviewPost  = lazy(() => import('./pages/blog/Shift4ReviewPost'))
 const ZellerVsTyroPost  = lazy(() => import('./pages/blog/ZellerVsTyroPost'))
 const SurchargingPost   = lazy(() => import('./pages/blog/SurchargingTradiesPost'))
-const BuildersPost      = lazy(() => import('./pages/blog/BestEftposBuildersPost'))
+const BuildersPost           = lazy(() => import('./pages/blog/BestEftposBuildersPost'))
+const ZellerSquareStripePost = lazy(() => import('./pages/blog/ZellerSquareStripePost'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -124,6 +125,7 @@ export default function App() {
           <Route path="/blog/zeller-vs-tyro-eftpos-tradies" element={<ZellerVsTyroPost />} />
           <Route path="/blog/surcharging-eftpos-tradies-australia-2026" element={<SurchargingPost />} />
           <Route path="/blog/best-eftpos-builders-australia-2026" element={<BuildersPost />} />
+          <Route path="/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026" element={<ZellerSquareStripePost />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
