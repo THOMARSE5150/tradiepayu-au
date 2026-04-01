@@ -35,10 +35,10 @@ const tradeSlugs = [
   'plasterers', 'pool-builders', 'pest-controllers', 'welders', 'cleaners', 'landscapers',
 ]
 
-const stateSlugs = ['nsw', 'vic', 'qld', 'wa', 'sa', 'tas']
+const stateSlugs = ['nsw', 'vic', 'qld', 'wa', 'sa', 'tas', 'act', 'nt']
 
 // Higher-population states and higher-intent trades get a priority boost
-const STATE_PRIORITY  = { nsw: '0.7', vic: '0.7', qld: '0.7', wa: '0.6', sa: '0.6', tas: '0.5' }
+const STATE_PRIORITY  = { nsw: '0.7', vic: '0.7', qld: '0.7', wa: '0.6', sa: '0.6', tas: '0.5', act: '0.5', nt: '0.5' }
 const HIGH_INTENT_TRADES = new Set(['electricians', 'plumbers', 'builders', 'painters', 'concreters'])
 
 function url(loc, priority, changefreq = 'monthly') {

@@ -60,6 +60,18 @@ export default function StateIndexPage() {
       q: `What is the surcharging rule for tradies in ${state.abbr}?`,
       a: `Tradies can pass card processing fees on to customers, but the surcharge must not exceed the actual cost of acceptance. Most tradies in ${state.name} absorb the 1.4% Zeller rate rather than adding surcharge friction to invoices.`,
     },
+    {
+      q: `What EFTPOS works offline or in remote areas of ${state.name}?`,
+      a: `Square Terminal has a built-in offline mode — you can take payments with zero connectivity and process them when signal is restored. This is the recommended backup for ${state.abbr} tradies working in remote areas, basements, plant rooms, or new estate sites with no signal. Square Terminal costs $329 outright with no monthly fees.`,
+    },
+    {
+      q: `How quickly do card payments settle for tradies in ${state.name}?`,
+      a: `Zeller settles same-day to a Zeller Transaction Account — funds are available the same afternoon you take payment. This is ideal for ${state.abbr} tradies who purchase materials the same day as the job. Square and Stripe both settle next business day to an external bank account by default.`,
+    },
+    {
+      q: `Can tradies in ${state.name} use their phone as an EFTPOS machine?`,
+      a: `Yes — both Zeller Tap to Pay and Square Tap to Pay turn an iPhone or Android into a card terminal with no hardware cost. Zeller charges 1.4% with no monthly fee. Square charges 1.6%. For sole traders in ${leadCity} starting out, Tap to Pay is the simplest and cheapest way to accept cards on day one.`,
+    },
   ]
 
   const jsonLd = [
@@ -70,6 +82,7 @@ export default function StateIndexPage() {
       description,
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
+      dateModified: '2026-03-31',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },

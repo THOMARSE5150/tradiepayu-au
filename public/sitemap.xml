@@ -319,7 +319,21 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- State-level trade pages (18 trades × 6 states = 108 pages) -->
+  <url>
+    <loc>https://tradiepayau.directory/states/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/states/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- State-level trade pages (18 trades × 8 states = 144 pages) -->
 
   <url>
     <loc>https://tradiepayau.directory/trades/electricians/nsw</loc>
@@ -358,6 +372,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/electricians/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/electricians/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/electricians/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
@@ -406,6 +434,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/plumbers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/plumbers/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/builders/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -442,6 +484,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/builders/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/builders/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/builders/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
@@ -490,6 +546,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/glaziers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/glaziers/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/roofers/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -526,6 +596,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/roofers/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/roofers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/roofers/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
@@ -574,6 +658,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/painters/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/painters/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/tilers/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -610,6 +708,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/tilers/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/tilers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/tilers/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
@@ -658,6 +770,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/concreters/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/concreters/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/carpenters/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -694,6 +820,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/carpenters/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/carpenters/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/carpenters/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
@@ -742,6 +882,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/hvac/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/hvac/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/gas-fitters/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -778,6 +932,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/gas-fitters/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/gas-fitters/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/gas-fitters/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
@@ -826,6 +994,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/fencers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/fencers/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/plasterers/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -862,6 +1044,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/plasterers/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/plasterers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/plasterers/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
@@ -910,6 +1106,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/pool-builders/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/pool-builders/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/pest-controllers/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -946,6 +1156,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/pest-controllers/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/pest-controllers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/pest-controllers/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
@@ -994,6 +1218,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/welders/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/welders/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/cleaners/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -1036,6 +1274,20 @@
   </url>
 
   <url>
+    <loc>https://tradiepayau.directory/trades/cleaners/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/cleaners/nt</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
     <loc>https://tradiepayau.directory/trades/landscapers/nsw</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -1072,6 +1324,20 @@
 
   <url>
     <loc>https://tradiepayau.directory/trades/landscapers/tas</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/landscapers/act</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://tradiepayau.directory/trades/landscapers/nt</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>

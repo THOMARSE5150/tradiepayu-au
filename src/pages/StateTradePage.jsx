@@ -41,6 +41,18 @@ export default function StateTradePage() {
       q: `Do I need a licence to take card payments as a tradie in ${state.name}?`,
       a: `No — there is no payment-specific licence requirement. You need your trade licence (regulated by ${state.regulator}) and an ABN to set up a merchant account with any EFTPOS provider. Zeller, Square, and Stripe all approve accounts online with just an ABN.`,
     },
+    {
+      q: `How quickly do card payments settle for ${trade.label.toLowerCase()} in ${state.abbr}?`,
+      a: `Zeller settles same-day to a Zeller Transaction Account, or next business day to an external bank account. For sole-trader ${trade.label.toLowerCase()} in ${state.abbr}, same-day settlement means funds are available to cover materials purchased the same afternoon. Square settles next business day by default.`,
+    },
+    {
+      q: `Can ${trade.label.toLowerCase()} in ${state.name} use their phone as an EFTPOS terminal?`,
+      a: `Yes — Zeller Tap to Pay turns any iPhone or Android into a card reader at ${trade.rate} with no hardware cost. It uses your phone's mobile data, so it works wherever you have signal. The Zeller Terminal 1 with SIM ($99) is the upgrade for ${leadCity} tradies who need printed receipts or work in buildings with poor phone signal.`,
+    },
+    {
+      q: `What is the cheapest way for a ${trade.label.toLowerCase().replace(/s$/, '')} in ${leadCity} to accept card payments?`,
+      a: `Zeller Tap to Pay is the cheapest start — $0 hardware, ${trade.rate} per transaction, no monthly fee. At higher volume (roughly $5,000+/month), Zeller Terminal 1 with SIM ($99 + $15/month) becomes cost-effective because the SIM removes the reliance on variable phone signal at ${leadCity} job sites.`,
+    },
   ]
 
   const jsonLd = [
@@ -51,6 +63,7 @@ export default function StateTradePage() {
       description,
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
+      dateModified: '2026-03-31',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },

@@ -47,6 +47,22 @@ export const STATES = [
     regulator: 'Consumer, Building and Occupational Services (CBOS)',
     notes: 'Smaller market with strong demand from renovation and new build activity. Optus SIM covers Hobart, Launceston, and major towns. Rural west TAS benefits from Square offline backup.',
   },
+  {
+    slug: 'act',
+    name: 'Australian Capital Territory',
+    abbr: 'ACT',
+    cities: ['Canberra', 'Belconnen', 'Gungahlin', 'Tuggeranong', 'Woden'],
+    regulator: 'Access Canberra',
+    notes: 'Compact, high-income market with strong government and commercial construction activity. Optus SIM covers the entire ACT region reliably.',
+  },
+  {
+    slug: 'nt',
+    name: 'Northern Territory',
+    abbr: 'NT',
+    cities: ['Darwin', 'Alice Springs', 'Katherine', 'Palmerston', 'Nhulunbuy'],
+    regulator: 'NT Building Practitioner Board',
+    notes: 'Large distances between job sites. Darwin metro is well-covered by Optus SIM. Remote NT and outback areas require Square Terminal offline mode as a backup.',
+  },
 ]
 
 export const STATE_MAP = Object.fromEntries(STATES.map(s => [s.slug, s]))
