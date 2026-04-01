@@ -1,9 +1,20 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Check } from 'lucide-react'
+import { ChevronDown, Check, Link2, CheckCheck } from 'lucide-react'
 import { haptic } from '../utils/haptic'
 import { trackCalculatorUsed } from '../utils/analytics'
 import rawProviders from '../data/providers.json'
+
+function getInitialState() {
+  if (typeof window === 'undefined') return { monthly: 5000, avgTx: 200, amortMonths: 24, includeSim: true }
+  const p = new URLSearchParams(window.location.search)
+  return {
+    monthly:     parseInt(p.get('monthly'), 10)  || 5000,
+    avgTx:       parseInt(p.get('avg'), 10)       || 200,
+    amortMonths: parseInt(p.get('amort'), 10)     || 24,
+    includeSim:  p.has('sim') ? p.get('sim') !== '0' : true,
+  }
+}
 
 const AMORT_OPTIONS = [
   { value: 12, label: '12 months' },
@@ -104,10 +115,25 @@ function buildCalcProviders(providers) {
 const PROVIDERS = buildCalcProviders(rawProviders)
 
 export default function CostCalculator() {
-  const [monthly, setMonthly] = useState(5000)
-  const [avgTx, setAvgTx] = useState(200)
-  const [amortMonths, setAmortMonths] = useState(24)
-  const [includeSim, setIncludeSim] = useState(true)
+  const init = getInitialState()
+  const [monthly, setMonthly] = useState(init.monthly)
+  const [avgTx, setAvgTx] = useState(init.avgTx)
+  const [amortMonths, setAmortMonths] = useState(init.amortMonths)
+  const [includeSim, setIncludeSim] = useState(init.includeSim)
+  const [copied, setCopied] = useState(false)
+
+  function copyShareLink() {
+    const url = new URL(window.location.href.split('?')[0])
+    url.searchParams.set('monthly', monthly)
+    url.searchParams.set('avg', avgTx)
+    url.searchParams.set('amort', amortMonths)
+    url.searchParams.set('sim', includeSim ? '1' : '0')
+    navigator.clipboard.writeText(url.toString()).then(() => {
+      haptic('medium')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2500)
+    })
+  }
 
   const results = useMemo(() => {
     const txCount = monthly / avgTx
@@ -245,9 +271,18 @@ export default function CostCalculator() {
             })}
           </AnimatePresence>
         </motion.div>
+        <div className="flex items-center justify-end mt-4 mb-1">
+          <button
+            onClick={copyShareLink}
+            className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border transition-all ${copied ? 'bg-green-50 border-green-200 text-green-600' : 'bg-white border-slate-200 text-slate-500 hover:text-brand-blue hover:border-brand-blue/40'}`}
+          >
+            {copied ? <CheckCheck size={13} /> : <Link2 size={13} />}
+            {copied ? 'Link copied!' : 'Share this result'}
+          </button>
+        </div>
         <p className="text-xs text-slate-400 mt-4">
           * Hardware amortised over {amortMonths} months. Assumes all transactions are in-person.
-          Zeller (1.4%, Terminal 1 $99, SIM $15/mo) and Square Terminal ($329) verified March 2026. Stripe (1.7% + $0.10, Reader M2 $69) and Tyro (1.4% payment links) could not be live-verified due to JS-rendered pricing pages — confirm at provider websites before signing up.
+          Zeller (1.4%, Terminal 1 $99, SIM $15/mo) and Square Terminal ($329) verified April 2026. Stripe (1.7% + $0.10, Reader M2 $69) and Tyro (1.4% payment links) could not be live-verified due to JS-rendered pricing pages — confirm at provider websites before signing up.
         </p>
       </div>
     </section>

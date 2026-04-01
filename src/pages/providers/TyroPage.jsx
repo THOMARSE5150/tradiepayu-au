@@ -62,7 +62,7 @@ export default function TyroPage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span>
             <StarRating rating={3.8} />
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Tyro for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Strong Australian bank-grade footprint. Competitive payment links. In-person rate requires a quote.</p>

@@ -228,7 +228,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-6 inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl">
             <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Last reviewed</span>
-            <span className="text-sm font-bold text-brand-dark">March 2026</span>
+            <span className="text-sm font-bold text-brand-dark">April 2026</span>
           </div>
         </div>
       </section>

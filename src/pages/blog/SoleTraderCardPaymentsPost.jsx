@@ -269,7 +269,7 @@ export default function SoleTraderCardPaymentsPost() {
         </motion.h2>
         <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
         <p className="text-xs text-slate-500 mt-3">
-          Rates current as of March 2026. Zeller SIM plan ($15/mo) is optional — not required if you have WiFi on site. Also compare <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> and <Link to="/providers/shift4" className="text-brand-blue hover:underline">Shift4</Link> if you're a higher-volume operator.
+          Rates current as of April 2026. Zeller SIM plan ($15/mo) is optional — not required if you have WiFi on site. Also compare <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> and <Link to="/providers/shift4" className="text-brand-blue hover:underline">Shift4</Link> if you're a higher-volume operator.
         </p>
       </section>
 

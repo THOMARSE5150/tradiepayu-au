@@ -182,7 +182,7 @@ export default function EftposFeesPost() {
             Provider rate comparison
           </motion.h2>
           <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
-          <p className="text-xs text-slate-500 mt-3">Rates current as of March 2026. Tyro and Shift4 rates are indicative — request a quote for your business.</p>
+          <p className="text-xs text-slate-500 mt-3">Rates current as of April 2026. Tyro and Shift4 rates are indicative — request a quote for your business.</p>
         </div>
       </section>
 

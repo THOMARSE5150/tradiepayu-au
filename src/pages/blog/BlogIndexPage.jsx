@@ -78,6 +78,30 @@ const posts = [
     readTime: '6 min read',
     image: 'photo-1559526324-4b87b5e36e44',
   },
+  {
+    slug: 'zeller-vs-tyro-eftpos-tradies',
+    title: 'Zeller vs Tyro: Which EFTPOS is Better for Tradies? (2026)',
+    description: 'Transparent pricing vs negotiated rates. SIM connectivity vs WiFi-only. Same-day vs next-day settlement. A head-to-head for Australian tradies.',
+    date: '2 Apr 2026',
+    readTime: '6 min read',
+    image: 'photo-1556742031-c6961e8560b0',
+  },
+  {
+    slug: 'surcharging-eftpos-tradies-australia-2026',
+    title: 'Surcharging for Tradies: How to Pass EFTPOS Fees to Customers (2026)',
+    description: 'What surcharging is, how to set it up on Zeller and Square, what the RBA rules say, and when it makes sense for Australian tradies.',
+    date: '2 Apr 2026',
+    readTime: '5 min read',
+    image: 'photo-1554224155-6726b3ff858f',
+  },
+  {
+    slug: 'best-eftpos-builders-australia-2026',
+    title: 'Best EFTPOS for Builders in Australia (2026)',
+    description: 'Builders need deposits, progress payments, multi-worker sites, and connectivity on early-stage builds. Here is the best EFTPOS setup for Australian builders.',
+    date: '2 Apr 2026',
+    readTime: '7 min read',
+    image: 'photo-1621905252507-b35492cc74b4',
+  },
 ]
 
 const crumbs = [

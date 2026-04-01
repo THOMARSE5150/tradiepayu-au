@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: 'How accurate are the results?',
-    a: 'The calculator uses published in-person rates as of March 2026. Results are estimates — actual costs can vary if your card mix includes more premium cards (which some providers charge more for), if Tyro quotes you a rate different from their standard, or if rates have changed since our last review. Always verify current pricing with the provider before signing up.',
+    a: 'The calculator uses published in-person rates as of April 2026. Results are estimates — actual costs can vary if your card mix includes more premium cards (which some providers charge more for), if Tyro quotes you a rate different from their standard, or if rates have changed since our last review. Always verify current pricing with the provider before signing up.',
   },
 ]
 
@@ -138,7 +138,7 @@ export default function CalculatorPage() {
           <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Free Tool</span>
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
             EFTPOS Cost Calculator for Tradies
@@ -213,7 +213,7 @@ export default function CalculatorPage() {
             <strong className="text-brand-dark">SIM cost</strong> — Zeller's optional Optus SIM plan is $15/month. Included when the checkbox is ticked. For any tradie working on sites without reliable WiFi, this is effectively a required expense.
           </p>
           <p className="text-xs text-slate-400 pt-2 border-t border-slate-100">
-            Rates verified March 2026. Shift4 uses a surcharging model (customer pays the fee, merchant cost is $0) and is excluded from this comparison. Always confirm current pricing at provider websites before signing up.
+            Rates verified April 2026. Shift4 uses a surcharging model (customer pays the fee, merchant cost is $0) and is excluded from this comparison. Always confirm current pricing at provider websites before signing up.
           </p>
         </div>
 

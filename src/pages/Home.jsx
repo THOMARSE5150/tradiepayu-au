@@ -113,7 +113,7 @@ export default function Home() {
     <>
       <Meta
         title="Best EFTPOS for Australian Tradies (2026)"
-        description="Compare the 5 best mobile card payment systems for Australian tradies. Real rates, SIM connectivity, offline mode, and settlement speed — updated March 2026."
+        description="Compare the 5 best mobile card payment systems for Australian tradies. Real rates, SIM connectivity, offline mode, and settlement speed — updated April 2026."
         canonical="/"
         jsonLd={jsonLd}
       />
@@ -142,7 +142,7 @@ export default function Home() {
               Best EFTPOS for Australian Tradies
             </h1>
             <p className="hero-sub">
-              5 providers compared. Real rates, no fluff — updated March 2026.
+              5 providers compared. Real rates, no fluff — updated April 2026.
             </p>
             <motion.a
               href="#compare"

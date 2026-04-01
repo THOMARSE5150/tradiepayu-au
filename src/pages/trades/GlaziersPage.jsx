@@ -65,7 +65,7 @@ export default function GlaziersPage() {
           <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Glaziers in Australia (2026)</h1>
           <p className="hero-sub">Dead zones, emergency call-outs, and property manager billing. Here's the payment setup that works for glazing.</p>

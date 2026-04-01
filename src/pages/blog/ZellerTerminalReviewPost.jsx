@@ -217,7 +217,7 @@ export default function ZellerTerminalReviewPost() {
           Pricing breakdown
         </motion.h2>
         <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
-        <p className="text-xs text-slate-500 mt-3">Rates current as of March 2026. The SIM plan is optional — required only if you want cellular connectivity independent of WiFi.</p>
+        <p className="text-xs text-slate-500 mt-3">Rates current as of April 2026. The SIM plan is optional — required only if you want cellular connectivity independent of WiFi.</p>
       </section>
 
       {/* Section 4: What tradies actually care about */}

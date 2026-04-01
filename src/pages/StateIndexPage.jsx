@@ -147,7 +147,7 @@ export default function StateIndexPage() {
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">State Guide</span>
             <span>·</span><span>All 18 Trades</span>
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">{title}</h1>
           <p className="hero-sub">

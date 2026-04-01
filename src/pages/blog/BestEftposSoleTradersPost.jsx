@@ -248,7 +248,7 @@ export default function BestEftposSoleTradersPost() {
         </motion.h2>
         <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
         <p className="text-xs text-slate-500 mt-3">
-          Rates current as of March 2026. <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> and <Link to="/providers/shift4" className="text-brand-blue hover:underline">Shift4</Link> rates are indicative — request a quote. ★ Primary recommendation for most sole traders.
+          Rates current as of April 2026. <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> and <Link to="/providers/shift4" className="text-brand-blue hover:underline">Shift4</Link> rates are indicative — request a quote. ★ Primary recommendation for most sole traders.
         </p>
       </section>
 

@@ -56,7 +56,7 @@ export default function CarpentersPage() {
         </div>
         <div className="container-page relative z-10">
           <Breadcrumb crumbs={crumbs} />
-          <div className="hero-meta"><span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span><span>·</span><span>Updated March 2026</span></div>
+          <div className="hero-meta"><span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span><span>·</span><span>Updated April 2026</span></div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Carpenters in Australia (2026)</h1>
           <p className="hero-sub">No WiFi on new build sites, builder invoicing, and deposits on custom joinery. Here's the payment setup that works for carpenters.</p>
           <nav className="jump-links"><a href="#picks">Comparison</a><a href="#challenges">Context</a><a href="#scenarios">Job Scenarios</a><a href="#faq">FAQ</a></nav>

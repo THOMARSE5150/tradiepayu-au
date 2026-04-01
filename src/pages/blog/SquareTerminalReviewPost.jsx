@@ -174,7 +174,7 @@ export default function SquareTerminalReviewPost() {
             Pricing breakdown
           </motion.h2>
           <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
-          <p className="text-xs text-slate-500 mt-3">Rates current as of March 2026. No monthly fee applies to the standard Square account.</p>
+          <p className="text-xs text-slate-500 mt-3">Rates current as of April 2026. No monthly fee applies to the standard Square account.</p>
         </div>
       </section>
 

@@ -62,7 +62,7 @@ export default function StripePage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span>
             <StarRating rating={4.2} />
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Stripe for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first operations.</p>

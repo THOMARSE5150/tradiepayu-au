@@ -74,7 +74,7 @@ export default function ZellerPage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span>
             <StarRating rating={4.8} />
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Zeller for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller.</p>
@@ -125,7 +125,7 @@ export default function ZellerPage() {
 
         <div className="prose-sm max-w-none text-slate-600 space-y-4">
           <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and same-day settlement into a Zeller account. More than 100,000 Australian businesses are already using it.</p>
-          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval takes minutes online with just your ABN. As of March 2026, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
+          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval takes minutes online with just your ABN. As of April 2026, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
         </div>
 
         {/* Product ecosystem */}

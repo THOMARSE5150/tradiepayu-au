@@ -203,7 +203,7 @@ export default function ComparePage() {
           <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Head-to-Head</span>
-            <span>·</span><span>Updated March 2026</span>
+            <span>·</span><span>Updated April 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
             {p1.name} vs {p2.name} for Australian Tradies
@@ -353,7 +353,7 @@ export default function ComparePage() {
             ))}
           </div>
           <p className="text-xs text-slate-400 mt-6 text-center">
-            Rates verified March 2026. Confirm current rates at provider websites before signing up.
+            Rates verified April 2026. Confirm current rates at provider websites before signing up.
           </p>
         </div>
       </section>
