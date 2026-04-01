@@ -10,6 +10,7 @@ import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
+import StarRating from '../../components/StarRating'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -40,7 +41,7 @@ const setupSteps = [
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Zeller for Tradies — Full Review (2026)', description: 'Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.', url: `${SITE}/providers/zeller`, datePublished: '2026-01-15', reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Zeller', url: 'https://www.myzeller.com.au', description: 'Australian EFTPOS and business banking provider offering flat-rate card payments, SIM-enabled terminals, and same-day settlement.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '1', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Zeller for Tradies — Full Review (2026)', description: 'Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.', url: `${SITE}/providers/zeller`, datePublished: '2026-01-15', reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Zeller', url: 'https://www.myzeller.com.au', description: 'Australian EFTPOS and business banking provider offering flat-rate card payments, SIM-enabled terminals, and same-day settlement.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '1', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Person', name: 'TradiePay Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Zeller Review', item: `${SITE}/providers/zeller` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -71,10 +72,15 @@ export default function ZellerPage() {
           <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
+            <span>·</span>
+            <StarRating rating={4.8} />
             <span>·</span><span>Updated March 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Zeller for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller.</p>
+          <p className="text-xs text-white/40 mt-2">
+            Independent review — TradiePay AU earns no referral fees. Ratings based on published rates and editorial testing.
+          </p>
           <div className="mt-4 mb-1">
             <ShareButton
               title="Zeller for Tradies — Full Review (2026)"

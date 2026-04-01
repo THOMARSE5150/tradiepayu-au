@@ -8,6 +8,7 @@ import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
+import StarRating from '../../components/StarRating'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -28,7 +29,7 @@ const faqs = [
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Tyro for Tradies — Full Review (2026)', description: "Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know.", url: `${SITE}/providers/tyro`, datePublished: '2026-01-15', dateModified: '2026-03-31', reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Tyro', url: 'https://www.tyro.com', description: 'Australian specialist bank offering EFTPOS terminals, payment links, and merchant services for SMEs with bank-grade infrastructure.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.8', reviewCount: '1', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Tyro for Tradies — Full Review (2026)', description: "Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know.", url: `${SITE}/providers/tyro`, datePublished: '2026-01-15', dateModified: '2026-03-31', reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Tyro', url: 'https://www.tyro.com', description: 'Australian specialist bank offering EFTPOS terminals, payment links, and merchant services for SMEs with bank-grade infrastructure.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.8', reviewCount: '1', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Person', name: 'TradiePay Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Tyro Review', item: `${SITE}/providers/tyro` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -59,10 +60,15 @@ export default function TyroPage() {
           <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
+            <span>·</span>
+            <StarRating rating={3.8} />
             <span>·</span><span>Updated March 2026</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Tyro for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Strong Australian bank-grade footprint. Competitive payment links. In-person rate requires a quote.</p>
+          <p className="text-xs text-white/40 mt-2">
+            Independent review — TradiePay AU earns no referral fees. Ratings based on published rates and editorial testing.
+          </p>
           <div className="mt-4 mb-1">
             <ShareButton
               title="Tyro for Tradies — Full Review (2026)"
