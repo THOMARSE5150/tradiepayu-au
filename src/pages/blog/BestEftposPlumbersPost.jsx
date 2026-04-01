@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Do plumbers need SIM connectivity in their EFTPOS terminal?',
-    a: "Yes, for most plumbing work. Plumbers often work in areas where customer WiFi is unavailable or unreliable: high-rise plant rooms, underground sewage systems, new builds without internet connected, and residential jobs where you don't want to ask the customer for their WiFi password mid-emergency. Zeller's $15/month Optus SIM plan makes all of this a non-issue.",
+    a: "Yes, for most plumbing work. Plumbers often work in areas where customer WiFi is unavailable or unreliable: high-rise plant rooms, underground sewage systems, new builds without internet connected, and residential jobs where you don\'t want to ask the customer for their WiFi password mid-emergency. Zeller\'s $15/month Optus SIM plan makes all of this a non-issue.",
   },
   {
     q: 'What is the best EFTPOS for emergency plumbing call-outs?',
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     q: 'How much does EFTPOS cost a plumber per month?',
-    a: "On $8,000/month in card revenue at Zeller's 1.4% rate, your monthly processing cost is $112. Add $15 for the SIM plan and the total is $127. At Square's 1.6% rate on the same volume, it's $128 plus hardware ($329 upfront). Zeller hardware is $99 upfront. Over 12 months, Zeller saves roughly $24 in processing fees — but the main difference is same-day settlement and SIM connectivity, not the fee gap alone.",
+    a: "On $8,000/month in card revenue at Zeller\'s 1.4% rate, your monthly processing cost is $112. Add $15 for the SIM plan and the total is $127. At Square\'s 1.6% rate on the same volume, it\'s $128 plus hardware ($329 upfront). Zeller hardware is $99 upfront. Over 12 months, Zeller saves roughly $24 in processing fees — but the main difference is same-day settlement and SIM connectivity, not the fee gap alone.",
   },
   {
     q: 'Should plumbers use surcharging?',
-    a: "It depends on your job mix. On small service calls ($150–$400), a 1.4% surcharge adds $2–$6 — most customers won't notice, but some will. On larger jobs like hot water systems or bathroom renovations ($2,000–$10,000), surcharging is more worthwhile: 1.4% of $5,000 is $70. Enable surcharging in Zeller's dashboard and disclose it on your quote. Under ACCC rules, the surcharge cannot exceed your actual cost of card acceptance.",
+    a: "It depends on your job mix. On small service calls ($150–$400), a 1.4% surcharge adds $2–$6 — most customers won\'t notice, but some will. On larger jobs like hot water systems or bathroom renovations ($2,000–$10,000), surcharging is more worthwhile: 1.4% of $5,000 is $70. Enable surcharging in Zeller\'s dashboard and disclose it on your quote. Under ACCC rules, the surcharge cannot exceed your actual cost of card acceptance.",
   },
   {
     q: 'Can I use EFTPOS in an apartment block or high-rise?',
@@ -153,7 +153,7 @@ export default function BestEftposPlumbersPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: 'Works without customer WiFi', body: "You cannot ask a customer for their WiFi password during an emergency. A SIM-enabled terminal processes payments via its own mobile data connection — no WiFi required." },
-              { title: 'Works in underground and plant areas', body: "High-rise plant rooms, basement pump rooms, and underground services all have poor WiFi. Zeller's Optus SIM works in most of these locations. Square's offline mode covers the rest." },
+              { title: 'Works in underground and plant areas', body: "High-rise plant rooms, basement pump rooms, and underground services all have poor WiFi. Zeller\'s Optus SIM works in most of these locations. Square\'s offline mode covers the rest." },
               { title: 'Available for 6am and 10pm call-outs', body: "Emergency plumbing does not wait for business hours. Your EFTPOS needs to work at any time, not rely on a payment gateway that has downtime windows." },
               { title: 'Fast settlement', body: "Same-day settlement with Zeller means a hot water system replacement billed on Monday morning is in your account that evening — available for supplier payments or next-day material orders." },
             ].map((item, i) => (

@@ -25,6 +25,9 @@ const STATE_TRADE_BLOG = {
   'concreters-nsw':   'best-eftpos-concreters-nsw-2026',
   'concreters-vic':   'best-eftpos-concreters-vic-2026',
   'concreters-qld':   'best-eftpos-concreters-qld-2026',
+  'roofers-nsw':      'best-eftpos-roofers-nsw-2026',
+  'roofers-vic':      'best-eftpos-roofers-vic-2026',
+  'roofers-qld':      'best-eftpos-roofers-qld-2026',
 }
 
 const COMPARE_PAIRS = [

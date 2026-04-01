@@ -36,19 +36,19 @@ const faqs = [
   },
   {
     q: 'What is the best EFTPOS for air conditioning emergency call-outs?',
-    a: "Zeller Terminal 1 + SIM. Air conditioning failures in summer (and heating failures in winter) are genuine emergencies. You arrive, diagnose, fix, and collect — often outside business hours. A SIM-enabled terminal that works in any building without requiring WiFi access is the safest choice. Square Terminal's offline mode is a backup for sites with no mobile signal at all.",
+    a: "Zeller Terminal 1 + SIM. Air conditioning failures in summer (and heating failures in winter) are genuine emergencies. You arrive, diagnose, fix, and collect — often outside business hours. A SIM-enabled terminal that works in any building without requiring WiFi access is the safest choice. Square Terminal\'s offline mode is a backup for sites with no mobile signal at all.",
   },
   {
     q: 'How do HVAC businesses handle large commercial service agreements?',
-    a: "Commercial HVAC contracts (quarterly service agreements, maintenance plans) are typically invoiced monthly or quarterly. Use Zeller or Square invoicing with embedded pay-now buttons so the facilities manager can approve and pay from their inbox. For large one-off commercial jobs ($10,000+), Tyro's Payment Links at 1.4% incl. GST are the cheapest published online rate. Collect deposits via payment link when the order is confirmed.",
+    a: "Commercial HVAC contracts (quarterly service agreements, maintenance plans) are typically invoiced monthly or quarterly. Use Zeller or Square invoicing with embedded pay-now buttons so the facilities manager can approve and pay from their inbox. For large one-off commercial jobs ($10,000+), Tyro\'s Payment Links at 1.4% incl. GST are the cheapest published online rate. Collect deposits via payment link when the order is confirmed.",
   },
   {
     q: 'Should HVAC technicians use surcharging?',
-    a: "For residential service calls and small jobs, absorbing the 1.4% Zeller rate is common — the client is already paying a call-out fee. For larger commercial installations and service agreements where the client is a business, disclosing a 1.4% surcharge on the quote is standard and accepted. At Zeller's rate, the surcharge is the lowest legally defensible amount in Australia.",
+    a: "For residential service calls and small jobs, absorbing the 1.4% Zeller rate is common — the client is already paying a call-out fee. For larger commercial installations and service agreements where the client is a business, disclosing a 1.4% surcharge on the quote is standard and accepted. At Zeller\'s rate, the surcharge is the lowest legally defensible amount in Australia.",
   },
   {
     q: 'Can HVAC technicians take payment from building managers remotely?',
-    a: "Yes — payment links are the right tool for commercial HVAC billing. Send a Zeller Payment Link (1.7%) or Tyro Payment Link (1.4% incl. GST) to the facilities manager or accounts payable email after completing the job. They pay from their accounting system or phone without needing to be on site. This is particularly useful for after-hours emergency work where the decision-maker isn't present when you finish.",
+    a: "Yes — payment links are the right tool for commercial HVAC billing. Send a Zeller Payment Link (1.7%) or Tyro Payment Link (1.4% incl. GST) to the facilities manager or accounts payable email after completing the job. They pay from their accounting system or phone without needing to be on site. This is particularly useful for after-hours emergency work where the decision-maker isn\'t present when you finish.",
   },
 ]
 
@@ -141,7 +141,7 @@ export default function BestEftposHVACPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            HVAC technicians span two very different market segments: residential air conditioning service (split systems, ducted units, seasonal call-outs) and commercial mechanical services (chillers, cooling towers, AHUs, BMS-linked systems). Both involve working in spaces where WiFi is unavailable or inaccessible. The right EFTPOS handles both without requiring the customer's internet credentials.
+            HVAC technicians span two very different market segments: residential air conditioning service (split systems, ducted units, seasonal call-outs) and commercial mechanical services (chillers, cooling towers, AHUs, BMS-linked systems). Both involve working in spaces where WiFi is unavailable or inaccessible. The right EFTPOS handles both without requiring the customer\'s internet credentials.
           </p>
         </motion.div>
 
@@ -149,7 +149,7 @@ export default function BestEftposHVACPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where HVAC technicians lose WiFi access</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: 'Roof plant rooms', body: "Commercial rooftop plant rooms are physically isolated from building networks. Zeller's SIM terminal has excellent 4G signal at height — often better than ground level." },
+              { title: 'Roof plant rooms', body: "Commercial rooftop plant rooms are physically isolated from building networks. Zeller\'s SIM terminal has excellent 4G signal at height — often better than ground level." },
               { title: 'Ceiling voids and roof cavities', body: "Domestic ducted system work happens in ceiling spaces where even phone signal is sometimes attenuated. SIM connectivity is more robust than relying on a WiFi hotspot from the roof." },
               { title: 'Commercial mechanical floors', body: "High-rise mechanical floors are designed for HVAC equipment, not network access. Building WiFi rarely reaches these areas reliably." },
               { title: 'After-hours emergency work', body: "Air conditioning failures on 35°C summer days mean you work after hours when building managers are not present to provide WiFi credentials." },

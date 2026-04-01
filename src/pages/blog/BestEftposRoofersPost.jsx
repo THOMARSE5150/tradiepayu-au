@@ -28,7 +28,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'What is the best EFTPOS for roofers in Australia?',
-    a: "Zeller Terminal 1 with the SIM plan is the best EFTPOS for most roofers. Roofing work often happens on sites with poor WiFi — rooftops are physically distant from routers, and storm-damage emergency jobs happen in houses where accessing the customer's WiFi is impractical. The Optus SIM plan ($15/month) means the terminal processes on mobile data independently. At 1.4% and same-day settlement, it is also the cheapest and fastest option for most roofing businesses.",
+    a: "Zeller Terminal 1 with the SIM plan is the best EFTPOS for most roofers. Roofing work often happens on sites with poor WiFi — rooftops are physically distant from routers, and storm-damage emergency jobs happen in houses where accessing the customer\'s WiFi is impractical. The Optus SIM plan ($15/month) means the terminal processes on mobile data independently. At 1.4% and same-day settlement, it is also the cheapest and fastest option for most roofing businesses.",
   },
   {
     q: 'Does EFTPOS work on rooftops?',
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: 'How do roofers handle deposits for large jobs?',
-    a: "Payment links are the standard approach. Send a Zeller or Tyro payment link for 20-40% of the job value when the quote is accepted. The client taps a link and pays from their phone — no bank details required, no cheques. Zeller payment links cost 1.7%, Tyro's are 1.4% incl. GST (the cheapest published online payment rate in Australia). The balance is collected via terminal on completion or via a second payment link.",
+    a: "Payment links are the standard approach. Send a Zeller or Tyro payment link for 20-40% of the job value when the quote is accepted. The client taps a link and pays from their phone — no bank details required, no cheques. Zeller payment links cost 1.7%, Tyro\'s are 1.4% incl. GST (the cheapest published online payment rate in Australia). The balance is collected via terminal on completion or via a second payment link.",
   },
   {
     q: 'Should roofers take payment at completion or send an invoice?',
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: 'How much does EFTPOS cost a roofing business per month?',
-    a: "On $15,000/month in card revenue at Zeller's 1.4% rate: $210 in processing fees. Add $15 for the SIM plan — total $225. Square at 1.6% on the same volume: $240. The difference is small, but Zeller also settles same day (Square is next day) and has a lower hardware cost ($99 vs $329). For high-volume roofing operations ($50,000+/month), contact Tyro for a custom in-person rate.",
+    a: "On $15,000/month in card revenue at Zeller\'s 1.4% rate: $210 in processing fees. Add $15 for the SIM plan — total $225. Square at 1.6% on the same volume: $240. The difference is small, but Zeller also settles same day (Square is next day) and has a lower hardware cost ($99 vs $329). For high-volume roofing operations ($50,000+/month), contact Tyro for a custom in-person rate.",
   },
 ]
 
@@ -141,7 +141,7 @@ export default function BestEftposRoofersPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Roofing has two distinct payment scenarios: large planned jobs (re-roofing, new builds, extensions) where deposit and progress payments are the norm, and emergency storm-damage work where you arrive, repair, and collect — often on the same day. Both benefit from a terminal that does not depend on the building's WiFi.
+            Roofing has two distinct payment scenarios: large planned jobs (re-roofing, new builds, extensions) where deposit and progress payments are the norm, and emergency storm-damage work where you arrive, repair, and collect — often on the same day. Both benefit from a terminal that does not depend on the building\'s WiFi.
           </p>
         </motion.div>
 
@@ -164,7 +164,7 @@ export default function BestEftposRoofersPost() {
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">Tyro for high-volume roofing businesses</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> does not publish an in-person terminal rate — it requires a quote. For roofing businesses processing more than $50,000/month in card payments, a negotiated Tyro in-person rate may come in below 1.4%, making it cheaper than Zeller. Tyro's Payment Links at 1.4% incl. GST are also the cheapest online rate for deposits and progress payments.
+            <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro</Link> does not publish an in-person terminal rate — it requires a quote. For roofing businesses processing more than $50,000/month in card payments, a negotiated Tyro in-person rate may come in below 1.4%, making it cheaper than Zeller. Tyro\'s Payment Links at 1.4% incl. GST are also the cheapest online rate for deposits and progress payments.
           </p>
         </section>
 

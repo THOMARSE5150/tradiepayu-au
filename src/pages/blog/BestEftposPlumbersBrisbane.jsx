@@ -143,9 +143,9 @@ export default function BestEftposPlumbersBrisbane() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "SEQ growth estate emergencies", body: "Burst pipes and hot water failures in Logan, Ipswich, and Moreton Bay estates happen without warning. New estate sites may not have NBN connected. SIM connectivity handles payment anywhere Optus reaches." },
-              { title: "Brisbane CBD and Valley", body: "CBD and Fortitude Valley apartment blocks have pump rooms where building WiFi doesn't always reach. Zeller's SIM terminal processes on Optus 4G independently." },
+              { title: "Brisbane CBD and Valley", body: "CBD and Fortitude Valley apartment blocks have pump rooms where building WiFi doesn\'t always reach. Zeller\'s SIM terminal processes on Optus 4G independently." },
               { title: "North Brisbane commercial", body: "Commercial plumbing fit-outs in Chermside, Northgate, and North Brisbane industrial areas often involve buildings mid-construction with no active internet. SIM connectivity covers these sites." },
-              { title: "Same-day parts from Reece", body: "Brisbane plumbers sourcing hot water units or fittings from Reece Plumbing on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day parts from Reece", body: "Brisbane plumbers sourcing hot water units or fittings from Reece Plumbing on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

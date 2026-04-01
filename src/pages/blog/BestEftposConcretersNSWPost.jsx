@@ -65,9 +65,9 @@ export default function BestEftposConcretersNSWPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Western Sydney estate slabs", body: "Marsden Park, Box Hill, and Schofields have thousands of new home slabs being poured annually. These sites have no NBN connected. SIM connectivity handles payment collection from developers and owner-builders." },
-              { title: "Large deposit collection", body: "NSW concreters collecting 30-50% deposits before the pour date benefit from Zeller's payment links (1.7%) — clients pay via SMS before material orders are placed." },
+              { title: "Large deposit collection", body: "NSW concreters collecting 30-50% deposits before the pour date benefit from Zeller\'s payment links (1.7%) — clients pay via SMS before material orders are placed." },
               { title: "Driveways and paths", body: "Residential driveway and path work in established Sydney suburbs involves homes with active internet, but using customer WiFi is impractical. SIM connectivity handles payment at job completion." },
-              { title: "Same-day concrete materials", body: "NSW concreters ordering cement, sand, and steel on the same day as the pour benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day concrete materials", body: "NSW concreters ordering cement, sand, and steel on the same day as the pour benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

@@ -29,11 +29,11 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for builders in Melbourne growth suburbs?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne outer suburbs — Melton, Wyndham, Mernda — have large residential estates under construction without NBN. Zeller's SIM terminal processes on mobile data. Payment links (1.7%) allow deposit collection before build commencement. Same-day settlement means material purchase funds are accessible the same day.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne outer suburbs — Melton, Wyndham, Mernda — have large residential estates under construction without NBN. Zeller\'s SIM terminal processes on mobile data. Payment links (1.7%) allow deposit collection before build commencement. Same-day settlement means material purchase funds are accessible the same day.",
   },
   {
     q: "How should Victorian builders collect large progress payments?",
-    a: "Payment links via SMS or email are the most practical method for Victorian building progress payments. Zeller's payment links (1.7%) and Tyro's links (1.4% incl. GST) allow clients to pay from their banking app without visiting the site. For final on-site payments, the Zeller terminal at 1.4% is the lowest-cost in-person rate.",
+    a: "Payment links via SMS or email are the most practical method for Victorian building progress payments. Zeller\'s payment links (1.7%) and Tyro\'s links (1.4% incl. GST) allow clients to pay from their banking app without visiting the site. For final on-site payments, the Zeller terminal at 1.4% is the lowest-cost in-person rate.",
   },
   {
     q: "What EFTPOS for Victorian commercial builders?",
@@ -108,7 +108,7 @@ export default function BestEftposBuildersVICPost() {
             Best EFTPOS for Builders in Victoria (2026)
           </h1>
           <p className="hero-sub">
-            Melbourne's outer-urban growth corridors, inner-city apartment developments, and regional Victorian commercial builds — efficient payment from deposit to final invoice.
+            Melbourne\'s outer-urban growth corridors, inner-city apartment developments, and regional Victorian commercial builds — efficient payment from deposit to final invoice.
           </p>
         </div>
       </header>
@@ -123,7 +123,7 @@ export default function BestEftposBuildersVICPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Victoria Builders work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            Victoria Builders work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Builders working in Victoria in 2026, with recommendations based on VIC-specific site conditions.
@@ -134,9 +134,9 @@ export default function BestEftposBuildersVICPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Victoria Builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Melbourne growth corridors", body: "Melton, Wyndham, Casey, and Mernda are Victoria's fastest-growing building markets. New estates under construction have no internet connected. Zeller's SIM plan handles payment collection from day one." },
+              { title: "Melbourne growth corridors", body: "Melton, Wyndham, Casey, and Mernda are Victoria\'s fastest-growing building markets. New estates under construction have no internet connected. Zeller\'s SIM plan handles payment collection from day one." },
               { title: "Inner-city apartment builds", body: "Melbourne CBD high-rise and inner-suburb apartment developments require progress payment collection from developers and owners. Payment links via SMS are standard for off-site invoice collection." },
-              { title: "Geelong and regional Victoria", body: "Geelong's construction market is Victoria's largest after Melbourne. Ballarat and Bendigo are also active. Optus 4G covers all three cities and surrounding areas." },
+              { title: "Geelong and regional Victoria", body: "Geelong\'s construction market is Victoria\'s largest after Melbourne. Ballarat and Bendigo are also active. Optus 4G covers all three cities and surrounding areas." },
               { title: "Volume and large invoices", body: "Victorian builders often process high-value individual invoices. Same-day settlement means a $20,000 progress payment collected in the morning is available in the Zeller account that afternoon." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">

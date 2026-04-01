@@ -65,9 +65,9 @@ export default function BestEftposConcretersVICPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Melbourne growth corridor slabs", body: "Melton, Wyndham, Casey, and Officer have large residential estate slabs. These sites have no NBN during construction. SIM connectivity handles payment from developers and owner-builders." },
-              { title: "Large deposit collection", body: "Victorian concreters collecting 30-50% deposits before pour day benefit from Zeller's payment links (1.7%) — clients pay via SMS before material orders are placed." },
+              { title: "Large deposit collection", body: "Victorian concreters collecting 30-50% deposits before pour day benefit from Zeller\'s payment links (1.7%) — clients pay via SMS before material orders are placed." },
               { title: "Geelong and regional Victoria", body: "Geelong and Ballarat residential concreting work requires reliable payment collection. Optus 4G covers both cities and surrounding areas." },
-              { title: "Same-day materials", body: "Victorian concreters ordering concrete and steel on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day materials", body: "Victorian concreters ordering concrete and steel on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

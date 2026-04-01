@@ -268,7 +268,7 @@ export default function BestEftposSoleTradersPost() {
               in about 5 minutes.
             </p>
             <p className="text-slate-600 leading-relaxed mb-4">
-              You do not need a company structure, a registered business name, or a trade licence to get an ABN. If you're operating as a sole trader — trading under your own name and invoicing for your labour — you can register for an ABN immediately. No accountant required.
+              You do not need a company structure, a registered business name, or a trade licence to get an ABN. If you\'re operating as a sole trader — trading under your own name and invoicing for your labour — you can register for an ABN immediately. No accountant required.
             </p>
             <div className="lg-light rounded-2xl p-5">
               <p className="text-sm text-slate-600 leading-relaxed">
@@ -289,7 +289,7 @@ export default function BestEftposSoleTradersPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">What volume justifies a terminal?</h2>
           <p className="text-slate-600 leading-relaxed mb-6">
-            The breakeven point depends on which option you're comparing against. Since Zeller Tap to Pay and Zeller Terminal 1 share the same 1.4% rate, there's no rate-based breakeven — the choice comes down to practical needs.
+            The breakeven point depends on which option you\'re comparing against. Since Zeller Tap to Pay and Zeller Terminal 1 share the same 1.4% rate, there\'s no rate-based breakeven — the choice comes down to practical needs.
           </p>
         </motion.div>
         <div className="space-y-4 max-w-2xl">

@@ -28,7 +28,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for Melbourne plumbers?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne's pump rooms and plant floors in CBD and Docklands high-rises have poor WiFi. Outer suburb estate emergency plumbing needs payment collection without WiFi dependencies. Same-day settlement means funds are available for Reece or BGS Plumbing purchases that afternoon. At 1.4% and $99 hardware, it is also the most cost-effective setup.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne\'s pump rooms and plant floors in CBD and Docklands high-rises have poor WiFi. Outer suburb estate emergency plumbing needs payment collection without WiFi dependencies. Same-day settlement means funds are available for Reece or BGS Plumbing purchases that afternoon. At 1.4% and $99 hardware, it is also the most cost-effective setup.",
   },
   {
     q: "Does Zeller SIM work across Melbourne metro?",
@@ -142,10 +142,10 @@ export default function BestEftposPlumbersMelbourne() {
           <h2 className="text-xl font-bold text-brand-dark">Where Melbourne plumbers lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Melbourne CBD and Docklands", body: "Pump rooms and mechanical floors in Docklands apartments and CBD high-rises have poor building WiFi. Zeller's SIM terminal processes on Optus 4G independently of building infrastructure." },
+              { title: "Melbourne CBD and Docklands", body: "Pump rooms and mechanical floors in Docklands apartments and CBD high-rises have poor building WiFi. Zeller\'s SIM terminal processes on Optus 4G independently of building infrastructure." },
               { title: "Outer suburb estate emergency work", body: "Burst pipes and hot water failures in Werribee, Pakenham, and Sunbury estates happen without warning. Emergency plumbing needs reliable payment collection — SIM connectivity removes the WiFi dependency." },
-              { title: "Inner Melbourne apartment renos", body: "Carlton, Fitzroy, and Richmond apartment renovation plumbing involves tight spaces with poor WiFi. SIM connectivity handles these environments without asking for the customer's password." },
-              { title: "Same-day parts from Reece", body: "Melbourne plumbers purchasing from Reece or BGS Plumbing on the same day as a job benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Inner Melbourne apartment renos", body: "Carlton, Fitzroy, and Richmond apartment renovation plumbing involves tight spaces with poor WiFi. SIM connectivity handles these environments without asking for the customer\'s password." },
+              { title: "Same-day parts from Reece", body: "Melbourne plumbers purchasing from Reece or BGS Plumbing on the same day as a job benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

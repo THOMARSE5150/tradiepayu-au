@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Do fencers need SIM connectivity in their EFTPOS terminal?',
-    a: "Yes. Fencing jobs almost always happen outdoors, physically away from any WiFi router. On new housing estates the house may not even be connected yet. On rural properties the homeowner's WiFi won't reach the paddock. A SIM-enabled terminal eliminates the need to ask for WiFi credentials or tether to your phone — the terminal processes transactions independently.",
+    a: "Yes. Fencing jobs almost always happen outdoors, physically away from any WiFi router. On new housing estates the house may not even be connected yet. On rural properties the homeowner\'s WiFi won\'t reach the paddock. A SIM-enabled terminal eliminates the need to ask for WiFi credentials or tether to your phone — the terminal processes transactions independently.",
   },
   {
     q: 'How do fencers collect a deposit on a large fencing job?',
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     q: 'What is the best EFTPOS setup for rural fencing work?',
-    a: "Check the Optus 4G coverage map for your specific work area before committing to Zeller's SIM plan. Optus has strong rural coverage in many regions but there are genuine dead zones. If you regularly work in areas with no Optus signal, Square Terminal with offline mode is the right backup — cards are stored locally and processed when you return to a connected area. Many rural fencers carry both: Zeller as primary and Square as the rural fallback.",
+    a: "Check the Optus 4G coverage map for your specific work area before committing to Zeller\'s SIM plan. Optus has strong rural coverage in many regions but there are genuine dead zones. If you regularly work in areas with no Optus signal, Square Terminal with offline mode is the right backup — cards are stored locally and processed when you return to a connected area. Many rural fencers carry both: Zeller as primary and Square as the rural fallback.",
   },
   {
     q: 'How do fencers handle payment for commercial fencing projects?',
-    a: "Commercial fencing for industrial sites, schools, and large developments typically involves a formal quote process and progress payments. Use payment links to collect deposits at contract signing and progress payments at milestones (materials delivered, work commenced, completion). For invoiced work, Zeller and Square both offer invoicing with embedded pay-now buttons that the client's accounts payable team can process without any EFTPOS terminal interaction.",
+    a: "Commercial fencing for industrial sites, schools, and large developments typically involves a formal quote process and progress payments. Use payment links to collect deposits at contract signing and progress payments at milestones (materials delivered, work commenced, completion). For invoiced work, Zeller and Square both offer invoicing with embedded pay-now buttons that the client\'s accounts payable team can process without any EFTPOS terminal interaction.",
   },
 ]
 
@@ -137,7 +137,7 @@ export default function BestEftposFencersPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Fencing work covers residential backyards, new housing estates, rural properties, and commercial or industrial sites. What all of these have in common is that the work happens outdoors, at a distance from any WiFi source. Collecting payment on site — or collecting a deposit before mobilising — requires an EFTPOS that does not depend on anyone's internet connection.
+            Fencing work covers residential backyards, new housing estates, rural properties, and commercial or industrial sites. What all of these have in common is that the work happens outdoors, at a distance from any WiFi source. Collecting payment on site — or collecting a deposit before mobilising — requires an EFTPOS that does not depend on anyone\'s internet connection.
           </p>
         </motion.div>
 
@@ -148,7 +148,7 @@ export default function BestEftposFencersPost() {
               { title: 'New housing estates', body: "On new estates, houses are often not yet occupied or connected to the internet. Perimeter fencing for an entire estate can mean days of work in an area with no accessible WiFi anywhere nearby." },
               { title: 'Rural properties', body: "Rural fencing — farm boundaries, horse paddocks, rural residential — takes you far beyond the reach of any residential WiFi network. SIM coverage varies; always check the Optus map before assuming." },
               { title: 'Construction sites', body: "Active construction sites may have site offices with WiFi, but the fence line is usually at the perimeter — not next to the office. A SIM-enabled terminal is the practical choice for collecting at the job." },
-              { title: 'Large residential jobs', body: "Even suburban fencing jobs ($3k–$15k for full boundary replacement) happen in a backyard. Asking to come inside to use the customer's WiFi is unnecessary friction when a SIM terminal handles it on the spot." },
+              { title: 'Large residential jobs', body: "Even suburban fencing jobs ($3k–$15k for full boundary replacement) happen in a backyard. Asking to come inside to use the customer\'s WiFi is unnecessary friction when a SIM terminal handles it on the spot." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

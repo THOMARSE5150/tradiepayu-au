@@ -85,6 +85,25 @@ const blogPosts = [
   { slug: 'best-eftpos-concreters-nsw-2026',                 lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
   { slug: 'best-eftpos-concreters-vic-2026',                 lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
   { slug: 'best-eftpos-concreters-qld-2026',                 lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // City guides — painters/concreters
+  { slug: 'best-eftpos-painters-sydney-2026',              lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-painters-melbourne-2026',           lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-painters-brisbane-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-sydney-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-melbourne-2026',         lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-brisbane-2026',          lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // City guides — Perth
+  { slug: 'best-eftpos-electricians-perth-2026',           lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-perth-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-perth-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // City guides — Adelaide
+  { slug: 'best-eftpos-electricians-adelaide-2026',        lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-adelaide-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-adelaide-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // Roofers state guides
+  { slug: 'best-eftpos-roofers-nsw-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-roofers-vic-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-roofers-qld-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
 ]
 
 // All combinations of 2 providers

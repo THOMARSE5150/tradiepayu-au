@@ -148,7 +148,7 @@ export default function StripeTerminalReviewPost() {
             Stripe Terminal Review (2026) — Best for Invoicing, Priciest In Person
           </h1>
           <p className="hero-sub">
-            Stripe's developer tools are world-class. Its invoicing product is genuinely strong. But at 1.7% + $0.10 in person with no SIM and 2-day settlement, it's the most expensive option for on-site work.
+            Stripe\'s developer tools are world-class. Its invoicing product is genuinely strong. But at 1.7% + $0.10 in person with no SIM and 2-day settlement, it\'s the most expensive option for on-site work.
           </p>
         </div>
       </header>
@@ -181,7 +181,7 @@ export default function StripeTerminalReviewPost() {
             Pricing breakdown
           </motion.h2>
           <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
-          <p className="text-xs text-slate-500 mt-3">Rates current as of April 2026. Hardware price includes GST at $97.90. Stripe Invoicing bank transfer rate of 0.8% applies only to invoices paid via bank transfer through Stripe's hosted invoice page.</p>
+          <p className="text-xs text-slate-500 mt-3">Rates current as of April 2026. Hardware price includes GST at $97.90. Stripe Invoicing bank transfer rate of 0.8% applies only to invoices paid via bank transfer through Stripe\'s hosted invoice page.</p>
         </div>
       </section>
 
@@ -195,7 +195,7 @@ export default function StripeTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Who Stripe is actually for</h2>
           <p className="text-slate-600 leading-relaxed mb-5">
-            Stripe is not primarily an EFTPOS terminal company — it's a payments platform that happens to offer a card reader. That distinction matters. The tradies who benefit most from Stripe are those whose business has a significant digital payment component.
+            Stripe is not primarily an EFTPOS terminal company — it\'s a payments platform that happens to offer a card reader. That distinction matters. The tradies who benefit most from Stripe are those whose business has a significant digital payment component.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
@@ -289,10 +289,10 @@ export default function StripeTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Stripe Invoicing vs the terminal</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Stripe's best product for many tradies isn't the card reader — it's Stripe Invoicing. When a customer pays a Stripe invoice by bank transfer, the fee is 0.8%. That's less than half the terminal rate.
+            Stripe\'s best product for many tradies isn\'t the card reader — it\'s Stripe Invoicing. When a customer pays a Stripe invoice by bank transfer, the fee is 0.8%. That\'s less than half the terminal rate.
           </p>
           <p className="text-slate-600 leading-relaxed mb-5">
-            The invoice flow: you create an invoice in Stripe (or your accounting software connected to Stripe), send the link via email, the customer clicks and pays by card or bank transfer through Stripe's hosted page. Stripe Invoicing also supports automated payment reminders, which reduces the chasing-unpaid-invoices problem that most tradies deal with.
+            The invoice flow: you create an invoice in Stripe (or your accounting software connected to Stripe), send the link via email, the customer clicks and pays by card or bank transfer through Stripe\'s hosted page. Stripe Invoicing also supports automated payment reminders, which reduces the chasing-unpaid-invoices problem that most tradies deal with.
           </p>
           <div className="lg-light rounded-2xl p-5 mb-5">
             <div className="flex flex-wrap gap-8">
@@ -381,7 +381,7 @@ export default function StripeTerminalReviewPost() {
             ))}
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Stripe is $12/month more expensive at this volume for in-person work — roughly $144/year. That gap widens with higher transaction counts because the $0.10 fixed fee accumulates. The comparison flips if a significant portion of your revenue comes through Stripe Invoicing at 0.8% bank transfer — in that scenario, Stripe's blended cost can be lower overall.
+            Stripe is $12/month more expensive at this volume for in-person work — roughly $144/year. That gap widens with higher transaction counts because the $0.10 fixed fee accumulates. The comparison flips if a significant portion of your revenue comes through Stripe Invoicing at 0.8% bank transfer — in that scenario, Stripe\'s blended cost can be lower overall.
           </p>
         </div>
       </section>
@@ -396,7 +396,7 @@ export default function StripeTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Verdict</h2>
           <div className="infobox mb-6">
-            Stripe earns its place in a tradie's toolkit — but for specific work types. If you invoice businesses, take online deposits, or have a website with a booking flow, Stripe's ecosystem is unmatched. If most of your revenue is tap-and-go at the job site, <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> or <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> will cost you less month to month. Many tradies run both: Zeller for on-site payments, Stripe for invoicing and online bookings.
+            Stripe earns its place in a tradie\'s toolkit — but for specific work types. If you invoice businesses, take online deposits, or have a website with a booking flow, Stripe\'s ecosystem is unmatched. If most of your revenue is tap-and-go at the job site, <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> or <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> will cost you less month to month. Many tradies run both: Zeller for on-site payments, Stripe for invoicing and online bookings.
           </div>
           <div className="flex flex-wrap gap-3">
             <Link

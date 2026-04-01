@@ -65,7 +65,7 @@ export default function BestEftposPaintersQLDPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "SEQ renovation homes", body: "Queensland residential painting in empty homes and investment properties between tenancies has no customer present. SIM connectivity handles payment at job completion." },
-              { title: "Deposit collection", body: "QLD painters collecting 30-50% deposits before multi-day jobs benefit from Zeller's payment links (1.7%) — clients pay via SMS before work begins." },
+              { title: "Deposit collection", body: "QLD painters collecting 30-50% deposits before multi-day jobs benefit from Zeller\'s payment links (1.7%) — clients pay via SMS before work begins." },
               { title: "Body corporate billing", body: "Multi-unit body corporate painting in inner Brisbane, Fortitude Valley, and the Sunshine Coast involves billing remotely. Payment links allow invoice collection without on-site meetings." },
               { title: "SEQ new build sites", body: "New build painting in Logan, Ipswich, and Moreton Bay estate sites involves construction sites without NBN. SIM connectivity handles payment collection reliably." },
             ].map((item, i) => (

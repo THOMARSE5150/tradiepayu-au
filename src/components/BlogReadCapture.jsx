@@ -39,15 +39,18 @@ export default function BlogReadCapture() {
     setDismissed(true)
   }
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault()
     if (!email) return
-    // Store locally — swap for a real endpoint (Mailchimp, Resend, etc.) when ready
+    // Configure VITE_EMAIL_ENDPOINT in .env (e.g. a Cloudflare Worker or Resend webhook)
+    const endpoint = import.meta.env.VITE_EMAIL_ENDPOINT
+    if (endpoint) {
+      try { await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: pathname }) }) } catch {}
+    }
+    // Always persist locally as fallback
     try {
       const existing = JSON.parse(localStorage.getItem('tp_subscribers') || '[]')
-      if (!existing.includes(email)) {
-        localStorage.setItem('tp_subscribers', JSON.stringify([...existing, email]))
-      }
+      if (!existing.includes(email)) localStorage.setItem('tp_subscribers', JSON.stringify([...existing, email]))
     } catch {}
     setSent(true)
     setTimeout(dismiss, 2500)

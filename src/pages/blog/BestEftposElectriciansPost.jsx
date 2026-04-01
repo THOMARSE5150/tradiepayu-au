@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'Do electricians need SIM connectivity in their EFTPOS terminal?',
-    a: "Usually yes. Electricians regularly work in locations where customer WiFi is unavailable: roof voids, sub-floor spaces, switchboard rooms that are Faraday-caged, new estates before the NBN is connected, and commercial fit-outs before tenants move in. Relying on a phone hotspot is an option but creates an extra step. Zeller's $15/month SIM plan eliminates this completely.",
+    a: "Usually yes. Electricians regularly work in locations where customer WiFi is unavailable: roof voids, sub-floor spaces, switchboard rooms that are Faraday-caged, new estates before the NBN is connected, and commercial fit-outs before tenants move in. Relying on a phone hotspot is an option but creates an extra step. Zeller\'s $15/month SIM plan eliminates this completely.",
   },
   {
     q: 'What is the best EFTPOS for emergency electrical call-outs?',
@@ -40,15 +40,15 @@ const faqs = [
   },
   {
     q: 'How much does EFTPOS cost an electrician per month?',
-    a: "On $10,000/month in card revenue at Zeller's 1.4% rate, your processing cost is $140. Add $15 for the SIM plan and the total is $155. Square at 1.6% would cost $160 in processing fees on the same volume, plus $329 upfront hardware versus Zeller's $99. Over 12 months, Zeller saves around $60 in fees plus $230 in hardware — approximately $290 total.",
+    a: "On $10,000/month in card revenue at Zeller\'s 1.4% rate, your processing cost is $140. Add $15 for the SIM plan and the total is $155. Square at 1.6% would cost $160 in processing fees on the same volume, plus $329 upfront hardware versus Zeller\'s $99. Over 12 months, Zeller saves around $60 in fees plus $230 in hardware — approximately $290 total.",
   },
   {
     q: 'Can I take deposits for electrical work before starting?',
-    a: "Yes. Zeller, Square, and Stripe all support payment links that can be sent via SMS or email before you start the job. For large residential or commercial electrical projects where materials need to be ordered, a 20-30% deposit via payment link is standard. Zeller payment links cost 1.7%, Tyro's are 1.4% incl. GST. The client taps a link and pays from their phone — no bank details required.",
+    a: "Yes. Zeller, Square, and Stripe all support payment links that can be sent via SMS or email before you start the job. For large residential or commercial electrical projects where materials need to be ordered, a 20-30% deposit via payment link is standard. Zeller payment links cost 1.7%, Tyro\'s are 1.4% incl. GST. The client taps a link and pays from their phone — no bank details required.",
   },
   {
     q: 'Should electricians pass card fees to customers via surcharging?',
-    a: "It depends on job size. On a $200 emergency call-out, a 1.4% surcharge is $2.80 — most clients won't notice. On a $5,000 switchboard upgrade, 1.4% is $70 — worth recovering. Enable surcharging in Zeller's dashboard and disclose it on your quote. Under ACCC rules, the surcharge cannot exceed your actual cost of card acceptance. Zeller's 1.4% is the lowest defensible surcharge rate in Australia.",
+    a: "It depends on job size. On a $200 emergency call-out, a 1.4% surcharge is $2.80 — most clients won\'t notice. On a $5,000 switchboard upgrade, 1.4% is $70 — worth recovering. Enable surcharging in Zeller\'s dashboard and disclose it on your quote. Under ACCC rules, the surcharge cannot exceed your actual cost of card acceptance. Zeller\'s 1.4% is the lowest defensible surcharge rate in Australia.",
   },
 ]
 
@@ -152,9 +152,9 @@ export default function BestEftposElectriciansPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: 'Switchboard rooms', body: "Metal enclosures and conduit runs can attenuate WiFi signals significantly. Zeller's SIM terminal uses Optus mobile data which is more penetrating than 2.4/5GHz WiFi in these environments." },
+              { title: 'Switchboard rooms', body: "Metal enclosures and conduit runs can attenuate WiFi signals significantly. Zeller\'s SIM terminal uses Optus mobile data which is more penetrating than 2.4/5GHz WiFi in these environments." },
               { title: 'Roof voids and sub-floors', body: "Insulation, timber, and distance from the router make WiFi unreliable. Trying to process a payment while standing at a manhole with your phone as a hotspot is a friction point Zeller eliminates." },
-              { title: 'New estates pre-NBN', body: "New residential developments often have no internet until weeks or months after lockup. Zeller's SIM plan is the only mainstream EFTPOS option that works from day one on these sites." },
+              { title: 'New estates pre-NBN', body: "New residential developments often have no internet until weeks or months after lockup. Zeller\'s SIM plan is the only mainstream EFTPOS option that works from day one on these sites." },
               { title: 'Commercial fit-outs', body: "Before tenants move in, commercial buildings may have no active internet services. Emergency and after-hours work in these buildings similarly has no WiFi available for a hotspot." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">

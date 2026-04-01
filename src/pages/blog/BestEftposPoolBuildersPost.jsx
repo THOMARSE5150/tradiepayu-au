@@ -28,7 +28,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'What is the best EFTPOS for pool builders in Australia?',
-    a: "For pool builders, payment links are as important as an in-person terminal — large jobs ($30k–$100k+) with multiple milestones are almost always paid remotely rather than in person. Zeller Terminal 1 with the Optus SIM handles on-site collection, while Zeller or Tyro payment links handle milestone billing sent to the homeowner by email or SMS. Tyro's payment links at 1.4% incl. GST offer the lowest published online rate for larger transactions. For the in-person terminal, Zeller's 1.4% rate and same-day settlement are the strongest combination.",
+    a: "For pool builders, payment links are as important as an in-person terminal — large jobs ($30k–$100k+) with multiple milestones are almost always paid remotely rather than in person. Zeller Terminal 1 with the Optus SIM handles on-site collection, while Zeller or Tyro payment links handle milestone billing sent to the homeowner by email or SMS. Tyro\'s payment links at 1.4% incl. GST offer the lowest published online rate for larger transactions. For the in-person terminal, Zeller\'s 1.4% rate and same-day settlement are the strongest combination.",
   },
   {
     q: 'How do pool builders manage payment milestones across a large job?',
@@ -36,15 +36,15 @@ const faqs = [
   },
   {
     q: 'Do pool builders need SIM connectivity in their EFTPOS terminal?',
-    a: "Yes, particularly for on-site milestone collections and handover payments. Residential backyards have WiFi, but the pool builder is usually not given WiFi access — and on new estates during construction, the house may not be connected at all. A SIM-enabled Zeller terminal handles on-site payment without any dependency on the homeowner's internet. For most pool build payments, though, payment links sent by email or SMS are the more practical option since the customer is rarely present during construction.",
+    a: "Yes, particularly for on-site milestone collections and handover payments. Residential backyards have WiFi, but the pool builder is usually not given WiFi access — and on new estates during construction, the house may not be connected at all. A SIM-enabled Zeller terminal handles on-site payment without any dependency on the homeowner\'s internet. For most pool build payments, though, payment links sent by email or SMS are the more practical option since the customer is rarely present during construction.",
   },
   {
     q: 'What is the best way to collect a pool deposit?',
-    a: "Send a payment link immediately after the contract is signed. Tyro Payment Links (1.4% incl. GST) offer the lowest rate for online collection. Zeller Payment Links (1.7% + $0.25) are also widely used and integrate with Zeller's broader account management. For large deposits ($5,000–$20,000+), both options are far more practical than in-person card collection — the homeowner can pay from their banking app or card at a time convenient to them. Always collect the deposit before ordering materials.",
+    a: "Send a payment link immediately after the contract is signed. Tyro Payment Links (1.4% incl. GST) offer the lowest rate for online collection. Zeller Payment Links (1.7% + $0.25) are also widely used and integrate with Zeller\'s broader account management. For large deposits ($5,000–$20,000+), both options are far more practical than in-person card collection — the homeowner can pay from their banking app or card at a time convenient to them. Always collect the deposit before ordering materials.",
   },
   {
     q: 'How do pool builders handle commercial pool project payments?',
-    a: "Commercial pool projects (aquatic centres, hotel pools, resort facilities) involve formal progress claims through a head contractor or property developer. Use Zeller or Square invoicing with embedded pay-now buttons sent to the client's accounts payable team. Progress claims follow the same milestone structure as residential work but at higher values and through more formal procurement processes. Ensure your payment terms are clearly stated in the contract — 14-day payment terms are standard for commercial construction progress claims.",
+    a: "Commercial pool projects (aquatic centres, hotel pools, resort facilities) involve formal progress claims through a head contractor or property developer. Use Zeller or Square invoicing with embedded pay-now buttons sent to the client\'s accounts payable team. Progress claims follow the same milestone structure as residential work but at higher values and through more formal procurement processes. Ensure your payment terms are clearly stated in the contract — 14-day payment terms are standard for commercial construction progress claims.",
   },
 ]
 
@@ -146,7 +146,7 @@ export default function BestEftposPoolBuildersPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: 'Multiple payment milestones', body: "A typical pool build has five stages: deposit, excavation, shell, tiling, and final completion. Each requires a separate payment collection. Payment links sent by SMS or email at each stage are the most practical approach — the homeowner pays remotely without needing to be present." },
-              { title: 'Residential sites without WiFi access', body: "Pool builders work in residential backyards but are not given WiFi access. On new estates, the house may not yet be connected. A SIM-enabled terminal handles any on-site collection without needing the homeowner's network credentials." },
+              { title: 'Residential sites without WiFi access', body: "Pool builders work in residential backyards but are not given WiFi access. On new estates, the house may not yet be connected. A SIM-enabled terminal handles any on-site collection without needing the homeowner\'s network credentials." },
               { title: 'Large deposits before mobilisation', body: "A pool build deposit of $5,000–$20,000 is standard before materials are ordered. Collecting this via payment link — sent immediately after the contract is signed — protects you before you commit to excavation and materials." },
               { title: 'Homeowner not present on site', body: "Most pool construction work happens while the homeowner is at work. Payment at completion of each stage is collected remotely via payment link rather than in person, making the link rate as important as the in-person rate." },
             ].map((item, i) => (

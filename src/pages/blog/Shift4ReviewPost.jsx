@@ -143,7 +143,7 @@ export default function Shift4ReviewPost() {
             Shift4 EFTPOS Review (2026) — Zero Merchant Cost: The Real Story
           </h1>
           <p className="hero-sub">
-            Paying $0 to process card payments sounds like a no-brainer. Here's what that model actually involves — and why it's not the right fit for most tradies.
+            Paying $0 to process card payments sounds like a no-brainer. Here\'s what that model actually involves — and why it\'s not the right fit for most tradies.
           </p>
         </div>
       </header>
@@ -158,7 +158,7 @@ export default function Shift4ReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Quick verdict</h2>
           <div className="infobox">
-            The zero merchant cost is real — Shift4's surcharging model means you pay nothing to process card payments. But the full picture includes a contract lock-in, undisclosed settlement timing, a merchant agreement that isn't publicly available, and a surcharge that your customers pay. For commercial operators invoicing businesses, this may work. For residential tradies, the customer friction and transparency concerns make <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> at 1.4% absorbed the more practical choice.
+            The zero merchant cost is real — Shift4\'s surcharging model means you pay nothing to process card payments. But the full picture includes a contract lock-in, undisclosed settlement timing, a merchant agreement that isn\'t publicly available, and a surcharge that your customers pay. For commercial operators invoicing businesses, this may work. For residential tradies, the customer friction and transparency concerns make <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> at 1.4% absorbed the more practical choice.
           </div>
         </motion.div>
       </section>
@@ -190,7 +190,7 @@ export default function Shift4ReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">How surcharging actually works</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Surcharging transfers the card processing fee from the merchant to the customer. Instead of you paying 1.4% (or whatever the merchant rate is), the customer's total increases by that amount when they pay by card.
+            Surcharging transfers the card processing fee from the merchant to the customer. Instead of you paying 1.4% (or whatever the merchant rate is), the customer\'s total increases by that amount when they pay by card.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
             Under ACCC rules, surcharging is legal in Australia but must not exceed the actual cost of acceptance. The surcharge must be disclosed before payment. It applies to card payments only — cash and bank transfer are not surcharged.
@@ -225,7 +225,7 @@ export default function Shift4ReviewPost() {
           </div>
           <div className="lg-light rounded-2xl p-5">
             <p className="text-sm text-slate-600 leading-relaxed">
-              <strong className="text-brand-dark">What surcharging looks like on your receipts:</strong> The customer's receipt will show the job total plus a card surcharge line item. Some customers accept this without comment — particularly in commercial B2B contexts. Others object, especially on large residential jobs. This is the friction risk that flat-rate providers eliminate by absorbing the fee.
+              <strong className="text-brand-dark">What surcharging looks like on your receipts:</strong> The customer\'s receipt will show the job total plus a card surcharge line item. Some customers accept this without comment — particularly in commercial B2B contexts. Others object, especially on large residential jobs. This is the friction risk that flat-rate providers eliminate by absorbing the fee.
             </p>
           </div>
         </motion.div>
@@ -291,17 +291,17 @@ export default function Shift4ReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">The contract problem</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Unlike every flat-rate provider reviewed on this site — Zeller, Square, and Stripe are all no-contract — Shift4 requires a minimum-term commitment. The contract length and early termination fee are not published, which means you can't assess the commitment you're making until you request and read the full merchant agreement.
+            Unlike every flat-rate provider reviewed on this site — Zeller, Square, and Stripe are all no-contract — Shift4 requires a minimum-term commitment. The contract length and early termination fee are not published, which means you can\'t assess the commitment you\'re making until you request and read the full merchant agreement.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
             The settlement timing is also not disclosed publicly. For a tradie evaluating cash flow impact, not knowing when funds will hit their account is a significant information gap. Ask Shift4 in writing: how many business days does settlement take to an external bank account?
           </p>
           <p className="text-slate-600 leading-relaxed mb-5">
-            The full merchant agreement is not available on Shift4's website. You will need to request it directly. Do not sign without reading the full document — particularly the sections on minimum term, termination fees, rate variation rights, and dispute resolution.
+            The full merchant agreement is not available on Shift4\'s website. You will need to request it directly. Do not sign without reading the full document — particularly the sections on minimum term, termination fees, rate variation rights, and dispute resolution.
           </p>
           <div className="lg-light rounded-2xl p-5">
             <p className="text-sm text-slate-600 leading-relaxed">
-              <strong className="text-brand-dark">Before signing Shift4, ask for these in writing:</strong> full merchant agreement document; contract minimum term and exit fee; settlement timing to external bank; surcharge rate by card type; monthly rental or fixed fee amount; any rate adjustment clauses during the contract. If a sales representative won't provide these before signing, that's a clear signal to walk away.
+              <strong className="text-brand-dark">Before signing Shift4, ask for these in writing:</strong> full merchant agreement document; contract minimum term and exit fee; settlement timing to external bank; surcharge rate by card type; monthly rental or fixed fee amount; any rate adjustment clauses during the contract. If a sales representative won\'t provide these before signing, that\'s a clear signal to walk away.
             </p>
           </div>
         </motion.div>
@@ -369,7 +369,7 @@ export default function Shift4ReviewPost() {
             ))}
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">
-            The $7 difference is real — on $8,000/month in card volume, that's $112/month the tradie saves by using Shift4 versus absorbing the fee. The question is whether that saving is worth the contract commitment, the customer friction risk, and the transparency concerns. For commercial work where surcharging is routine, the answer may be yes. For residential work, most tradies who've tried surcharging find the pushback isn't worth the saving.
+            The $7 difference is real — on $8,000/month in card volume, that\'s $112/month the tradie saves by using Shift4 versus absorbing the fee. The question is whether that saving is worth the contract commitment, the customer friction risk, and the transparency concerns. For commercial work where surcharging is routine, the answer may be yes. For residential work, most tradies who\'ve tried surcharging find the pushback isn\'t worth the saving.
           </p>
         </div>
       </section>
@@ -384,7 +384,7 @@ export default function Shift4ReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Verdict</h2>
           <div className="infobox mb-6">
-            Shift4's zero merchant cost is genuine — and for commercial operators with high volume, contract tolerance, and a B2B customer base, it can make financial sense. But the lack of published pricing, undisclosed settlement timing, hidden merchant agreement, and contract lock-in mean you're operating with significant information gaps before signing. Get everything in writing. If Shift4 won't provide the full merchant agreement before you sign, that's the answer. For most tradies — particularly those doing residential work — <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> at 1.4% absorbed, no contract, and full transparency is the safer starting point.
+            Shift4\'s zero merchant cost is genuine — and for commercial operators with high volume, contract tolerance, and a B2B customer base, it can make financial sense. But the lack of published pricing, undisclosed settlement timing, hidden merchant agreement, and contract lock-in mean you\'re operating with significant information gaps before signing. Get everything in writing. If Shift4 won\'t provide the full merchant agreement before you sign, that\'s the answer. For most tradies — particularly those doing residential work — <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> at 1.4% absorbed, no contract, and full transparency is the safer starting point.
           </div>
           <div className="flex flex-wrap gap-3">
             <Link

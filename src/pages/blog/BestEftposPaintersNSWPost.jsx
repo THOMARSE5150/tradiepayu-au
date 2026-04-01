@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "What EFTPOS for NSW body corporate and strata painters?",
-    a: "Zeller's payment links (1.7%) for billing strata managers and property managers remotely — they pay via SMS link without an on-site visit. For on-site payments at multi-unit properties, the Zeller terminal with SIM works without relying on the body corporate's WiFi.",
+    a: "Zeller\'s payment links (1.7%) for billing strata managers and property managers remotely — they pay via SMS link without an on-site visit. For on-site payments at multi-unit properties, the Zeller terminal with SIM works without relying on the body corporate\'s WiFi.",
   },
 ]
 const jsonLd = [
@@ -65,7 +65,7 @@ export default function BestEftposPaintersNSWPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Empty houses under renovation", body: "NSW residential painting is often done in empty homes between tenancies or during renovation. No customer is present, so no WiFi password is available. SIM connectivity handles payment at job completion." },
-              { title: "Deposit collection before starting", body: "NSW painters collecting 30-50% deposits before starting multi-day jobs benefit from Zeller's payment links (1.7%) — clients pay via SMS before the first brush stroke." },
+              { title: "Deposit collection before starting", body: "NSW painters collecting 30-50% deposits before starting multi-day jobs benefit from Zeller\'s payment links (1.7%) — clients pay via SMS before the first brush stroke." },
               { title: "Body corporate and strata billing", body: "Multi-unit strata painting in inner Sydney and the North Shore involves billing strata managers remotely. Payment links allow invoice collection without an on-site meeting." },
               { title: "Western Sydney new builds", body: "New build painting in Western Sydney estates involves sites without NBN. SIM connectivity is the reliable choice for collecting payment at practical completion." },
             ].map((item, i) => (

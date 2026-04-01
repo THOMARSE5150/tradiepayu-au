@@ -116,7 +116,7 @@ export default function BestEftposBuildersBrisbane() {
             Best EFTPOS for Builders in Queensland (2026)
           </h1>
           <p className="hero-sub">
-            Brisbane's SEQ housing boom, progress payments from developers, and same-day material runs — your EFTPOS needs to handle large invoices and no-WiFi estate sites.
+            Brisbane\'s SEQ housing boom, progress payments from developers, and same-day material runs — your EFTPOS needs to handle large invoices and no-WiFi estate sites.
           </p>
         </div>
       </header>
@@ -142,10 +142,10 @@ export default function BestEftposBuildersBrisbane() {
           <h2 className="text-xl font-bold text-brand-dark">Where Brisbane builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "SEQ housing construction volume", body: "Queensland's population growth is concentrated in SEQ. Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have large residential estates under construction. Payment links for deposits are standard before build commences." },
-              { title: "Progress payments on QLD contracts", body: "Queensland builders collecting stage payments benefit from Zeller's payment links (1.7%) — clients pay via SMS without needing to attend site. Same-day settlement means funds are accessible for same-day material purchases." },
+              { title: "SEQ housing construction volume", body: "Queensland\'s population growth is concentrated in SEQ. Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have large residential estates under construction. Payment links for deposits are standard before build commences." },
+              { title: "Progress payments on QLD contracts", body: "Queensland builders collecting stage payments benefit from Zeller\'s payment links (1.7%) — clients pay via SMS without needing to attend site. Same-day settlement means funds are accessible for same-day material purchases." },
               { title: "North Queensland builds", body: "Townsville, Cairns, and regional Queensland commercial builds require reliable on-site payment collection. Optus 4G covers both cities and surrounding areas. SIM connectivity handles sites without active internet." },
-              { title: "Multi-site Brisbane operations", body: "Brisbane building companies with multiple active sites benefit from Zeller's multi-terminal support — each supervisor gets their own terminal under one account, $99 outright, no rental fees." },
+              { title: "Multi-site Brisbane operations", body: "Brisbane building companies with multiple active sites benefit from Zeller\'s multi-terminal support — each supervisor gets their own terminal under one account, $99 outright, no rental fees." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

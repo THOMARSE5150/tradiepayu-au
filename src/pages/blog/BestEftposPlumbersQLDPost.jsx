@@ -28,7 +28,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for plumbers in South-East Queensland?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. SEQ's growth corridors — Logan, Ipswich, Moreton Bay — have large residential estates under construction without internet connected. Zeller's SIM terminal works on mobile data independently. Same-day settlement means funds are available that evening for purchasing replacement parts.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. SEQ\'s growth corridors — Logan, Ipswich, Moreton Bay — have large residential estates under construction without internet connected. Zeller\'s SIM terminal works on mobile data independently. Same-day settlement means funds are available that evening for purchasing replacement parts.",
   },
   {
     q: "What EFTPOS for North Queensland plumbers in Cairns and Townsville?",
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Can Queensland plumbers use EFTPOS for outback emergency call-outs?",
-    a: "For outback QLD (Mount Isa, Roma, Longreach, Charleville), Square Terminal offline mode is the only reliable option. It stores card transactions locally and processes them within 24 hours when you return to mobile coverage. Zeller's SIM plan relies on Optus 4G, which does not reach most of the QLD outback.",
+    a: "For outback QLD (Mount Isa, Roma, Longreach, Charleville), Square Terminal offline mode is the only reliable option. It stores card transactions locally and processes them within 24 hours when you return to mobile coverage. Zeller\'s SIM plan relies on Optus 4G, which does not reach most of the QLD outback.",
   },
 ]
 
@@ -122,7 +122,7 @@ export default function BestEftposPlumbersQLDPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Queensland Plumbers work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            Queensland Plumbers work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Plumbers working in Queensland in 2026, with recommendations based on QLD-specific site conditions.
@@ -136,7 +136,7 @@ export default function BestEftposPlumbersQLDPost() {
               { title: "SEQ growth areas", body: "Logan, Ipswich, Sunshine Coast, and Moreton Bay residential developments have new homes commissioned before internet is connected. SIM connectivity handles these sites from day one." },
               { title: "North Queensland", body: "Cairns and Townsville plumbing work — particularly wet season emergency call-outs — needs reliable payment collection. Optus 4G covers both cities and surrounding towns." },
               { title: "Outback Queensland", body: "Mount Isa, Roma, and Longreach are beyond reliable Optus 4G coverage. Square Terminal offline mode is the only practical option for confirmed outback plumbing work." },
-              { title: "Same-day materials in QLD", body: "Queensland plumbers sourcing hot water units or fittings from Reece or Tradelink on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day materials in QLD", body: "Queensland plumbers sourcing hot water units or fittings from Reece or Tradelink on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

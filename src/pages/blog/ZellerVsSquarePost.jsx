@@ -91,6 +91,12 @@ const jsonLd = [
   },
   {
     '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'EFTPOS Terminal Comparison',
+    itemListElement: [{"@type":"ListItem","position":1,"name":"Zeller Terminal 1"},{"@type":"ListItem","position":2,"name":"Square Terminal"}],
+  },
+  {
+    '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map(f => ({
       '@type': 'Question',
@@ -230,7 +236,7 @@ export default function ZellerVsSquarePost() {
           ))}
         </div>
         <p className="text-sm text-slate-600 leading-relaxed">
-          The break-even point for the Zeller SIM plan ($180/year) is approximately $9,000/month in card volume. Above that, Zeller is cheaper than Square even after the SIM. Below it, the difference is marginal — but Zeller's same-day settlement and lower hardware cost still favour it.
+          The break-even point for the Zeller SIM plan ($180/year) is approximately $9,000/month in card volume. Above that, Zeller is cheaper than Square even after the SIM. Below it, the difference is marginal — but Zeller\'s same-day settlement and lower hardware cost still favour it.
         </p>
       </section>
 
@@ -245,7 +251,7 @@ export default function ZellerVsSquarePost() {
           >
             <h2 className="text-2xl font-bold text-brand-dark mb-4">When Square wins</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Square's offline mode is the only real-world advantage it holds over Zeller for tradies, and it is a genuine one. If your work regularly takes you underground — stormwater, sewer, car park basements, telecommunications tunnels — or into buildings with thick concrete shielding mobile signals, Square Terminal is the only device in this market that will take a payment without any connectivity at all.
+              Square\'s offline mode is the only real-world advantage it holds over Zeller for tradies, and it is a genuine one. If your work regularly takes you underground — stormwater, sewer, car park basements, telecommunications tunnels — or into buildings with thick concrete shielding mobile signals, Square Terminal is the only device in this market that will take a payment without any connectivity at all.
             </p>
             <p className="text-slate-600 leading-relaxed mb-4">
               Cards are stored locally on the device and processed in batch when you reconnect within 24 hours. The acceptance rate for deferred offline transactions is very high for domestic Visa and Mastercard. AMEX and some international cards carry higher risk of later decline in offline mode.

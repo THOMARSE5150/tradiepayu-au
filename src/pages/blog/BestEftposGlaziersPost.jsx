@@ -27,11 +27,11 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'What is the best EFTPOS for glaziers in Australia?',
-    a: "Zeller Terminal 1 with the SIM plan is the best EFTPOS for most glaziers. Emergency glazing — broken windows from storms, vandalism, or accidents — happens at any hour and in any location. The Optus SIM plan means you can take payment on a high-rise balcony, in a commercial building after hours, or on a new estate with no internet, without needing the customer's WiFi. At 1.4% in-person rate and same-day settlement, it is also the cheapest option for glaziers with consistent card volumes.",
+    a: "Zeller Terminal 1 with the SIM plan is the best EFTPOS for most glaziers. Emergency glazing — broken windows from storms, vandalism, or accidents — happens at any hour and in any location. The Optus SIM plan means you can take payment on a high-rise balcony, in a commercial building after hours, or on a new estate with no internet, without needing the customer\'s WiFi. At 1.4% in-person rate and same-day settlement, it is also the cheapest option for glaziers with consistent card volumes.",
   },
   {
     q: 'Do glaziers need SIM connectivity in their EFTPOS terminal?',
-    a: "For emergency glazing, yes. Storm damage, break-ins, and accidents mean you arrive at unpredictable locations at unpredictable hours. High-rise apartments, commercial buildings after hours, and new estates all share one characteristic: no reliable WiFi for a payment terminal. Zeller's SIM plan eliminates this problem for $15/month on Optus mobile data.",
+    a: "For emergency glazing, yes. Storm damage, break-ins, and accidents mean you arrive at unpredictable locations at unpredictable hours. High-rise apartments, commercial buildings after hours, and new estates all share one characteristic: no reliable WiFi for a payment terminal. Zeller\'s SIM plan eliminates this problem for $15/month on Optus mobile data.",
   },
   {
     q: 'What is the best EFTPOS for 24-hour emergency glazing?',
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: 'Should glaziers use surcharging?',
-    a: "On emergency glazing jobs where the customer is already stressed, surcharging can add friction at the worst moment. On larger commercial or residential jobs booked in advance, disclosing a 1.4% surcharge on the quote is common and accepted. At Zeller's rate, you can choose to absorb the fee (maximising customer goodwill) or pass it on (maximising revenue). Either way, 1.4% is the lowest defensible surcharge rate in Australia.",
+    a: "On emergency glazing jobs where the customer is already stressed, surcharging can add friction at the worst moment. On larger commercial or residential jobs booked in advance, disclosing a 1.4% surcharge on the quote is common and accepted. At Zeller\'s rate, you can choose to absorb the fee (maximising customer goodwill) or pass it on (maximising revenue). Either way, 1.4% is the lowest defensible surcharge rate in Australia.",
   },
 ]
 
@@ -125,7 +125,7 @@ export default function BestEftposGlaziersPost() {
             Best EFTPOS for Glaziers in Australia (2026)
           </h1>
           <p className="hero-sub">
-            Emergency glazing is 24/7, on high-rise balconies, and in commercial buildings after hours. Your EFTPOS cannot depend on the building's WiFi.
+            Emergency glazing is 24/7, on high-rise balconies, and in commercial buildings after hours. Your EFTPOS cannot depend on the building\'s WiFi.
           </p>
         </div>
       </header>
@@ -140,7 +140,7 @@ export default function BestEftposGlaziersPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Emergency glazing is among the most time-sensitive and connectivity-challenged tradie work in Australia. A storm shatters a residential window at 2am, or a break-in destroys a shopfront at midnight — you arrive, do the work, and need to take payment before you leave. The customer is stressed, it is the middle of the night, and the building's internet is either off or inaccessible.
+            Emergency glazing is among the most time-sensitive and connectivity-challenged tradie work in Australia. A storm shatters a residential window at 2am, or a break-in destroys a shopfront at midnight — you arrive, do the work, and need to take payment before you leave. The customer is stressed, it is the middle of the night, and the building\'s internet is either off or inaccessible.
           </p>
           <p>
             The right EFTPOS for glaziers must work without customer WiFi. Everything else — rate, settlement speed, invoicing — matters second.
@@ -166,7 +166,7 @@ export default function BestEftposGlaziersPost() {
 
           <div className="grid sm:grid-cols-2 gap-3 mt-4">
             {[
-              { title: 'Residential emergency glazing', body: "Zeller + SIM. Works in apartments, houses, and townhouses regardless of whether the customer's router is accessible." },
+              { title: 'Residential emergency glazing', body: "Zeller + SIM. Works in apartments, houses, and townhouses regardless of whether the customer\'s router is accessible." },
               { title: 'Commercial after-hours', body: "Zeller + SIM handles most commercial locations. Square offline mode as backup for underground carparks and basement retail." },
               { title: 'High-rise balconies and facades', body: "Optus 4G typically has excellent coverage at height. Zeller SIM is the right call for glaziers doing multi-storey work." },
               { title: 'Custom glass deposits', body: "Send a Zeller or Tyro payment link when the order is placed. Balance collected on installation via terminal." },

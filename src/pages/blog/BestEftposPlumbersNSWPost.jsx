@@ -28,7 +28,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for plumbers in Western Sydney?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. New estates in Western Sydney — Marsden Park, Box Hill, Jordan Springs — have homes under construction without NBN. Emergency plumbing on these sites cannot rely on customer WiFi. Zeller's SIM terminal processes on mobile data. At 1.4% and same-day settlement, it is the lowest-cost, fastest option for NSW plumbers.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. New estates in Western Sydney — Marsden Park, Box Hill, Jordan Springs — have homes under construction without NBN. Emergency plumbing on these sites cannot rely on customer WiFi. Zeller\'s SIM terminal processes on mobile data. At 1.4% and same-day settlement, it is the lowest-cost, fastest option for NSW plumbers.",
   },
   {
     q: "Why is same-day settlement important for NSW plumbers?",
@@ -122,7 +122,7 @@ export default function BestEftposPlumbersNSWPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            New South Wales Plumbers work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            New South Wales Plumbers work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Plumbers working in New South Wales in 2026, with recommendations based on NSW-specific site conditions.
@@ -134,7 +134,7 @@ export default function BestEftposPlumbersNSWPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Western Sydney new estates", body: "Thousands of new homes in Marsden Park, Box Hill, and Jordan Springs have no internet connected during construction. Emergency plumbing on these sites cannot rely on customer WiFi." },
-              { title: "High-rise plant rooms", body: "Sydney CBD apartment blocks and commercial buildings have pump rooms and plant areas where building WiFi rarely reaches. Zeller's SIM terminal processes on Optus 4G independently." },
+              { title: "High-rise plant rooms", body: "Sydney CBD apartment blocks and commercial buildings have pump rooms and plant areas where building WiFi rarely reaches. Zeller\'s SIM terminal processes on Optus 4G independently." },
               { title: "Inner-Sydney renovations", body: "Heritage terrace and apartment renovations in Surry Hills, Newtown, and Balmain often involve tight spaces with poor WiFi penetration. SIM connectivity removes the dependency entirely." },
               { title: "Regional NSW emergency call-outs", body: "Burst pipes and hot water system failures in Wollongong, Newcastle, the Hunter Valley, and Central Coast happen at any hour. Same-day settlement means material replacement costs can be covered the same day." },
             ].map((item, i) => (

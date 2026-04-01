@@ -32,11 +32,11 @@ const faqs = [
   },
   {
     q: "What EFTPOS for Brisbane storm season emergency call-outs?",
-    a: "Zeller Terminal 1 + SIM plan. Brisbane's spring storm season creates a surge in emergency electrical call-outs. Storm damage, tripped mains, and after-hours emergency work happen in any building at any hour. SIM connectivity means you can take payment without asking for a WiFi password in an emergency. Same-day settlement means funds are available that evening.",
+    a: "Zeller Terminal 1 + SIM plan. Brisbane\'s spring storm season creates a surge in emergency electrical call-outs. Storm damage, tripped mains, and after-hours emergency work happen in any building at any hour. SIM connectivity means you can take payment without asking for a WiFi password in an emergency. Same-day settlement means funds are available that evening.",
   },
   {
     q: "Do Brisbane electricians need SIM connectivity?",
-    a: "Yes, for most Brisbane electrical work. SEQ new estate sites don't have NBN during construction. CBD switchboard rooms and basement plant areas have poor WiFi. Emergency after-hours call-outs in occupied buildings are impractical WiFi scenarios. Zeller's $15/month Optus SIM plan removes all of these friction points in one solution.",
+    a: "Yes, for most Brisbane electrical work. SEQ new estate sites don\'t have NBN during construction. CBD switchboard rooms and basement plant areas have poor WiFi. Emergency after-hours call-outs in occupied buildings are impractical WiFi scenarios. Zeller\'s $15/month Optus SIM plan removes all of these friction points in one solution.",
   },
 ]
 
@@ -142,8 +142,8 @@ export default function BestEftposElectriciansBrisbane() {
           <h2 className="text-xl font-bold text-brand-dark">Where Brisbane electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "SEQ growth estates", body: "Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have large estates under construction without NBN. Zeller's SIM plan handles payment from day one on these sites." },
-              { title: "Brisbane CBD commercial", body: "CBD high-rise buildings and Fortitude Valley commercial tenancies have switchboard rooms where building WiFi doesn't always reach. SIM connectivity handles these environments reliably." },
+              { title: "SEQ growth estates", body: "Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have large estates under construction without NBN. Zeller\'s SIM plan handles payment from day one on these sites." },
+              { title: "Brisbane CBD commercial", body: "CBD high-rise buildings and Fortitude Valley commercial tenancies have switchboard rooms where building WiFi doesn\'t always reach. SIM connectivity handles these environments reliably." },
               { title: "Brisbane storm season", body: "Spring and summer storm season creates surges in emergency electrical call-outs — storm damage, tripped mains, downed lines. Emergency work happens at any hour in any building. SIM connectivity means payment is never delayed." },
               { title: "Inner Brisbane renovations", body: "New Farm, Paddington, West End terrace renovations often have poor WiFi mid-renovation. SIM connectivity removes the need for customer WiFi access entirely." },
             ].map((item, i) => (

@@ -141,7 +141,7 @@ export default function SquareTerminalReviewPost() {
             Square Terminal Review (2026) — Is It Worth It for Australian Tradies?
           </h1>
           <p className="hero-sub">
-            $329 hardware, 1.6% rate, best-in-class offline mode. Here's an honest look at when Square Terminal makes sense — and when it doesn't.
+            $329 hardware, 1.6% rate, best-in-class offline mode. Here\'s an honest look at when Square Terminal makes sense — and when it doesn\'t.
           </p>
         </div>
       </header>
@@ -188,7 +188,7 @@ export default function SquareTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">The offline mode — what it actually does</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Square Terminal stores card data locally when there's no internet connection and processes the transactions when you reconnect — within a 24-hour window. Critically, Square assumes the decline risk on offline transactions. If a card is later declined after you go back online, Square wears that loss — not you.
+            Square Terminal stores card data locally when there\'s no internet connection and processes the transactions when you reconnect — within a 24-hour window. Critically, Square assumes the decline risk on offline transactions. If a card is later declined after you go back online, Square wears that loss — not you.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
             To use it: enable offline mode in the Square app before entering the dead zone. The device will prompt you to confirm. Once active, tap and chip payments are stored locally. Swipe payments and some international card types are not accepted in offline mode — Square is conservative about which transactions it will back.
@@ -284,10 +284,10 @@ export default function SquareTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">The two-device strategy</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            The practical setup for tradies who work across varied sites: Zeller Terminal 1 as your primary device ($99 + $15/mo SIM) for all standard jobs at 1.4% with same-day settlement and SIM connectivity. Square Terminal as your backup ($329, no monthly fee) stored in the van for dead-zone jobs where Optus signal doesn't reach.
+            The practical setup for tradies who work across varied sites: Zeller Terminal 1 as your primary device ($99 + $15/mo SIM) for all standard jobs at 1.4% with same-day settlement and SIM connectivity. Square Terminal as your backup ($329, no monthly fee) stored in the van for dead-zone jobs where Optus signal doesn\'t reach.
           </p>
           <p className="text-slate-600 leading-relaxed mb-6">
-            This setup makes the most sense for electricians and plumbers, where underground or concrete-shielded environments are a regular part of the job. For most other trades — builders, carpenters, painters, landscapers — the Zeller SIM covers essentially every site you'll work on, and the Square backup stays unused.
+            This setup makes the most sense for electricians and plumbers, where underground or concrete-shielded environments are a regular part of the job. For most other trades — builders, carpenters, painters, landscapers — the Zeller SIM covers essentially every site you\'ll work on, and the Square backup stays unused.
           </p>
           <div className="lg-light rounded-2xl p-5 mb-6">
             <div className="flex flex-wrap gap-8">
@@ -309,7 +309,7 @@ export default function SquareTerminalReviewPost() {
             </div>
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Square charges no monthly fee — you're not paying anything to keep the device in your van between uses. The $329 hardware cost is the only Square outlay.
+            Square charges no monthly fee — you\'re not paying anything to keep the device in your van between uses. The $329 hardware cost is the only Square outlay.
           </p>
         </motion.div>
       </section>
@@ -374,7 +374,7 @@ export default function SquareTerminalReviewPost() {
             ))}
           </div>
           <p className="text-sm text-slate-600 leading-relaxed">
-            At $8,000/month the difference is $1/month — nearly identical total cost. But Zeller includes SIM connectivity and same-day settlement. Square only wins on this comparison if you genuinely need offline capability. At higher volumes, Zeller's rate advantage grows.
+            At $8,000/month the difference is $1/month — nearly identical total cost. But Zeller includes SIM connectivity and same-day settlement. Square only wins on this comparison if you genuinely need offline capability. At higher volumes, Zeller\'s rate advantage grows.
           </p>
         </div>
       </section>
@@ -389,7 +389,7 @@ export default function SquareTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Verdict</h2>
           <div className="infobox mb-6">
-            Square Terminal earns its place in the toolkit — but only for tradies who regularly face zero-signal environments. For everyone else, Zeller Terminal 1 wins on rate, connectivity, settlement speed, and hardware cost. If you're unsure, start with Zeller. Add Square when you hit a job site where it can't connect.
+            Square Terminal earns its place in the toolkit — but only for tradies who regularly face zero-signal environments. For everyone else, Zeller Terminal 1 wins on rate, connectivity, settlement speed, and hardware cost. If you\'re unsure, start with Zeller. Add Square when you hit a job site where it can\'t connect.
           </div>
           <div className="flex flex-wrap gap-3">
             <Link

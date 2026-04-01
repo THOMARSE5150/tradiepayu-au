@@ -64,10 +64,10 @@ export default function BestEftposBuildersSAPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where South Australia builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Adelaide growth corridors", body: "Munno Para, Angle Vale, Mount Barker, and the Gawler Belt are SA's fastest-growing residential construction areas. New estates under construction have no NBN. Payment links for deposits before build commences are essential." },
-              { title: "Progress payments", body: "SA builders collecting HIA-standard stage payments benefit from Zeller's payment links (1.7%) — clients pay via SMS without needing to attend site." },
+              { title: "Adelaide growth corridors", body: "Munno Para, Angle Vale, Mount Barker, and the Gawler Belt are SA\'s fastest-growing residential construction areas. New estates under construction have no NBN. Payment links for deposits before build commences are essential." },
+              { title: "Progress payments", body: "SA builders collecting HIA-standard stage payments benefit from Zeller\'s payment links (1.7%) — clients pay via SMS without needing to attend site." },
               { title: "Regional SA commercial", body: "Barossa Valley, Mount Gambier, and regional SA commercial construction requires reliable on-site payment collection. Optus 4G covers major SA regional centres." },
-              { title: "Same-day materials", body: "Adelaide builders purchasing from Bunnings Trade or BGS Timber on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day materials", body: "Adelaide builders purchasing from Bunnings Trade or BGS Timber on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

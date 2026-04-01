@@ -65,9 +65,9 @@ export default function BestEftposPlumbersWAPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Perth estate emergency work", body: "Burst pipes and hot water failures in Baldivis, Alkimos, and Ellenbrook estates happen without warning. SIM connectivity handles payment in new estate sites without NBN." },
-              { title: "Perth CBD and inner city", body: "CBD apartment blocks and commercial buildings have pump rooms with poor WiFi. Zeller's SIM terminal processes on Optus 4G independently." },
+              { title: "Perth CBD and inner city", body: "CBD apartment blocks and commercial buildings have pump rooms with poor WiFi. Zeller\'s SIM terminal processes on Optus 4G independently." },
               { title: "Regional WA", body: "Bunbury, Geraldton, and Albany have solid Optus 4G for emergency plumbing call-outs. Remote Pilbara and Kimberley sites need Square offline mode." },
-              { title: "Same-day materials from Reece", body: "WA plumbers purchasing parts from Reece or Tradelink on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day materials from Reece", body: "WA plumbers purchasing parts from Reece or Tradelink on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

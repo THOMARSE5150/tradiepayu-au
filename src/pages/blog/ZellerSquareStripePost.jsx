@@ -41,15 +41,15 @@ const costRows = [
 const faqs = [
   {
     q: 'Which is cheapest — Zeller, Square, or Stripe?',
-    a: "Zeller is cheapest at almost every volume. At $10,000/month in card revenue, Zeller costs approximately $140 in processing fees alone (1.4% flat). Square costs $160 (1.6%). Stripe costs $170 + roughly $28.50 in per-transaction fees (1.7% + $0.10 per tx at ~285 transactions). With hardware amortised over 24 months, the gap widens further — Square's $329 terminal adds $13.71/month versus Zeller's $99 terminal at $4.13/month.",
+    a: "Zeller is cheapest at almost every volume. At $10,000/month in card revenue, Zeller costs approximately $140 in processing fees alone (1.4% flat). Square costs $160 (1.6%). Stripe costs $170 + roughly $28.50 in per-transaction fees (1.7% + $0.10 per tx at ~285 transactions). With hardware amortised over 24 months, the gap widens further — Square\'s $329 terminal adds $13.71/month versus Zeller\'s $99 terminal at $4.13/month.",
   },
   {
     q: 'Which works best without WiFi — Zeller, Square, or Stripe?',
-    a: "Zeller wins for most connectivity-limited environments — the optional Optus SIM plan ($15/month) means the terminal works entirely independently of WiFi. Square Terminal wins in true zero-signal environments through its offline payment mode: cards are stored locally and processed when connectivity is restored. Stripe Reader M2 has no SIM and no offline mode — it requires an active internet connection at all times. For most tradie job sites, Zeller's SIM plan is the better solution.",
+    a: "Zeller wins for most connectivity-limited environments — the optional Optus SIM plan ($15/month) means the terminal works entirely independently of WiFi. Square Terminal wins in true zero-signal environments through its offline payment mode: cards are stored locally and processed when connectivity is restored. Stripe Reader M2 has no SIM and no offline mode — it requires an active internet connection at all times. For most tradie job sites, Zeller\'s SIM plan is the better solution.",
   },
   {
     q: 'Is Stripe worth it for tradies?',
-    a: "Stripe makes sense for tradies who have a software developer on the team, use custom quoting or job-management software that integrates via API, or need advanced reporting. The Stripe Terminal SDK is the most powerful in Australia. For a sole trader doing straightforward on-site payments, Zeller's lower rate, SIM connectivity, and same-day settlement make it the better daily driver. Stripe's per-transaction $0.10 fee hurts on low-average-transaction work (call-outs, small jobs).",
+    a: "Stripe makes sense for tradies who have a software developer on the team, use custom quoting or job-management software that integrates via API, or need advanced reporting. The Stripe Terminal SDK is the most powerful in Australia. For a sole trader doing straightforward on-site payments, Zeller\'s lower rate, SIM connectivity, and same-day settlement make it the better daily driver. Stripe\'s per-transaction $0.10 fee hurts on low-average-transaction work (call-outs, small jobs).",
   },
   {
     q: 'Which settles money fastest?',
@@ -91,6 +91,12 @@ const jsonLd = [
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
       { '@type': 'ListItem', position: 3, name: 'Zeller vs Square vs Stripe: Best EFTPOS for Australian Tradies (2026)', item: `${SITE}/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026` },
     ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'EFTPOS Terminal Comparison',
+    itemListElement: [{"@type":"ListItem","position":1,"name":"Zeller Terminal 1"},{"@type":"ListItem","position":2,"name":"Square Terminal"},{"@type":"ListItem","position":3,"name":"Stripe Reader"}],
   },
   {
     '@context': 'https://schema.org',
@@ -218,7 +224,7 @@ export default function ZellerSquareStripePost() {
         <section className="mb-10 space-y-6">
           <h2 className="text-xl font-bold text-brand-dark">Rate: Zeller wins at every volume</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Zeller's 1.4% flat rate is the lowest published in-person rate available to Australian tradies with no lock-in. Square's 1.6% costs 14% more per transaction. Stripe's 1.7% + $0.10 is worse still for low-average-transaction work — for a $150 call-out fee, that extra $0.10 represents an effective 0.07% surcharge on top of an already-higher rate.
+            Zeller\'s 1.4% flat rate is the lowest published in-person rate available to Australian tradies with no lock-in. Square\'s 1.6% costs 14% more per transaction. Stripe\'s 1.7% + $0.10 is worse still for low-average-transaction work — for a $150 call-out fee, that extra $0.10 represents an effective 0.07% surcharge on top of an already-higher rate.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed">
             Hardware compounds the gap. Zeller Terminal 1 costs $99 upfront. Square Terminal costs $329 — more than three times as much. Stripe Reader M2 is $69 but the higher per-transaction rate erodes that saving within a few months for any meaningful volume.
@@ -226,10 +232,10 @@ export default function ZellerSquareStripePost() {
 
           <h2 className="text-xl font-bold text-brand-dark">Connectivity: depends on your job site</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <strong className="text-brand-dark">Zeller + SIM plan</strong> is the right answer for most tradie connectivity problems. The Optus SIM plan ($15/month) means the terminal works anywhere Optus 4G reaches — no reliance on the customer's WiFi, no hotspot required. Optus covers most metropolitan, suburban, and regional Australian areas.
+            <strong className="text-brand-dark">Zeller + SIM plan</strong> is the right answer for most tradie connectivity problems. The Optus SIM plan ($15/month) means the terminal works anywhere Optus 4G reaches — no reliance on the customer\'s WiFi, no hotspot required. Optus covers most metropolitan, suburban, and regional Australian areas.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <strong className="text-brand-dark">Square's offline mode</strong> is the right answer for true zero-signal environments — underground, remote rural, or sites outside any mobile coverage. Cards are stored locally and processed when connectivity is restored within 24 hours. This is the only option that works in a dead zone.
+            <strong className="text-brand-dark">Square\'s offline mode</strong> is the right answer for true zero-signal environments — underground, remote rural, or sites outside any mobile coverage. Cards are stored locally and processed when connectivity is restored within 24 hours. This is the only option that works in a dead zone.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed">
             <strong className="text-brand-dark">Stripe</strong> has neither. It requires an active internet connection at all times — WiFi or hotspot. For most job sites, this is a meaningful limitation.
@@ -242,7 +248,7 @@ export default function ZellerSquareStripePost() {
 
           <h2 className="text-xl font-bold text-brand-dark">When Stripe is the right call</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Stripe's appeal is its developer ecosystem — the Terminal SDK, Stripe Connect, webhooks, and reporting APIs are unmatched. For a tradie business that uses custom-built job management software, has a developer integrating payments into a quoting tool, or is growing into a platform business (marketplace, subscription billing), Stripe is the right foundation. The rate premium is the cost of that infrastructure. For a sole trader doing on-site card payments with no custom software, the rate premium is not justified.
+            Stripe\'s appeal is its developer ecosystem — the Terminal SDK, Stripe Connect, webhooks, and reporting APIs are unmatched. For a tradie business that uses custom-built job management software, has a developer integrating payments into a quoting tool, or is growing into a platform business (marketplace, subscription billing), Stripe is the right foundation. The rate premium is the cost of that infrastructure. For a sole trader doing on-site card payments with no custom software, the rate premium is not justified.
           </p>
         </section>
 

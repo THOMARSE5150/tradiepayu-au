@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: 'Should painters surcharge for card payments?',
-    a: "For residential repaint jobs, most painters absorb the 1.4% Zeller rate — it is a small amount on a typical job and customers appreciate not being hit with a surcharge. For larger commercial repaint contracts where the client is a business, disclosing a 1.4% surcharge on the quote is accepted practice. At Zeller's rate, you are passing on the lowest defensible amount under Australian surcharging rules.",
+    a: "For residential repaint jobs, most painters absorb the 1.4% Zeller rate — it is a small amount on a typical job and customers appreciate not being hit with a surcharge. For larger commercial repaint contracts where the client is a business, disclosing a 1.4% surcharge on the quote is accepted practice. At Zeller\'s rate, you are passing on the lowest defensible amount under Australian surcharging rules.",
   },
   {
     q: 'What is the best way to accept payment for a large commercial repaint?',

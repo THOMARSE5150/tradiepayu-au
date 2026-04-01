@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: 'Which is cheaper for high-volume tradies, Stripe or Square?',
-    a: "Square is cheaper for most high-volume in-person use at 1.6% vs Stripe at 1.7% + $0.10. On $20,000/month of card revenue at an average transaction of $300: Square costs $320, Stripe costs $340 + $6.67 in per-transaction fees = $346.67. But both are more expensive than Zeller (1.4%, $280/month on the same volume). For online-heavy billing — where Stripe's payment link rate (1.7% + $0.30) beats Square's (2.2%) — Stripe wins on online payments.",
+    a: "Square is cheaper for most high-volume in-person use at 1.6% vs Stripe at 1.7% + $0.10. On $20,000/month of card revenue at an average transaction of $300: Square costs $320, Stripe costs $340 + $6.67 in per-transaction fees = $346.67. But both are more expensive than Zeller (1.4%, $280/month on the same volume). For online-heavy billing — where Stripe\'s payment link rate (1.7% + $0.30) beats Square\'s (2.2%) — Stripe wins on online payments.",
   },
   {
     q: 'Which has better hardware: Stripe or Square?',
@@ -82,6 +82,12 @@ const jsonLd = [
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
       { '@type': 'ListItem', position: 3, name: 'Stripe vs Square: Which Is Better for Australian Tradies? (2026)', item: `${SITE}/blog/stripe-vs-square-eftpos-australia-2026` },
     ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'EFTPOS Terminal Comparison',
+    itemListElement: [{"@type":"ListItem","position":1,"name":"Stripe Reader"},{"@type":"ListItem","position":2,"name":"Square Terminal"}],
   },
   {
     '@context': 'https://schema.org',

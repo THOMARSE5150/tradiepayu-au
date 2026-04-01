@@ -142,10 +142,10 @@ export default function BestEftposBuildersMelbourne() {
           <h2 className="text-xl font-bold text-brand-dark">Where Melbourne builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Melbourne growth corridor volume", body: "Melton, Wyndham, Casey, and Mernda are among Australia's fastest-growing residential corridors. New estates under construction have no NBN connected. Payment links for deposits are essential before build commences." },
+              { title: "Melbourne growth corridor volume", body: "Melton, Wyndham, Casey, and Mernda are among Australia\'s fastest-growing residential corridors. New estates under construction have no NBN connected. Payment links for deposits are essential before build commences." },
               { title: "Inner-city apartment developments", body: "Melbourne CBD and inner suburb apartment developments require progress payment collection from developers and investors. Payment links via SMS are the standard method for off-site invoice collection." },
-              { title: "Geelong and regional Victoria", body: "Victoria's building market extends to Geelong, Ballarat, and Bendigo. Optus 4G covers all three cities and surrounding areas — Zeller's SIM plan works across these regional markets." },
-              { title: "Multi-site operations", body: "Melbourne building companies with multiple active sites benefit from Zeller's multi-terminal support — each site supervisor can have their own terminal under one account, $99 each outright." },
+              { title: "Geelong and regional Victoria", body: "Victoria\'s building market extends to Geelong, Ballarat, and Bendigo. Optus 4G covers all three cities and surrounding areas — Zeller\'s SIM plan works across these regional markets." },
+              { title: "Multi-site operations", body: "Melbourne building companies with multiple active sites benefit from Zeller\'s multi-terminal support — each site supervisor can have their own terminal under one account, $99 each outright." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

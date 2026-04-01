@@ -65,9 +65,9 @@ export default function BestEftposPlumbersSAPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Adelaide estate emergency work", body: "Burst pipes and hot water failures in Munno Para, Angle Vale, and Mount Barker happen without warning. SIM connectivity handles payment in new estate sites without NBN." },
-              { title: "Adelaide inner city", body: "Adelaide CBD apartments and heritage inner-city properties have pump rooms with poor WiFi. Zeller's SIM terminal processes on Optus 4G independently." },
+              { title: "Adelaide inner city", body: "Adelaide CBD apartments and heritage inner-city properties have pump rooms with poor WiFi. Zeller\'s SIM terminal processes on Optus 4G independently." },
               { title: "Regional SA", body: "Barossa Valley, Fleurieu Peninsula, and Riverland commercial plumbing work needs reliable payment collection. Optus 4G covers these regional areas." },
-              { title: "Same-day materials", body: "SA plumbers purchasing parts from Reece or Tradelink on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
+              { title: "Same-day materials", body: "SA plumbers purchasing parts from Reece or Tradelink on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

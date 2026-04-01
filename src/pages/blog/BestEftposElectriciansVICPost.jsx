@@ -28,15 +28,15 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for electricians in Melbourne growth suburbs?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. Suburbs like Werribee, Cranbourne, and Mickleham have thousands of homes under construction without NBN. Zeller's $15/month SIM plan means you can take payment at the door of a brand-new home before the internet is ever connected. At 1.4% and same-day settlement, it is also the lowest-cost option.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. Suburbs like Werribee, Cranbourne, and Mickleham have thousands of homes under construction without NBN. Zeller\'s $15/month SIM plan means you can take payment at the door of a brand-new home before the internet is ever connected. At 1.4% and same-day settlement, it is also the lowest-cost option.",
   },
   {
     q: "Does Zeller SIM work in regional Victoria — Ballarat, Bendigo, Shepparton?",
-    a: "Yes. Optus 4G covers all major Victorian regional cities including Ballarat, Bendigo, Geelong, Shepparton, Mildura, and Warrnambool. Remote areas and the Alpine region have reduced coverage. For those sites, Square Terminal's offline mode is the practical backup.",
+    a: "Yes. Optus 4G covers all major Victorian regional cities including Ballarat, Bendigo, Geelong, Shepparton, Mildura, and Warrnambool. Remote areas and the Alpine region have reduced coverage. For those sites, Square Terminal\'s offline mode is the practical backup.",
   },
   {
     q: "What EFTPOS for Victorian commercial electrical fit-outs?",
-    a: "Zeller Terminal 1 + SIM plan for on-site payment collection, combined with Zeller's payment link feature (1.7%) for collecting large progress payments from commercial clients before you attend site. For underground substations or zero-signal environments, Square Terminal with offline mode is the backup.",
+    a: "Zeller Terminal 1 + SIM plan for on-site payment collection, combined with Zeller\'s payment link feature (1.7%) for collecting large progress payments from commercial clients before you attend site. For underground substations or zero-signal environments, Square Terminal with offline mode is the backup.",
   },
 ]
 
@@ -107,7 +107,7 @@ export default function BestEftposElectriciansVICPost() {
             Best EFTPOS for Electricians in Victoria (2026)
           </h1>
           <p className="hero-sub">
-            Melbourne's outer suburbs, inner-city high-rise switchboard fit-outs, and rural Victoria — one terminal needs to work across all of it.
+            Melbourne\'s outer suburbs, inner-city high-rise switchboard fit-outs, and rural Victoria — one terminal needs to work across all of it.
           </p>
         </div>
       </header>
@@ -122,7 +122,7 @@ export default function BestEftposElectriciansVICPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Victoria Electricians work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            Victoria Electricians work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Electricians working in Victoria in 2026, with recommendations based on VIC-specific site conditions.
@@ -133,7 +133,7 @@ export default function BestEftposElectriciansVICPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Victoria Electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Melbourne growth corridors", body: "Werribee, Cranbourne, Mickleham, and Clyde North are among Australia's fastest-growing areas. New homes go up before NBN is connected. Zeller's SIM plan handles these sites without any site WiFi." },
+              { title: "Melbourne growth corridors", body: "Werribee, Cranbourne, Mickleham, and Clyde North are among Australia\'s fastest-growing areas. New homes go up before NBN is connected. Zeller\'s SIM plan handles these sites without any site WiFi." },
               { title: "Inner-city Melbourne", body: "CBD high-rise fit-outs, Docklands apartments, and commercial tenancies before occupancy have no active internet service. A SIM terminal is the reliable choice for commercial electrical work in these environments." },
               { title: "Regional Victoria", body: "Geelong, Ballarat, Bendigo, and Shepparton have good Optus 4G coverage. Deep rural Victoria and alpine areas can be patchy — Square offline mode handles confirmed dead-zone sites." },
               { title: "After-hours and emergency", body: "Melbourne residential and commercial emergency call-outs often happen at hours when asking for WiFi access is impractical. SIM connectivity means the payment step is always frictionless." },

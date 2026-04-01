@@ -27,12 +27,12 @@ const comparisonRows = [
 
 const faqs = [
   {
-    q: "What is the best EFTPOS for plumbers in Melbourne's outer suburbs?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne growth suburbs like Werribee, Pakenham, and Sunbury have large residential estates under construction without NBN. Zeller's SIM terminal processes on mobile data — no site WiFi required. Same-day settlement means you can purchase replacement parts the same evening if needed.",
+    q: "What is the best EFTPOS for plumbers in Melbourne\'s outer suburbs?",
+    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne growth suburbs like Werribee, Pakenham, and Sunbury have large residential estates under construction without NBN. Zeller\'s SIM terminal processes on mobile data — no site WiFi required. Same-day settlement means you can purchase replacement parts the same evening if needed.",
   },
   {
     q: "Does Zeller SIM work for high-rise apartment plumbing in Melbourne?",
-    a: "Yes. Optus 4G has strong penetration in inner Melbourne including CBD high-rises, Docklands, Southbank, and Carlton. Plant rooms and mechanical floors in these buildings typically have poor WiFi, but Optus 4G mobile data reaches. Zeller's SIM terminal processes independently of the building's WiFi infrastructure.",
+    a: "Yes. Optus 4G has strong penetration in inner Melbourne including CBD high-rises, Docklands, Southbank, and Carlton. Plant rooms and mechanical floors in these buildings typically have poor WiFi, but Optus 4G mobile data reaches. Zeller\'s SIM terminal processes independently of the building\'s WiFi infrastructure.",
   },
   {
     q: "What EFTPOS for Victorian emergency plumbing call-outs?",
@@ -107,7 +107,7 @@ export default function BestEftposPlumbersVICPost() {
             Best EFTPOS for Plumbers in Victoria (2026)
           </h1>
           <p className="hero-sub">
-            Melbourne's outer-suburb estates, inner-city apartment plumbing, and regional Victorian towns — get paid at the door before you drive to the next job.
+            Melbourne\'s outer-suburb estates, inner-city apartment plumbing, and regional Victorian towns — get paid at the door before you drive to the next job.
           </p>
         </div>
       </header>
@@ -122,7 +122,7 @@ export default function BestEftposPlumbersVICPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Victoria Plumbers work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            Victoria Plumbers work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Plumbers working in Victoria in 2026, with recommendations based on VIC-specific site conditions.
@@ -133,8 +133,8 @@ export default function BestEftposPlumbersVICPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Victoria Plumbers lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Melbourne outer suburbs", body: "Werribee, Pakenham, Sunbury, and Officer are among Victoria's fastest-growing areas. New homes have plumbing commissioned before NBN is connected. SIM connectivity handles these sites from day one." },
-              { title: "Inner-city apartment plumbing", body: "Docklands, Southbank, and Carlton high-rise buildings have plant rooms and mechanical floors with poor building WiFi. Zeller's SIM terminal operates on Optus 4G independently." },
+              { title: "Melbourne outer suburbs", body: "Werribee, Pakenham, Sunbury, and Officer are among Victoria\'s fastest-growing areas. New homes have plumbing commissioned before NBN is connected. SIM connectivity handles these sites from day one." },
+              { title: "Inner-city apartment plumbing", body: "Docklands, Southbank, and Carlton high-rise buildings have plant rooms and mechanical floors with poor building WiFi. Zeller\'s SIM terminal operates on Optus 4G independently." },
               { title: "Regional Victoria", body: "Geelong, Ballarat, Bendigo, and Shepparton plumbing emergency work needs reliable payment collection. Optus 4G covers all major Victorian regional cities." },
               { title: "Same-day materials", body: "Victorian plumbers purchasing from Reece or Tradelink on the same day as a job benefit from same-day settlement — funds available in the Zeller account before close of business." },
             ].map((item, i) => (

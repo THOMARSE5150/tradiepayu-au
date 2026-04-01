@@ -43,6 +43,45 @@ const STATE_TRADE_BLOG_MAP = {
   'concreters-nsw':   { slug: 'best-eftpos-concreters-nsw-2026',   label: 'NSW concreters guide' },
   'concreters-vic':   { slug: 'best-eftpos-concreters-vic-2026',   label: 'VIC concreters guide' },
   'concreters-qld':   { slug: 'best-eftpos-concreters-qld-2026',   label: 'QLD concreters guide' },
+  'roofers-nsw':      { slug: 'best-eftpos-roofers-nsw-2026',      label: 'NSW roofers guide' },
+  'roofers-vic':      { slug: 'best-eftpos-roofers-vic-2026',      label: 'VIC roofers guide' },
+  'roofers-qld':      { slug: 'best-eftpos-roofers-qld-2026',      label: 'QLD roofers guide' },
+}
+
+
+// City blog posts per state + trade (for the "In your city" link on state trade pages)
+const CITY_BLOG_MAP = {
+  nsw: {
+    electricians: { city: 'Sydney', slug: 'best-eftpos-electricians-sydney-2026' },
+    plumbers:     { city: 'Sydney', slug: 'best-eftpos-plumbers-sydney-2026' },
+    builders:     { city: 'Sydney', slug: 'best-eftpos-builders-sydney-2026' },
+    painters:     { city: 'Sydney', slug: 'best-eftpos-painters-sydney-2026' },
+    concreters:   { city: 'Sydney', slug: 'best-eftpos-concreters-sydney-2026' },
+  },
+  vic: {
+    electricians: { city: 'Melbourne', slug: 'best-eftpos-electricians-melbourne-2026' },
+    plumbers:     { city: 'Melbourne', slug: 'best-eftpos-plumbers-melbourne-2026' },
+    builders:     { city: 'Melbourne', slug: 'best-eftpos-builders-melbourne-2026' },
+    painters:     { city: 'Melbourne', slug: 'best-eftpos-painters-melbourne-2026' },
+    concreters:   { city: 'Melbourne', slug: 'best-eftpos-concreters-melbourne-2026' },
+  },
+  qld: {
+    electricians: { city: 'Brisbane', slug: 'best-eftpos-electricians-brisbane-2026' },
+    plumbers:     { city: 'Brisbane', slug: 'best-eftpos-plumbers-brisbane-2026' },
+    builders:     { city: 'Brisbane', slug: 'best-eftpos-builders-brisbane-2026' },
+    painters:     { city: 'Brisbane', slug: 'best-eftpos-painters-brisbane-2026' },
+    concreters:   { city: 'Brisbane', slug: 'best-eftpos-concreters-brisbane-2026' },
+  },
+  wa: {
+    electricians: { city: 'Perth', slug: 'best-eftpos-electricians-perth-2026' },
+    plumbers:     { city: 'Perth', slug: 'best-eftpos-plumbers-perth-2026' },
+    builders:     { city: 'Perth', slug: 'best-eftpos-builders-perth-2026' },
+  },
+  sa: {
+    electricians: { city: 'Adelaide', slug: 'best-eftpos-electricians-adelaide-2026' },
+    plumbers:     { city: 'Adelaide', slug: 'best-eftpos-plumbers-adelaide-2026' },
+    builders:     { city: 'Adelaide', slug: 'best-eftpos-builders-adelaide-2026' },
+  },
 }
 
 const SITE = 'https://tradiepayau.directory'
@@ -57,6 +96,7 @@ export default function StateTradePage() {
   const leadCity = state.cities[0]
   const city2    = state.cities[1]
   const stateBlogPost = STATE_TRADE_BLOG_MAP[`${tradeSlug}-${stateSlug}`] || null
+  const cityPost = CITY_BLOG_MAP[stateSlug]?.[tradeSlug] || null
   const title       = `Best EFTPOS for ${trade.label} in ${leadCity} & ${state.abbr} (2026)`
   const description = `Best EFTPOS terminal for ${trade.label.toLowerCase()} in ${leadCity}${city2 ? ` and ${city2}` : ''}, ${state.name}. ${trade.heroSub} No lock-in, same-day settlement.`
   const canonical = `/trades/${tradeSlug}/${stateSlug}`
@@ -245,6 +285,11 @@ export default function StateTradePage() {
           {stateBlogPost && (
             <Link to={`/blog/${stateBlogPost.slug}`} className="text-brand-blue font-medium hover:underline">
               In-depth {stateBlogPost.label} →
+            </Link>
+          )}
+          {cityPost && (
+            <Link to={`/blog/${cityPost.slug}`} className="text-brand-blue font-medium hover:underline">
+              {cityPost.city} city guide →
             </Link>
           )}
         </div>
