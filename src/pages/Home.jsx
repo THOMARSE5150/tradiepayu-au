@@ -65,6 +65,8 @@ const jsonLd = [
 ]
 
 const tableRows = providers.map(p => ({
+  id: p.id,
+  label: p.name,
   highlight: p.id === 'zeller',
   cells: [
     <Link to={`/providers/${p.id}`} className="hover:text-brand-blue transition-colors">
@@ -84,7 +86,7 @@ const tableRows = providers.map(p => ({
 const heroStats = [
   { icon: TrendingDown, label: 'Lowest rate',  value: '1.4%' },
   { icon: Zap,          label: 'Settlement',   value: 'Same day' },
-  { icon: Shield,       label: 'Surcharge',    value: '0% cost' },
+  { icon: Shield,       label: 'Monthly fee',  value: '$0' },
   { icon: Wifi,         label: 'SIM plan',     value: 'From $15/mo' },
 ]
 
@@ -155,7 +157,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 mt-7 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors"
               style={{ boxShadow: '0 8px 28px rgba(0,106,255,0.40), inset 0 1px 0 rgba(255,255,255,0.15)' }}
             >
-              See the comparison ↓
+              See why Zeller wins ↓
             </motion.a>
           </motion.div>
 
@@ -198,6 +200,7 @@ export default function Home() {
           <ComparisonTable
             headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Settlement']}
             rows={tableRows}
+            pickable
           />
           <p className="text-xs text-slate-400 mt-3">Tyro in-person rate requires a quote. Verify all rates with providers before signing up.</p>
         </div>

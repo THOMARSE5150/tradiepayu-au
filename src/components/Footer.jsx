@@ -35,6 +35,7 @@ const blog = [
 
 const legal = [
   { label: 'About', href: '/about' },
+  { label: 'Glossary', href: '/glossary' },
   { label: 'Contact', href: '/contact' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Disclaimer', href: '/disclaimer' },

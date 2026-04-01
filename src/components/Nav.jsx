@@ -9,10 +9,23 @@ import { STATES } from '../data/states'
 const topLinks = [
   { label: 'Providers', href: '/providers' },
   { label: 'Trades',    href: '/trades' },
-  { label: 'States',    href: '/states' },
+  { label: 'Compare',   href: '/compare' },
   { label: 'Blog',      href: '/blog' },
+  { label: 'Glossary',  href: '/glossary' },
   { label: 'Calculator', href: '/calculator' },
-  { label: 'About', href: '/about' },
+]
+
+const blogGuides = [
+  { label: 'Zeller vs Square vs Stripe', href: '/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026' },
+  { label: 'Best EFTPOS for Electricians', href: '/blog/best-eftpos-electricians-australia-2026' },
+  { label: 'Best EFTPOS for Plumbers', href: '/blog/best-eftpos-plumbers-australia-2026' },
+  { label: 'Best EFTPOS for Builders', href: '/blog/best-eftpos-builders-australia-2026' },
+  { label: 'Best for Sole Traders', href: '/blog/best-eftpos-sole-traders-australia-2026' },
+  { label: 'Zeller vs Square', href: '/blog/zeller-vs-square-eftpos-tradies' },
+  { label: 'Stripe vs Square', href: '/blog/stripe-vs-square-eftpos-australia-2026' },
+  { label: 'Surcharging Guide', href: '/blog/surcharging-eftpos-tradies-australia-2026' },
+  { label: 'EFTPOS Fees Explained', href: '/blog/eftpos-fees-tradies-australia-2026' },
+  { label: 'Get Paid Faster', href: '/blog/how-to-get-paid-faster-sole-trader-australia' },
 ]
 
 const providers = [
@@ -139,13 +152,13 @@ export default function Nav() {
                 </Link>
               )
             })}
-            <a
-              href="/#compare"
+            <Link
+              to="/calculator"
               className="ml-2 text-[13px] font-semibold bg-brand-blue/90 hover:bg-brand-blue text-white px-4 py-2 rounded-lg transition-all duration-150"
               style={{ boxShadow: '0 0 0 1px rgba(0,106,255,0.4)' }}
             >
-              Compare →
-            </a>
+              Calculator →
+            </Link>
           </nav>
 
           {/* Mobile hamburger */}
@@ -230,9 +243,11 @@ export default function Nav() {
                   items={STATES.map(s => ({ label: `${s.name} (${s.abbr})`, href: `/states/${s.slug}` }))}
                   onClose={close}
                 />
+                <SubList title="Blog & Guides" items={blogGuides} onClose={close} />
 
                 {/* Legal */}
-                <div className="flex gap-5 px-6 py-4">
+                <div className="flex flex-wrap gap-x-5 gap-y-1 px-6 py-4">
+                  <Link to="/about" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">About</Link>
                   <Link to="/contact" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">Contact</Link>
                   <Link to="/disclaimer" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">Disclaimer</Link>
                   <Link to="/privacy" onClick={close} className="text-xs text-white/30 hover:text-white/60 transition-colors">Privacy</Link>
@@ -242,7 +257,7 @@ export default function Nav() {
               {/* Pinned CTAs */}
               <div className="flex-shrink-0 px-4 pb-6 pt-3 grid grid-cols-2 gap-3 border-t border-white/[0.07]">
                 <Link
-                  to="/providers"
+                  to="/compare"
                   onClick={close}
                   className="flex items-center justify-center gap-1.5 py-3 rounded-2xl bg-brand-blue text-white font-semibold text-sm transition-colors hover:bg-blue-600"
                   style={{ boxShadow: '0 4px 16px rgba(0,106,255,0.35)' }}
@@ -250,11 +265,11 @@ export default function Nav() {
                   Compare →
                 </Link>
                 <Link
-                  to="/trades"
+                  to="/calculator"
                   onClick={close}
                   className="flex items-center justify-center gap-1.5 py-3 rounded-2xl bg-white/[0.08] border border-white/[0.12] text-white font-semibold text-sm transition-colors hover:bg-white/[0.12]"
                 >
-                  By Trade →
+                  Calculator →
                 </Link>
               </div>
             </motion.div>

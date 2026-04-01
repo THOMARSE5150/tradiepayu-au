@@ -9,6 +9,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
+import StickySignUpBar from '../../components/StickySignUpBar'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -29,7 +30,7 @@ const faqs = [
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Stripe for Tradies — Full Review (2026)', description: 'Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first Australian tradie operations.', url: `${SITE}/providers/stripe`, datePublished: '2026-01-15', dateModified: '2026-03-31', reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Stripe', url: 'https://stripe.com/au', description: 'Global payments infrastructure provider offering API-first payment processing, EFTPOS readers, and automated invoicing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.2', reviewCount: '1', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Person', name: 'TradiePay Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Stripe for Tradies — Full Review (2026)', description: 'Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first Australian tradie operations.', url: `${SITE}/providers/stripe`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '4.2', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Stripe', url: 'https://stripe.com/au', description: 'Global payments infrastructure provider offering API-first payment processing, EFTPOS readers, and automated invoicing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.2', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Stripe Review', item: `${SITE}/providers/stripe` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -84,6 +85,37 @@ export default function StripePage() {
           </nav>
         </div>
       </header>
+
+      <StickySignUpBar providerId="stripe" providerName="Stripe Terminal" />
+
+      {/* Quick Summary */}
+      <section className="container-page pt-8">
+        <div className="lg-light rounded-2xl p-5 border border-slate-200 mb-2">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">At a Glance</p>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center mb-4">
+            {[
+              { label: 'In-person rate', value: '1.7% + $0.10' },
+              { label: 'Hardware', value: '$69 (M2)' },
+              { label: 'Monthly fee', value: '$0' },
+              { label: 'SIM connectivity', value: '✗ No' },
+              { label: 'Settlement', value: '2 days' },
+            ].map((s, i) => (
+              <div key={i} className="bg-white rounded-xl p-3 border border-slate-100">
+                <span className="block text-[11px] text-slate-500 mb-1">{s.label}</span>
+                <span className="block text-sm font-bold text-brand-dark">{s.value}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2 text-xs">
+            <span className="flex-1 bg-green-50 border border-green-200 rounded-xl px-3 py-2 text-green-800">
+              <strong>Best for:</strong> Website integration, recurring billing, automated invoice reminders
+            </span>
+            <span className="flex-1 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-amber-800">
+              <strong>Skip if:</strong> You mainly take on-site payments — Zeller is cheaper at 1.4% with SIM connectivity
+            </span>
+          </div>
+        </div>
+      </section>
 
       <section className="section container-page">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
@@ -218,6 +250,15 @@ export default function StripePage() {
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+          <div className="mt-5 flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4">
+            <div>
+              <p className="text-sm font-semibold text-brand-dark">Not sure Stripe is right for you?</p>
+              <p className="text-xs text-slate-500 mt-0.5">Answer 3 questions — get a personalised recommendation.</p>
+            </div>
+            <Link to="/#finder" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap ml-4">
+              Take the quiz →
+            </Link>
+          </div>
 
           {/* Head-to-head */}
           <div className="mt-6">

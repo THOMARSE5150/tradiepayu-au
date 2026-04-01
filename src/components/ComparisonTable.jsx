@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const rowVariants = {
@@ -9,7 +10,20 @@ const rowVariants = {
   }),
 }
 
-export default function ComparisonTable({ headers, rows }) {
+export default function ComparisonTable({ headers, rows, pickable = false }) {
+  const [picking, setPicking] = useState(false)
+  const [selected, setSelected] = useState([])
+
+  function toggleSelect(id) {
+    setSelected(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : prev.length < 2 ? [...prev, id] : prev
+    )
+  }
+
+  const displayRows = pickable && picking && selected.length === 2
+    ? rows.filter(r => selected.includes(r.id))
+    : rows
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -18,42 +32,74 @@ export default function ComparisonTable({ headers, rows }) {
       transition={{ duration: 0.45, ease: 'easeOut' }}
     >
       {/* ── Mobile: stacked cards (hidden on md+) ── */}
-      <div className="md:hidden space-y-3">
-        {rows.map((row, ri) => (
-          <motion.div
-            key={ri}
-            custom={ri}
-            variants={rowVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-40px' }}
-            className={`rounded-2xl overflow-hidden ${
-              row.highlight
-                ? 'border-2 border-brand-blue shadow-[0_4px_16px_rgba(0,106,255,0.12)]'
-                : 'border border-slate-200'
-            }`}
-          >
-            {row.highlight && (
-              <div className="bg-brand-blue text-white text-xs font-bold px-4 py-1.5 tracking-wide">
-                ★ Top Pick
-              </div>
-            )}
-            <div className="divide-y divide-slate-100 bg-white/90">
-              {headers.map((header, ci) => (
-                <div key={ci} className="flex items-start justify-between gap-4 px-4 py-2.5">
-                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide flex-shrink-0 pt-0.5 w-28">
-                    {header}
-                  </span>
-                  <span className={`text-sm text-right text-brand-dark leading-snug ${
-                    row.highlight && ci === 0 ? 'font-semibold text-brand-blue' : ''
-                  }`}>
-                    {row.cells[ci]}
-                  </span>
+      <div className="md:hidden">
+        {pickable && (
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs text-slate-500">
+              {picking && selected.length < 2 ? `Select ${2 - selected.length} more` : picking && selected.length === 2 ? 'Showing 2 selected' : ''}
+            </span>
+            <button
+              type="button"
+              onClick={() => { setPicking(v => !v); setSelected([]) }}
+              className={`text-xs font-semibold px-3 py-1.5 rounded-lg border transition-all ${picking ? 'bg-brand-blue text-white border-brand-blue' : 'border-slate-200 text-brand-blue'}`}
+            >
+              {picking ? 'Show all ×' : 'Compare 2 →'}
+            </button>
+          </div>
+        )}
+        <div className="space-y-3">
+          {displayRows.map((row, ri) => (
+            <motion.div
+              key={row.id ?? ri}
+              custom={ri}
+              variants={rowVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-40px' }}
+              className={`rounded-2xl overflow-hidden ${
+                row.highlight
+                  ? 'border-2 border-brand-blue shadow-[0_4px_16px_rgba(0,106,255,0.12)]'
+                  : 'border border-slate-200'
+              }`}
+            >
+              {row.highlight && (
+                <div className="bg-brand-blue text-white text-xs font-bold px-4 py-1.5 tracking-wide">
+                  ★ Top Pick
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+              )}
+              {pickable && picking && (
+                <button
+                  type="button"
+                  onClick={() => row.id && toggleSelect(row.id)}
+                  className={`w-full flex items-center gap-2 px-4 py-2 text-xs font-semibold border-b transition-colors ${
+                    selected.includes(row.id)
+                      ? 'bg-brand-blue/10 text-brand-blue border-brand-blue/20'
+                      : 'bg-slate-50 text-slate-500 border-slate-100 hover:bg-blue-50'
+                  }`}
+                >
+                  <span className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 ${selected.includes(row.id) ? 'bg-brand-blue border-brand-blue' : 'border-slate-300'}`}>
+                    {selected.includes(row.id) && <span className="text-white text-[10px] font-bold">✓</span>}
+                  </span>
+                  {row.label ?? `Option ${ri + 1}`}
+                </button>
+              )}
+              <div className="divide-y divide-slate-100 bg-white/90">
+                {headers.map((header, ci) => (
+                  <div key={ci} className="flex items-start justify-between gap-4 px-4 py-2.5">
+                    <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide flex-shrink-0 pt-0.5 w-28">
+                      {header}
+                    </span>
+                    <span className={`text-sm text-right text-brand-dark leading-snug ${
+                      row.highlight && ci === 0 ? 'font-semibold text-brand-blue' : ''
+                    }`}>
+                      {row.cells[ci]}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       {/* ── Desktop: normal table (hidden below md) ── */}
@@ -79,7 +125,7 @@ export default function ComparisonTable({ headers, rows }) {
           <tbody>
             {rows.map((row, ri) => (
               <motion.tr
-                key={ri}
+                key={row.id ?? ri}
                 custom={ri}
                 variants={rowVariants}
                 initial="hidden"

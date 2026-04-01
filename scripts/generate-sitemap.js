@@ -40,6 +40,27 @@ const blogPosts = [
   { slug: 'best-eftpos-glaziers-australia-2026',               lastmod: TODAY, changefreq: 'monthly' },
   { slug: 'best-eftpos-roofers-australia-2026',                lastmod: TODAY, changefreq: 'monthly' },
   { slug: 'best-eftpos-hvac-australia-2026',                   lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-painters-australia-2026',              lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-tilers-australia-2026',                lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-concreters-australia-2026',            lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-carpenters-australia-2026',            lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-gas-fitters-australia-2026',           lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-fencers-australia-2026',               lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-plasterers-australia-2026',            lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-pool-builders-australia-2026',         lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-pest-controllers-australia-2026',      lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-welders-australia-2026',               lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-cleaners-australia-2026',              lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-landscapers-australia-2026',           lastmod: TODAY, changefreq: 'monthly' },
+  { slug: 'best-eftpos-electricians-nsw-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-electricians-vic-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-electricians-qld-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-nsw-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-vic-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-plumbers-qld-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-nsw-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-vic-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-builders-qld-2026',                   lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
 ]
 
 // All combinations of 2 providers
@@ -110,6 +131,7 @@ ${blogPosts.map(p => url(`/blog/${p.slug}`, p.priority || '0.8', p.changefreq, p
 
   <!-- Static pages -->
 ${url('/calculator', '0.7')}
+${url('/glossary',   '0.7')}
 ${url('/about',      '0.6')}
 ${url('/contact',    '0.4', 'yearly')}
 ${url('/privacy',    '0.3', 'yearly')}

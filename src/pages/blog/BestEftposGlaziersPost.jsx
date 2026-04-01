@@ -131,6 +131,7 @@ export default function BestEftposGlaziersPost() {
       </header>
 
       <article className="container-page section max-w-3xl">
+        <a href="#recommendation" className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 px-3 py-1.5 rounded-full mb-6 transition-colors">Jump to recommendation ↓</a>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -179,7 +180,7 @@ export default function BestEftposGlaziersPost() {
         </section>
 
         <section className="mb-10">
-          <div className="lg-blue rounded-2xl p-6">
+          <div id="recommendation" className="lg-blue rounded-2xl p-6">
             <h3 className="font-bold text-brand-dark mb-3">Our recommendation for glaziers</h3>
             <p className="text-sm text-slate-700 leading-relaxed mb-3">
               <strong>Primary:</strong> Zeller Terminal 1 + Optus SIM ($15/mo). For all emergency and standard glazing work — residential, commercial, high-rise.

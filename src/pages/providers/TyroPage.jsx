@@ -9,6 +9,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
+import StickySignUpBar from '../../components/StickySignUpBar'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -29,7 +30,7 @@ const faqs = [
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Tyro for Tradies — Full Review (2026)', description: "Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know.", url: `${SITE}/providers/tyro`, datePublished: '2026-01-15', dateModified: '2026-03-31', reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Tyro', url: 'https://www.tyro.com', description: 'Australian specialist bank offering EFTPOS terminals, payment links, and merchant services for SMEs with bank-grade infrastructure.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.8', reviewCount: '1', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Person', name: 'TradiePay Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Tyro for Tradies — Full Review (2026)', description: "Strong Australian bank-grade footprint and competitive payment links. In-person rate requires a quote — here's what tradies need to know.", url: `${SITE}/providers/tyro`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '3.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Tyro', url: 'https://www.tyro.com', description: 'Australian specialist bank offering EFTPOS terminals, payment links, and merchant services for SMEs with bank-grade infrastructure.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.8', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Tyro Review', item: `${SITE}/providers/tyro` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]
@@ -83,6 +84,37 @@ export default function TyroPage() {
           </nav>
         </div>
       </header>
+
+      <StickySignUpBar providerId="tyro" providerName="Tyro EFTPOS" />
+
+      {/* Quick Summary */}
+      <section className="container-page pt-8">
+        <div className="lg-light rounded-2xl p-5 border border-slate-200 mb-2">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">At a Glance</p>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center mb-4">
+            {[
+              { label: 'In-person rate', value: 'Quote required' },
+              { label: 'Payment links', value: '1.4% incl. GST' },
+              { label: 'Terminal', value: 'Rental' },
+              { label: 'SIM connectivity', value: '✓ Built-in' },
+              { label: 'Settlement', value: 'Same day (Tyro)' },
+            ].map((s, i) => (
+              <div key={i} className="bg-white rounded-xl p-3 border border-slate-100">
+                <span className="block text-[11px] text-slate-500 mb-1">{s.label}</span>
+                <span className="block text-sm font-bold text-brand-dark">{s.value}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2 text-xs">
+            <span className="flex-1 bg-green-50 border border-green-200 rounded-xl px-3 py-2 text-green-800">
+              <strong>Best for:</strong> High-volume businesses with field service software integration (ServiceM8, simPRO)
+            </span>
+            <span className="flex-1 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-amber-800">
+              <strong>Skip if:</strong> You want transparent published rates — in-person pricing requires a quote
+            </span>
+          </div>
+        </div>
+      </section>
 
       <section className="section container-page">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
@@ -191,6 +223,15 @@ export default function TyroPage() {
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>
+          <div className="mt-5 flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4">
+            <div>
+              <p className="text-sm font-semibold text-brand-dark">Not sure Tyro is right for you?</p>
+              <p className="text-xs text-slate-500 mt-0.5">Answer 3 questions — get a personalised recommendation.</p>
+            </div>
+            <Link to="/#finder" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap ml-4">
+              Take the quiz →
+            </Link>
+          </div>
 
           {/* Head-to-head */}
           <div className="mt-6">

@@ -156,7 +156,7 @@ export default function ComparePage() {
       image: { '@type': 'ImageObject', url: p1.product_image?.startsWith('http') ? p1.product_image : `${SITE}/og-provider.svg`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
-      dateModified: '2026-03-31',
+      dateModified: '2026-04-02',
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },
@@ -257,6 +257,43 @@ export default function ComparePage() {
           </div>
         )
       })()}
+
+      {/* Quick stats strip */}
+      <div className="bg-white border-b border-slate-100">
+        <div className="container-page max-w-2xl py-4">
+          <div className="grid grid-cols-3 gap-4 text-center">
+            {[
+              {
+                label: 'In-person rate',
+                v1: rate1, v2: rate2,
+                p1Better: p1.fees.in_person_percent != null && (p2.fees.in_person_percent == null || p1.fees.in_person_percent <= p2.fees.in_person_percent),
+                p2Better: p2.fees.in_person_percent != null && (p1.fees.in_person_percent == null || p2.fees.in_person_percent < p1.fees.in_person_percent),
+              },
+              {
+                label: 'Hardware',
+                v1: hw1, v2: hw2,
+                p1Better: !!p1.hardware[0]?.price_aud && (!p2.hardware[0]?.price_aud || p1.hardware[0].price_aud <= p2.hardware[0].price_aud),
+                p2Better: !!p2.hardware[0]?.price_aud && (!p1.hardware[0]?.price_aud || p2.hardware[0].price_aud < p1.hardware[0].price_aud),
+              },
+              {
+                label: 'Settlement',
+                v1: settle1, v2: settle2,
+                p1Better: p1.settlement.same_day_available && !p2.settlement.same_day_available,
+                p2Better: p2.settlement.same_day_available && !p1.settlement.same_day_available,
+              },
+            ].map((item, i) => (
+              <div key={i}>
+                <p className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 mb-1.5">{item.label}</p>
+                <div className="flex items-center justify-center gap-1.5 flex-wrap">
+                  <span className={`text-sm font-bold ${item.p1Better ? 'text-brand-blue' : 'text-slate-500'}`}>{item.v1}</span>
+                  <span className="text-slate-300 text-[10px]">vs</span>
+                  <span className={`text-sm font-bold ${item.p2Better ? 'text-brand-blue' : 'text-slate-500'}`}>{item.v2}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Comparison table */}
       <section className="section">
@@ -359,6 +396,21 @@ export default function ComparePage() {
       </section>
 
       <FaqSection items={faqs} title={`${p1.name} vs ${p2.name} — FAQ`} />
+
+      {/* Not sure? Take the quiz */}
+      <section className="section-alt py-8">
+        <div className="container-page max-w-2xl">
+          <div className="flex items-center justify-between bg-white border border-slate-200 rounded-2xl px-5 py-4">
+            <div>
+              <p className="text-sm font-semibold text-brand-dark">Still not sure which is right for you?</p>
+              <p className="text-xs text-slate-500 mt-0.5">Answer 3 quick questions — get a personalised recommendation.</p>
+            </div>
+            <Link to="/#finder" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap ml-4">
+              Take the quiz →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <RelatedLinks slug={p1.id} type="provider" />
     </>

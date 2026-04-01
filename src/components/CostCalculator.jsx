@@ -1,9 +1,24 @@
 import { useState, useMemo, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Check, Link2, CheckCheck } from 'lucide-react'
 import { haptic } from '../utils/haptic'
 import { trackCalculatorUsed } from '../utils/analytics'
 import rawProviders from '../data/providers.json'
+
+const PRESETS = [
+  { label: '~$3k/mo', value: 3000 },
+  { label: '~$10k/mo', value: 10000 },
+  { label: '~$20k/mo', value: 20000 },
+]
+
+const PROVIDER_SIGNUP = {
+  zeller:       'https://www.myzeller.com.au',
+  'zeller-tap': 'https://www.myzeller.com.au',
+  square:       'https://squareup.com/au/en',
+  stripe:       'https://dashboard.stripe.com/register',
+  tyro:         'https://www.tyro.com/contact/sign-up',
+}
 
 function getInitialState() {
   if (typeof window === 'undefined') return { monthly: 5000, avgTx: 200, amortMonths: 24, includeSim: true }
@@ -147,6 +162,7 @@ export default function CostCalculator() {
   }, [monthly, avgTx, amortMonths, includeSim])
 
   const cheapest = results[0]?.total
+  const secondCost = results[1]?.total
 
   return (
     <section id="calculator" className="section section-alt">
@@ -160,6 +176,18 @@ export default function CostCalculator() {
               <label className="block text-sm font-semibold text-brand-dark mb-1.5">
                 Monthly card revenue
               </label>
+              <div className="flex gap-2 mb-2">
+                {PRESETS.map(p => (
+                  <button
+                    key={p.value}
+                    type="button"
+                    onClick={() => { haptic('light'); setMonthly(p.value) }}
+                    className={`text-xs px-2 py-1 rounded-lg border transition-all ${monthly === p.value ? 'bg-brand-blue text-white border-brand-blue' : 'border-slate-200 text-slate-500 hover:border-brand-blue hover:text-brand-blue'}`}
+                  >
+                    {p.label}
+                  </button>
+                ))}
+              </div>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">$</span>
                 <input
@@ -265,6 +293,21 @@ export default function CostCalculator() {
                       ${p.total.toFixed(2)}
                     </motion.div>
                     <div className="text-xs text-slate-500">per month</div>
+                    {i === 0 && secondCost > 0 && (secondCost - p.total) > 0.5 && (
+                      <div className="text-xs text-green-600 font-semibold mt-0.5">
+                        saves ${(secondCost - p.total).toFixed(2)}/mo
+                      </div>
+                    )}
+                    {i === 0 && PROVIDER_SIGNUP[p.id] && (
+                      <a
+                        href={PROVIDER_SIGNUP[p.id]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-block text-xs font-semibold text-white bg-brand-blue hover:bg-blue-600 px-3 py-1.5 rounded-lg transition-colors"
+                      >
+                        Sign up →
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               )

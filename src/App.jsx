@@ -37,6 +37,7 @@ const CalculatorPage    = lazy(() => import('./pages/CalculatorPage'))
 const ContactPage       = lazy(() => import('./pages/ContactPage'))
 const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
 const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
+const GlossaryPage      = lazy(() => import('./pages/GlossaryPage'))
 const StateTradePage    = lazy(() => import('./pages/StateTradePage'))
 const StateIndexPage    = lazy(() => import('./pages/StateIndexPage'))
 const StatesIndexPage   = lazy(() => import('./pages/StatesIndexPage'))
@@ -61,6 +62,27 @@ const BestEftposElectriciansPost  = lazy(() => import('./pages/blog/BestEftposEl
 const BestEftposGlaziersPost      = lazy(() => import('./pages/blog/BestEftposGlaziersPost'))
 const BestEftposRoofersPost       = lazy(() => import('./pages/blog/BestEftposRoofersPost'))
 const BestEftposHVACPost          = lazy(() => import('./pages/blog/BestEftposHVACPost'))
+const BestEftposPaintersPost      = lazy(() => import('./pages/blog/BestEftposPaintersPost'))
+const BestEftposTilersPost        = lazy(() => import('./pages/blog/BestEftposTilersPost'))
+const BestEftposConcretersPost    = lazy(() => import('./pages/blog/BestEftposConcretersPost'))
+const BestEftposCarpentersPost    = lazy(() => import('./pages/blog/BestEftposCarpentersPost'))
+const BestEftposGasFittersPost    = lazy(() => import('./pages/blog/BestEftposGasFittersPost'))
+const BestEftposFencersPost       = lazy(() => import('./pages/blog/BestEftposFencersPost'))
+const BestEftposPlasterersPost    = lazy(() => import('./pages/blog/BestEftposPlasterersPost'))
+const BestEftposPoolBuildersPost  = lazy(() => import('./pages/blog/BestEftposPoolBuildersPost'))
+const BestEftposPestControllersPost = lazy(() => import('./pages/blog/BestEftposPestControllersPost'))
+const BestEftposWeldersPost       = lazy(() => import('./pages/blog/BestEftposWeldersPost'))
+const BestEftposCleanersPost      = lazy(() => import('./pages/blog/BestEftposCleanersPost'))
+const BestEftposLandscapersPost   = lazy(() => import('./pages/blog/BestEftposLandscapersPost'))
+const BestEftposElectriciansNSWPost = lazy(() => import('./pages/blog/BestEftposElectriciansNSWPost'))
+const BestEftposElectriciansVICPost = lazy(() => import('./pages/blog/BestEftposElectriciansVICPost'))
+const BestEftposElectriciansQLDPost = lazy(() => import('./pages/blog/BestEftposElectriciansQLDPost'))
+const BestEftposPlumbersNSWPost   = lazy(() => import('./pages/blog/BestEftposPlumbersNSWPost'))
+const BestEftposPlumbersVICPost   = lazy(() => import('./pages/blog/BestEftposPlumbersVICPost'))
+const BestEftposPlumbersQLDPost   = lazy(() => import('./pages/blog/BestEftposPlumbersQLDPost'))
+const BestEftposBuildersNSWPost   = lazy(() => import('./pages/blog/BestEftposBuildersNSWPost'))
+const BestEftposBuildersVICPost   = lazy(() => import('./pages/blog/BestEftposBuildersVICPost'))
+const BestEftposBuildersQLDPost   = lazy(() => import('./pages/blog/BestEftposBuildersQLDPost'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -140,11 +162,33 @@ export default function App() {
           <Route path="/blog/best-eftpos-glaziers-australia-2026" element={<BestEftposGlaziersPost />} />
           <Route path="/blog/best-eftpos-roofers-australia-2026" element={<BestEftposRoofersPost />} />
           <Route path="/blog/best-eftpos-hvac-australia-2026" element={<BestEftposHVACPost />} />
+          <Route path="/blog/best-eftpos-painters-australia-2026" element={<BestEftposPaintersPost />} />
+          <Route path="/blog/best-eftpos-tilers-australia-2026" element={<BestEftposTilersPost />} />
+          <Route path="/blog/best-eftpos-concreters-australia-2026" element={<BestEftposConcretersPost />} />
+          <Route path="/blog/best-eftpos-carpenters-australia-2026" element={<BestEftposCarpentersPost />} />
+          <Route path="/blog/best-eftpos-gas-fitters-australia-2026" element={<BestEftposGasFittersPost />} />
+          <Route path="/blog/best-eftpos-fencers-australia-2026" element={<BestEftposFencersPost />} />
+          <Route path="/blog/best-eftpos-plasterers-australia-2026" element={<BestEftposPlasterersPost />} />
+          <Route path="/blog/best-eftpos-pool-builders-australia-2026" element={<BestEftposPoolBuildersPost />} />
+          <Route path="/blog/best-eftpos-pest-controllers-australia-2026" element={<BestEftposPestControllersPost />} />
+          <Route path="/blog/best-eftpos-welders-australia-2026" element={<BestEftposWeldersPost />} />
+          <Route path="/blog/best-eftpos-cleaners-australia-2026" element={<BestEftposCleanersPost />} />
+          <Route path="/blog/best-eftpos-landscapers-australia-2026" element={<BestEftposLandscapersPost />} />
+          <Route path="/blog/best-eftpos-electricians-nsw-2026" element={<BestEftposElectriciansNSWPost />} />
+          <Route path="/blog/best-eftpos-electricians-vic-2026" element={<BestEftposElectriciansVICPost />} />
+          <Route path="/blog/best-eftpos-electricians-qld-2026" element={<BestEftposElectriciansQLDPost />} />
+          <Route path="/blog/best-eftpos-plumbers-nsw-2026" element={<BestEftposPlumbersNSWPost />} />
+          <Route path="/blog/best-eftpos-plumbers-vic-2026" element={<BestEftposPlumbersVICPost />} />
+          <Route path="/blog/best-eftpos-plumbers-qld-2026" element={<BestEftposPlumbersQLDPost />} />
+          <Route path="/blog/best-eftpos-builders-nsw-2026" element={<BestEftposBuildersNSWPost />} />
+          <Route path="/blog/best-eftpos-builders-vic-2026" element={<BestEftposBuildersVICPost />} />
+          <Route path="/blog/best-eftpos-builders-qld-2026" element={<BestEftposBuildersQLDPost />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/glossary" element={<GlossaryPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

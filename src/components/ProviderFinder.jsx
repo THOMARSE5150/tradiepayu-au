@@ -196,10 +196,10 @@ export default function ProviderFinder() {
                   Full review →
                 </Link>
                 <Link
-                  to={result.secondary.href}
+                  to={`/calculator?monthly=${{ low: 3000, mid: 10000, high: 25000 }[answers.volume] || 5000}`}
                   className="inline-flex items-center justify-center gap-2 border border-white/20 hover:bg-white/10 text-white/70 hover:text-white font-medium rounded-xl px-5 py-2.5 text-sm transition-colors"
                 >
-                  {result.secondary.label}
+                  Calculate your exact cost →
                 </Link>
               </div>
             </motion.div>
