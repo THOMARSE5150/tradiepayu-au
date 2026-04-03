@@ -7,7 +7,6 @@ import { haptic } from '../utils/haptic'
 import { STATES } from '../data/states'
 
 const topLinks = [
-  { label: 'Providers', href: '/providers' },
   { label: 'Trades',    href: '/trades' },
   { label: 'Compare',   href: '/compare' },
   { label: 'Blog',      href: '/blog' },
@@ -195,7 +194,7 @@ export default function Nav() {
               animate={{ y: 0 }}
               exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 320 }}
-              className="sm:hidden fixed bottom-0 left-0 right-0 z-50 flex flex-col rounded-t-3xl overflow-hidden"
+              className="sm:hidden fixed bottom-0 left-0 right-0 z-[60] flex flex-col rounded-t-3xl overflow-hidden"
               style={{
                 background: 'rgba(20,20,36,0.97)',
                 backdropFilter: 'blur(32px)',
@@ -255,7 +254,10 @@ export default function Nav() {
               </div>
 
               {/* Pinned CTAs */}
-              <div className="flex-shrink-0 px-4 pb-6 pt-3 grid grid-cols-2 gap-3 border-t border-white/[0.07]">
+              <div
+                className="flex-shrink-0 px-4 pt-3 grid grid-cols-2 gap-3 border-t border-white/[0.07]"
+                style={{ paddingBottom: 'max(1.5rem, calc(env(safe-area-inset-bottom) + 0.75rem))' }}
+              >
                 <Link
                   to="/compare"
                   onClick={close}
