@@ -6,6 +6,7 @@ import CostCalculator from '../components/CostCalculator'
 import ProviderFinder from '../components/ProviderFinder'
 import FaqSection from '../components/FaqSection'
 import ComparisonTable from '../components/ComparisonTable'
+import ProviderComparison from '../components/ProviderComparison'
 import Meta from '../components/Meta'
 import { STATES } from '../data/states'
 
@@ -191,17 +192,13 @@ export default function Home() {
           <div className="flex items-end justify-between mb-5 gap-4">
             <div>
               <h2 className="text-2xl font-bold text-brand-dark">Compare Providers</h2>
-              <p className="text-slate-500 text-sm mt-1">Tap a provider name for the full review.</p>
+              <p className="text-slate-500 text-sm mt-1">Green = category winner. Tap any name for the full review.</p>
             </div>
             <Link to="/providers" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap">
               All reviews →
             </Link>
           </div>
-          <ComparisonTable
-            headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Settlement']}
-            rows={tableRows}
-            pickable
-          />
+          <ProviderComparison />
           <p className="text-xs text-slate-400 mt-3">Tyro in-person rate requires a quote. Verify all rates with providers before signing up.</p>
         </div>
       </section>
