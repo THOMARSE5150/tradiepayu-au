@@ -10,7 +10,7 @@ const rowVariants = {
   }),
 }
 
-export default function ComparisonTable({ headers, rows, pickable = false }) {
+export default function ComparisonTable({ headers = [], rows = [], pickable = false }) {
   const [picking, setPicking] = useState(false)
   const [selected, setSelected] = useState([])
 

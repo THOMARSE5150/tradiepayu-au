@@ -43,7 +43,8 @@ function FaqItem({ item, index }) {
   )
 }
 
-export default function FaqSection({ items, title = 'Frequently Asked Questions' }) {
+export default function FaqSection({ items, faqs, title = 'Frequently Asked Questions' }) {
+  const list = items ?? faqs ?? []
   return (
     <section id="faq" className="section container-page">
       <motion.h2
@@ -56,7 +57,7 @@ export default function FaqSection({ items, title = 'Frequently Asked Questions'
         {title}
       </motion.h2>
       <div className="lg-light rounded-2xl overflow-hidden">
-        {items.map((item, i) => (
+        {list.map((item, i) => (
           <FaqItem key={i} item={item} index={i} />
         ))}
       </div>

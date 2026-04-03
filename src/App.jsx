@@ -1,7 +1,12 @@
 import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Layout from './components/Layout'
 import ErrorBoundary from './components/ErrorBoundary'
+
+function RouteErrorBoundary({ children }) {
+  const { pathname } = useLocation()
+  return <ErrorBoundary key={pathname}>{children}</ErrorBoundary>
+}
 import Home from './pages/Home'
 
 // Lazy-load all non-home pages so the initial bundle only ships Home + Layout
@@ -166,7 +171,7 @@ function PageLoader() {
 export default function App() {
   return (
     <Layout>
-      <ErrorBoundary>
+      <RouteErrorBoundary>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -301,7 +306,7 @@ export default function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
-      </ErrorBoundary>
+      </RouteErrorBoundary>
     </Layout>
   )
 }

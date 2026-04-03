@@ -47,6 +47,17 @@ export function trackCalculatorUsed({ monthly, avgTx, winner, winnerCost }) {
 }
 
 /**
+ * Fire when a user submits the blog read-capture email form.
+ * @param {string} source - pathname of the blog post
+ */
+export function trackEmailCapture(source = 'unknown') {
+  gtag('event', 'email_capture', {
+    event_category: 'lead',
+    source,
+  })
+}
+
+/**
  * Append UTM params to a provider's affiliate URL.
  * @param {string} baseUrl    - provider's affiliate_url from providers.json
  * @param {string} providerId - e.g. 'zeller'

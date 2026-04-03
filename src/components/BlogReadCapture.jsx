@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useLocation } from 'react-router-dom'
+import { trackEmailCapture } from '../utils/analytics'
 
 /**
  * Scroll-triggered email capture — appears after the user reads ~40% of any
@@ -52,6 +53,7 @@ export default function BlogReadCapture() {
       const existing = JSON.parse(localStorage.getItem('tp_subscribers') || '[]')
       if (!existing.includes(email)) localStorage.setItem('tp_subscribers', JSON.stringify([...existing, email]))
     } catch {}
+    trackEmailCapture(pathname)
     setSent(true)
     setTimeout(dismiss, 2500)
   }
