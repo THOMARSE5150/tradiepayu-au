@@ -142,6 +142,7 @@ const BestEftposPaintersAdelaide    = lazy(() => import('./pages/blog/BestEftpos
 const BestEftposConcretersPerth     = lazy(() => import('./pages/blog/BestEftposConcretersPerth'))
 const BestEftposConcretersAdelaide  = lazy(() => import('./pages/blog/BestEftposConcretersAdelaide'))
 const GoPage            = lazy(() => import('./pages/GoPage'))
+const DashboardPage     = lazy(() => import('./pages/DashboardPage'))
 const NotFoundPage      = lazy(() => import('./pages/NotFoundPage'))
 
 function PageLoader() {
@@ -296,6 +297,7 @@ export default function App() {
           <Route path="/disclaimer" element={<DisclaimerPage />} />
           <Route path="/glossary" element={<GlossaryPage />} />
           <Route path="/go/:provider" element={<GoPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
