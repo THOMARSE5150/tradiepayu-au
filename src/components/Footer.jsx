@@ -102,8 +102,8 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark text-slate-400 mt-auto">
       <RateAlerts />
-      <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-6 gap-5">
-        <div className="col-span-2 lg:col-span-1 lg-dark lg-sheen relative rounded-2xl p-5">
+      <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-7 gap-5">
+        <div className="col-span-2 lg:col-span-2 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
           <p className="text-sm leading-relaxed text-slate-400 mb-3">Independent comparison of mobile card payment systems for Australian tradies. Updated {siteMeta.lastVerifiedDisplay}.</p>
           <p className="text-xs text-slate-600">No sponsored rankings. Not financial advice.</p>
