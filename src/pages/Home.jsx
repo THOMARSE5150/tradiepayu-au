@@ -161,25 +161,27 @@ export default function Home() {
 
             {/* CTA row */}
             <div className="flex flex-wrap items-center gap-3 mt-5">
-              <AffiliateButton
-                providerId="zeller"
-                label="hero-primary"
-                campaign="homepage"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
-              >
-                Get Zeller →
-              </AffiliateButton>
               <a
                 href="#compare"
-                className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
               >
                 Compare all options ↓
               </a>
+              <Link
+                to="/providers/zeller"
+                className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
+              >
+                Why Zeller is top pick →
+              </Link>
             </div>
             <p className="text-white/40 text-xs mt-2.5">
-              No signal on site?{' '}
+              Ready to sign up?{' '}
+              <AffiliateButton providerId="zeller" label="hero-tertiary" campaign="homepage" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
+                Visit Zeller ↗
+              </AffiliateButton>
+              {' · '}
               <AffiliateButton providerId="square" label="hero-fallback" campaign="homepage" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
-                Square is the best backup for offline payments.
+                Square (offline) ↗
               </AffiliateButton>
             </p>
 
@@ -277,14 +279,12 @@ export default function Home() {
                   <p className="text-xs text-slate-500 leading-relaxed mb-3">{s.body}</p>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xs font-semibold text-slate-500">Best pick:</span>
-                    <AffiliateButton
-                      providerId={s.pickId}
-                      label={`usecase-${s.pickId}`}
-                      campaign="homepage-usecase"
+                    <Link
+                      to={`/providers/${s.pickId}`}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors"
                     >
-                      {s.pick} →
-                    </AffiliateButton>
+                      {s.pick} details →
+                    </Link>
                     <span className="text-[11px] text-slate-400 hidden sm:inline">{s.why}</span>
                   </div>
                 </div>
@@ -308,21 +308,19 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col sm:items-end gap-2.5 flex-shrink-0">
-              <AffiliateButton
-                providerId="zeller"
-                label="midpage-cta"
-                campaign="homepage-mid"
+              <Link
+                to="/providers/zeller"
                 className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
               >
-                Get Zeller →
-              </AffiliateButton>
+                Full Zeller review →
+              </Link>
               <div className="flex items-center gap-3 text-xs text-slate-500">
-                <AffiliateButton providerId="square" label="midpage-alt-square" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
-                  Square
+                <AffiliateButton providerId="zeller" label="midpage-cta" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
+                  Visit Zeller ↗
                 </AffiliateButton>
                 <span>·</span>
-                <AffiliateButton providerId="stripe" label="midpage-alt-stripe" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
-                  Stripe
+                <AffiliateButton providerId="square" label="midpage-alt-square" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
+                  Square ↗
                 </AffiliateButton>
                 <span>·</span>
                 <Link to="/providers" className="hover:text-slate-300 transition-colors">Compare all</Link>
