@@ -2,6 +2,26 @@ import { Link } from 'react-router-dom'
 import { PROVIDERS, TRADES, relatedTrades, otherProviders, blogPostsForProvider, blogPostsForTrade, defaultBlogPosts } from '../data/siteLinks'
 import { STATES, STATE_MAP } from '../data/states'
 
+const CITY_SLUGS = ['sydney', 'melbourne', 'brisbane', 'perth', 'adelaide']
+const STATE_CODES = ['-nsw-', '-vic-', '-qld-', '-wa-', '-sa-']
+const PROVIDER_PATTERNS = ['-vs-', '-review-']
+
+function blogCategory(slug) {
+  if (CITY_SLUGS.some(c => slug.includes(c))) return 'cities'
+  if (STATE_CODES.some(s => slug.includes(s))) return 'states'
+  if (PROVIDER_PATTERNS.some(p => slug.includes(p))) return 'providers'
+  if (slug.startsWith('best-eftpos-')) return 'trades'
+  return 'guides'
+}
+
+const CAT_DOT = {
+  providers: 'bg-blue-500',
+  trades:    'bg-amber-400',
+  guides:    'bg-emerald-500',
+  states:    'bg-violet-500',
+  cities:    'bg-rose-400',
+}
+
 // State-specific blog posts for the 9 combos we've published
 const STATE_TRADE_BLOG = {
   'electricians-nsw': 'best-eftpos-electricians-nsw-2026',
@@ -190,16 +210,20 @@ export default function RelatedLinks({ slug, type, currentState }) {
             From the blog
           </p>
           <div className="space-y-1">
-            {blogPosts.map(post => (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.slug}`}
-                className="flex items-center justify-between px-4 py-2.5 bg-white border border-slate-100 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
-              >
-                <span className="text-sm text-slate-600 group-hover:text-brand-blue transition-colors">{post.label}</span>
-                <span className="text-xs text-slate-400 group-hover:text-brand-blue transition-colors flex-shrink-0 ml-2">→</span>
-              </Link>
-            ))}
+            {blogPosts.map(post => {
+              const dot = CAT_DOT[blogCategory(post.slug)] ?? 'bg-slate-300'
+              return (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="flex items-center gap-2.5 px-4 py-2.5 bg-white border border-slate-100 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
+                >
+                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dot}`} />
+                  <span className="text-sm text-slate-600 group-hover:text-brand-blue transition-colors flex-1">{post.label}</span>
+                  <span className="text-xs text-slate-400 group-hover:text-brand-blue transition-colors flex-shrink-0">→</span>
+                </Link>
+              )
+            })}
             <Link
               to="/blog"
               className="flex items-center px-4 py-2.5 text-sm font-semibold text-brand-blue hover:underline"
