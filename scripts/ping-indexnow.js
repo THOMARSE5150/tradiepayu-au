@@ -16,7 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
 
 const SITE    = 'https://tradiepayau.directory'
-const API_KEY = '9cywg6a6kxcywvx9k5gnnftccut97f7q'
+const API_KEY = process.env.INDEXNOW_API_KEY ?? '9cywg6a6kxcywvx9k5gnnftccut97f7q'
 const KEY_LOC = `${SITE}/${API_KEY}.txt`
 
 // Parse all <loc> URLs from the already-generated sitemap.xml
