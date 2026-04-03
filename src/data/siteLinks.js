@@ -122,6 +122,25 @@ export const BLOG_POSTS = [
   { slug: 'best-eftpos-electricians-brisbane-2026',        label: 'Best EFTPOS for Electricians in Brisbane' },
   { slug: 'best-eftpos-plumbers-brisbane-2026',            label: 'Best EFTPOS for Plumbers in Brisbane' },
   { slug: 'best-eftpos-builders-brisbane-2026',            label: 'Best EFTPOS for Builders in Brisbane' },
+  // State guides — roofers NSW/VIC/QLD
+  { slug: 'best-eftpos-roofers-nsw-2026',                  label: 'Best EFTPOS for Roofers in NSW' },
+  { slug: 'best-eftpos-roofers-vic-2026',                  label: 'Best EFTPOS for Roofers in Victoria' },
+  { slug: 'best-eftpos-roofers-qld-2026',                  label: 'Best EFTPOS for Roofers in QLD' },
+  // State guides — painters/concreters WA/SA
+  { slug: 'best-eftpos-painters-wa-2026',                  label: 'Best EFTPOS for Painters in WA' },
+  { slug: 'best-eftpos-painters-sa-2026',                  label: 'Best EFTPOS for Painters in SA' },
+  { slug: 'best-eftpos-concreters-wa-2026',                label: 'Best EFTPOS for Concreters in WA' },
+  { slug: 'best-eftpos-concreters-sa-2026',                label: 'Best EFTPOS for Concreters in SA' },
+  // City guides — roofers
+  { slug: 'best-eftpos-roofers-sydney-2026',               label: 'Best EFTPOS for Roofers in Sydney' },
+  { slug: 'best-eftpos-roofers-melbourne-2026',            label: 'Best EFTPOS for Roofers in Melbourne' },
+  { slug: 'best-eftpos-roofers-brisbane-2026',             label: 'Best EFTPOS for Roofers in Brisbane' },
+  // City guides — painters Perth/Adelaide
+  { slug: 'best-eftpos-painters-perth-2026',               label: 'Best EFTPOS for Painters in Perth' },
+  { slug: 'best-eftpos-painters-adelaide-2026',            label: 'Best EFTPOS for Painters in Adelaide' },
+  // City guides — concreters Perth/Adelaide
+  { slug: 'best-eftpos-concreters-perth-2026',             label: 'Best EFTPOS for Concreters in Perth' },
+  { slug: 'best-eftpos-concreters-adelaide-2026',          label: 'Best EFTPOS for Concreters in Adelaide' },
 ]
 
 /** Blog posts most relevant to each provider */
@@ -138,11 +157,11 @@ const TRADE_BLOG_MAP = {
   electricians:     ['best-eftpos-electricians-australia-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
   plumbers:         ['best-eftpos-plumbers-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
   builders:         ['best-eftpos-builders-australia-2026', 'zeller-vs-square-vs-stripe-eftpos-tradies-2026', 'surcharging-eftpos-tradies-australia-2026'],
-  painters:         ['best-eftpos-painters-australia-2026', 'best-eftpos-painters-nsw-2026', 'best-eftpos-painters-vic-2026', 'eftpos-fees-tradies-australia-2026'],
-  roofers:          ['best-eftpos-roofers-australia-2026', 'best-eftpos-roofers-nsw-2026', 'best-eftpos-roofers-vic-2026', 'eftpos-fees-tradies-australia-2026'],
+  painters:         ['best-eftpos-painters-australia-2026', 'best-eftpos-painters-nsw-2026', 'best-eftpos-painters-vic-2026', 'best-eftpos-painters-wa-2026', 'eftpos-fees-tradies-australia-2026'],
+  roofers:          ['best-eftpos-roofers-australia-2026', 'best-eftpos-roofers-nsw-2026', 'best-eftpos-roofers-vic-2026', 'best-eftpos-roofers-qld-2026', 'eftpos-fees-tradies-australia-2026'],
   glaziers:         ['best-eftpos-glaziers-australia-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
   hvac:             ['best-eftpos-hvac-australia-2026', 'zeller-vs-square-eftpos-tradies', 'eftpos-fees-tradies-australia-2026'],
-  concreters:       ['best-eftpos-concreters-australia-2026', 'best-eftpos-concreters-nsw-2026', 'best-eftpos-concreters-vic-2026', 'eftpos-fees-tradies-australia-2026'],
+  concreters:       ['best-eftpos-concreters-australia-2026', 'best-eftpos-concreters-nsw-2026', 'best-eftpos-concreters-vic-2026', 'best-eftpos-concreters-wa-2026', 'eftpos-fees-tradies-australia-2026'],
   carpenters:       ['best-eftpos-carpenters-australia-2026', 'best-eftpos-builders-australia-2026', 'eftpos-fees-tradies-australia-2026'],
   tilers:           ['best-eftpos-tilers-australia-2026', 'how-to-get-paid-faster-sole-trader-australia', 'eftpos-fees-tradies-australia-2026'],
   'gas-fitters':    ['best-eftpos-gas-fitters-australia-2026', 'best-eftpos-plumbers-australia-2026', 'eftpos-fees-tradies-australia-2026'],

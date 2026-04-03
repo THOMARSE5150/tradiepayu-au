@@ -104,6 +104,20 @@ const blogPosts = [
   { slug: 'best-eftpos-roofers-nsw-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
   { slug: 'best-eftpos-roofers-vic-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
   { slug: 'best-eftpos-roofers-qld-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // Roofers city guides
+  { slug: 'best-eftpos-roofers-sydney-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-roofers-melbourne-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-roofers-brisbane-2026',             lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // Painters & Concreters × WA/SA state guides
+  { slug: 'best-eftpos-painters-wa-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-painters-sa-2026',                  lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-wa-2026',                lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-sa-2026',                lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  // Painters & Concreters × Perth/Adelaide city guides
+  { slug: 'best-eftpos-painters-perth-2026',               lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-painters-adelaide-2026',            lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-perth-2026',             lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
+  { slug: 'best-eftpos-concreters-adelaide-2026',          lastmod: TODAY, changefreq: 'monthly', priority: '0.7' },
 ]
 
 // All combinations of 2 providers

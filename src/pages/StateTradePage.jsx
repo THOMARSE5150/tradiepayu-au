@@ -57,6 +57,7 @@ const CITY_BLOG_MAP = {
     builders:     { city: 'Sydney', slug: 'best-eftpos-builders-sydney-2026' },
     painters:     { city: 'Sydney', slug: 'best-eftpos-painters-sydney-2026' },
     concreters:   { city: 'Sydney', slug: 'best-eftpos-concreters-sydney-2026' },
+    roofers:      { city: 'Sydney', slug: 'best-eftpos-roofers-sydney-2026' },
   },
   vic: {
     electricians: { city: 'Melbourne', slug: 'best-eftpos-electricians-melbourne-2026' },
@@ -64,6 +65,7 @@ const CITY_BLOG_MAP = {
     builders:     { city: 'Melbourne', slug: 'best-eftpos-builders-melbourne-2026' },
     painters:     { city: 'Melbourne', slug: 'best-eftpos-painters-melbourne-2026' },
     concreters:   { city: 'Melbourne', slug: 'best-eftpos-concreters-melbourne-2026' },
+    roofers:      { city: 'Melbourne', slug: 'best-eftpos-roofers-melbourne-2026' },
   },
   qld: {
     electricians: { city: 'Brisbane', slug: 'best-eftpos-electricians-brisbane-2026' },
@@ -71,16 +73,21 @@ const CITY_BLOG_MAP = {
     builders:     { city: 'Brisbane', slug: 'best-eftpos-builders-brisbane-2026' },
     painters:     { city: 'Brisbane', slug: 'best-eftpos-painters-brisbane-2026' },
     concreters:   { city: 'Brisbane', slug: 'best-eftpos-concreters-brisbane-2026' },
+    roofers:      { city: 'Brisbane', slug: 'best-eftpos-roofers-brisbane-2026' },
   },
   wa: {
     electricians: { city: 'Perth', slug: 'best-eftpos-electricians-perth-2026' },
     plumbers:     { city: 'Perth', slug: 'best-eftpos-plumbers-perth-2026' },
     builders:     { city: 'Perth', slug: 'best-eftpos-builders-perth-2026' },
+    painters:     { city: 'Perth', slug: 'best-eftpos-painters-perth-2026' },
+    concreters:   { city: 'Perth', slug: 'best-eftpos-concreters-perth-2026' },
   },
   sa: {
     electricians: { city: 'Adelaide', slug: 'best-eftpos-electricians-adelaide-2026' },
     plumbers:     { city: 'Adelaide', slug: 'best-eftpos-plumbers-adelaide-2026' },
     builders:     { city: 'Adelaide', slug: 'best-eftpos-builders-adelaide-2026' },
+    painters:     { city: 'Adelaide', slug: 'best-eftpos-painters-adelaide-2026' },
+    concreters:   { city: 'Adelaide', slug: 'best-eftpos-concreters-adelaide-2026' },
   },
 }
 
