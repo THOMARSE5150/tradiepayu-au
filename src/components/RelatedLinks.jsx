@@ -134,32 +134,60 @@ export default function RelatedLinks({ slug, type, currentState }) {
         </div>
 
         {/* State guides — shown on all trade pages */}
-        {isTrade && slug && (
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
-              {currentState ? 'Other states' : 'Browse by state'}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {currentState && (
-                <Link
-                  to={`/states/${currentState}`}
-                  className="px-3.5 py-2 bg-brand-blue/5 border border-brand-blue/20 rounded-xl text-sm font-semibold text-brand-blue hover:bg-brand-blue/10 transition-all"
-                >
-                  All {STATE_MAP[currentState]?.name} trades →
-                </Link>
+        {isTrade && slug && (() => {
+          const tradeLabel = TRADES.find(t => t.slug === slug)?.label ?? ''
+          // Published state blog posts for this trade
+          const statePostLinks = Object.entries(STATE_TRADE_BLOG)
+            .filter(([key]) => key.startsWith(`${slug}-`) && key !== `${slug}-${currentState}`)
+            .map(([key, postSlug]) => {
+              const stateCode = key.replace(`${slug}-`, '')
+              const stateName = STATE_MAP[stateCode]?.name ?? stateCode.toUpperCase()
+              return { stateCode, stateName, postSlug }
+            })
+          return (
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+                {tradeLabel} guides by state
+              </p>
+              {statePostLinks.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 mb-2">
+                  {statePostLinks.map(({ stateCode, stateName, postSlug }) => (
+                    <Link
+                      key={stateCode}
+                      to={`/blog/${postSlug}`}
+                      className="px-3 py-2 bg-white border border-slate-100 rounded-xl text-xs font-medium text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all"
+                    >
+                      {stateName} →
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {currentState && (
+                    <Link
+                      to={`/states/${currentState}`}
+                      className="px-3.5 py-2 bg-brand-blue/5 border border-brand-blue/20 rounded-xl text-sm font-semibold text-brand-blue hover:bg-brand-blue/10 transition-all"
+                    >
+                      All {STATE_MAP[currentState]?.name} trades →
+                    </Link>
+                  )}
+                  {STATES.filter(s => s.slug !== currentState).map(s => (
+                    <Link
+                      key={s.slug}
+                      to={`/trades/${slug}/${s.slug}`}
+                      className="px-3.5 py-2 bg-white border border-slate-100 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all"
+                    >
+                      {s.name} <span className="text-slate-400 text-xs">({s.abbr})</span>
+                    </Link>
+                  ))}
+                </div>
               )}
-              {STATES.filter(s => s.slug !== currentState).map(s => (
-                <Link
-                  key={s.slug}
-                  to={`/trades/${slug}/${s.slug}`}
-                  className="px-3.5 py-2 bg-white border border-slate-100 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-blue hover:border-brand-blue transition-all"
-                >
-                  {s.name} <span className="text-slate-400 text-xs">({s.abbr})</span>
-                </Link>
-              ))}
+              <Link to={`/trades/${slug}`} className="text-xs font-semibold text-brand-blue hover:underline">
+                All {tradeLabel} guides →
+              </Link>
             </div>
-          </div>
-        )}
+          )
+        })()}
 
         {/* State guides — shown on provider pages */}
         {isProvider && (

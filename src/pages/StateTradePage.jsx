@@ -344,6 +344,37 @@ export default function StateTradePage() {
 
       <FaqSection items={faqs} title={`FAQ — ${trade.label} in ${state.name}`} />
 
+      {/* Other trades in this state */}
+      {(() => {
+        const otherTrades = Object.entries(STATE_TRADE_BLOG_MAP)
+          .filter(([key]) => key.endsWith(`-${stateSlug}`) && !key.startsWith(`${tradeSlug}-`))
+          .map(([, val]) => val)
+        if (!otherTrades.length) return null
+        return (
+          <section className="section-alt py-10">
+            <div className="container-page">
+              <h2 className="text-lg font-bold text-brand-dark mb-4">More trade guides for {state.name}</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {otherTrades.map(({ slug: postSlug, label }) => (
+                  <Link key={postSlug} to={`/blog/${postSlug}`}
+                    className="flex items-center gap-2 px-4 py-3 bg-white border border-slate-100 rounded-xl hover:border-brand-blue hover:shadow-sm transition-all group"
+                  >
+                    <span className="text-sm text-slate-600 group-hover:text-brand-blue transition-colors flex-1">{label}</span>
+                    <span className="text-xs text-slate-400 group-hover:text-brand-blue flex-shrink-0">→</span>
+                  </Link>
+                ))}
+                <Link to={`/states/${stateSlug}`}
+                  className="flex items-center gap-2 px-4 py-3 bg-brand-blue/5 border border-brand-blue/20 rounded-xl hover:bg-brand-blue/10 transition-all"
+                >
+                  <span className="text-sm font-semibold text-brand-blue flex-1">All {state.name} guides</span>
+                  <span className="text-xs text-brand-blue flex-shrink-0">→</span>
+                </Link>
+              </div>
+            </div>
+          </section>
+        )
+      })()}
+
       <RelatedLinks slug={tradeSlug} type="trade" currentState={stateSlug} />
     </>
   )

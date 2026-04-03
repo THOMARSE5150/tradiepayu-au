@@ -12,6 +12,7 @@ import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
 import StickyProviderBar from '../../components/StickyProviderBar'
+import SectionNav from '../../components/SectionNav'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -101,6 +102,7 @@ export default function ZellerPage() {
         </div>
       </header>
       <StickyProviderBar providerId="zeller" />
+      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'hardware',label:'Hardware'},{id:'connectivity',label:'Connectivity'},{id:'settlement',label:'Settlement'},{id:'setup',label:'Setup'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="zeller" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Zeller →</AffiliateButton>} />
       <ProviderVerdict providerId="zeller" />
 
       {/* Quick Summary */}

@@ -10,6 +10,7 @@ import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
 import StickyProviderBar from '../../components/StickyProviderBar'
+import SectionNav from '../../components/SectionNav'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -97,6 +98,7 @@ export default function Shift4Page() {
       </header>
 
       <StickyProviderBar providerId="shift4" />
+      <SectionNav sections={[{id:'how-it-works',label:'How It Works'},{id:'hardware',label:'Hardware'},{id:'vs-zeller',label:'vs Zeller'},{id:'warning',label:'Before You Sign'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="shift4" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Shift4 →</AffiliateButton>} />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">

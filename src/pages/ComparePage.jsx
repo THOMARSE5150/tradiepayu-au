@@ -6,6 +6,7 @@ import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import RelatedLinks from '../components/RelatedLinks'
 import FaqSection from '../components/FaqSection'
+import AffiliateButton from '../components/AffiliateButton'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -248,10 +249,14 @@ export default function ComparePage() {
                     <p className="text-xs text-slate-500 mt-0.5 leading-snug">{winner.best_for[0]} · {loser.name} is better for: {loser.best_for[0].toLowerCase()}</p>
                   </div>
                 </div>
-                <Link to={`/providers/${winner.id}`} className="flex-shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-blue border border-brand-blue/25 hover:bg-blue-50 hover:border-brand-blue/50 transition-all px-3.5 py-2 rounded-xl">
-                  Full review
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                </Link>
+                <div className="flex items-center gap-2 flex-shrink-0">
+                  <AffiliateButton providerId={winner.id} label="compare-verdict" campaign="compare" className="inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">
+                    Get {winner.name} →
+                  </AffiliateButton>
+                  <Link to={`/providers/${winner.id}`} className="text-xs font-semibold text-brand-blue hover:underline">
+                    Review
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -380,12 +385,17 @@ export default function ComparePage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to={`/providers/${p.id}`}
-                  className="mt-4 block text-center bg-white border border-slate-200 hover:border-brand-blue hover:text-brand-blue text-brand-dark font-semibold px-4 py-2.5 rounded-xl transition-all text-sm"
-                >
-                  Full {p.name} Review →
-                </Link>
+                <div className="mt-4 flex gap-2">
+                  <AffiliateButton providerId={p.id} label="compare-bestfor" campaign="compare" className="flex-1 block text-center bg-brand-blue text-white font-semibold px-4 py-2.5 rounded-xl transition-all text-sm hover:bg-blue-600">
+                    Get {p.name} →
+                  </AffiliateButton>
+                  <Link
+                    to={`/providers/${p.id}`}
+                    className="block text-center bg-white border border-slate-200 hover:border-brand-blue hover:text-brand-blue text-brand-dark font-semibold px-4 py-2.5 rounded-xl transition-all text-sm"
+                  >
+                    Review
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
