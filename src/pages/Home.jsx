@@ -9,6 +9,7 @@ import ComparisonTable from '../components/ComparisonTable'
 import ProviderComparison from '../components/ProviderComparison'
 import Meta from '../components/Meta'
 import HeroTradeSelector from '../components/HeroTradeSelector'
+import AffiliateButton from '../components/AffiliateButton'
 import { STATES } from '../data/states'
 
 const SITE_URL = 'https://tradiepayau.directory'
@@ -117,8 +118,8 @@ export default function Home() {
   return (
     <>
       <Meta
-        title="Best EFTPOS for Australian Tradies (2026)"
-        description="Compare the 5 best mobile card payment systems for Australian tradies. Real rates, SIM connectivity, offline mode, and settlement speed — updated April 2026."
+        title="Best EFTPOS for Australian Tradies (2026) — Zeller vs Square vs Stripe"
+        description="Compare the best EFTPOS for Australian tradies. Zeller (1.4%), Square, and Stripe compared on fees, portability, offline mode, and getting paid on-site — updated April 2026."
         canonical="/"
         jsonLd={jsonLd}
       />
@@ -147,8 +148,41 @@ export default function Home() {
               Best EFTPOS for Australian Tradies
             </h1>
             <p className="hero-sub">
-              5 providers compared. Real rates, no fluff — updated April 2026.
+              5 providers compared on fees, connectivity, and settlement speed — updated April 2026.
             </p>
+
+            {/* Top pick callout */}
+            <div className="mt-5 inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-3.5 py-2">
+              <span className="text-amber-400 text-xs font-bold uppercase tracking-wide">Top pick</span>
+              <span className="text-white/30">·</span>
+              <span className="text-white text-sm font-semibold">Zeller Terminal 1</span>
+              <span className="text-white/50 text-xs hidden sm:inline">— 1.4% rate, $0 monthly fee, SIM-enabled</span>
+            </div>
+
+            {/* CTA row */}
+            <div className="flex flex-wrap items-center gap-3 mt-5">
+              <AffiliateButton
+                providerId="zeller"
+                label="hero-primary"
+                campaign="homepage"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
+              >
+                Get Zeller →
+              </AffiliateButton>
+              <a
+                href="#compare"
+                className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
+              >
+                Compare all options ↓
+              </a>
+            </div>
+            <p className="text-white/40 text-xs mt-2.5">
+              No signal on site?{' '}
+              <AffiliateButton providerId="square" label="hero-fallback" campaign="homepage" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
+                Square is the best backup for offline payments.
+              </AffiliateButton>
+            </p>
+
             <HeroTradeSelector />
           </motion.div>
 
@@ -181,7 +215,7 @@ export default function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between mb-5 gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-brand-dark">Compare Providers</h2>
+              <h2 className="text-2xl font-bold text-brand-dark">Compare EFTPOS Providers</h2>
               <p className="text-slate-500 text-sm mt-1">Green = category winner. Tap any name for the full review.</p>
             </div>
             <Link to="/providers" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap">
@@ -189,7 +223,112 @@ export default function Home() {
             </Link>
           </div>
           <ProviderComparison />
-          <p className="text-xs text-slate-400 mt-3">Tyro in-person rate requires a quote. Verify all rates with providers before signing up.</p>
+          <p className="text-xs text-slate-400 mt-3">
+            Tyro in-person rate requires a quote. Verify all rates with providers before signing up.
+            {' '}Some links on this site may be referral links — this does not affect our editorial rankings.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Use-case scenarios ── */}
+      <section className="section-alt py-10 sm:py-12">
+        <div className="container-page">
+          <h2 className="text-2xl font-bold text-brand-dark mb-1">Which EFTPOS is Right for Your Work?</h2>
+          <p className="text-slate-500 text-sm mb-6">Common tradie scenarios — and the right provider for each.</p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              {
+                icon: '🏗️',
+                heading: 'Job site work without WiFi',
+                body: 'Customer WiFi is unavailable on new estates, commercial sites, and mid-reno houses. You need a SIM-enabled terminal.',
+                pick: 'Zeller',
+                pickId: 'zeller',
+                why: '1.4% · Optus SIM · $0/mo fee',
+              },
+              {
+                icon: '📵',
+                heading: 'Zero signal / underground / no coverage',
+                body: 'SIM can\'t help in basement car parks, concrete voids, or remote rural properties. Offline mode is the only option.',
+                pick: 'Square',
+                pickId: 'square',
+                why: 'Accepts cards offline, syncs on reconnect',
+              },
+              {
+                icon: '⚡',
+                heading: 'Same-day settlement for material runs',
+                body: 'Emergency call-out complete — need funds in your account before the hardware store closes.',
+                pick: 'Zeller',
+                pickId: 'zeller',
+                why: 'Same-day to Zeller account · next business day external',
+              },
+              {
+                icon: '💻',
+                heading: 'Online invoicing, subscriptions, or websites',
+                body: 'If your business takes payments online, via a website, or through a CRM integration, Stripe\'s API is unmatched.',
+                pick: 'Stripe',
+                pickId: 'stripe',
+                why: 'Best API · 24/7 support · payment links',
+              },
+            ].map(s => (
+              <div key={s.heading} className="bg-white rounded-2xl border border-slate-100 p-5 flex gap-4">
+                <span className="text-2xl flex-shrink-0 mt-0.5">{s.icon}</span>
+                <div className="min-w-0">
+                  <h3 className="text-sm font-bold text-brand-dark leading-snug mb-1">{s.heading}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed mb-3">{s.body}</p>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-xs font-semibold text-slate-500">Best pick:</span>
+                    <AffiliateButton
+                      providerId={s.pickId}
+                      label={`usecase-${s.pickId}`}
+                      campaign="homepage-usecase"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors"
+                    >
+                      {s.pick} →
+                    </AffiliateButton>
+                    <span className="text-[11px] text-slate-400 hidden sm:inline">{s.why}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mid-page CTA ── */}
+      <section className="section py-10 sm:py-12">
+        <div className="container-page">
+          <div className="bg-brand-dark rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8">
+            <div className="flex-1 min-w-0">
+              <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-1">Our top pick for most tradies</p>
+              <h2 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+                Zeller Terminal 1 — lowest rate, SIM-enabled, no lock-in
+              </h2>
+              <p className="text-slate-400 text-sm mt-1.5">
+                1.4% in-person · $0 monthly fee · Optus SIM ($15/mo optional) · Same-day settlement
+              </p>
+            </div>
+            <div className="flex flex-col sm:items-end gap-2.5 flex-shrink-0">
+              <AffiliateButton
+                providerId="zeller"
+                label="midpage-cta"
+                campaign="homepage-mid"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
+              >
+                Get Zeller →
+              </AffiliateButton>
+              <div className="flex items-center gap-3 text-xs text-slate-500">
+                <AffiliateButton providerId="square" label="midpage-alt-square" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
+                  Square
+                </AffiliateButton>
+                <span>·</span>
+                <AffiliateButton providerId="stripe" label="midpage-alt-stripe" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
+                  Stripe
+                </AffiliateButton>
+                <span>·</span>
+                <Link to="/providers" className="hover:text-slate-300 transition-colors">Compare all</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

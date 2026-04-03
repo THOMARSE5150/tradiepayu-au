@@ -22,6 +22,13 @@ const FEATURES = [
 // Winner per feature (shown as "best" badge on that provider's cell)
 const WINNER = { rate: 'zeller', hardware: 'zeller', sim: 'zeller', offline: 'square', settlement: 'zeller', monthly: 'zeller' }
 
+// Concise use-case positioning label per provider
+const USE_CASE = {
+  zeller: 'Best Overall',
+  square: 'Best Offline',
+  stripe: 'Best Integrations',
+}
+
 function getCell(p) {
   const rate = p.fees.in_person_percent
   const hw   = p.hardware[0]?.price_aud
@@ -102,7 +109,11 @@ export default function ProviderComparison() {
                       </span>
                       <div>
                         <p className={`text-sm font-bold leading-none ${isTop ? 'text-brand-blue' : 'text-brand-dark'}`}>{p.name}</p>
-                        <p className="text-[10px] text-slate-400 mt-0.5 leading-tight">{p.tagline}</p>
+                        {USE_CASE[p.id] && (
+                          <span className="inline-block mt-0.5 text-[9px] font-bold uppercase tracking-wide text-brand-blue bg-blue-50 px-1.5 py-[2px] rounded-full leading-none">
+                            {USE_CASE[p.id]}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -170,6 +181,11 @@ export default function ProviderComparison() {
                         {p.name[0]}
                       </span>
                       <span className={`text-sm font-bold ${isTop ? 'text-brand-blue' : 'text-brand-dark'}`}>{p.name}</span>
+                      {USE_CASE[p.id] && (
+                        <span className="text-[9px] font-bold uppercase tracking-wide text-brand-blue bg-blue-50 px-1.5 py-[2px] rounded-full leading-none">
+                          {USE_CASE[p.id]}
+                        </span>
+                      )}
                       <span className="text-[10px] text-slate-400 font-normal text-center leading-tight">{p.tagline}</span>
                     </Link>
                   </th>
