@@ -653,6 +653,20 @@ const jsonLd = [
   },
 ]
 
+const CATEGORY = {
+  providers: { label: 'Provider review', color: 'bg-blue-600',   text: 'text-blue-700',   border: 'border-t-blue-500',   pill: 'bg-blue-600/90' },
+  trades:    { label: 'Trade guide',     color: 'bg-amber-500',  text: 'text-amber-700',  border: 'border-t-amber-400',  pill: 'bg-amber-500/90' },
+  guides:    { label: 'Setup & fees',    color: 'bg-emerald-600',text: 'text-emerald-700',border: 'border-t-emerald-500',pill: 'bg-emerald-600/90' },
+  states:    { label: 'State guide',     color: 'bg-violet-600', text: 'text-violet-700', border: 'border-t-violet-500',  pill: 'bg-violet-600/90' },
+  cities:    { label: 'City guide',      color: 'bg-rose-500',   text: 'text-rose-700',   border: 'border-t-rose-500',    pill: 'bg-rose-500/90' },
+}
+
+const FEATURED = new Set([
+  'zeller-terminal-1-review-2026',
+  'zeller-vs-square-eftpos-tradies',
+  'zeller-vs-square-vs-stripe-eftpos-tradies-2026',
+])
+
 const FILTERS = [
   { id: 'all',       label: 'All guides' },
   { id: 'providers', label: 'Provider reviews' },
@@ -725,50 +739,65 @@ export default function BlogIndexPage() {
             </button>
           ))}
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((post, i) => (
-            <motion.article
-              key={post.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: Math.min(i, 5) * 0.06 }}
-              className="lg-light rounded-2xl overflow-hidden flex flex-col"
-            >
-              <Link to={`/blog/${post.slug}`} className="block overflow-hidden aspect-[16/9] bg-slate-100">
-                <img
-                  src={`https://images.unsplash.com/${post.image}?w=800&h=450&fit=crop&crop=center&q=80`}
-                  alt={post.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </Link>
-              <div className="p-5 flex flex-col flex-1">
-                <div className="flex items-center gap-2 text-xs text-slate-500 mb-3">
-                  <span>{post.date}</span>
-                  <span>·</span>
-                  <span>{post.readTime}</span>
-                </div>
-                <h2 className="text-base font-bold text-brand-dark leading-snug mb-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((post, i) => {
+            const cat = CATEGORY[post.category] ?? CATEGORY.guides
+            const featured = FEATURED.has(post.slug)
+            return (
+              <motion.article
+                key={post.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: Math.min(i, 5) * 0.06 }}
+                className={`bg-white rounded-2xl overflow-hidden flex flex-col border border-slate-100 border-t-4 shadow-sm hover:shadow-md transition-shadow ${cat.border}`}
+              >
+                {/* Image with overlays */}
+                <Link to={`/blog/${post.slug}`} className="block relative overflow-hidden aspect-[16/9] bg-slate-100 group">
+                  <img
+                    src={`https://images.unsplash.com/${post.image}?w=800&h=450&fit=crop&crop=center&q=80`}
+                    alt={post.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Bottom gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  {/* Category pill */}
+                  <span className={`absolute top-2.5 left-2.5 ${cat.pill} text-white text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full backdrop-blur-sm`}>
+                    {cat.label}
+                  </span>
+                  {/* Featured badge */}
+                  {featured && (
+                    <span className="absolute top-2.5 right-2.5 bg-amber-400 text-amber-900 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full">
+                      ★ Featured
+                    </span>
+                  )}
+                </Link>
+
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 text-xs text-slate-400 mb-2.5">
+                    <span>{post.date}</span>
+                    <span>·</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h2 className="text-sm font-bold text-brand-dark leading-snug mb-2">
+                    <Link to={`/blog/${post.slug}`} className="hover:text-brand-blue transition-colors">
+                      {post.title}
+                    </Link>
+                  </h2>
+                  <p className="text-xs text-slate-500 leading-relaxed flex-1 mb-4">
+                    {post.description}
+                  </p>
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="hover:text-brand-blue transition-colors"
+                    className={`inline-flex items-center gap-1 text-xs font-semibold ${cat.text} hover:underline`}
                   >
-                    {post.title}
+                    Read guide →
                   </Link>
-                </h2>
-                <p className="text-sm text-slate-600 leading-relaxed flex-1 mb-4">
-                  {post.description}
-                </p>
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
-                >
-                  Read guide →
-                </Link>
-              </div>
-            </motion.article>
-          ))}
+                </div>
+              </motion.article>
+            )
+          })}
         </div>
       </section>
     </>
