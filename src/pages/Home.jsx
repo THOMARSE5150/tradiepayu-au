@@ -181,7 +181,7 @@ export default function Home() {
               </AffiliateButton>
               {' · '}
               <AffiliateButton providerId="square" label="hero-fallback" campaign="homepage" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
-                Square (offline) ↗
+                Square (no signal) ↗
               </AffiliateButton>
             </p>
 
