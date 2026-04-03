@@ -8,6 +8,7 @@ import FaqSection from '../components/FaqSection'
 import ComparisonTable from '../components/ComparisonTable'
 import ProviderComparison from '../components/ProviderComparison'
 import Meta from '../components/Meta'
+import HeroTradeSelector from '../components/HeroTradeSelector'
 import { STATES } from '../data/states'
 
 const SITE_URL = 'https://tradiepayau.directory'
@@ -148,18 +149,7 @@ export default function Home() {
             <p className="hero-sub">
               5 providers compared. Real rates, no fluff — updated April 2026.
             </p>
-            <motion.a
-              href="#compare"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.15, ease: [0.34, 1.2, 0.64, 1] }}
-              whileHover={{ y: -2, scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 mt-7 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors"
-              style={{ boxShadow: '0 8px 28px rgba(0,106,255,0.40), inset 0 1px 0 rgba(255,255,255,0.15)' }}
-            >
-              See why Zeller wins ↓
-            </motion.a>
+            <HeroTradeSelector />
           </motion.div>
 
           {/* Stat pills */}
