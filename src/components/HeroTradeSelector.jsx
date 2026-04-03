@@ -10,7 +10,7 @@ const TRADES = [
   { slug: 'painters',     label: 'Painters',      icon: '🖌️' },
   { slug: 'concreters',   label: 'Concreters',    icon: '🧱' },
   { slug: 'carpenters',   label: 'Carpenters',    icon: '🪚' },
-  { slug: 'hvac',         label: 'HVAC',          icon: '❄️' },
+  { slug: 'glaziers',     label: 'Glaziers',      icon: '🪟' },
   { slug: 'landscapers',  label: 'Landscapers',   icon: '🌿' },
 ]
 
@@ -23,7 +23,7 @@ const REASONS = {
   painters:     'Empty houses have no WiFi. Zeller\'s SIM + payment links for deposits before the first brush stroke.',
   concreters:   'Collect the 50% deposit before the pour using Zeller payment links. Same-day settlement covers your ready-mix order.',
   carpenters:   'Workshop and on-site work without customer WiFi — Zeller SIM handles payment at practical completion.',
-  hvac:         'Mechanical rooms and plant rooms often have no signal beyond mobile. Optus SIM covers most metro and regional sites.',
+  glaziers:     'Emergency glazing happens at all hours in high-rises with no site WiFi. Zeller SIM on Optus keeps payments moving wherever the glass is.',
   landscapers:  'New estate landscaping has no utilities. Zeller SIM is the only reliable payment option on undeveloped land.',
 }
 
