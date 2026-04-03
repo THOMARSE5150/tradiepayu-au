@@ -46,7 +46,7 @@ async function getAccessToken(sa, scopes) {
   const now = Math.floor(Date.now() / 1000)
   const hdr = b64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }))
   const pay = b64url(JSON.stringify({
-    iss: sa.client_email, sub: sa.client_email,
+    iss: sa.client_email,
     scope: scopes.join(' '),
     aud: 'https://oauth2.googleapis.com/token',
     iat: now, exp: now + 3600,
