@@ -250,12 +250,12 @@ export default function ComparePage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2 flex-shrink-0">
-                  <AffiliateButton providerId={winner.id} label="compare-verdict" campaign="compare" className="inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">
-                    Get {winner.name} →
-                  </AffiliateButton>
-                  <Link to={`/providers/${winner.id}`} className="text-xs font-semibold text-brand-blue hover:underline">
-                    Review
+                  <Link to={`/providers/${winner.id}`} className="inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">
+                    Full review →
                   </Link>
+                  <AffiliateButton providerId={winner.id} label="compare-verdict" campaign="compare" className="text-xs font-semibold text-brand-blue hover:underline">
+                    Visit {winner.name} ↗
+                  </AffiliateButton>
                 </div>
               </div>
             </div>
@@ -387,7 +387,7 @@ export default function ComparePage() {
                 </ul>
                 <div className="mt-4 flex gap-2">
                   <AffiliateButton providerId={p.id} label="compare-bestfor" campaign="compare" className="flex-1 block text-center bg-brand-blue text-white font-semibold px-4 py-2.5 rounded-xl transition-all text-sm hover:bg-blue-600">
-                    Get {p.name} →
+                    Visit {p.name} ↗
                   </AffiliateButton>
                   <Link
                     to={`/providers/${p.id}`}
