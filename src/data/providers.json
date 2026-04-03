@@ -13,6 +13,13 @@
     "product_image_bg": "#eef2f7",
     "website": "https://www.myzeller.com/au",
     "affiliate_url": "https://www.myzeller.com/au",
+    "urls": {
+      "signup":    "https://dashboard.myzeller.com/signup",
+      "pricing":   "https://www.myzeller.com/au/pricing",
+      "hardware":  "https://www.myzeller.com/au/eftpos-terminal-machines",
+      "invoicing": "https://www.myzeller.com/au/invoices",
+      "contact":   "https://www.myzeller.com/au/contact"
+    },
     "founded": 2020,
     "hq": "Melbourne, VIC",
     "type": "Australian fintech",
@@ -135,6 +142,13 @@
     "product_image_bg": "#f8fafc",
     "website": "https://squareup.com/au",
     "affiliate_url": "https://squareup.com/au",
+    "urls": {
+      "signup":    "https://squareup.com/au/en/register",
+      "pricing":   "https://squareup.com/au/en/payments/pricing",
+      "hardware":  "https://squareup.com/au/en/hardware/terminal",
+      "invoicing": "https://squareup.com/au/en/invoices",
+      "contact":   "https://squareup.com/au/en/help/contact"
+    },
     "founded": 2009,
     "hq": "San Francisco (AU operations)",
     "type": "Global fintech",
@@ -239,6 +253,13 @@
     "product_image_bg": "#f0f0ff",
     "website": "https://stripe.com/au",
     "affiliate_url": "https://stripe.com/au",
+    "urls": {
+      "signup":    "https://dashboard.stripe.com/register",
+      "pricing":   "https://stripe.com/au/pricing",
+      "hardware":  "https://stripe.com/au/terminal",
+      "invoicing": "https://stripe.com/au/invoicing",
+      "contact":   "https://stripe.com/au/contact"
+    },
     "founded": 2010,
     "hq": "San Francisco (AU operations)",
     "type": "Global fintech",
@@ -346,6 +367,12 @@
     "product_image_bg": "#f0faf4",
     "website": "https://www.tyro.com",
     "affiliate_url": "https://www.tyro.com",
+    "urls": {
+      "signup":    "https://www.tyro.com/get-started/",
+      "pricing":   "https://www.tyro.com/pricing/",
+      "hardware":  "https://www.tyro.com/eftpos-terminal/",
+      "contact":   "https://www.tyro.com/contact-us/"
+    },
     "founded": 2003,
     "hq": "Sydney, NSW",
     "type": "Australian fintech / bank",
