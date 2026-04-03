@@ -10,7 +10,7 @@ import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
-import StickySignUpBar from '../../components/StickySignUpBar'
+import StickyProviderBar from '../../components/StickyProviderBar'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -96,7 +96,7 @@ export default function StripePage() {
         </div>
       </header>
 
-      <StickySignUpBar providerId="stripe" providerName="Stripe Terminal" />
+      <StickyProviderBar providerId="stripe" />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">

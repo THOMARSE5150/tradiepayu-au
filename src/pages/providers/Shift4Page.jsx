@@ -9,7 +9,7 @@ import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
-import StickySignUpBar from '../../components/StickySignUpBar'
+import StickyProviderBar from '../../components/StickyProviderBar'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -96,7 +96,7 @@ export default function Shift4Page() {
         </div>
       </header>
 
-      <StickySignUpBar providerId="shift4" providerName="Shift4 EFTPOS" />
+      <StickyProviderBar providerId="shift4" />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">

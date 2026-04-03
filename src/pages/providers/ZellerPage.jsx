@@ -11,7 +11,7 @@ import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
 import StarRating from '../../components/StarRating'
-import StickySignUpBar from '../../components/StickySignUpBar'
+import StickyProviderBar from '../../components/StickyProviderBar'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -100,7 +100,7 @@ export default function ZellerPage() {
           </nav>
         </div>
       </header>
-      <StickySignUpBar providerId="zeller" providerName="Zeller Terminal 1" />
+      <StickyProviderBar providerId="zeller" />
       <ProviderVerdict providerId="zeller" />
 
       {/* Quick Summary */}
