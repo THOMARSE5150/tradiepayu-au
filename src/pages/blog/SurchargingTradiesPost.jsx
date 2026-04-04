@@ -159,7 +159,7 @@ export default function SurchargingTradiesPost() {
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">How to enable surcharging on Zeller</h2>
           <ol className="list-decimal pl-5 text-sm text-slate-600 space-y-2 mt-2">
-            <li>Log in to the Zeller dashboard at myzeller.com.au</li>
+            <li>Log in to the Zeller dashboard at myzeller.com/au</li>
             <li>Go to <strong>Settings → Terminal</strong> and select your terminal</li>
             <li>Enable <strong>Surcharging</strong> and set the percentage to 1.4% (matching the standard in-person rate)</li>
             <li>Save. The surcharge will now be applied automatically and displayed on the terminal screen before each payment</li>
