@@ -158,10 +158,15 @@ export default function BlogIndexPage() {
                 {/* Image with overlays */}
                 <Link to={`/blog/${post.slug}`} className="block relative overflow-hidden aspect-[16/9] bg-slate-100 group">
                   <img
-                    src={`https://images.unsplash.com/${post.image}?w=800&h=450&fit=crop&crop=center&q=80`}
+                    src={`https://images.unsplash.com/${post.image}?w=800&h=450&fit=crop&crop=${post.imageCrop || 'center'}&q=80`}
                     alt={post.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    onError={e => {
+                      e.currentTarget.onerror = null
+                      e.currentTarget.parentElement.style.background = 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)'
+                      e.currentTarget.style.display = 'none'
+                    }}
                   />
                   {/* Bottom gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />

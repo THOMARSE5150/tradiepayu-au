@@ -18,23 +18,23 @@
 //
 // TRADE IMAGE MAP (base photo IDs):
 //   builders/construction → photo-1504307651254-35680f356dfd
-//   plumbers              → photo-1585771724684-38269d6639fd
+//   plumbers              → photo-1504275427011-2a3c01e96d1d
 //   electricians          → photo-1621905252507-b35492cc74b4
 //   painters              → photo-1589939705384-5185137a7f0f  (some WA/SA variants use photo-1562259929-b4e1fd3aef09 — already set, kept as-is)
 //   roofers               → photo-1558618666-fcd25c85cd64
 //   carpenters            → photo-1416879595882-3373a0480b5b
 //   concreters            → photo-1565008447742-97f6f38c985c
 //   glaziers              → photo-1527689368864-3a821dbccc34
-//   pool builders         → photo-1519315901367-f34ff9154487
-//   welders               → photo-1563453392212-326f5e854473
+//   pool builders         → photo-1575429198097-0414ec08e8cd
+//   welders               → photo-1504917595217-d4dc5ebe6122
 //   tilers                → photo-1584622650111-993a426fbf0a
-//   gas fitters           → photo-1558449028-b53a39d100fc
-//   fencers               → photo-1518012312832-96aea3c91144
-//   hvac                  → photo-1561144257-b16878bf4573
+//   gas fitters           → photo-1609220136736-443140cfeaa8
+//   fencers               → photo-1530124566582-a618bc2615dc
+//   hvac                  → photo-1581094651181-35942b2a0993
 //   cleaners              → photo-1581578731548-c64695cc6952
-//   plasterers            → photo-1574362848149-11496d93a7c7
-//   pest controllers      → photo-1561155963-e5b83e6d3e84
-//   landscapers           → photo-1558636508-e0969525dad4
+//   plasterers            → photo-1557804506-669a67965ba0
+//   pest controllers      → photo-1558346490-a72e53ae2d4f
+//   landscapers           → photo-1508193638397-1c4234db14d8
 
 export const posts = [
   {
@@ -174,7 +174,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '6 min read',
     category: 'trades',
-    image: 'photo-1585771724684-38269d6639fd',
+    image: 'photo-1504275427011-2a3c01e96d1d',
     imageAlt: 'Plumber at work on pipes with a portable payment device nearby',
   },
   {
@@ -234,7 +234,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1561144257-b16878bf4573',
+    image: 'photo-1581094651181-35942b2a0993',
     imageAlt: 'HVAC technician servicing a rooftop air conditioning unit',
   },
   {
@@ -284,7 +284,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1558449028-b53a39d100fc',
+    image: 'photo-1609220136736-443140cfeaa8',
     imageAlt: 'Gas fitter connecting a gas line fitting with a wrench',
   },
   {
@@ -294,7 +294,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1518012312832-96aea3c91144',
+    image: 'photo-1530124566582-a618bc2615dc',
     imageAlt: 'Fencer installing a timber fence on a residential property',
   },
   {
@@ -304,7 +304,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1574362848149-11496d93a7c7',
+    image: 'photo-1557804506-669a67965ba0',
     imageAlt: 'Plasterer applying render to a wall with a trowel',
   },
   {
@@ -314,7 +314,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '6 min read',
     category: 'trades',
-    image: 'photo-1519315901367-f34ff9154487',
+    image: 'photo-1575429198097-0414ec08e8cd',
     imageAlt: 'Pool builder working on the shell of a new in-ground swimming pool',
   },
   {
@@ -324,7 +324,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1561155963-e5b83e6d3e84',
+    image: 'photo-1558346490-a72e53ae2d4f',
     imageAlt: 'Pest controller in protective gear treating a property',
   },
   {
@@ -334,7 +334,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1563453392212-326f5e854473',
+    image: 'photo-1504917595217-d4dc5ebe6122',
     imageAlt: 'Welder in protective mask welding metal on an industrial site',
   },
   {
@@ -354,7 +354,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'trades',
-    image: 'photo-1558636508-e0969525dad4',
+    image: 'photo-1508193638397-1c4234db14d8',
     imageAlt: 'Landscaper laying turf in a residential garden',
   },
   // State guides — electricians
@@ -367,6 +367,7 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1621905252507-b35492cc74b4',
+    imageCrop: 'entropy',
     imageAlt: 'Electrician working on a switchboard panel in New South Wales',
   },
   {
@@ -377,6 +378,7 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1621905252507-b35492cc74b4',
+    imageCrop: 'top',
     imageAlt: 'Electrician working on a switchboard panel in Victoria',
   },
   {
@@ -387,10 +389,11 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1621905252507-b35492cc74b4',
+    imageCrop: 'bottom',
     imageAlt: 'Electrician working on a switchboard panel in Queensland',
   },
   // State guides — plumbers
-  // Shares plumbers base image (photo-1585771724684-38269d6639fd) — intentional, see notes above
+  // Shares plumbers base image (photo-1504275427011-2a3c01e96d1d) — intentional, see notes above
   {
     slug: 'best-eftpos-plumbers-nsw-2026',
     title: 'Best EFTPOS for Plumbers in NSW (2026)',
@@ -398,7 +401,8 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'states',
-    image: 'photo-1585771724684-38269d6639fd',
+    image: 'photo-1504275427011-2a3c01e96d1d',
+    imageCrop: 'entropy',
     imageAlt: 'Plumber at work on pipes in New South Wales',
   },
   {
@@ -408,7 +412,8 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'states',
-    image: 'photo-1585771724684-38269d6639fd',
+    image: 'photo-1504275427011-2a3c01e96d1d',
+    imageCrop: 'top',
     imageAlt: 'Plumber at work on pipes in Victoria',
   },
   {
@@ -418,7 +423,8 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'states',
-    image: 'photo-1585771724684-38269d6639fd',
+    image: 'photo-1504275427011-2a3c01e96d1d',
+    imageCrop: 'bottom',
     imageAlt: 'Plumber at work on pipes in Queensland',
   },
   // State guides — builders
@@ -431,6 +437,7 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1504307651254-35680f356dfd',
+    imageCrop: 'entropy',
     imageAlt: 'Builder on a construction site in New South Wales',
   },
   {
@@ -441,6 +448,7 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1504307651254-35680f356dfd',
+    imageCrop: 'top',
     imageAlt: 'Builder on a construction site in Victoria',
   },
   {
@@ -451,71 +459,72 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1504307651254-35680f356dfd',
+    imageCrop: 'bottom',
     imageAlt: 'Builder on a construction site in Queensland',
   },
   // City guides — electricians
-  { slug: 'best-eftpos-electricians-sydney-2026', title: 'Best EFTPOS for Electricians in Sydney (2026)', description: 'Best EFTPOS for Sydney electricians — Western Sydney estates, CBD switchboard rooms, and suburban call-outs. Lowest rate and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in Sydney' },
-  { slug: 'best-eftpos-electricians-melbourne-2026', title: 'Best EFTPOS for Electricians in Melbourne (2026)', description: 'Best EFTPOS for Melbourne electricians — outer growth corridors, CBD fit-outs, and suburban call-outs. Lowest rate and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in Melbourne' },
-  { slug: 'best-eftpos-electricians-brisbane-2026', title: 'Best EFTPOS for Electricians in Brisbane (2026)', description: 'Best EFTPOS for Brisbane electricians — SEQ estates, inner-city high-rise, and subtropical call-outs. Lowest rate and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in Brisbane' },
+  { slug: 'best-eftpos-electricians-sydney-2026', title: 'Best EFTPOS for Electricians in Sydney (2026)', description: 'Best EFTPOS for Sydney electricians — Western Sydney estates, CBD switchboard rooms, and suburban call-outs. Lowest rate and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'left', imageAlt: 'Electrician working on a switchboard panel in Sydney' },
+  { slug: 'best-eftpos-electricians-melbourne-2026', title: 'Best EFTPOS for Electricians in Melbourne (2026)', description: 'Best EFTPOS for Melbourne electricians — outer growth corridors, CBD fit-outs, and suburban call-outs. Lowest rate and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'right', imageAlt: 'Electrician working on a switchboard panel in Melbourne' },
+  { slug: 'best-eftpos-electricians-brisbane-2026', title: 'Best EFTPOS for Electricians in Brisbane (2026)', description: 'Best EFTPOS for Brisbane electricians — SEQ estates, inner-city high-rise, and subtropical call-outs. Lowest rate and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'faces', imageAlt: 'Electrician working on a switchboard panel in Brisbane' },
   // City guides — plumbers
-  { slug: 'best-eftpos-plumbers-sydney-2026', title: 'Best EFTPOS for Plumbers in Sydney (2026)', description: 'Best EFTPOS for Sydney plumbers — emergency call-outs across Western Sydney, high-rise strata, and new estate builds. Same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in Sydney' },
-  { slug: 'best-eftpos-plumbers-melbourne-2026', title: 'Best EFTPOS for Plumbers in Melbourne (2026)', description: 'Best EFTPOS for Melbourne plumbers — emergency call-outs, growth corridor builds, and CBD high-rise. Same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in Melbourne' },
-  { slug: 'best-eftpos-plumbers-brisbane-2026', title: 'Best EFTPOS for Plumbers in Brisbane (2026)', description: 'Best EFTPOS for Brisbane plumbers — SEQ growth areas, flood-damage call-outs, and new estate builds. Same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in Brisbane' },
+  { slug: 'best-eftpos-plumbers-sydney-2026', title: 'Best EFTPOS for Plumbers in Sydney (2026)', description: 'Best EFTPOS for Sydney plumbers — emergency call-outs across Western Sydney, high-rise strata, and new estate builds. Same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'left', imageAlt: 'Plumber at work on pipes in Sydney' },
+  { slug: 'best-eftpos-plumbers-melbourne-2026', title: 'Best EFTPOS for Plumbers in Melbourne (2026)', description: 'Best EFTPOS for Melbourne plumbers — emergency call-outs, growth corridor builds, and CBD high-rise. Same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'right', imageAlt: 'Plumber at work on pipes in Melbourne' },
+  { slug: 'best-eftpos-plumbers-brisbane-2026', title: 'Best EFTPOS for Plumbers in Brisbane (2026)', description: 'Best EFTPOS for Brisbane plumbers — SEQ growth areas, flood-damage call-outs, and new estate builds. Same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'faces', imageAlt: 'Plumber at work on pipes in Brisbane' },
   // City guides — builders
-  { slug: 'best-eftpos-builders-sydney-2026', title: 'Best EFTPOS for Builders in Sydney (2026)', description: 'Best EFTPOS for Sydney builders — Western Sydney estates, inner-city apartment blocks, and payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in Sydney' },
-  { slug: 'best-eftpos-builders-melbourne-2026', title: 'Best EFTPOS for Builders in Melbourne (2026)', description: 'Best EFTPOS for Melbourne builders — outer growth corridors, inner-city apartment builds, and payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in Melbourne' },
-  { slug: 'best-eftpos-builders-brisbane-2026', title: 'Best EFTPOS for Builders in Brisbane (2026)', description: 'Best EFTPOS for Brisbane builders — SEQ housing boom, Sunshine Coast growth, and payment solutions for large project invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in Brisbane' },
+  { slug: 'best-eftpos-builders-sydney-2026', title: 'Best EFTPOS for Builders in Sydney (2026)', description: 'Best EFTPOS for Sydney builders — Western Sydney estates, inner-city apartment blocks, and payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'left', imageAlt: 'Builder on a construction site in Sydney' },
+  { slug: 'best-eftpos-builders-melbourne-2026', title: 'Best EFTPOS for Builders in Melbourne (2026)', description: 'Best EFTPOS for Melbourne builders — outer growth corridors, inner-city apartment builds, and payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'right', imageAlt: 'Builder on a construction site in Melbourne' },
+  { slug: 'best-eftpos-builders-brisbane-2026', title: 'Best EFTPOS for Builders in Brisbane (2026)', description: 'Best EFTPOS for Brisbane builders — SEQ housing boom, Sunshine Coast growth, and payment solutions for large project invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'faces', imageAlt: 'Builder on a construction site in Brisbane' },
   // WA / SA state posts
-  { slug: 'best-eftpos-electricians-wa-2026', title: 'Best EFTPOS for Electricians in Western Australia (2026)', description: 'Best EFTPOS for WA electricians — Perth metro estates, remote mining regions, and regional WA. SIM connectivity and lowest rate.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in Western Australia' },
-  { slug: 'best-eftpos-plumbers-wa-2026', title: 'Best EFTPOS for Plumbers in Western Australia (2026)', description: 'Best EFTPOS for WA plumbers — Perth metro, remote mining sites, and regional WA emergency call-outs. Same-day settlement and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in Western Australia' },
-  { slug: 'best-eftpos-builders-wa-2026', title: 'Best EFTPOS for Builders in Western Australia (2026)', description: 'Best EFTPOS for WA builders — Perth growth corridors, remote construction sites, and payment solutions for large project invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in Western Australia' },
-  { slug: 'best-eftpos-electricians-sa-2026', title: 'Best EFTPOS for Electricians in South Australia (2026)', description: 'Best EFTPOS for SA electricians — Adelaide metro, regional SA, and remote outback sites. SIM connectivity and lowest rate.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in South Australia' },
-  { slug: 'best-eftpos-plumbers-sa-2026', title: 'Best EFTPOS for Plumbers in South Australia (2026)', description: 'Best EFTPOS for SA plumbers — Adelaide metro and regional SA emergency call-outs. Same-day settlement and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in South Australia' },
-  { slug: 'best-eftpos-builders-sa-2026', title: 'Best EFTPOS for Builders in South Australia (2026)', description: 'Best EFTPOS for SA builders — Adelaide growth suburbs and regional SA. Payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in South Australia' },
+  { slug: 'best-eftpos-electricians-wa-2026', title: 'Best EFTPOS for Electricians in Western Australia (2026)', description: 'Best EFTPOS for WA electricians — Perth metro estates, remote mining regions, and regional WA. SIM connectivity and lowest rate.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'edges', imageAlt: 'Electrician working on a switchboard panel in Western Australia' },
+  { slug: 'best-eftpos-plumbers-wa-2026', title: 'Best EFTPOS for Plumbers in Western Australia (2026)', description: 'Best EFTPOS for WA plumbers — Perth metro, remote mining sites, and regional WA emergency call-outs. Same-day settlement and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'edges', imageAlt: 'Plumber at work on pipes in Western Australia' },
+  { slug: 'best-eftpos-builders-wa-2026', title: 'Best EFTPOS for Builders in Western Australia (2026)', description: 'Best EFTPOS for WA builders — Perth growth corridors, remote construction sites, and payment solutions for large project invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'edges', imageAlt: 'Builder on a construction site in Western Australia' },
+  { slug: 'best-eftpos-electricians-sa-2026', title: 'Best EFTPOS for Electricians in South Australia (2026)', description: 'Best EFTPOS for SA electricians — Adelaide metro, regional SA, and remote outback sites. SIM connectivity and lowest rate.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'entropy', imageAlt: 'Electrician working on a switchboard panel in South Australia' },
+  { slug: 'best-eftpos-plumbers-sa-2026', title: 'Best EFTPOS for Plumbers in South Australia (2026)', description: 'Best EFTPOS for SA plumbers — Adelaide metro and regional SA emergency call-outs. Same-day settlement and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'entropy', imageAlt: 'Plumber at work on pipes in South Australia' },
+  { slug: 'best-eftpos-builders-sa-2026', title: 'Best EFTPOS for Builders in South Australia (2026)', description: 'Best EFTPOS for SA builders — Adelaide growth suburbs and regional SA. Payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'entropy', imageAlt: 'Builder on a construction site in South Australia' },
   // Painters state guides
   // Shares painters base image (photo-1589939705384-5185137a7f0f) — intentional, see notes above
-  { slug: 'best-eftpos-painters-nsw-2026', title: 'Best EFTPOS for Painters in NSW (2026)', description: 'Best EFTPOS for NSW painters — deposit collection before starting, empty house WiFi challenges, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1589939705384-5185137a7f0f', imageAlt: 'Painter rolling paint on an interior wall in New South Wales' },
-  { slug: 'best-eftpos-painters-vic-2026', title: 'Best EFTPOS for Painters in Victoria (2026)', description: 'Best EFTPOS for Victorian painters — deposits, empty-building WiFi issues, and same-day settlement across Melbourne and regional VIC.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1589939705384-5185137a7f0f', imageAlt: 'Painter rolling paint on an interior wall in Victoria' },
-  { slug: 'best-eftpos-painters-qld-2026', title: 'Best EFTPOS for Painters in Queensland (2026)', description: 'Best EFTPOS for Queensland painters — deposits, insurance work, and same-day settlement across SEQ and regional QLD.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1589939705384-5185137a7f0f', imageAlt: 'Painter rolling paint on an interior wall in Queensland' },
+  { slug: 'best-eftpos-painters-nsw-2026', title: 'Best EFTPOS for Painters in NSW (2026)', description: 'Best EFTPOS for NSW painters — deposit collection before starting, empty house WiFi challenges, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1589939705384-5185137a7f0f', imageCrop: 'entropy', imageAlt: 'Painter rolling paint on an interior wall in New South Wales' },
+  { slug: 'best-eftpos-painters-vic-2026', title: 'Best EFTPOS for Painters in Victoria (2026)', description: 'Best EFTPOS for Victorian painters — deposits, empty-building WiFi issues, and same-day settlement across Melbourne and regional VIC.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1589939705384-5185137a7f0f', imageCrop: 'top', imageAlt: 'Painter rolling paint on an interior wall in Victoria' },
+  { slug: 'best-eftpos-painters-qld-2026', title: 'Best EFTPOS for Painters in Queensland (2026)', description: 'Best EFTPOS for Queensland painters — deposits, insurance work, and same-day settlement across SEQ and regional QLD.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1589939705384-5185137a7f0f', imageCrop: 'bottom', imageAlt: 'Painter rolling paint on an interior wall in Queensland' },
   // Concreters state guides
   // Shares concreters base image (photo-1565008447742-97f6f38c985c) — intentional, see notes above
-  { slug: 'best-eftpos-concreters-nsw-2026', title: 'Best EFTPOS for Concreters in NSW (2026)', description: 'Best EFTPOS for NSW concreters — large deposits before the pour, new estate sites, and same-day settlement for material purchasing.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in New South Wales' },
-  { slug: 'best-eftpos-concreters-vic-2026', title: 'Best EFTPOS for Concreters in Victoria (2026)', description: 'Best EFTPOS for Victorian concreters — large deposits, Melbourne growth estates, and same-day settlement for material purchasing.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Victoria' },
+  { slug: 'best-eftpos-concreters-nsw-2026', title: 'Best EFTPOS for Concreters in NSW (2026)', description: 'Best EFTPOS for NSW concreters — large deposits before the pour, new estate sites, and same-day settlement for material purchasing.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'entropy', imageAlt: 'Concreter smoothing a slab in New South Wales' },
+  { slug: 'best-eftpos-concreters-vic-2026', title: 'Best EFTPOS for Concreters in Victoria (2026)', description: 'Best EFTPOS for Victorian concreters — large deposits, Melbourne growth estates, and same-day settlement for material purchasing.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'top', imageAlt: 'Concreter smoothing a slab in Victoria' },
   // Painters city guides
-  { slug: 'best-eftpos-painters-sydney-2026', title: 'Best EFTPOS for Painters in Sydney (2026)', description: 'Best EFTPOS for Sydney painters — inner-west renovations, empty-house WiFi issues, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1589939705384-5185137a7f0f', imageAlt: 'Painter rolling paint on an interior wall in Sydney' },
-  { slug: 'best-eftpos-painters-melbourne-2026', title: 'Best EFTPOS for Painters in Melbourne (2026)', description: 'Best EFTPOS for Melbourne painters — inner-suburb renovations, outer growth corridor builds, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1589939705384-5185137a7f0f', imageAlt: 'Painter rolling paint on an interior wall in Melbourne' },
-  { slug: 'best-eftpos-painters-brisbane-2026', title: 'Best EFTPOS for Painters in Brisbane (2026)', description: 'Best EFTPOS for Brisbane painters — SEQ new builds, insurance repaint work, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1589939705384-5185137a7f0f', imageAlt: 'Painter rolling paint on an interior wall in Brisbane' },
+  { slug: 'best-eftpos-painters-sydney-2026', title: 'Best EFTPOS for Painters in Sydney (2026)', description: 'Best EFTPOS for Sydney painters — inner-west renovations, empty-house WiFi issues, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1589939705384-5185137a7f0f', imageCrop: 'left', imageAlt: 'Painter rolling paint on an interior wall in Sydney' },
+  { slug: 'best-eftpos-painters-melbourne-2026', title: 'Best EFTPOS for Painters in Melbourne (2026)', description: 'Best EFTPOS for Melbourne painters — inner-suburb renovations, outer growth corridor builds, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1589939705384-5185137a7f0f', imageCrop: 'right', imageAlt: 'Painter rolling paint on an interior wall in Melbourne' },
+  { slug: 'best-eftpos-painters-brisbane-2026', title: 'Best EFTPOS for Painters in Brisbane (2026)', description: 'Best EFTPOS for Brisbane painters — SEQ new builds, insurance repaint work, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1589939705384-5185137a7f0f', imageCrop: 'faces', imageAlt: 'Painter rolling paint on an interior wall in Brisbane' },
   // Concreters city guides
-  { slug: 'best-eftpos-concreters-sydney-2026', title: 'Best EFTPOS for Concreters in Sydney (2026)', description: 'Best EFTPOS for Sydney concreters — large deposits before the pour, Western Sydney estate slabs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Sydney' },
-  { slug: 'best-eftpos-concreters-melbourne-2026', title: 'Best EFTPOS for Concreters in Melbourne (2026)', description: 'Best EFTPOS for Melbourne concreters — large deposits, outer growth estate slabs, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Melbourne' },
-  { slug: 'best-eftpos-concreters-brisbane-2026', title: 'Best EFTPOS for Concreters in Brisbane (2026)', description: 'Best EFTPOS for Brisbane concreters — SEQ new estate slabs, large deposits before the pour, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Brisbane' },
+  { slug: 'best-eftpos-concreters-sydney-2026', title: 'Best EFTPOS for Concreters in Sydney (2026)', description: 'Best EFTPOS for Sydney concreters — large deposits before the pour, Western Sydney estate slabs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'bottom', imageAlt: 'Concreter smoothing a slab in Sydney' },
+  { slug: 'best-eftpos-concreters-melbourne-2026', title: 'Best EFTPOS for Concreters in Melbourne (2026)', description: 'Best EFTPOS for Melbourne concreters — large deposits, outer growth estate slabs, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'left', imageAlt: 'Concreter smoothing a slab in Melbourne' },
+  { slug: 'best-eftpos-concreters-brisbane-2026', title: 'Best EFTPOS for Concreters in Brisbane (2026)', description: 'Best EFTPOS for Brisbane concreters — SEQ new estate slabs, large deposits before the pour, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'right', imageAlt: 'Concreter smoothing a slab in Brisbane' },
   // Perth city guides
-  { slug: 'best-eftpos-electricians-perth-2026', title: 'Best EFTPOS for Electricians in Perth (2026)', description: 'Best EFTPOS for Perth electricians — outer growth estate builds, mining sector commercial work, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in Perth' },
-  { slug: 'best-eftpos-plumbers-perth-2026', title: 'Best EFTPOS for Plumbers in Perth (2026)', description: 'Best EFTPOS for Perth plumbers — outer estate builds, after-hours emergency call-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in Perth' },
-  { slug: 'best-eftpos-builders-perth-2026', title: 'Best EFTPOS for Builders in Perth (2026)', description: 'Best EFTPOS for Perth builders — growth estate house-and-land builds, progress payments, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in Perth' },
+  { slug: 'best-eftpos-electricians-perth-2026', title: 'Best EFTPOS for Electricians in Perth (2026)', description: 'Best EFTPOS for Perth electricians — outer growth estate builds, mining sector commercial work, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'top', imageAlt: 'Electrician working on a switchboard panel in Perth' },
+  { slug: 'best-eftpos-plumbers-perth-2026', title: 'Best EFTPOS for Plumbers in Perth (2026)', description: 'Best EFTPOS for Perth plumbers — outer estate builds, after-hours emergency call-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'top', imageAlt: 'Plumber at work on pipes in Perth' },
+  { slug: 'best-eftpos-builders-perth-2026', title: 'Best EFTPOS for Builders in Perth (2026)', description: 'Best EFTPOS for Perth builders — growth estate house-and-land builds, progress payments, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'edges', imageAlt: 'Builder on a construction site in Perth' },
   // Adelaide city guides
-  { slug: 'best-eftpos-electricians-adelaide-2026', title: 'Best EFTPOS for Electricians in Adelaide (2026)', description: 'Best EFTPOS for Adelaide electricians — northern suburbs estate builds, commercial fit-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageAlt: 'Electrician working on a switchboard panel in Adelaide' },
-  { slug: 'best-eftpos-plumbers-adelaide-2026', title: 'Best EFTPOS for Plumbers in Adelaide (2026)', description: 'Best EFTPOS for Adelaide plumbers — growth estate plumbing, after-hours call-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1585771724684-38269d6639fd', imageAlt: 'Plumber at work on pipes in Adelaide' },
-  { slug: 'best-eftpos-builders-adelaide-2026', title: 'Best EFTPOS for Builders in Adelaide (2026)', description: 'Best EFTPOS for Adelaide builders — northern suburbs estate builds, progress payments, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageAlt: 'Builder on a construction site in Adelaide' },
+  { slug: 'best-eftpos-electricians-adelaide-2026', title: 'Best EFTPOS for Electricians in Adelaide (2026)', description: 'Best EFTPOS for Adelaide electricians — northern suburbs estate builds, commercial fit-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1621905252507-b35492cc74b4', imageCrop: 'bottom', imageAlt: 'Electrician working on a switchboard panel in Adelaide' },
+  { slug: 'best-eftpos-plumbers-adelaide-2026', title: 'Best EFTPOS for Plumbers in Adelaide (2026)', description: 'Best EFTPOS for Adelaide plumbers — growth estate plumbing, after-hours call-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504275427011-2a3c01e96d1d', imageCrop: 'bottom', imageAlt: 'Plumber at work on pipes in Adelaide' },
+  { slug: 'best-eftpos-builders-adelaide-2026', title: 'Best EFTPOS for Builders in Adelaide (2026)', description: 'Best EFTPOS for Adelaide builders — northern suburbs estate builds, progress payments, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'faces', imageAlt: 'Builder on a construction site in Adelaide' },
   // Roofers state guides
   // Shares roofers base image (photo-1558618666-fcd25c85cd64) — intentional, see notes above
-  { slug: 'best-eftpos-roofers-nsw-2026', title: 'Best EFTPOS for Roofers in NSW (2026)', description: 'Best EFTPOS for NSW roofers — storm-damage insurance work, large job values, and same-day settlement across Sydney and regional NSW.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1558618666-fcd25c85cd64', imageAlt: 'Roofer working on a tile roof in New South Wales' },
-  { slug: 'best-eftpos-roofers-vic-2026', title: 'Best EFTPOS for Roofers in Victoria (2026)', description: 'Best EFTPOS for Victorian roofers — hailstorm insurance claims, SIM connectivity at roof level, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1558618666-fcd25c85cd64', imageAlt: 'Roofer working on a tile roof in Victoria' },
-  { slug: 'best-eftpos-roofers-qld-2026', title: 'Best EFTPOS for Roofers in Queensland (2026)', description: 'Best EFTPOS for QLD roofers — cyclone and storm season insurance work, large job values, and rapid payment collection.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1558618666-fcd25c85cd64', imageAlt: 'Roofer working on a tile roof in Queensland' },
+  { slug: 'best-eftpos-roofers-nsw-2026', title: 'Best EFTPOS for Roofers in NSW (2026)', description: 'Best EFTPOS for NSW roofers — storm-damage insurance work, large job values, and same-day settlement across Sydney and regional NSW.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1558618666-fcd25c85cd64', imageCrop: 'entropy', imageAlt: 'Roofer working on a tile roof in New South Wales' },
+  { slug: 'best-eftpos-roofers-vic-2026', title: 'Best EFTPOS for Roofers in Victoria (2026)', description: 'Best EFTPOS for Victorian roofers — hailstorm insurance claims, SIM connectivity at roof level, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1558618666-fcd25c85cd64', imageCrop: 'top', imageAlt: 'Roofer working on a tile roof in Victoria' },
+  { slug: 'best-eftpos-roofers-qld-2026', title: 'Best EFTPOS for Roofers in Queensland (2026)', description: 'Best EFTPOS for QLD roofers — cyclone and storm season insurance work, large job values, and rapid payment collection.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1558618666-fcd25c85cd64', imageCrop: 'bottom', imageAlt: 'Roofer working on a tile roof in Queensland' },
   // Painters & Concreters × WA/SA — painters WA/SA use photo-1562259929-b4e1fd3aef09 (already set in original, kept as-is)
-  { slug: 'best-eftpos-painters-wa-2026', title: 'Best EFTPOS for Painters in Western Australia (2026)', description: 'Best EFTPOS for WA painters — Perth new estates, remote mining town work, and deposit collection before starting multi-day jobs.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageAlt: 'Painter rolling paint on an exterior wall in Western Australia' },
-  { slug: 'best-eftpos-painters-sa-2026', title: 'Best EFTPOS for Painters in South Australia (2026)', description: 'Best EFTPOS for SA painters — Adelaide Hills heritage work, outer suburb new builds, and deposit collection before starting.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageAlt: 'Painter rolling paint on an exterior wall in South Australia' },
-  { slug: 'best-eftpos-concreters-wa-2026', title: 'Best EFTPOS for Concreters in Western Australia (2026)', description: 'Best EFTPOS for WA concreters — Perth new estate slabs, large deposits before the pour, and SIM connectivity on development sites.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Western Australia' },
-  { slug: 'best-eftpos-concreters-sa-2026', title: 'Best EFTPOS for Concreters in South Australia (2026)', description: 'Best EFTPOS for SA concreters — Adelaide new estate slabs, large deposits before the pour, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in South Australia' },
+  { slug: 'best-eftpos-painters-wa-2026', title: 'Best EFTPOS for Painters in Western Australia (2026)', description: 'Best EFTPOS for WA painters — Perth new estates, remote mining town work, and deposit collection before starting multi-day jobs.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'entropy', imageAlt: 'Painter rolling paint on an exterior wall in Western Australia' },
+  { slug: 'best-eftpos-painters-sa-2026', title: 'Best EFTPOS for Painters in South Australia (2026)', description: 'Best EFTPOS for SA painters — Adelaide Hills heritage work, outer suburb new builds, and deposit collection before starting.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'top', imageAlt: 'Painter rolling paint on an exterior wall in South Australia' },
+  { slug: 'best-eftpos-concreters-wa-2026', title: 'Best EFTPOS for Concreters in Western Australia (2026)', description: 'Best EFTPOS for WA concreters — Perth new estate slabs, large deposits before the pour, and SIM connectivity on development sites.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'faces', imageAlt: 'Concreter smoothing a slab in Western Australia' },
+  { slug: 'best-eftpos-concreters-sa-2026', title: 'Best EFTPOS for Concreters in South Australia (2026)', description: 'Best EFTPOS for SA concreters — Adelaide new estate slabs, large deposits before the pour, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'edges', imageAlt: 'Concreter smoothing a slab in South Australia' },
   // Roofers city guides
-  { slug: 'best-eftpos-roofers-sydney-2026', title: 'Best EFTPOS for Roofers in Sydney (2026)', description: 'Best EFTPOS for Sydney roofers — storm-damage insurance claims, terrace reroofing in the inner west, and new estate tile work.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1558618666-fcd25c85cd64', imageAlt: 'Roofer working on a tile roof in Sydney' },
-  { slug: 'best-eftpos-roofers-melbourne-2026', title: 'Best EFTPOS for Roofers in Melbourne (2026)', description: 'Best EFTPOS for Melbourne roofers — Victorian-era tile reroofing, southeast storm damage, and new estate roofing in outer suburbs.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1558618666-fcd25c85cd64', imageAlt: 'Roofer working on a tile roof in Melbourne' },
-  { slug: 'best-eftpos-roofers-brisbane-2026', title: 'Best EFTPOS for Roofers in Brisbane (2026)', description: 'Best EFTPOS for Brisbane roofers — Queenslander tin roof restoration, cyclone-prep reroofing, and storm-damage insurance work.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1558618666-fcd25c85cd64', imageAlt: 'Roofer working on a Queenslander tin roof in Brisbane' },
+  { slug: 'best-eftpos-roofers-sydney-2026', title: 'Best EFTPOS for Roofers in Sydney (2026)', description: 'Best EFTPOS for Sydney roofers — storm-damage insurance claims, terrace reroofing in the inner west, and new estate tile work.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1558618666-fcd25c85cd64', imageCrop: 'left', imageAlt: 'Roofer working on a tile roof in Sydney' },
+  { slug: 'best-eftpos-roofers-melbourne-2026', title: 'Best EFTPOS for Roofers in Melbourne (2026)', description: 'Best EFTPOS for Melbourne roofers — Victorian-era tile reroofing, southeast storm damage, and new estate roofing in outer suburbs.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1558618666-fcd25c85cd64', imageCrop: 'right', imageAlt: 'Roofer working on a tile roof in Melbourne' },
+  { slug: 'best-eftpos-roofers-brisbane-2026', title: 'Best EFTPOS for Roofers in Brisbane (2026)', description: 'Best EFTPOS for Brisbane roofers — Queenslander tin roof restoration, cyclone-prep reroofing, and storm-damage insurance work.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1558618666-fcd25c85cd64', imageCrop: 'faces', imageAlt: 'Roofer working on a Queenslander tin roof in Brisbane' },
   // Painters & Concreters × Perth/Adelaide
-  { slug: 'best-eftpos-painters-perth-2026', title: 'Best EFTPOS for Painters in Perth (2026)', description: 'Best EFTPOS for Perth painters — new estate painting in outer suburbs, deposit collection before starting, and SIM connectivity on site.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1562259929-b4e1fd3aef09', imageAlt: 'Painter rolling paint on an exterior wall in Perth' },
-  { slug: 'best-eftpos-painters-adelaide-2026', title: 'Best EFTPOS for Painters in Adelaide (2026)', description: 'Best EFTPOS for Adelaide painters — Hills heritage painting, outer suburb new builds, and deposit collection before starting.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1562259929-b4e1fd3aef09', imageAlt: 'Painter rolling paint on an exterior wall in Adelaide' },
-  { slug: 'best-eftpos-concreters-perth-2026', title: 'Best EFTPOS for Concreters in Perth (2026)', description: 'Best EFTPOS for Perth concreters — new estate slabs in outer suburbs, large deposits before the pour, and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Perth' },
-  { slug: 'best-eftpos-concreters-adelaide-2026', title: 'Best EFTPOS for Concreters in Adelaide (2026)', description: 'Best EFTPOS for Adelaide concreters — new estate slabs in northern and southern growth corridors, large deposits before the pour.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageAlt: 'Concreter smoothing a slab in Adelaide' },
+  { slug: 'best-eftpos-painters-perth-2026', title: 'Best EFTPOS for Painters in Perth (2026)', description: 'Best EFTPOS for Perth painters — new estate painting in outer suburbs, deposit collection before starting, and SIM connectivity on site.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'bottom', imageAlt: 'Painter rolling paint on an exterior wall in Perth' },
+  { slug: 'best-eftpos-painters-adelaide-2026', title: 'Best EFTPOS for Painters in Adelaide (2026)', description: 'Best EFTPOS for Adelaide painters — Hills heritage painting, outer suburb new builds, and deposit collection before starting.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'left', imageAlt: 'Painter rolling paint on an exterior wall in Adelaide' },
+  { slug: 'best-eftpos-concreters-perth-2026', title: 'Best EFTPOS for Concreters in Perth (2026)', description: 'Best EFTPOS for Perth concreters — new estate slabs in outer suburbs, large deposits before the pour, and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'entropy', imageAlt: 'Concreter smoothing a slab in Perth' },
+  { slug: 'best-eftpos-concreters-adelaide-2026', title: 'Best EFTPOS for Concreters in Adelaide (2026)', description: 'Best EFTPOS for Adelaide concreters — new estate slabs in northern and southern growth corridors, large deposits before the pour.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1565008447742-97f6f38c985c', imageCrop: 'top', imageAlt: 'Concreter smoothing a slab in Adelaide' },
   {
     slug: 'best-eftpos-concreters-qld-2026',
     title: 'Best EFTPOS for Concreters in Queensland (2026)',
@@ -524,6 +533,7 @@ export const posts = [
     readTime: '5 min read',
     category: 'states',
     image: 'photo-1565008447742-97f6f38c985c',
+    imageCrop: 'bottom',
     imageAlt: 'Concreter smoothing a slab in Queensland',
   },
 ]
