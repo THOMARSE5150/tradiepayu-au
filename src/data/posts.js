@@ -5,6 +5,16 @@
 // - State/city variant posts (e.g. best-eftpos-builders-nsw-2026) intentionally
 //   share the same photo ID as their base trade post. This is correct behaviour —
 //   the trade context is the same regardless of geography.
+// - Payment-cost posts (fees, surcharging) intentionally share photo-1554224155-6726b3ff858f.
+// - Tyro-related comparison posts intentionally share photo-1563013544-824ae1b704d3.
+// - Provider reviews keep their manually-assigned images — do not change without checking
+//   the ogImage prop in the individual post JSX file too.
+//
+// ADDING A NEW POST:
+// - Add an entry here. The blog listing and OG meta update automatically.
+// - Trade posts: reuse the base trade photo ID from the map below.
+// - New topics: pick a unique Unsplash photo ID. Run scripts/validate-blog-images.js to check.
+// - Provider reviews: match the image to the ogImage in the post JSX file.
 //
 // TRADE IMAGE MAP (base photo IDs):
 //   builders/construction → photo-1504307651254-35680f356dfd
@@ -134,7 +144,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '5 min read',
     category: 'guides',
-    image: 'photo-1556742049-0cfed4f6a45d',
+    image: 'photo-1554224155-6726b3ff858f', // matches post hero; payment cost topic (shares intentionally with fees post)
     imageAlt: 'EFTPOS terminal displaying a surcharge prompt at checkout',
   },
   {
@@ -174,7 +184,7 @@ export const posts = [
     date: '2 Apr 2026',
     readTime: '7 min read',
     category: 'providers',
-    image: 'photo-1556742049-0cfed4f6a45d',
+    image: 'photo-1579621970795-87facc2f976d', // tech/payment comparison — distinct from all provider reviews
     imageAlt: 'Stripe and Square payment terminals compared for tradies',
   },
   {
