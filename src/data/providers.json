@@ -21,6 +21,7 @@
       "tap_to_pay":"https://www.myzeller.com/au/zeller-app/tap-to-pay",
       "contact":   "https://www.myzeller.com/au/sales-form"
     },
+    "lastVerified": "2026-04-05",
     "founded": 2020,
     "hq": "Melbourne, VIC",
     "type": "Australian fintech",
@@ -150,6 +151,7 @@
       "invoicing": "https://squareup.com/au/en/invoices",
       "contact":   "https://squareup.com/au/en/help/contact"
     },
+    "lastVerified": "2026-04-05",
     "founded": 2009,
     "hq": "San Francisco (AU operations)",
     "type": "Global fintech",
@@ -261,6 +263,7 @@
       "invoicing": "https://stripe.com/au/invoicing",
       "contact":   "https://stripe.com/au/contact"
     },
+    "lastVerified": "2026-04-05",
     "founded": 2010,
     "hq": "San Francisco (AU operations)",
     "type": "Global fintech",
@@ -375,6 +378,7 @@
       "invoicing": "https://www.tyro.com/invoicing/",
       "contact":   "https://www.tyro.com/contact-us/"
     },
+    "lastVerified": "2026-04-05",
     "founded": 2003,
     "hq": "Sydney, NSW",
     "type": "Australian fintech / bank",
@@ -482,6 +486,7 @@
       "hardware":  "https://www.shift4-au.com.au/eftpos-solutions/",
       "contact":   "https://www.shift4-au.com.au/get-started/"
     },
+    "lastVerified": "2026-04-05",
     "founded": null,
     "hq": "AU operations",
     "type": "Payments company",

@@ -194,7 +194,7 @@ Only include providers where you found data above.
         }
       }
     }
-    provider.last_verified = today
+    provider.lastVerified = today
   }
 
   // Write updated providers.json

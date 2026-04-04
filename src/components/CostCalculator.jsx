@@ -157,7 +157,8 @@ export default function CostCalculator() {
       const hwMonthly = p.hardware / amortMonths
       const simMonthly = includeSim ? p.sim : 0
       const total = processing + hwMonthly + simMonthly
-      return { ...p, processing, hwMonthly, simMonthly, total }
+      const perJob = avgTx * p.rate + p.fixed  // processing cost on one average-sized job
+      return { ...p, processing, hwMonthly, simMonthly, total, perJob }
     }).sort((a, b) => a.total - b.total)
   }, [monthly, avgTx, amortMonths, includeSim])
 
@@ -293,6 +294,11 @@ export default function CostCalculator() {
                       ${p.total.toFixed(2)}
                     </motion.div>
                     <div className="text-xs text-slate-500">per month</div>
+                    {p.rate > 0 && (
+                      <div className="text-xs text-slate-400 mt-0.5">
+                        ${p.perJob.toFixed(2)} per ${avgTx} job
+                      </div>
+                    )}
                     {i === 0 && secondCost > 0 && (secondCost - p.total) > 0.5 && (
                       <div className="text-xs text-green-600 font-semibold mt-0.5">
                         saves ${(secondCost - p.total).toFixed(2)}/mo
@@ -324,8 +330,19 @@ export default function CostCalculator() {
           </button>
         </div>
         <p className="text-xs text-slate-400 mt-4">
-          * Hardware amortised over {amortMonths} months. Assumes all transactions are in-person.
-          Zeller (1.4%, Terminal 1 $99, SIM $15/mo) and Square Terminal ($329) verified April 2026. Stripe (1.7% + $0.10, Reader M2 $69) and Tyro (1.4% payment links) could not be live-verified due to JS-rendered pricing pages — confirm at provider websites before signing up.
+          {(() => {
+            const byId = Object.fromEntries(rawProviders.map(p => [p.id, p]))
+            const fmt = iso => iso ? new Date(iso).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : null
+            const zellerDate  = fmt(byId.zeller?.lastVerified)
+            const squareDate  = fmt(byId.square?.lastVerified)
+            const stripeDate  = fmt(byId.stripe?.lastVerified)
+            const tyroDate    = fmt(byId.tyro?.lastVerified)
+            return `Hardware amortised over ${amortMonths} months. Assumes all transactions are in-person. ` +
+              `Zeller (1.4%, Terminal 1 $99, SIM $15/mo)${zellerDate ? ` verified ${zellerDate}` : ''}. ` +
+              `Square Terminal ($329)${squareDate ? ` verified ${squareDate}` : ''}. ` +
+              `Stripe (1.7% + $0.10, Reader M2 $69)${stripeDate ? ` verified ${stripeDate}` : ''} and ` +
+              `Tyro (1.4% payment links)${tyroDate ? ` verified ${tyroDate}` : ''} — confirm at provider websites before signing up.`
+          })()}
         </p>
       </div>
     </section>
