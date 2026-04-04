@@ -102,7 +102,7 @@ export default function ZellerPage() {
         </div>
       </header>
       <StickyProviderBar providerId="zeller" />
-      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'hardware',label:'Hardware'},{id:'connectivity',label:'Connectivity'},{id:'settlement',label:'Settlement'},{id:'setup',label:'Setup'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="zeller" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Zeller →</AffiliateButton>} />
+      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'hardware',label:'Hardware'},{id:'connectivity',label:'Connectivity'},{id:'settlement',label:'Settlement'},{id:'setup',label:'Setup'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="zeller" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Zeller →</AffiliateButton>} />
       <ProviderVerdict providerId="zeller" />
 
       {/* Quick Summary */}
@@ -386,8 +386,8 @@ export default function ZellerPage() {
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Zeller?</h2>
               <p className="text-slate-400 text-sm">Apply online with your ABN — approval typically within 24 hours.</p>
             </div>
-            <AffiliateButton providerId="zeller" label="page-cta" className="btn-primary flex-shrink-0">
-              Visit Zeller →
+            <AffiliateButton providerId="zeller" label="page-cta" intent="signup" className="btn-primary flex-shrink-0">
+              Create Zeller account →
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>

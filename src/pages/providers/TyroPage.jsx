@@ -97,7 +97,7 @@ export default function TyroPage() {
       </header>
 
       <StickyProviderBar providerId="tyro" />
-      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'when-to-use',label:'When to Use'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="tyro" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Tyro →</AffiliateButton>} />
+      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'when-to-use',label:'When to Use'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="tyro" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Apply for Tyro →</AffiliateButton>} />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">
@@ -230,8 +230,8 @@ export default function TyroPage() {
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Tyro?</h2>
               <p className="text-slate-400 text-sm">Contact Tyro for a quote — no lock-in, no cancellation fees.</p>
             </div>
-            <AffiliateButton providerId="tyro" label="page-cta" className="btn-primary flex-shrink-0">
-              Visit Tyro →
+            <AffiliateButton providerId="tyro" label="page-cta" intent="signup" className="btn-primary flex-shrink-0">
+              Apply for Tyro →
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>

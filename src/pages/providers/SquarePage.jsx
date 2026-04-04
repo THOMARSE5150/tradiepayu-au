@@ -99,7 +99,7 @@ export default function SquarePage() {
       </header>
 
       <StickyProviderBar providerId="square" />
-      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'offline',label:'Offline Mode'},{id:'vs-zeller',label:'vs Zeller'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="square" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Square →</AffiliateButton>} />
+      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'offline',label:'Offline Mode'},{id:'vs-zeller',label:'vs Zeller'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="square" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Square →</AffiliateButton>} />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">
@@ -259,8 +259,8 @@ export default function SquarePage() {
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Square?</h2>
               <p className="text-slate-400 text-sm">Sign up free online — no monthly fees, no contracts.</p>
             </div>
-            <AffiliateButton providerId="square" label="page-cta" className="btn-primary flex-shrink-0">
-              Visit Square →
+            <AffiliateButton providerId="square" label="page-cta" intent="signup" className="btn-primary flex-shrink-0">
+              Sign up to Square →
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>

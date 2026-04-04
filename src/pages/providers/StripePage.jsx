@@ -98,7 +98,7 @@ export default function StripePage() {
       </header>
 
       <StickyProviderBar providerId="stripe" />
-      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'when-to-use',label:'When to Use'},{id:'recurring',label:'Recurring'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="stripe" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Stripe →</AffiliateButton>} />
+      <SectionNav sections={[{id:'fees',label:'Fees'},{id:'when-to-use',label:'When to Use'},{id:'recurring',label:'Recurring'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="stripe" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Stripe →</AffiliateButton>} />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">
@@ -257,8 +257,8 @@ export default function StripePage() {
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Stripe?</h2>
               <p className="text-slate-400 text-sm">Create an account in minutes — no monthly fees.</p>
             </div>
-            <AffiliateButton providerId="stripe" label="page-cta" className="btn-primary flex-shrink-0">
-              Visit Stripe →
+            <AffiliateButton providerId="stripe" label="page-cta" intent="signup" className="btn-primary flex-shrink-0">
+              Create Stripe account →
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>

@@ -9,14 +9,17 @@ import { trackOutbound, affiliateUrl } from '../utils/analytics'
  *   providerId  {string}  - matches providers.json id field (e.g. 'zeller')
  *   label       {string}  - click location tag for analytics (e.g. 'page-cta', 'compare-strip')
  *   campaign    {string}  - utm_campaign value (default: 'review')
+ *   intent      {string}  - optional key from provider's urls map (e.g. 'signup', 'pricing', 'hardware', 'invoicing')
+ *                           When set, routes to that intent-specific URL instead of the default affiliate_url.
  *   className   {string}  - pass-through classNames
  *   children    {node}    - button content
  */
-export default function AffiliateButton({ providerId, label = 'cta', campaign = 'review', className = '', children }) {
+export default function AffiliateButton({ providerId, label = 'cta', campaign = 'review', intent, className = '', children }) {
   const p = providers.find(x => x.id === providerId)
   if (!p) return null
 
-  const href = affiliateUrl(p.affiliate_url, providerId, campaign)
+  const baseUrl = (intent && p.urls?.[intent]) ?? p.affiliate_url
+  const href = affiliateUrl(baseUrl, providerId, campaign)
 
   return (
     <a

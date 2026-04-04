@@ -98,7 +98,7 @@ export default function Shift4Page() {
       </header>
 
       <StickyProviderBar providerId="shift4" />
-      <SectionNav sections={[{id:'how-it-works',label:'How It Works'},{id:'hardware',label:'Hardware'},{id:'vs-zeller',label:'vs Zeller'},{id:'warning',label:'Before You Sign'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="shift4" label="section-nav" campaign="provider-nav" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Shift4 →</AffiliateButton>} />
+      <SectionNav sections={[{id:'how-it-works',label:'How It Works'},{id:'hardware',label:'Hardware'},{id:'vs-zeller',label:'vs Zeller'},{id:'warning',label:'Before You Sign'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="shift4" label="section-nav" campaign="provider-nav" intent="contact" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Contact Shift4 →</AffiliateButton>} />
 
       {/* Quick Summary */}
       <section className="container-page pt-8">
@@ -246,8 +246,8 @@ export default function Shift4Page() {
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Shift4?</h2>
               <p className="text-slate-400 text-sm">Contact Shift4 for a quote — request written terms before signing.</p>
             </div>
-            <AffiliateButton providerId="shift4" label="page-cta" className="btn-primary flex-shrink-0">
-              Visit Shift4 →
+            <AffiliateButton providerId="shift4" label="page-cta" intent="contact" className="btn-primary flex-shrink-0">
+              Contact Shift4 →
             </AffiliateButton>
           </div>
           <p className="text-xs text-slate-400 mt-3 px-1">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or terms.</p>

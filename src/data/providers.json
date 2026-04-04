@@ -18,7 +18,8 @@
       "pricing":   "https://www.myzeller.com/au/pricing",
       "hardware":  "https://www.myzeller.com/au/eftpos-terminal-machines",
       "invoicing": "https://www.myzeller.com/au/invoices",
-      "contact":   "https://www.myzeller.com/au/contact"
+      "tap_to_pay":"https://www.myzeller.com/au/zeller-app/tap-to-pay",
+      "contact":   "https://www.myzeller.com/au/sales-form"
     },
     "founded": 2020,
     "hq": "Melbourne, VIC",
@@ -368,9 +369,10 @@
     "website": "https://www.tyro.com",
     "affiliate_url": "https://www.tyro.com",
     "urls": {
-      "signup":    "https://www.tyro.com/get-started/",
+      "signup":    "https://www.tyro.com/apply/",
       "pricing":   "https://www.tyro.com/pricing/",
-      "hardware":  "https://www.tyro.com/eftpos-terminal/",
+      "hardware":  "https://www.tyro.com/eftpos-terminals/",
+      "invoicing": "https://www.tyro.com/invoicing/",
       "contact":   "https://www.tyro.com/contact-us/"
     },
     "founded": 2003,
@@ -474,6 +476,12 @@
     "product_image_bg": "#f0f0ee",
     "website": "https://www.shift4-au.com.au",
     "affiliate_url": "https://www.shift4-au.com.au",
+    "urls": {
+      "signup":    "https://www.shift4-au.com.au/get-started/",
+      "pricing":   "https://www.shift4-au.com.au/eftpos-solutions/",
+      "hardware":  "https://www.shift4-au.com.au/eftpos-solutions/",
+      "contact":   "https://www.shift4-au.com.au/get-started/"
+    },
     "founded": null,
     "hq": "AU operations",
     "type": "Payments company",
