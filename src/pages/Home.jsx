@@ -176,11 +176,11 @@ export default function Home() {
             </div>
             <p className="text-white/40 text-xs mt-2.5">
               Ready to sign up?{' '}
-              <AffiliateButton providerId="zeller" label="hero-tertiary" campaign="homepage" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
+              <AffiliateButton providerId="zeller" label="hero-tertiary" campaign="homepage" intent="signup" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
                 Visit Zeller ↗
               </AffiliateButton>
               {' · '}
-              <AffiliateButton providerId="square" label="hero-fallback" campaign="homepage" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
+              <AffiliateButton providerId="square" label="hero-fallback" campaign="homepage" intent="signup" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
                 Square (no signal) ↗
               </AffiliateButton>
             </p>
@@ -315,11 +315,11 @@ export default function Home() {
                 Full Zeller review →
               </Link>
               <div className="flex items-center gap-3 text-xs text-slate-500">
-                <AffiliateButton providerId="zeller" label="midpage-cta" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
+                <AffiliateButton providerId="zeller" label="midpage-cta" campaign="homepage-mid" intent="signup" className="hover:text-slate-300 transition-colors">
                   Visit Zeller ↗
                 </AffiliateButton>
                 <span>·</span>
-                <AffiliateButton providerId="square" label="midpage-alt-square" campaign="homepage-mid" className="hover:text-slate-300 transition-colors">
+                <AffiliateButton providerId="square" label="midpage-alt-square" campaign="homepage-mid" intent="signup" className="hover:text-slate-300 transition-colors">
                   Square ↗
                 </AffiliateButton>
                 <span>·</span>

@@ -29,7 +29,7 @@ export default function StickySignUpBar({ providerId, providerName }) {
             <p className="text-xs text-slate-500 leading-none mb-0.5">Ready to set up?</p>
             <p className="text-sm font-bold text-brand-dark">{providerName}</p>
           </div>
-          <AffiliateButton providerId={providerId} label="sticky-cta" className="btn-primary text-sm px-4 py-2">
+          <AffiliateButton providerId={providerId} label="sticky-cta" intent="signup" className="btn-primary text-sm px-4 py-2">
             Sign up →
           </AffiliateButton>
         </motion.div>

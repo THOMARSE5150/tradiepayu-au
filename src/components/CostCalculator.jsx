@@ -12,12 +12,12 @@ const PRESETS = [
   { label: '~$20k/mo', value: 20000 },
 ]
 
-const PROVIDER_SIGNUP = {
-  zeller:       'https://www.myzeller.com.au',
-  'zeller-tap': 'https://www.myzeller.com.au',
-  square:       'https://squareup.com/au/en',
-  stripe:       'https://dashboard.stripe.com/register',
-  tyro:         'https://www.tyro.com/contact/sign-up',
+// Derive signup URLs from providers.json (single source of truth).
+// Calculator rows use synthetic IDs (zeller-tap, zeller-surcharge) that map
+// back to the base provider by stripping the suffix.
+function getSignupUrl(calcId) {
+  const baseId = calcId.replace(/-(tap|surcharge)$/, '')
+  return rawProviders.find(x => x.id === baseId)?.urls?.signup ?? null
 }
 
 function getInitialState() {
@@ -298,9 +298,9 @@ export default function CostCalculator() {
                         saves ${(secondCost - p.total).toFixed(2)}/mo
                       </div>
                     )}
-                    {i === 0 && PROVIDER_SIGNUP[p.id] && (
+                    {i === 0 && getSignupUrl(p.id) && (
                       <a
-                        href={PROVIDER_SIGNUP[p.id]}
+                        href={getSignupUrl(p.id)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-2 inline-block text-xs font-semibold text-white bg-brand-blue hover:bg-blue-600 px-3 py-1.5 rounded-lg transition-colors"

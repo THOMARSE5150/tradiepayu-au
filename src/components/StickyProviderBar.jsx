@@ -116,6 +116,7 @@ export default function StickyProviderBar({ providerId, heroRef }) {
             <AffiliateButton
               providerId={providerId}
               label="sticky-bar"
+              intent="signup"
               className="ml-auto flex-shrink-0 inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 active:bg-blue-700 transition-colors whitespace-nowrap"
             >
               Get {current.name} →
