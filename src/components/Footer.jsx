@@ -106,7 +106,7 @@ export default function Footer() {
         <div className="col-span-2 lg:col-span-2 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
           <p className="text-sm leading-relaxed text-slate-400 mb-3">Independent comparison of mobile card payment systems for Australian tradies. Updated {siteMeta.lastVerifiedDisplay}.</p>
-          <p className="text-xs text-slate-600">No sponsored rankings. Not financial advice.</p>
+          <p className="text-xs text-slate-600">Editorially independent rankings. Not financial advice.</p>
         </div>
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
           <Link to="/providers" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">

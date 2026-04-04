@@ -30,7 +30,7 @@ const ORG = {
     availableLanguage: 'en-AU',
   },
   foundingDate: '2025',
-  description: 'Independent comparison of mobile card payment systems for Australian tradies. No paid placements, no sponsored rankings.',
+  description: 'Independent comparison of mobile card payment systems for Australian tradies. Rankings are editorially independent — providers cannot pay to improve their position.',
   address: { '@type': 'PostalAddress', addressCountry: 'AU' },
 }
 
@@ -39,7 +39,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
     name: 'About TradiePay AU — Independent EFTPOS Comparison for Tradies',
-    description: 'TradiePay AU is an independent comparison site for mobile card payment systems for Australian tradies. No sponsored rankings, no financial advice.',
+    description: 'TradiePay AU is an independent comparison site for mobile card payment systems for Australian tradies. Rankings are editorially independent. Not financial advice.',
     url: `${SITE}/about`,
     datePublished: '2025-01-01',
     dateModified: '2026-03-31',
@@ -70,7 +70,7 @@ const pillars = [
   {
     icon: Shield,
     title: 'No paid placements',
-    body: 'Providers cannot pay to improve their ranking. Our top picks are determined by criteria that matter on the job site — fees, connectivity, offline capability, and settlement speed — not by commercial relationships.',
+    body: 'Providers cannot pay to improve their ranking. Our top picks are determined by criteria that matter on the job site — fees, connectivity, offline capability, and settlement speed. Some outbound links may earn a referral commission, which goes toward running the site; this never affects how providers are ranked.',
   },
   {
     icon: Search,
@@ -94,7 +94,7 @@ export default function AboutPage() {
     <>
       <Meta
         title="About TradiePay AU — Independent EFTPOS Comparison for Tradies"
-        description="TradiePay AU is an independent comparison site for mobile card payment systems for Australian tradies. No sponsored rankings, no financial advice — just honest comparison."
+        description="TradiePay AU independently compares mobile card payment systems for Australian tradies. Rankings are editorially independent — providers cannot pay to improve their position. Not financial advice."
         canonical="/about"
         jsonLd={jsonLd}
       />
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">About</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">About TradiePay AU</h1>
-          <p className="hero-sub">Independent comparison of mobile card payment systems for Australian tradies. No sponsored rankings. No financial advice. Just honest, practical information.</p>
+          <p className="hero-sub">Independent comparison of mobile card payment systems for Australian tradies. Rankings are editorially independent — providers cannot pay to improve their position. Not financial advice.</p>
         </div>
       </header>
 
@@ -126,7 +126,7 @@ export default function AboutPage() {
           </motion.h2>
           <div className="space-y-4 text-slate-600 leading-relaxed">
             <p>
-              TradiePay AU exists because tradie payment options are genuinely confusing — and most "comparison" sites are just affiliate farms that push whoever pays the highest commission.
+              TradiePay AU exists because tradie payment options are genuinely confusing — and most "comparison" sites rank providers based on who pays the highest commission, not what works on a job site.
             </p>
             <p>
               We built this site to answer a simple question honestly: <strong className="text-brand-dark">which EFTPOS setup actually works on a tradie's job site?</strong> That means looking at connectivity (SIM vs WiFi), offline capability for dead zones, settlement speed for cash flow, and real fees — not promotional rates buried in footnotes.
