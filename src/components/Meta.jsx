@@ -1,22 +1,13 @@
 import { Helmet } from 'react-helmet-async'
 import { TRADE_MAP } from '../data/tradesMeta'
+import { posts as allPosts } from '../data/posts'
 
 const SITE_URL = 'https://tradiepayau.directory'
 const SITE_NAME = 'TradiePay AU'
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
 
-// Blog post hero photos
-const BLOG_HERO = {
-  'eftpos-fees-tradies-australia-2026':           'photo-1554224155-6726b3ff858f',
-  'zeller-vs-square-eftpos-tradies':              'photo-1556742031-c6961e8560b0',
-  'accept-card-payments-sole-trader-australia':   'photo-1607472586893-edb57bdc0e39',
-  'zeller-terminal-1-review-2026':                'photo-1556742049-0cfed4f6a45d',
-  'square-terminal-review-2026':                  'photo-1556742031-c6961e8560b0',
-  'best-eftpos-sole-traders-australia-2026':      'photo-1521791136064-7986c2920216',
-  'stripe-terminal-review-2026':                  'photo-1601597111158-2fceff292cdc',
-  'tyro-eftpos-review-2026':                      'photo-1563013544-824ae1b704d3',
-  'shift4-eftpos-review-2026':                    'photo-1559526324-4b87b5e36e44',
-}
+// Build BLOG_HERO dynamically so it never goes stale
+const BLOG_HERO = Object.fromEntries(allPosts.map(p => [p.slug, p.image]))
 
 // Branded OG PNGs for all provider pages
 const PROVIDER_OG = {
