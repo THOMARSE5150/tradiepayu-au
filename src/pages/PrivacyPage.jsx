@@ -7,7 +7,7 @@ const crumbs = [
 ]
 
 const SITE = 'https://tradiepayau.directory'
-const LAST_UPDATED = 'March 2026'
+const LAST_UPDATED = 'April 2026'
 
 function Section({ title, children }) {
   return (
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
           <p className="text-sm text-slate-500 mb-8">Last updated: {LAST_UPDATED}. This policy applies to the TradiePay AU website at <span className="text-brand-blue">{SITE}</span>.</p>
 
           <Section title="1. Who we are">
-            <p>TradiePay AU is an independent comparison website for mobile card payment systems for Australian tradies and small business owners. We are not a financial adviser, broker, or representative of any payment provider.</p>
+            <p>TradiePay AU is an independent comparison website for mobile card payment systems for Australian tradies and small business owners. TradiePay AU is operated by QUICKFIXCREATIVE (ABN 77 133 011 874), an Australian registered business. We are not a financial adviser, broker, or representative of any payment provider.</p>
           </Section>
 
           <Section title="2. Information we collect">

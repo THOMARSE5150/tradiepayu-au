@@ -167,6 +167,7 @@ export default function Footer() {
           {' '}·{' '}
           <Link to="/about" className="hover:text-slate-400 transition-colors">About</Link>
         </p>
+        <p>TradiePay AU is operated by QUICKFIXCREATIVE · ABN 77 133 011 874</p>
       </div>
     </footer>
   )
