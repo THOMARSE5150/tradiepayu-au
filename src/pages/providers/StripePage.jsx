@@ -83,7 +83,7 @@ export default function StripePage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Stripe for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first operations.</p>
           <p className="text-xs text-white/40 mt-2">
-            Independent review — TradiePay AU earns no referral fees. Ratings based on published rates and editorial testing.
+            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
           </p>
           <div className="mt-4 mb-1">
             <ShareButton

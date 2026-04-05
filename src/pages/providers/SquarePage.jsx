@@ -84,7 +84,7 @@ export default function SquarePage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Square for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best offline capability in the market. The right backup terminal for tradies who work in dead zones.</p>
           <p className="text-xs text-white/40 mt-2">
-            Independent review — TradiePay AU earns no referral fees. Ratings based on published rates and editorial testing.
+            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
           </p>
           <div className="mt-4 mb-1">
             <ShareButton

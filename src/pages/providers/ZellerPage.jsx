@@ -86,7 +86,7 @@ export default function ZellerPage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Zeller for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller.</p>
           <p className="text-xs text-white/40 mt-2">
-            Independent review — TradiePay AU earns no referral fees. Ratings based on published rates and editorial testing.
+            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
           </p>
           <div className="mt-4 mb-1">
             <ShareButton
@@ -204,7 +204,7 @@ export default function ZellerPage() {
 
         {/* Author credentials */}
         <p className="mt-5 text-xs text-slate-400">
-          Reviewed by the <strong>TradiePay AU Editorial Team</strong> — rates verified against Zeller's published pricing, {lastVerifiedDisplay}. We earn no referral fees from Zeller.
+          Reviewed by the <strong>TradiePay AU Editorial Team</strong> — rates verified against Zeller's published pricing, {lastVerifiedDisplay}. Rankings are editorially independent.
         </p>
       </section>
 

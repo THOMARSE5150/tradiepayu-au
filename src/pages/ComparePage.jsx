@@ -160,8 +160,8 @@ export default function ComparePage() {
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
       dateModified: siteMeta.lastVerified,
-      author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
-      publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
+      author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'TradiePay AU', url: SITE },
+      publisher: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'TradiePay AU', url: SITE },
     },
     {
       '@context': 'https://schema.org',
@@ -334,6 +334,16 @@ export default function ComparePage() {
           </div>
         </div>
       </section>
+
+      {/* Editorial note */}
+      <div className="container-page max-w-2xl -mt-2 pb-4">
+        <p className="text-xs text-slate-400 text-center leading-relaxed">
+          Ranked by published in-person rate, SIM connectivity, settlement speed, and offline capability — not by commercial arrangement.{' '}
+          <Link to="/about" className="hover:text-slate-300 underline underline-offset-2">See methodology →</Link>
+          {' '}· Some links may earn a small commission.{' '}
+          <Link to="/disclaimer" className="hover:text-slate-300 underline underline-offset-2">Disclosure</Link>
+        </p>
+      </div>
 
       {/* Pros/cons */}
       <section className="section section-alt">

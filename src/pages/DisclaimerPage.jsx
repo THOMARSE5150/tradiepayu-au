@@ -6,7 +6,7 @@ const crumbs = [
   { label: 'Disclaimer' },
 ]
 
-const LAST_UPDATED = 'March 2026'
+const LAST_UPDATED = 'April 2026'
 
 function Section({ title, children }) {
   return (
