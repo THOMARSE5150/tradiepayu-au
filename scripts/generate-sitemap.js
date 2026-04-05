@@ -8,6 +8,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { posts } from '../src/data/posts.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT       = path.resolve(__dirname, '..')
@@ -25,45 +26,8 @@ const TRADES = [
 ]
 const STATES = ['nsw', 'vic', 'qld', 'wa', 'sa', 'tas', 'act', 'nt']
 
-const BLOG_SLUGS = [
-  'zeller-terminal-1-review-2026','square-terminal-review-2026','stripe-terminal-review-2026',
-  'tyro-eftpos-review-2026','shift4-eftpos-review-2026',
-  'zeller-vs-square-eftpos-tradies','zeller-vs-square-vs-stripe-eftpos-tradies-2026',
-  'stripe-vs-square-eftpos-australia-2026','zeller-vs-tyro-eftpos-tradies',
-  'eftpos-fees-tradies-australia-2026','surcharging-eftpos-tradies-australia-2026',
-  'how-to-get-paid-faster-sole-trader-australia','accept-card-payments-sole-trader-australia',
-  'best-eftpos-sole-traders-australia-2026',
-  'best-eftpos-electricians-australia-2026','best-eftpos-plumbers-australia-2026',
-  'best-eftpos-builders-australia-2026','best-eftpos-painters-australia-2026',
-  'best-eftpos-roofers-australia-2026','best-eftpos-concreters-australia-2026',
-  'best-eftpos-glaziers-australia-2026','best-eftpos-hvac-australia-2026',
-  'best-eftpos-carpenters-australia-2026','best-eftpos-tilers-australia-2026',
-  'best-eftpos-gas-fitters-australia-2026','best-eftpos-fencers-australia-2026',
-  'best-eftpos-plasterers-australia-2026','best-eftpos-pool-builders-australia-2026',
-  'best-eftpos-pest-controllers-australia-2026','best-eftpos-welders-australia-2026',
-  'best-eftpos-cleaners-australia-2026','best-eftpos-landscapers-australia-2026',
-  'best-eftpos-electricians-nsw-2026','best-eftpos-electricians-vic-2026','best-eftpos-electricians-qld-2026',
-  'best-eftpos-plumbers-nsw-2026','best-eftpos-plumbers-vic-2026','best-eftpos-plumbers-qld-2026',
-  'best-eftpos-builders-nsw-2026','best-eftpos-builders-vic-2026','best-eftpos-builders-qld-2026',
-  'best-eftpos-painters-nsw-2026','best-eftpos-painters-vic-2026','best-eftpos-painters-qld-2026',
-  'best-eftpos-concreters-nsw-2026','best-eftpos-concreters-vic-2026','best-eftpos-concreters-qld-2026',
-  'best-eftpos-roofers-nsw-2026','best-eftpos-roofers-vic-2026','best-eftpos-roofers-qld-2026',
-  'best-eftpos-electricians-wa-2026','best-eftpos-electricians-sa-2026',
-  'best-eftpos-plumbers-wa-2026','best-eftpos-plumbers-sa-2026',
-  'best-eftpos-builders-wa-2026','best-eftpos-builders-sa-2026',
-  'best-eftpos-painters-wa-2026','best-eftpos-painters-sa-2026',
-  'best-eftpos-concreters-wa-2026','best-eftpos-concreters-sa-2026',
-  'best-eftpos-electricians-sydney-2026','best-eftpos-plumbers-sydney-2026','best-eftpos-builders-sydney-2026',
-  'best-eftpos-painters-sydney-2026','best-eftpos-concreters-sydney-2026','best-eftpos-roofers-sydney-2026',
-  'best-eftpos-electricians-melbourne-2026','best-eftpos-plumbers-melbourne-2026','best-eftpos-builders-melbourne-2026',
-  'best-eftpos-painters-melbourne-2026','best-eftpos-concreters-melbourne-2026','best-eftpos-roofers-melbourne-2026',
-  'best-eftpos-electricians-brisbane-2026','best-eftpos-plumbers-brisbane-2026','best-eftpos-builders-brisbane-2026',
-  'best-eftpos-painters-brisbane-2026','best-eftpos-concreters-brisbane-2026','best-eftpos-roofers-brisbane-2026',
-  'best-eftpos-electricians-perth-2026','best-eftpos-plumbers-perth-2026','best-eftpos-builders-perth-2026',
-  'best-eftpos-painters-perth-2026','best-eftpos-concreters-perth-2026',
-  'best-eftpos-electricians-adelaide-2026','best-eftpos-plumbers-adelaide-2026','best-eftpos-builders-adelaide-2026',
-  'best-eftpos-painters-adelaide-2026','best-eftpos-concreters-adelaide-2026',
-]
+// Derived from posts.js — stays current automatically as new posts are added
+const BLOG_SLUGS = posts.map(p => p.slug)
 
 function url(loc, { priority = 0.6, changefreq = 'monthly', lastmod = lastVerified } = {}) {
   return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`

@@ -1,14 +1,45 @@
-name: Ping sitemap on deploy
+name: Regenerate sitemap + ping on deploy
 
 on:
   push:
     branches: [main]
 
 jobs:
-  ping:
+  sitemap:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate sitemap
+        working-directory: site
+        run: node scripts/generate-sitemap.js
+
+      - name: Commit updated sitemap if changed
+        working-directory: site
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Sitemap unchanged — skipping commit."
+          else
+            git commit -m "chore: regenerate sitemap.xml"
+            git push
+          fi
+
       - name: Ping Cloudflare sitemap worker
         run: |
           curl -s -o /dev/null -w "%{http_code}" \
             https://tradiepayau-sitemap-ping.5p5ccbcgnr.workers.dev
+
+      - name: Ping Google + Bing sitemaps
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://tradiepayau.directory/sitemap.xml" -o /dev/null -w "Google ping: %{http_code}\n"
+          curl -s "https://www.bing.com/ping?sitemap=https://tradiepayau.directory/sitemap.xml" -o /dev/null -w "Bing ping: %{http_code}\n"
