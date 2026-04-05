@@ -108,12 +108,12 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
         <div className="grid grid-cols-2 gap-2">
           <StatCell
             label="In-person rate"
-            value={fees.in_person_percent ? `${fees.in_person_percent}%` : 'Quote'}
-            positive={true}
+            value={fees.in_person_percent ? `${fees.in_person_percent}%` : 'Contact for rate'}
+            positive={fees.in_person_percent ? true : null}
           />
           <StatCell
             label="Settlement"
-            value={settlement.same_day_available ? 'Same day' : settlement.standard_days != null ? `${settlement.standard_days}d` : '—'}
+            value={settlement.same_day_available ? 'Same day' : settlement.standard_days != null ? `${settlement.standard_days}d` : 'Contact'}
           />
           <StatCell
             label="SIM plan"
@@ -155,9 +155,17 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
               <Smartphone size={10} />  Google Pay
             </span>
           )}
-          {sim_plan.available && (
+          {sim_plan.available ? (
             <span className="inline-flex items-center gap-1 bg-blue-50 text-brand-blue text-xs px-2 py-0.5 rounded-full">
-              <Wifi size={10} />  SIM ready
+              <Wifi size={10} />  SIM ✓
+            </span>
+          ) : offline_mode.available ? (
+            <span className="inline-flex items-center gap-1 bg-blue-50 text-brand-blue text-xs px-2 py-0.5 rounded-full">
+              <Wifi size={10} />  Offline ✓
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-400 text-xs px-2 py-0.5 rounded-full">
+              <Wifi size={10} />  WiFi only
             </span>
           )}
           {settlement.same_day_available && (
