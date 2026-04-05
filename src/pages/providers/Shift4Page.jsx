@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
@@ -38,8 +39,11 @@ const faqs = [
 ]
 
 const SITE = 'https://tradiepayau.directory'
+const _p = providers.find(p => p.id === 'shift4')
+const lastVerified = _p?.lastVerified ?? '2026-04-05'
+const lastVerifiedDisplay = new Date(lastVerified).toLocaleString('en-AU', { month: 'long', year: 'numeric' })
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Shift4 for Tradies — Full Review (2026)', description: 'Independent review of Shift4 (formerly Smartpay) EFTPOS for Australian tradies. Zero-cost surcharging model, PAX A920 terminal, built-in mobile connectivity.', url: `${SITE}/providers/shift4`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Shift4', url: 'https://www.shift4-au.com.au', description: 'EFTPOS provider (formerly Smartpay) offering zero-cost surcharging terminals on contract for Australian merchants.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Shift4 for Tradies — Full Review (2026)', description: 'Independent review of Shift4 (formerly Smartpay) EFTPOS for Australian tradies. Zero-cost surcharging model, PAX A920 terminal, built-in mobile connectivity.', url: `${SITE}/providers/shift4`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '3.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Shift4', url: 'https://www.shift4-au.com.au', description: 'EFTPOS provider (formerly Smartpay) offering zero-cost surcharging terminals on contract for Australian merchants.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '3.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Shift4 Review', item: `${SITE}/providers/shift4` }] },
     { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Shift4 for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -73,7 +77,7 @@ export default function Shift4Page() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span>
             <StarRating rating={3.5} />
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Shift4 for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Zero-cost EFTPOS via customer surcharging. No upfront hardware. Built-in mobile connectivity. Here's what tradies need to know before signing.</p>

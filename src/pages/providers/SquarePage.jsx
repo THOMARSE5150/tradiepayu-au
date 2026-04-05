@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import { Check, X } from 'lucide-react'
@@ -40,8 +41,11 @@ const faqs = [
 ]
 
 const SITE = 'https://tradiepayau.directory'
+const _p = providers.find(p => p.id === 'square')
+const lastVerified = _p?.lastVerified ?? '2026-04-05'
+const lastVerifiedDisplay = new Date(lastVerified).toLocaleString('en-AU', { month: 'long', year: 'numeric' })
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Square for Tradies — Full Review (2026)', description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.', url: `${SITE}/providers/square`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Square', url: 'https://squareup.com/au', description: 'Global payments provider offering EFTPOS terminals with offline payment capability and flat-rate pricing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Square for Tradies — Full Review (2026)', description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.', url: `${SITE}/providers/square`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Square', url: 'https://squareup.com/au', description: 'Global payments provider offering EFTPOS terminals with offline payment capability and flat-rate pricing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Square Review', item: `${SITE}/providers/square` }] },
     { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Square Terminal for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -75,7 +79,7 @@ export default function SquarePage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span>
             <StarRating rating={4.5} />
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Square for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Best offline capability in the market. The right backup terminal for tradies who work in dead zones.</p>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
@@ -42,8 +43,11 @@ const setupSteps = [
 ]
 
 const SITE = 'https://tradiepayau.directory'
+const _p = providers.find(p => p.id === 'zeller')
+const lastVerified = _p?.lastVerified ?? '2026-04-05'
+const lastVerifiedDisplay = new Date(lastVerified).toLocaleString('en-AU', { month: 'long', year: 'numeric' })
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', name: 'Zeller for Tradies — Full Review (2026)', description: 'Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.', url: `${SITE}/providers/zeller`, datePublished: '2026-01-15', dateModified: '2026-04-02', reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Zeller', url: 'https://www.myzeller.com/au', description: 'Australian EFTPOS and business banking provider offering flat-rate card payments, SIM-enabled terminals, and same-day settlement.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', name: 'Zeller for Tradies — Full Review (2026)', description: 'Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.', url: `${SITE}/providers/zeller`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Zeller', url: 'https://www.myzeller.com/au', description: 'Australian EFTPOS and business banking provider offering flat-rate card payments, SIM-enabled terminals, and same-day settlement.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Zeller Review', item: `${SITE}/providers/zeller` }] },
   { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Zeller for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -77,7 +81,7 @@ export default function ZellerPage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
             <span>·</span>
             <StarRating rating={4.8} />
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Zeller for Tradies — Full Review (2026)</h1>
           <p className="hero-sub">Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller.</p>
@@ -159,7 +163,7 @@ export default function ZellerPage() {
 
         <div className="prose-sm max-w-none text-slate-600 space-y-4">
           <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and same-day settlement into a Zeller account. More than 100,000 Australian businesses are already using it.</p>
-          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval takes minutes online with just your ABN. As of April 2026, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
+          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval takes minutes online with just your ABN. As of {lastVerifiedDisplay}, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
         </div>
 
         {/* Product ecosystem */}
@@ -200,7 +204,7 @@ export default function ZellerPage() {
 
         {/* Author credentials */}
         <p className="mt-5 text-xs text-slate-400">
-          Reviewed by the <strong>TradiePay AU Editorial Team</strong> — rates verified against Zeller's published pricing, April 2026. We earn no referral fees from Zeller.
+          Reviewed by the <strong>TradiePay AU Editorial Team</strong> — rates verified against Zeller's published pricing, {lastVerifiedDisplay}. We earn no referral fees from Zeller.
         </p>
       </section>
 
