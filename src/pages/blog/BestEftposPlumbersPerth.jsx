@@ -44,7 +44,7 @@ const jsonLd = [
     dateModified: '2026-04-02',
     author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
-    image: { '@type': 'ImageObject', url: `https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
+    image: { '@type': 'ImageObject', url: `https://images.unsplash.com/photo-1504275427011-2a3c01e96d1d?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
   },
   {
     '@context': 'https://schema.org',
@@ -86,7 +86,7 @@ export default function BestEftposPlumbersPerth() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src={`https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&h=560&fit=crop&crop=center&q=80`} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src={`https://images.unsplash.com/photo-1504275427011-2a3c01e96d1d?w=900&h=560&fit=crop&crop=center&q=80`} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

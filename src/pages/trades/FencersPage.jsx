@@ -34,7 +34,7 @@ const faqs = [
 
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Fencers in Australia (2026)', name: 'Best EFTPOS for Fencers in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'Remote rural sites, large material deposits, absent landowners, and staged payment contracts — the best EFTPOS and payment setup for Australian fencers.', url: `${SITE}/trades/fencers`, datePublished: '2026-01-15', dateModified: '2026-03-31', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Fencers in Australia (2026)', name: 'Best EFTPOS for Fencers in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'Remote rural sites, large material deposits, absent landowners, and staged payment contracts — the best EFTPOS and payment setup for Australian fencers.', url: `${SITE}/trades/fencers`, datePublished: '2026-01-15', dateModified: '2026-03-31', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Fencers', item: `${SITE}/trades/fencers` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   { '@context': 'https://schema.org', '@type': 'Service', name: 'Best EFTPOS for Fencers in Australia', serviceType: 'EFTPOS Payment Processing for Fencers', areaServed: { '@type': 'Country', name: 'Australia' }, provider: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, url: `${SITE}/trades/fencers` },
@@ -52,7 +52,7 @@ export default function FencersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

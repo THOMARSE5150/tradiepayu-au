@@ -56,7 +56,7 @@ const jsonLd = [
     description: 'Gas fitters handle emergency call-outs in plant rooms and underground infrastructure. The best EFTPOS for Australian gas fitters in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1609220136736-443140cfeaa8?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -94,14 +94,14 @@ export default function BestEftposGasFittersPost() {
         description="Gas fitters handle emergency call-outs in plant rooms and underground infrastructure. The best EFTPOS for Australian gas fitters in 2026."
         canonical="/blog/best-eftpos-gas-fitters-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1609220136736-443140cfeaa8?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1609220136736-443140cfeaa8?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

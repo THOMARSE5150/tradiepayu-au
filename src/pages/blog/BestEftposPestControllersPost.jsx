@@ -56,7 +56,7 @@ const jsonLd = [
     description: 'Pest controllers access roof voids, subfloors, and commercial buildings without WiFi. The best EFTPOS for Australian pest controllers in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -94,14 +94,14 @@ export default function BestEftposPestControllersPost() {
         description="Pest controllers access roof voids, subfloors, and commercial buildings without WiFi. The best EFTPOS for Australian pest controllers in 2026."
         canonical="/blog/best-eftpos-pest-controllers-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"
