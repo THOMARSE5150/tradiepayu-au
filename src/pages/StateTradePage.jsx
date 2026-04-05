@@ -51,6 +51,8 @@ const STATE_TRADE_BLOG_MAP = {
   'roofers-nsw':      { slug: 'best-eftpos-roofers-nsw-2026',      label: 'NSW roofers guide' },
   'roofers-vic':      { slug: 'best-eftpos-roofers-vic-2026',      label: 'VIC roofers guide' },
   'roofers-qld':      { slug: 'best-eftpos-roofers-qld-2026',      label: 'QLD roofers guide' },
+  'roofers-wa':       { slug: 'best-eftpos-roofers-wa-2026',       label: 'WA roofers guide' },
+  'roofers-sa':       { slug: 'best-eftpos-roofers-sa-2026',       label: 'SA roofers guide' },
 }
 
 
@@ -86,6 +88,7 @@ const CITY_BLOG_MAP = {
     builders:     { city: 'Perth', slug: 'best-eftpos-builders-perth-2026' },
     painters:     { city: 'Perth', slug: 'best-eftpos-painters-perth-2026' },
     concreters:   { city: 'Perth', slug: 'best-eftpos-concreters-perth-2026' },
+    roofers:      { city: 'Perth', slug: 'best-eftpos-roofers-perth-2026' },
   },
   sa: {
     electricians: { city: 'Adelaide', slug: 'best-eftpos-electricians-adelaide-2026' },
@@ -93,6 +96,7 @@ const CITY_BLOG_MAP = {
     builders:     { city: 'Adelaide', slug: 'best-eftpos-builders-adelaide-2026' },
     painters:     { city: 'Adelaide', slug: 'best-eftpos-painters-adelaide-2026' },
     concreters:   { city: 'Adelaide', slug: 'best-eftpos-concreters-adelaide-2026' },
+    roofers:      { city: 'Adelaide', slug: 'best-eftpos-roofers-adelaide-2026' },
   },
 }
 

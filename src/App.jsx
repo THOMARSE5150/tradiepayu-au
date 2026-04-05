@@ -132,10 +132,14 @@ const BestEftposBuildersAdelaide    = lazy(() => import('./pages/blog/BestEftpos
 const BestEftposRoofersNSWPost      = lazy(() => import('./pages/blog/BestEftposRoofersNSWPost'))
 const BestEftposRoofersVICPost      = lazy(() => import('./pages/blog/BestEftposRoofersVICPost'))
 const BestEftposRoofersQLDPost      = lazy(() => import('./pages/blog/BestEftposRoofersQLDPost'))
+const BestEftposRoofersWAPost       = lazy(() => import('./pages/blog/BestEftposRoofersWAPost'))
+const BestEftposRoofersSAPost       = lazy(() => import('./pages/blog/BestEftposRoofersSAPost'))
 // Roofers city guides
 const BestEftposRoofersSydney       = lazy(() => import('./pages/blog/BestEftposRoofersSydney'))
 const BestEftposRoofersMelbourne    = lazy(() => import('./pages/blog/BestEftposRoofersMelbourne'))
 const BestEftposRoofersBrisbane     = lazy(() => import('./pages/blog/BestEftposRoofersBrisbane'))
+const BestEftposRoofersPerth        = lazy(() => import('./pages/blog/BestEftposRoofersPerth'))
+const BestEftposRoofersAdelaide     = lazy(() => import('./pages/blog/BestEftposRoofersAdelaide'))
 // Painters & Concreters × WA/SA state guides
 const BestEftposPaintersWAPost      = lazy(() => import('./pages/blog/BestEftposPaintersWAPost'))
 const BestEftposPaintersSAPost      = lazy(() => import('./pages/blog/BestEftposPaintersSAPost'))
@@ -287,6 +291,10 @@ export default function App() {
           <Route path="/blog/best-eftpos-roofers-sydney-2026" element={<BestEftposRoofersSydney />} />
           <Route path="/blog/best-eftpos-roofers-melbourne-2026" element={<BestEftposRoofersMelbourne />} />
           <Route path="/blog/best-eftpos-roofers-brisbane-2026" element={<BestEftposRoofersBrisbane />} />
+          <Route path="/blog/best-eftpos-roofers-wa-2026" element={<BestEftposRoofersWAPost />} />
+          <Route path="/blog/best-eftpos-roofers-sa-2026" element={<BestEftposRoofersSAPost />} />
+          <Route path="/blog/best-eftpos-roofers-perth-2026" element={<BestEftposRoofersPerth />} />
+          <Route path="/blog/best-eftpos-roofers-adelaide-2026" element={<BestEftposRoofersAdelaide />} />
           <Route path="/blog/best-eftpos-painters-wa-2026" element={<BestEftposPaintersWAPost />} />
           <Route path="/blog/best-eftpos-painters-sa-2026" element={<BestEftposPaintersSAPost />} />
           <Route path="/blog/best-eftpos-concreters-wa-2026" element={<BestEftposConcretersWAPost />} />
