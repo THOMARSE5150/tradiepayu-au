@@ -80,6 +80,22 @@ export default function RelatedLinks({ slug, type, currentState }) {
     <section className="section section-alt">
       <div className="container-page space-y-8">
 
+        {/* CTA banner */}
+        <div className="bg-gradient-to-r from-brand-blue to-blue-700 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-white font-bold text-base">Ready to pick your EFTPOS?</p>
+            <p className="text-blue-100 text-sm mt-0.5">Compare all 5 providers side-by-side, or calculate your exact monthly cost.</p>
+          </div>
+          <div className="flex gap-3 flex-shrink-0">
+            <Link to="/compare/zeller-vs-square" className="px-4 py-2 bg-white text-brand-blue text-sm font-bold rounded-xl hover:bg-blue-50 transition-colors whitespace-nowrap">
+              Compare providers →
+            </Link>
+            <Link to="/calculator" className="px-4 py-2 bg-blue-900/40 text-white text-sm font-semibold rounded-xl hover:bg-blue-900/60 transition-colors whitespace-nowrap">
+              Cost calculator →
+            </Link>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
 
           {/* Providers */}

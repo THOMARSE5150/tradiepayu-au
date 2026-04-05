@@ -131,10 +131,10 @@ export default function BestEftposBuildersBrisbane() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Brisbane has a large and competitive trade market. Whether you are doing residential service work, new estate construction, or commercial fit-outs, the right EFTPOS terminal comes down to connectivity and rate.
+            Brisbane builders are riding SEQ's housing boom — project pipelines at Ripley, Baringa, and Aura at Caloundra stretch 12–18 months with multiple progress claims per project.
           </p>
           <p>
-            This guide covers the best EFTPOS options for builders working in Brisbane in 2026.
+            Cyclone-prep reroofing and post-flood rebuild contracts in Ipswich and the Lockyer Valley add a reactive component. For all of it, fast settlement and off-site payment links make cash flow more predictable across the building cycle.
           </p>
         </motion.div>
 

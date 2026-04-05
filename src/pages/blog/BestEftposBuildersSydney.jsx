@@ -131,10 +131,10 @@ export default function BestEftposBuildersSydney() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Sydney has a large and competitive trade market. Whether you are doing residential service work, new estate construction, or commercial fit-outs, the right EFTPOS terminal comes down to connectivity and rate.
+            Sydney builders manage some of Australia's highest-value residential contracts — where a deposit, progress claim, or final payment can represent $30,000–$150,000 and a delayed payment creates real cash-flow pain.
           </p>
           <p>
-            This guide covers the best EFTPOS options for builders working in Sydney in 2026.
+            Western Sydney estates in Box Hill, Spring Farm, and Leppington, inner-city apartment blocks in Parramatta and Surry Hills, and renovation work across the North Shore all require payment infrastructure that doesn't depend on connected NBN on site.
           </p>
         </motion.div>
 
