@@ -173,6 +173,17 @@ const BestEftposTilersMelbourne     = lazy(() => import('./pages/blog/BestEftpos
 const BestEftposTilersBrisbane      = lazy(() => import('./pages/blog/BestEftposTilersBrisbane'))
 const BestEftposTilersPerth         = lazy(() => import('./pages/blog/BestEftposTilersPerth'))
 const BestEftposTilersAdelaide      = lazy(() => import('./pages/blog/BestEftposTilersAdelaide'))
+// Plasterers state + city guides
+const BestEftposPlasterersNSWPost   = lazy(() => import('./pages/blog/BestEftposPlasterersNSWPost'))
+const BestEftposPlasterersVICPost   = lazy(() => import('./pages/blog/BestEftposPlasterersVICPost'))
+const BestEftposPlasterersQLDPost   = lazy(() => import('./pages/blog/BestEftposPlasterersQLDPost'))
+const BestEftposPlasterersWAPost    = lazy(() => import('./pages/blog/BestEftposPlasterersWAPost'))
+const BestEftposPlasterersSAPost    = lazy(() => import('./pages/blog/BestEftposPlasterersSAPost'))
+const BestEftposPlasterersSydney    = lazy(() => import('./pages/blog/BestEftposPlasterersSydney'))
+const BestEftposPlasterersMelbourne = lazy(() => import('./pages/blog/BestEftposPlasterersMelbourne'))
+const BestEftposPlasterersBrisbane  = lazy(() => import('./pages/blog/BestEftposPlasterersBrisbane'))
+const BestEftposPlasterersPerth     = lazy(() => import('./pages/blog/BestEftposPlasterersPerth'))
+const BestEftposPlasterersAdelaide  = lazy(() => import('./pages/blog/BestEftposPlasterersAdelaide'))
 // Painters & Concreters × WA/SA state guides
 const BestEftposPaintersWAPost      = lazy(() => import('./pages/blog/BestEftposPaintersWAPost'))
 const BestEftposPaintersSAPost      = lazy(() => import('./pages/blog/BestEftposPaintersSAPost'))
@@ -358,6 +369,16 @@ export default function App() {
           <Route path="/blog/best-eftpos-tilers-brisbane-2026" element={<BestEftposTilersBrisbane />} />
           <Route path="/blog/best-eftpos-tilers-perth-2026" element={<BestEftposTilersPerth />} />
           <Route path="/blog/best-eftpos-tilers-adelaide-2026" element={<BestEftposTilersAdelaide />} />
+          <Route path="/blog/best-eftpos-plasterers-nsw-2026" element={<BestEftposPlasterersNSWPost />} />
+          <Route path="/blog/best-eftpos-plasterers-vic-2026" element={<BestEftposPlasterersVICPost />} />
+          <Route path="/blog/best-eftpos-plasterers-qld-2026" element={<BestEftposPlasterersQLDPost />} />
+          <Route path="/blog/best-eftpos-plasterers-wa-2026" element={<BestEftposPlasterersWAPost />} />
+          <Route path="/blog/best-eftpos-plasterers-sa-2026" element={<BestEftposPlasterersSAPost />} />
+          <Route path="/blog/best-eftpos-plasterers-sydney-2026" element={<BestEftposPlasterersSydney />} />
+          <Route path="/blog/best-eftpos-plasterers-melbourne-2026" element={<BestEftposPlasterersMelbourne />} />
+          <Route path="/blog/best-eftpos-plasterers-brisbane-2026" element={<BestEftposPlasterersBrisbane />} />
+          <Route path="/blog/best-eftpos-plasterers-perth-2026" element={<BestEftposPlasterersPerth />} />
+          <Route path="/blog/best-eftpos-plasterers-adelaide-2026" element={<BestEftposPlasterersAdelaide />} />
           <Route path="/blog/best-eftpos-painters-wa-2026" element={<BestEftposPaintersWAPost />} />
           <Route path="/blog/best-eftpos-painters-sa-2026" element={<BestEftposPaintersSAPost />} />
           <Route path="/blog/best-eftpos-concreters-wa-2026" element={<BestEftposConcretersWAPost />} />
