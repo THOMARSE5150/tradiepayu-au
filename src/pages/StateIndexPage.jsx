@@ -7,6 +7,8 @@ import NotFoundPage from './NotFoundPage'
 import { TRADES_META } from '../data/tradesMeta'
 import { STATE_MAP, STATES } from '../data/states'
 
+import siteMeta from '../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 
 const TRADE_ICONS = {
@@ -82,7 +84,7 @@ export default function StateIndexPage() {
       description,
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
-      dateModified: '2026-04-02',
+      dateModified: siteMeta.lastVerified,
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },
@@ -159,7 +161,7 @@ export default function StateIndexPage() {
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">State Guide</span>
             <span>·</span><span>All 18 Trades</span>
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {siteMeta.lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">{title}</h1>
           <p className="hero-sub">

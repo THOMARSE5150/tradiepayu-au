@@ -206,6 +206,10 @@ Only include providers where you found data above.
   fs.writeFileSync(META_PATH, JSON.stringify(meta, null, 2))
   console.log('✓ site-meta.json updated')
 
+  // Regenerate sitemap with updated lastmod date
+  await import('./generate-sitemap.js')
+  console.log('✓ sitemap.xml regenerated')
+
   // Append to change log
   if (changes.length) {
     log.push({ date: today, changes })

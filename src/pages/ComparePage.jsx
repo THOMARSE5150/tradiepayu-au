@@ -8,6 +8,8 @@ import RelatedLinks from '../components/RelatedLinks'
 import FaqSection from '../components/FaqSection'
 import AffiliateButton from '../components/AffiliateButton'
 
+import siteMeta from '../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 
 function Cell({ value, positive, className = '' }) {
@@ -157,7 +159,7 @@ export default function ComparePage() {
       image: { '@type': 'ImageObject', url: p1.product_image?.startsWith('http') ? p1.product_image : `${SITE}/og-provider.svg`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
-      dateModified: '2026-04-02',
+      dateModified: siteMeta.lastVerified,
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },
@@ -204,7 +206,7 @@ export default function ComparePage() {
           <Breadcrumb crumbs={crumbs} />
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Head-to-Head</span>
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {siteMeta.lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
             {p1.name} vs {p2.name} for Australian Tradies
