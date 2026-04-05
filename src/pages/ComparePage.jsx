@@ -18,10 +18,13 @@ function Cell({ value, positive, className = '' }) {
   return <span className={`${positive ? 'text-brand-blue font-semibold' : 'text-brand-dark'} ${className}`}>{value ?? '—'}</span>
 }
 
-function CompareRow({ label, v1, v2, pos1, pos2 }) {
+function CompareRow({ label, note, v1, v2, pos1, pos2 }) {
   return (
     <div className="grid grid-cols-3 gap-3 py-3 border-b border-slate-100 last:border-0 items-center">
-      <span className="text-xs text-slate-500 font-medium">{label}</span>
+      <div>
+        <span className="text-xs text-slate-500 font-medium leading-tight">{label}</span>
+        {note && <span className="block text-[10px] text-slate-400 leading-tight mt-0.5">{note}</span>}
+      </div>
       <div className="text-sm"><Cell value={v1} positive={pos1} /></div>
       <div className="text-sm"><Cell value={v2} positive={pos2} /></div>
     </div>
@@ -183,14 +186,19 @@ export default function ComparePage() {
     },
   ]
 
-  const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Quote'
-  const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Quote'
+  const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Contact for rate'
+  const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Contact for rate'
+  const rateNote = (!p1.fees.in_person_percent || !p2.fees.in_person_percent) ? 'Quote-based — varies by volume' : null
   const hw1 = p1.hardware[0]?.price_aud ? `$${p1.hardware[0].price_aud}` : p1.hardware[0]?.rental ? 'Rental' : '—'
   const hw2 = p2.hardware[0]?.price_aud ? `$${p2.hardware[0].price_aud}` : p2.hardware[0]?.rental ? 'Rental' : '—'
   const sim1 = p1.sim_plan.available ? (p1.sim_plan.cost_monthly_aud ? `$${p1.sim_plan.cost_monthly_aud}/mo` : 'Included') : false
   const sim2 = p2.sim_plan.available ? (p2.sim_plan.cost_monthly_aud ? `$${p2.sim_plan.cost_monthly_aud}/mo` : 'Included') : false
-  const settle1 = p1.settlement.same_day_available ? 'Same day' : p1.settlement.standard_days != null ? `${p1.settlement.standard_days}d` : '—'
-  const settle2 = p2.settlement.same_day_available ? 'Same day' : p2.settlement.standard_days != null ? `${p2.settlement.standard_days}d` : '—'
+  const settle1 = p1.settlement.same_day_available ? 'Same day' : p1.settlement.standard_days != null ? `${p1.settlement.standard_days}d` : 'Contact'
+  const settle2 = p2.settlement.same_day_available ? 'Same day' : p2.settlement.standard_days != null ? `${p2.settlement.standard_days}d` : 'Contact'
+  const conn1 = p1.sim_plan.available ? 'SIM ✓' : p1.offline_mode.available ? 'Offline ✓' : 'WiFi only'
+  const conn2 = p2.sim_plan.available ? 'SIM ✓' : p2.offline_mode.available ? 'Offline ✓' : 'WiFi only'
+  const c1Better = !!(p1.sim_plan.available || p1.offline_mode.available)
+  const c2Better = !!(p2.sim_plan.available || p2.offline_mode.available)
 
   return (
     <>
@@ -268,7 +276,7 @@ export default function ComparePage() {
       {/* Quick stats strip */}
       <div className="bg-white border-b border-slate-100">
         <div className="container-page max-w-2xl py-4">
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
             {[
               {
                 label: 'In-person rate',
@@ -277,16 +285,21 @@ export default function ComparePage() {
                 p2Better: p2.fees.in_person_percent != null && (p1.fees.in_person_percent == null || p2.fees.in_person_percent < p1.fees.in_person_percent),
               },
               {
-                label: 'Hardware',
-                v1: hw1, v2: hw2,
-                p1Better: !!p1.hardware[0]?.price_aud && (!p2.hardware[0]?.price_aud || p1.hardware[0].price_aud <= p2.hardware[0].price_aud),
-                p2Better: !!p2.hardware[0]?.price_aud && (!p1.hardware[0]?.price_aud || p2.hardware[0].price_aud < p1.hardware[0].price_aud),
+                label: 'Connectivity',
+                v1: conn1, v2: conn2,
+                p1Better: c1Better, p2Better: c2Better,
               },
               {
                 label: 'Settlement',
                 v1: settle1, v2: settle2,
                 p1Better: p1.settlement.same_day_available && !p2.settlement.same_day_available,
                 p2Better: p2.settlement.same_day_available && !p1.settlement.same_day_available,
+              },
+              {
+                label: 'Hardware',
+                v1: hw1, v2: hw2,
+                p1Better: !!p1.hardware[0]?.price_aud && (!p2.hardware[0]?.price_aud || p1.hardware[0].price_aud <= p2.hardware[0].price_aud),
+                p2Better: !!p2.hardware[0]?.price_aud && (!p1.hardware[0]?.price_aud || p2.hardware[0].price_aud < p1.hardware[0].price_aud),
               },
             ].map((item, i) => (
               <div key={i}>
@@ -321,11 +334,11 @@ export default function ComparePage() {
 
             {/* Rows */}
             <div className="px-5">
-              <CompareRow label="In-person rate" v1={rate1} v2={rate2} />
-              <CompareRow label="Hardware" v1={hw1} v2={hw2} />
-              <CompareRow label="SIM plan" v1={sim1 || false} v2={sim2 || false} pos1={!!p1.sim_plan.available} pos2={!!p2.sim_plan.available} />
-              <CompareRow label="Offline mode" v1={p1.offline_mode.available || false} v2={p2.offline_mode.available || false} />
+              <CompareRow label="In-person rate" note={rateNote} v1={rate1} v2={rate2} />
+              <CompareRow label="SIM plan" note="No customer WiFi needed" v1={sim1 || false} v2={sim2 || false} pos1={!!p1.sim_plan.available} pos2={!!p2.sim_plan.available} />
+              <CompareRow label="Offline mode" note="Zero-signal environments" v1={p1.offline_mode.available || false} v2={p2.offline_mode.available || false} />
               <CompareRow label="Settlement" v1={settle1} v2={settle2} />
+              <CompareRow label="Hardware" v1={hw1} v2={hw2} />
               <CompareRow label="Invoicing" v1={p1.invoicing || false} v2={p2.invoicing || false} />
               <CompareRow label="Payment links" v1={p1.payment_links || false} v2={p2.payment_links || false} />
               <CompareRow label="Recurring billing" v1={p1.recurring_billing || false} v2={p2.recurring_billing || false} />
