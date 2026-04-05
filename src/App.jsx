@@ -206,6 +206,17 @@ const BestEftposCleanersMelbourne = lazy(() => import('./pages/blog/BestEftposCl
 const BestEftposCleanersBrisbane  = lazy(() => import('./pages/blog/BestEftposCleanersBrisbane'))
 const BestEftposCleanersPerth     = lazy(() => import('./pages/blog/BestEftposCleanersPerth'))
 const BestEftposCleanersAdelaide  = lazy(() => import('./pages/blog/BestEftposCleanersAdelaide'))
+// HVAC state + city guides
+const BestEftposHVACNSWPost   = lazy(() => import('./pages/blog/BestEftposHVACNSWPost'))
+const BestEftposHVACVICPost   = lazy(() => import('./pages/blog/BestEftposHVACVICPost'))
+const BestEftposHVACQLDPost   = lazy(() => import('./pages/blog/BestEftposHVACQLDPost'))
+const BestEftposHVACWAPost    = lazy(() => import('./pages/blog/BestEftposHVACWAPost'))
+const BestEftposHVACSAPost    = lazy(() => import('./pages/blog/BestEftposHVACSAPost'))
+const BestEftposHVACSydney    = lazy(() => import('./pages/blog/BestEftposHVACSydney'))
+const BestEftposHVACMelbourne = lazy(() => import('./pages/blog/BestEftposHVACMelbourne'))
+const BestEftposHVACBrisbane  = lazy(() => import('./pages/blog/BestEftposHVACBrisbane'))
+const BestEftposHVACPerth     = lazy(() => import('./pages/blog/BestEftposHVACPerth'))
+const BestEftposHVACAdelaide  = lazy(() => import('./pages/blog/BestEftposHVACAdelaide'))
 // Painters & Concreters × WA/SA state guides
 const BestEftposPaintersWAPost      = lazy(() => import('./pages/blog/BestEftposPaintersWAPost'))
 const BestEftposPaintersSAPost      = lazy(() => import('./pages/blog/BestEftposPaintersSAPost'))
@@ -421,6 +432,16 @@ export default function App() {
           <Route path="/blog/best-eftpos-cleaners-brisbane-2026" element={<BestEftposCleanersBrisbane />} />
           <Route path="/blog/best-eftpos-cleaners-perth-2026" element={<BestEftposCleanersPerth />} />
           <Route path="/blog/best-eftpos-cleaners-adelaide-2026" element={<BestEftposCleanersAdelaide />} />
+          <Route path="/blog/best-eftpos-hvac-nsw-2026" element={<BestEftposHVACNSWPost />} />
+          <Route path="/blog/best-eftpos-hvac-vic-2026" element={<BestEftposHVACVICPost />} />
+          <Route path="/blog/best-eftpos-hvac-qld-2026" element={<BestEftposHVACQLDPost />} />
+          <Route path="/blog/best-eftpos-hvac-wa-2026" element={<BestEftposHVACWAPost />} />
+          <Route path="/blog/best-eftpos-hvac-sa-2026" element={<BestEftposHVACSAPost />} />
+          <Route path="/blog/best-eftpos-hvac-sydney-2026" element={<BestEftposHVACSydney />} />
+          <Route path="/blog/best-eftpos-hvac-melbourne-2026" element={<BestEftposHVACMelbourne />} />
+          <Route path="/blog/best-eftpos-hvac-brisbane-2026" element={<BestEftposHVACBrisbane />} />
+          <Route path="/blog/best-eftpos-hvac-perth-2026" element={<BestEftposHVACPerth />} />
+          <Route path="/blog/best-eftpos-hvac-adelaide-2026" element={<BestEftposHVACAdelaide />} />
           <Route path="/blog/best-eftpos-painters-wa-2026" element={<BestEftposPaintersWAPost />} />
           <Route path="/blog/best-eftpos-painters-sa-2026" element={<BestEftposPaintersSAPost />} />
           <Route path="/blog/best-eftpos-concreters-wa-2026" element={<BestEftposConcretersWAPost />} />
