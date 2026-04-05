@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && vite build && node scripts/ping-indexnow.js",
-    "lint": "eslint .",
+    "build": "node scripts/check-jsx-escapes.mjs && node scripts/generate-sitemap.js && vite build && node scripts/ping-indexnow.js",
+    "lint": "eslint . && node scripts/check-jsx-escapes.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
