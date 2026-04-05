@@ -78,6 +78,11 @@ const STATE_TRADE_BLOG_MAP = {
   'glaziers-qld':     { slug: 'best-eftpos-glaziers-qld-2026',     label: 'QLD glaziers guide' },
   'glaziers-wa':      { slug: 'best-eftpos-glaziers-wa-2026',      label: 'WA glaziers guide' },
   'glaziers-sa':      { slug: 'best-eftpos-glaziers-sa-2026',      label: 'SA glaziers guide' },
+  'cleaners-nsw':     { slug: 'best-eftpos-cleaners-nsw-2026',     label: 'NSW cleaners guide' },
+  'cleaners-vic':     { slug: 'best-eftpos-cleaners-vic-2026',     label: 'VIC cleaners guide' },
+  'cleaners-qld':     { slug: 'best-eftpos-cleaners-qld-2026',     label: 'QLD cleaners guide' },
+  'cleaners-wa':      { slug: 'best-eftpos-cleaners-wa-2026',      label: 'WA cleaners guide' },
+  'cleaners-sa':      { slug: 'best-eftpos-cleaners-sa-2026',      label: 'SA cleaners guide' },
 }
 
 
@@ -95,6 +100,7 @@ const CITY_BLOG_MAP = {
     tilers:       { city: 'Sydney', slug: 'best-eftpos-tilers-sydney-2026' },
     plasterers:   { city: 'Sydney', slug: 'best-eftpos-plasterers-sydney-2026' },
     glaziers:     { city: 'Sydney', slug: 'best-eftpos-glaziers-sydney-2026' },
+    cleaners:     { city: 'Sydney', slug: 'best-eftpos-cleaners-sydney-2026' },
   },
   vic: {
     electricians: { city: 'Melbourne', slug: 'best-eftpos-electricians-melbourne-2026' },
@@ -108,6 +114,7 @@ const CITY_BLOG_MAP = {
     tilers:       { city: 'Melbourne', slug: 'best-eftpos-tilers-melbourne-2026' },
     plasterers:   { city: 'Melbourne', slug: 'best-eftpos-plasterers-melbourne-2026' },
     glaziers:     { city: 'Melbourne', slug: 'best-eftpos-glaziers-melbourne-2026' },
+    cleaners:     { city: 'Melbourne', slug: 'best-eftpos-cleaners-melbourne-2026' },
   },
   qld: {
     electricians: { city: 'Brisbane', slug: 'best-eftpos-electricians-brisbane-2026' },
@@ -121,6 +128,7 @@ const CITY_BLOG_MAP = {
     tilers:       { city: 'Brisbane', slug: 'best-eftpos-tilers-brisbane-2026' },
     plasterers:   { city: 'Brisbane', slug: 'best-eftpos-plasterers-brisbane-2026' },
     glaziers:     { city: 'Brisbane', slug: 'best-eftpos-glaziers-brisbane-2026' },
+    cleaners:     { city: 'Brisbane', slug: 'best-eftpos-cleaners-brisbane-2026' },
   },
   wa: {
     electricians: { city: 'Perth', slug: 'best-eftpos-electricians-perth-2026' },
@@ -134,6 +142,7 @@ const CITY_BLOG_MAP = {
     tilers:       { city: 'Perth', slug: 'best-eftpos-tilers-perth-2026' },
     plasterers:   { city: 'Perth', slug: 'best-eftpos-plasterers-perth-2026' },
     glaziers:     { city: 'Perth', slug: 'best-eftpos-glaziers-perth-2026' },
+    cleaners:     { city: 'Perth', slug: 'best-eftpos-cleaners-perth-2026' },
   },
   sa: {
     electricians: { city: 'Adelaide', slug: 'best-eftpos-electricians-adelaide-2026' },
@@ -147,6 +156,7 @@ const CITY_BLOG_MAP = {
     tilers:       { city: 'Adelaide', slug: 'best-eftpos-tilers-adelaide-2026' },
     plasterers:   { city: 'Adelaide', slug: 'best-eftpos-plasterers-adelaide-2026' },
     glaziers:     { city: 'Adelaide', slug: 'best-eftpos-glaziers-adelaide-2026' },
+    cleaners:     { city: 'Adelaide', slug: 'best-eftpos-cleaners-adelaide-2026' },
   },
 }
 
