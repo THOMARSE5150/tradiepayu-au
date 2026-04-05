@@ -158,13 +158,13 @@ export default function EftposFeesPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">What "in-person rate" actually means</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Every time a customer taps, inserts, or swipes their card on your terminal, the provider takes a percentage of the transaction amount. That\'s the in-person rate. There are no separate gateway fees, no monthly statement fees, and no minimum charges on Zeller, Square, or Stripe — the percentage is the entire cost.
+            Every time a customer taps, inserts, or swipes their card on your terminal, the provider takes a percentage of the transaction amount. That's the in-person rate. There are no separate gateway fees, no monthly statement fees, and no minimum charges on Zeller, Square, or Stripe — the percentage is the entire cost.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
-            At <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller</Link>'s 1.4% rate, a $500 job costs you $7.00 in processing fees. At <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square</Link>'s 1.6%, it\'s $8.00. At <Link to="/providers/stripe" className="text-brand-blue hover:underline font-medium">Stripe</Link>'s 1.7% plus $0.10, it\'s $8.60. Small differences per job — but they compound across a month of work.
+            At <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller</Link>'s 1.4% rate, a $500 job costs you $7.00 in processing fees. At <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square</Link>'s 1.6%, it's $8.00. At <Link to="/providers/stripe" className="text-brand-blue hover:underline font-medium">Stripe</Link>'s 1.7% plus $0.10, it's $8.60. Small differences per job — but they compound across a month of work.
           </p>
           <p className="text-slate-600 leading-relaxed">
-            None of Zeller, Square, or Stripe charge a monthly fee on standard accounts. You pay only when you take a payment. This is the flat-rate model, and it\'s what most tradies should use unless their volume is high enough to justify a negotiated rate through a bank merchant account or <Link to="/providers/tyro" className="text-brand-blue hover:underline font-medium">Tyro</Link>.
+            None of Zeller, Square, or Stripe charge a monthly fee on standard accounts. You pay only when you take a payment. This is the flat-rate model, and it's what most tradies should use unless their volume is high enough to justify a negotiated rate through a bank merchant account or <Link to="/providers/tyro" className="text-brand-blue hover:underline font-medium">Tyro</Link>.
           </p>
         </motion.div>
       </section>
@@ -289,7 +289,7 @@ export default function EftposFeesPost() {
             Square is the right choice when you work in environments with no mobile signal and no WiFi — its offline mode is genuinely the only solution for deep underground or concrete-shielded sites. Use it as a backup device, not a primary.
           </p>
           <p className="text-slate-600 leading-relaxed">
-            Stripe makes sense if you already use Stripe for online payments or invoicing and want one provider across all channels. The 1.7% + $0.10 in-person rate is the highest of the three, but Stripe\'s developer tools and invoice features are market-leading.
+            Stripe makes sense if you already use Stripe for online payments or invoicing and want one provider across all channels. The 1.7% + $0.10 in-person rate is the highest of the three, but Stripe's developer tools and invoice features are market-leading.
           </p>
           <p className="text-slate-600 leading-relaxed mt-4">
             <Link to="/providers/shift4" className="text-brand-blue hover:underline font-medium">Shift4</Link> is the exception to the rate comparison: it passes the processing fee to the customer entirely (surcharging model), so your merchant cost is 0%. Worth considering for commercial operators who bill large jobs regularly. See the <Link to="/compare" className="text-brand-blue hover:underline font-medium">full provider comparison →</Link>

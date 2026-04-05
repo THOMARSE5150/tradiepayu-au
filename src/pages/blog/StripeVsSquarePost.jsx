@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: 'Which is cheaper for high-volume tradies, Stripe or Square?',
-    a: "Square is cheaper for most high-volume in-person use at 1.6% vs Stripe at 1.7% + $0.10. On $20,000/month of card revenue at an average transaction of $300: Square costs $320, Stripe costs $340 + $6.67 in per-transaction fees = $346.67. But both are more expensive than Zeller (1.4%, $280/month on the same volume). For online-heavy billing — where Stripe\'s payment link rate (1.7% + $0.30) beats Square\'s (2.2%) — Stripe wins on online payments.",
+    a: "Square is cheaper for most high-volume in-person use at 1.6% vs Stripe at 1.7% + $0.10. On $20,000/month of card revenue at an average transaction of $300: Square costs $320, Stripe costs $340 + $6.67 in per-transaction fees = $346.67. But both are more expensive than Zeller (1.4%, $280/month on the same volume). For online-heavy billing — where Stripe's payment link rate (1.7% + $0.30) beats Square's (2.2%) — Stripe wins on online payments.",
   },
   {
     q: 'Which has better hardware: Stripe or Square?',

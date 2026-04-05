@@ -29,8 +29,8 @@ const faqs = [
     a: "Yes — disclosure is mandatory under Australian Consumer Law. You must display the surcharge percentage before the customer commits to paying. Most surcharging-configured terminals display it on the payment screen automatically. Including a note on your quote or invoice ('Card payments include a 1.4% processing fee') also satisfies the requirement.",
   },
   {
-    q: "What is Shift4\'s surcharging model?",
-    a: "Shift4 operates on a 'zero cost' or 'zero merchant fee' model — the card processing fee is passed to the customer by default. You pay $0 in processing fees and the customer pays a surcharge (typically 1.5–1.75%, depending on card type). This model is the core of Shift4\'s value proposition. The trade-off is less price transparency — Shift4\'s merchant agreement is not publicly published and requires a direct contract.",
+    q: "What is Shift4's surcharging model?",
+    a: "Shift4 operates on a 'zero cost' or 'zero merchant fee' model — the card processing fee is passed to the customer by default. You pay $0 in processing fees and the customer pays a surcharge (typically 1.5–1.75%, depending on card type). This model is the core of Shift4's value proposition. The trade-off is less price transparency — Shift4's merchant agreement is not publicly published and requires a direct contract.",
   },
   {
     q: 'Does surcharging affect how customers feel about paying?',
@@ -140,7 +140,7 @@ export default function SurchargingTradiesPost() {
         <section className="mb-10 space-y-5">
           <h2 className="text-xl font-bold text-brand-dark">How surcharging works</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            When you enable surcharging on your EFTPOS terminal, a percentage is added to the customer\'s payment total at checkout. The surcharge covers your cost of accepting that card. Your net revenue stays at the original job price — you are not absorbing the processing fee.
+            When you enable surcharging on your EFTPOS terminal, a percentage is added to the customer's payment total at checkout. The surcharge covers your cost of accepting that card. Your net revenue stays at the original job price — you are not absorbing the processing fee.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed">
             Example: A plumber invoices $600 for a job. With 1.4% surcharging enabled, the customer pays $608.40. The plumber receives $600. The $8.40 goes to Zeller as the processing fee.
@@ -151,12 +151,12 @@ export default function SurchargingTradiesPost() {
             The Reserve Bank of Australia regulates surcharging under the <em>Payment Systems (Regulation) Act 1998</em>. The core rules:
           </p>
           <ul className="list-disc pl-5 text-sm text-slate-600 space-y-2 mt-2">
-            <li><strong className="text-brand-dark">You cannot surcharge more than your cost.</strong> The surcharge must reflect your actual cost of accepting that card type. For Zeller\'s 1.4% in-person rate, you may surcharge up to 1.4%.</li>
+            <li><strong className="text-brand-dark">You cannot surcharge more than your cost.</strong> The surcharge must reflect your actual cost of accepting that card type. For Zeller's 1.4% in-person rate, you may surcharge up to 1.4%.</li>
             <li><strong className="text-brand-dark">Disclosure is required before payment.</strong> The customer must be informed of the surcharge amount before they tap or insert their card. Most terminals display this automatically on the payment screen.</li>
             <li><strong className="text-brand-dark">Excessive surcharging is prohibited.</strong> The ACCC enforces this. A surcharge significantly above your actual cost of acceptance is illegal and can result in fines.</li>
           </ul>
           <p className="text-sm text-slate-600 leading-relaxed mt-3">
-            In practice, if you configure the surcharge to match your provider\'s published rate exactly, you are compliant. Both Zeller and Square make this straightforward.
+            In practice, if you configure the surcharge to match your provider's published rate exactly, you are compliant. Both Zeller and Square make this straightforward.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">How to enable surcharging on Zeller</h2>
@@ -182,7 +182,7 @@ export default function SurchargingTradiesPost() {
             <Link to="/providers/shift4" className="text-brand-blue hover:underline">Shift4</Link> operates on a "zero cost" model — customer surcharging is the default. As a Shift4 merchant, you pay $0 in processing fees because the surcharge is built into every transaction automatically. The customer pays a percentage on top of the invoice total (typically 1.5–1.75%, depending on card type).
           </p>
           <p className="text-sm text-slate-600 leading-relaxed mt-2">
-            This is the same outcome as enabling surcharging on Zeller or Square — but it is the model by default, not an optional setting. The trade-off is that Shift4\'s merchant agreement is not publicly available and requires a direct contract, which makes it harder to evaluate than Zeller or Square.
+            This is the same outcome as enabling surcharging on Zeller or Square — but it is the model by default, not an optional setting. The trade-off is that Shift4's merchant agreement is not publicly available and requires a direct contract, which makes it harder to evaluate than Zeller or Square.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">Is surcharging right for your trade business?</h2>

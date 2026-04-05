@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     q: "What EFTPOS for Western Sydney estate electricians?",
-    a: "Zeller Terminal 1 + SIM plan. New housing estates in Marsden Park, Box Hill, and Schofields are among the fastest-growing areas in Australia. These sites have no NBN connected during construction. Zeller\'s SIM plan means you can process payment at the door of a brand-new home before the internet is ever connected.",
+    a: "Zeller Terminal 1 + SIM plan. New housing estates in Marsden Park, Box Hill, and Schofields are among the fastest-growing areas in Australia. These sites have no NBN connected during construction. Zeller's SIM plan means you can process payment at the door of a brand-new home before the internet is ever connected.",
   },
   {
     q: "How much do Sydney electricians pay in EFTPOS fees?",
-    a: "On $10,000/month in card revenue at Zeller\'s 1.4% rate, your processing cost is $140. Add $15 for the SIM plan and the total is $155. At Square\'s 1.6% rate, it\'s $160 in processing on the same volume — plus $329 upfront hardware versus Zeller\'s $99. Over 12 months, Zeller saves approximately $290 total.",
+    a: "On $10,000/month in card revenue at Zeller's 1.4% rate, your processing cost is $140. Add $15 for the SIM plan and the total is $155. At Square's 1.6% rate, it's $160 in processing on the same volume — plus $329 upfront hardware versus Zeller's $99. Over 12 months, Zeller saves approximately $290 total.",
   },
 ]
 
@@ -118,7 +118,7 @@ export default function BestEftposElectricianssydney() {
             Best EFTPOS for Electricians in Sydney (2026)
           </h1>
           <p className="hero-sub">
-            Sydney CBD switchboard rooms, Western Sydney housing estates, and North Shore commercial fit-outs — your EFTPOS needs to work where WiFi doesn\'t reach.
+            Sydney CBD switchboard rooms, Western Sydney housing estates, and North Shore commercial fit-outs — your EFTPOS needs to work where WiFi doesn't reach.
           </p>
         </div>
       </header>
@@ -144,8 +144,8 @@ export default function BestEftposElectricianssydney() {
           <h2 className="text-xl font-bold text-brand-dark">Where Sydney electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Sydney CBD switchboard rooms", body: "High-rise buildings in the CBD have switchboard rooms and mechanical floors where building WiFi doesn\'t reach. Zeller\'s SIM terminal uses Optus 4G independently." },
-              { title: "Western Sydney estates", body: "Marsden Park, Box Hill, Schofields, and Jordan Springs have thousands of homes under construction without NBN. Zeller\'s SIM plan handles payment from day one." },
+              { title: "Sydney CBD switchboard rooms", body: "High-rise buildings in the CBD have switchboard rooms and mechanical floors where building WiFi doesn't reach. Zeller's SIM terminal uses Optus 4G independently." },
+              { title: "Western Sydney estates", body: "Marsden Park, Box Hill, Schofields, and Jordan Springs have thousands of homes under construction without NBN. Zeller's SIM plan handles payment from day one." },
               { title: "North Shore and Hills District", body: "Commercial and residential electrical work in the Hills District and North Shore often involves buildings mid-renovation with no active internet. SIM connectivity removes the WiFi dependency." },
               { title: "After-hours emergency call-outs", body: "Sydney emergency electrical work — storm damage after east coast lows, tripped mains in apartment blocks — happens at any hour. SIM connectivity means payment never waits on a WiFi password." },
             ].map((item, i) => (
@@ -169,7 +169,7 @@ export default function BestEftposElectricianssydney() {
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">#2 Square Terminal — backup for dead zones</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> ($329) with offline mode handles basement substations, underground plant rooms, and any Sydney site where even mobile data is absent. For confirmed dead zones — underground substations in the CBD, deep basement switchrooms — Square Terminal\'s offline mode stores the transaction locally and processes within 24 hours.
+            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> ($329) with offline mode handles basement substations, underground plant rooms, and any Sydney site where even mobile data is absent. For confirmed dead zones — underground substations in the CBD, deep basement switchrooms — Square Terminal's offline mode stores the transaction locally and processes within 24 hours.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">Cost at typical Sydney electricians volumes</h2>

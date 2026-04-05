@@ -66,7 +66,7 @@ export default function BestEftposElectriciansSAPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where South Australia electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Adelaide outer suburbs", body: "Munno Para, Angle Vale, and Mount Barker are Adelaide\'s fastest-growing areas. New homes under construction have no NBN. Zeller\'s SIM plan handles payment from day one." },
+              { title: "Adelaide outer suburbs", body: "Munno Para, Angle Vale, and Mount Barker are Adelaide's fastest-growing areas. New homes under construction have no NBN. Zeller's SIM plan handles payment from day one." },
               { title: "Adelaide CBD and inner city", body: "Commercial electrical work in CBD buildings and heritage inner-city properties often involves spaces with poor WiFi. SIM connectivity handles these environments." },
               { title: "Regional SA", body: "Barossa Valley, McLaren Vale, Port Augusta, and Whyalla have solid Optus 4G. Remote outback SA — Coober Pedy, Ceduna, Nullarbor — is beyond reliable coverage." },
               { title: "After-hours Adelaide emergencies", body: "Storm damage, tripped mains, and hot water system faults happen at any hour across Adelaide. SIM connectivity means payment is never delayed by WiFi access." },

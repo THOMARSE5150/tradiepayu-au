@@ -66,7 +66,7 @@ export default function BestEftposElectriciansWAPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Western Australia electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Perth growth corridors", body: "Baldivis, Alkimos, Ellenbrook, and Byford have large estates under construction without NBN. Zeller\'s SIM plan handles payment from day one on these sites." },
+              { title: "Perth growth corridors", body: "Baldivis, Alkimos, Ellenbrook, and Byford have large estates under construction without NBN. Zeller's SIM plan handles payment from day one on these sites." },
               { title: "Pilbara and Kimberley", body: "Remote mining regions and regional WA towns like Karratha, Port Hedland, and Broome have variable Optus 4G coverage. Square Terminal offline mode is the backup for confirmed dead zones." },
               { title: "Perth commercial", body: "CBD and inner-Perth commercial electrical work in buildings pre-tenancy has no active internet. SIM connectivity handles these environments." },
               { title: "Regional WA", body: "Geraldton, Bunbury, Albany, and Kalgoorlie have solid Optus 4G coverage. Remote rural WA and outback are the exceptions." },

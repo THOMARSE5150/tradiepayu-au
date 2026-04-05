@@ -44,7 +44,7 @@ export default function BestEftposFencersWAPost() {
       </header>
       <section id="verdict" className="section container-page">
         <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="text-2xl font-bold text-brand-dark mb-4">Best EFTPOS for Fencers in Western Australia</motion.h2>
-        <div className="infobox mb-6"><p className="text-sm text-slate-700 leading-relaxed"><strong>Zeller Terminal 1</strong> is the top pick for WA fencers. At 1.4% in-person with SIM connectivity via Optus and same-day settlement, it covers Perth new estate fencing and regional WA rural jobs. For remote pastoral stations with no coverage, Square Terminal\'s offline mode handles payment.</p></div>
+        <div className="infobox mb-6"><p className="text-sm text-slate-700 leading-relaxed"><strong>Zeller Terminal 1</strong> is the top pick for WA fencers. At 1.4% in-person with SIM connectivity via Optus and same-day settlement, it covers Perth new estate fencing and regional WA rural jobs. For remote pastoral stations with no coverage, Square Terminal's offline mode handles payment.</p></div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           {[ { label: 'Rate', value: '1.4%', note: 'In-person tap/chip' }, { label: 'Hardware', value: '$99', note: 'Outright, no rental' }, { label: 'Settlement', value: 'Same day', note: 'To Zeller account' } ].map((s, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.35, delay: i * 0.07 }} className="lg-light rounded-2xl p-4 text-center">

@@ -54,7 +54,7 @@ export default function BestEftposBuildersWAPost() {
             <span>·</span><span>2 Apr 2026</span><span>·</span><span>5 min read</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Builders in Western Australia (2026)</h1>
-          <p className="hero-sub">Perth\'s outer suburb growth corridors, progress payment collection from developers, and same-day material purchasing — your EFTPOS must handle large invoices and estate sites without NBN.</p>
+          <p className="hero-sub">Perth's outer suburb growth corridors, progress payment collection from developers, and same-day material purchasing — your EFTPOS must handle large invoices and estate sites without NBN.</p>
         </div>
       </header>
       <article className="container-page section max-w-3xl">
@@ -66,8 +66,8 @@ export default function BestEftposBuildersWAPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Western Australia builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Perth growth corridor volume", body: "Baldivis, Alkimos, Ellenbrook, and Byford are Western Australia\'s fastest-growing residential construction areas. New estates under construction have no NBN. Payment links for deposits before build commences are essential." },
-              { title: "Progress payments", body: "WA builders collecting HIA-standard stage payments benefit from Zeller\'s payment links (1.7%) — clients pay via SMS without needing to attend site. Same-day settlement means funds are available for same-day material purchasing." },
+              { title: "Perth growth corridor volume", body: "Baldivis, Alkimos, Ellenbrook, and Byford are Western Australia's fastest-growing residential construction areas. New estates under construction have no NBN. Payment links for deposits before build commences are essential." },
+              { title: "Progress payments", body: "WA builders collecting HIA-standard stage payments benefit from Zeller's payment links (1.7%) — clients pay via SMS without needing to attend site. Same-day settlement means funds are available for same-day material purchasing." },
               { title: "Regional WA commercial", body: "Bunbury, Geraldton, and regional WA commercial construction requires reliable on-site payment. Optus 4G covers all major WA regional centres." },
               { title: "Multiple terminals", body: "WA building companies with multiple active sites can deploy multiple Zeller terminals under one account — $99 each outright, no rental fees." },
             ].map((item, i) => (

@@ -30,11 +30,11 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for plumbers in Sydney CBD?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. Sydney CBD apartment blocks and commercial buildings have pump rooms and mechanical floors where building WiFi doesn\'t reliably reach. The SIM terminal processes on Optus 4G independently. At 1.4% in-person rate and same-day settlement, it is also the lowest-cost option with the fastest access to funds.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. Sydney CBD apartment blocks and commercial buildings have pump rooms and mechanical floors where building WiFi doesn't reliably reach. The SIM terminal processes on Optus 4G independently. At 1.4% in-person rate and same-day settlement, it is also the lowest-cost option with the fastest access to funds.",
   },
   {
     q: "Why does same-day settlement matter for Sydney plumbers?",
-    a: "Sydney plumbers often need to purchase replacement parts — hot water systems, pipe fittings, fixtures — from Reece or Tradelink on the same day as the job. Same-day settlement with Zeller means card revenue collected that day is available in the Zeller Transaction Account before close of business. Square, Stripe, and most others settle next business day, meaning a late-afternoon job doesn\'t fund same-day purchases.",
+    a: "Sydney plumbers often need to purchase replacement parts — hot water systems, pipe fittings, fixtures — from Reece or Tradelink on the same day as the job. Same-day settlement with Zeller means card revenue collected that day is available in the Zeller Transaction Account before close of business. Square, Stripe, and most others settle next business day, meaning a late-afternoon job doesn't fund same-day purchases.",
   },
   {
     q: "What EFTPOS for emergency plumbing call-outs in Sydney?",
@@ -144,10 +144,10 @@ export default function BestEftposPlumbersSydney() {
           <h2 className="text-xl font-bold text-brand-dark">Where Sydney plumbers lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Sydney CBD high-rise plant rooms", body: "Pump rooms and mechanical floors in CBD apartment blocks and commercial buildings have poor WiFi. Zeller\'s SIM terminal processes on Optus 4G independently." },
+              { title: "Sydney CBD high-rise plant rooms", body: "Pump rooms and mechanical floors in CBD apartment blocks and commercial buildings have poor WiFi. Zeller's SIM terminal processes on Optus 4G independently." },
               { title: "Western Sydney emergency call-outs", body: "Burst pipes and hot water failures in Western Sydney happen in new estates and established suburbs alike. Emergency plumbing needs reliable payment collection without WiFi dependencies." },
-              { title: "Inner Sydney terrace renovations", body: "Plumbing in Surry Hills, Newtown, and Balmain terraces involves tight spaces and poor WiFi penetration. SIM connectivity handles these environments without asking for the customer\'s password." },
-              { title: "Same-day materials from Reece", body: "Sydney plumbers who purchase parts from Reece or Tradelink the same day as a job benefit from Zeller\'s same-day settlement — funds available before close of business." },
+              { title: "Inner Sydney terrace renovations", body: "Plumbing in Surry Hills, Newtown, and Balmain terraces involves tight spaces and poor WiFi penetration. SIM connectivity handles these environments without asking for the customer's password." },
+              { title: "Same-day materials from Reece", body: "Sydney plumbers who purchase parts from Reece or Tradelink the same day as a job benefit from Zeller's same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

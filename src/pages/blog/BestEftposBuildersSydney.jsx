@@ -118,7 +118,7 @@ export default function BestEftposBuildersSydney() {
             Best EFTPOS for Builders in Sydney (2026)
           </h1>
           <p className="hero-sub">
-            Western Sydney housing estates, Northern Beaches knock-down rebuilds, and large progress payments — from deposit to final invoice, your EFTPOS needs to handle Sydney\'s building volume.
+            Western Sydney housing estates, Northern Beaches knock-down rebuilds, and large progress payments — from deposit to final invoice, your EFTPOS needs to handle Sydney's building volume.
           </p>
         </div>
       </header>
@@ -144,10 +144,10 @@ export default function BestEftposBuildersSydney() {
           <h2 className="text-xl font-bold text-brand-dark">Where Sydney builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Western Sydney housing volume", body: "Western Sydney is Australia\'s largest residential construction corridor. Marsden Park, Box Hill, and Schofields have thousands of homes under construction without NBN. Payment links for deposits are essential before build commences." },
-              { title: "Progress payments on HIA contracts", body: "Sydney builders collecting stage payments on HIA contracts benefit from Zeller\'s payment links (1.7%) — clients pay via SMS without needing to be on site. Same-day settlement means funds are available for same-day material purchases." },
+              { title: "Western Sydney housing volume", body: "Western Sydney is Australia's largest residential construction corridor. Marsden Park, Box Hill, and Schofields have thousands of homes under construction without NBN. Payment links for deposits are essential before build commences." },
+              { title: "Progress payments on HIA contracts", body: "Sydney builders collecting stage payments on HIA contracts benefit from Zeller's payment links (1.7%) — clients pay via SMS without needing to be on site. Same-day settlement means funds are available for same-day material purchases." },
               { title: "Eastern suburbs knockdown-rebuilds", body: "High-value knockdown-rebuilds in the Northern Beaches, Eastern Suburbs, and North Shore involve large single-invoice payments. Payment links remove the need to collect on-site for final payments." },
-              { title: "Multi-site subcontractor management", body: "Sydney building companies with multiple active sites benefit from Zeller\'s multi-terminal support — each supervisor can have their own terminal under one account, $99 each with no rental fees." },
+              { title: "Multi-site subcontractor management", body: "Sydney building companies with multiple active sites benefit from Zeller's multi-terminal support — each supervisor can have their own terminal under one account, $99 each with no rental fees." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

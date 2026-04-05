@@ -31,7 +31,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for builders in South-East Queensland?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. SEQ\'s construction corridors — Logan, Ipswich, Moreton Bay — have large estates under construction without NBN. Zeller\'s SIM terminal processes on mobile data. Payment links (1.7%) allow deposit collection before build commencement. Same-day settlement means material purchase funds are available the same day.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. SEQ's construction corridors — Logan, Ipswich, Moreton Bay — have large estates under construction without NBN. Zeller's SIM terminal processes on mobile data. Payment links (1.7%) allow deposit collection before build commencement. Same-day settlement means material purchase funds are available the same day.",
   },
   {
     q: "What EFTPOS for North Queensland builders doing cyclone repairs?",
@@ -125,7 +125,7 @@ export default function BestEftposBuildersQLDPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Queensland Builders work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            Queensland Builders work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Builders working in Queensland in 2026, with recommendations based on QLD-specific site conditions.
@@ -136,7 +136,7 @@ export default function BestEftposBuildersQLDPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Queensland Builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "SEQ housing boom", body: "Queensland\'s population growth is concentrated in South-East Queensland. Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have large residential estates under construction. Zeller\'s SIM plan handles payment before internet is connected." },
+              { title: "SEQ housing boom", body: "Queensland's population growth is concentrated in South-East Queensland. Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have large residential estates under construction. Zeller's SIM plan handles payment before internet is connected." },
               { title: "North Queensland cyclone work", body: "Cyclone damage in Cairns, Townsville, and surrounding areas creates surge building demand. Rapid build-and-repair work requires reliable on-site payment with SIM connectivity." },
               { title: "Remote Queensland commercial", body: "Commercial builds in Toowoomba, Rockhampton, and the QLD mining regions require payment solutions that work without reliable internet. SIM connectivity covers most regional centres." },
               { title: "Progress payments on QLD builds", body: "Queensland builders collecting HIA-standard progress payments benefit from payment links (Zeller 1.7%, Tyro 1.4%) — clients pay via SMS link without needing to be on site." },

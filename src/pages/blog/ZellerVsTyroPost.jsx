@@ -32,19 +32,19 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'Is Zeller or Tyro cheaper for tradies?',
-    a: "Zeller\'s in-person rate is 1.4% flat — published online, no negotiation required. Tyro\'s in-person merchant service fee depends on your annual card turnover and card mix, and requires a quote. For most sole traders and small trade businesses, Zeller\'s 1.4% is very competitive and transparent. Higher-volume builders and commercial operators may negotiate a lower rate through Tyro, but there is no guarantee.",
+    a: "Zeller's in-person rate is 1.4% flat — published online, no negotiation required. Tyro's in-person merchant service fee depends on your annual card turnover and card mix, and requires a quote. For most sole traders and small trade businesses, Zeller's 1.4% is very competitive and transparent. Higher-volume builders and commercial operators may negotiate a lower rate through Tyro, but there is no guarantee.",
   },
   {
     q: 'Does Tyro work without WiFi?',
     a: 'No — Tyro terminals require a WiFi or ethernet connection to process payments. There is no built-in SIM option and no published offline mode. For job sites without reliable WiFi — new estates, plant rooms, underground switchboards — this is a significant limitation. Zeller Terminal 1 includes an Optus SIM plan option ($15/month) that operates independently of any customer WiFi.',
   },
   {
-    q: "What is Tyro\'s in-person rate?",
-    a: "Tyro does not publish a single in-person rate. Their merchant service fee is calculated based on your annual card turnover and card mix (credit vs debit, card type). To get a rate, you need to contact Tyro\'s sales team and request a quote. Businesses processing over $250,000/year in card payments may negotiate rates lower than 1.4%. Payment Links through Tyro are 1.4% incl. GST — a published flat rate — but this is a remote payment method, not a terminal-based in-person rate.",
+    q: "What is Tyro's in-person rate?",
+    a: "Tyro does not publish a single in-person rate. Their merchant service fee is calculated based on your annual card turnover and card mix (credit vs debit, card type). To get a rate, you need to contact Tyro's sales team and request a quote. Businesses processing over $250,000/year in card payments may negotiate rates lower than 1.4%. Payment Links through Tyro are 1.4% incl. GST — a published flat rate — but this is a remote payment method, not a terminal-based in-person rate.",
   },
   {
     q: 'Which settles faster — Zeller or Tyro?',
-    a: "Zeller settles same day into a Zeller Transaction Account. From there, you can transfer to your external bank account next business day, or spend immediately using the free Zeller Mastercard debit card. Tyro settles to your nominated bank account the next business day. For tradies buying materials the same day they\'re paid, Zeller\'s same-day settlement into a usable account is the more practical option.",
+    a: "Zeller settles same day into a Zeller Transaction Account. From there, you can transfer to your external bank account next business day, or spend immediately using the free Zeller Mastercard debit card. Tyro settles to your nominated bank account the next business day. For tradies buying materials the same day they're paid, Zeller's same-day settlement into a usable account is the more practical option.",
   },
   {
     q: 'Is Tyro suitable for tradies?',
@@ -165,13 +165,13 @@ export default function ZellerVsTyroPost() {
         <section className="mb-10 space-y-6">
           <h2 className="text-xl font-bold text-brand-dark">Rate transparency: Zeller wins</h2>
           <p className="text-slate-600 leading-relaxed text-sm">
-            Zeller\'s in-person rate is 1.4% flat. No negotiation. No phone calls. You can calculate your monthly processing cost before you order the terminal. At $10,000/month in card revenue, that is $140.
+            Zeller's in-person rate is 1.4% flat. No negotiation. No phone calls. You can calculate your monthly processing cost before you order the terminal. At $10,000/month in card revenue, that is $140.
           </p>
           <p className="text-slate-600 leading-relaxed text-sm">
-            Tyro\'s in-person merchant service fee is not published. It depends on your annual card turnover and card mix — the proportion of debit vs credit cards, and card type. You will need to contact Tyro\'s sales team and request a quote. If you are a high-volume operator (above $250,000/year in card payments), you may negotiate a rate below 1.4%. For most tradies, the lack of a published rate is a friction point, not a feature.
+            Tyro's in-person merchant service fee is not published. It depends on your annual card turnover and card mix — the proportion of debit vs credit cards, and card type. You will need to contact Tyro's sales team and request a quote. If you are a high-volume operator (above $250,000/year in card payments), you may negotiate a rate below 1.4%. For most tradies, the lack of a published rate is a friction point, not a feature.
           </p>
           <p className="text-slate-600 leading-relaxed text-sm">
-            Tyro\'s Payment Links product (a remote payment method, not a terminal) does have a published rate: 1.4% incl. GST. This is a remote/online rate, not the in-person terminal rate.
+            Tyro's Payment Links product (a remote payment method, not a terminal) does have a published rate: 1.4% incl. GST. This is a remote/online rate, not the in-person terminal rate.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark">Connectivity: Zeller wins, clearly</h2>
@@ -187,7 +187,7 @@ export default function ZellerVsTyroPost() {
             Zeller settles same day into a Zeller Transaction Account. If you take a payment in the morning, the funds are in your account by end of business — and accessible immediately via the free Zeller Mastercard debit card. Transfers to an external bank account take the next business day.
           </p>
           <p className="text-slate-600 leading-relaxed text-sm">
-            Tyro settles to your nominated bank account the next business day. For tradies who need to purchase materials the same day they invoice, same-day access matters. Zeller\'s settlement model is simpler and faster.
+            Tyro settles to your nominated bank account the next business day. For tradies who need to purchase materials the same day they invoice, same-day access matters. Zeller's settlement model is simpler and faster.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark">When Tyro makes sense</h2>
@@ -197,7 +197,7 @@ export default function ZellerVsTyroPost() {
           <ul className="list-disc pl-5 text-sm text-slate-600 space-y-1">
             <li>Process over $250,000/year in card payments and can negotiate a competitive rate</li>
             <li>Operate in fixed locations (offices, depots, showrooms) with reliable WiFi and ethernet</li>
-            <li>Need integration with industry-specific software that supports Tyro\'s POS API</li>
+            <li>Need integration with industry-specific software that supports Tyro's POS API</li>
             <li>Have an existing relationship with Tyro through a banking partner</li>
           </ul>
           <p className="text-slate-600 leading-relaxed text-sm mt-3">

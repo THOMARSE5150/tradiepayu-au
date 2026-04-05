@@ -67,9 +67,9 @@ export default function BestEftposConcretersQLDPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "SEQ estate slabs", body: "Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland have thousands of residential slabs annually. These sites have no NBN connected. SIM connectivity handles payment from developers and owner-builders." },
-              { title: "Large deposit collection", body: "Queensland concreters collecting 30-50% deposits before pour day benefit from Zeller\'s payment links (1.7%) — clients pay via SMS before material orders are placed." },
+              { title: "Large deposit collection", body: "Queensland concreters collecting 30-50% deposits before pour day benefit from Zeller's payment links (1.7%) — clients pay via SMS before material orders are placed." },
               { title: "Driveways and paths in Brisbane", body: "Residential driveway work in established Brisbane suburbs involves homes with active internet, but using customer WiFi is impractical. SIM connectivity handles payment at job completion." },
-              { title: "Same-day materials", body: "Queensland concreters ordering concrete and reinforcing steel on the same day benefit from Zeller\'s same-day settlement — funds available before close of business." },
+              { title: "Same-day materials", body: "Queensland concreters ordering concrete and reinforcing steel on the same day benefit from Zeller's same-day settlement — funds available before close of business." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

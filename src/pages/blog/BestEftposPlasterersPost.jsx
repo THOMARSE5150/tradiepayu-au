@@ -30,7 +30,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'What is the best EFTPOS for plasterers in Australia?',
-    a: "Zeller Terminal 1 with the Optus SIM plan is the best EFTPOS for most plasterers. New home builds and renovation sites don\'t have WiFi during the plastering phase — the electrical and data cabling may not even be connected yet. The $15/month SIM means the terminal processes on 4G without requiring any site internet. At 1.4% in-person rate and same-day settlement, it handles residential plaster work, progress payments on larger jobs, and commercial fitout billing.",
+    a: "Zeller Terminal 1 with the Optus SIM plan is the best EFTPOS for most plasterers. New home builds and renovation sites don't have WiFi during the plastering phase — the electrical and data cabling may not even be connected yet. The $15/month SIM means the terminal processes on 4G without requiring any site internet. At 1.4% in-person rate and same-day settlement, it handles residential plaster work, progress payments on larger jobs, and commercial fitout billing.",
   },
   {
     q: 'Do plasterers need SIM connectivity in their EFTPOS terminal?',
@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     q: 'How do plasterers collect payment when the owner is not on site?',
-    a: "Payment links are the right tool. Send a Zeller Payment Link (1.7%) or Tyro Payment Link (1.4% incl. GST) to the homeowner or builder\'s accounts team when the work is complete. They receive a link by email or SMS and pay from their device. This is particularly useful on new builds managed by a builder — you may never interact directly with the end owner but still need to invoice and collect through the builder\'s payment process.",
+    a: "Payment links are the right tool. Send a Zeller Payment Link (1.7%) or Tyro Payment Link (1.4% incl. GST) to the homeowner or builder's accounts team when the work is complete. They receive a link by email or SMS and pay from their device. This is particularly useful on new builds managed by a builder — you may never interact directly with the end owner but still need to invoice and collect through the builder's payment process.",
   },
   {
     q: 'How do plasterers handle commercial fitout payment?',
-    a: "Commercial plastering for office fitouts and large construction projects typically involves formal invoicing with progress claims. Use Zeller or Square invoicing with embedded pay-now links sent to the head contractor\'s accounts payable team. For large commercial jobs, collecting a deposit at contract signing (via payment link) is standard practice. The in-person terminal is still useful for smaller commercial jobs or when the site supervisor is authorised to approve payment on completion.",
+    a: "Commercial plastering for office fitouts and large construction projects typically involves formal invoicing with progress claims. Use Zeller or Square invoicing with embedded pay-now links sent to the head contractor's accounts payable team. For large commercial jobs, collecting a deposit at contract signing (via payment link) is standard practice. The in-person terminal is still useful for smaller commercial jobs or when the site supervisor is authorised to approve payment on completion.",
   },
 ]
 
@@ -149,7 +149,7 @@ export default function BestEftposPlasterersPost() {
             {[
               { title: 'New home construction', body: "The plastering phase happens before the house is occupied and before NBN is connected. There is no WiFi on a new build site. A SIM-enabled terminal is the only reliable option for collecting at completion." },
               { title: 'Renovation sites', body: "Renovation jobs happen in empty or partially occupied homes. Owners may be staying elsewhere during the work. A SIM terminal means you can collect when the job is done without waiting for the owner to return." },
-              { title: 'Commercial fitouts', body: "Offices and retail fitouts are stripped back to concrete before plastering begins. Temporary site WiFi exists in some cases, but it\'s unreliable and access isn\'t guaranteed. SIM connectivity removes the dependency." },
+              { title: 'Commercial fitouts', body: "Offices and retail fitouts are stripped back to concrete before plastering begins. Temporary site WiFi exists in some cases, but it's unreliable and access isn't guaranteed. SIM connectivity removes the dependency." },
               { title: 'Dusty environments', body: "Plaster dust is hard on equipment. Keep your terminal in a protective case in the van — bring it out only to process payment. A portable, self-contained SIM terminal is much more practical than relying on a wall-mounted or office-based setup." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">

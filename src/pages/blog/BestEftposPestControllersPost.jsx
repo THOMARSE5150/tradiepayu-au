@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     q: 'How do pest controllers collect payment when the customer is not home?',
-    a: "Payment links are the standard solution for pre-purchase inspections and treatments where the customer is absent. Send a Zeller Payment Link or Tyro Payment Link to the customer\'s phone or email after completing the job. They pay remotely without needing to be on site. For pre-purchase pest inspections specifically, payment is often collected before the job via a link sent when the booking is confirmed.",
+    a: "Payment links are the standard solution for pre-purchase inspections and treatments where the customer is absent. Send a Zeller Payment Link or Tyro Payment Link to the customer's phone or email after completing the job. They pay remotely without needing to be on site. For pre-purchase pest inspections specifically, payment is often collected before the job via a link sent when the booking is confirmed.",
   },
   {
     q: 'Do pest controllers need SIM connectivity in their EFTPOS terminal?',
-    a: "Yes, for most field work. Roof voids occasionally attenuate mobile signal, and subfloors in brick homes can reduce coverage further. SIM connectivity handles the majority of residential jobs without needing WiFi. For commercial buildings — offices, warehouses, factories treated after hours — SIM is essential as the building network will not be accessible. Square Terminal\'s offline mode is a useful backup for the rare genuine dead zone.",
+    a: "Yes, for most field work. Roof voids occasionally attenuate mobile signal, and subfloors in brick homes can reduce coverage further. SIM connectivity handles the majority of residential jobs without needing WiFi. For commercial buildings — offices, warehouses, factories treated after hours — SIM is essential as the building network will not be accessible. Square Terminal's offline mode is a useful backup for the rare genuine dead zone.",
   },
   {
     q: 'How do pest controllers manage recurring billing for commercial pest contracts?',
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Are payment links useful for pre-purchase pest inspections?',
-    a: "Yes — pre-purchase pest inspections are one of the strongest use cases for payment links in the pest control industry. The property buyer books the inspection, often isn\'t present during it, and the report goes to their conveyancer or solicitor. Collect payment via a link sent at booking confirmation or immediately after the report is issued. Zeller Payment Links (1.7%) and Tyro Payment Links (1.4% incl. GST) are the two most cost-effective options for this.",
+    a: "Yes — pre-purchase pest inspections are one of the strongest use cases for payment links in the pest control industry. The property buyer books the inspection, often isn't present during it, and the report goes to their conveyancer or solicitor. Collect payment via a link sent at booking confirmation or immediately after the report is issued. Zeller Payment Links (1.7%) and Tyro Payment Links (1.4% incl. GST) are the two most cost-effective options for this.",
   },
 ]
 
@@ -147,7 +147,7 @@ export default function BestEftposPestControllersPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where pest controllers lose WiFi access</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: 'Roof voids', body: "Roof void access for termite inspections and rodent baiting can reduce mobile signal. Zeller\'s SIM terminal typically maintains 4G in most residential roof voids — but Square\'s offline mode is a reliable fallback." },
+              { title: 'Roof voids', body: "Roof void access for termite inspections and rodent baiting can reduce mobile signal. Zeller's SIM terminal typically maintains 4G in most residential roof voids — but Square's offline mode is a reliable fallback." },
               { title: 'Subfloors and wall cavities', body: "Subfloor spaces in brick homes and wall cavity treatments for termites and cockroaches are the most signal-challenged areas. SIM connectivity is more robust than expecting WiFi to reach underground." },
               { title: 'Commercial buildings after hours', body: "Restaurant, warehouse, and office treatments are scheduled after hours when staff are gone and building networks are inaccessible. SIM connectivity is essential for these jobs." },
               { title: 'Emergency treatments', body: "Cockroach infestations and termite emergencies mean unpredictable call-out times — including evenings and weekends. Payment needs to work regardless of what WiFi is available on site." },
@@ -167,7 +167,7 @@ export default function BestEftposPestControllersPost() {
             <Link to="/providers/zeller" className="text-brand-blue hover:underline">Zeller Terminal 1</Link> with the $15/month Optus SIM plan handles the full range of pest control payment scenarios. Residential treatments, commercial after-hours work, pre-purchase inspections, and emergency call-outs all work on the same terminal without any configuration change.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed mt-2">
-            1.4% in-person rate, same-day settlement, $99 hardware. Zeller Payment Links let you collect from customers who aren\'t home — send the link after completing the inspection report.
+            1.4% in-person rate, same-day settlement, $99 hardware. Zeller Payment Links let you collect from customers who aren't home — send the link after completing the inspection report.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">#2 Square Terminal — offline backup</h2>

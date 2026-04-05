@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Should I use payment links or invoices for sole trader work?',
-    a: "Payment links are generally faster than invoices. A payment link sent at job completion gives the client a direct tap-to-pay button in their SMS or email. There are no bank details to copy, no reference numbers to remember — just tap and pay. Traditional invoices with 14 or 30-day terms leave payment entirely in the client\'s control. For repeat or commercial clients who require formal invoices, Zeller and Square both support payment-embedded invoices where a pay-now button is built into the invoice PDF.",
+    a: "Payment links are generally faster than invoices. A payment link sent at job completion gives the client a direct tap-to-pay button in their SMS or email. There are no bank details to copy, no reference numbers to remember — just tap and pay. Traditional invoices with 14 or 30-day terms leave payment entirely in the client's control. For repeat or commercial clients who require formal invoices, Zeller and Square both support payment-embedded invoices where a pay-now button is built into the invoice PDF.",
   },
   {
     q: 'What payment terms should sole traders use?',
@@ -163,7 +163,7 @@ export default function GetPaidFasterPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            The average Australian sole trader waits 23 days to be paid after completing a job. For a tradie doing $8,000 a month in work, that means $6,000 is sitting in someone else\'s account at any given time — money that cannot pay suppliers, cannot buy materials, and cannot go into savings.
+            The average Australian sole trader waits 23 days to be paid after completing a job. For a tradie doing $8,000 a month in work, that means $6,000 is sitting in someone else's account at any given time — money that cannot pay suppliers, cannot buy materials, and cannot go into savings.
           </p>
           <p>
             Most of this delay is not customers being dishonest. It is friction: bank transfers that require finding BSB numbers, invoices that get buried in email, and 14-day payment terms that give clients implicit permission to wait. The right payment setup removes that friction entirely.

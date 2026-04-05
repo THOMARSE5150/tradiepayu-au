@@ -30,15 +30,15 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for Melbourne CBD electricians?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne CBD commercial buildings and Docklands apartments have switchboard rooms where building WiFi doesn\'t reliably reach. The SIM terminal uses Optus 4G independently. At 1.4% in-person rate and same-day settlement, it is also the most cost-effective choice for Melbourne CBD electrical contractors.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. Melbourne CBD commercial buildings and Docklands apartments have switchboard rooms where building WiFi doesn't reliably reach. The SIM terminal uses Optus 4G independently. At 1.4% in-person rate and same-day settlement, it is also the most cost-effective choice for Melbourne CBD electrical contractors.",
   },
   {
     q: "What EFTPOS for Melbourne outer suburb estate electricians?",
-    a: "Zeller Terminal 1 + SIM plan. Melbourne\'s outer-suburb growth corridors — Werribee, Cranbourne, Mickleham — have large residential estates under construction without NBN. Zeller\'s SIM terminal processes on mobile data. You can take payment at the door of a brand-new home before the internet is ever connected.",
+    a: "Zeller Terminal 1 + SIM plan. Melbourne's outer-suburb growth corridors — Werribee, Cranbourne, Mickleham — have large residential estates under construction without NBN. Zeller's SIM terminal processes on mobile data. You can take payment at the door of a brand-new home before the internet is ever connected.",
   },
   {
     q: "How do Melbourne electricians handle payment on multi-storey commercial jobs?",
-    a: "Zeller Terminal 1 with SIM for on-site payment at any floor level. For large commercial progress payments, Zeller\'s payment links (1.7%) let you send an invoice via SMS or email for the client to pay remotely — avoiding the need to process large amounts on-site. Same-day settlement means funds are accessible that evening.",
+    a: "Zeller Terminal 1 with SIM for on-site payment at any floor level. For large commercial progress payments, Zeller's payment links (1.7%) let you send an invoice via SMS or email for the client to pay remotely — avoiding the need to process large amounts on-site. Same-day settlement means funds are accessible that evening.",
   },
 ]
 
@@ -144,8 +144,8 @@ export default function BestEftposElectriciansMelbourne() {
           <h2 className="text-xl font-bold text-brand-dark">Where Melbourne electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Melbourne CBD high-rise", body: "CBD commercial buildings and Docklands apartments have switchboard rooms and mechanical floors with poor WiFi. Zeller\'s SIM terminal processes on Optus 4G independently of building infrastructure." },
-              { title: "Outer suburb estates", body: "Werribee, Cranbourne, Mickleham, and Officer are growing rapidly. New homes have no NBN during construction. Zeller\'s SIM plan handles payment from day one on these sites." },
+              { title: "Melbourne CBD high-rise", body: "CBD commercial buildings and Docklands apartments have switchboard rooms and mechanical floors with poor WiFi. Zeller's SIM terminal processes on Optus 4G independently of building infrastructure." },
+              { title: "Outer suburb estates", body: "Werribee, Cranbourne, Mickleham, and Officer are growing rapidly. New homes have no NBN during construction. Zeller's SIM plan handles payment from day one on these sites." },
               { title: "Inner-city renovations", body: "Victorian terrace and apartment renovations in Carlton, Fitzroy, and Richmond involve tight spaces and poor WiFi penetration. SIM connectivity removes the dependency entirely." },
               { title: "After-hours Melbourne emergencies", body: "Melbourne emergency electrical call-outs — blown fuses, tripped mains, storm damage from spring gales — happen in any building. SIM means payment collection is always frictionless." },
             ].map((item, i) => (

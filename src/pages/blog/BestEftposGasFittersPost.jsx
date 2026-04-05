@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'How do gas fitters take payment on emergency call-outs after hours?',
-    a: "A SIM-enabled terminal like Zeller Terminal 1 is the right tool for after-hours emergency gas work. Hot water system failures and gas line faults don\'t happen during business hours — when you arrive at 9 pm without a building manager present, you need an EFTPOS that works on 4G without relying on anyone\'s WiFi credentials. Payment-on-completion is standard for emergency gas work, so collect as soon as the job is signed off.",
+    a: "A SIM-enabled terminal like Zeller Terminal 1 is the right tool for after-hours emergency gas work. Hot water system failures and gas line faults don't happen during business hours — when you arrive at 9 pm without a building manager present, you need an EFTPOS that works on 4G without relying on anyone's WiFi credentials. Payment-on-completion is standard for emergency gas work, so collect as soon as the job is signed off.",
   },
   {
     q: 'Do gas fitters need SIM connectivity in their EFTPOS terminal?',
@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     q: 'How do gas fitters handle payment for large commercial gas fitting jobs?',
-    a: "Large commercial gas fitting (new estate infrastructure, commercial plant room fit-outs) often involves staged payments: a deposit at contract signing, progress payments at key milestones, and a final payment on commissioning. Use Zeller or Tyro payment links to collect deposits and progress payments remotely — the facilities manager or developer can pay from an email link without being on site. For in-person commercial work, Zeller\'s 1.4% rate is the lowest available for tap-to-pay transactions.",
+    a: "Large commercial gas fitting (new estate infrastructure, commercial plant room fit-outs) often involves staged payments: a deposit at contract signing, progress payments at key milestones, and a final payment on commissioning. Use Zeller or Tyro payment links to collect deposits and progress payments remotely — the facilities manager or developer can pay from an email link without being on site. For in-person commercial work, Zeller's 1.4% rate is the lowest available for tap-to-pay transactions.",
   },
   {
     q: 'Should gas fitters use surcharging?',
-    a: "For residential hot water and small domestic jobs, most gas fitters absorb the 1.4% Zeller rate — the customer is already paying a call-out fee and a surcharge can feel jarring. For commercial gas work where the client is a business (developers, facilities managers, commercial tenants), disclosing a 1.4% surcharge on the quote is standard and generally accepted. At Zeller\'s rate, any surcharge you pass on is the lowest legally defensible amount in Australia.",
+    a: "For residential hot water and small domestic jobs, most gas fitters absorb the 1.4% Zeller rate — the customer is already paying a call-out fee and a surcharge can feel jarring. For commercial gas work where the client is a business (developers, facilities managers, commercial tenants), disclosing a 1.4% surcharge on the quote is standard and generally accepted. At Zeller's rate, any surcharge you pass on is the lowest legally defensible amount in Australia.",
   },
 ]
 
@@ -148,7 +148,7 @@ export default function BestEftposGasFittersPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: 'Commercial plant rooms', body: "Gas meters and plant rooms in commercial buildings are designed for equipment, not network access. Building WiFi does not reach these areas reliably. A SIM-enabled terminal is the only dependable option." },
-              { title: 'Underground gas infrastructure', body: "New estate gas line work happens underground — in trenches and pits where mobile signal can be attenuated. Test your terminal\'s coverage on site; Square\'s offline mode is a backup for confirmed dead zones." },
+              { title: 'Underground gas infrastructure', body: "New estate gas line work happens underground — in trenches and pits where mobile signal can be attenuated. Test your terminal's coverage on site; Square's offline mode is a backup for confirmed dead zones." },
               { title: 'Roof spaces and hot water systems', body: "Residential hot water and gas line work often takes place in roof spaces. Customers are sometimes home and can provide WiFi, but SIM connectivity removes that dependency." },
               { title: 'After-hours emergency call-outs', body: "Gas faults and hot water failures happen at any hour. You arrive without a building manager present, fix the fault, and need to collect payment on the spot. SIM connectivity is essential for after-hours work." },
             ].map((item, i) => (

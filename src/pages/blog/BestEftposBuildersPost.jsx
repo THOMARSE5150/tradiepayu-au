@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: 'What is the best way to take a large payment on a building site?',
-    a: "For large amounts (over $5,000), sending a payment link via SMS or email before the client is on site is more reliable than processing at the terminal — it avoids connectivity issues and gives the client flexibility to pay from their banking app. Zeller\'s Payment Links (1.7%) and Tyro\'s Payment Links (1.4% incl. GST) are both solid options. For final payments collected in person, the terminal remains the lowest-cost method.",
+    a: "For large amounts (over $5,000), sending a payment link via SMS or email before the client is on site is more reliable than processing at the terminal — it avoids connectivity issues and gives the client flexibility to pay from their banking app. Zeller's Payment Links (1.7%) and Tyro's Payment Links (1.4% incl. GST) are both solid options. For final payments collected in person, the terminal remains the lowest-cost method.",
   },
 ]
 
@@ -186,12 +186,12 @@ export default function BestEftposBuildersPost() {
             <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> ($329) supports offline payment mode — if there is no connectivity at all, cards are stored locally and processed when the terminal reconnects. For builders on remote rural sites or in areas with no mobile coverage, this is the only option that works.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed mt-2">
-            Square\'s 1.6% in-person rate is higher than Zeller and the hardware is more expensive. On $10,000/month in card volume, Square costs $160 versus Zeller\'s $140 — a $240/year difference. For most builders, Zeller is cheaper for day-to-day use and Square is kept as a backup specifically for known zero-signal jobs.
+            Square's 1.6% in-person rate is higher than Zeller and the hardware is more expensive. On $10,000/month in card volume, Square costs $160 versus Zeller's $140 — a $240/year difference. For most builders, Zeller is cheaper for day-to-day use and Square is kept as a backup specifically for known zero-signal jobs.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">Tyro for payment links</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro\'s Payment Links</Link> (1.4% incl. GST) is the cheapest published rate for remote/online payments. If a large portion of your builder billing is progress claims paid remotely by clients — rather than in-person terminal transactions — Tyro\'s Payment Links may be worth setting up alongside your primary terminal provider. The in-person terminal rate is not published and requires a quote.
+            <Link to="/providers/tyro" className="text-brand-blue hover:underline">Tyro's Payment Links</Link> (1.4% incl. GST) is the cheapest published rate for remote/online payments. If a large portion of your builder billing is progress claims paid remotely by clients — rather than in-person terminal transactions — Tyro's Payment Links may be worth setting up alongside your primary terminal provider. The in-person terminal rate is not published and requires a quote.
           </p>
         </section>
 

@@ -30,7 +30,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'What is the best EFTPOS for landscapers in Australia?',
-    a: "Zeller Terminal 1 with the Optus SIM plan is the best EFTPOS for most Australian landscapers. New housing estate landscaping, rural property work, and large residential gardens all take place without WiFi access. The $15/month SIM plan means the terminal processes independently of any property\'s internet. At 1.4% in-person rate and same-day settlement, it covers both small lawn maintenance jobs and large landscape construction projects.",
+    a: "Zeller Terminal 1 with the Optus SIM plan is the best EFTPOS for most Australian landscapers. New housing estate landscaping, rural property work, and large residential gardens all take place without WiFi access. The $15/month SIM plan means the terminal processes independently of any property's internet. At 1.4% in-person rate and same-day settlement, it covers both small lawn maintenance jobs and large landscape construction projects.",
   },
   {
     q: 'How do landscapers collect a deposit for large jobs?',
@@ -148,7 +148,7 @@ export default function BestEftposLandscapersPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: 'New housing estates', body: "New estate landscaping is one of the most common landscaping job types — and every new estate has the same problem: no WiFi. Properties under construction have no active internet service. SIM connectivity is not optional here." },
-              { title: 'Rural properties', body: "Acreage and rural residential landscaping often falls outside reliable NBN coverage. Check the Optus 4G map before relying on SIM for very remote properties — Square Terminal\'s offline mode is the backup for genuine dead zones." },
+              { title: 'Rural properties', body: "Acreage and rural residential landscaping often falls outside reliable NBN coverage. Check the Optus 4G map before relying on SIM for very remote properties — Square Terminal's offline mode is the backup for genuine dead zones." },
               { title: 'Large residential landscape construction', body: "Turf, irrigation, retaining walls, and planting on large residential sites often involves deposits for materials before work begins. Payment links at quote acceptance protect against costly cancellations after materials are staged on site." },
               { title: 'Commercial landscaping', body: "Strata, council, and developer landscaping contracts are billed in stages or monthly. Decision-makers are rarely on site — digital invoicing with payment links is the only practical billing approach." },
             ].map((item, i) => (
@@ -172,7 +172,7 @@ export default function BestEftposLandscapersPost() {
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">#2 Square Terminal — offline backup</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> with offline mode handles rural properties and remote locations beyond Optus 4G coverage. Cards are stored locally and processed when connectivity is restored. Square\'s recurring billing is also well-suited to weekly lawn maintenance clients who prefer a set-and-forget payment arrangement.
+            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> with offline mode handles rural properties and remote locations beyond Optus 4G coverage. Cards are stored locally and processed when connectivity is restored. Square's recurring billing is also well-suited to weekly lawn maintenance clients who prefer a set-and-forget payment arrangement.
           </p>
         </section>
 

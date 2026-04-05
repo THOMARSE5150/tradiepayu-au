@@ -67,9 +67,9 @@ export default function BestEftposPaintersVICPost() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { title: "Melbourne renovation sites", body: "Victorian residential painting in empty homes — between tenancies, during renovation — has no customer present and no WiFi. SIM connectivity handles payment at job completion." },
-              { title: "Deposit collection", body: "Victorian painters collecting 30-50% deposits before multi-day jobs benefit from Zeller\'s payment links (1.7%) — clients pay via SMS before work begins." },
+              { title: "Deposit collection", body: "Victorian painters collecting 30-50% deposits before multi-day jobs benefit from Zeller's payment links (1.7%) — clients pay via SMS before work begins." },
               { title: "Owners corporation billing", body: "Multi-unit owners corporation painting in inner Melbourne, Docklands, and Southbank involves billing remotely. Payment links allow invoice collection without on-site meetings." },
-              { title: "Growth corridor new builds", body: "New build painting in Melbourne\'s outer suburbs — Werribee, Cranbourne — involves sites without NBN. SIM connectivity is the reliable choice." },
+              { title: "Growth corridor new builds", body: "New build painting in Melbourne's outer suburbs — Werribee, Cranbourne — involves sites without NBN. SIM connectivity is the reliable choice." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

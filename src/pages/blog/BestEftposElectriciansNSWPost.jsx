@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Does Zeller SIM work in regional NSW towns like Tamworth and Bathurst?",
-    a: "Optus 4G covers most NSW regional centres including Tamworth, Bathurst, Orange, Dubbo, Wagga Wagga, and Albury. Remote and outback NSW has reduced or no Optus coverage. For confirmed dead-zone jobs, Square Terminal\'s offline mode is the practical backup.",
+    a: "Optus 4G covers most NSW regional centres including Tamworth, Bathurst, Orange, Dubbo, Wagga Wagga, and Albury. Remote and outback NSW has reduced or no Optus coverage. For confirmed dead-zone jobs, Square Terminal's offline mode is the practical backup.",
   },
   {
     q: "What EFTPOS should NSW electricians use for emergency call-outs?",
@@ -124,7 +124,7 @@ export default function BestEftposElectriciansNSWPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            New South Wales Electricians work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            New South Wales Electricians work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Electricians working in New South Wales in 2026, with recommendations based on NSW-specific site conditions.
@@ -135,8 +135,8 @@ export default function BestEftposElectriciansNSWPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where New South Wales Electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Western Sydney estates", body: "Marsden Park, Box Hill, Schofields, and Leppington have thousands of homes under construction without NBN. Zeller\'s SIM plan is the only mainstream EFTPOS that works from day one on these sites." },
-              { title: "Sydney CBD switchboard rooms", body: "Commercial buildings in the CBD have switchboard rooms and basement plant areas where WiFi is poor. Zeller\'s SIM terminal uses Optus 4G independently of building WiFi." },
+              { title: "Western Sydney estates", body: "Marsden Park, Box Hill, Schofields, and Leppington have thousands of homes under construction without NBN. Zeller's SIM plan is the only mainstream EFTPOS that works from day one on these sites." },
+              { title: "Sydney CBD switchboard rooms", body: "Commercial buildings in the CBD have switchboard rooms and basement plant areas where WiFi is poor. Zeller's SIM terminal uses Optus 4G independently of building WiFi." },
               { title: "Regional NSW", body: "Tamworth, Bathurst, Orange, Dubbo, Wagga Wagga, and Albury all have solid Optus 4G. Outback NSW is the exception — Square offline mode is the backup for zero-signal sites." },
               { title: "After-hours emergency work", body: "Evening and weekend call-outs — storm damage, tripped mains — happen in any building at any hour. SIM connectivity removes the need to ask for a WiFi password mid-emergency." },
             ].map((item, i) => (

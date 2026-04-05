@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Should concreters surcharge for card payments?',
-    a: "For residential driveways and smaller jobs, many concreters absorb the 1.4% Zeller rate rather than surcharging — it is simpler and maintains goodwill with residential customers. For larger commercial concrete jobs where the client is a business or developer, disclosing a 1.4% card surcharge on the quote is standard practice and generally accepted. At Zeller\'s rate, you are passing on the lowest legally defensible surcharge amount in Australia.",
+    a: "For residential driveways and smaller jobs, many concreters absorb the 1.4% Zeller rate rather than surcharging — it is simpler and maintains goodwill with residential customers. For larger commercial concrete jobs where the client is a business or developer, disclosing a 1.4% card surcharge on the quote is standard practice and generally accepted. At Zeller's rate, you are passing on the lowest legally defensible surcharge amount in Australia.",
   },
 ]
 

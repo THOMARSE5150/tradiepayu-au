@@ -30,7 +30,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "What is the best EFTPOS for electricians in South-East Queensland?",
-    a: "Zeller Terminal 1 with the Optus SIM plan. SEQ\'s growth corridors — Logan, Ipswich, Moreton Bay — have large new estates under construction without NBN. The Optus SIM plan means Zeller processes on mobile data independently. At 1.4% in-person rate and same-day settlement, it is the lowest-cost, fastest-settlement option available.",
+    a: "Zeller Terminal 1 with the Optus SIM plan. SEQ's growth corridors — Logan, Ipswich, Moreton Bay — have large new estates under construction without NBN. The Optus SIM plan means Zeller processes on mobile data independently. At 1.4% in-person rate and same-day settlement, it is the lowest-cost, fastest-settlement option available.",
   },
   {
     q: "Does Zeller SIM work in North Queensland — Cairns and Townsville?",
@@ -124,7 +124,7 @@ export default function BestEftposElectriciansQLDPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Queensland Electricians work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            Queensland Electricians work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Electricians working in Queensland in 2026, with recommendations based on QLD-specific site conditions.
@@ -135,10 +135,10 @@ export default function BestEftposElectriciansQLDPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where Queensland Electricians lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "SEQ housing estates", body: "Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland are growing rapidly. New estates under construction have no internet connected for months. Zeller\'s SIM plan handles these sites from day one." },
+              { title: "SEQ housing estates", body: "Logan, Ipswich, Moreton Bay, and the Sunshine Coast hinterland are growing rapidly. New estates under construction have no internet connected for months. Zeller's SIM plan handles these sites from day one." },
               { title: "Cairns and Townsville commercial", body: "Tropical NQ commercial electrical work in buildings with high humidity and limited WiFi infrastructure. The SIM terminal is the reliable choice where building WiFi is unreliable." },
               { title: "Queensland outback", body: "Mount Isa, Roma, Charleville, and remote pastoral stations often have no Optus 4G coverage. Square Terminal offline mode is the only practical solution for confirmed outback work." },
-              { title: "Storm season and emergency", body: "Queensland\'s storm season creates surges in emergency electrical call-outs. Cyclone damage in North QLD, storm damage in SEQ — emergency work happens at any hour in any conditions. SIM connectivity eliminates the WiFi dependency." },
+              { title: "Storm season and emergency", body: "Queensland's storm season creates surges in emergency electrical call-outs. Cyclone damage in North QLD, storm damage in SEQ — emergency work happens at any hour in any conditions. SIM connectivity eliminates the WiFi dependency." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>
@@ -160,7 +160,7 @@ export default function BestEftposElectriciansQLDPost() {
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">#2 Square Terminal — backup for confirmed dead zones</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> ($329) with offline mode handles rural and remote QLD sites where even mobile signal is absent. Outback QLD is where Square\'s offline mode earns its $329 price — cards stored locally and processed within 24 hours when back in coverage.
+            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> ($329) with offline mode handles rural and remote QLD sites where even mobile signal is absent. Outback QLD is where Square's offline mode earns its $329 price — cards stored locally and processed within 24 hours when back in coverage.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">Cost at typical QLD electricians volumes</h2>

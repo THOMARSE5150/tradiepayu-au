@@ -145,7 +145,7 @@ export default function TyroReviewPost() {
             Tyro EFTPOS Review (2026) — Is It Worth It for High-Volume Tradies?
           </h1>
           <p className="hero-sub">
-            NAB-backed, integrates with simPRO and ServiceM8, negotiated rates that can beat Zeller at volume. But no published pricing, contract lock-in, and monthly rental mean it\'s not for everyone.
+            NAB-backed, integrates with simPRO and ServiceM8, negotiated rates that can beat Zeller at volume. But no published pricing, contract lock-in, and monthly rental mean it's not for everyone.
           </p>
         </div>
       </header>
@@ -160,7 +160,7 @@ export default function TyroReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Quick verdict</h2>
           <div className="infobox">
-            Tyro is worth investigating if you\'re processing $20,000 or more per month in card payments and use trade management software like simPRO, ServiceM8, or Tradify. Below that threshold, <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link>'s 1.4% flat rate, no contract, and no rental fee is almost certainly cheaper and simpler. The lack of published rates is a genuine transparency problem — you can\'t compare properly without getting a quote.
+            Tyro is worth investigating if you're processing $20,000 or more per month in card payments and use trade management software like simPRO, ServiceM8, or Tradify. Below that threshold, <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link>'s 1.4% flat rate, no contract, and no rental fee is almost certainly cheaper and simpler. The lack of published rates is a genuine transparency problem — you can't compare properly without getting a quote.
           </div>
         </motion.div>
       </section>
@@ -178,11 +178,11 @@ export default function TyroReviewPost() {
             Pricing breakdown
           </motion.h2>
           <ComparisonTable headers={comparisonHeaders} rows={comparisonRows} />
-          <p className="text-xs text-slate-500 mt-3">Tyro does not publish transaction rates. The range shown (0.8%–1.4%) reflects typical negotiated outcomes for different volume tiers — actual rates depend on your turnover, card mix, and business type. Payment links rate of 1.4% is published on Tyro\'s website.</p>
+          <p className="text-xs text-slate-500 mt-3">Tyro does not publish transaction rates. The range shown (0.8%–1.4%) reflects typical negotiated outcomes for different volume tiers — actual rates depend on your turnover, card mix, and business type. Payment links rate of 1.4% is published on Tyro's website.</p>
         </div>
       </section>
 
-      {/* Section 3: Why Tyro doesn\'t publish a rate */}
+      {/* Section 3: Why Tyro doesn't publish a rate */}
       <section className="section container-page">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -190,16 +190,16 @@ export default function TyroReviewPost() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <h2 className="text-2xl font-bold text-brand-dark mb-4">Why Tyro doesn\'t publish a rate</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4">Why Tyro doesn't publish a rate</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
             Unlike <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller</Link>, <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square</Link>, and <Link to="/providers/stripe" className="text-brand-blue hover:underline font-medium">Stripe</Link> — all of which advertise a single flat rate — Tyro prices on a negotiated basis. Your rate depends on your monthly card volume, your mix of card types (Visa debit is cheaper than Visa credit, Amex costs more), and your industry.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
-            This is the same model traditional banks use for merchant facilities. It means high-volume businesses can negotiate below flat-rate pricing, but low-volume businesses are unlikely to get a competitive offer. For Tyro, this is by design — they\'re targeting larger trade businesses, not sole operators.
+            This is the same model traditional banks use for merchant facilities. It means high-volume businesses can negotiate below flat-rate pricing, but low-volume businesses are unlikely to get a competitive offer. For Tyro, this is by design — they're targeting larger trade businesses, not sole operators.
           </p>
           <div className="lg-light rounded-2xl p-5">
             <p className="text-sm text-slate-600 leading-relaxed">
-              <strong className="text-brand-dark">What this means in practice:</strong> You cannot compare Tyro\'s cost against a flat-rate provider without getting a quote first. If you\'re considering Tyro, request a quote with your average monthly volume and ask for a rate broken down by card type. Then model the total cost including the terminal rental fee against what you\'d pay on Zeller or Square.
+              <strong className="text-brand-dark">What this means in practice:</strong> You cannot compare Tyro's cost against a flat-rate provider without getting a quote first. If you're considering Tyro, request a quote with your average monthly volume and ask for a rate broken down by card type. Then model the total cost including the terminal rental fee against what you'd pay on Zeller or Square.
             </p>
           </div>
         </motion.div>
@@ -218,7 +218,7 @@ export default function TyroReviewPost() {
             When Tyro beats Zeller
           </motion.h2>
           <p className="text-slate-600 leading-relaxed mb-5">
-            At high enough volume, a negotiated Tyro rate can save meaningful money versus a flat rate. Here\'s how the maths looks at different volume tiers, assuming a negotiated Tyro rate of 1.0% and a Zeller rate of 1.4% (plus $15/mo SIM).
+            At high enough volume, a negotiated Tyro rate can save meaningful money versus a flat rate. Here's how the maths looks at different volume tiers, assuming a negotiated Tyro rate of 1.0% and a Zeller rate of 1.4% (plus $15/mo SIM).
           </p>
           <div className="grid sm:grid-cols-3 gap-4 mb-5">
             {[
@@ -272,9 +272,9 @@ export default function TyroReviewPost() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <h2 className="text-2xl font-bold text-brand-dark mb-4">Trade software integrations — Tyro\'s real differentiator</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4">Trade software integrations — Tyro's real differentiator</h2>
           <p className="text-slate-600 leading-relaxed mb-5">
-            The strongest argument for Tyro isn\'t the rate — it\'s the integrations. Tyro connects directly to the field service management platforms that trade businesses actually run on, allowing payment to be processed from within the same system used to manage jobs.
+            The strongest argument for Tyro isn't the rate — it's the integrations. Tyro connects directly to the field service management platforms that trade businesses actually run on, allowing payment to be processed from within the same system used to manage jobs.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
@@ -325,11 +325,11 @@ export default function TyroReviewPost() {
               Tyro was acquired by NAB in 2023. Before that, Tyro was an independent fintech — which meant some tradies were cautious about using a non-bank payment provider as a core part of their business. That concern is less relevant now.
             </p>
             <p className="text-slate-600 leading-relaxed mb-4">
-              NAB ownership brings bank-grade support infrastructure, regulatory oversight as an Australian Deposit-taking Institution (ADI), and the financial stability of one of Australia\'s four major banks. For tradies who\'ve had bad experiences with startup payment providers shutting down or changing terms without notice, Tyro\'s banking parentage is a meaningful difference.
+              NAB ownership brings bank-grade support infrastructure, regulatory oversight as an Australian Deposit-taking Institution (ADI), and the financial stability of one of Australia's four major banks. For tradies who've had bad experiences with startup payment providers shutting down or changing terms without notice, Tyro's banking parentage is a meaningful difference.
             </p>
             <div className="lg-light rounded-2xl p-5">
               <p className="text-sm text-slate-600 leading-relaxed">
-                <strong className="text-brand-dark">Practical note:</strong> NAB ownership doesn\'t change the quoting or contract process — you\'re still dealing with Tyro directly, not through NAB. But it does mean the provider has regulatory obligations that purely fintech competitors don\'t. Dispute resolution and fund protection follow Australian banking law.
+                <strong className="text-brand-dark">Practical note:</strong> NAB ownership doesn't change the quoting or contract process — you're still dealing with Tyro directly, not through NAB. But it does mean the provider has regulatory obligations that purely fintech competitors don't. Dispute resolution and fund protection follow Australian banking law.
               </p>
             </div>
           </motion.div>
@@ -346,7 +346,7 @@ export default function TyroReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">What to ask for when getting a Tyro quote</h2>
           <p className="text-slate-600 leading-relaxed mb-5">
-            Because Tyro doesn\'t publish its pricing, the quality of the deal you get depends on how well you negotiate. Before signing anything, ask for these in writing:
+            Because Tyro doesn't publish its pricing, the quality of the deal you get depends on how well you negotiate. Before signing anything, ask for these in writing:
           </p>
           <ul className="space-y-3 max-w-2xl">
             {[
@@ -386,7 +386,7 @@ export default function TyroReviewPost() {
           >
             <h2 className="text-2xl font-bold text-brand-dark mb-4">Verdict</h2>
             <div className="infobox mb-6">
-              Tyro is a legitimate option for established trade businesses running high volume through trade management software. The NAB backing, built-in SIM, same-day settlement, and deep simPRO/ServiceM8/Tradify integrations are real advantages. The dealbreakers for smaller operators: no published rate, contract lock-in, monthly rental fee, and the need to negotiate terms before you can compare costs. If you\'re under $15,000/month, start with Zeller — no contract, no rental, 1.4% flat, and you can switch to Tyro later if volume justifies it.
+              Tyro is a legitimate option for established trade businesses running high volume through trade management software. The NAB backing, built-in SIM, same-day settlement, and deep simPRO/ServiceM8/Tradify integrations are real advantages. The dealbreakers for smaller operators: no published rate, contract lock-in, monthly rental fee, and the need to negotiate terms before you can compare costs. If you're under $15,000/month, start with Zeller — no contract, no rental, 1.4% flat, and you can switch to Tyro later if volume justifies it.
             </div>
             <div className="flex flex-wrap gap-3">
               <Link

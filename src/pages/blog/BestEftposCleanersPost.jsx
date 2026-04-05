@@ -30,7 +30,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'What is the best EFTPOS for cleaners in Australia?',
-    a: "Zeller Terminal 1 with the Optus SIM plan is the best EFTPOS for most Australian cleaning businesses. New build cleans, end-of-lease jobs, and post-construction cleans all happen in properties without WiFi. The $15/month SIM plan means the terminal processes independently of any property\'s internet. At 1.4% in-person rate and same-day settlement, it covers both small recurring residential cleans and large commercial one-off jobs.",
+    a: "Zeller Terminal 1 with the Optus SIM plan is the best EFTPOS for most Australian cleaning businesses. New build cleans, end-of-lease jobs, and post-construction cleans all happen in properties without WiFi. The $15/month SIM plan means the terminal processes independently of any property's internet. At 1.4% in-person rate and same-day settlement, it covers both small recurring residential cleans and large commercial one-off jobs.",
   },
   {
     q: 'How do cleaning businesses set up recurring billing for regular clients?',
@@ -38,11 +38,11 @@ const faqs = [
   },
   {
     q: 'How do cleaners collect payment when the customer is not home?',
-    a: "Payment links are the standard solution when clients aren\'t present during their clean. Send a Zeller Payment Link or Square invoice to the client\'s phone or email after completing the job — they pay remotely without needing to be home. For recurring clients, set up automatic invoicing so payment is triggered immediately after each clean without requiring any manual step from either party.",
+    a: "Payment links are the standard solution when clients aren't present during their clean. Send a Zeller Payment Link or Square invoice to the client's phone or email after completing the job — they pay remotely without needing to be home. For recurring clients, set up automatic invoicing so payment is triggered immediately after each clean without requiring any manual step from either party.",
   },
   {
     q: 'Do cleaners need SIM connectivity in their EFTPOS terminal?',
-    a: "SIM connectivity is essential for new builds, end-of-lease cleans, and commercial post-construction work where no WiFi exists. For occupied homes, the homeowner\'s WiFi is usually accessible — but a SIM terminal eliminates the step of asking for credentials and works in every scenario. End-of-lease and vacancy cleans are increasingly common for cleaning businesses and always lack WiFi.",
+    a: "SIM connectivity is essential for new builds, end-of-lease cleans, and commercial post-construction work where no WiFi exists. For occupied homes, the homeowner's WiFi is usually accessible — but a SIM terminal eliminates the step of asking for credentials and works in every scenario. End-of-lease and vacancy cleans are increasingly common for cleaning businesses and always lack WiFi.",
   },
   {
     q: 'What is the best payment setup for commercial cleaning invoicing?',
@@ -124,7 +124,7 @@ export default function BestEftposCleanersPost() {
             Best EFTPOS for Cleaners in Australia (2026)
           </h1>
           <p className="hero-sub">
-            New builds, end-of-lease cleans, and regular residential clients — cleaning businesses need EFTPOS that works in empty properties and sends payment links when customers aren\'t home.
+            New builds, end-of-lease cleans, and regular residential clients — cleaning businesses need EFTPOS that works in empty properties and sends payment links when customers aren't home.
           </p>
         </div>
       </header>
@@ -167,12 +167,12 @@ export default function BestEftposCleanersPost() {
             <Link to="/providers/zeller" className="text-brand-blue hover:underline">Zeller Terminal 1</Link> with the $15/month Optus SIM plan handles in-person payments when clients are home, processes independently in new builds and empty properties, and supports payment links for absent clients — all on the same account.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed mt-2">
-            1.4% in-person rate, same-day settlement, $99 hardware. Zeller\'s invoicing and recurring invoice features handle regular residential client billing with minimal manual overhead.
+            1.4% in-person rate, same-day settlement, $99 hardware. Zeller's invoicing and recurring invoice features handle regular residential client billing with minimal manual overhead.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">#2 Square Terminal — offline backup</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> with offline mode is a useful backup for rural properties and areas with poor Optus 4G coverage. Cards are stored locally and processed when connectivity is restored. Square\'s recurring billing tools are also strong for residential cleaning businesses that prefer not to use payment links.
+            <Link to="/providers/square" className="text-brand-blue hover:underline">Square Terminal</Link> with offline mode is a useful backup for rural properties and areas with poor Optus 4G coverage. Cards are stored locally and processed when connectivity is restored. Square's recurring billing tools are also strong for residential cleaning businesses that prefer not to use payment links.
           </p>
         </section>
 

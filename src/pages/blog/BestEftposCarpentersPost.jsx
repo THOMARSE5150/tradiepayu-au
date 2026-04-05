@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Zeller vs Square for carpenters — which is better?',
-    a: "Zeller Terminal 1 is the better primary terminal for most carpenters. The 1.4% in-person rate is lower than Square\'s 1.6%, hardware is $99 vs $329, and the SIM plan covers every site without WiFi. Square Terminal\'s main advantage is offline mode — it stores card data and processes when connectivity is restored, which is useful in true dead zones. The typical carpenter recommendation is Zeller as primary for all normal site work, with Square as a backup for confirmed dead-zone locations.",
+    a: "Zeller Terminal 1 is the better primary terminal for most carpenters. The 1.4% in-person rate is lower than Square's 1.6%, hardware is $99 vs $329, and the SIM plan covers every site without WiFi. Square Terminal's main advantage is offline mode — it stores card data and processes when connectivity is restored, which is useful in true dead zones. The typical carpenter recommendation is Zeller as primary for all normal site work, with Square as a backup for confirmed dead-zone locations.",
   },
 ]
 
@@ -150,7 +150,7 @@ export default function BestEftposCarpentersPost() {
               { title: 'New home framing sites', body: "House framing happens on new estates before any services are connected. There is no WiFi, no landline, and often patchy phone signal. A SIM terminal with 4G is the only reliable option." },
               { title: 'Renovation sites', body: "Renovation work often involves homes that are vacated mid-project, with internet disconnected. Even occupied homes may have their router moved or inaccessible during structural work." },
               { title: 'Custom joinery and workshops', body: "Custom joinery and furniture orders require deposits before materials are purchased. Payment links sent with the quote let customers pay online before work starts." },
-              { title: 'Commercial fitouts', body: "Shop and office fitouts are done after hours when corporate WiFi is inaccessible. SIM connectivity handles on-site payments; payment links handle remote invoicing to the client\'s accounts team." },
+              { title: 'Commercial fitouts', body: "Shop and office fitouts are done after hours when corporate WiFi is inaccessible. SIM connectivity handles on-site payments; payment links handle remote invoicing to the client's accounts team." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

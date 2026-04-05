@@ -145,7 +145,7 @@ export default function ZellerTerminalReviewPost() {
             Zeller Terminal 1 Review (2026) — The Best EFTPOS for Australian Tradies?
           </h1>
           <p className="hero-sub">
-            Independent review of Zeller Terminal 1: 1.4% rate, $99 hardware, built-in Optus SIM, same-day settlement. Here\'s what tradies actually need to know.
+            Independent review of Zeller Terminal 1: 1.4% rate, $99 hardware, built-in Optus SIM, same-day settlement. Here's what tradies actually need to know.
           </p>
         </div>
       </header>
@@ -165,7 +165,7 @@ export default function ZellerTerminalReviewPost() {
         </motion.div>
       </section>
 
-      {/* Section 2: What\'s in the box */}
+      {/* Section 2: What's in the box */}
       <section className="section-alt">
         <div className="container-page">
           <motion.div
@@ -174,7 +174,7 @@ export default function ZellerTerminalReviewPost() {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <h2 className="text-2xl font-bold text-brand-dark mb-4">What\'s in the box</h2>
+            <h2 className="text-2xl font-bold text-brand-dark mb-4">What's in the box</h2>
             <p className="text-slate-600 leading-relaxed mb-5">
               The Zeller Terminal 1 ships within 1–3 business days of account approval. In the box you get everything you need to start taking payments immediately on site.
             </p>
@@ -277,14 +277,14 @@ export default function ZellerTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">The one thing Square does better</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> has an offline mode for genuine zero-signal environments — underground drainage, deep basements, large concrete structures where even Optus mobile data can\'t reach. Zeller Terminal 1 does not have offline mode. If there is no mobile or WiFi signal, Zeller cannot process a payment.
+            <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> has an offline mode for genuine zero-signal environments — underground drainage, deep basements, large concrete structures where even Optus mobile data can't reach. Zeller Terminal 1 does not have offline mode. If there is no mobile or WiFi signal, Zeller cannot process a payment.
           </p>
           <p className="text-slate-600 leading-relaxed mb-4">
-            For most tradies, this is not a real-world limitation. Optus 4G reaches the vast majority of residential and commercial job sites in Australia. But if your work regularly takes you underground — stormwater, sewer, communications tunnels, deep car park basements — Square Terminal\'s offline capability is the only solution in this market.
+            For most tradies, this is not a real-world limitation. Optus 4G reaches the vast majority of residential and commercial job sites in Australia. But if your work regularly takes you underground — stormwater, sewer, communications tunnels, deep car park basements — Square Terminal's offline capability is the only solution in this market.
           </p>
           <div className="lg-light rounded-2xl p-5">
             <p className="text-sm text-slate-600 leading-relaxed">
-              <strong className="text-brand-dark">Practical recommendation:</strong> If you work underground regularly, carry a Square Terminal as backup ($329, no monthly fee). Use Zeller as your primary device for the lower rate and SIM convenience. Square stays in the van until you need it. High-volume operators ($20k+/month) should also request a quote from <Link to="/providers/tyro" className="text-brand-blue hover:underline font-medium">Tyro</Link> — their negotiated rates can compete with Zeller\'s at volume.
+              <strong className="text-brand-dark">Practical recommendation:</strong> If you work underground regularly, carry a Square Terminal as backup ($329, no monthly fee). Use Zeller as your primary device for the lower rate and SIM convenience. Square stays in the van until you need it. High-volume operators ($20k+/month) should also request a quote from <Link to="/providers/tyro" className="text-brand-blue hover:underline font-medium">Tyro</Link> — their negotiated rates can compete with Zeller's at volume.
             </p>
           </div>
         </motion.div>
@@ -367,7 +367,7 @@ export default function ZellerTerminalReviewPost() {
         >
           <h2 className="text-2xl font-bold text-brand-dark mb-4">Verdict</h2>
           <div className="infobox mb-6">
-            For 90% of Australian tradies, Zeller Terminal 1 with SIM is the right choice. Lowest rate, SIM connectivity, same-day settlement, no contract. The only scenario where it falls short is genuine zero-signal underground work — and Square Terminal\'s offline mode handles that.
+            For 90% of Australian tradies, Zeller Terminal 1 with SIM is the right choice. Lowest rate, SIM connectivity, same-day settlement, no contract. The only scenario where it falls short is genuine zero-signal underground work — and Square Terminal's offline mode handles that.
           </div>
           <div className="flex flex-wrap gap-3">
             <Link

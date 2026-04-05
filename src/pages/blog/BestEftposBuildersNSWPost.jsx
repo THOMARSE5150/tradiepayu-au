@@ -125,7 +125,7 @@ export default function BestEftposBuildersNSWPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            New South Wales Builders work across some of Australia\'s most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
+            New South Wales Builders work across some of Australia's most varied job sites. Connectivity is never guaranteed — and the terminal that fails to process at the end of a job is a bigger problem than a slightly higher fee rate.
           </p>
           <p>
             This guide covers the best EFTPOS options for Builders working in New South Wales in 2026, with recommendations based on NSW-specific site conditions.
@@ -136,10 +136,10 @@ export default function BestEftposBuildersNSWPost() {
           <h2 className="text-xl font-bold text-brand-dark">Where New South Wales Builders lose connectivity</h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
-              { title: "Western Sydney housing volume", body: "NSW has Australia\'s highest residential construction volume. Western Sydney — Marsden Park, Box Hill, Schofields — is one of the country\'s fastest-growing corridors. Payment links for deposits before build commencement are standard practice here." },
-              { title: "Progress payments and invoicing", body: "NSW builders collecting progress payments on HIA or MBA contracts benefit from Zeller\'s payment links (1.7%) — the client pays via SMS link without needing to be on site. Same-day settlement means funds are available for material purchases." },
-              { title: "Multiple workers on site", body: "NSW building sites with multiple subcontractors and site supervisors benefit from Zeller\'s multi-terminal support. Each team member can have their own terminal under one account — $99 each, no rental fees." },
-              { title: "Commercial NSW builds", body: "Commercial construction in Sydney CBD and regional NSW requires reliable on-site payment collection. WiFi is unavailable on early-stage builds. Zeller\'s SIM plan handles these sites without requiring site internet." },
+              { title: "Western Sydney housing volume", body: "NSW has Australia's highest residential construction volume. Western Sydney — Marsden Park, Box Hill, Schofields — is one of the country's fastest-growing corridors. Payment links for deposits before build commencement are standard practice here." },
+              { title: "Progress payments and invoicing", body: "NSW builders collecting progress payments on HIA or MBA contracts benefit from Zeller's payment links (1.7%) — the client pays via SMS link without needing to be on site. Same-day settlement means funds are available for material purchases." },
+              { title: "Multiple workers on site", body: "NSW building sites with multiple subcontractors and site supervisors benefit from Zeller's multi-terminal support. Each team member can have their own terminal under one account — $99 each, no rental fees." },
+              { title: "Commercial NSW builds", body: "Commercial construction in Sydney CBD and regional NSW requires reliable on-site payment collection. WiFi is unavailable on early-stage builds. Zeller's SIM plan handles these sites without requiring site internet." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">
                 <h3 className="text-sm font-semibold text-brand-dark mb-1">{item.title}</h3>

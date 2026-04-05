@@ -149,7 +149,7 @@ export default function BestEftposTilersPost() {
             {[
               { title: 'Bathroom and kitchen renovations', body: "Wet area renovations often involve the router being moved or the internet service temporarily disconnected. The customer may have left for the day before you finish." },
               { title: 'New build sites', body: "New homes have no internet connected until the owner moves in, which is often weeks or months after tiling is complete. SIM connectivity is the only option." },
-              { title: 'Apartment construction', body: "Large apartment projects involve multiple tradespeople across dozens of units. The construction site WiFi, if it exists, is locked to the builder\'s network." },
+              { title: 'Apartment construction', body: "Large apartment projects involve multiple tradespeople across dozens of units. The construction site WiFi, if it exists, is locked to the builder's network." },
               { title: 'Multi-day jobs with absent customers', body: "Customers often go to work during a multi-day bathroom tiling job. Collecting final payment requires a method that works without the customer being physically present." },
             ].map((item, i) => (
               <div key={i} className="bg-slate-50 border border-slate-100 rounded-xl p-4">

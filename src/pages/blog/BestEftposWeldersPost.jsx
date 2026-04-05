@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     q: 'How do welders handle payment on remote and mining sites?',
-    a: "Remote and mining site work involves the most challenging payment environments. Check the Optus 4G coverage map before relying on SIM connectivity for very remote locations. Square Terminal\'s offline mode is the most reliable fallback for confirmed dead zones — cards are stored and processed when coverage is restored. For large invoices on mining contracts, payment links sent to the accounts payable contact are more practical than in-person terminals.",
+    a: "Remote and mining site work involves the most challenging payment environments. Check the Optus 4G coverage map before relying on SIM connectivity for very remote locations. Square Terminal's offline mode is the most reliable fallback for confirmed dead zones — cards are stored and processed when coverage is restored. For large invoices on mining contracts, payment links sent to the accounts payable contact are more practical than in-person terminals.",
   },
   {
     q: 'What is the best way for welders to invoice large industrial jobs?',
-    a: "For large industrial welding contracts and structural fabrication jobs, invoicing with embedded payment links is more practical than in-person terminal payments. Zeller and Square both support invoicing with pay-now links. Send the invoice to the client\'s accounts payable contact after the job or milestone is complete. For the largest contracts (mining, infrastructure), Tyro Payment Links at 1.4% incl. GST are the cheapest published online rate for high invoice values.",
+    a: "For large industrial welding contracts and structural fabrication jobs, invoicing with embedded payment links is more practical than in-person terminal payments. Zeller and Square both support invoicing with pay-now links. Send the invoice to the client's accounts payable contact after the job or milestone is complete. For the largest contracts (mining, infrastructure), Tyro Payment Links at 1.4% incl. GST are the cheapest published online rate for high invoice values.",
   },
 ]
 
@@ -139,7 +139,7 @@ export default function BestEftposWeldersPost() {
           className="prose-sm text-slate-600 space-y-4 mb-10"
         >
           <p>
-            Welders operate across a wide range of environments: fixed workshops with reliable internet, industrial sites with variable connectivity, and remote mining and infrastructure projects where signal can be absent entirely. Mobile welding for onsite repairs and fabrication adds a further layer — you are working at the customer\'s location with no access to their network. The right EFTPOS handles every scenario on a single device.
+            Welders operate across a wide range of environments: fixed workshops with reliable internet, industrial sites with variable connectivity, and remote mining and infrastructure projects where signal can be absent entirely. Mobile welding for onsite repairs and fabrication adds a further layer — you are working at the customer's location with no access to their network. The right EFTPOS handles every scenario on a single device.
           </p>
         </motion.div>
 
