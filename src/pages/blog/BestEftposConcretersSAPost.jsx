@@ -5,6 +5,8 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 
+import siteMeta from '../../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -41,7 +43,7 @@ const jsonLd = [
     description: 'Best EFTPOS for SA concreters — Adelaide new estate slabs, large deposits before the pour, and SIM connectivity on outer suburb development sites.',
     url: 'https://tradiepayau.directory/blog/best-eftpos-concreters-sa-2026',
     datePublished: '2026-04-02',
-    dateModified: '2026-04-02',
+    dateModified: siteMeta.lastVerified,
     author: {
       '@type': 'Organization',
       name: 'TradiePay AU',
@@ -169,7 +171,7 @@ export default function BestEftposConcretersSAPost() {
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">State Guide</span>
             <span>·</span><span>South Australia</span>
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {siteMeta.lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Concreters in South Australia (2026)</h1>
           <p className="hero-sub">Covering Adelaide new estate slab work, large deposits before the pour, and outer suburb driveway and pool surround jobs.</p>

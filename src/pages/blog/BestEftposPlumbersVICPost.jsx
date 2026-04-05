@@ -6,6 +6,8 @@ import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
+import siteMeta from '../../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 
 const crumbs = [
@@ -47,7 +49,7 @@ const jsonLd = [
     headline: "Best EFTPOS for Plumbers in Victoria (2026)",
     description: "Best EFTPOS for Victorian plumbers — Melbourne growth corridors, inner-city high-rise work, and regional Victoria. Same-day settlement and SIM connectivity.",
     datePublished: '2026-04-02',
-    dateModified: '2026-04-02',
+    dateModified: siteMeta.lastVerified,
     author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     url: `${SITE}/blog/best-eftpos-plumbers-vic-2026`,

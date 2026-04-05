@@ -9,6 +9,7 @@ import RelatedLinks from '../components/RelatedLinks'
 import NotFoundPage from './NotFoundPage'
 import { TRADE_MAP } from '../data/tradesMeta'
 import { STATE_MAP } from '../data/states'
+import siteMeta from '../data/site-meta.json'
 
 const COMPARISON_HEADERS = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader M2', 'Tyro']
 const COMPARISON_ROWS = [
@@ -149,7 +150,7 @@ export default function StateTradePage() {
       image: { '@type': 'ImageObject', url: `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
-      dateModified: '2026-04-02',
+      dateModified: siteMeta.lastVerified,
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     },

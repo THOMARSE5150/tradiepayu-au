@@ -5,6 +5,8 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 
+import siteMeta from '../../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -45,7 +47,7 @@ const jsonLd = [
     description: 'Best EFTPOS for QLD roofers — Brisbane, Gold Coast, and across Queensland. Lowest rate, SIM connectivity, same-day settlement.',
     url: `${SITE}/blog/best-eftpos-roofers-qld-2026`,
     datePublished: '2026-04-02',
-    dateModified: '2026-04-02',
+    dateModified: siteMeta.lastVerified,
     author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     image: { '@type': 'ImageObject', url: `https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
@@ -99,7 +101,7 @@ export default function BestEftposRoofersQLDPost() {
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">State Guide</span>
             <span>·</span><span>Queensland</span>
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {siteMeta.lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Roofers in Queensland (2026)</h1>
           <p className="hero-sub">Covering Brisbane, Gold Coast, Townsville and across QLD. QLD cyclone and storm season generates high-volume emergency roofing work — fast payment collection is critical for mobilising quickly.</p>

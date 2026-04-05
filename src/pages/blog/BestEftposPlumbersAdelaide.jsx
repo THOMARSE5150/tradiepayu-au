@@ -5,6 +5,8 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 
+import siteMeta from '../../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -41,7 +43,7 @@ const jsonLd = [
     description: 'Best EFTPOS for Adelaide plumbers — Adelaide growth estate builds, after-hours call-outs, and same-day settlement for material runs. Lowest rate, SIM connectivity, same-day settlement.',
     url: `${SITE}/blog/best-eftpos-plumbers-adelaide-2026`,
     datePublished: '2026-04-02',
-    dateModified: '2026-04-02',
+    dateModified: siteMeta.lastVerified,
     author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     image: { '@type': 'ImageObject', url: `https://images.unsplash.com/photo-1504275427011-2a3c01e96d1d?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
@@ -94,7 +96,7 @@ export default function BestEftposPlumbersAdelaide() {
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">City Guide</span>
             <span>·</span><span>Adelaide, SA</span>
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {siteMeta.lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Plumbers in Adelaide (2026)</h1>
           <p className="hero-sub">Covering Adelaide suburban call-outs, growth estate plumbing, and regional SA work.</p>

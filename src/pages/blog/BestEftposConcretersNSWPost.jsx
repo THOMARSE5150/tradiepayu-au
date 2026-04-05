@@ -6,6 +6,8 @@ import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
+import siteMeta from '../../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: "Best EFTPOS for Concreters in NSW (2026)" }]
 const comparisonHeaders = ["","Zeller Terminal 1","Square Terminal","Stripe Reader M2","Tyro"]
@@ -32,7 +34,7 @@ const faqs = [
   },
 ]
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: "Best EFTPOS for Concreters in NSW (2026)", description: "Best EFTPOS for NSW concreters — large deposits before the pour, new estate sites, and same-day settlement for material purchasing.", datePublished: '2026-04-02', dateModified: '2026-04-02', author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, url: `${SITE}/blog/best-eftpos-concreters-nsw-2026` },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: "Best EFTPOS for Concreters in NSW (2026)", description: "Best EFTPOS for NSW concreters — large deposits before the pour, new estate sites, and same-day settlement for material purchasing.", datePublished: '2026-04-02', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, url: `${SITE}/blog/best-eftpos-concreters-nsw-2026` },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` }, { '@type': 'ListItem', position: 3, name: "Best EFTPOS for Concreters in NSW (2026)", item: `${SITE}/blog/best-eftpos-concreters-nsw-2026` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
 ]

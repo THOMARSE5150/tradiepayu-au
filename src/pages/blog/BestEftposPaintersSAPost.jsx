@@ -5,6 +5,8 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 
+import siteMeta from '../../data/site-meta.json'
+
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -41,7 +43,7 @@ const jsonLd = [
     description: 'Best EFTPOS for SA painters — Adelaide Hills heritage work, outer suburb new builds, and deposit collection before starting multi-day jobs.',
     url: 'https://tradiepayau.directory/blog/best-eftpos-painters-sa-2026',
     datePublished: '2026-04-02',
-    dateModified: '2026-04-02',
+    dateModified: siteMeta.lastVerified,
     author: {
       '@type': 'Organization',
       name: 'TradiePay AU',
@@ -169,7 +171,7 @@ export default function BestEftposPaintersSAPost() {
           <div className="hero-meta">
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">State Guide</span>
             <span>·</span><span>South Australia</span>
-            <span>·</span><span>Updated April 2026</span>
+            <span>·</span><span>Updated {siteMeta.lastVerifiedDisplay}</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Painters in South Australia (2026)</h1>
           <p className="hero-sub">Covering Adelaide Hills heritage painting, outer suburb new builds, and deposit collection before starting multi-day jobs across South Australia.</p>
