@@ -98,26 +98,43 @@ function RateAlerts() {
   )
 }
 
+const decisionCues = [
+  { lead: 'Lowest fees',    name: 'Zeller', href: '/providers/zeller' },
+  { lead: 'Offline backup', name: 'Square', href: '/providers/square' },
+  { lead: 'Online stack',   name: 'Stripe', href: '/providers/stripe' },
+]
+
 function DecisionBlock() {
   return (
-    <div className="border-y border-white/[0.12] bg-white/[0.04]">
-      <div className="container-page py-7 flex flex-col sm:flex-row sm:items-center gap-6">
-        <div className="flex-1 min-w-0">
-          <p className="text-white/40 text-xs mb-3 tracking-wide">Independent comparison · Updated {siteMeta.lastVerifiedDisplay}</p>
-          <p className="text-white font-bold text-lg mb-2">Still deciding?</p>
-          <p className="text-slate-300 text-sm leading-relaxed max-w-sm">Most tradies choose on fees or reliability in tough spots.</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
-            <span className="flex items-baseline gap-2">
-              <span className="text-slate-500 text-xs">Lowest fees</span>
-              <span className="text-brand-blue font-semibold text-sm">→ Zeller</span>
-            </span>
-            <span className="flex items-baseline gap-2">
-              <span className="text-slate-500 text-xs">Offline backup</span>
-              <span className="text-brand-blue font-semibold text-sm">→ Square</span>
-            </span>
+    <div className="border-y-2 border-white/[0.15] bg-white/[0.06]">
+      <div className="container-page py-7 grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] gap-6 sm:gap-0 sm:divide-x sm:divide-white/[0.10]">
+        {/* Left: trust signal */}
+        <div className="hidden sm:flex flex-col justify-center pr-6">
+          <p className="text-white/35 text-xs leading-relaxed whitespace-nowrap">Independent comparison</p>
+          <p className="text-white/35 text-xs leading-relaxed whitespace-nowrap">Updated {siteMeta.lastVerifiedDisplay}</p>
+        </div>
+
+        {/* Center: heading + copy + pills */}
+        <div className="sm:px-6">
+          <p className="text-white font-bold text-lg mb-1">Still deciding?</p>
+          <p className="text-slate-400 text-sm mb-4">Most tradies choose on fees or coverage.</p>
+          <div className="flex flex-wrap gap-2">
+            {decisionCues.map(c => (
+              <Link
+                key={c.name}
+                to={c.href}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/[0.14] bg-white/[0.06] hover:border-white/30 hover:bg-white/[0.10] transition-all text-xs"
+              >
+                <span className="text-slate-400">{c.lead}</span>
+                <span className="text-white/30 mx-0.5">→</span>
+                <span className="text-white font-semibold">{c.name}</span>
+              </Link>
+            ))}
           </div>
         </div>
-        <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3 flex-shrink-0">
+
+        {/* Right: CTA */}
+        <div className="flex flex-row sm:flex-col items-center sm:items-end justify-start sm:justify-center gap-3 flex-shrink-0 sm:pl-6">
           <Link
             to="/providers"
             className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors whitespace-nowrap shadow-md"
@@ -148,11 +165,11 @@ export default function Footer() {
           <Link to="/providers" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
             Providers <span className="text-white/30">→</span>
           </Link>
-          <ul className="space-y-3 mt-3">
+          <ul className="space-y-4 mt-3">
             {providers.map(p => (
               <li key={p.href}>
                 <Link to={p.href} className="group flex flex-col gap-0.5">
-                  <span className="text-white group-hover:text-brand-blue transition-colors text-sm font-medium underline-offset-2 group-hover:underline">{p.label}</span>
+                  <span className="text-white group-hover:text-brand-blue transition-colors text-sm font-semibold underline-offset-2 group-hover:underline">{p.label}</span>
                   {p.desc && <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-xs">{p.desc}</span>}
                 </Link>
               </li>
