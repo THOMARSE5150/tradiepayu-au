@@ -21,13 +21,19 @@ export default function AffiliateButton({ providerId, label = 'cta', campaign = 
   const baseUrl = (intent && p.urls?.[intent]) ?? p.affiliate_url
   const href = affiliateUrl(baseUrl, providerId, campaign)
 
+  function handleClick(e) {
+    e.preventDefault()
+    trackOutbound(providerId, label)
+    // Delay navigation 150ms so the GA4 beacon dispatches before the tab opens.
+    setTimeout(() => window.open(href, '_blank', 'noopener,noreferrer'), 150)
+  }
+
   return (
     <a
       href={href}
-      target="_blank"
       rel="noopener noreferrer"
       className={className}
-      onClick={() => trackOutbound(providerId, label)}
+      onClick={handleClick}
     >
       {children}
     </a>

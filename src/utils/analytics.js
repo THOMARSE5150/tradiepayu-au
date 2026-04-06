@@ -4,15 +4,18 @@ function gtag(...args) {
 
 /**
  * Fire a GA4 event for outbound affiliate link clicks.
+ * Calls window.gtag directly (not the local wrapper) so the beacon
+ * dispatches immediately before navigation occurs.
  * @param {string} providerId  - e.g. 'zeller'
  * @param {string} label       - where on the page the click happened, e.g. 'page-cta', 'compare-strip'
  */
 export function trackOutbound(providerId, label = 'cta') {
-  gtag('event', 'outbound_click', {
-    event_category: 'affiliate',
-    provider: providerId,
-    label,
-  })
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'click_provider', {
+      provider: providerId,
+      label,
+    })
+  }
 }
 
 /**
