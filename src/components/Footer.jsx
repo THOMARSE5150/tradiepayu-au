@@ -5,11 +5,11 @@ import siteMeta from '../data/site-meta.json'
 import { STATES } from '../data/states'
 
 const providers = [
-  { label: 'Zeller', href: '/providers/zeller' },
-  { label: 'Square', href: '/providers/square' },
-  { label: 'Stripe', href: '/providers/stripe' },
-  { label: 'Tyro', href: '/providers/tyro' },
-  { label: 'Shift4', href: '/providers/shift4' },
+  { label: 'Zeller', desc: 'lowest fees',          href: '/providers/zeller' },
+  { label: 'Square', desc: 'offline backup',        href: '/providers/square' },
+  { label: 'Stripe', desc: 'advanced online stack', href: '/providers/stripe' },
+  { label: 'Tyro',   desc: 'tailored pricing',      href: '/providers/tyro' },
+  { label: 'Shift4', desc: 'quote-based',           href: '/providers/shift4' },
 ]
 
 const trades = [
@@ -98,10 +98,42 @@ function RateAlerts() {
   )
 }
 
+function DecisionBlock() {
+  return (
+    <div className="border-t border-white/[0.06]">
+      <div className="container-page py-6">
+        <div className="lg-dark lg-sheen relative rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="flex-1 min-w-0">
+            <p className="text-white/30 text-xs mb-2">Independent comparison · Updated {siteMeta.lastVerifiedDisplay}</p>
+            <p className="text-white font-semibold text-sm mb-1">Still deciding?</p>
+            <p className="text-slate-400 text-xs leading-relaxed">Most tradies choose based on lowest fees or reliability on difficult sites.</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-slate-400">
+              <span>Lowest fees <span className="text-white font-medium">→ Zeller</span></span>
+              <span>No-signal backup <span className="text-white font-medium">→ Square</span></span>
+            </div>
+          </div>
+          <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3 flex-shrink-0">
+            <Link
+              to="/providers"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors whitespace-nowrap"
+            >
+              Compare all providers
+            </Link>
+            <Link to="/compare/zeller-vs-square" className="text-xs text-slate-500 hover:text-slate-300 transition-colors whitespace-nowrap">
+              Zeller vs Square →
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-slate-400 mt-auto">
       <RateAlerts />
+      <DecisionBlock />
       <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-7 gap-5">
         <div className="col-span-2 lg:col-span-2 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
@@ -114,7 +146,12 @@ export default function Footer() {
           </Link>
           <ul className="space-y-2 text-sm mt-3">
             {providers.map(p => (
-              <li key={p.href}><Link to={p.href} className="text-slate-400 hover:text-white transition-colors">{p.label}</Link></li>
+              <li key={p.href}>
+                <Link to={p.href} className="text-slate-400 hover:text-white transition-colors">
+                  {p.label}
+                  {p.desc && <span className="text-slate-600 ml-1">— {p.desc}</span>}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
