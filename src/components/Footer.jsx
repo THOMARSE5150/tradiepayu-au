@@ -100,35 +100,33 @@ function RateAlerts() {
 
 function DecisionBlock() {
   return (
-    <div className="border-t border-white/[0.06]">
-      <div className="container-page py-6">
-        <div className="lg-dark lg-sheen relative rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-5">
-          <div className="flex-1 min-w-0">
-            <p className="text-white/40 text-xs mb-3">Independent comparison · Updated {siteMeta.lastVerifiedDisplay}</p>
-            <p className="text-white font-bold text-base mb-1">Still deciding?</p>
-            <p className="text-slate-300 text-xs leading-relaxed">Most tradies choose based on lowest fees or reliability on difficult sites.</p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3">
-              <span className="flex items-baseline gap-1.5">
-                <span className="text-slate-500 text-xs">Lowest fees</span>
-                <span className="text-white font-semibold text-sm">→ Zeller</span>
-              </span>
-              <span className="flex items-baseline gap-1.5">
-                <span className="text-slate-500 text-xs">No-signal backup</span>
-                <span className="text-white font-semibold text-sm">→ Square</span>
-              </span>
-            </div>
+    <div className="border-y border-white/[0.12] bg-white/[0.04]">
+      <div className="container-page py-7 flex flex-col sm:flex-row sm:items-center gap-6">
+        <div className="flex-1 min-w-0">
+          <p className="text-white/40 text-xs mb-3 tracking-wide">Independent comparison · Updated {siteMeta.lastVerifiedDisplay}</p>
+          <p className="text-white font-bold text-lg mb-2">Still deciding?</p>
+          <p className="text-slate-300 text-sm leading-relaxed max-w-sm">Most tradies choose on fees or reliability in tough spots.</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4">
+            <span className="flex items-baseline gap-2">
+              <span className="text-slate-500 text-xs">Lowest fees</span>
+              <span className="text-brand-blue font-semibold text-sm">→ Zeller</span>
+            </span>
+            <span className="flex items-baseline gap-2">
+              <span className="text-slate-500 text-xs">Offline backup</span>
+              <span className="text-brand-blue font-semibold text-sm">→ Square</span>
+            </span>
           </div>
-          <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3 flex-shrink-0">
-            <Link
-              to="/providers"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors whitespace-nowrap shadow-sm"
-            >
-              Compare all providers
-            </Link>
-            <Link to="/compare/zeller-vs-square" className="text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
-              Zeller vs Square →
-            </Link>
-          </div>
+        </div>
+        <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3 flex-shrink-0">
+          <Link
+            to="/providers"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors whitespace-nowrap shadow-md"
+          >
+            Compare all providers →
+          </Link>
+          <Link to="/compare/zeller-vs-square" className="text-xs text-slate-400 hover:text-white transition-colors whitespace-nowrap">
+            Zeller vs Square
+          </Link>
         </div>
       </div>
     </div>
@@ -140,7 +138,6 @@ export default function Footer() {
     <footer className="bg-brand-dark text-slate-400 mt-auto">
       <RateAlerts />
       <DecisionBlock />
-      <div className="border-t border-white/[0.06]" />
       <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-7 gap-5">
         <div className="col-span-2 lg:col-span-2 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
@@ -155,8 +152,8 @@ export default function Footer() {
             {providers.map(p => (
               <li key={p.href}>
                 <Link to={p.href} className="group flex flex-col gap-0.5">
-                  <span className="text-slate-300 group-hover:text-white transition-colors text-sm font-medium">{p.label}</span>
-                  {p.desc && <span className="text-slate-500 group-hover:text-slate-400 transition-colors text-xs">{p.desc}</span>}
+                  <span className="text-white group-hover:text-brand-blue transition-colors text-sm font-medium underline-offset-2 group-hover:underline">{p.label}</span>
+                  {p.desc && <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-xs">{p.desc}</span>}
                 </Link>
               </li>
             ))}
