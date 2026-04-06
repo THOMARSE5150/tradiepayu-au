@@ -467,7 +467,7 @@ export const posts = [
     imageAlt: 'Electrician working on a switchboard panel in Queensland',
   },
   // State guides — plumbers
-  // Shares plumbers base image (photo-1504275427011-2a3c01e96d1d) — intentional, see notes above
+  // Shares plumbers base image (photo-1607472586893-edb57bdc0e39) — intentional, see notes above
   {
     slug: 'best-eftpos-plumbers-nsw-2026',
     title: 'Best EFTPOS for Plumbers in NSW (2026)',
@@ -556,12 +556,12 @@ export const posts = [
   { slug: 'best-eftpos-plumbers-sa-2026', title: 'Best EFTPOS for Plumbers in South Australia (2026)', description: 'Best EFTPOS for SA plumbers — Adelaide metro and regional SA emergency call-outs. Same-day settlement and SIM connectivity.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1607472586893-edb57bdc0e39', imageCrop: 'entropy', imageAlt: 'Plumber at work on pipes in South Australia' },
   { slug: 'best-eftpos-builders-sa-2026', title: 'Best EFTPOS for Builders in South Australia (2026)', description: 'Best EFTPOS for SA builders — Adelaide growth suburbs and regional SA. Payment solutions for large progress invoices.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'entropy', imageAlt: 'Builder on a construction site in South Australia' },
   // Painters state guides
-  // Shares painters base image (photo-1589939705384-5185137a7f0f) — intentional, see notes above
+  // Shares painters base image (photo-1562259929-b4e1fd3aef09) — intentional, see notes above
   { slug: 'best-eftpos-painters-nsw-2026', title: 'Best EFTPOS for Painters in NSW (2026)', description: 'Best EFTPOS for NSW painters — deposit collection before starting, empty house WiFi challenges, and same-day settlement for materials.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'entropy', imageAlt: 'Painter rolling paint on an interior wall in New South Wales' },
   { slug: 'best-eftpos-painters-vic-2026', title: 'Best EFTPOS for Painters in Victoria (2026)', description: 'Best EFTPOS for Victorian painters — deposits, empty-building WiFi issues, and same-day settlement across Melbourne and regional VIC.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'top', imageAlt: 'Painter rolling paint on an interior wall in Victoria' },
   { slug: 'best-eftpos-painters-qld-2026', title: 'Best EFTPOS for Painters in Queensland (2026)', description: 'Best EFTPOS for Queensland painters — deposits, insurance work, and same-day settlement across SEQ and regional QLD.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1562259929-b4e1fd3aef09', imageCrop: 'bottom', imageAlt: 'Painter rolling paint on an interior wall in Queensland' },
   // Concreters state guides
-  // Shares concreters base image (photo-1565008447742-97f6f38c985c) — intentional, see notes above
+  // Shares concreters base image (photo-1504917595217-d4dc5ebe6122) — intentional, see notes above
   { slug: 'best-eftpos-concreters-nsw-2026', title: 'Best EFTPOS for Concreters in NSW (2026)', description: 'Best EFTPOS for NSW concreters — large deposits before the pour, new estate sites, and same-day settlement for material purchasing.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504917595217-d4dc5ebe6122', imageCrop: 'entropy', imageAlt: 'Concreter smoothing a slab in New South Wales' },
   { slug: 'best-eftpos-concreters-vic-2026', title: 'Best EFTPOS for Concreters in Victoria (2026)', description: 'Best EFTPOS for Victorian concreters — large deposits, Melbourne growth estates, and same-day settlement for material purchasing.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1504917595217-d4dc5ebe6122', imageCrop: 'top', imageAlt: 'Concreter smoothing a slab in Victoria' },
   // Painters city guides
@@ -581,7 +581,7 @@ export const posts = [
   { slug: 'best-eftpos-plumbers-adelaide-2026', title: 'Best EFTPOS for Plumbers in Adelaide (2026)', description: 'Best EFTPOS for Adelaide plumbers — growth estate plumbing, after-hours call-outs, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1607472586893-edb57bdc0e39', imageCrop: 'bottom', imageAlt: 'Plumber at work on pipes in Adelaide' },
   { slug: 'best-eftpos-builders-adelaide-2026', title: 'Best EFTPOS for Builders in Adelaide (2026)', description: 'Best EFTPOS for Adelaide builders — northern suburbs estate builds, progress payments, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'cities', image: 'photo-1504307651254-35680f356dfd', imageCrop: 'faces', imageAlt: 'Builder on a construction site in Adelaide' },
   // Roofers state guides
-  // Shares roofers base image (photo-1558618666-fcd25c85cd64) — intentional, see notes above
+  // Shares roofers base image (photo-1570129477492-45c003edd2be) — intentional, see notes above
   { slug: 'best-eftpos-roofers-nsw-2026', title: 'Best EFTPOS for Roofers in NSW (2026)', description: 'Best EFTPOS for NSW roofers — storm-damage insurance work, large job values, and same-day settlement across Sydney and regional NSW.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1570129477492-45c003edd2be', imageCrop: 'entropy', imageAlt: 'Roofer working on a tile roof in New South Wales' },
   { slug: 'best-eftpos-roofers-vic-2026', title: 'Best EFTPOS for Roofers in Victoria (2026)', description: 'Best EFTPOS for Victorian roofers — hailstorm insurance claims, SIM connectivity at roof level, and same-day settlement.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1570129477492-45c003edd2be', imageCrop: 'top', imageAlt: 'Roofer working on a tile roof in Victoria' },
   { slug: 'best-eftpos-roofers-qld-2026', title: 'Best EFTPOS for Roofers in Queensland (2026)', description: 'Best EFTPOS for QLD roofers — cyclone and storm season insurance work, large job values, and rapid payment collection.', date: '2 Apr 2026', readTime: '5 min read', category: 'states', image: 'photo-1570129477492-45c003edd2be', imageCrop: 'bottom', imageAlt: 'Roofer working on a tile roof in Queensland' },
