@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
+import AffiliateButton from '../../components/AffiliateButton'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -370,19 +371,29 @@ export default function ZellerTerminalReviewPost() {
             For 90% of Australian tradies, Zeller Terminal 1 with SIM is the right choice. Lowest rate, SIM connectivity, same-day settlement, no contract. The only scenario where it falls short is genuine zero-signal underground work — and Square Terminal's offline mode handles that.
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/providers/zeller"
+            <AffiliateButton
+              providerId="zeller"
+              label="blog-verdict"
+              campaign="zeller-review-blog"
+              intent="signup"
               className="inline-flex items-center gap-2 bg-brand-blue text-white font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-colors"
             >
-              Full Zeller review →
+              Get Zeller →
+            </AffiliateButton>
+            <Link
+              to="/providers/zeller"
+              className="inline-flex items-center gap-2 border border-brand-blue text-brand-blue font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+            >
+              Full review &amp; pricing
             </Link>
             <Link
               to="/compare/zeller-vs-square"
-              className="inline-flex items-center gap-2 border border-brand-blue text-brand-blue font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center gap-2 border border-slate-200 text-slate-600 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-slate-50 transition-colors"
             >
-              Zeller vs Square comparison
+              Zeller vs Square
             </Link>
           </div>
+          <p className="text-xs text-slate-400 mt-3">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or our editorial independence.</p>
         </motion.div>
       </section>
 

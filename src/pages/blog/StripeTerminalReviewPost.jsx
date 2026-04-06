@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
+import AffiliateButton from '../../components/AffiliateButton'
 
 import siteMeta from '../../data/site-meta.json'
 
@@ -401,19 +402,29 @@ export default function StripeTerminalReviewPost() {
             Stripe earns its place in a tradie's toolkit — but for specific work types. If you invoice businesses, take online deposits, or have a website with a booking flow, Stripe's ecosystem is unmatched. If most of your revenue is tap-and-go at the job site, <Link to="/providers/zeller" className="text-brand-blue hover:underline font-medium">Zeller Terminal 1</Link> or <Link to="/providers/square" className="text-brand-blue hover:underline font-medium">Square Terminal</Link> will cost you less month to month. Many tradies run both: Zeller for on-site payments, Stripe for invoicing and online bookings.
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/providers/stripe"
+            <AffiliateButton
+              providerId="stripe"
+              label="blog-verdict"
+              campaign="stripe-review-blog"
+              intent="signup"
               className="inline-flex items-center gap-2 bg-brand-blue text-white font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-600 transition-colors"
             >
-              Full Stripe review →
+              Get Stripe →
+            </AffiliateButton>
+            <Link
+              to="/providers/stripe"
+              className="inline-flex items-center gap-2 border border-brand-blue text-brand-blue font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+            >
+              Full review &amp; pricing
             </Link>
             <Link
               to="/compare/zeller-vs-stripe"
-              className="inline-flex items-center gap-2 border border-brand-blue text-brand-blue font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors"
+              className="inline-flex items-center gap-2 border border-slate-200 text-slate-600 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-slate-50 transition-colors"
             >
-              Zeller vs Stripe comparison
+              Zeller vs Stripe
             </Link>
           </div>
+          <p className="text-xs text-slate-400 mt-3">TradiePay AU may earn a commission if you sign up — this does not affect your pricing or our editorial independence.</p>
         </motion.div>
       </section>
 

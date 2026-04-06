@@ -354,6 +354,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Top reads ── */}
+      <section className="section-alt py-8 sm:py-10">
+        <div className="container-page">
+          <div className="flex items-end justify-between mb-4 gap-4">
+            <h2 className="text-lg font-bold text-brand-dark">In-depth guides</h2>
+            <Link to="/blog" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap">All articles →</Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              { to: '/blog/zeller-terminal-1-review-2026', label: 'Zeller Terminal 1 Review (2026)', desc: 'Lowest rate, SIM card, same-day settlement — detailed tradie verdict.' },
+              { to: '/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026', label: 'Zeller vs Square vs Stripe', desc: 'Head-to-head comparison at every monthly volume.' },
+              { to: '/blog/stripe-terminal-review-2026', label: 'Stripe Terminal Review (2026)', desc: 'The right choice if you invoice digitally or take online deposits.' },
+            ].map(({ to, label, desc }) => (
+              <Link key={to} to={to} className="flex flex-col gap-1 p-4 rounded-2xl bg-white border border-slate-100 hover:border-brand-blue hover:shadow-sm transition-all group">
+                <span className="text-sm font-semibold text-brand-dark group-hover:text-brand-blue transition-colors leading-snug">{label}</span>
+                <span className="text-xs text-slate-500 leading-relaxed">{desc}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── By state ── */}
       <section className="section py-10 sm:py-12">
         <div className="container-page">

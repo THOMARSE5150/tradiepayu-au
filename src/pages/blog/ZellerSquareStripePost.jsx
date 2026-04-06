@@ -280,9 +280,11 @@ export default function ZellerSquareStripePost() {
 
         <section className="mb-10">
           <div className="flex flex-wrap gap-3">
+            <Link to="/blog/zeller-terminal-1-review-2026" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Zeller Terminal 1 review →</Link>
+            <Link to="/blog/square-terminal-review-2026" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Square Terminal review →</Link>
+            <Link to="/blog/stripe-terminal-review-2026" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Stripe Terminal review →</Link>
             <Link to="/compare/zeller-vs-square" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Zeller vs Square →</Link>
             <Link to="/compare/zeller-vs-stripe" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Zeller vs Stripe →</Link>
-            <Link to="/compare/square-vs-stripe" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Square vs Stripe →</Link>
             <Link to="/calculator" className="text-sm font-semibold text-brand-blue border border-brand-blue/30 hover:bg-brand-blue/5 px-4 py-2 rounded-xl transition-colors">Cost calculator →</Link>
           </div>
         </section>
@@ -296,7 +298,7 @@ export default function ZellerSquareStripePost() {
       </article>
 
       <div className="container-page mb-12">
-        <RelatedLinks slug="electricians" type="trade" />
+        <RelatedLinks slug="zeller" type="provider" />
       </div>
     </>
   )
