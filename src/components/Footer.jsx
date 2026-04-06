@@ -4,12 +4,14 @@ import Logo from './Logo'
 import siteMeta from '../data/site-meta.json'
 import { STATES } from '../data/states'
 
+// ─── Data ────────────────────────────────────────────────────────────────────
+
 const providers = [
-  { label: 'Zeller', desc: 'lowest fees',          href: '/providers/zeller' },
-  { label: 'Square', desc: 'offline backup',        href: '/providers/square' },
-  { label: 'Stripe', desc: 'advanced online stack', href: '/providers/stripe' },
-  { label: 'Tyro',   desc: 'tailored pricing',      href: '/providers/tyro' },
-  { label: 'Shift4', desc: 'quote-based',           href: '/providers/shift4' },
+  { label: 'Zeller', desc: 'Lowest transaction fees',    href: '/providers/zeller' },
+  { label: 'Square', desc: 'Works offline, no signal',   href: '/providers/square' },
+  { label: 'Stripe', desc: 'Advanced online payments',   href: '/providers/stripe' },
+  { label: 'Tyro',   desc: 'Tailored pricing available', href: '/providers/tyro' },
+  { label: 'Shift4', desc: 'Quote-based for high volume',href: '/providers/shift4' },
 ]
 
 const trades = [
@@ -26,26 +28,34 @@ const trades = [
 
 const blog = [
   { label: 'Zeller vs Square vs Stripe', href: '/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026' },
-  { label: 'Best EFTPOS for Plumbers', href: '/blog/best-eftpos-plumbers-australia-2026' },
-  { label: 'Stripe vs Square', href: '/blog/stripe-vs-square-eftpos-australia-2026' },
-  { label: 'Get Paid Faster', href: '/blog/how-to-get-paid-faster-sole-trader-australia' },
-  { label: 'EFTPOS Fees Breakdown', href: '/blog/eftpos-fees-tradies-australia-2026' },
-  { label: 'Zeller vs Square', href: '/blog/zeller-vs-square-eftpos-tradies' },
+  { label: 'Best EFTPOS for Plumbers',   href: '/blog/best-eftpos-plumbers-australia-2026' },
+  { label: 'Stripe vs Square',           href: '/blog/stripe-vs-square-eftpos-australia-2026' },
+  { label: 'Get Paid Faster',            href: '/blog/how-to-get-paid-faster-sole-trader-australia' },
+  { label: 'EFTPOS Fees Breakdown',      href: '/blog/eftpos-fees-tradies-australia-2026' },
+  { label: 'Zeller vs Square',           href: '/blog/zeller-vs-square-eftpos-tradies' },
 ]
 
 const legal = [
-  { label: 'About', href: '/about' },
-  { label: 'Glossary', href: '/glossary' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'About',          href: '/about' },
+  { label: 'Glossary',       href: '/glossary' },
+  { label: 'Contact',        href: '/contact' },
   { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Disclaimer', href: '/disclaimer' },
+  { label: 'Disclaimer',     href: '/disclaimer' },
+]
+
+const decisionCues = [
+  { lead: 'Lowest fees',    name: 'Zeller', href: '/providers/zeller' },
+  { lead: 'Offline backup', name: 'Square', href: '/providers/square' },
+  { lead: 'Online stack',   name: 'Stripe', href: '/providers/stripe' },
 ]
 
 const RATE_ALERTS_URL = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev/rate-alerts'
 
+// ─── Rate alerts ─────────────────────────────────────────────────────────────
+
 function RateAlerts() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState('idle') // idle | sending | done | error
+  const [status, setStatus] = useState('idle')
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -67,7 +77,9 @@ function RateAlerts() {
       <div className="container-page py-8">
         <div className="lg-dark lg-sheen relative rounded-2xl p-5 sm:p-6 max-w-xl">
           <p className="text-white font-semibold text-sm mb-0.5">Get rate change alerts</p>
-          <p className="text-slate-400 text-xs mb-4">We'll notify you when a provider changes their rates or hardware pricing — no spam, just useful updates.</p>
+          <p className="text-slate-400 text-xs mb-4">
+            We'll notify you when a provider changes their rates or hardware pricing — no spam, just useful updates.
+          </p>
           {status === 'done' ? (
             <p className="text-green-400 text-sm font-medium">✓ You're on the list. We'll be in touch when rates change.</p>
           ) : (
@@ -91,114 +103,204 @@ function RateAlerts() {
               </button>
             </form>
           )}
-          {status === 'error' && <p className="text-red-400 text-xs mt-2">Something went wrong — try emailing us directly.</p>}
+          {status === 'error' && (
+            <p className="text-red-400 text-xs mt-2">Something went wrong — try emailing us directly.</p>
+          )}
         </div>
       </div>
     </div>
   )
 }
 
-function DecisionBlock() {
+// ─── Decision band ────────────────────────────────────────────────────────────
+// Full-width section — visually distinct from the nav grid below.
+// Replaces the floating card (DecisionBlock) that blended with nav cards.
+
+function DecisionBand() {
   return (
-    <div className="border-t border-white/[0.06]">
-      <div className="container-page py-6">
-        <div className="lg-dark lg-sheen relative rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+    <div className="bg-white/[0.06] border-y border-white/[0.14]">
+      <div className="container-page py-9 sm:py-11">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-12">
+
+          {/* Heading + copy + decision cues */}
           <div className="flex-1 min-w-0">
-            <p className="text-white/30 text-xs mb-2">Independent comparison · Updated {siteMeta.lastVerifiedDisplay}</p>
-            <p className="text-white font-semibold text-sm mb-1">Still deciding?</p>
-            <p className="text-slate-400 text-xs leading-relaxed">Most tradies choose based on lowest fees or reliability on difficult sites.</p>
-            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-slate-400">
-              <span>Lowest fees <span className="text-white font-medium">→ Zeller</span></span>
-              <span>No-signal backup <span className="text-white font-medium">→ Square</span></span>
+            <p className="text-white/35 text-xs mb-3 tracking-wide">
+              Independent comparison · Updated {siteMeta.lastVerifiedDisplay}
+            </p>
+            <h2 className="text-white font-bold text-xl mb-2">Still deciding?</h2>
+            <p className="text-slate-400 text-sm leading-relaxed mb-5 max-w-md">
+              Most tradies choose based on fees, offline reliability, or the provider that best fits their trade.
+            </p>
+
+            {/* Linked pill cues */}
+            <div className="flex flex-wrap gap-2">
+              {decisionCues.map(c => (
+                <Link
+                  key={c.name}
+                  to={c.href}
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-white/[0.18] bg-white/[0.05] hover:border-white/[0.30] hover:bg-white/[0.09] transition-all text-xs"
+                >
+                  <span className="text-slate-400">{c.lead}</span>
+                  <span className="text-slate-600">→</span>
+                  <span className="text-white font-semibold">{c.name}</span>
+                </Link>
+              ))}
             </div>
           </div>
-          <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3 flex-shrink-0">
+
+          {/* Primary CTA — full-width on mobile, auto on sm+ */}
+          <div className="flex flex-col gap-3 sm:items-end sm:pt-11 flex-shrink-0">
             <Link
               to="/providers"
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-md w-full sm:w-auto whitespace-nowrap"
             >
-              Compare all providers
+              Compare all providers →
             </Link>
-            <Link to="/compare/zeller-vs-square" className="text-xs text-slate-500 hover:text-slate-300 transition-colors whitespace-nowrap">
-              Zeller vs Square →
+            <Link
+              to="/compare/zeller-vs-square"
+              className="text-xs text-slate-500 hover:text-slate-300 transition-colors text-center sm:text-right"
+            >
+              Zeller vs Square side-by-side →
             </Link>
           </div>
+
         </div>
       </div>
     </div>
   )
 }
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
 
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-slate-400 mt-auto">
+
       <RateAlerts />
-      <DecisionBlock />
-      <div className="container-page py-12 grid grid-cols-2 lg:grid-cols-7 gap-5">
+      <DecisionBand />
+
+      {/* Nav grid — human sitemap */}
+      <div className="container-page py-10 grid grid-cols-2 lg:grid-cols-7 gap-4 lg:gap-5">
+
+        {/* Brand / about */}
         <div className="col-span-2 lg:col-span-2 lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
-          <p className="text-sm leading-relaxed text-slate-400 mb-3">Independent comparison of mobile card payment systems for Australian tradies. Updated {siteMeta.lastVerifiedDisplay}.</p>
+          <p className="text-sm leading-relaxed text-slate-400 mb-3">
+            Independent comparison of mobile card payment systems for Australian tradies.
+            Updated {siteMeta.lastVerifiedDisplay}.
+          </p>
           <p className="text-xs text-slate-600">Editorially independent rankings. Not financial advice.</p>
         </div>
+
+        {/* Providers */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <Link to="/providers" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+          <Link
+            to="/providers"
+            className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
+          >
             Providers <span className="text-white/30">→</span>
           </Link>
-          <ul className="space-y-2 text-sm mt-3">
+          <ul className="space-y-4 mt-3">
             {providers.map(p => (
               <li key={p.href}>
-                <Link to={p.href} className="text-slate-400 hover:text-white transition-colors">
-                  {p.label}
-                  {p.desc && <span className="text-slate-600 ml-1">— {p.desc}</span>}
+                <Link to={p.href} className="group flex flex-col gap-0.5">
+                  <span className="text-white group-hover:text-brand-blue transition-colors text-sm font-semibold">
+                    {p.label}
+                  </span>
+                  <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-xs">
+                    {p.desc}
+                  </span>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* By Trade */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <Link to="/trades" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+          <Link
+            to="/trades"
+            className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
+          >
             By Trade <span className="text-white/30">→</span>
           </Link>
           <ul className="space-y-2 text-sm mt-3">
             {trades.map(t => (
-              <li key={t.href}><Link to={t.href} className="text-slate-400 hover:text-white transition-colors">{t.label}</Link></li>
+              <li key={t.href}>
+                <Link to={t.href} className="text-slate-400 hover:text-white transition-colors">
+                  {t.label}
+                </Link>
+              </li>
             ))}
-            <li><Link to="/trades" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">All 18 trades →</Link></li>
+            <li>
+              <Link to="/trades" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">
+                All 18 trades →
+              </Link>
+            </li>
           </ul>
         </div>
+
+        {/* By State */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <Link to="/states" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+          <Link
+            to="/states"
+            className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
+          >
             By State <span className="text-white/30">→</span>
           </Link>
           <ul className="space-y-2 text-sm mt-3">
             {STATES.map(s => (
-              <li key={s.slug}><Link to={`/states/${s.slug}`} className="text-slate-400 hover:text-white transition-colors">{s.name} <span className="text-slate-600">({s.abbr})</span></Link></li>
+              <li key={s.slug}>
+                <Link to={`/states/${s.slug}`} className="text-slate-400 hover:text-white transition-colors">
+                  {s.name} <span className="text-slate-600">({s.abbr})</span>
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
+
+        {/* Blog */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <Link to="/blog" className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1">
+          <Link
+            to="/blog"
+            className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
+          >
             Blog <span className="text-white/30">→</span>
           </Link>
           <ul className="space-y-2 text-sm mt-3">
             {blog.map(b => (
-              <li key={b.href}><Link to={b.href} className="text-slate-400 hover:text-white transition-colors">{b.label}</Link></li>
+              <li key={b.href}>
+                <Link to={b.href} className="text-slate-400 hover:text-white transition-colors leading-snug block">
+                  {b.label}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
+
+        {/* Legal */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <p className="text-white/60 font-semibold mb-3 text-xs uppercase tracking-widest">Legal</p>
+          <p className="text-white/60 font-semibold text-xs uppercase tracking-widest mb-3">Legal</p>
           <ul className="space-y-2 text-sm">
             {legal.map(l => (
-              <li key={l.href}><Link to={l.href} className="text-slate-400 hover:text-white transition-colors">{l.label}</Link></li>
+              <li key={l.href}>
+                <Link to={l.href} className="text-slate-400 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
+
       </div>
+
+      {/* Bottom strip */}
       <div className="border-t border-white/[0.06] py-4 text-center text-xs text-slate-600 space-y-1 px-4">
         <p>Rates correct as of {siteMeta.lastVerifiedDisplay}. Verify with providers before signing up.</p>
         <p>
-          <Link to="/disclaimer" className="hover:text-slate-400 transition-colors">General information only — not financial advice.</Link>
+          <Link to="/disclaimer" className="hover:text-slate-400 transition-colors">
+            General information only — not financial advice.
+          </Link>
           {' '}·{' '}
           <Link to="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>
           {' '}·{' '}
@@ -206,6 +308,7 @@ export default function Footer() {
         </p>
         <p>TradiePay AU is operated by QUICKFIXCREATIVE · ABN 77 133 011 874</p>
       </div>
+
     </footer>
   )
 }
