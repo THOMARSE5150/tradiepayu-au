@@ -16,10 +16,10 @@ const crumbs = [
   { label: 'Best EFTPOS for Concreters in Australia (2026)' },
 ]
 
-const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader M2']
+const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe WisePad 3']
 const comparisonRows = [
   { highlight: true, cells: ['In-person rate', '1.4%', '1.6%', '1.7% + $0.10'] },
-  { cells: ['Hardware cost', '$99', '$329', '$69'] },
+  { cells: ['Hardware cost', '$99', '$329', '$89'] },
   { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗'] },
   { cells: ['Settlement', 'Same day', 'Next day', '2 days'] },

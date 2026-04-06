@@ -19,7 +19,7 @@ const crumbs = [
 const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader', 'Tyro']
 const comparisonRows = [
   { highlight: true, cells: ['In-person rate', '1.4%', '1.6%', '1.7% + $0.10', 'Quote'] },
-  { cells: ['Hardware cost', '$99', '$329', '$69', 'Quote'] },
+  { cells: ['Hardware cost', '$99', '$329', '$89', 'Quote'] },
   { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗', '✗'] },
   { cells: ['Settlement', 'Same day', 'Next day', '2 days', 'Next day'] },

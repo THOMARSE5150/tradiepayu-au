@@ -209,7 +209,7 @@ export default function CalculatorPage() {
             <strong className="text-brand-dark">Processing cost</strong> — your monthly card revenue × the provider's in-person rate, plus any fixed per-transaction fee (Stripe charges $0.10 per transaction).
           </p>
           <p>
-            <strong className="text-brand-dark">Hardware cost</strong> — terminal purchase price divided by your chosen amortisation period. Zeller Terminal 1 is $99; Square Terminal is $329; Stripe Reader M2 is $69. Tyro uses lease pricing (shown as $0 for payment links).
+            <strong className="text-brand-dark">Hardware cost</strong> — terminal purchase price divided by your chosen amortisation period. Zeller Terminal 1 is $99; Square Terminal is $329; Stripe BBPOS WisePad 3 is $89. Tyro uses lease pricing (shown as $0 for payment links).
           </p>
           <p>
             <strong className="text-brand-dark">SIM cost</strong> — Zeller's optional Optus SIM plan is $15/month. Included when the checkbox is ticked. For any tradie working on sites without reliable WiFi, this is effectively a required expense.

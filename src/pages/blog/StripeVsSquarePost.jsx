@@ -16,10 +16,10 @@ const crumbs = [
   { label: 'Stripe vs Square: Which Is Better for Australian Tradies? (2026)' },
 ]
 
-const comparisonHeaders = ['', 'Square Terminal', 'Stripe Reader M2']
+const comparisonHeaders = ['', 'Square Terminal', 'Stripe WisePad 3']
 const comparisonRows = [
   { highlight: true, cells: ['In-person rate', '1.6%', '1.7% + $0.10'] },
-  { cells: ['Hardware cost', '$329', '$69'] },
+  { cells: ['Hardware cost', '$329', '$89'] },
   { cells: ['SIM connectivity', '✗ (WiFi/hotspot)', '✗ (WiFi/hotspot)'] },
   { cells: ['Offline mode', '✓ up to 24h', '✗'] },
   { cells: ['Settlement', 'Next business day', '2 business days'] },
@@ -34,7 +34,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: 'Is Stripe or Square better for Australian tradies?',
-    a: "For most Australian tradies, neither Stripe nor Square beats Zeller (1.4% rate, SIM connectivity, same-day settlement). Between Stripe and Square specifically: Square Terminal is better for tradies who need offline payment capability — rural jobs, underground, no-signal sites. Stripe is better for tradies who do a lot of online billing (invoices, payment links) and want lower online payment fees. For in-person EFTPOS as a primary terminal, Square has a lower per-transaction rate (1.6% vs 1.7% + $0.10), though the hardware cost is much higher ($329 vs $69).",
+    a: "For most Australian tradies, neither Stripe nor Square beats Zeller (1.4% rate, SIM connectivity, same-day settlement). Between Stripe and Square specifically: Square Terminal is better for tradies who need offline payment capability — rural jobs, underground, no-signal sites. Stripe is better for tradies who do a lot of online billing (invoices, payment links) and want lower online payment fees. For in-person EFTPOS as a primary terminal, Square has a lower per-transaction rate (1.6% vs 1.7% + $0.10), though the hardware cost is much higher ($329 vs $89).",
   },
   {
     q: 'What is the difference between Stripe and Square fees in Australia?',
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: 'Does Stripe work for tradies in Australia?',
-    a: "Yes — Stripe Reader M2 is available in Australia for $69 and supports in-person tap/chip/swipe payments. It connects via Bluetooth to a phone running the Stripe Terminal app. There is no SIM plan option, so you need a mobile hotspot from your phone for connectivity. It does not support offline payments. Stripe is particularly useful for tradies who already use Stripe for online invoicing or subscriptions, as it consolidates everything in one account.",
+    a: "Yes — Stripe WisePad 3 is available in Australia for $89 and supports in-person tap/chip/swipe payments. It connects via Bluetooth to a phone running the Stripe Terminal app. There is no SIM plan option, so you need a mobile hotspot from your phone for connectivity. It does not support offline payments. Stripe is particularly useful for tradies who already use Stripe for online invoicing or subscriptions, as it consolidates everything in one account.",
   },
   {
     q: 'Does Square work in Australia?',
@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: 'Which has better hardware: Stripe or Square?',
-    a: "Stripe Reader M2 at $69 is much cheaper than Square Terminal at $329, but the tradeoff is significant. Stripe Reader M2 is a Bluetooth-paired reader that requires your phone for the display, receipt management, and internet connectivity. Square Terminal is a fully standalone Android device with its own screen, receipt printer port, and battery — it does not need your phone at all. For tradies, the standalone Square Terminal is more practical on job sites.",
+    a: "Stripe WisePad 3 at $89 is much cheaper than Square Terminal at $329, but the tradeoff is significant. Stripe WisePad 3 is a Bluetooth-paired reader that requires your phone for the display, receipt management, and internet connectivity. Square Terminal is a fully standalone Android device with its own screen, receipt printer port, and battery — it does not need your phone at all. For tradies, the standalone Square Terminal is more practical on job sites.",
   },
 ]
 
@@ -170,7 +170,7 @@ export default function StripeVsSquarePost() {
 
           <h2 className="text-xl font-bold text-brand-dark mt-6">Hardware: Stripe wins (on price), Square wins (on practicality)</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Stripe Reader M2 is $69. Square Terminal is $329. On upfront cost, Stripe wins by a wide margin. But the hardware is fundamentally different: Stripe Reader M2 is a Bluetooth-paired reader that offloads all intelligence — display, connectivity, receipt management — to your phone. Square Terminal is a standalone Android device with its own screen and battery that does not need your phone nearby.
+            Stripe WisePad 3 is $89. Square Terminal is $329. On upfront cost, Stripe wins by a wide margin. But the hardware is fundamentally different: Stripe WisePad 3 is a Bluetooth-paired reader that offloads all intelligence — display, connectivity, receipt management — to your phone. Square Terminal is a standalone Android device with its own screen and battery that does not need your phone nearby.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed mt-2">
             For tradies, standalone hardware wins. On a job site, your phone may be taking a call, managing a photo, or in your pocket. Square Terminal sits on the bench and works independently.

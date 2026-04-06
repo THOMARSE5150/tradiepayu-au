@@ -108,7 +108,7 @@ export default function ZellerVsTyroPost() {
         description="Transparent pricing vs negotiated rates. SIM connectivity vs WiFi-only. Same-day vs next-day settlement. A head-to-head for Australian tradies choosing between Zeller and Tyro."
         canonical="/blog/zeller-vs-tyro-eftpos-tradies"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 

@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'Does EFTPOS work on rooftops?',
-    a: "Yes — Zeller Terminal 1 with the Optus SIM plan is particularly effective on rooftops because 4G mobile signal is often stronger at height than at ground level. WiFi-only terminals like Square Reader or Stripe Reader M2 require a phone hotspot on the roof, which is less convenient. Zeller is self-contained.",
+    a: "Yes — Zeller Terminal 1 with the Optus SIM plan is particularly effective on rooftops because 4G mobile signal is often stronger at height than at ground level. WiFi-only terminals like Square Reader or Stripe WisePad 3 require a phone hotspot on the roof, which is less convenient. Zeller is self-contained.",
   },
   {
     q: 'How do roofers handle deposits for large jobs?',

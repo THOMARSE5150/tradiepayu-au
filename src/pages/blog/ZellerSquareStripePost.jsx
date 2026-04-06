@@ -16,10 +16,10 @@ const crumbs = [
   { label: 'Zeller vs Square vs Stripe: Best EFTPOS for Australian Tradies (2026)' },
 ]
 
-const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader M2']
+const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe WisePad 3']
 const comparisonRows = [
   { highlight: true, cells: ['In-person rate', '1.4%', '1.6%', '1.7% + $0.10'] },
-  { cells: ['Hardware cost', '$99', '$329', '$69'] },
+  { cells: ['Hardware cost', '$99', '$329', '$89'] },
   { cells: ['Monthly fee', '$0', '$0', '$0'] },
   { cells: ['SIM / cellular', '✓ $15/mo (Optus)', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗'] },
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: 'Which works best without WiFi — Zeller, Square, or Stripe?',
-    a: "Zeller wins for most connectivity-limited environments — the optional Optus SIM plan ($15/month) means the terminal works entirely independently of WiFi. Square Terminal wins in true zero-signal environments through its offline payment mode: cards are stored locally and processed when connectivity is restored. Stripe Reader M2 has no SIM and no offline mode — it requires an active internet connection at all times. For most tradie job sites, Zeller's SIM plan is the better solution.",
+    a: "Zeller wins for most connectivity-limited environments — the optional Optus SIM plan ($15/month) means the terminal works entirely independently of WiFi. Square Terminal wins in true zero-signal environments through its offline payment mode: cards are stored locally and processed when connectivity is restored. Stripe WisePad 3 has no SIM and no offline mode — it requires an active internet connection at all times. For most tradie job sites, Zeller's SIM plan is the better solution.",
   },
   {
     q: 'Is Stripe worth it for tradies?',
@@ -171,7 +171,7 @@ export default function ZellerSquareStripePost() {
           {[
             { provider: 'Zeller', tag: 'Best overall', colour: 'border-brand-blue bg-blue-50', tagColour: 'bg-brand-blue text-white', points: ['Lowest rate: 1.4%', 'SIM connectivity', 'Same-day settlement', '$99 hardware'] },
             { provider: 'Square', tag: 'Best for dead zones', colour: 'border-slate-200 bg-white', tagColour: 'bg-slate-700 text-white', points: ['Offline payment mode', '1.6% rate', 'Best offline reliability', '$329 hardware'] },
-            { provider: 'Stripe', tag: 'Best for developers', colour: 'border-slate-200 bg-white', tagColour: 'bg-violet-600 text-white', points: ['Best API / SDK', '1.7% + $0.10', '24/7 support', '$69 hardware'] },
+            { provider: 'Stripe', tag: 'Best for developers', colour: 'border-slate-200 bg-white', tagColour: 'bg-violet-600 text-white', points: ['Best API / SDK', '1.7% + $0.10', '24/7 support', '$89 hardware'] },
           ].map((c, i) => (
             <div key={i} className={`rounded-2xl border p-4 ${c.colour}`}>
               <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${c.tagColour}`}>{c.tag}</span>
@@ -229,7 +229,7 @@ export default function ZellerSquareStripePost() {
             Zeller's 1.4% flat rate is the lowest published in-person rate available to Australian tradies with no lock-in. Square's 1.6% costs 14% more per transaction. Stripe's 1.7% + $0.10 is worse still for low-average-transaction work — for a $150 call-out fee, that extra $0.10 represents an effective 0.07% surcharge on top of an already-higher rate.
           </p>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Hardware compounds the gap. Zeller Terminal 1 costs $99 upfront. Square Terminal costs $329 — more than three times as much. Stripe Reader M2 is $69 but the higher per-transaction rate erodes that saving within a few months for any meaningful volume.
+            Hardware compounds the gap. Zeller Terminal 1 costs $99 upfront. Square Terminal costs $329 — more than three times as much. Stripe WisePad 3 is $89 but the higher per-transaction rate erodes that saving within a few months for any meaningful volume.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark">Connectivity: depends on your job site</h2>

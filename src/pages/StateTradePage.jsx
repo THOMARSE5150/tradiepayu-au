@@ -11,10 +11,10 @@ import { TRADE_MAP } from '../data/tradesMeta'
 import { STATE_MAP } from '../data/states'
 import siteMeta from '../data/site-meta.json'
 
-const COMPARISON_HEADERS = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader M2', 'Tyro']
+const COMPARISON_HEADERS = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe WisePad 3', 'Tyro']
 const COMPARISON_ROWS = [
   { highlight: true, cells: ['In-person rate', '1.4%', '1.6%', '1.7% + $0.10', 'Quote'] },
-  { cells: ['Hardware cost', '$99', '$329', '$69', 'Quote'] },
+  { cells: ['Hardware cost', '$99', '$329', '$89', 'Quote'] },
   { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗', '✗'] },
   { cells: ['Settlement', 'Same day', 'Next day', 'Next day', 'Next day'] },

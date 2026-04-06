@@ -23,7 +23,7 @@ const crumbs = [
 
 const setupSteps = [
   { title: 'Create a Stripe account', body: 'Sign up at stripe.com/au. ABN required. Approval is typically same-day. Stripe\'s verification is stricter than Zeller — have your ID ready.' },
-  { title: 'Order Stripe Reader M2', body: 'Purchase the Stripe Reader M2 ($69) from the Stripe dashboard. The M2 requires a device to operate — it connects via Bluetooth to your phone.' },
+  { title: 'Order Stripe BBPOS WisePad 3', body: 'Purchase the Stripe BBPOS WisePad 3 ($89) from the Stripe dashboard. The WisePad 3 requires a device to operate — it connects via Bluetooth to your phone.' },
   { title: 'Set up Stripe Invoicing', body: 'Enable Stripe Invoicing in the dashboard. Configure invoice templates with your ABN, payment terms, and automatic reminder schedules.' },
   { title: 'Configure payment links', body: 'Create payment link templates for deposits and remote billing. Stripe payment links work on any device and can be embedded in your website or sent via SMS.' },
   { title: 'Integrate with your website (optional)', body: 'If you have a booking site, use Stripe\'s plugin (WordPress, Squarespace) or API to accept payments directly. This is Stripe\'s key advantage over other providers.' },
@@ -111,7 +111,7 @@ export default function StripePage() {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center mb-4">
             {[
               { label: 'In-person rate', value: '1.7% + $0.10' },
-              { label: 'Hardware', value: '$69 (M2)' },
+              { label: 'Hardware', value: '$89 (WisePad 3)' },
               { label: 'Monthly fee', value: '$0' },
               { label: 'SIM connectivity', value: '✗ No' },
               { label: 'Settlement', value: '2 days' },
@@ -170,7 +170,7 @@ export default function StripePage() {
           <ComparisonTable
             headers={['Payment type', 'Rate', 'Fixed fee', 'Notes']}
             rows={[
-              { cells: ['In-person (Reader)', '1.7%', '+$0.10', 'BBPOS WisePad 3 (~$98)'] },
+              { cells: ['In-person (Reader)', '1.7%', '+$0.10', 'BBPOS WisePad 3 ($89 ex GST)'] },
               { cells: ['Tap to Pay (phone)', '1.7%', '+$0.10 + $0.15/auth', '$0.15 surcharge per authorisation'] },
               { cells: ['Online / payment link', '1.7%', '+$0.30', 'Standard Stripe online rate'] },
               { cells: ['Recurring (Stripe Billing)', '1.7%', '+$0.30', 'Automated — no manual send'] },
@@ -179,7 +179,7 @@ export default function StripePage() {
             ]}
           />
           <div className="mt-4 breakeven-box">
-            <strong>Tap to Pay note:</strong> At $0.15/auth, Stripe Tap to Pay adds up. Breakeven vs the reader (~$98): approximately 653 transactions. If you do more than ~55 transactions/month, the reader pays for itself within 12 months.
+            <strong>Tap to Pay note:</strong> At $0.15/auth, Stripe Tap to Pay adds up. Breakeven vs the reader ($89): approximately 593 transactions. If you do more than ~50 transactions/month, the reader pays for itself within 12 months.
           </div>
         </div>
       </section>

@@ -16,10 +16,10 @@ const crumbs = [
   { label: 'Best EFTPOS for Plumbers in Australia (2026)' },
 ]
 
-const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe Reader M2', 'Tyro']
+const comparisonHeaders = ['', 'Zeller Terminal 1', 'Square Terminal', 'Stripe WisePad 3', 'Tyro']
 const comparisonRows = [
   { highlight: true, cells: ['In-person rate', '1.4%', '1.6%', '1.7% + $0.10', 'Quote'] },
-  { cells: ['Hardware cost', '$99', '$329', '$69', 'Quote'] },
+  { cells: ['Hardware cost', '$99', '$329', '$89', 'Quote'] },
   { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗', '✗'] },
   { cells: ['Settlement', 'Same day', 'Next day', '2 days', 'Next day'] },
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: 'Can I use EFTPOS in an apartment block or high-rise?',
-    a: "Yes, with the right terminal. Zeller Terminal 1 with the Optus SIM plan uses mobile data rather than building WiFi, so it works in plant rooms, pump rooms, and mechanical floors where building WiFi rarely reaches. Square Terminal can take payments offline if there is no connectivity at all. Stripe Reader M2 and most Tyro terminals require WiFi or a strong mobile hotspot connection from your phone.",
+    a: "Yes, with the right terminal. Zeller Terminal 1 with the Optus SIM plan uses mobile data rather than building WiFi, so it works in plant rooms, pump rooms, and mechanical floors where building WiFi rarely reaches. Square Terminal can take payments offline if there is no connectivity at all. Stripe WisePad 3 and most Tyro terminals require WiFi or a strong mobile hotspot connection from your phone.",
   },
 ]
 

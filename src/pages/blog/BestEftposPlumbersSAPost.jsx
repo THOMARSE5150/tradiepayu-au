@@ -10,10 +10,10 @@ import siteMeta from '../../data/site-meta.json'
 
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: "Best EFTPOS for Plumbers in South Australia (2026)" }]
-const comparisonHeaders = ["","Zeller Terminal 1","Square Terminal","Stripe Reader M2","Tyro"]
+const comparisonHeaders = ["","Zeller Terminal 1","Square Terminal","Stripe WisePad 3","Tyro"]
 const comparisonRows = [
   { highlight: true, cells: ["In-person rate", "1.4%", "1.6%", "1.7% + $0.10", "Quote"] },
-  { cells: ["Hardware cost", "$99", "$329", "$69", "Quote"] },
+  { cells: ["Hardware cost", "$99", "$329", "$89", "Quote"] },
   { cells: ["SIM connectivity", "✓ $15/mo", "✗", "✗", "✗"] },
   { cells: ["Offline mode", "✗", "✓", "✗", "✗"] },
   { cells: ["Settlement", "Same day", "Next day", "2 days", "Next day"] },

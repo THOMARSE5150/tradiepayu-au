@@ -114,7 +114,7 @@ export default function ZellerVsSquarePost() {
         description="Rate, SIM card, offline mode, and settlement speed. A straight head-to-head for Australian tradies choosing between Zeller Terminal 1 and Square Terminal."
         canonical="/blog/zeller-vs-square-eftpos-tradies"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
