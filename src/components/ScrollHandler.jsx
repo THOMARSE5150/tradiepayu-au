@@ -6,12 +6,15 @@ const GA_ID = 'G-DW6EPTN6N1'
 export default function ScrollHandler() {
   const { pathname, hash } = useLocation()
 
-  // Fire a GA4 page_view on every SPA route change.
-  // The gtag snippet in index.html only fires once on initial load —
-  // without this, client-side navigations are invisible to GA4.
+  // Fire a GA4 page_view on every SPA route change (including initial load).
+  // send_page_view is disabled in index.html so this is the single source
+  // of truth for all page_view events — fired after React has set the title.
   useEffect(() => {
     if (typeof window.gtag === 'function') {
-      window.gtag('config', GA_ID, { page_path: pathname })
+      window.gtag('config', GA_ID, {
+        page_path: pathname,
+        page_title: document.title,
+      })
     }
   }, [pathname])
 
