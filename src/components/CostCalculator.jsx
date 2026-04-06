@@ -333,15 +333,27 @@ export default function CostCalculator() {
           {(() => {
             const byId = Object.fromEntries(rawProviders.map(p => [p.id, p]))
             const fmt = iso => iso ? new Date(iso).toLocaleDateString('en-AU', { month: 'long', year: 'numeric' }) : null
-            const zellerDate  = fmt(byId.zeller?.lastVerified)
-            const squareDate  = fmt(byId.square?.lastVerified)
-            const stripeDate  = fmt(byId.stripe?.lastVerified)
-            const tyroDate    = fmt(byId.tyro?.lastVerified)
+            const providerNote = (id) => {
+              const p = byId[id]
+              if (!p) return ''
+              const fees = p.fees || {}
+              const hw = Array.isArray(p.hardware) ? p.hardware[0] : null
+              const sim = p.sim_plan || {}
+              const rate = fees.in_person_percent != null
+                ? (fees.in_person_fixed_cents ? `${fees.in_person_percent}% + $${(fees.in_person_fixed_cents / 100).toFixed(2)}` : `${fees.in_person_percent}%`)
+                : 'quote-based'
+              const hwPart = hw && hw.name && hw.price_aud ? `${hw.name} $${hw.price_aud}` : (hw && hw.name ? hw.name : null)
+              const simPart = sim.cost_monthly_aud ? `SIM $${sim.cost_monthly_aud}/mo` : null
+              const parts = [rate, hwPart, simPart].filter(Boolean).join(', ')
+              const date = fmt(p.lastVerified)
+              return `${p.name} (${parts})${date ? ` verified ${date}` : ''}`
+            }
+            const notes = ['zeller', 'square', 'stripe', 'tyro'].map((id, i, arr) => {
+              const note = providerNote(id)
+              return i === arr.length - 2 ? note : (i === arr.length - 1 ? `and ${note}` : note)
+            })
             return `Hardware amortised over ${amortMonths} months. Assumes all transactions are in-person. ` +
-              `Zeller (1.4%, Terminal 1 $99, SIM $15/mo)${zellerDate ? ` verified ${zellerDate}` : ''}. ` +
-              `Square Terminal ($329)${squareDate ? ` verified ${squareDate}` : ''}. ` +
-              `Stripe (1.7% + $0.10, Reader M2 $69)${stripeDate ? ` verified ${stripeDate}` : ''} and ` +
-              `Tyro (1.4% payment links)${tyroDate ? ` verified ${tyroDate}` : ''} — confirm at provider websites before signing up.`
+              `${notes.slice(0, -1).join('. ')}. ${notes[notes.length - 1]} — confirm at provider websites before signing up.`
           })()}
         </p>
       </div>
