@@ -44,7 +44,7 @@ export default function BestEftposPaintersQLDPost() {
       <Meta title="Best EFTPOS for Painters in Queensland (2026)" description="Best EFTPOS for Queensland painters — deposit collection, SEQ new build sites, and body corporate billing for Brisbane and Sunshine Coast." canonical="/blog/best-eftpos-painters-qld-2026" ogType="article" jsonLd={jsonLd} />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=900&h=560&fit=crop&crop=entropy&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&h=560&fit=crop&crop=entropy&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

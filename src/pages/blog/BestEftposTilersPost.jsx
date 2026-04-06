@@ -58,7 +58,7 @@ const jsonLd = [
     description: 'Tilers work in bathrooms and kitchens under renovation with no WiFi. The best EFTPOS for Australian tilers in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -96,14 +96,14 @@ export default function BestEftposTilersPost() {
         description="Tilers work in bathrooms and kitchens under renovation with no WiFi. The best EFTPOS for Australian tilers in 2026."
         canonical="/blog/best-eftpos-tilers-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

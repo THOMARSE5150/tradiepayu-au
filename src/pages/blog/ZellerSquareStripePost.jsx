@@ -75,7 +75,7 @@ const jsonLd = [
     description: 'A full 3-way comparison of the most popular EFTPOS options for Australian tradies. Rates, hardware, connectivity, settlement, and a clear winner for each scenario.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -119,14 +119,14 @@ export default function ZellerSquareStripePost() {
         description="A full 3-way comparison of the most popular EFTPOS options for Australian tradies. Rates, hardware, connectivity, settlement speed, and a clear winner for each scenario."
         canonical="/blog/zeller-vs-square-vs-stripe-eftpos-tradies-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"
