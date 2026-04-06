@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'How quickly do card payments settle for painters in SA?',
-    a: 'Zeller settles same-day to a Zeller Transaction Account. Square and Stripe settle next business day.'
+    a: 'Zeller settles same-day to a Zeller Transaction Account. Square settles next business day; Stripe settles in 2 business days.'
   }
 ]
 const jsonLd = [
@@ -143,7 +143,7 @@ const jsonLd = [
         name: 'How quickly do card payments settle for painters in SA?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Zeller settles same-day to a Zeller Transaction Account. Square and Stripe settle next business day.'
+          text: 'Zeller settles same-day to a Zeller Transaction Account. Square settles next business day; Stripe settles in 2 business days.'
         }
       }
     ]

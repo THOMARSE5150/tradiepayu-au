@@ -22,7 +22,7 @@ const comparisonRows = [
   { cells: ['Hardware cost', '$99', '$329', 'Quote'] },
   { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗'] },
-  { cells: ['Settlement', 'Same day', 'Next day', 'Next day'] },
+  { cells: ['Settlement', 'Same day', 'Next day', '2 days'] },
   { cells: ['Payment links', '✓ 1.7%', '✓ 2.2%', '✓ 1.4%'] },
   { cells: ['Works on roof (Optus 4G)', 'Excellent', 'Hotspot needed', 'Hotspot needed'] },
 ]

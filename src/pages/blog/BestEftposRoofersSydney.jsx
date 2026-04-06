@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'How quickly do card payments settle for roofers in Sydney?',
-    a: 'Zeller settles same-day to a Zeller Transaction Account. For Sydney roofers who purchase materials after collecting a deposit, same-day funds mean no waiting overnight. Square and Stripe settle next business day.'
+    a: 'Zeller settles same-day to a Zeller Transaction Account. For Sydney roofers who purchase materials after collecting a deposit, same-day funds mean no waiting overnight. Square settles next business day; Stripe settles in 2 business days.'
   }
 ]
 const jsonLd = [
@@ -143,7 +143,7 @@ const jsonLd = [
         name: 'How quickly do card payments settle for roofers in Sydney?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Zeller settles same-day to a Zeller Transaction Account. For Sydney roofers who purchase materials after collecting a deposit, same-day funds mean no waiting overnight. Square and Stripe settle next business day.'
+          text: 'Zeller settles same-day to a Zeller Transaction Account. For Sydney roofers who purchase materials after collecting a deposit, same-day funds mean no waiting overnight. Square settles next business day; Stripe settles in 2 business days.'
         }
       }
     ]

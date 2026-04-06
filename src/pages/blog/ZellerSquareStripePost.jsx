@@ -23,7 +23,7 @@ const comparisonRows = [
   { cells: ['Monthly fee', '$0', '$0', '$0'] },
   { cells: ['SIM / cellular', '✓ $15/mo (Optus)', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗'] },
-  { cells: ['Settlement', 'Same day', 'Next business day', 'Next business day'] },
+  { cells: ['Settlement', 'Same day', 'Next business day', '2 business days'] },
   { cells: ['Tap to Pay (phone)', '✓ Free', '✓ Free', '✓ + $0.15/auth'] },
   { cells: ['Invoicing', '✓ Free, built-in', '✓ Square Invoices', '✓ Stripe Invoicing'] },
   { cells: ['Payment links rate', '1.7% + $0.25', '2.2%', '1.7% + $0.30'] },
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'Which settles money fastest?',
-    a: "Zeller settles same business day into a Zeller Transaction Account. Funds are accessible immediately — via the free Zeller Mastercard debit card or same-day transfer to an external bank. Square and Stripe both settle the next business day to your nominated Australian bank account. For tradies who take a payment in the morning and need to buy materials the same afternoon, Zeller is the only option that makes this possible.",
+    a: "Zeller settles same business day into a Zeller Transaction Account. Funds are accessible immediately — via the free Zeller Mastercard debit card or same-day transfer to an external bank. Square settles the next business day; Stripe settles in 2 business days to your nominated Australian bank account. For tradies who take a payment in the morning and need to buy materials the same afternoon, Zeller is the only option that makes this possible.",
   },
   {
     q: 'Can I use Zeller and Square at the same time?',
@@ -245,7 +245,7 @@ export default function ZellerSquareStripePost() {
 
           <h2 className="text-xl font-bold text-brand-dark">Settlement: Zeller wins, clearly</h2>
           <p className="text-sm text-slate-600 leading-relaxed">
-            Zeller settles same business day into a Zeller Transaction Account. The free Zeller Mastercard debit card makes the funds accessible immediately — you can pay for materials at a trade supplier the same afternoon. Square and Stripe both settle the following business day. For cash-flow-sensitive sole traders, same-day settlement is not a minor perk — it is a meaningful operational advantage.
+            Zeller settles same business day into a Zeller Transaction Account. The free Zeller Mastercard debit card makes the funds accessible immediately — you can pay for materials at a trade supplier the same afternoon. Square settles the next business day; Stripe settles in 2 business days. For cash-flow-sensitive sole traders, same-day settlement is not a minor perk — it is a meaningful operational advantage.
           </p>
 
           <h2 className="text-xl font-bold text-brand-dark">When Stripe is the right call</h2>

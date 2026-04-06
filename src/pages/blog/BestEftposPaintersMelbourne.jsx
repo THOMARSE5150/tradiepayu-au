@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'How quickly do card payments settle for painters in Melbourne?',
-    a: 'Zeller settles same-day to a Zeller Transaction Account. For Melbourne painters who purchase materials after a job, same-day funds mean no waiting overnight. Square and Stripe both settle next business day by default.',
+    a: 'Zeller settles same-day to a Zeller Transaction Account. For Melbourne painters who purchase materials after a job, same-day funds mean no waiting overnight. Square settles next business day; Stripe settles in 2 business days by default.',
   },
 ]
 const jsonLd = [

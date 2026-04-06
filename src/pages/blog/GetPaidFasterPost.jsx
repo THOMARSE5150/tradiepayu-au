@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'What is same-day settlement and which providers offer it?',
-    a: "Same-day settlement means card payment revenue reaches your nominated bank account on the same calendar day the transaction is processed (if processed before the daily cutoff, typically 5–7pm). Zeller is the only major tradie EFTPOS provider in Australia offering same-day settlement. Square, Stripe, and Tyro all settle next business day — meaning a Friday payment arrives Monday. Zeller settles same day including Fridays.",
+    a: "Same-day settlement means card payment revenue reaches your nominated bank account on the same calendar day the transaction is processed (if processed before the daily cutoff, typically 5–7pm). Zeller is the only major tradie EFTPOS provider in Australia offering same-day settlement. Square and Tyro settle next business day; Stripe settles in 2 business days — meaning a Friday payment arrives Monday. Zeller settles same day including Fridays.",
   },
   {
     q: 'Should I use payment links or invoices for sole trader work?',
@@ -228,7 +228,7 @@ export default function GetPaidFasterPost() {
                 {[
                   ['Zeller', 'Same day', 'Friday evening', true],
                   ['Square', 'Next business day', 'Monday', false],
-                  ['Stripe', 'Next business day', 'Monday', false],
+                  ['Stripe', '2 business days', 'Tuesday', false],
                   ['Tyro', 'Next business day', 'Monday', false],
                 ].map(([name, speed, friday, highlight], i) => (
                   <tr key={i} className={highlight ? 'bg-green-50' : i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>

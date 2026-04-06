@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'How quickly do card payments settle for roofers in Melbourne?',
-    a: 'Zeller settles same-day to a Zeller Transaction Account. Melbourne roofers purchasing materials after a deposit can access funds the same day. Square and Stripe settle next business day.'
+    a: 'Zeller settles same-day to a Zeller Transaction Account. Melbourne roofers purchasing materials after a deposit can access funds the same day. Square settles next business day; Stripe settles in 2 business days.'
   }
 ]
 const jsonLd = [
@@ -143,7 +143,7 @@ const jsonLd = [
         name: 'How quickly do card payments settle for roofers in Melbourne?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Zeller settles same-day to a Zeller Transaction Account. Melbourne roofers purchasing materials after a deposit can access funds the same day. Square and Stripe settle next business day.'
+          text: 'Zeller settles same-day to a Zeller Transaction Account. Melbourne roofers purchasing materials after a deposit can access funds the same day. Square settles next business day; Stripe settles in 2 business days.'
         }
       }
     ]

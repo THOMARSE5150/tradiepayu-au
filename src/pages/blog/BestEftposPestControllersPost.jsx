@@ -22,7 +22,7 @@ const comparisonRows = [
   { cells: ['Hardware cost', '$99', '$329', '$69'] },
   { cells: ['SIM connectivity', '✓ $15/mo', '✗', '✗'] },
   { cells: ['Offline mode', '✗', '✓', '✗'] },
-  { cells: ['Settlement', 'Same day', 'Next day', 'Next day'] },
+  { cells: ['Settlement', 'Same day', 'Next day', '2 days'] },
   { cells: ['Works in roof voids', '✓ Usually (SIM)', 'Offline backup', 'No'] },
   { cells: ['Works in commercial buildings', 'Yes (SIM)', 'Needs hotspot', 'No'] },
 ]

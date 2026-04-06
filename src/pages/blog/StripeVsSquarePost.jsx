@@ -22,7 +22,7 @@ const comparisonRows = [
   { cells: ['Hardware cost', '$329', '$69'] },
   { cells: ['SIM connectivity', '✗ (WiFi/hotspot)', '✗ (WiFi/hotspot)'] },
   { cells: ['Offline mode', '✓ up to 24h', '✗'] },
-  { cells: ['Settlement', 'Next business day', 'Next business day'] },
+  { cells: ['Settlement', 'Next business day', '2 business days'] },
   { cells: ['Free settlement', '✓ Standard', '✓ Standard'] },
   { cells: ['Payment links rate', '2.2%', '1.7% + $0.30'] },
   { cells: ['Invoicing', '✓ Square Invoices', '✓ Stripe Invoicing'] },

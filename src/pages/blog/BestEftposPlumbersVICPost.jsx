@@ -22,7 +22,7 @@ const comparisonRows = [
   { cells: ["Hardware cost", "$99", "$329", "$69", "Quote"] },
   { cells: ["SIM connectivity", "✓ $15/mo", "✗", "✗", "✗"] },
   { cells: ["Offline mode", "✗", "✓", "✗", "✗"] },
-  { cells: ["Settlement", "Same day", "Next day", "Next day", "Next day"] },
+  { cells: ["Settlement", "Same day", "Next day", "2 days", "Next day"] },
   { cells: ["Payment links", "✓ 1.7%", "✓ 2.2%", "✓ 1.7%+$0.30", "✓ 1.4%"] },
   { cells: ["Emergency call-out use", "Excellent", "Good", "Good", "Limited"] },
 ]

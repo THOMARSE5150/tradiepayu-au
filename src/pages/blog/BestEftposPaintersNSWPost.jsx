@@ -16,7 +16,7 @@ const comparisonRows = [
   { cells: ["Hardware cost", "$99", "$329", "$69", "Quote"] },
   { cells: ["SIM connectivity", "✓ $15/mo", "✗", "✗", "✗"] },
   { cells: ["Offline mode", "✗", "✓", "✗", "✗"] },
-  { cells: ["Settlement", "Same day", "Next day", "Next day", "Next day"] },
+  { cells: ["Settlement", "Same day", "Next day", "2 days", "Next day"] },
   { cells: ["Payment links", "✓ 1.7%", "✓ 2.2%", "✓ 1.7%+$0.30", "✓ 1.4%"] },
 ]
 const faqs = [
@@ -44,7 +44,7 @@ export default function BestEftposPaintersNSWPost() {
       <Meta title="Best EFTPOS for Painters in NSW (2026)" description="Best EFTPOS for NSW painters — deposit collection before starting, empty house WiFi challenges, and same-day settlement for materials." canonical="/blog/best-eftpos-painters-nsw-2026" ogType="article" jsonLd={jsonLd} />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=900&h=560&fit=crop&crop=entropy&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: 'How quickly do card payments settle for roofers in SA?',
-    a: 'Zeller settles same-day to a Zeller Transaction Account. For SA roofers purchasing materials the same day, this is the fastest option available. Square and Stripe both settle next business day.',
+    a: 'Zeller settles same-day to a Zeller Transaction Account. For SA roofers purchasing materials the same day, this is the fastest option available. Square settles next business day; Stripe settles in 2 business days.',
   },
   {
     q: 'What EFTPOS works in regional South Australia?',

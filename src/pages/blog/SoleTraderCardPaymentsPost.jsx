@@ -342,7 +342,7 @@ export default function SoleTraderCardPaymentsPost() {
           {[
             {
               heading: 'Same-day settlement',
-              body: 'Zeller settles in-person payments same day to a Zeller Transaction Account. Take a payment at 9am, funds available by end of business. Square and Stripe settle next business day or 2 days respectively.',
+              body: 'Zeller settles in-person payments same day to a Zeller Transaction Account. Take a payment at 9am, funds available by end of business. Square settles next business day; Stripe settles in 2 business days or 2 days respectively.',
             },
             {
               heading: 'Payment links for off-site jobs',

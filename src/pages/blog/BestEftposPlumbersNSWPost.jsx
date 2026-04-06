@@ -22,7 +22,7 @@ const comparisonRows = [
   { cells: ["Hardware cost", "$99", "$329", "$69", "Quote"] },
   { cells: ["SIM connectivity", "✓ $15/mo", "✗", "✗", "✗"] },
   { cells: ["Offline mode", "✗", "✓", "✗", "✗"] },
-  { cells: ["Settlement", "Same day", "Next day", "Next day", "Next day"] },
+  { cells: ["Settlement", "Same day", "Next day", "2 days", "Next day"] },
   { cells: ["Payment links", "✓ 1.7%", "✓ 2.2%", "✓ 1.7%+$0.30", "✓ 1.4%"] },
   { cells: ["Emergency call-out use", "Excellent", "Good", "Good", "Limited"] },
 ]
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Why is same-day settlement important for NSW plumbers?",
-    a: "Plumbers often need to purchase replacement parts — hot water systems, pipe fittings, fixtures — on the same day as the job. Same-day settlement with Zeller means card revenue collected that day is available in the Zeller Transaction Account before close of business, without waiting until the next morning. Square, Stripe, and most other providers settle the following business day.",
+    a: "Plumbers often need to purchase replacement parts — hot water systems, pipe fittings, fixtures — on the same day as the job. Same-day settlement with Zeller means card revenue collected that day is available in the Zeller Transaction Account before close of business, without waiting until the next morning. Square settles the next business day; Stripe settles in 2 business days.",
   },
   {
     q: "What EFTPOS for NSW emergency plumbing call-outs?",
