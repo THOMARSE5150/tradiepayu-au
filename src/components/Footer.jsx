@@ -63,8 +63,8 @@ function RateAlerts() {
         {status === 'done' ? (
           <p className="text-green-400/80 text-xs">✓ You're on the list.</p>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row sm:items-center gap-2.5">
-            <p className="text-slate-600 text-xs flex-shrink-0">Rate change alerts</p>
+          <form onSubmit={handleSubmit} className="flex flex-row items-center gap-3 flex-wrap">
+            <p className="text-slate-400 text-xs flex-shrink-0">Rate alerts —</p>
             <div className="flex gap-2 max-w-xs">
               <input
                 type="email"
@@ -101,24 +101,24 @@ function DecisionBand() {
   return (
     <div className="bg-gradient-to-b from-white/[0.08] to-white/[0.05] border-y border-white/[0.14]">
       <div className="container-page py-10 sm:py-12">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-16">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-12">
 
           {/* Left: heading + editorial cue list */}
           <div className="flex-1 min-w-0">
-            <p className="text-white/30 text-xs tracking-widest uppercase mb-4">
+            <p className="text-white/30 text-xs tracking-widest uppercase mb-3">
               Independent · Updated {siteMeta.lastVerifiedDisplay}
             </p>
-            <h2 className="text-white font-bold text-2xl sm:text-3xl tracking-tight mb-6">
+            <h2 className="text-white font-bold text-2xl sm:text-3xl tracking-tight mb-5">
               Still deciding?
             </h2>
 
             {/* Editorial cue list — feels like guidance, not filter chips */}
-            <div className="divide-y divide-white/[0.08] max-w-xs">
+            <div className="divide-y divide-white/[0.10] max-w-xs">
               {decisionCues.map(c => (
                 <Link
                   key={c.name}
                   to={c.href}
-                  className="group flex items-center justify-between gap-6 py-3 first:pt-0 last:pb-0"
+                  className="group flex items-center justify-between gap-6 py-3.5 first:pt-0 last:pb-0"
                 >
                   <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-sm">
                     {c.lead}
@@ -168,7 +168,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="col-span-2 sm:col-span-1">
           <Logo className="mb-4 opacity-75" />
-          <p className="text-xs text-slate-600 leading-relaxed">
+          <p className="text-xs text-slate-500 leading-relaxed">
             Independent EFTPOS comparison<br className="hidden sm:block" /> for Australian tradies.
           </p>
         </div>
@@ -188,7 +188,7 @@ export default function Footer() {
                   <span className="text-slate-200 group-hover:text-white transition-colors text-sm leading-none">
                     {p.label}
                   </span>
-                  <span className="text-slate-600 text-xs">{p.desc}</span>
+                  <span className="text-slate-500 text-xs">{p.desc}</span>
                 </Link>
               </li>
             ))}
@@ -207,7 +207,7 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link to="/trades" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">
+              <Link to="/trades" className="text-slate-500 hover:text-slate-300 transition-colors text-xs">
                 All 18 trades →
               </Link>
             </li>
@@ -217,7 +217,7 @@ export default function Footer() {
               <Link
                 key={s.slug}
                 to={`/states/${s.slug}`}
-                className="text-slate-600 hover:text-slate-400 transition-colors text-xs"
+                className="text-slate-500 hover:text-slate-300 transition-colors text-xs"
               >
                 {s.abbr}
               </Link>
@@ -242,7 +242,7 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link to="/blog" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">
+              <Link to="/blog" className="text-slate-500 hover:text-slate-300 transition-colors text-xs">
                 More guides →
               </Link>
             </li>
@@ -255,7 +255,7 @@ export default function Footer() {
               { label: 'Privacy',    href: '/privacy' },
               { label: 'Disclaimer', href: '/disclaimer' },
             ].map(l => (
-              <Link key={l.href} to={l.href} className="text-slate-600 hover:text-slate-400 transition-colors text-xs">
+              <Link key={l.href} to={l.href} className="text-slate-500 hover:text-slate-300 transition-colors text-xs">
                 {l.label}
               </Link>
             ))}
