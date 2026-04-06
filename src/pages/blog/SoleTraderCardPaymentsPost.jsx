@@ -86,7 +86,7 @@ const jsonLd = [
     '@type': 'HowTo',
     name: 'How to Accept Card Payments as a Sole Trader in Australia (2026)',
     description: 'Everything a sole-trader tradie needs: ABN setup, choosing a provider, hardware costs, and what the fees actually mean for your take-home pay.',
-    image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&h=630&fit=crop&crop=center&q=80',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop&crop=center&q=80',
     step: steps.map((s, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
@@ -135,14 +135,14 @@ export default function SoleTraderCardPaymentsPost() {
         description="Everything a sole-trader tradie needs: ABN setup, choosing a provider, hardware costs, and what the fees actually mean for your take-home pay."
         canonical="/blog/accept-card-payments-sole-trader-australia"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

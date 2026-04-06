@@ -7,7 +7,7 @@ import RelatedLinks from '../../components/RelatedLinks'
 import siteMeta from '../../data/site-meta.json'
 
 const SITE = 'https://tradiepayau.directory'
-const IMG = 'photo-1581094651181-35942b2a0993'
+const IMG = 'photo-1621905251189-08b45d6a269e'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Best EFTPOS for HVAC in Queensland (2026)' }]
 const faqs = [
   { q: 'What is the best EFTPOS for HVAC technicians in Queensland?', a: 'Zeller Terminal 1 with the Optus SIM plan is the top pick for Queensland HVAC technicians. At 1.4% in-person with same-day settlement, it handles residential split-system and ceiling cassette installs, commercial HVAC fit-outs, and service calls across Brisbane and regional QLD.' },

@@ -62,7 +62,7 @@ const jsonLd = [
     description: 'Plumbers work in plant rooms, basements, new estates, and emergency call-outs at any hour. Here is the best EFTPOS terminal setup for Australian plumbers in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1504275427011-2a3c01e96d1d?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -100,14 +100,14 @@ export default function BestEftposPlumbersPost() {
         description="Plumbers work in plant rooms, basements, new estates, and emergency call-outs at any hour. Here is the best EFTPOS terminal setup for Australian plumbers in 2026."
         canonical="/blog/best-eftpos-plumbers-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1504275427011-2a3c01e96d1d?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1504275427011-2a3c01e96d1d?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

@@ -58,7 +58,7 @@ const jsonLd = [
     description: 'Carpenters work on new builds, renovations, and remote sites. Here is the best EFTPOS for Australian carpenters in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -96,14 +96,14 @@ export default function BestEftposCarpentersPost() {
         description="Carpenters work on new builds, renovations, and remote sites. Here is the best EFTPOS for Australian carpenters in 2026."
         canonical="/blog/best-eftpos-carpenters-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

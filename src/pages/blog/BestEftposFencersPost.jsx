@@ -58,7 +58,7 @@ const jsonLd = [
     description: 'Fencers work on new estates, rural properties, and construction sites without WiFi. The best EFTPOS setup for Australian fencers in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1200&h=630&fit=crop&crop=center&q=80',
       width: 1200,
       height: 630,
     },
@@ -96,14 +96,14 @@ export default function BestEftposFencersPost() {
         description="Fencers work on new estates, rural properties, and construction sites without WiFi. The best EFTPOS setup for Australian fencers in 2026."
         canonical="/blog/best-eftpos-fencers-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1200&h=630&fit=crop&crop=center&q=80"
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=900&h=560&fit=crop&crop=center&q=80"
+            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&h=560&fit=crop&crop=center&q=80"
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

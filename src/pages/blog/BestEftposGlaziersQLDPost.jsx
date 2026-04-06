@@ -7,7 +7,7 @@ import RelatedLinks from '../../components/RelatedLinks'
 import siteMeta from '../../data/site-meta.json'
 
 const SITE = 'https://tradiepayau.directory'
-const IMG = 'photo-1527689368864-3a821dbccc34'
+const IMG = 'photo-1558618666-fcd25c85cd64'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Best EFTPOS for Glaziers in Queensland (2026)' }]
 const faqs = [
   { q: 'What is the best EFTPOS for glaziers in Queensland?', a: 'Zeller Terminal 1 with the Optus SIM plan is the top pick for QLD glaziers. At 1.4% in-person with same-day settlement, it covers Brisbane emergency glass replacement, SEQ new estate window installation, and coastal glazing on the Gold and Sunshine Coasts.' },

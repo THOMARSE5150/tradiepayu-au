@@ -12,6 +12,7 @@ const REGIONAL = /-(nsw|vic|qld|sa|wa|act|nt|tas|sydney|melbourne|brisbane|perth
 const ALLOWED_SHARED = {
   'photo-1554224155-6726b3ff858f': 'payment-cost topic (fees + surcharging)',
   'photo-1563013544-824ae1b704d3': 'Tyro-related comparisons',
+  'photo-1521791136064-7986c2920216': 'sole-trader EFTPOS guides (best-eftpos-sole-traders + accept-card-payments)',
 }
 
 let errors = 0

@@ -7,7 +7,7 @@ import RelatedLinks from '../../components/RelatedLinks'
 import siteMeta from '../../data/site-meta.json'
 
 const SITE = 'https://tradiepayau.directory'
-const IMG = 'photo-1557804506-669a67965ba0'
+const IMG = 'photo-1541888946425-d81bb19240f5'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Best EFTPOS for Plasterers in Brisbane (2026)' }]
 const faqs = [
   { q: 'What is the best EFTPOS for plasterers in Brisbane?', a: 'Zeller Terminal 1 with the Optus SIM plan is the top pick for Brisbane plasterers. At 1.4% in-person with same-day settlement, it handles Queenslander wall and ceiling restoration, SEQ new estate set plaster, and coastal renovation plasterwork without site WiFi.' },

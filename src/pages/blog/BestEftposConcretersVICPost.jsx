@@ -44,7 +44,7 @@ export default function BestEftposConcretersVICPost() {
       <Meta title="Best EFTPOS for Concreters in Victoria (2026)" description="Best EFTPOS for Victorian concreters — large deposits before pour day, Melbourne growth estate slabs, and same-day settlement for materials." canonical="/blog/best-eftpos-concreters-vic-2026" ogType="article" jsonLd={jsonLd} />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">
