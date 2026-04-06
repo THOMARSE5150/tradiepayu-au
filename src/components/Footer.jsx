@@ -7,11 +7,11 @@ import { STATES } from '../data/states'
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const providers = [
-  { label: 'Zeller', desc: 'Lowest transaction fees',    href: '/providers/zeller' },
-  { label: 'Square', desc: 'Works offline, no signal',   href: '/providers/square' },
-  { label: 'Stripe', desc: 'Advanced online payments',   href: '/providers/stripe' },
-  { label: 'Tyro',   desc: 'Tailored pricing available', href: '/providers/tyro' },
-  { label: 'Shift4', desc: 'Quote-based for high volume',href: '/providers/shift4' },
+  { label: 'Zeller', desc: 'Lowest transaction fees',     href: '/providers/zeller' },
+  { label: 'Square', desc: 'Works offline, no signal',    href: '/providers/square' },
+  { label: 'Stripe', desc: 'Advanced online payments',    href: '/providers/stripe' },
+  { label: 'Tyro',   desc: 'Tailored pricing available',  href: '/providers/tyro' },
+  { label: 'Shift4', desc: 'Quote-based for high volume', href: '/providers/shift4' },
 ]
 
 const trades = [
@@ -31,8 +31,6 @@ const blog = [
   { label: 'Best EFTPOS for Plumbers',   href: '/blog/best-eftpos-plumbers-australia-2026' },
   { label: 'Stripe vs Square',           href: '/blog/stripe-vs-square-eftpos-australia-2026' },
   { label: 'Get Paid Faster',            href: '/blog/how-to-get-paid-faster-sole-trader-australia' },
-  { label: 'EFTPOS Fees Breakdown',      href: '/blog/eftpos-fees-tradies-australia-2026' },
-  { label: 'Zeller vs Square',           href: '/blog/zeller-vs-square-eftpos-tradies' },
 ]
 
 const legal = [
@@ -51,7 +49,7 @@ const decisionCues = [
 
 const RATE_ALERTS_URL = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev/rate-alerts'
 
-// ─── Rate alerts ─────────────────────────────────────────────────────────────
+// ─── Rate alerts ──────────────────────────────────────────────────────────────
 
 function RateAlerts() {
   const [email, setEmail] = useState('')
@@ -113,32 +111,27 @@ function RateAlerts() {
 }
 
 // ─── Decision band ────────────────────────────────────────────────────────────
-// Full-width section — visually distinct from the nav grid below.
-// Replaces the floating card (DecisionBlock) that blended with nav cards.
 
 function DecisionBand() {
   return (
     <div className="bg-white/[0.06] border-y border-white/[0.14]">
-      <div className="container-page py-9 sm:py-11">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-12">
+      <div className="container-page py-7 sm:py-8">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-10">
 
-          {/* Heading + copy + decision cues */}
           <div className="flex-1 min-w-0">
-            <p className="text-white/35 text-xs mb-3 tracking-wide">
+            <p className="text-white/35 text-xs mb-2.5 tracking-wide">
               Independent comparison · Updated {siteMeta.lastVerifiedDisplay}
             </p>
-            <h2 className="text-white font-bold text-xl mb-2">Still deciding?</h2>
-            <p className="text-slate-400 text-sm leading-relaxed mb-5 max-w-md">
-              Most tradies choose based on fees, offline reliability, or the provider that best fits their trade.
+            <h2 className="text-white font-bold text-lg sm:text-xl mb-1.5">Still deciding?</h2>
+            <p className="text-slate-400 text-sm leading-relaxed mb-4 max-w-sm">
+              Most tradies choose on fees, offline reliability, or trade fit.
             </p>
-
-            {/* Linked pill cues */}
             <div className="flex flex-wrap gap-2">
               {decisionCues.map(c => (
                 <Link
                   key={c.name}
                   to={c.href}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-white/[0.18] bg-white/[0.05] hover:border-white/[0.30] hover:bg-white/[0.09] transition-all text-xs"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-white/[0.18] bg-white/[0.05] hover:border-white/[0.30] hover:bg-white/[0.09] transition-all text-xs"
                 >
                   <span className="text-slate-400">{c.lead}</span>
                   <span className="text-slate-600">→</span>
@@ -148,8 +141,7 @@ function DecisionBand() {
             </div>
           </div>
 
-          {/* Primary CTA — full-width on mobile, auto on sm+ */}
-          <div className="flex flex-col gap-3 sm:items-end sm:pt-11 flex-shrink-0">
+          <div className="flex flex-col gap-2.5 sm:items-end sm:pt-9 flex-shrink-0">
             <Link
               to="/providers"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-md w-full sm:w-auto whitespace-nowrap"
@@ -160,7 +152,7 @@ function DecisionBand() {
               to="/compare/zeller-vs-square"
               className="text-xs text-slate-500 hover:text-slate-300 transition-colors text-center sm:text-right"
             >
-              Zeller vs Square side-by-side →
+              Zeller vs Square →
             </Link>
           </div>
 
@@ -179,17 +171,21 @@ export default function Footer() {
       <RateAlerts />
       <DecisionBand />
 
-      {/* Nav grid — human sitemap */}
-      <div className="container-page py-10 grid grid-cols-2 lg:grid-cols-7 gap-4 lg:gap-5">
+      {/*
+        Nav: 4 sections instead of 7 narrow columns.
+        Mobile: single column stack.
+        sm: 2-column grid.
+        lg: 4-column grid.
+      */}
+      <div className="container-page py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        {/* Brand / about */}
-        <div className="col-span-2 lg:col-span-2 lg-dark lg-sheen relative rounded-2xl p-5">
+        {/* Brand */}
+        <div className="lg-dark lg-sheen relative rounded-2xl p-5">
           <Logo className="mb-3" />
-          <p className="text-sm leading-relaxed text-slate-400 mb-3">
-            Independent comparison of mobile card payment systems for Australian tradies.
-            Updated {siteMeta.lastVerifiedDisplay}.
+          <p className="text-sm leading-relaxed text-slate-400 mb-2">
+            Independent comparison of EFTPOS providers for Australian tradies.
           </p>
-          <p className="text-xs text-slate-600">Editorially independent rankings. Not financial advice.</p>
+          <p className="text-xs text-slate-600">Not financial advice. Updated {siteMeta.lastVerifiedDisplay}.</p>
         </div>
 
         {/* Providers */}
@@ -200,7 +196,7 @@ export default function Footer() {
           >
             Providers <span className="text-white/30">→</span>
           </Link>
-          <ul className="space-y-4 mt-3">
+          <ul className="space-y-3 mt-3">
             {providers.map(p => (
               <li key={p.href}>
                 <Link to={p.href} className="group flex flex-col gap-0.5">
@@ -216,16 +212,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* By Trade */}
+        {/* Browse — Trades + States combined */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <Link
-            to="/trades"
-            className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
-          >
-            By Trade <span className="text-white/30">→</span>
-          </Link>
-          <ul className="space-y-2 text-sm mt-3">
-            {trades.map(t => (
+          <p className="text-white/60 font-semibold text-xs uppercase tracking-widest mb-3">Browse</p>
+
+          <p className="text-white/35 text-xs mb-2">By trade</p>
+          <ul className="space-y-1.5 text-sm mb-4">
+            {trades.slice(0, 7).map(t => (
               <li key={t.href}>
                 <Link to={t.href} className="text-slate-400 hover:text-white transition-colors">
                   {t.label}
@@ -238,36 +231,30 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
 
-        {/* By State */}
-        <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <Link
-            to="/states"
-            className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
-          >
-            By State <span className="text-white/30">→</span>
-          </Link>
-          <ul className="space-y-2 text-sm mt-3">
+          <p className="text-white/35 text-xs mb-2">By state</p>
+          <div className="flex flex-wrap gap-x-2.5 gap-y-1.5">
             {STATES.map(s => (
-              <li key={s.slug}>
-                <Link to={`/states/${s.slug}`} className="text-slate-400 hover:text-white transition-colors">
-                  {s.name} <span className="text-slate-600">({s.abbr})</span>
-                </Link>
-              </li>
+              <Link
+                key={s.slug}
+                to={`/states/${s.slug}`}
+                className="text-slate-400 hover:text-white transition-colors text-xs"
+              >
+                {s.abbr}
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
 
-        {/* Blog */}
+        {/* Resources — Blog + Legal combined */}
         <div className="lg-dark lg-sheen relative rounded-2xl p-5">
           <Link
             to="/blog"
             className="text-white/60 font-semibold text-xs uppercase tracking-widest hover:text-white/90 transition-colors flex items-center gap-1 mb-3"
           >
-            Blog <span className="text-white/30">→</span>
+            Resources <span className="text-white/30">→</span>
           </Link>
-          <ul className="space-y-2 text-sm mt-3">
+          <ul className="space-y-2 text-sm mb-5">
             {blog.map(b => (
               <li key={b.href}>
                 <Link to={b.href} className="text-slate-400 hover:text-white transition-colors leading-snug block">
@@ -275,21 +262,24 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/blog" className="text-slate-600 hover:text-slate-400 transition-colors text-xs">
+                More guides →
+              </Link>
+            </li>
           </ul>
-        </div>
 
-        {/* Legal */}
-        <div className="lg-dark lg-sheen relative rounded-2xl p-5">
-          <p className="text-white/60 font-semibold text-xs uppercase tracking-widest mb-3">Legal</p>
-          <ul className="space-y-2 text-sm">
+          <div className="border-t border-white/[0.08] pt-3 flex flex-col gap-1.5">
             {legal.map(l => (
-              <li key={l.href}>
-                <Link to={l.href} className="text-slate-400 hover:text-white transition-colors">
-                  {l.label}
-                </Link>
-              </li>
+              <Link
+                key={l.href}
+                to={l.href}
+                className="text-slate-500 hover:text-slate-300 transition-colors text-xs"
+              >
+                {l.label}
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
 
       </div>
