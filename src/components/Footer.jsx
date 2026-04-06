@@ -79,9 +79,9 @@ function RateAlerts() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="px-3 py-1.5 bg-white/[0.08] hover:bg-white/[0.12] disabled:opacity-40 text-slate-300 rounded-lg text-xs transition-colors flex-shrink-0"
+                className="text-slate-400 hover:text-white disabled:opacity-40 text-xs transition-colors flex-shrink-0 whitespace-nowrap"
               >
-                {status === 'sending' ? '…' : 'Notify me'}
+                {status === 'sending' ? '…' : 'Notify me →'}
               </button>
             </div>
             {status === 'error' && <p className="text-red-400/70 text-xs">Try again or email us.</p>}
