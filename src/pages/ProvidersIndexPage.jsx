@@ -112,25 +112,22 @@ export default function ProvidersIndexPage() {
       <section className="section">
         <div className="container-page">
 
-          {/* ── Decision helper — lets users self-select before scanning all cards ── */}
-          <div className="mb-8 pb-7 border-b border-slate-100">
-            <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">Jump to what fits your work</p>
+          {/* ── Decision shortcut — assistive, not primary ── */}
+          <div className="mb-7 pb-6 border-b border-slate-100">
             <div className="flex flex-wrap gap-2">
               {[
-                { need: 'Lowest fees',         provider: 'Zeller', href: '/providers/zeller' },
-                { need: 'Works offline',        provider: 'Square', href: '/providers/square' },
-                { need: 'Online + in-person',   provider: 'Stripe', href: '/providers/stripe' },
-                { need: 'Quote-based pricing',  provider: 'Tyro',   href: '/providers/tyro'   },
-                { need: 'No upfront cost',      provider: 'Shift4', href: '/providers/shift4' },
+                { need: 'Lowest fees',    provider: 'Zeller', href: '/providers/zeller' },
+                { need: 'Works offline',  provider: 'Square', href: '/providers/square' },
+                { need: 'No upfront cost',provider: 'Shift4', href: '/providers/shift4' },
               ].map(({ need, provider, href }) => (
                 <Link
                   key={href}
                   to={href}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm hover:border-brand-blue hover:bg-blue-50/40 transition-all group"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-slate-50 border border-slate-100 rounded-xl text-xs hover:border-brand-blue/40 hover:bg-blue-50/30 transition-all group"
                 >
-                  <span className="text-slate-500 group-hover:text-slate-700">{need}</span>
-                  <span className="text-slate-300">·</span>
-                  <span className="font-semibold text-brand-dark group-hover:text-brand-blue">{provider} →</span>
+                  <span className="text-slate-400 group-hover:text-slate-600">{need}</span>
+                  <span className="text-slate-200">·</span>
+                  <span className="font-semibold text-slate-600 group-hover:text-brand-blue">{provider} →</span>
                 </Link>
               ))}
             </div>

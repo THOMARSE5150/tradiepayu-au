@@ -12,15 +12,22 @@ const badgeClasses = {
   'badge-muted':  'bg-slate-100 text-slate-600',
 }
 
-function StatCell({ label, value, positive }) {
+// highlight = true marks the cell as this provider's primary decision signal
+function StatCell({ label, value, positive, highlight = false }) {
   return (
-    <div className="lg-light rounded-xl p-3">
-      <span className="block text-xs text-slate-400 mb-0.5">{label}</span>
-      <span className={`font-bold text-sm ${positive === true ? 'text-brand-blue' : positive === false ? 'text-slate-400' : 'text-brand-dark'}`}>
+    <div className={`lg-light rounded-xl p-3 ${highlight ? 'ring-1 ring-brand-blue/25' : ''}`}>
+      <span className={`block text-xs mb-0.5 ${highlight ? 'text-slate-500' : 'text-slate-400'}`}>{label}</span>
+      <span className={`font-bold leading-none ${highlight ? 'text-base' : 'text-sm'} ${positive === true ? 'text-brand-blue' : positive === false ? 'text-slate-400' : 'text-brand-dark'}`}>
         {value}
       </span>
     </div>
   )
+}
+
+// Primary decision signal per provider — drives stat cell emphasis
+const HIGHLIGHT_STAT = {
+  zeller: 'rate',    // 1.4% — lowest published rate
+  square: 'offline', // offline mode — only provider with it
 }
 
 function StarRating({ rating }) {
@@ -51,6 +58,7 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
     apple_pay, google_pay, rating,
   } = provider
   const badgeCls = badgeClasses[badge_class] || badgeClasses['badge-muted']
+  const highlightKey = HIGHLIGHT_STAT[id] ?? null
 
   return (
     <motion.article
@@ -106,12 +114,13 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
 
         <p className="text-sm text-slate-600 leading-snug">{tagline}</p>
 
-        {/* Glassmorphism stat grid */}
+        {/* Stat grid — highlighted cell = primary reason to pick this provider */}
         <div className="grid grid-cols-2 gap-2">
           <StatCell
             label="In-person rate"
             value={fees.in_person_percent ? `${fees.in_person_percent}%` : 'Contact for rate'}
             positive={fees.in_person_percent ? true : null}
+            highlight={highlightKey === 'rate'}
           />
           <StatCell
             label="Settlement"
@@ -126,6 +135,7 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
             label="Offline"
             value={offline_mode.available ? 'Yes' : 'No'}
             positive={offline_mode.available || null}
+            highlight={highlightKey === 'offline'}
           />
         </div>
 
@@ -167,7 +177,7 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
           )}
         </div>
 
-        {/* CTA — featured gets primary, others get secondary to reinforce ranking */}
+        {/* CTA — featured gets primary; secondary for all others to reinforce ranking */}
         <Link
           to={`/providers/${id}`}
           onClick={() => trackProviderClick(id, source)}
@@ -177,7 +187,7 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
               : 'bg-slate-50 border border-slate-200 text-brand-dark hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/40'
           }`}
         >
-          {featured ? `See why ${name} is #1 →` : `Full ${name} review →`}
+          {featured ? `Why ${name} is #1 →` : `Full ${name} review →`}
         </Link>
       </div>
     </motion.article>
