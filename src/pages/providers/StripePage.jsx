@@ -2,17 +2,15 @@ import { Link } from 'react-router-dom'
 import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
-import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
-import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
-import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
 import StickyProviderBar from '../../components/StickyProviderBar'
 import SectionNav from '../../components/SectionNav'
+import ProviderHero from '../../components/ProviderHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -61,45 +59,32 @@ export default function StripePage() {
         jsonLd={jsonLd}
       />
 
-      <header className="hero relative overflow-hidden">
-        {/* Provider hero image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=900&h=560&fit=crop&crop=center&q=80"
-            alt=""
-            fetchPriority="high" className="w-full h-full object-cover"
-            onError={e => { e.currentTarget.style.opacity = '0' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
-        </div>
-        <div className="container-page relative z-10">
-          <Breadcrumb crumbs={crumbs} />
-          <div className="hero-meta">
-            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
-            <span>·</span>
-            <StarRating rating={4.2} />
-            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Stripe for Tradies — Full Review (2026)</h1>
-          <p className="hero-sub">Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first operations.</p>
-          <p className="text-xs text-white/40 mt-2">
-            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
-          </p>
-          <div className="mt-4 mb-1">
-            <ShareButton
-              title="Stripe for Tradies — Full Review (2026)"
-              text="API-first payments with invoicing and recurring billing for Australian tradies."
-              url="https://tradiepayau.directory/providers/stripe"
-            />
-          </div>
-                    <nav className="jump-links">
-            <a href="#fees">Fees</a>
-            <a href="#when-to-use">When to Use</a>
-            <a href="#recurring">Recurring Billing</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-        </div>
-      </header>
+      <ProviderHero
+        providerId="stripe"
+        heading="Stripe for Tradies — Full Review (2026)"
+        subheading="Best for website integration, online deposits, and automated recurring billing. Not the cheapest on-site, but the most powerful for digital-first operations."
+        bgImage="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=900&h=560&fit=crop&crop=center&q=80"
+        bgImageAlt=""
+        rating={4.2}
+        crumbs={crumbs}
+        keyStats={[
+          { label: 'Rate', value: '1.7%+$0.10' },
+          { label: 'Hardware', value: '$89' },
+          { label: 'Settlement', value: '2 days' },
+        ]}
+        signupLabel="Get Stripe →"
+        signupIntent="signup"
+        lastVerifiedDisplay={lastVerifiedDisplay}
+        navItems={[
+          { href: '#fees', label: 'Fees' },
+          { href: '#when-to-use', label: 'When to Use' },
+          { href: '#recurring', label: 'Recurring Billing' },
+          { href: '#faq', label: 'FAQ' },
+        ]}
+        shareTitle="Stripe for Tradies — Full Review (2026)"
+        shareText="API-first payments with invoicing and recurring billing for Australian tradies."
+        shareUrl="https://tradiepayau.directory/providers/stripe"
+      />
 
       <StickyProviderBar providerId="stripe" />
       <SectionNav sections={[{id:'fees',label:'Fees'},{id:'when-to-use',label:'When to Use'},{id:'recurring',label:'Recurring'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="stripe" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Stripe →</AffiliateButton>} />

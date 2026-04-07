@@ -3,17 +3,15 @@ import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import { Check, X } from 'lucide-react'
-import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
-import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
-import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
 import StickyProviderBar from '../../components/StickyProviderBar'
 import SectionNav from '../../components/SectionNav'
+import ProviderHero from '../../components/ProviderHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -62,45 +60,32 @@ export default function SquarePage() {
         jsonLd={jsonLd}
       />
 
-      <header className="hero relative overflow-hidden">
-        {/* Provider hero image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=900&h=560&fit=crop&crop=center&q=80"
-            alt=""
-            fetchPriority="high" className="w-full h-full object-cover"
-            onError={e => { e.currentTarget.style.opacity = '0' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
-        </div>
-        <div className="container-page relative z-10">
-          <Breadcrumb crumbs={crumbs} />
-          <div className="hero-meta">
-            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
-            <span>·</span>
-            <StarRating rating={4.5} />
-            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Square for Tradies — Full Review (2026)</h1>
-          <p className="hero-sub">Best offline capability in the market. The right backup terminal for tradies who work in dead zones.</p>
-          <p className="text-xs text-white/40 mt-2">
-            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
-          </p>
-          <div className="mt-4 mb-1">
-            <ShareButton
-              title="Square for Tradies — Full Review (2026)"
-              text="Best offline capability in the market — is Square right for your trade?"
-              url="https://tradiepayau.directory/providers/square"
-            />
-          </div>
-                    <nav className="jump-links">
-            <a href="#fees">Fees</a>
-            <a href="#offline">Offline Mode</a>
-            <a href="#vs-zeller">vs Zeller</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-        </div>
-      </header>
+      <ProviderHero
+        providerId="square"
+        heading="Square for Tradies — Full Review (2026)"
+        subheading="Best offline capability in the market. The right backup terminal for tradies who work in dead zones."
+        bgImage="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=900&h=560&fit=crop&crop=center&q=80"
+        bgImageAlt=""
+        rating={4.5}
+        crumbs={crumbs}
+        keyStats={[
+          { label: 'Rate', value: '1.6%' },
+          { label: 'Hardware', value: '$329' },
+          { label: 'Offline', value: '✓ Yes' },
+        ]}
+        signupLabel="Get Square →"
+        signupIntent="signup"
+        lastVerifiedDisplay={lastVerifiedDisplay}
+        navItems={[
+          { href: '#fees', label: 'Fees' },
+          { href: '#offline', label: 'Offline Mode' },
+          { href: '#vs-zeller', label: 'vs Zeller' },
+          { href: '#faq', label: 'FAQ' },
+        ]}
+        shareTitle="Square for Tradies — Full Review (2026)"
+        shareText="Best offline capability in the market — is Square right for your trade?"
+        shareUrl="https://tradiepayau.directory/providers/square"
+      />
 
       <StickyProviderBar providerId="square" />
       <SectionNav sections={[{id:'fees',label:'Fees'},{id:'offline',label:'Offline Mode'},{id:'vs-zeller',label:'vs Zeller'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="square" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Square →</AffiliateButton>} />

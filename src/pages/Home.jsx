@@ -168,22 +168,12 @@ export default function Home() {
                 Compare all options ↓
               </a>
               <Link
-                to="/providers/zeller"
+                to="/compare/zeller-vs-square"
                 className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
               >
-                Why Zeller is top pick →
+                Zeller vs Square →
               </Link>
             </div>
-            <p className="text-white/40 text-xs mt-2.5">
-              Ready to sign up?{' '}
-              <AffiliateButton providerId="zeller" label="hero-tertiary" campaign="homepage" intent="signup" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
-                Visit Zeller ↗
-              </AffiliateButton>
-              {' · '}
-              <AffiliateButton providerId="square" label="hero-fallback" campaign="homepage" intent="signup" className="text-white/60 hover:text-white/90 underline underline-offset-2 transition-colors">
-                Square (no signal) ↗
-              </AffiliateButton>
-            </p>
 
             <HeroTradeSelector />
           </motion.div>
@@ -229,6 +219,24 @@ export default function Home() {
             Tyro in-person rate requires a quote. Verify all rates with providers before signing up.
             {' '}Some links on this site may be referral links — this does not affect our editorial rankings.
           </p>
+
+          {/* Post-table routing strip */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              { label: 'See full Zeller review', to: '/providers/zeller' },
+              { label: 'Zeller vs Square — deep dive', to: '/compare/zeller-vs-square' },
+              { label: 'Best EFTPOS for my trade', to: '/trades' },
+              { label: 'All comparisons', to: '/compare' },
+            ].map(item => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-600 hover:border-brand-blue hover:text-brand-blue transition-all"
+              >
+                {item.label} →
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

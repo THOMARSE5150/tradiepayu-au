@@ -3,17 +3,15 @@ import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
-import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import SetupSteps from '../../components/SetupSteps'
 import ComparisonTable from '../../components/ComparisonTable'
-import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
-import StarRating from '../../components/StarRating'
 import StickyProviderBar from '../../components/StickyProviderBar'
 import SectionNav from '../../components/SectionNav'
+import ProviderHero from '../../components/ProviderHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -64,47 +62,34 @@ export default function ZellerPage() {
         jsonLd={jsonLd}
       />
 
-      <header className="hero relative overflow-hidden">
-        {/* Provider hero image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="/zeller-hero.webp"
-            alt="Tradie holding a Zeller Terminal beside his work ute"
-            fetchPriority="high" className="w-full h-full object-cover object-center"
-            onError={e => { e.currentTarget.style.opacity = '0' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/75 to-brand-dark/30" />
-        </div>
-        <div className="container-page relative z-10">
-          <Breadcrumb crumbs={crumbs} />
-          <div className="hero-meta">
-            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
-            <span>·</span>
-            <StarRating rating={4.8} />
-            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Zeller for Tradies — Full Review (2026)</h1>
-          <p className="hero-sub">Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller.</p>
-          <p className="text-xs text-white/40 mt-2">
-            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
-          </p>
-          <div className="mt-4 mb-1">
-            <ShareButton
-              title="Zeller for Tradies — Full Review (2026)"
-              text="Lowest rate, SIM-enabled terminals, and same-day settlement. See if Zeller is right for your trade."
-              url="https://tradiepayau.directory/providers/zeller"
-            />
-          </div>
-          <nav className="jump-links">
-            <a href="#fees">Fees</a>
-            <a href="#hardware">Hardware</a>
-            <a href="#connectivity">Connectivity</a>
-            <a href="#settlement">Settlement</a>
-            <a href="#setup">Setup</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-        </div>
-      </header>
+      <ProviderHero
+        providerId="zeller"
+        heading="Zeller for Tradies — Full Review (2026)"
+        subheading="Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller."
+        bgImage="/zeller-hero.webp"
+        bgImageAlt="Tradie holding a Zeller Terminal beside his work ute"
+        rating={4.8}
+        crumbs={crumbs}
+        keyStats={[
+          { label: 'Rate', value: '1.4%' },
+          { label: 'Hardware', value: '$99' },
+          { label: 'SIM', value: '$15/mo' },
+        ]}
+        signupLabel="Get Zeller →"
+        signupIntent="signup"
+        lastVerifiedDisplay={lastVerifiedDisplay}
+        navItems={[
+          { href: '#fees', label: 'Fees' },
+          { href: '#hardware', label: 'Hardware' },
+          { href: '#connectivity', label: 'Connectivity' },
+          { href: '#settlement', label: 'Settlement' },
+          { href: '#setup', label: 'Setup' },
+          { href: '#faq', label: 'FAQ' },
+        ]}
+        shareTitle="Zeller for Tradies — Full Review (2026)"
+        shareText="Lowest rate, SIM-enabled terminals, and same-day settlement. See if Zeller is right for your trade."
+        shareUrl="https://tradiepayau.directory/providers/zeller"
+      />
       <StickyProviderBar providerId="zeller" />
       <SectionNav sections={[{id:'fees',label:'Fees'},{id:'hardware',label:'Hardware'},{id:'connectivity',label:'Connectivity'},{id:'settlement',label:'Settlement'},{id:'setup',label:'Setup'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="zeller" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Get Zeller →</AffiliateButton>} />
       <ProviderVerdict providerId="zeller" />

@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom'
 import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
-import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
-import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
-import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
 import StickyProviderBar from '../../components/StickyProviderBar'
 import SectionNav from '../../components/SectionNav'
+import ProviderHero from '../../components/ProviderHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -60,46 +58,33 @@ export default function Shift4Page() {
         jsonLd={jsonLd}
       />
 
-      <header className="hero relative overflow-hidden">
-        {/* Provider hero image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&h=560&fit=crop&crop=center&q=80"
-            alt=""
-            fetchPriority="high" className="w-full h-full object-cover"
-            onError={e => { e.currentTarget.style.opacity = '0' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
-        </div>
-        <div className="container-page relative z-10">
-          <Breadcrumb crumbs={crumbs} />
-          <div className="hero-meta">
-            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
-            <span>·</span>
-            <StarRating rating={3.5} />
-            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Shift4 for Tradies — Full Review (2026)</h1>
-          <p className="hero-sub">Zero-cost EFTPOS via customer surcharging. No upfront hardware. Built-in mobile connectivity. Here's what tradies need to know before signing.</p>
-          <p className="text-xs text-white/40 mt-2">
-            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
-          </p>
-          <div className="mt-4 mb-1">
-            <ShareButton
-              title="Shift4 for Tradies — Full Review (2026)"
-              text="Zero-cost EFTPOS via surcharging — what tradies need to know before signing."
-              url="https://tradiepayau.directory/providers/shift4"
-            />
-          </div>
-                    <nav className="jump-links">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#hardware">Hardware</a>
-            <a href="#vs-zeller">vs Zeller</a>
-            <a href="#warning">Before You Sign</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-        </div>
-      </header>
+      <ProviderHero
+        providerId="shift4"
+        heading="Shift4 for Tradies — Full Review (2026)"
+        subheading="Zero-cost EFTPOS via customer surcharging. No upfront hardware. Built-in mobile connectivity. Here's what tradies need to know before signing."
+        bgImage="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&h=560&fit=crop&crop=center&q=80"
+        bgImageAlt=""
+        rating={3.5}
+        crumbs={crumbs}
+        keyStats={[
+          { label: 'Merchant cost', value: '$0' },
+          { label: 'SIM', value: '✓ Built-in' },
+          { label: 'Contract', value: 'Lock-in' },
+        ]}
+        signupLabel="Contact Shift4 →"
+        signupIntent="contact"
+        lastVerifiedDisplay={lastVerifiedDisplay}
+        navItems={[
+          { href: '#how-it-works', label: 'How It Works' },
+          { href: '#hardware', label: 'Hardware' },
+          { href: '#vs-zeller', label: 'vs Zeller' },
+          { href: '#warning', label: 'Before You Sign' },
+          { href: '#faq', label: 'FAQ' },
+        ]}
+        shareTitle="Shift4 for Tradies — Full Review (2026)"
+        shareText="Zero-cost EFTPOS via surcharging — what tradies need to know before signing."
+        shareUrl="https://tradiepayau.directory/providers/shift4"
+      />
 
       <StickyProviderBar providerId="shift4" />
       <SectionNav sections={[{id:'how-it-works',label:'How It Works'},{id:'hardware',label:'Hardware'},{id:'vs-zeller',label:'vs Zeller'},{id:'warning',label:'Before You Sign'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="shift4" label="section-nav" campaign="provider-nav" intent="contact" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Contact Shift4 →</AffiliateButton>} />

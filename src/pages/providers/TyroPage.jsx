@@ -2,17 +2,15 @@ import { Link } from 'react-router-dom'
 import providers from '../../data/providers.json'
 import RelatedLinks from '../../components/RelatedLinks'
 import { motion } from 'framer-motion'
-import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
-import ShareButton from '../../components/ShareButton'
 import ProviderVerdict from '../../components/ProviderVerdict'
 import Meta from '../../components/Meta'
 import AffiliateButton from '../../components/AffiliateButton'
-import StarRating from '../../components/StarRating'
 import SetupSteps from '../../components/SetupSteps'
 import StickyProviderBar from '../../components/StickyProviderBar'
 import SectionNav from '../../components/SectionNav'
+import ProviderHero from '../../components/ProviderHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -61,44 +59,31 @@ export default function TyroPage() {
         jsonLd={jsonLd}
       />
 
-      <header className="hero relative overflow-hidden">
-        {/* Provider hero image */}
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=560&fit=crop&crop=center&q=80"
-            alt=""
-            fetchPriority="high" className="w-full h-full object-cover"
-            onError={e => { e.currentTarget.style.opacity = '0' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
-        </div>
-        <div className="container-page relative z-10">
-          <Breadcrumb crumbs={crumbs} />
-          <div className="hero-meta">
-            <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Provider Review</span>
-            <span>·</span>
-            <StarRating rating={3.8} />
-            <span>·</span><span>Updated {lastVerifiedDisplay}</span>
-          </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Tyro for Tradies — Full Review (2026)</h1>
-          <p className="hero-sub">Strong Australian bank-grade footprint. Competitive payment links. In-person rate requires a quote.</p>
-          <p className="text-xs text-white/40 mt-2">
-            Independent review. Rankings based on published rates and practical tradie scenarios. Some links may earn a small commission — this does not affect rankings.
-          </p>
-          <div className="mt-4 mb-1">
-            <ShareButton
-              title="Tyro for Tradies — Full Review (2026)"
-              text="Australian bank-grade EFTPOS with competitive payment links for tradies."
-              url="https://tradiepayau.directory/providers/tyro"
-            />
-          </div>
-                    <nav className="jump-links">
-            <a href="#fees">Fees</a>
-            <a href="#when-to-use">When to Use</a>
-            <a href="#faq">FAQ</a>
-          </nav>
-        </div>
-      </header>
+      <ProviderHero
+        providerId="tyro"
+        heading="Tyro for Tradies — Full Review (2026)"
+        subheading="Strong Australian bank-grade footprint. Competitive payment links. In-person rate requires a quote."
+        bgImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=560&fit=crop&crop=center&q=80"
+        bgImageAlt=""
+        rating={3.8}
+        crumbs={crumbs}
+        keyStats={[
+          { label: 'Rate', value: 'Quote' },
+          { label: 'SIM', value: '✓ Built-in' },
+          { label: 'Links', value: '1.4%' },
+        ]}
+        signupLabel="Apply for Tyro →"
+        signupIntent="signup"
+        lastVerifiedDisplay={lastVerifiedDisplay}
+        navItems={[
+          { href: '#fees', label: 'Fees' },
+          { href: '#when-to-use', label: 'When to Use' },
+          { href: '#faq', label: 'FAQ' },
+        ]}
+        shareTitle="Tyro for Tradies — Full Review (2026)"
+        shareText="Australian bank-grade EFTPOS with competitive payment links for tradies."
+        shareUrl="https://tradiepayau.directory/providers/tyro"
+      />
 
       <StickyProviderBar providerId="tyro" />
       <SectionNav sections={[{id:'fees',label:'Fees'},{id:'when-to-use',label:'When to Use'},{id:'faq',label:'FAQ'}]} cta={<AffiliateButton providerId="tyro" label="section-nav" campaign="provider-nav" intent="signup" className="px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">Apply for Tyro →</AffiliateButton>} />
