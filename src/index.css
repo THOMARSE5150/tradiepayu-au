@@ -111,6 +111,22 @@ select:-webkit-autofill {
   }
 }
 
+/* ─── Trust-strip marquee ─── */
+/* Content is duplicated once in JSX so the strip is 200% wide.        */
+/* Animating by -50% returns to the visual start — seamless loop.      */
+/* Uses CSS transforms only — zero CLS, zero JS thread cost.           */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
 /* ─── Liquid Glass system ─── */
 
 /* Dark variant — use on dark/gradient backgrounds */

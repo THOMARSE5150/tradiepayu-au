@@ -151,12 +151,36 @@ export default function Home() {
               5 providers compared on fees, connectivity, and settlement speed — updated April 2026.
             </p>
 
-            {/* Top pick callout */}
-            <div className="mt-5 inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-3.5 py-2">
-              <span className="text-amber-400 text-xs font-bold uppercase tracking-wide">Top pick</span>
-              <span className="text-white/30">·</span>
-              <span className="text-white text-sm font-semibold">Zeller Terminal 1</span>
-              <span className="text-white/50 text-xs hidden sm:inline">— 1.4% rate, $0 monthly fee, SIM-enabled</span>
+            {/* ── Verdict-first pill ── */}
+            <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-2
+              bg-white/[0.07] border border-white/[0.14] rounded-2xl
+              px-4 py-3 backdrop-blur-sm">
+              {/* Label + provider */}
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
+                  2026 Top Pick
+                </span>
+                <span className="text-white/20 text-xs">·</span>
+                <span className="text-white font-bold text-sm">Zeller Terminal 1</span>
+              </div>
+              {/* Stat chips */}
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {['1.4% rate', '$0/mo fee', 'SIM-enabled', 'Same-day pay'].map(tag => (
+                  <span key={tag} className="text-[11px] text-white/55 bg-white/[0.07] border border-white/[0.10] px-2 py-0.5 rounded-lg">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {/* CTA */}
+              <AffiliateButton
+                providerId="zeller"
+                label="hero-cta"
+                campaign="homepage-verdict"
+                intent="signup"
+                className="text-xs font-semibold text-brand-blue bg-brand-blue/[0.18] hover:bg-brand-blue/[0.28] border border-brand-blue/30 px-3 py-1.5 rounded-xl transition-colors whitespace-nowrap"
+              >
+                Get Zeller ↗
+              </AffiliateButton>
             </div>
 
             {/* CTA row */}
@@ -197,6 +221,34 @@ export default function Home() {
                   <p className="text-white font-bold text-sm">{s.value}</p>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Trust strip marquee ── */}
+        {/* Items duplicated once so the -50% translateX loop is seamless. */}
+        <div className="mt-10 border-t border-white/[0.06] overflow-hidden select-none" aria-hidden="true">
+          <div className="marquee-track py-3">
+            {[...Array(2)].map((_, pass) => (
+              <div key={pass} className="flex items-center gap-0 flex-shrink-0">
+                {[
+                  { name: 'Zeller',  rate: '1.4%',       note: 'SIM + same-day', accent: '#22c55e' },
+                  { name: 'Square',  rate: '1.6%',       note: 'offline mode',   accent: '#60a5fa' },
+                  { name: 'Stripe',  rate: '1.7%+$0.10', note: 'invoicing API',  accent: '#a78bfa' },
+                  { name: 'Tyro',    rate: 'Quote',       note: 'volume rates',   accent: '#fb923c' },
+                  { name: 'Shift4',  rate: '$0 merchant', note: 'surcharging',    accent: '#94a3b8' },
+                ].map(p => (
+                  <div
+                    key={`${pass}-${p.name}`}
+                    className="flex items-center gap-3 px-7 border-r border-white/[0.06] whitespace-nowrap"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: p.accent }} />
+                    <span className="text-white/70 text-[13px] font-semibold">{p.name}</span>
+                    <span className="text-white/35 text-xs font-mono">{p.rate}</span>
+                    <span className="text-white/25 text-[11px] hidden sm:inline">{p.note}</span>
+                  </div>
+                ))}
+              </div>
             ))}
           </div>
         </div>

@@ -56,7 +56,7 @@ const trades = [
   { label: 'Landscapers', href: '/trades/landscapers' },
 ]
 
-function SubList({ title, items, onClose }) {
+function SubList({ title, items, onClose, compact = false }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="border-b border-white/[0.06]">
@@ -78,18 +78,43 @@ function SubList({ title, items, onClose }) {
             transition={{ duration: 0.22, ease: 'easeInOut' }}
             style={{ overflow: 'hidden' }}
           >
-            <div className="grid grid-cols-2 gap-1 px-4 pb-4">
-              {items.map(item => (
+            {compact ? (
+              <div className="px-3 pb-3">
+                <div className="max-h-52 overflow-y-auto grid grid-cols-3 gap-0.5 pr-1"
+                  style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.15) transparent' }}>
+                  {items.map(item => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={onClose}
+                      className="text-xs text-slate-300 hover:text-white px-2 py-2 rounded-lg transition-all hover:bg-white/[0.07] active:bg-white/[0.12] text-center leading-tight"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
                 <Link
-                  key={item.href}
-                  to={item.href}
+                  to="/trades"
                   onClick={onClose}
-                  className="text-sm text-slate-300 hover:text-white px-3 py-2.5 rounded-xl transition-all hover:bg-white/[0.07] active:bg-white/[0.12]"
+                  className="mt-2 flex items-center justify-center gap-1 text-xs text-brand-blue/70 hover:text-brand-blue transition-colors py-1"
                 >
-                  {item.label}
+                  All trades →
                 </Link>
-              ))}
-            </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 gap-1 px-4 pb-4">
+                {items.map(item => (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    onClick={onClose}
+                    className="text-sm text-slate-300 hover:text-white px-3 py-2.5 rounded-xl transition-all hover:bg-white/[0.07] active:bg-white/[0.12]"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
@@ -221,8 +246,8 @@ export default function Nav() {
 
               {/* Scrollable content */}
               <div className="overflow-y-auto flex-1">
-                {/* Main links */}
-                {topLinks.map(l => (
+                {/* Main links — Trades and Blog are covered by SubLists below */}
+                {topLinks.filter(l => l.href !== '/trades' && l.href !== '/blog').map(l => (
                   <Link
                     key={l.href}
                     to={l.href}
@@ -236,7 +261,7 @@ export default function Nav() {
 
                 {/* Expandable sub-lists */}
                 <SubList title="Providers" items={providers} onClose={close} />
-                <SubList title="By Trade" items={trades} onClose={close} />
+                <SubList title="Browse by Trade" items={trades} onClose={close} compact />
                 <SubList
                   title="By State"
                   items={STATES.map(s => ({ label: `${s.name} (${s.abbr})`, href: `/states/${s.slug}` }))}
