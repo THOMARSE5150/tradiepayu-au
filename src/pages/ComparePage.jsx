@@ -186,6 +186,8 @@ export default function ComparePage() {
     },
   ]
 
+  const winner = p1.score_overall >= p2.score_overall ? p1 : p2
+
   const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Contact for rate'
   const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Contact for rate'
   const rateNote = (!p1.fees.in_person_percent || !p2.fees.in_person_percent) ? 'Quote-based — varies by volume' : null
