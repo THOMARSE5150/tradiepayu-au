@@ -248,20 +248,20 @@ export default function ComparePage() {
         const loser   = winner.id === p1.id ? p2 : p1
         return (
           <div className="bg-white border-b border-slate-100">
-            <div className="container-page max-w-2xl py-4 sm:py-5">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+            <div className="container-page max-w-2xl py-5 sm:py-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                 <span className="flex-shrink-0 text-[11px] font-bold uppercase tracking-widest text-slate-400 hidden sm:block">Verdict</span>
                 <div className="flex items-start sm:items-center gap-3 flex-1 min-w-0">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ background: winner.logo_colour }}>{winner.logo_text}</div>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                      <span className="font-bold text-brand-dark text-sm sm:text-[15px]">Best choice for most tradies → {winner.name}</span>
+                      <span className="font-extrabold text-brand-dark text-[15px] sm:text-base">Best choice for most tradies → {winner.name}</span>
                       <span className="text-xs font-semibold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded">{winner.score_overall}/10</span>
                     </div>
-                    <p className="text-xs text-slate-500 mt-0.5 leading-snug">{winner.best_for[0]} · {loser.name} is better for: {loser.best_for[0].toLowerCase()}</p>
+                    <p className="text-xs text-slate-400 mt-1 leading-snug">{winner.best_for[0]} · {loser.name} is better for: {loser.best_for[0].toLowerCase()}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2.5 flex-shrink-0">
+                <div className="flex items-center gap-3 flex-shrink-0 sm:pl-5 sm:border-l sm:border-slate-200">
                   <AffiliateButton providerId={winner.id} label="compare-verdict" campaign="compare" intent="signup" className="inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">
                     Visit {winner.name} ↗
                   </AffiliateButton>
@@ -403,8 +403,8 @@ export default function ComparePage() {
           <h2 className="text-xl font-bold text-brand-dark mb-5">Which should you choose?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[p1, p2].map(p => (
-              <div key={p.id} className="rounded-2xl p-5 bg-slate-50 border border-slate-100">
-                <h3 className="font-bold text-brand-dark mb-2">Choose {p.name} if you {winner.id === p.id ? 'want:' : 'need:'}</h3>
+              <div key={p.id} className={`rounded-2xl p-5 border ${p.id === winner.id ? 'bg-white border-brand-blue/25 shadow-sm shadow-blue-900/5' : 'bg-slate-50 border-slate-100'}`}>
+                <h3 className={`mb-2 ${p.id === winner.id ? 'font-extrabold text-brand-dark' : 'font-semibold text-slate-600'}`}>Choose {p.name} if you {winner.id === p.id ? 'want:' : 'need:'}</h3>
                 <ul className="space-y-1.5 text-sm text-slate-600">
                   {p.best_for.map((b, i) => (
                     <li key={i} className="flex gap-2 items-start">
@@ -436,19 +436,14 @@ export default function ComparePage() {
       <FaqSection items={faqs} title={`${p1.name} vs ${p2.name} — FAQ`} />
 
       {/* Not sure? Take the quiz */}
-      <section className="section-alt py-8">
-        <div className="container-page max-w-2xl">
-          <div className="flex items-center justify-between bg-white border border-slate-100 rounded-2xl px-5 py-4">
-            <div>
-              <p className="text-sm font-semibold text-brand-dark">Still not sure which is right for you?</p>
-              <p className="text-xs text-slate-500 mt-0.5">Answer 3 quick questions — get a personalised recommendation.</p>
-            </div>
-            <Link to="/#finder" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap ml-4">
-              Take the quiz →
-            </Link>
-          </div>
+      <div className="container-page max-w-2xl py-4 border-t border-slate-100">
+        <div className="flex items-center justify-between gap-4">
+          <p className="text-xs text-slate-400">Not sure? Answer 3 questions for a personalised pick.</p>
+          <Link to="/#finder" className="text-xs font-semibold text-slate-500 hover:text-brand-blue transition-colors whitespace-nowrap">
+            Take the quiz →
+          </Link>
         </div>
-      </section>
+      </div>
 
       <RelatedLinks slug={p1.id} type="provider" />
     </>
