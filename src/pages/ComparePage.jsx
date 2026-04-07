@@ -253,19 +253,19 @@ export default function ComparePage() {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ background: winner.logo_colour }}>{winner.logo_text}</div>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                      <span className="font-bold text-brand-dark text-sm sm:text-[15px]">{winner.name} wins for most tradies</span>
+                      <span className="font-bold text-brand-dark text-sm sm:text-[15px]">Best choice for most tradies → {winner.name}</span>
                       <span className="text-xs font-semibold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded">{winner.score_overall}/10</span>
                     </div>
                     <p className="text-xs text-slate-500 mt-0.5 leading-snug">{winner.best_for[0]} · {loser.name} is better for: {loser.best_for[0].toLowerCase()}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <Link to={`/providers/${winner.id}`} className="inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">
-                    Full review →
-                  </Link>
-                  <AffiliateButton providerId={winner.id} label="compare-verdict" campaign="compare" intent="signup" className="text-xs font-semibold text-brand-blue hover:underline">
+                <div className="flex items-center gap-2.5 flex-shrink-0">
+                  <AffiliateButton providerId={winner.id} label="compare-verdict" campaign="compare" intent="signup" className="inline-flex items-center gap-1 px-3.5 py-2 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors">
                     Visit {winner.name} ↗
                   </AffiliateButton>
+                  <Link to={`/providers/${winner.id}`} className="text-xs font-medium text-slate-400 hover:text-brand-blue transition-colors">
+                    Full review →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -318,6 +318,7 @@ export default function ComparePage() {
       {/* Comparison table */}
       <section className="section">
         <div className="container-page max-w-2xl">
+          <p className="text-sm text-slate-500 mb-3">Here's how they compare at a glance:</p>
           <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden">
             {/* Table header */}
             <div className="grid grid-cols-3 gap-3 px-5 py-4 bg-slate-50 border-b border-slate-200">
@@ -401,7 +402,7 @@ export default function ComparePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {[p1, p2].map(p => (
               <div key={p.id} className="rounded-2xl p-5 bg-slate-50 border border-slate-100">
-                <h3 className="font-bold text-brand-dark mb-2">Choose {p.name} if you…</h3>
+                <h3 className="font-bold text-brand-dark mb-2">Choose {p.name} if you {winner.id === p.id ? 'want:' : 'need:'}</h3>
                 <ul className="space-y-1.5 text-sm text-slate-600">
                   {p.best_for.map((b, i) => (
                     <li key={i} className="flex gap-2 items-start">
@@ -435,7 +436,7 @@ export default function ComparePage() {
       {/* Not sure? Take the quiz */}
       <section className="section-alt py-8">
         <div className="container-page max-w-2xl">
-          <div className="flex items-center justify-between bg-white border border-slate-200 rounded-2xl px-5 py-4">
+          <div className="flex items-center justify-between bg-white border border-slate-100 rounded-2xl px-5 py-4">
             <div>
               <p className="text-sm font-semibold text-brand-dark">Still not sure which is right for you?</p>
               <p className="text-xs text-slate-500 mt-0.5">Answer 3 quick questions — get a personalised recommendation.</p>
