@@ -254,7 +254,7 @@ export default function ComparePage() {
                 <div className="flex items-start sm:items-center gap-3 flex-1 min-w-0">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ background: winner.logo_colour }}>{winner.logo_text}</div>
                   <div className="min-w-0">
-                    <p className="font-extrabold text-brand-dark text-[15px] sm:text-base leading-tight">Best choice for most tradies → {winner.name}</p>
+                    <p className="font-extrabold text-brand-dark text-[15px] sm:text-base leading-tight">Best for most tradies → {winner.name}</p>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="text-xs font-semibold text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded flex-shrink-0">{winner.score_overall}/10</span>
                       <p className="text-xs text-slate-400 leading-snug">{winner.best_for[0]} · {loser.name} is better for: {loser.best_for[0].toLowerCase()}</p>
