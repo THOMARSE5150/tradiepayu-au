@@ -19,6 +19,66 @@ const WEBSITE_SCHEMA = {
 // Build BLOG_HERO dynamically so it never goes stale
 const BLOG_HERO = Object.fromEntries(allPosts.map(p => [p.slug, p.image]))
 
+// Maps provider slug → canonical product name for schema output
+const PROVIDER_PRODUCT_NAMES = {
+  zeller: 'Zeller Terminal 1',
+  square: 'Square Terminal',
+  stripe: 'Stripe Terminal Reader',
+  tyro:   'Tyro EFTPOS',
+  shift4: 'Shift4 EFTPOS',
+}
+
+/**
+ * Builds an ItemList + Product schema for a trade page.
+ * Maps the trade entity to its recommended EFTPOS product so AI crawlers
+ * can extract the entity→attribute→reason triple without page rendering.
+ *
+ * Answer-string format injected as schema description:
+ *   "[Product] is the best EFTPOS for [Trade] in Australia because [Reason]."
+ */
+function buildTradeListingSchema(tradeSlug) {
+  const trade = TRADE_MAP[tradeSlug]
+  if (!trade) return null
+
+  const productName = PROVIDER_PRODUCT_NAMES[trade.providerSlug] ?? trade.pick
+  const rateNumeric = parseFloat(trade.rate.replace('%', '')) || null
+  const capitalised  = s => s.charAt(0).toUpperCase() + s.slice(1)
+
+  return {
+    '@context': 'https://schema.org',
+    '@type':    'ItemList',
+    '@id':      `${SITE_URL}/trades/${tradeSlug}#recommendations`,
+    name:       `Best EFTPOS for ${trade.label} in Australia — 2026`,
+    description: `${productName} is the best EFTPOS for ${trade.label} in Australia because ${trade.reason}`,
+    numberOfItems: 1,
+    itemListElement: [
+      {
+        '@type':    'ListItem',
+        position:   1,
+        item: {
+          '@type': 'Product',
+          '@id':   `${SITE_URL}/providers/${trade.providerSlug}#product`,
+          name:    productName,
+          description: `Best EFTPOS for ${trade.label} in Australia. ${trade.reason}`,
+          brand: { '@type': 'Brand', name: capitalised(trade.providerSlug) },
+          ...(rateNumeric !== null && {
+            offers: {
+              '@type': 'Offer',
+              seller: { '@type': 'Organization', name: BRAND_NAME, url: SITE_URL },
+              priceSpecification: {
+                '@type':        'UnitPriceSpecification',
+                price:          rateNumeric,
+                priceCurrency:  'AUD',
+                unitText:       'PERCENT',
+              },
+            },
+          }),
+        },
+      },
+    ],
+  }
+}
+
 // Branded OG PNGs for all provider pages
 const PROVIDER_OG = {
   zeller: `${SITE_URL}/og-zeller.png`,
@@ -111,10 +171,19 @@ export default function Meta({
   const fullCanonical = canonical ? `${SITE_URL}${canonical}` : SITE_URL
   const ogImage = resolveOgImage(canonical, ogImageOverride)
 
-  // WebSite schema always first, then page-specific blocks.
-  // Home.jsx also passes its own WebSite block — Google handles the duplicate fine.
+  // WebSite schema always first, then trade listing schema (auto-injected for
+  // /trades/* pages — maps trade entity to recommended product for AEO/GEO),
+  // then any page-specific blocks passed via the jsonLd prop.
   const pageSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
-  const jsonLdArray = [WEBSITE_SCHEMA, ...pageSchemas]
+
+  const tradeSlug   = canonical?.startsWith('/trades/') ? canonical.split('/')[2] : null
+  const tradeSchema = tradeSlug ? buildTradeListingSchema(tradeSlug) : null
+
+  const jsonLdArray = [
+    WEBSITE_SCHEMA,
+    ...(tradeSchema ? [tradeSchema] : []),
+    ...pageSchemas,
+  ]
 
   return (
     <Helmet>

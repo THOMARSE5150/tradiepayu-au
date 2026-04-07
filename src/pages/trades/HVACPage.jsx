@@ -70,6 +70,7 @@ export default function HVACPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for rooftop and plant room access. Tap to Pay on your phone for after-hours call-outs."
         providerSlug="zeller"
+        trade="HVAC technicians"
       />
 
       <section id="picks" className="section section-alt">

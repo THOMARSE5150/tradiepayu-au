@@ -70,6 +70,7 @@ export default function PoolBuildersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for new estate excavation. Same-day settlement on high-value $30k+ contracts."
         providerSlug="zeller"
+        trade="pool builders"
       />
 
       <section id="picks" className="section section-alt">

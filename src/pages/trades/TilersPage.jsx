@@ -70,6 +70,7 @@ export default function TilersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for bathroom renos mid-strip. Payment links confirm deposits before you order tiles."
         providerSlug="zeller"
+        trade="tilers"
       />
 
       <section id="picks" className="section section-alt">

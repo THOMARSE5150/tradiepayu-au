@@ -84,6 +84,7 @@ export default function RoofersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for on-roof and gutter access. Payment links for deposit collection on storm damage jobs."
         providerSlug="zeller"
+        trade="roofers"
       />
 
       <section id="picks" className="section section-alt">

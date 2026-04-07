@@ -70,6 +70,7 @@ export default function PlasterersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for new build sites with no infrastructure. Payment links for absent homeowner billing."
         providerSlug="zeller"
+        trade="plasterers"
       />
 
       <section id="picks" className="section section-alt">

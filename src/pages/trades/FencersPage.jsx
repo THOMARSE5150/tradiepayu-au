@@ -70,6 +70,7 @@ export default function FencersPage() {
         hardware="$99 + $15/mo SIM"
         reason="Optus SIM covers rural and acreage sites. Payment links for absent landowners."
         providerSlug="zeller"
+        trade="fencers"
       />
 
       <section id="picks" className="section section-alt">

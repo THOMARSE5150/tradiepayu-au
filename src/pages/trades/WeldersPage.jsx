@@ -70,6 +70,7 @@ export default function WeldersPage() {
         hardware="$99 + $15/mo SIM"
         reason="Optus SIM for on-site structural work. Payment links for steel stock deposit collection."
         providerSlug="zeller"
+        trade="welders"
       />
 
       <section id="picks" className="section section-alt">

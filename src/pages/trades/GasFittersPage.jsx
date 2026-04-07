@@ -70,6 +70,7 @@ export default function GasFittersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for plant rooms and service corridors. Payment links for emergency remote billing."
         providerSlug="zeller"
+        trade="gas fitters"
       />
 
       <section id="picks" className="section section-alt">

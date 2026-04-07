@@ -87,6 +87,7 @@ export default function GlaziersPage() {
         reason="Reliable SIM across commercial and residential glazing sites. Lowest flat rate on the market."
         backup="Square Terminal for underground / zero-signal dead zones"
         providerSlug="zeller"
+        trade="glaziers"
       />
 
       <section id="picks" className="section section-alt">

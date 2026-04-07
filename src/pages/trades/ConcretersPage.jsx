@@ -70,6 +70,7 @@ export default function ConcretersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for new estate slabs. Same-day settlement covers daily material purchasing."
         providerSlug="zeller"
+        trade="concreters"
       />
 
       <section id="picks" className="section section-alt">

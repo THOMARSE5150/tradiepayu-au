@@ -70,6 +70,7 @@ export default function PestControllersPage() {
         hardware="$99 + $15/mo SIM"
         reason="Fastest tap-and-go for high-frequency routes — no customer WiFi required."
         providerSlug="zeller"
+        trade="pest controllers"
       />
 
       <section id="picks" className="section section-alt">

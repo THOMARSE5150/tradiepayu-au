@@ -84,6 +84,7 @@ export default function PaintersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for new builds and renos. Payment links for deposit collection before starting."
         providerSlug="zeller"
+        trade="painters"
       />
 
       <section id="picks" className="section section-alt">

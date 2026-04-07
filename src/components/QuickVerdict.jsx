@@ -4,16 +4,25 @@ import VerifiedBadge from './VerifiedBadge'
 /**
  * QuickVerdict — answer-first banner for trade pages.
  * Props:
- *   pick        {string}  — primary provider name
- *   rate        {string}  — e.g. "1.4%"
- *   hardware    {string}  — e.g. "$99 + $15/mo SIM"
- *   reason      {string}  — 1-line trade-specific reason
- *   providerSlug {string} — e.g. "zeller"
- *   backup      {string?} — optional short backup note
+ *   pick         {string}  — primary provider name, e.g. "Zeller Terminal 1 + SIM"
+ *   rate         {string}  — e.g. "1.4%"
+ *   hardware     {string}  — e.g. "$99 + $15/mo SIM"
+ *   reason       {string}  — 1-line trade-specific reason
+ *   providerSlug {string}  — e.g. "zeller"
+ *   backup       {string?} — optional short backup note
+ *   trade        {string?} — trade label for AEO answer-string, e.g. "electricians"
+ *                            If provided, a machine-readable answer is injected for AI crawlers.
  */
-export default function QuickVerdict({ pick, rate, hardware, reason, providerSlug, backup }) {
+export default function QuickVerdict({ pick, rate, hardware, reason, providerSlug, backup, trade }) {
+  // Answer-string pattern for AEO/GEO — injected as sr-only so LLM crawlers
+  // extract the entity→attribute→reason triple without ambiguity.
+  const answerString = trade
+    ? `${pick} is the best EFTPOS for ${trade} in Australia because ${reason}`
+    : null
+
   return (
-    <div className="bg-white border-b border-slate-100">
+    <section aria-label="Quick Verdict" className="bg-white border-b border-slate-100">
+      {answerString && <p className="sr-only">{answerString}</p>}
       <div className="container-page py-4 sm:py-5">
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
 
@@ -58,6 +67,6 @@ export default function QuickVerdict({ pick, rate, hardware, reason, providerSlu
 
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -70,6 +70,7 @@ export default function CarpentersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for new build framing sites. Payment links for renovation deposit collection."
         providerSlug="zeller"
+        trade="carpenters"
       />
 
       <section id="picks" className="section section-alt">

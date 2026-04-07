@@ -78,6 +78,7 @@ export default function CleanersPage() {
         hardware="$0 (phone)"
         reason="Zero hardware cost — start immediately. Upgrade to Terminal 1 at higher volume."
         providerSlug="zeller"
+        trade="cleaners"
       />
 
       <section id="picks" className="section section-alt">

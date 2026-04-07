@@ -115,6 +115,7 @@ export default function ComparisonTable({ headers = [], rows = [], pickable = fa
               {headers.map((h, i) => (
                 <th
                   key={i}
+                  scope="col"
                   className="text-left py-3 px-4 text-xs font-semibold text-slate-500 uppercase tracking-wide border-b border-slate-200/80 whitespace-nowrap bg-white/40"
                 >
                   {h}

@@ -82,6 +82,7 @@ export default function ElectriciansPage() {
         reason="SIM coverage for switchboards and plant rooms."
         backup="Square Terminal for underground dead zones"
         providerSlug="zeller"
+        trade="electricians"
       />
 
       <section id="picks" className="section section-alt">

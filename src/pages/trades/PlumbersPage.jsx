@@ -82,6 +82,7 @@ export default function PlumbersPage() {
         reason="Same-day settlement for parts purchasing on emergency call-outs."
         backup="Square Terminal for underground access"
         providerSlug="zeller"
+        trade="plumbers"
       />
 
       <section id="picks" className="section section-alt">

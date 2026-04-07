@@ -78,6 +78,7 @@ export default function LandscapersPage() {
         hardware="$99 + $15/mo SIM"
         reason="SIM for new estates and rural properties. Tap to Pay for mow-and-go routes."
         providerSlug="zeller"
+        trade="landscapers"
       />
 
       <section id="picks" className="section section-alt">
