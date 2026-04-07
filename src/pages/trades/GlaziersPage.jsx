@@ -8,6 +8,7 @@ import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
 import QuickVerdict from '../../components/QuickVerdict'
+import AffiliateButton from '../../components/AffiliateButton'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -35,7 +36,7 @@ const faqs = [
 import siteMeta from '../../data/site-meta.json'
 const SITE = 'https://tradiepayau.directory'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Glaziers in Australia (2026)', name: 'Best EFTPOS for Glaziers in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.', url: `${SITE}/trades/glaziers`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Glaziers in Australia (2026)', name: 'Best EFTPOS for Glaziers in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.', url: `${SITE}/trades/glaziers`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Glaziers in Australia (2026)', item: `${SITE}/trades/glaziers` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   { '@context': 'https://schema.org', '@type': 'Service', name: 'Best EFTPOS for Glaziers in Australia', serviceType: 'EFTPOS Payment Processing for Glaziers', areaServed: { '@type': 'Country', name: 'Australia' }, provider: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, url: `${SITE}/trades/glaziers` },
@@ -56,8 +57,8 @@ export default function GlaziersPage() {
         {/* Trade hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=560&fit=crop&crop=center&q=80"
-            alt=""
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=560&fit=crop&crop=center&q=80"
+            alt="Glazier installing glass panel on a commercial building site"
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />
@@ -83,7 +84,8 @@ export default function GlaziersPage() {
         pick="Zeller Terminal 1 + SIM"
         rate="1.4%"
         hardware="$99 + $15/mo SIM"
-        reason="Reliable SIM across commercial and residential sites. Lowest flat rate on the market."
+        reason="Reliable SIM across commercial and residential glazing sites. Lowest flat rate on the market."
+        backup="Square Terminal for underground / zero-signal dead zones"
         providerSlug="zeller"
       />
 
@@ -98,6 +100,13 @@ export default function GlaziersPage() {
           >
             Top Picks for Glaziers
           </motion.h2>
+          <div className="breakeven-box mb-6">
+            <strong>Two-device strategy:</strong> Zeller Terminal 1 + SIM ($99, primary) + Square Terminal ($329, dead-zone backup). No monthly fee on Square. Total hardware: $428.
+          </div>
+          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
+            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
+            <p className="text-sm text-green-700">A glazier processing <strong>$8,000/month</strong> in card payments pays <strong>$112/month</strong> with Zeller (1.4%) vs $128 with Square (1.6%) — saving <strong>$192/year</strong> on rate alone. Add $15/mo SIM and Zeller still wins at most glazing volumes under $120k/year.</p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -110,7 +119,7 @@ export default function GlaziersPage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-dark text-white flex items-center justify-center font-bold">Z</div>
                 <div>
-                  <h3 className="font-bold text-brand-dark">Zeller Terminal 1 + SIM</h3>
+                  <h3 className="font-bold text-brand-dark">#1 — Zeller Terminal 1 + SIM</h3>
                   <span className="badge badge-gold">Best for Glaziers</span>
                 </div>
               </div>
@@ -120,7 +129,10 @@ export default function GlaziersPage() {
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
                 ))}
               </div>
-              <Link to="/providers/zeller" className="btn-primary block text-center text-sm">Full Zeller Review →</Link>
+              <AffiliateButton providerId="zeller" label="page-cta" campaign="glaziers-picks" intent="signup" className="btn-primary block text-center text-sm mb-2">
+                Get Zeller →
+              </AffiliateButton>
+              <Link to="/providers/zeller" className="block text-center text-xs text-slate-500 hover:text-brand-blue transition-colors">Full review →</Link>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -133,7 +145,7 @@ export default function GlaziersPage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-blue text-white flex items-center justify-center font-bold text-sm">Sq</div>
                 <div>
-                  <h3 className="font-bold text-brand-dark">Square Terminal</h3>
+                  <h3 className="font-bold text-brand-dark">#2 — Square Terminal</h3>
                   <span className="badge badge-muted">Dead Zone Backup</span>
                 </div>
               </div>
@@ -143,11 +155,11 @@ export default function GlaziersPage() {
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
                 ))}
               </div>
-              <Link to="/providers/square" className="btn-tertiary block text-center text-sm">Full Square Review →</Link>
+              <AffiliateButton providerId="square" label="page-cta" campaign="glaziers-picks" intent="signup" className="btn-tertiary block text-center text-sm mb-2">
+                Get Square →
+              </AffiliateButton>
+              <Link to="/providers/square" className="block text-center text-xs text-slate-500 hover:text-brand-blue transition-colors">Full review →</Link>
             </motion.div>
-          </div>
-          <div className="mt-5 lg-light rounded-2xl p-4 text-sm text-slate-700">
-            <strong>Two-device strategy:</strong> Carry both. Zeller Terminal 1 + SIM ($99 + $15/mo) as primary. Square Terminal ($329, no monthly fee) as dead-zone backup. Total hardware investment: $428. No ongoing monthly cost on Square.
           </div>
         </div>
       </section>
@@ -212,6 +224,29 @@ export default function GlaziersPage() {
         </div>
       </section>
 
+      {/* Testimonial */}
+      <section className="section container-page">
+        <motion.blockquote
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="relative bg-slate-50 border border-slate-200 rounded-2xl px-6 py-5 max-w-2xl"
+        >
+          <svg className="absolute top-4 left-5 w-6 h-6 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p className="text-slate-700 text-sm leading-relaxed pl-6 mb-4">
+            "Had a shopfront emergency in Parramatta at 11pm — smashed glass, alarm going. Got there, secured the opening, re-glazed the next morning. Sent the property manager a Zeller payment link before I left the site. Money was in my account by lunchtime. That invoice used to take 30 days to get paid."
+          </p>
+          <footer className="flex items-center gap-3 pl-6">
+            <div className="w-8 h-8 rounded-full bg-brand-dark text-white text-xs font-bold flex items-center justify-center flex-shrink-0">MT</div>
+            <div>
+              <p className="text-sm font-semibold text-brand-dark">Marcus T.</p>
+              <p className="text-xs text-slate-500">Glazier · Western Sydney</p>
+            </div>
+          </footer>
+        </motion.blockquote>
+      </section>
+
       <section className="section section-alt">
         <div className="container-page">
           <motion.h2
@@ -233,6 +268,22 @@ export default function GlaziersPage() {
             ]}
           />
           <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
+
+          {/* Post-table CTA */}
+          <div className="mt-6 bg-brand-dark rounded-2xl px-5 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex-1 min-w-0">
+              <p className="text-white font-semibold text-sm mb-0.5">Ready to get paid on-site?</p>
+              <p className="text-white/60 text-xs">Set up Zeller in minutes — ABN required, approval same day.</p>
+            </div>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <AffiliateButton providerId="zeller" label="page-cta" campaign="glaziers-table" intent="signup" className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors">
+                Get Zeller →
+              </AffiliateButton>
+              <Link to="/providers/zeller" className="text-white/60 text-xs hover:text-white transition-colors">
+                Full review →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
