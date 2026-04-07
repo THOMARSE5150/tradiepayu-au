@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import siteMeta from '../data/site-meta.json'
@@ -32,87 +32,46 @@ const decisionCues = [
   { lead: 'Online stack',   name: 'Stripe', href: '/providers/stripe' },
 ]
 
-const RATE_ALERTS_URL = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev/rate-alerts'
+// ─── Decision band ────────────────────────────────────────────────────────────
+// Session-stable A/B hook via localStorage — no flicker, no randomness on
+// re-render. Hook is chosen once per session and persisted.
 
-// ─── Rate alerts ──────────────────────────────────────────────────────────────
-// Quiet secondary element — deliberately low-key so it doesn't compete
-// with the decision band below.
+const HOOKS = [
+  'Pick the right setup for your work.',
+  'Choose what actually fits your jobs.',
+  'Most tradies choose based on this.',
+]
 
-function RateAlerts() {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState('idle')
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch(RATE_ALERTS_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-      setStatus(res.ok ? 'done' : 'error')
-    } catch {
-      setStatus('error')
-    }
+function getSessionHook() {
+  try {
+    const stored = localStorage.getItem('footerHook')
+    if (stored !== null) return HOOKS[Number(stored)] ?? HOOKS[0]
+    const idx = Math.floor(Math.random() * HOOKS.length)
+    localStorage.setItem('footerHook', String(idx))
+    return HOOKS[idx]
+  } catch {
+    return HOOKS[0]
   }
-
-  return (
-    <div className="border-t border-white/[0.06]">
-      <div className="container-page py-5">
-        {status === 'done' ? (
-          <p className="text-green-400/80 text-xs">✓ You're on the list.</p>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex flex-row items-center gap-3 flex-wrap">
-            <p className="text-slate-400 text-xs flex-shrink-0">Rate alerts —</p>
-            <div className="flex gap-2 max-w-xs">
-              <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                required
-                placeholder="your@email.com"
-                inputMode="email"
-                autoComplete="email"
-                className="flex-1 min-w-0 px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white text-xs placeholder-white/20 focus:outline-none focus:border-white/20 transition-all"
-              />
-              <button
-                type="submit"
-                disabled={status === 'sending'}
-                className="text-slate-400 hover:text-white disabled:opacity-40 text-xs transition-colors flex-shrink-0 whitespace-nowrap"
-              >
-                {status === 'sending' ? '…' : 'Notify me →'}
-              </button>
-            </div>
-            {status === 'error' && <p className="text-red-400/70 text-xs">Try again or email us.</p>}
-          </form>
-        )}
-      </div>
-    </div>
-  )
 }
 
-// ─── Decision band ────────────────────────────────────────────────────────────
-// The high-intent zone. Users reaching this point are still deciding —
-// this must feel composed, authoritative, and reassuring.
-// Editorial list format for cues: more considered, less fragmented than chips.
-
 function DecisionBand() {
+  const hook = useMemo(getSessionHook, [])
+
   return (
     <div className="bg-gradient-to-b from-white/[0.08] to-white/[0.05] border-y border-white/[0.14]">
       <div className="container-page py-10 sm:py-12">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-12">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-8">
 
-          {/* Left: heading + editorial cue list */}
+          {/* Left: hook + editorial cue list */}
           <div className="flex-1 min-w-0">
             <p className="text-white/30 text-xs tracking-widest uppercase mb-3">
               Independent · Updated {siteMeta.lastVerifiedDisplay}
             </p>
             <h2 className="text-white font-bold text-2xl sm:text-3xl tracking-tight mb-5">
-              Still deciding?
+              {hook}
             </h2>
 
-            {/* Editorial cue list — feels like guidance, not filter chips */}
+            {/* Editorial cue list */}
             <div className="divide-y divide-white/[0.10] max-w-xs">
               {decisionCues.map(c => (
                 <Link
@@ -129,19 +88,35 @@ function DecisionBand() {
                 </Link>
               ))}
             </div>
+
+            {/* CTA on mobile — sits directly after cues */}
+            <div className="flex flex-col gap-3 mt-6 sm:hidden">
+              <Link
+                to="/providers"
+                className="inline-flex items-center justify-center px-7 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-lg shadow-blue-900/30 w-full whitespace-nowrap"
+              >
+                Compare all providers →
+              </Link>
+              <Link
+                to="/compare/zeller-vs-square"
+                className="text-xs text-slate-600 hover:text-slate-400 transition-colors text-center"
+              >
+                Zeller vs Square →
+              </Link>
+            </div>
           </div>
 
-          {/* Right: primary CTA */}
-          <div className="flex flex-col gap-3 sm:items-end flex-shrink-0">
+          {/* Right: CTA on desktop — aligned to top of cue list */}
+          <div className="hidden sm:flex flex-col gap-3 items-end flex-shrink-0 pt-[4.5rem]">
             <Link
               to="/providers"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-lg shadow-blue-900/30 w-full sm:w-auto whitespace-nowrap"
+              className="inline-flex items-center justify-center px-7 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-lg shadow-blue-900/30 whitespace-nowrap"
             >
               Compare all providers →
             </Link>
             <Link
               to="/compare/zeller-vs-square"
-              className="text-xs text-slate-600 hover:text-slate-400 transition-colors text-center sm:text-right"
+              className="text-xs text-slate-600 hover:text-slate-400 transition-colors text-right"
             >
               Zeller vs Square →
             </Link>
@@ -159,7 +134,6 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark text-slate-400 mt-auto">
 
-      <RateAlerts />
       <DecisionBand />
 
       {/* Nav — clean columns, no card boxing, deliberate typographic hierarchy */}
