@@ -1,5 +1,6 @@
 import providers from '../data/providers.json'
 import { trackOutbound, affiliateUrl } from '../utils/analytics'
+import { haptic } from '../utils/haptic'
 
 /**
  * Tracked outbound link to a provider's affiliate URL.
@@ -23,6 +24,7 @@ export default function AffiliateButton({ providerId, label = 'cta', campaign = 
 
   function handleClick(e) {
     e.preventDefault()
+    haptic('medium')
     trackOutbound(providerId, label)
     // Delay navigation 150ms so the GA4 beacon dispatches before the tab opens.
     setTimeout(() => window.open(href, '_blank', 'noopener,noreferrer'), 150)

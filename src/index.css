@@ -3,6 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  /* ─── Native mobile feel ─── */
+  /* Remove iOS/Android blue tap flash on every interactive element */
+  *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+
+  /* Eliminate 300ms double-tap zoom delay — allows panning + pinch still */
+  a, button, summary, label, select,
+  input[type="checkbox"], input[type="radio"], [role="button"] {
+    touch-action: manipulation;
+  }
+
+  /* Prevent pull-to-refresh and overscroll bounce on the page shell;
+     individual scroll containers set overscroll-behavior-y: contain instead */
+  html { overscroll-behavior-y: none; }
+
+  /* Disable long-press "Save Image" / link preview on images and media */
+  img, video { -webkit-touch-callout: none; }
+
   html { scroll-behavior: smooth; overflow-x: clip; }
   body {
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;

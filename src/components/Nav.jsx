@@ -244,8 +244,8 @@ export default function Nav() {
                 </button>
               </div>
 
-              {/* Scrollable content */}
-              <div className="overflow-y-auto flex-1">
+              {/* Scrollable content — contain prevents sheet scroll leaking to page */}
+              <div className="overflow-y-auto flex-1" style={{ overscrollBehaviorY: 'contain' }}>
                 {/* Main links — Trades and Blog are covered by SubLists below */}
                 {topLinks.filter(l => l.href !== '/trades' && l.href !== '/blog').map(l => (
                   <Link
