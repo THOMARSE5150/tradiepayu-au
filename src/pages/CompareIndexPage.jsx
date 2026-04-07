@@ -46,6 +46,40 @@ function combos(ps) {
 
 const PAIRS = combos(providers)
 
+// Short positioning label for each provider tile
+const POSITION_LABEL = {
+  zeller: 'Lowest fees',
+  square: 'Works offline',
+  stripe: 'Online stack',
+  tyro:   'Volume rates',
+  shift4: 'No merchant cost',
+}
+
+// Outcome framing per matchup — replaces generic "Winner" label
+const MATCHUP_OUTCOMES = {
+  'zeller-vs-square':  'Better for most tradies',
+  'zeller-vs-stripe':  'Better for in-person',
+  'zeller-vs-tyro':    'Better for sole traders',
+  'zeller-vs-shift4':  'Better without lock-in',
+  'square-vs-stripe':  'Better for offline sites',
+  'square-vs-tyro':    'Better for offline jobs',
+  'square-vs-shift4':  'Better for offline coverage',
+  'stripe-vs-tyro':    'Better for web + invoicing',
+  'stripe-vs-shift4':  'Better for payment links',
+  'tyro-vs-shift4':    'Better for high volume',
+}
+
+// Top 3 matchups sorted to the front — most common decisions
+const PRIORITY = ['zeller-vs-square', 'zeller-vs-stripe', 'square-vs-stripe']
+const SORTED_PAIRS = [...PAIRS].sort(([a1, a2], [b1, b2]) => {
+  const a = PRIORITY.indexOf(`${a1.id}-vs-${a2.id}`)
+  const b = PRIORITY.indexOf(`${b1.id}-vs-${b2.id}`)
+  if (a !== -1 && b !== -1) return a - b
+  if (a !== -1) return -1
+  if (b !== -1) return 1
+  return 0
+})
+
 const jsonLd = [
   {
     '@context': 'https://schema.org',
@@ -114,8 +148,8 @@ export default function CompareIndexPage() {
             EFTPOS Provider Comparisons for Tradies
           </h1>
           <p className="hero-sub">
-            Side-by-side rates, hardware, SIM connectivity, offline mode, and settlement speed.
-            Pick any two providers to compare.
+            Rates, SIM connectivity, offline mode, and settlement speed — side by side.
+            Choose the matchup that fits your decision.
           </p>
         </div>
       </header>
@@ -138,26 +172,33 @@ export default function CompareIndexPage() {
               </div>
               <p className="font-bold text-brand-dark text-sm group-hover:text-brand-blue transition-colors">{p.name}</p>
               <p className="text-lg font-bold text-brand-blue">{rateLabel(p)}</p>
-              <p className="text-[11px] text-slate-400 leading-tight">{p.best_for[0]}</p>
+              <p className="text-[11px] text-slate-500 font-medium leading-tight">{POSITION_LABEL[p.id]}</p>
             </Link>
           ))}
         </div>
 
-        <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">All comparisons</h2>
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">Choose a matchup</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {PAIRS.map(([p1, p2], i) => {
+          {SORTED_PAIRS.map(([p1, p2], i) => {
+            const slug = `${p1.id}-vs-${p2.id}`
             const winner = p1.score_overall >= p2.score_overall ? p1 : p2
+            const outcome = MATCHUP_OUTCOMES[slug]
+            const isPriority = PRIORITY.includes(slug)
             return (
               <motion.div
-                key={`${p1.id}-${p2.id}`}
+                key={slug}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
               >
                 <Link
-                  to={`/compare/${p1.id}-vs-${p2.id}`}
-                  className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl hover:border-brand-blue hover:shadow-sm transition-all group"
+                  to={`/compare/${slug}`}
+                  className={`flex items-center gap-3 p-4 rounded-2xl hover:border-brand-blue hover:shadow-sm transition-all group ${
+                    isPriority
+                      ? 'bg-white border border-slate-300'
+                      : 'bg-white border border-slate-200'
+                  }`}
                 >
                   <div className="flex items-center gap-1.5 flex-1 min-w-0">
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0" style={{ background: p1.logo_colour }}>{p1.logo_text}</div>
@@ -166,9 +207,9 @@ export default function CompareIndexPage() {
                     <div className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-[11px] font-bold flex-shrink-0" style={{ background: p2.logo_colour }}>{p2.logo_text}</div>
                     <span className="font-semibold text-sm text-brand-dark truncate">{p2.name}</span>
                   </div>
-                  <div className="flex-shrink-0 text-right">
-                    <p className="text-[10px] text-slate-400">Winner</p>
-                    <p className="text-xs font-bold text-brand-blue">{winner.name}</p>
+                  <div className="flex-shrink-0 text-right min-w-0">
+                    <p className="text-[10px] text-slate-400 leading-none mb-0.5">{outcome ?? 'See comparison'}</p>
+                    <p className="text-xs font-bold text-brand-blue group-hover:text-blue-700 transition-colors">{winner.name} →</p>
                   </div>
                 </Link>
               </motion.div>
