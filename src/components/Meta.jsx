@@ -1,10 +1,20 @@
 import { Helmet } from 'react-helmet-async'
 import { TRADE_MAP } from '../data/tradesMeta'
 import { posts as allPosts } from '../data/posts'
+import { BRAND_NAME, SITE_URL } from '../constants/brand'
 
-const SITE_URL = 'https://tradiepayau.directory'
-const SITE_NAME = 'TradiePay AU'
+const SITE_NAME = BRAND_NAME
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.svg`
+
+// Injected on every page so Google reliably identifies the site name
+// regardless of which URL is first crawled.
+const WEBSITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: BRAND_NAME,
+  url: `${SITE_URL}/`,
+}
 
 // Build BLOG_HERO dynamically so it never goes stale
 const BLOG_HERO = Object.fromEntries(allPosts.map(p => [p.slug, p.image]))
@@ -89,12 +99,22 @@ export default function Meta({
   geoPlacename,
   jsonLd,
 }) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — Best EFTPOS for Australian Tradies`
+  // Homepage: brand-first ("TradiePay AU | Best EFTPOS...") so Google can
+  // display the site name prominently in SERPs. All other pages: content-first.
+  const isHomepage = canonical === '/'
+  const fullTitle = title
+    ? isHomepage
+      ? `${SITE_NAME} | ${title}`
+      : `${title} | ${SITE_NAME}`
+    : `${SITE_NAME} — Best EFTPOS for Australian Tradies`
+
   const fullCanonical = canonical ? `${SITE_URL}${canonical}` : SITE_URL
   const ogImage = resolveOgImage(canonical, ogImageOverride)
 
-  // Accept single object or array of JSON-LD blocks
-  const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
+  // WebSite schema always first, then page-specific blocks.
+  // Home.jsx also passes its own WebSite block — Google handles the duplicate fine.
+  const pageSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
+  const jsonLdArray = [WEBSITE_SCHEMA, ...pageSchemas]
 
   return (
     <Helmet>
