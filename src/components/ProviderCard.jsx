@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Check, X, Wifi, Clock, Smartphone } from 'lucide-react'
+import { Check, X, Wifi, Clock } from 'lucide-react'
 import { trackProviderClick } from '../utils/analytics'
 
 const badgeClasses = {
@@ -95,14 +95,16 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
           >
             {logo_text}
           </div>
-          <div>
-            <h3 className="font-bold text-brand-dark text-base leading-tight">{name}</h3>
-            <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold mt-1 ${badgeCls}`}>{badge}</span>
-            {rating && <div className="mt-1.5"><StarRating rating={rating} /></div>}
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 flex-wrap mb-1">
+              <h3 className="font-bold text-brand-dark text-base leading-tight">{name}</h3>
+              {rating && <StarRating rating={rating} />}
+            </div>
+            <span className={`inline-block px-2.5 py-1 rounded-lg text-xs font-bold tracking-tight ${badgeCls}`}>{badge}</span>
           </div>
         </div>
 
-        <p className="text-sm text-slate-500 leading-relaxed">{tagline}</p>
+        <p className="text-sm text-slate-600 leading-snug">{tagline}</p>
 
         {/* Glassmorphism stat grid */}
         <div className="grid grid-cols-2 gap-2">
@@ -143,25 +145,15 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
           ))}
         </ul>
 
-        {/* iOS / Android / Apple Pay / Google Pay chips */}
+        {/* Connectivity + settlement — only the two differentiating signals */}
         <div className="flex flex-wrap gap-1.5">
-          {apple_pay && (
-            <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded-full">
-              <Smartphone size={10} />  Apple Pay
-            </span>
-          )}
-          {google_pay && (
-            <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded-full">
-              <Smartphone size={10} />  Google Pay
-            </span>
-          )}
           {sim_plan.available ? (
-            <span className="inline-flex items-center gap-1 bg-blue-50 text-brand-blue text-xs px-2 py-0.5 rounded-full">
-              <Wifi size={10} />  SIM ✓
+            <span className="inline-flex items-center gap-1 bg-blue-50 text-brand-blue text-xs font-medium px-2 py-0.5 rounded-full">
+              <Wifi size={10} />  SIM connectivity
             </span>
           ) : offline_mode.available ? (
-            <span className="inline-flex items-center gap-1 bg-blue-50 text-brand-blue text-xs px-2 py-0.5 rounded-full">
-              <Wifi size={10} />  Offline ✓
+            <span className="inline-flex items-center gap-1 bg-blue-50 text-brand-blue text-xs font-medium px-2 py-0.5 rounded-full">
+              <Wifi size={10} />  Works offline
             </span>
           ) : (
             <span className="inline-flex items-center gap-1 bg-slate-100 text-slate-400 text-xs px-2 py-0.5 rounded-full">
@@ -169,19 +161,23 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
             </span>
           )}
           {settlement.same_day_available && (
-            <span className="inline-flex items-center gap-1 bg-green-50 text-brand-green text-xs px-2 py-0.5 rounded-full">
-              <Clock size={10} />  Same-day
+            <span className="inline-flex items-center gap-1 bg-green-50 text-brand-green text-xs font-medium px-2 py-0.5 rounded-full">
+              <Clock size={10} />  Same-day pay
             </span>
           )}
         </div>
 
-        {/* CTA */}
+        {/* CTA — featured gets primary, others get secondary to reinforce ranking */}
         <Link
           to={`/providers/${id}`}
           onClick={() => trackProviderClick(id, source)}
-          className="mt-auto block text-center bg-gradient-to-b from-blue-500 to-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl hover:from-blue-600 hover:to-blue-800 transition-all shadow-sm text-sm"
+          className={`mt-auto block text-center font-semibold px-4 py-2.5 rounded-xl transition-all text-sm ${
+            featured
+              ? 'bg-brand-blue hover:bg-blue-600 text-white shadow-md shadow-blue-900/20'
+              : 'bg-slate-50 border border-slate-200 text-brand-dark hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/40'
+          }`}
         >
-          Full {name} Review →
+          {featured ? `See why ${name} is #1 →` : `Full ${name} review →`}
         </Link>
       </div>
     </motion.article>

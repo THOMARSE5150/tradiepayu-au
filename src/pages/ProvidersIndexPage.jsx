@@ -111,6 +111,31 @@ export default function ProvidersIndexPage() {
 
       <section className="section">
         <div className="container-page">
+
+          {/* ── Decision helper — lets users self-select before scanning all cards ── */}
+          <div className="mb-8 pb-7 border-b border-slate-100">
+            <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-3">Jump to what fits your work</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { need: 'Lowest fees',         provider: 'Zeller', href: '/providers/zeller' },
+                { need: 'Works offline',        provider: 'Square', href: '/providers/square' },
+                { need: 'Online + in-person',   provider: 'Stripe', href: '/providers/stripe' },
+                { need: 'Quote-based pricing',  provider: 'Tyro',   href: '/providers/tyro'   },
+                { need: 'No upfront cost',      provider: 'Shift4', href: '/providers/shift4' },
+              ].map(({ need, provider, href }) => (
+                <Link
+                  key={href}
+                  to={href}
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm hover:border-brand-blue hover:bg-blue-50/40 transition-all group"
+                >
+                  <span className="text-slate-500 group-hover:text-slate-700">{need}</span>
+                  <span className="text-slate-300">·</span>
+                  <span className="font-semibold text-brand-dark group-hover:text-brand-blue">{provider} →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {providers.map((p, i) => (
               <ProviderCard key={p.id} provider={p} featured={p.id === 'zeller'} index={i} />
@@ -121,14 +146,30 @@ export default function ProvidersIndexPage() {
 
       <section className="section section-alt">
         <div className="container-page">
-          <h2 className="text-xl font-bold text-brand-dark mb-1">Head-to-Head Comparisons</h2>
+          <h2 className="text-xl font-bold text-brand-dark mb-1">Head-to-head comparisons</h2>
           <p className="text-slate-500 text-sm mb-5">Side-by-side breakdowns for the most common decisions.</p>
-          <div className="flex flex-wrap gap-2.5">
-            {comparisons.map(c => (
+
+          {/* Top comparisons — most commonly used decisions */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+            {comparisons.slice(0, 3).map(c => (
               <Link
                 key={c.slug}
                 to={`/compare/${c.slug}`}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-medium text-brand-dark hover:border-brand-blue hover:text-brand-blue transition-all"
+                className="flex items-center justify-between px-5 py-3.5 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-brand-dark hover:border-brand-blue hover:text-brand-blue transition-all group"
+              >
+                <span>{c.label}</span>
+                <span className="text-slate-300 group-hover:text-brand-blue transition-colors">→</span>
+              </Link>
+            ))}
+          </div>
+
+          {/* All remaining comparisons */}
+          <div className="flex flex-wrap gap-2">
+            {comparisons.slice(3).map(c => (
+              <Link
+                key={c.slug}
+                to={`/compare/${c.slug}`}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs font-medium text-slate-600 hover:border-brand-blue hover:text-brand-blue transition-all"
               >
                 {c.label} →
               </Link>
