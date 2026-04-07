@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Shield, Search, RefreshCw, AlertCircle, CheckCircle, FileText, Clock } from 'lucide-react'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
+import Logo from '../components/Logo'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -236,6 +237,37 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl">
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Operated by</span>
               <span className="text-sm font-bold text-brand-dark">QUICKFIXCREATIVE · ABN 77 133 011 874</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section container-page">
+        <div className="max-w-2xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-4"
+          >
+            Brand identity
+          </motion.h2>
+          <div className="space-y-4 text-slate-600 leading-relaxed">
+            <p>
+              The TradiePay AU mark is a tape measure hook — the bent metal clip at the end of every tape, the first thing a tradie reaches for. Two strokes: a white horizontal bar (the tape) and a blue hook. Simple enough to read at 16px, distinct enough to own.
+            </p>
+            <p>
+              On page load, the tape extends left to right and the hook snaps into place — a small mechanical moment that reflects what the site is about: getting paid at the end of the job, cleanly and without fuss.
+            </p>
+          </div>
+          {/* Live mark on dark swatch */}
+          <div className="mt-6 inline-flex items-center gap-8 bg-brand-dark rounded-2xl px-8 py-6">
+            <Logo />
+            <div className="w-px h-8 bg-white/10 flex-shrink-0" />
+            <div>
+              <p className="text-white/30 text-[10px] font-semibold uppercase tracking-widest mb-1">Mark</p>
+              <p className="text-white/60 text-xs leading-relaxed">Tape hook · Two strokes<br />White tape · Blue hook</p>
             </div>
           </div>
         </div>
