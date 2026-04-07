@@ -72,7 +72,7 @@ function DecisionBand() {
             </h2>
 
             {/* Editorial cue list */}
-            <div className="divide-y divide-white/[0.10] max-w-xs">
+            <div className="divide-y divide-white/[0.12] max-w-xs">
               {decisionCues.map(c => (
                 <Link
                   key={c.name}
@@ -82,7 +82,7 @@ function DecisionBand() {
                   <span className="text-slate-400 group-hover:text-slate-300 transition-colors text-sm">
                     {c.lead}
                   </span>
-                  <span className="text-white font-semibold text-sm group-hover:text-brand-blue transition-colors flex-shrink-0">
+                  <span className="text-white/90 font-bold text-sm group-hover:text-brand-blue transition-colors flex-shrink-0 tracking-tight">
                     {c.name} →
                   </span>
                 </Link>
@@ -106,8 +106,8 @@ function DecisionBand() {
             </div>
           </div>
 
-          {/* Right: CTA on desktop — aligned to top of cue list */}
-          <div className="hidden sm:flex flex-col gap-3 items-end flex-shrink-0 pt-[4.5rem]">
+          {/* Right: CTA on desktop — vertically anchored to first cue row */}
+          <div className="hidden sm:flex flex-col gap-3 items-end flex-shrink-0 pt-[5.25rem]">
             <Link
               to="/providers"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-lg shadow-blue-900/30 whitespace-nowrap"
