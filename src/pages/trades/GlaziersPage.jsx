@@ -37,8 +37,8 @@ const faqs = [
 import siteMeta from '../../data/site-meta.json'
 import { SITE_URL as SITE } from '../../constants/brand'
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Glaziers in Australia (2026)', name: 'Best EFTPOS for Glaziers in Australia (2026)', image: { '@type': 'ImageObject', url: tradeOgUrl('glaziers'), width: 1200, height: 630 }, description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.', url: `${SITE}/trades/glaziers`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
-  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Glaziers in Australia (2026)', item: `${SITE}/trades/glaziers` }] },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS Machines for Glaziers in Australia (2026)', name: 'Best EFTPOS Machines for Glaziers in Australia (2026)', image: { '@type': 'ImageObject', url: tradeOgUrl('glaziers'), width: 1200, height: 630 }, description: 'Compare the lowest-rate EFTPOS terminals for glazing businesses. Fees from 1.4%, same-day payouts, and offline mode — reviewed for Australian glaziers.', url: `${SITE}/trades/glaziers`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS Machines for Glaziers in Australia (2026)', item: `${SITE}/trades/glaziers` }] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   { '@context': 'https://schema.org', '@type': 'Service', name: 'Best EFTPOS for Glaziers in Australia', serviceType: 'EFTPOS Payment Processing for Glaziers', areaServed: { '@type': 'Country', name: 'Australia' }, provider: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, url: `${SITE}/trades/glaziers` },
 ]
@@ -47,15 +47,15 @@ export default function GlaziersPage() {
   return (
     <>
       <Meta
-        title="Best EFTPOS for Glaziers in Australia (2026)"
-        description="Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses."
+        title="Best EFTPOS Machines for Glaziers in Australia (2026)"
+        description="Compare the lowest-rate EFTPOS terminals for glazing businesses. Fees from 1.4%, same-day payouts, and offline mode — reviewed for Australian glaziers."
         canonical="/trades/glaziers"
         ogType="article"
         jsonLd={jsonLd}
       />
 
+      {/* ── 1. HERO ─────────────────────────────────────── */}
       <header className="hero relative overflow-hidden">
-        {/* Trade hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
             src={tradeHeroUrl('glaziers')}
@@ -71,16 +71,33 @@ export default function GlaziersPage() {
             <span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span>
             <span>·</span><span>Updated April 2026</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Glaziers in Australia (2026)</h1>
-          <p className="hero-sub">Dead zones, emergency call-outs, and property manager billing. Here's the payment setup that works for glazing.</p>
-          <nav className="jump-links">
-            <a href="#picks">Comparison</a>
-            <a href="#challenges">Context</a>
-            <a href="#scenarios">Job Scenarios</a>
-            <a href="#faq">FAQ</a>
-          </nav>
+          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
+            Best EFTPOS Machines for Glaziers in Australia (2026)
+          </h1>
+          <p className="hero-sub">
+            Stop losing money to high fees and slow payouts. Compare terminals with rates from 1.4%, same-day settlement, and offline mode — built for glazing businesses.
+          </p>
+          <div className="mt-5 flex flex-col sm:flex-row items-start gap-3">
+            <a
+              href="#picks"
+              className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors shadow-lg shadow-brand-blue/25"
+            >
+              Compare Top Options
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              </svg>
+            </a>
+            <div className="flex items-center gap-3 text-sm">
+              <span className="text-white/40 hidden sm:inline">or view</span>
+              <Link to="/providers/zeller" className="text-white/80 hover:text-white font-medium transition-colors underline underline-offset-2 decoration-white/30">Zeller</Link>
+              <Link to="/providers/square" className="text-white/80 hover:text-white font-medium transition-colors underline underline-offset-2 decoration-white/30">Square</Link>
+              <Link to="/providers/stripe" className="text-white/80 hover:text-white font-medium transition-colors underline underline-offset-2 decoration-white/30">Stripe</Link>
+            </div>
+          </div>
         </div>
       </header>
+
+      {/* QuickVerdict — AEO answer-first */}
       <QuickVerdict
         pick="Zeller Terminal 1 + SIM"
         rate="1.4%"
@@ -91,6 +108,28 @@ export default function GlaziersPage() {
         trade="glaziers"
       />
 
+      {/* ── 2. TRUST BLOCK ─────────────────────────────── */}
+      <section className="bg-white border-b border-slate-100">
+        <div className="container-page py-6 sm:py-8">
+          <p className="text-center text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-4">
+            Reviewed for Australian tradies
+          </p>
+          <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
+            {[
+              ['1.4%', 'Lowest rate'],
+              ['Same day', 'Payout speed'],
+              ['$99', 'Terminal cost'],
+            ].map(([value, label]) => (
+              <div key={label} className="text-center">
+                <span className="block text-lg sm:text-2xl font-bold text-brand-dark">{value}</span>
+                <span className="text-[11px] text-slate-500">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. TOP PICKS ───────────────────────────────── */}
       <section id="picks" className="section section-alt">
         <div className="container-page">
           <motion.h2
@@ -102,14 +141,8 @@ export default function GlaziersPage() {
           >
             Top Picks for Glaziers
           </motion.h2>
-          <div className="breakeven-box mb-6">
-            <strong>Two-device strategy:</strong> Zeller Terminal 1 + SIM ($99, primary) + Square Terminal ($329, dead-zone backup). No monthly fee on Square. Total hardware: $428.
-          </div>
-          <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-6">
-            <p className="text-sm font-semibold text-green-800 mb-1">Real savings example</p>
-            <p className="text-sm text-green-700">A glazier processing <strong>$8,000/month</strong> in card payments pays <strong>$112/month</strong> with Zeller (1.4%) vs $128 with Square (1.6%) — saving <strong>$192/year</strong> on rate alone. Add $15/mo SIM and Zeller still wins at most glazing volumes under $120k/year.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* ── Zeller ── */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,11 +154,12 @@ export default function GlaziersPage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-dark text-white flex items-center justify-center font-bold">Z</div>
                 <div>
-                  <h3 className="font-bold text-brand-dark">#1 — Zeller Terminal 1 + SIM</h3>
+                  <h3 className="font-bold text-brand-dark">Zeller Terminal 1 + SIM</h3>
                   <span className="badge badge-gold">Best for Glaziers</span>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mb-4">SIM plan (Optus, $15/mo) handles most building coverage. 1.4% rate and same-day settlement. Payment links for property manager billing.</p>
+              <p className="text-sm text-slate-600 mb-1 font-medium">Lowest rate with same-day settlement.</p>
+              <p className="text-sm text-slate-500 mb-4">SIM plan covers most commercial and residential sites. Payment links for property manager billing.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.4%'], ['Terminal', '$99'], ['SIM', '$15/mo'], ['Settlement', 'Same day']].map(([l, v], i) => (
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
@@ -136,6 +170,8 @@ export default function GlaziersPage() {
               </AffiliateButton>
               <Link to="/providers/zeller" className="block text-center text-xs text-slate-500 hover:text-brand-blue transition-colors">Full review →</Link>
             </motion.div>
+
+            {/* ── Square ── */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -147,11 +183,12 @@ export default function GlaziersPage() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-brand-blue text-white flex items-center justify-center font-bold text-sm">Sq</div>
                 <div>
-                  <h3 className="font-bold text-brand-dark">#2 — Square Terminal</h3>
-                  <span className="badge badge-muted">Dead Zone Backup</span>
+                  <h3 className="font-bold text-brand-dark">Square Terminal</h3>
+                  <span className="badge badge-muted">Best for Dead Zones</span>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mb-4">Offline mode for zero-connectivity sites — stairwells, mechanical rooms, underground. Accept payment, reconnect later. 24-hour window applies.</p>
+              <p className="text-sm text-slate-600 mb-1 font-medium">Only terminal with offline mode.</p>
+              <p className="text-sm text-slate-500 mb-4">Accept payments in stairwells, mechanical rooms, and basements — reconnect later. 24-hour window.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.6%'], ['Terminal', '$329'], ['Offline', '✓ Yes'], ['Settlement', 'Next day']].map(([l, v], i) => (
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
@@ -162,9 +199,111 @@ export default function GlaziersPage() {
               </AffiliateButton>
               <Link to="/providers/square" className="block text-center text-xs text-slate-500 hover:text-brand-blue transition-colors">Full review →</Link>
             </motion.div>
+
+            {/* ── Stripe ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.14 }}
+              whileHover={{ y: -3 }}
+              className="lg-light rounded-2xl p-6"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-brand-purple text-white flex items-center justify-center font-bold text-sm">St</div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">Stripe</h3>
+                  <span className="badge badge-purple">Best for Invoicing</span>
+                </div>
+              </div>
+              <p className="text-sm text-slate-600 mb-1 font-medium">Professional invoicing for commercial jobs.</p>
+              <p className="text-sm text-slate-500 mb-4">Email invoices to property managers and accounts departments. ABN, GST, and payment terms built in.</p>
+              <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
+                {[['Rate', '1.7% + 10c'], ['Terminal', '~$98'], ['Invoicing', 'Full suite'], ['Settlement', '2 days']].map(([l, v], i) => (
+                  <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
+                ))}
+              </div>
+              <AffiliateButton providerId="stripe" label="page-cta" campaign="glaziers-picks" intent="signup" className="btn-tertiary block text-center text-sm mb-2">
+                Get Stripe →
+              </AffiliateButton>
+              <Link to="/providers/stripe" className="block text-center text-xs text-slate-500 hover:text-brand-blue transition-colors">Full review →</Link>
+            </motion.div>
           </div>
         </div>
       </section>
+
+      {/* ── 4. COMPARISON SNAPSHOT ──────────────────────── */}
+      <section className="section">
+        <div className="container-page">
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-brand-dark mb-6"
+          >
+            Quick Comparison
+          </motion.h2>
+          <ComparisonTable
+            headers={['Provider', 'Rate', 'Hardware', 'Offline', 'Best for']}
+            rows={[
+              { highlight: true, cells: [<><strong>Zeller Terminal 1 + SIM</strong> <span className="ml-1 badge badge-gold">Top pick</span></>, '1.4%', '$99', '✗', 'All glazing — primary device'] },
+              { cells: ['Square Terminal', '1.6%', '$329', '✓', 'Dead zones — basements, mechanical rooms'] },
+              { cells: ['Stripe', '1.7% + 10c', '~$98', '✗', 'Invoicing — property managers'] },
+            ]}
+          />
+          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
+        </div>
+      </section>
+
+      {/* ── Testimonial ────────────────────────────────── */}
+      <section className="section section-alt">
+        <div className="container-page">
+          <motion.blockquote
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="relative bg-white border border-slate-200 rounded-2xl px-6 py-5 max-w-2xl"
+          >
+            <svg className="absolute top-4 left-5 w-6 h-6 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p className="text-slate-700 text-sm leading-relaxed pl-6 mb-4">
+              "Had a shopfront emergency in Parramatta at 11pm — smashed glass, alarm going. Got there, secured the opening, re-glazed the next morning. Sent the property manager a Zeller payment link before I left the site. Money was in my account by lunchtime. That invoice used to take 30 days to get paid."
+            </p>
+            <footer className="flex items-center gap-3 pl-6">
+              <div className="w-8 h-8 rounded-full bg-brand-dark text-white text-xs font-bold flex items-center justify-center flex-shrink-0">MT</div>
+              <div>
+                <p className="text-sm font-semibold text-brand-dark">Marcus T.</p>
+                <p className="text-xs text-slate-500">Glazier · Western Sydney</p>
+              </div>
+            </footer>
+          </motion.blockquote>
+        </div>
+      </section>
+
+      {/* ── 5. FINAL CTA ───────────────────────────────── */}
+      <section className="section">
+        <div className="container-page">
+          <div className="bg-brand-dark rounded-2xl px-6 py-8 text-center">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              Get the best EFTPOS setup for your glazing business
+            </h2>
+            <p className="text-white/60 text-sm mb-5 max-w-md mx-auto">
+              Set up in minutes with just your ABN. Same-day approval, same-day settlement.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <AffiliateButton providerId="zeller" label="page-cta" campaign="glaziers-final" intent="signup" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors">
+                Get Started with Zeller →
+              </AffiliateButton>
+              <Link to="/compare/zeller-vs-square" className="text-white/60 text-sm hover:text-white transition-colors">
+                Or compare all options →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Supporting Content (SEO depth) ─────────────── */}
 
       <section id="challenges" className="section container-page">
         <motion.h2
@@ -223,69 +362,6 @@ export default function GlaziersPage() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="section container-page">
-        <motion.blockquote
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="relative bg-slate-50 border border-slate-200 rounded-2xl px-6 py-5 max-w-2xl"
-        >
-          <svg className="absolute top-4 left-5 w-6 h-6 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-          <p className="text-slate-700 text-sm leading-relaxed pl-6 mb-4">
-            "Had a shopfront emergency in Parramatta at 11pm — smashed glass, alarm going. Got there, secured the opening, re-glazed the next morning. Sent the property manager a Zeller payment link before I left the site. Money was in my account by lunchtime. That invoice used to take 30 days to get paid."
-          </p>
-          <footer className="flex items-center gap-3 pl-6">
-            <div className="w-8 h-8 rounded-full bg-brand-dark text-white text-xs font-bold flex items-center justify-center flex-shrink-0">MT</div>
-            <div>
-              <p className="text-sm font-semibold text-brand-dark">Marcus T.</p>
-              <p className="text-xs text-slate-500">Glazier · Western Sydney</p>
-            </div>
-          </footer>
-        </motion.blockquote>
-      </section>
-
-      <section className="section section-alt">
-        <div className="container-page">
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-2xl font-bold text-brand-dark mb-6"
-          >
-            Glazier EFTPOS Comparison
-          </motion.h2>
-          <ComparisonTable
-            headers={['Provider', 'Rate', 'Hardware', 'SIM', 'Offline', 'Best for']}
-            rows={[
-              { highlight: true, cells: [<><strong>Zeller Terminal 1 + SIM</strong> <span className="ml-1 badge badge-gold">Top pick</span></>, '1.4%', '$99', '✓ $15/mo', '✗', 'All glazing — primary device'] },
-              { cells: ['Zeller Tap to Pay', '1.4%', '$0', '✗ (phone data)', '✗', 'Emergency call-outs, low volume'] },
-              { cells: ['Square Terminal', '1.6%', '$329', '✗', '✓', 'Dead zones — mechanical rooms, basements'] },
-              { cells: ['Stripe', '1.7% + $0.10', '~$98', '✓ optional', '✗', 'Commercial invoicing, property manager billing'] },
-            ]}
-          />
-          <p className="mt-4 text-xs text-slate-500">Need a deeper comparison? <Link to="/compare/zeller-vs-square" className="text-brand-blue font-medium hover:underline">Zeller vs Square — full head-to-head →</Link></p>
-
-          {/* Post-table CTA */}
-          <div className="mt-6 bg-brand-dark rounded-2xl px-5 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
-            <div className="flex-1 min-w-0">
-              <p className="text-white font-semibold text-sm mb-0.5">Ready to get paid on-site?</p>
-              <p className="text-white/60 text-xs">Set up Zeller in minutes — ABN required, approval same day.</p>
-            </div>
-            <div className="flex items-center gap-3 flex-shrink-0">
-              <AffiliateButton providerId="zeller" label="page-cta" campaign="glaziers-table" intent="signup" className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors">
-                Get Zeller →
-              </AffiliateButton>
-              <Link to="/providers/zeller" className="text-white/60 text-xs hover:text-white transition-colors">
-                Full review →
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
