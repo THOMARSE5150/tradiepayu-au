@@ -164,8 +164,8 @@ export default function BlogIndexPage() {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={e => {
                       e.currentTarget.onerror = null
-                      e.currentTarget.parentElement.style.background = 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)'
-                      e.currentTarget.style.display = 'none'
+                      e.currentTarget.src = '/og-trade.svg'
+                      e.currentTarget.className = 'w-full h-full object-contain p-8 opacity-30'
                     }}
                   />
                   {/* Bottom gradient */}

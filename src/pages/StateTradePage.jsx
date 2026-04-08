@@ -8,6 +8,7 @@ import FaqSection from '../components/FaqSection'
 import RelatedLinks from '../components/RelatedLinks'
 import NotFoundPage from './NotFoundPage'
 import { TRADE_MAP } from '../data/tradesMeta'
+import { tradeHeroUrl, tradeOgUrl } from '../utils/tradeHero'
 import { STATE_MAP } from '../data/states'
 import siteMeta from '../data/site-meta.json'
 
@@ -225,7 +226,7 @@ export default function StateTradePage() {
       headline: title,
       name: title,
       description,
-      image: { '@type': 'ImageObject', url: `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 },
+      image: { '@type': 'ImageObject', url: tradeOgUrl(trade.slug), width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
       dateModified: siteMeta.lastVerified,
@@ -292,7 +293,7 @@ export default function StateTradePage() {
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src={`https://images.unsplash.com/${trade.heroImage}?w=900&h=560&fit=crop&crop=center&q=80`}
+            src={tradeHeroUrl(trade.slug)}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

@@ -80,7 +80,7 @@ export const TRADES_META = [
   {
     slug: 'plasterers',
     label: 'Plasterers',
-    heroImage: 'photo-1621905252507-b35492cc74b4',
+    heroImage: 'photo-1541888946425-d81bb19240f5',
     heroAlt: 'Plasterer applying plasterboard compound on a new build interior',
     heroSub: 'No WiFi on new builds, staged billing by coat, and same-day cash flow for materials. Here\'s the payment setup that works for plasterers.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -119,8 +119,8 @@ export const TRADES_META = [
   {
     slug: 'glaziers',
     label: 'Glaziers',
-    heroImage: 'photo-1541888946425-d81bb19240f5',
-    heroAlt: 'Glazier installing glass panel on a commercial building site',
+    heroImage: 'photo-1558618666-fcd25c85cd64',
+    heroAlt: 'Glazier fitting a large glass pane into a window frame on a building site',
     heroSub: 'Dead zones, emergency call-outs, and property manager billing. Here\'s the payment setup that works for glazing.',
     pick: 'Zeller Terminal 1 + SIM',
     rate: '1.4%',
