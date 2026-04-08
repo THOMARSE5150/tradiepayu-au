@@ -95,7 +95,7 @@ function DecisionBand() {
                 to="/providers"
                 className="inline-flex items-center justify-center px-7 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-lg shadow-blue-900/30 w-full whitespace-nowrap"
               >
-                Compare all providers →
+                Compare Australian EFTPOS providers →
               </Link>
               <Link
                 to="/compare/zeller-vs-square"
@@ -112,7 +112,7 @@ function DecisionBand() {
               to="/providers"
               className="inline-flex items-center justify-center px-7 py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-semibold text-sm rounded-xl transition-colors shadow-lg shadow-blue-900/30 whitespace-nowrap"
             >
-              Compare all providers →
+              Compare Australian EFTPOS providers →
             </Link>
             <Link
               to="/compare/zeller-vs-square"
@@ -143,7 +143,7 @@ export default function Footer() {
         <div className="col-span-2 sm:col-span-1">
           <Logo className="mb-4 opacity-75" />
           <p className="text-xs text-slate-500 leading-relaxed">
-            Independent EFTPOS comparison<br className="hidden sm:block" /> for Australian tradies.
+            Independent EFTPOS comparison<br className="hidden sm:block" /> for Australian tradies.<br className="hidden sm:block" /> AUD pricing · GST-ready · ABN signup.
           </p>
         </div>
 

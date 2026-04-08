@@ -46,7 +46,7 @@ export default function ComparePage() {
     )
   }
 
-  const title = `${p1.name} vs ${p2.name} for Tradies — Full Comparison (2026)`
+  const title = `${p1.name} vs ${p2.name} for Australian Tradies — Full Comparison (2026)`
   const description = `${p1.name} vs ${p2.name}: side-by-side rates, hardware, SIM connectivity, offline mode, and settlement speed for Australian tradies. Which one is right for your trade?`
   const canonical = `/compare/${slug}`
 
@@ -160,6 +160,7 @@ export default function ComparePage() {
       headline: title,
       name: title,
       description,
+      inLanguage: 'en-AU',
       image: { '@type': 'ImageObject', url: p1.product_image?.startsWith('http') ? p1.product_image : `${SITE}/og-provider.svg`, width: 1200, height: 630 },
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',

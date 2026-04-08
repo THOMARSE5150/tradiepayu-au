@@ -20,6 +20,7 @@ const jsonLd = [
     '@id': `${SITE_URL}/#website`,
     name: 'TradiePay AU',
     url: SITE_URL,
+    inLanguage: 'en-AU',
     description: 'Independent comparison of EFTPOS and mobile payment providers for Australian tradies.',
     potentialAction: {
       '@type': 'SearchAction',
@@ -37,6 +38,7 @@ const jsonLd = [
     description: 'Independent comparison site for EFTPOS and mobile card payment systems for Australian tradies. Reviews cover Zeller, Square, Stripe, Tyro, and Shift4 across 18 trade categories.',
     foundingDate: '2025',
     areaServed: { '@type': 'Country', name: 'Australia' },
+    address: { '@type': 'PostalAddress', addressCountry: 'AU' },
     contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', email: 'hello@tradiepayau.directory', areaServed: 'AU', availableLanguage: 'en-AU' },
     publishingPrinciples: `${SITE_URL}/disclaimer`,
     knowsAbout: [
@@ -268,7 +270,7 @@ export default function Home() {
         <div className="container-page">
           <div className="flex items-end justify-between mb-5 gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-brand-dark">Compare EFTPOS Providers</h2>
+              <h2 className="text-2xl font-bold text-brand-dark">Compare EFTPOS Providers for Australian Tradies</h2>
               <p className="text-slate-500 text-sm mt-1">Green = category winner. Tap any name for the full review.</p>
             </div>
             <Link to="/providers" className="text-sm font-semibold text-brand-blue hover:underline whitespace-nowrap">
@@ -286,8 +288,8 @@ export default function Home() {
             {[
               { label: 'See full Zeller review', to: '/providers/zeller' },
               { label: 'Zeller vs Square — deep dive', to: '/compare/zeller-vs-square' },
-              { label: 'Best EFTPOS for my trade', to: '/trades' },
-              { label: 'All comparisons', to: '/compare' },
+              { label: 'Best EFTPOS for your trade in Australia', to: '/trades' },
+              { label: 'All Australian EFTPOS comparisons', to: '/compare' },
             ].map(item => (
               <Link
                 key={item.to}

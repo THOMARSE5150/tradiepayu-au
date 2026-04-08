@@ -14,6 +14,13 @@ const WEBSITE_SCHEMA = {
   '@id': `${SITE_URL}/#website`,
   name: BRAND_NAME,
   url: `${SITE_URL}/`,
+  inLanguage: 'en-AU',
+  publisher: {
+    '@type': 'Organization',
+    name: BRAND_NAME,
+    url: SITE_URL,
+    areaServed: { '@type': 'Country', name: 'Australia' },
+  },
 }
 
 // Build BLOG_HERO dynamically so it never goes stale
@@ -49,6 +56,7 @@ function buildTradeListingSchema(tradeSlug) {
     '@type':    'ItemList',
     '@id':      `${SITE_URL}/trades/${tradeSlug}#recommendations`,
     name:       `Best EFTPOS for ${trade.label} in Australia — 2026`,
+    inLanguage: 'en-AU',
     description: `${productName} is the best EFTPOS for ${trade.label} in Australia because ${trade.reason}`,
     numberOfItems: 1,
     itemListElement: [
