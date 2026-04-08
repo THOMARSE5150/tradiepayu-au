@@ -9,8 +9,7 @@ import FaqSection from '../components/FaqSection'
 import AffiliateButton from '../components/AffiliateButton'
 
 import siteMeta from '../data/site-meta.json'
-
-const SITE = 'https://tradiepayau.directory'
+import { SITE_URL as SITE, BRAND_NAME } from '../constants/brand'
 
 function Cell({ value, positive, className = '' }) {
   if (value === true)  return <span className={`flex items-center gap-1 font-semibold text-green-600 ${className}`}><Check size={14} strokeWidth={2.5} /> Yes</span>
@@ -152,6 +151,8 @@ export default function ComparePage() {
     return items
   })()
 
+  const winner = p1.score_overall >= p2.score_overall ? p1 : p2
+
   const jsonLd = [
     {
       '@context': 'https://schema.org',
@@ -163,8 +164,8 @@ export default function ComparePage() {
       url: `${SITE}${canonical}`,
       datePublished: '2026-01-15',
       dateModified: siteMeta.lastVerified,
-      author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'TradiePay AU', url: SITE },
-      publisher: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'TradiePay AU', url: SITE },
+      author: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: BRAND_NAME, url: SITE },
+      publisher: { '@type': 'Organization', '@id': `${SITE}/#organization`, name: BRAND_NAME, url: SITE },
     },
     {
       '@context': 'https://schema.org',
@@ -184,9 +185,51 @@ export default function ComparePage() {
         acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
     },
+    {
+      '@context': 'https://schema.org',
+      '@type':    'ItemList',
+      '@id':      `${SITE}${canonical}#comparison`,
+      name:       `${p1.name} vs ${p2.name} — EFTPOS Comparison for Australian Tradies (2026)`,
+      description: `${winner.name} is the recommended EFTPOS for most Australian tradies in a ${p1.name} vs ${p2.name} comparison, rated ${winner.score_overall}/10. ${winner.best_for[0]}.`,
+      numberOfItems: 2,
+      itemListElement: [
+        {
+          '@type':    'ListItem',
+          position:   1,
+          item: {
+            '@type':  'Product',
+            '@id':    `${SITE}/providers/${winner.id}#product`,
+            name:     winner.name,
+            description: `${winner.best_for.slice(0, 2).join('. ')}.`,
+            brand:    { '@type': 'Brand', name: winner.name },
+            ...(winner.fees?.in_person_percent && {
+              offers: {
+                '@type':  'Offer',
+                seller:   { '@type': 'Organization', name: BRAND_NAME, url: SITE },
+                priceSpecification: {
+                  '@type':       'UnitPriceSpecification',
+                  price:         winner.fees.in_person_percent,
+                  priceCurrency: 'AUD',
+                  unitText:      'PERCENT',
+                },
+              },
+            }),
+          },
+        },
+        {
+          '@type':    'ListItem',
+          position:   2,
+          item: {
+            '@type':  'Product',
+            '@id':    `${SITE}/providers/${(winner.id === p1.id ? p2 : p1).id}#product`,
+            name:     (winner.id === p1.id ? p2 : p1).name,
+            description: `${(winner.id === p1.id ? p2 : p1).best_for.slice(0, 2).join('. ')}.`,
+            brand:    { '@type': 'Brand', name: (winner.id === p1.id ? p2 : p1).name },
+          },
+        },
+      ],
+    },
   ]
-
-  const winner = p1.score_overall >= p2.score_overall ? p1 : p2
 
   const rate1 = p1.fees.in_person_percent ? `${p1.fees.in_person_percent}%` : 'Contact for rate'
   const rate2 = p2.fees.in_person_percent ? `${p2.fees.in_person_percent}%` : 'Contact for rate'
@@ -247,7 +290,8 @@ export default function ComparePage() {
         const winner  = p1.score_overall >= p2.score_overall ? p1 : p2
         const loser   = winner.id === p1.id ? p2 : p1
         return (
-          <div className="bg-white border-b border-slate-100">
+          <section aria-label="Comparison Verdict" className="bg-white border-b border-slate-100">
+            <p className="sr-only">{winner.name} is the better EFTPOS choice for most Australian tradies compared to {loser.name}.</p>
             <div className="container-page max-w-2xl py-5 sm:py-6">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                 <span className="flex-shrink-0 text-[11px] font-bold uppercase tracking-widest text-slate-400 hidden sm:block">Verdict</span>
@@ -271,7 +315,7 @@ export default function ComparePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         )
       })()}
 

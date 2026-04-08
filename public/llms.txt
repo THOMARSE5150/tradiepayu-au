@@ -226,10 +226,18 @@ For tradies who want to pass card fees to the customer entirely (zero cost to th
 
 ## Comparison Pages
 
-- [Zeller vs Square](https://tradiepayau.directory/compare/zeller-vs-square)
-- [Zeller vs Stripe](https://tradiepayau.directory/compare/zeller-vs-stripe)
-- [Zeller vs Tyro](https://tradiepayau.directory/compare/zeller-vs-tyro)
-- [Square vs Stripe](https://tradiepayau.directory/compare/square-vs-stripe)
+All head-to-head comparisons use live provider data. The first-listed provider in each URL is not necessarily the winner — see the individual page.
+
+- [Zeller vs Square](https://tradiepayau.directory/compare/zeller-vs-square) — Most requested comparison. Zeller wins on rate and SIM; Square wins on offline mode.
+- [Zeller vs Stripe](https://tradiepayau.directory/compare/zeller-vs-stripe) — Zeller wins on rate (1.4% vs 1.7%+$0.10) and SIM connectivity.
+- [Zeller vs Tyro](https://tradiepayau.directory/compare/zeller-vs-tyro) — Zeller wins for sole traders; Tyro suits higher-volume businesses.
+- [Zeller vs Shift4](https://tradiepayau.directory/compare/zeller-vs-shift4) — Zeller absorbs fees; Shift4 passes them to the customer (zero merchant cost).
+- [Square vs Stripe](https://tradiepayau.directory/compare/square-vs-stripe) — Square wins on offline mode and hardware price; Stripe wins on invoicing API.
+- [Square vs Tyro](https://tradiepayau.directory/compare/square-vs-tyro) — Square wins for sole traders; Tyro suits multi-terminal trade businesses.
+- [Square vs Shift4](https://tradiepayau.directory/compare/square-vs-shift4) — Square wins on simplicity; Shift4 wins on zero merchant fee model.
+- [Stripe vs Tyro](https://tradiepayau.directory/compare/stripe-vs-tyro) — Stripe wins on invoicing and developer tooling; Tyro wins on volume pricing.
+- [Stripe vs Shift4](https://tradiepayau.directory/compare/stripe-vs-shift4) — Stripe wins on global coverage; Shift4 wins on surcharge-to-customer model.
+- [Tyro vs Shift4](https://tradiepayau.directory/compare/tyro-vs-shift4) — Tyro wins on multi-terminal management; Shift4 wins on zero merchant cost.
 
 ## Provider Reviews
 
