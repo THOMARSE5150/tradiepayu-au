@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "node scripts/check-jsx-escapes.mjs && node scripts/generate-sitemap.js && vite build && node scripts/ping-indexnow.js",
     "lint": "eslint . && node scripts/check-jsx-escapes.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:trade-image": "node scripts/generate-trade-image.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
