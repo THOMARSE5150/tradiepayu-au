@@ -8,6 +8,7 @@ import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
 import QuickVerdict from '../../components/QuickVerdict'
+import { tradeHeroUrl, tradeHeroAlt } from '../../utils/tradeHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -29,7 +30,7 @@ const faqs = [
 ]
 
 import siteMeta from '../../data/site-meta.json'
-const SITE = 'https://tradiepayau.directory'
+import { SITE_URL as SITE } from '../../constants/brand'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Builders in Australia (2026)', name: 'Best EFTPOS for Builders in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'Progress payments, new estate sites, and subcontractor cash flow — the best payment setup for Australian building businesses.', url: `${SITE}/trades/builders`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Builders in Australia (2026)', item: `${SITE}/trades/builders` }] },
@@ -52,8 +53,8 @@ export default function BuildersPage() {
         {/* Trade hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&h=560&fit=crop&crop=center&q=80"
-            alt=""
+            src={tradeHeroUrl('builders')}
+            alt={tradeHeroAlt('builders')}
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />

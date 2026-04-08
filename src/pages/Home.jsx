@@ -11,8 +11,7 @@ import Meta from '../components/Meta'
 import HeroTradeSelector from '../components/HeroTradeSelector'
 import AffiliateButton from '../components/AffiliateButton'
 import { STATES } from '../data/states'
-
-const SITE_URL = 'https://tradiepayau.directory'
+import { SITE_URL, BRAND_NAME } from '../constants/brand'
 
 const jsonLd = [
   {
@@ -148,7 +147,7 @@ export default function Home() {
               Best EFTPOS for Australian Tradies
             </h1>
             <p className="hero-sub">
-              5 providers compared on fees, connectivity, and settlement speed — updated April 2026.
+              Compare Zeller, Square, Stripe & more — find what actually works on-site.
             </p>
 
             {/* ── Verdict-first pill ── */}
@@ -185,17 +184,17 @@ export default function Home() {
 
             {/* CTA row */}
             <div className="flex flex-wrap items-center gap-3 mt-5">
-              <a
-                href="#compare"
+              <Link
+                to="/compare"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
               >
-                Compare all options ↓
-              </a>
+                Compare Providers →
+              </Link>
               <Link
-                to="/compare/zeller-vs-square"
+                to="/providers/zeller"
                 className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
               >
-                Zeller vs Square →
+                See Top Pick (Zeller) →
               </Link>
             </div>
 

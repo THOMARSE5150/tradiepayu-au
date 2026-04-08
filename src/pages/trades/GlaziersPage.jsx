@@ -9,6 +9,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
 import QuickVerdict from '../../components/QuickVerdict'
 import AffiliateButton from '../../components/AffiliateButton'
+import { tradeHeroUrl, tradeHeroAlt } from '../../utils/tradeHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -34,7 +35,7 @@ const faqs = [
 ]
 
 import siteMeta from '../../data/site-meta.json'
-const SITE = 'https://tradiepayau.directory'
+import { SITE_URL as SITE } from '../../constants/brand'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Glaziers in Australia (2026)', name: 'Best EFTPOS for Glaziers in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'Dead zones, emergency call-outs, and property manager billing — the best EFTPOS and payment setup for Australian glazing businesses.', url: `${SITE}/trades/glaziers`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Glaziers in Australia (2026)', item: `${SITE}/trades/glaziers` }] },
@@ -57,8 +58,8 @@ export default function GlaziersPage() {
         {/* Trade hero image */}
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=560&fit=crop&crop=center&q=80"
-            alt="Glazier installing glass panel on a commercial building site"
+            src={tradeHeroUrl('glaziers')}
+            alt={tradeHeroAlt('glaziers')}
             fetchPriority="high" className="w-full h-full object-cover"
             onError={e => { e.currentTarget.style.opacity = '0' }}
           />

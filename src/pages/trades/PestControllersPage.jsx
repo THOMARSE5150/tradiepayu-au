@@ -8,6 +8,7 @@ import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import Meta from '../../components/Meta'
 import QuickVerdict from '../../components/QuickVerdict'
+import { tradeHeroUrl, tradeHeroAlt } from '../../utils/tradeHero'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -33,7 +34,7 @@ const faqs = [
 ]
 
 import siteMeta from '../../data/site-meta.json'
-const SITE = 'https://tradiepayau.directory'
+import { SITE_URL as SITE } from '../../constants/brand'
 const jsonLd = [
   { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Pest Controllers in Australia (2026)', name: 'Best EFTPOS for Pest Controllers in Australia (2026)', image: { '@type': 'ImageObject', url: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200&h=630&fit=crop&crop=center&q=80', width: 1200, height: 630 }, description: 'High-frequency jobs, conveyancer billing, recurring treatment plans, and body corporate invoicing — the best EFTPOS and payment setup for Australian pest controllers.', url: `${SITE}/trades/pest-controllers`, datePublished: '2026-01-15', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'By Trade', item: `${SITE}/trades` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Pest Controllers', item: `${SITE}/trades/pest-controllers` }] },
@@ -53,7 +54,7 @@ export default function PestControllersPage() {
       />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=900&h=560&fit=crop&crop=center&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src={tradeHeroUrl('pest-controllers')} alt={tradeHeroAlt('pest-controllers')} fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">
