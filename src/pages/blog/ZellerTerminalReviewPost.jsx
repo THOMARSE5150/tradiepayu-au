@@ -6,6 +6,7 @@ import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 import AffiliateButton from '../../components/AffiliateButton'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -72,7 +73,7 @@ const jsonLd = [
     description: 'Independent review of the Zeller Terminal 1 for Australian tradies. Rate: 1.4%. Hardware: $99. SIM plan: $15/mo. Is it the best EFTPOS terminal in Australia?',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('zeller-terminal-1-review-2026'),
       width: 1200,
       height: 630,
     },
@@ -118,14 +119,14 @@ export default function ZellerTerminalReviewPost() {
         description="Independent review of the Zeller Terminal 1 for Australian tradies. Rate: 1.4%. Hardware: $99. SIM plan: $15/mo. Is it the best EFTPOS terminal in Australia?"
         canonical="/blog/zeller-terminal-1-review-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('zeller-terminal-1-review-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('zeller-terminal-1-review-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

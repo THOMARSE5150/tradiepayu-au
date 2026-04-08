@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -88,7 +89,7 @@ export default function BestEftposElectriciansNSWPost() {
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('best-eftpos-electricians-nsw-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

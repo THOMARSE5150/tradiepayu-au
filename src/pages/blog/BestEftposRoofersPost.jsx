@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -62,7 +63,7 @@ const jsonLd = [
     description: 'Roofers work at height, on storm-damage emergency jobs, and on sites with poor WiFi. Here is the best EFTPOS terminal setup for Australian roofers in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('best-eftpos-roofers-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -100,14 +101,14 @@ export default function BestEftposRoofersPost() {
         description="Roofers work at height, on storm-damage emergency jobs, and on sites with poor WiFi. Here is the best EFTPOS terminal setup for Australian roofers in 2026."
         canonical="/blog/best-eftpos-roofers-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('best-eftpos-roofers-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('best-eftpos-roofers-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

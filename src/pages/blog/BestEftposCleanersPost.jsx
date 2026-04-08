@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -58,7 +59,7 @@ const jsonLd = [
     description: 'Cleaners work in occupied and unoccupied premises with recurring clients. The best EFTPOS setup for Australian cleaning businesses in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop&crop=entropy&q=80',
+      url: blogOgUrl('best-eftpos-cleaners-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -96,14 +97,14 @@ export default function BestEftposCleanersPost() {
         description="Cleaners work in occupied and unoccupied premises with recurring clients. The best EFTPOS setup for Australian cleaning businesses in 2026."
         canonical="/blog/best-eftpos-cleaners-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&h=630&fit=crop&crop=entropy&q=80"
+        ogImage={blogOgUrl('best-eftpos-cleaners-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&h=560&fit=crop&crop=entropy&q=80"
+            src={blogHeroUrl('best-eftpos-cleaners-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

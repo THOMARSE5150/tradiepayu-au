@@ -5,6 +5,7 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Best EFTPOS for Fencers in Queensland (2026)' }]
@@ -16,7 +17,7 @@ const faqs = [
   { q: 'How quickly do card payments settle for fencers in QLD?', a: 'Zeller settles same-day to a Zeller Transaction Account — QLD fencers can order materials the same afternoon a deposit is collected.' },
 ]
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Fencers in Queensland (2026)', description: 'Best EFTPOS for QLD fencers — SEQ new estate colourbond fencing, rural acreage jobs, and cyclone-rated fencing in coastal QLD.', url: `${SITE}/blog/best-eftpos-fencers-qld-2026`, datePublished: '2026-04-06', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, image: { '@type': 'ImageObject', url: `https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1200&h=630&fit=crop&crop=bottom&q=80`, width: 1200, height: 630 } },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Fencers in Queensland (2026)', description: 'Best EFTPOS for QLD fencers — SEQ new estate colourbond fencing, rural acreage jobs, and cyclone-rated fencing in coastal QLD.', url: `${SITE}/blog/best-eftpos-fencers-qld-2026`, datePublished: '2026-04-06', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, image: { '@type': 'ImageObject', url: blogOgUrl('best-eftpos-fencers-qld-2026'), width: 1200, height: 630 } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Fencers in Queensland (2026)', item: `${SITE}/blog/best-eftpos-fencers-qld-2026` } ] },
   { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'TradiePay AU — EFTPOS Guides for Queensland Fencers', description: 'Best EFTPOS terminal for fencers across Queensland.', url: `${SITE}/blog/best-eftpos-fencers-qld-2026`, areaServed: [ { '@type': 'AdministrativeArea', name: 'Queensland' }, { '@type': 'City', name: 'Brisbane' } ] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -27,7 +28,7 @@ export default function BestEftposFencersQLDPost() {
       <Meta title="Best EFTPOS for Fencers in Queensland (2026)" description="Best EFTPOS for QLD fencers — SEQ new estate colourbond fencing, rural acreage jobs, and cyclone-rated fencing in coastal QLD." canonical="/blog/best-eftpos-fencers-qld-2026" ogType="article" geoRegion="AU-QLD" geoPlacename="Brisbane, Queensland" jsonLd={jsonLd} />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&h=560&fit=crop&crop=bottom&q=80" alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src={blogHeroUrl('best-eftpos-fencers-qld-2026')} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

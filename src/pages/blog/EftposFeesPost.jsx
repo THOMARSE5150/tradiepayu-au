@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 import ComparisonTable from '../../components/ComparisonTable'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -68,7 +69,7 @@ const jsonLd = [
     description: 'Zeller 1.4%, Square 1.6%, Stripe 1.7%. What those percentages actually cost a tradie per month — and which provider wins at every volume.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('eftpos-fees-tradies-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -114,14 +115,14 @@ export default function EftposFeesPost() {
         description="Zeller 1.4%, Square 1.6%, Stripe 1.7%. What those percentages actually cost a tradie per month — and which provider wins at every volume."
         canonical="/blog/eftpos-fees-tradies-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('eftpos-fees-tradies-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('eftpos-fees-tradies-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

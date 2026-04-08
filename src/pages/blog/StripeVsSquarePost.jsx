@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -66,7 +67,7 @@ const jsonLd = [
     description: 'Stripe and Square are both available in Australia. We compare in-person rates, hardware, connectivity, and settlement speed to find the better EFTPOS option for tradies.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('stripe-vs-square-eftpos-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -110,14 +111,14 @@ export default function StripeVsSquarePost() {
         description="Stripe and Square are both available in Australia. We compare in-person rates, hardware, connectivity, and settlement speed to find the better EFTPOS option for tradies."
         canonical="/blog/stripe-vs-square-eftpos-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('stripe-vs-square-eftpos-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('stripe-vs-square-eftpos-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

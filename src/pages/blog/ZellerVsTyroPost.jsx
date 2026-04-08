@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -64,7 +65,7 @@ const jsonLd = [
     description: 'Transparent pricing vs negotiated rates. SIM connectivity vs WiFi-only. Same-day vs next-day settlement. A head-to-head for Australian tradies choosing between Zeller and Tyro.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('zeller-vs-tyro-eftpos-tradies'),
       width: 1200,
       height: 630,
     },
@@ -108,14 +109,14 @@ export default function ZellerVsTyroPost() {
         description="Transparent pricing vs negotiated rates. SIM connectivity vs WiFi-only. Same-day vs next-day settlement. A head-to-head for Australian tradies choosing between Zeller and Tyro."
         canonical="/blog/zeller-vs-tyro-eftpos-tradies"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('zeller-vs-tyro-eftpos-tradies')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('zeller-vs-tyro-eftpos-tradies')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

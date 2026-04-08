@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -62,7 +63,7 @@ const jsonLd = [
     description: 'Rate, SIM card, offline mode, and settlement speed. A straight head-to-head for Australian tradies choosing between Zeller Terminal 1 and Square Terminal.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('zeller-vs-square-eftpos-tradies'),
       width: 1200,
       height: 630,
     },
@@ -114,14 +115,14 @@ export default function ZellerVsSquarePost() {
         description="Rate, SIM card, offline mode, and settlement speed. A straight head-to-head for Australian tradies choosing between Zeller Terminal 1 and Square Terminal."
         canonical="/blog/zeller-vs-square-eftpos-tradies"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('zeller-vs-square-eftpos-tradies')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('zeller-vs-square-eftpos-tradies')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

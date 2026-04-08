@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -58,7 +59,7 @@ const jsonLd = [
     description: 'Plasterers work in new builds and renovation sites that have no WiFi during construction. The best EFTPOS for Australian plasterers in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&crop=entropy&q=80',
+      url: blogOgUrl('best-eftpos-plasterers-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -96,14 +97,14 @@ export default function BestEftposPlasterersPost() {
         description="Plasterers work in new builds and renovation sites that have no WiFi during construction. The best EFTPOS for Australian plasterers in 2026."
         canonical="/blog/best-eftpos-plasterers-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop&crop=entropy&q=80"
+        ogImage={blogOgUrl('best-eftpos-plasterers-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=560&fit=crop&crop=entropy&q=80"
+            src={blogHeroUrl('best-eftpos-plasterers-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

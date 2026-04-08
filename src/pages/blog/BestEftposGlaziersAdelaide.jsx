@@ -5,9 +5,9 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
-const IMG = 'photo-1558618666-fcd25c85cd64'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Best EFTPOS for Glaziers in Adelaide (2026)' }]
 const faqs = [
   { q: 'What is the best EFTPOS for glaziers in Adelaide?', a: 'Zeller Terminal 1 with the Optus SIM plan is the top pick for Adelaide glaziers. At 1.4% in-person with same-day settlement, it handles emergency glass replacement, Adelaide Hills luxury home glazing, and new estate window installation in Angle Vale and Mount Barker.' },
@@ -17,7 +17,7 @@ const faqs = [
   { q: 'What licence do Adelaide glaziers need?', a: 'Adelaide glaziers require a Building Work Contractors licence from Consumer and Business Services (CBS) for work over the threshold. No payment licence is required — an ABN is sufficient to open a merchant account.' },
 ]
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Glaziers in Adelaide (2026)', description: 'Best EFTPOS for Adelaide glaziers — emergency glass replacement, Adelaide Hills luxury home glazing, and new estate window installation in Angle Vale and Mount Barker.', url: `${SITE}/blog/best-eftpos-glaziers-adelaide-2026`, datePublished: '2026-04-06', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, image: { '@type': 'ImageObject', url: `https://images.unsplash.com/${IMG}?w=1200&h=630&fit=crop&crop=bottom&q=80`, width: 1200, height: 630 } },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for Glaziers in Adelaide (2026)', description: 'Best EFTPOS for Adelaide glaziers — emergency glass replacement, Adelaide Hills luxury home glazing, and new estate window installation in Angle Vale and Mount Barker.', url: `${SITE}/blog/best-eftpos-glaziers-adelaide-2026`, datePublished: '2026-04-06', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, image: { '@type': 'ImageObject', url: blogOgUrl('best-eftpos-glaziers-adelaide-2026'), width: 1200, height: 630 } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for Glaziers in Adelaide (2026)', item: `${SITE}/blog/best-eftpos-glaziers-adelaide-2026` } ] },
   { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'TradiePay AU — EFTPOS Guides for Adelaide Glaziers', description: 'Best EFTPOS terminal for glaziers across Adelaide.', url: `${SITE}/blog/best-eftpos-glaziers-adelaide-2026`, areaServed: [ { '@type': 'City', name: 'Adelaide' }, { '@type': 'AdministrativeArea', name: 'South Australia' } ] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -28,7 +28,7 @@ export default function BestEftposGlaziersAdelaide() {
       <Meta title="Best EFTPOS for Glaziers in Adelaide (2026)" description="Best EFTPOS for Adelaide glaziers — emergency glass replacement, Adelaide Hills luxury home glazing, and new estate window installation in Angle Vale and Mount Barker." canonical="/blog/best-eftpos-glaziers-adelaide-2026" ogType="article" geoRegion="AU-SA" geoPlacename="Adelaide, South Australia" jsonLd={jsonLd} />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src={`https://images.unsplash.com/${IMG}?w=900&h=560&fit=crop&crop=bottom&q=80`} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src={blogHeroUrl('best-eftpos-glaziers-adelaide-2026')} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

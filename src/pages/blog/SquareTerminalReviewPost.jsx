@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -67,7 +68,7 @@ const jsonLd = [
     description: 'Independent review of the Square Terminal for Australian tradies. Rate: 1.6%. Hardware: $329. Best-in-class offline mode. Is it worth the premium over Zeller?',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('square-terminal-review-2026'),
       width: 1200,
       height: 630,
     },
@@ -113,14 +114,14 @@ export default function SquareTerminalReviewPost() {
         description="Independent review of the Square Terminal for Australian tradies. Rate: 1.6%. Hardware: $329. Best-in-class offline mode. Is it worth the premium over Zeller?"
         canonical="/blog/square-terminal-review-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('square-terminal-review-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('square-terminal-review-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

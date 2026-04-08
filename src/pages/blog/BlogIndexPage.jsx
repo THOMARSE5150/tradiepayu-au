@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Meta from '../../components/Meta'
 import Breadcrumb from '../../components/Breadcrumb'
 import { posts } from '../../data/posts'
+import { blogOgUrl, blogCardUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -26,7 +27,7 @@ const jsonLd = [
       headline: p.title,
       description: p.description,
       url: `${SITE}/blog/${p.slug}`,
-      image: `https://images.unsplash.com/${p.image}?w=1200&h=630&fit=crop&crop=center&q=80`,
+      image: blogOgUrl(p.slug),
       author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
       publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
     })),
@@ -158,7 +159,7 @@ export default function BlogIndexPage() {
                 {/* Image with overlays */}
                 <Link to={`/blog/${post.slug}`} className="block relative overflow-hidden aspect-[16/9] bg-slate-100 group">
                   <img
-                    src={`https://images.unsplash.com/${post.image}?w=800&h=450&fit=crop&crop=${post.imageCrop || 'center'}&q=80`}
+                    src={blogCardUrl(post.slug)}
                     alt={post.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"

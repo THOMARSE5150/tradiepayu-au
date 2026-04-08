@@ -5,6 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -98,7 +99,7 @@ const jsonLd = [
     description: 'The best EFTPOS options for Australian sole traders in 2026 — compared by rate, cost, and setup time. No contracts, no lock-in.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('best-eftpos-sole-traders-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -144,14 +145,14 @@ export default function BestEftposSoleTradersPost() {
         description="The best EFTPOS options for Australian sole traders in 2026 — compared by rate, cost, and setup time. No contracts, no lock-in."
         canonical="/blog/best-eftpos-sole-traders-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('best-eftpos-sole-traders-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('best-eftpos-sole-traders-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

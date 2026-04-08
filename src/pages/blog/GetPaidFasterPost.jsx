@@ -6,6 +6,7 @@ import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -50,7 +51,7 @@ const jsonLd = [
     description: 'Late payments are the biggest cash-flow problem for Australian sole traders. Here are the practical steps — same-day settlement, payment links, and on-site EFTPOS — that eliminate debtor days.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('how-to-get-paid-faster-sole-trader-australia'),
       width: 1200,
       height: 630,
     },
@@ -121,14 +122,14 @@ export default function GetPaidFasterPost() {
         description="Late payments are the biggest cash-flow problem for Australian sole traders. Here are the practical steps — same-day settlement, payment links, and on-site EFTPOS — that eliminate debtor days."
         canonical="/blog/how-to-get-paid-faster-sole-trader-australia"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('how-to-get-paid-faster-sole-trader-australia')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('how-to-get-paid-faster-sole-trader-australia')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

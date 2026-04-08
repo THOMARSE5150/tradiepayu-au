@@ -5,9 +5,9 @@ import Meta from '../../components/Meta'
 import FaqSection from '../../components/FaqSection'
 import RelatedLinks from '../../components/RelatedLinks'
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
-const IMG = 'photo-1621905251189-08b45d6a269e'
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Best EFTPOS for HVAC in Sydney (2026)' }]
 const faqs = [
   { q: 'What is the best EFTPOS for HVAC technicians in Sydney?', a: 'Zeller Terminal 1 with the Optus SIM plan is the top pick for Sydney HVAC technicians. At 1.4% in-person with same-day settlement, it handles residential split-system installs, commercial ducted fit-outs, and service calls without site WiFi.' },
@@ -17,7 +17,7 @@ const faqs = [
   { q: 'What licence do Sydney HVAC technicians need?', a: 'Sydney HVAC technicians require an ARC refrigerant handling licence for refrigerant work and a NSW Fair Trading electrical contractor licence for electrical connections. Both are required to operate legally and open a merchant account.' },
 ]
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for HVAC in Sydney (2026)', description: 'Best EFTPOS for Sydney HVAC technicians — residential split-system installs, commercial ducted fit-outs, and service calls across Sydney growth corridors.', url: `${SITE}/blog/best-eftpos-hvac-sydney-2026`, datePublished: '2026-04-06', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, image: { '@type': 'ImageObject', url: `https://images.unsplash.com/${IMG}?w=1200&h=630&fit=crop&crop=center&q=80`, width: 1200, height: 630 } },
+  { '@context': 'https://schema.org', '@type': 'Article', headline: 'Best EFTPOS for HVAC in Sydney (2026)', description: 'Best EFTPOS for Sydney HVAC technicians — residential split-system installs, commercial ducted fit-outs, and service calls across Sydney growth corridors.', url: `${SITE}/blog/best-eftpos-hvac-sydney-2026`, datePublished: '2026-04-06', dateModified: siteMeta.lastVerified, author: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE }, image: { '@type': 'ImageObject', url: blogOgUrl('best-eftpos-hvac-sydney-2026'), width: 1200, height: 630 } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [ { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` }, { '@type': 'ListItem', position: 3, name: 'Best EFTPOS for HVAC in Sydney (2026)', item: `${SITE}/blog/best-eftpos-hvac-sydney-2026` } ] },
   { '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'TradiePay AU — EFTPOS Guides for Sydney HVAC Technicians', description: 'Best EFTPOS terminal for HVAC technicians across Sydney.', url: `${SITE}/blog/best-eftpos-hvac-sydney-2026`, areaServed: [ { '@type': 'City', name: 'Sydney' }, { '@type': 'AdministrativeArea', name: 'New South Wales' } ] },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -28,7 +28,7 @@ export default function BestEftposHVACSydney() {
       <Meta title="Best EFTPOS for HVAC in Sydney (2026)" description="Best EFTPOS for Sydney HVAC technicians — residential split-system installs, commercial ducted fit-outs, and service calls across Sydney growth corridors." canonical="/blog/best-eftpos-hvac-sydney-2026" ogType="article" geoRegion="AU-NSW" geoPlacename="Sydney, New South Wales" jsonLd={jsonLd} />
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <img src={`https://images.unsplash.com/${IMG}?w=900&h=560&fit=crop&crop=center&q=80`} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
+          <img src={blogHeroUrl('best-eftpos-hvac-sydney-2026')} alt="" fetchPriority="high" className="w-full h-full object-cover" onError={e => { e.currentTarget.style.opacity = '0' }} />
           <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/93 via-brand-dark/80 to-slate-900/70" />
         </div>
         <div className="container-page relative z-10">

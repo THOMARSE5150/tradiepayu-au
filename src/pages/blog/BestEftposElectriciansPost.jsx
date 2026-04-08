@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -62,7 +63,7 @@ const jsonLd = [
     description: 'Electricians work in switchboard rooms, roof voids, and new estates without WiFi. Here is the best EFTPOS terminal setup for Australian electricians in 2026.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('best-eftpos-electricians-australia-2026'),
       width: 1200,
       height: 630,
     },
@@ -100,14 +101,14 @@ export default function BestEftposElectriciansPost() {
         description="Electricians work in switchboard rooms, roof voids, and new estates without WiFi. Here is the best EFTPOS terminal setup for Australian electricians in 2026."
         canonical="/blog/best-eftpos-electricians-australia-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('best-eftpos-electricians-australia-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('best-eftpos-electricians-australia-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"

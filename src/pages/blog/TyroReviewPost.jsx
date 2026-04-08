@@ -7,6 +7,7 @@ import ComparisonTable from '../../components/ComparisonTable'
 import RelatedLinks from '../../components/RelatedLinks'
 
 import siteMeta from '../../data/site-meta.json'
+import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -71,7 +72,7 @@ const jsonLd = [
     description: 'Independent review of Tyro EFTPOS for Australian tradies. Quote-based pricing, built-in SIM, same-day settlement, strong trade software integrations. Best for high-volume operators — not for small businesses.',
     image: {
       '@type': 'ImageObject',
-      url: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&crop=center&q=80',
+      url: blogOgUrl('tyro-eftpos-review-2026'),
       width: 1200,
       height: 630,
     },
@@ -117,14 +118,14 @@ export default function TyroReviewPost() {
         description="Independent review of Tyro EFTPOS for Australian tradies. Quote-based pricing, built-in SIM, same-day settlement, strong trade software integrations. Best for high-volume operators — not for small businesses."
         canonical="/blog/tyro-eftpos-review-2026"
         ogType="article"
-        ogImage="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=630&fit=crop&crop=center&q=80"
+        ogImage={blogOgUrl('tyro-eftpos-review-2026')}
         jsonLd={jsonLd}
       />
 
       <header className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900&h=560&fit=crop&crop=center&q=80"
+            src={blogHeroUrl('tyro-eftpos-review-2026')}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"
