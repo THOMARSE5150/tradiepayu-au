@@ -114,7 +114,14 @@ function resolveOgImage(canonical, ogImageOverride) {
     const parts = canonical.split('/').filter(Boolean)
     const tradeSlug = parts[1]
     const trade = tradeSlug ? TRADE_MAP[tradeSlug] : null
-    if (trade) return `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`
+    if (trade) {
+      // Local asset: use dedicated OG variant if present, else the hero asset directly
+      if (trade.heroImage?.startsWith('/')) {
+        const ogPath = trade.heroImage.replace(/(-hero)(\.\w+)$/, '-og$2')
+        return `${SITE_URL}${ogPath}`
+      }
+      return `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`
+    }
     return `${SITE_URL}/og-trade.svg`
   }
 

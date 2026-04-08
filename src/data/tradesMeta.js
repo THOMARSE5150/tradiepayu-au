@@ -119,7 +119,7 @@ export const TRADES_META = [
   {
     slug: 'glaziers',
     label: 'Glaziers',
-    heroImage: '/images/trades/glaziers-hero.png',
+    heroImage: '/images/trades/glaziers-hero.jpg',
     heroAlt: 'Glazier installing reflective glass facade panels with suction cups on a commercial building in Australia',
     heroSub: 'Dead zones, emergency call-outs, and property manager billing. Here\'s the payment setup that works for glazing.',
     pick: 'Zeller Terminal 1 + SIM',

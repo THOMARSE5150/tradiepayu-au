@@ -10,6 +10,7 @@
  *   <img src={tradeHeroUrl('electricians')} alt={tradeHeroAlt('electricians')} />
  */
 import { TRADE_MAP } from '../data/tradesMeta'
+import { SITE_URL } from '../constants/brand'
 
 const HERO_PARAMS   = 'w=900&h=560&fit=crop&crop=center&q=80'
 const OG_PARAMS     = 'w=1200&h=630&fit=crop&crop=center&q=80'
@@ -24,12 +25,15 @@ export function tradeHeroUrl(slug) {
   return `https://images.unsplash.com/${photoId}?${HERO_PARAMS}`
 }
 
-/** Full URL for 1200×630 OG / JSON-LD Article images.
- *  If heroImage starts with '/' it is a local public asset. */
+/** Absolute URL for 1200×630 OG / JSON-LD Article images.
+ *  Local assets use a dedicated -og variant; Unsplash assets use CDN params. */
 export function tradeOgUrl(slug) {
   const photoId = TRADE_MAP[slug]?.heroImage
   if (!photoId) return BRANDED_FALLBACK
-  if (photoId.startsWith('/')) return photoId
+  if (photoId.startsWith('/')) {
+    const ogPath = photoId.replace(/(-hero)(\.\w+)$/, '-og$2')
+    return `${SITE_URL}${ogPath}`
+  }
   return `https://images.unsplash.com/${photoId}?${OG_PARAMS}`
 }
 
