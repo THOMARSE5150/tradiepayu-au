@@ -2,7 +2,7 @@ export const TRADES_META = [
   {
     slug: 'electricians',
     label: 'Electricians',
-    heroImage: 'photo-1621905252507-b35492cc74b4',
+    heroImage: '/images/trades/electricians-hero.jpg',
     heroAlt: 'Electrician working in a commercial switchboard room',
     heroSub: 'Switchboards, plant rooms, and dead zones. The payment setup for electricians who need connectivity where there isn\'t any.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -15,7 +15,7 @@ export const TRADES_META = [
   {
     slug: 'plumbers',
     label: 'Plumbers',
-    heroImage: 'photo-1607472586893-edb57bdc0e39',
+    heroImage: '/images/trades/plumbers-hero.jpg',
     heroAlt: 'Plumber working on pipes at a residential job site',
     heroSub: 'After-hours emergencies, underground work, and same-day parts. Here\'s the payment setup for plumbing businesses.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -28,7 +28,7 @@ export const TRADES_META = [
   {
     slug: 'builders',
     label: 'Builders',
-    heroImage: 'photo-1504307651254-35680f356dfd',
+    heroImage: '/images/trades/builders-hero.jpg',
     heroAlt: 'Builder on a residential construction site with timber framing',
     heroSub: 'Progress payments, new estate sites, and subcontractor cash flow. The payment setup for building businesses.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -67,7 +67,7 @@ export const TRADES_META = [
   {
     slug: 'roofers',
     label: 'Roofers',
-    heroImage: 'photo-1570129477492-45c003edd2be',
+    heroImage: '/images/trades/roofers-hero.jpg',
     heroAlt: 'Roofer installing roofing sheets on a residential property',
     heroSub: 'Large job values, insurance claims, and no WiFi on new estates. Here\'s the payment setup that works for roofing.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -106,7 +106,7 @@ export const TRADES_META = [
   {
     slug: 'painters',
     label: 'Painters',
-    heroImage: 'photo-1562259929-b4e1fd3aef09',
+    heroImage: '/images/trades/painters-hero.jpg',
     heroAlt: 'Painter applying exterior paint to a residential home',
     heroSub: 'Empty houses, deposit collection, and body corporate billing. Here\'s the payment setup that works for painting businesses.',
     pick: 'Zeller Terminal 1 + SIM',

@@ -108,14 +108,16 @@ ${shapePrompt(userPrompt)}
 //      {"contents":[{"parts":[{"text":prompt}]}],"generationConfig":{"responseModalities":["IMAGE"]}}
 //      response: candidates[0].content.parts[0].inlineData.data (base64)
 // ══════════════════════════════════════════════════════════════════════════════
-async function fetchImageBuffer(prompt) {  // eslint-disable-line no-unused-vars
-  throw new Error(
-    'No image provider configured.\n\n' +
-    'Open scripts/generate-trade-image.mjs and implement fetchImageBuffer().\n' +
-    'See the PROVIDER ADAPTER comment block for options and their current status.\n\n' +
-    'Dry-run still works without a provider:\n' +
-    '  npm run generate:trade-image -- --slug <slug> --prompt "..." --dry-run=true'
-  )
+async function fetchImageBuffer(prompt) {
+  // Pollinations.ai — free, no auth required, FLUX model
+  const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1344&height=768&model=flux&nologo=true&seed=${Date.now() % 99999}`
+  console.log(`  Generating via Pollinations.ai…`)
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`Pollinations returned ${res.status}`)
+  const ct = res.headers.get('content-type') ?? ''
+  if (!ct.startsWith('image/')) throw new Error(`Unexpected content-type: ${ct}`)
+  const ab = await res.arrayBuffer()
+  return Buffer.from(ab)
 }
 
 // ── Call provider ─────────────────────────────────────────────────────────────
