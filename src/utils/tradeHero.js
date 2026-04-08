@@ -15,17 +15,21 @@ const HERO_PARAMS   = 'w=900&h=560&fit=crop&crop=center&q=80'
 const OG_PARAMS     = 'w=1200&h=630&fit=crop&crop=center&q=80'
 const BRANDED_FALLBACK = '/og-trade.svg'
 
-/** Full Unsplash URL for the 900×560 page hero <img>. */
+/** Full URL for the 900×560 page hero <img>.
+ *  If heroImage starts with '/' it is a local public asset (no Unsplash params). */
 export function tradeHeroUrl(slug) {
   const photoId = TRADE_MAP[slug]?.heroImage
   if (!photoId) return BRANDED_FALLBACK
+  if (photoId.startsWith('/')) return photoId
   return `https://images.unsplash.com/${photoId}?${HERO_PARAMS}`
 }
 
-/** Full Unsplash URL for 1200×630 OG / JSON-LD Article images. */
+/** Full URL for 1200×630 OG / JSON-LD Article images.
+ *  If heroImage starts with '/' it is a local public asset. */
 export function tradeOgUrl(slug) {
   const photoId = TRADE_MAP[slug]?.heroImage
   if (!photoId) return BRANDED_FALLBACK
+  if (photoId.startsWith('/')) return photoId
   return `https://images.unsplash.com/${photoId}?${OG_PARAMS}`
 }
 
