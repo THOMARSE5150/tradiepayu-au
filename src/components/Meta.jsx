@@ -136,7 +136,13 @@ function resolveOgImage(canonical, ogImageOverride) {
   if (canonical.startsWith('/blog/')) {
     const slug = canonical.split('/')[2]
     const photo = slug ? BLOG_HERO[slug] : null
-    if (photo) return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
+    if (photo) {
+      if (photo.startsWith('/')) {
+        const ogPath = photo.replace(/(-hero)(\.\w+)$/, '-og$2')
+        return `${SITE_URL}${ogPath}`
+      }
+      return `https://images.unsplash.com/${photo}?w=1200&h=630&fit=crop&crop=center&q=80`
+    }
     return DEFAULT_OG_IMAGE
   }
 
