@@ -41,7 +41,7 @@ export const TRADES_META = [
   {
     slug: 'carpenters',
     label: 'Carpenters',
-    heroImage: 'photo-1504328345606-18bbc8c9d7d1',
+    heroImage: '/images/trades/carpenters-hero.jpg',
     heroAlt: 'Carpenter measuring and cutting timber on a new build site',
     heroSub: 'No WiFi on new build sites, builder invoicing, and deposits on custom joinery. Here\'s the payment setup that works for carpenters.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -54,7 +54,7 @@ export const TRADES_META = [
   {
     slug: 'concreters',
     label: 'Concreters',
-    heroImage: 'photo-1504917595217-d4dc5ebe6122',
+    heroImage: '/images/trades/concreters-hero.jpg',
     heroAlt: 'Concreter smoothing freshly poured concrete on a residential slab',
     heroSub: 'No WiFi on new estate sites, large deposits before the pour, and same-day cash flow for materials. Here\'s what works.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -132,7 +132,7 @@ export const TRADES_META = [
   {
     slug: 'fencers',
     label: 'Fencers',
-    heroImage: 'photo-1589939705384-5185137a7f0f',
+    heroImage: '/images/trades/fencers-hero.jpg',
     heroAlt: 'Fencer installing Colorbond steel fencing on a rural property',
     heroSub: 'No signal on rural properties, large Colorbond deposits, and collecting from absent landowners. Here\'s the payment setup that works for fencers.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -158,7 +158,7 @@ export const TRADES_META = [
   {
     slug: 'pool-builders',
     label: 'Pool Builders',
-    heroImage: 'photo-1572168696553-9e5f8a06dbfa',
+    heroImage: '/images/trades/pool-builders-hero.jpg',
     heroAlt: 'Pool builder constructing a concrete swimming pool on a new estate',
     heroSub: '$30k–$100k+ jobs with five payment stages, remote new estate sites, and council hold-points. Here\'s the payment setup that works for pool builders.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -210,7 +210,7 @@ export const TRADES_META = [
   {
     slug: 'hvac',
     label: 'HVAC',
-    heroImage: 'photo-1621905251189-08b45d6a269e',
+    heroImage: '/images/trades/hvac-hero.jpg',
     heroAlt: 'HVAC technician servicing a commercial air conditioning unit on a rooftop',
     heroSub: 'After-hours emergencies, commercial rooftop dead zones, and warranty billing. Here\'s the payment setup that works for HVAC and refrigeration.',
     pick: 'Zeller Terminal 1 + SIM',
