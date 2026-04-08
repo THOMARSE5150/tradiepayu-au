@@ -1,17 +1,21 @@
 # Trade Image Generation
 
-Generates production-ready trade hero and OG images via Gemini Imagen 3.
+Generates production-ready trade hero and OG images via **Together AI FLUX.1-schnell-Free** (free tier, no billing required).
 
 ## Required environment variable
 
 ```
-GEMINI_API_KEY=your_key_here
+TOGETHER_API_KEY=your_key_here
 ```
 
-Set it in your shell session or a local `.env` file (**never commit this file**):
+Get a free key at https://api.together.xyz (sign up, no credit card required for free tier).
+
+Set it in your shell or prepend to the command:
 
 ```bash
-export GEMINI_API_KEY=your_key_here
+export TOGETHER_API_KEY=your_key_here
+# or per-command:
+TOGETHER_API_KEY=your_key npm run generate:trade-image -- ...
 ```
 
 ## Command
