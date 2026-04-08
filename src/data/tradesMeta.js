@@ -119,8 +119,8 @@ export const TRADES_META = [
   {
     slug: 'glaziers',
     label: 'Glaziers',
-    heroImage: 'photo-1558618666-fcd25c85cd64',
-    heroAlt: 'Glazier fitting a large glass pane into a window frame on a building site',
+    heroImage: 'photo-1617617558346-d157b6ae0aeb',
+    heroAlt: 'Glaziers on scaffolding installing reflective glass curtain wall panels on a commercial building',
     heroSub: 'Dead zones, emergency call-outs, and property manager billing. Here\'s the payment setup that works for glazing.',
     pick: 'Zeller Terminal 1 + SIM',
     rate: '1.4%',
