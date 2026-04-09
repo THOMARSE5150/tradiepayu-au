@@ -80,7 +80,7 @@ export const TRADES_META = [
   {
     slug: 'plasterers',
     label: 'Plasterers',
-    heroImage: 'photo-1541888946425-d81bb19240f5',
+    heroImage: '/images/trades/plasterers-hero.jpg',
     heroAlt: 'Plasterer applying plasterboard compound on a new build interior',
     heroSub: 'No WiFi on new builds, staged billing by coat, and same-day cash flow for materials. Here\'s the payment setup that works for plasterers.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -93,8 +93,8 @@ export const TRADES_META = [
   {
     slug: 'tilers',
     label: 'Tilers',
-    heroImage: 'photo-1584622650111-993a426fbf0a',
-    heroAlt: 'Tiler laying large format floor tiles in a residential bathroom renovation',
+    heroImage: '/images/trades/tilers-hero.jpg',
+    heroAlt: 'Tiler laying large format floor tiles in a bathroom renovation, levelling board and tile spacers visible',
     heroSub: 'Bathroom renos without WiFi, tile deposits, and developer billing. Here\'s the payment setup that works for tiling.',
     pick: 'Zeller Terminal 1 + SIM',
     rate: '1.4%',
@@ -145,8 +145,8 @@ export const TRADES_META = [
   {
     slug: 'landscapers',
     label: 'Landscapers',
-    heroImage: 'photo-1416879595882-3373a0480b5b',
-    heroAlt: 'Landscaper working on a garden and lawn project at a residential property',
+    heroImage: '/images/trades/landscapers-hero.jpg',
+    heroAlt: 'Landscaper laying turf rolls at a residential property, prepared soil and paved edging visible',
     heroSub: 'Outdoor sites, variable job values, deposit-on-booking models. Here\'s the payment setup that works for landscaping and garden services.',
     pick: 'Zeller Terminal 1 + SIM',
     rate: '1.4%',
@@ -171,8 +171,8 @@ export const TRADES_META = [
   {
     slug: 'cleaners',
     label: 'Cleaners',
-    heroImage: 'photo-1581578731548-c64695cc6952',
-    heroAlt: 'Cleaner working on a commercial office cleaning job',
+    heroImage: '/images/trades/cleaners-hero.jpg',
+    heroAlt: 'Professional domestic cleaner wiping down a timber sideboard in a modern Australian home interior, cleaning cart and vacuum visible',
     heroSub: 'High-frequency, lower-value jobs with recurring clients. The right setup minimises fees across volume and makes regular clients frictionless.',
     pick: 'Zeller Tap to Pay',
     rate: '1.4%',
@@ -184,8 +184,8 @@ export const TRADES_META = [
   {
     slug: 'pest-controllers',
     label: 'Pest Controllers',
-    heroImage: 'photo-1628177142898-93e36e4e3a50',
-    heroAlt: 'Pest controller treating a residential property for termites',
+    heroImage: '/images/trades/pest-controllers-hero.jpg',
+    heroAlt: 'Pest control technicians in full PPE suits with backpack chemical sprayers treating the exterior perimeter of a residential property',
     heroSub: '50+ jobs a week, conveyancer billing for inspection reports, recurring treatment plans, and body corporate accounts. Here\'s the payment setup that works for pest controllers.',
     pick: 'Zeller Terminal 1 + SIM',
     rate: '1.4%',
@@ -197,7 +197,7 @@ export const TRADES_META = [
   {
     slug: 'gas-fitters',
     label: 'Gas Fitters',
-    heroImage: 'photo-1609205807107-b6cf6be5b6c9',
+    heroImage: '/images/trades/gas-fitters-hero.jpg',
     heroAlt: 'Gas fitter working on a gas line installation at a residential property',
     heroSub: 'Underground dead zones, 2am emergency call-outs, and dual billing on gas connections. Here\'s the payment setup that works for gas fitters.',
     pick: 'Zeller Terminal 1 + SIM',
@@ -223,8 +223,8 @@ export const TRADES_META = [
   {
     slug: 'welders',
     label: 'Welders',
-    heroImage: 'photo-1585771724684-38269d6639fd',
-    heroAlt: 'Welder working on structural metalwork at a construction site',
+    heroImage: '/images/trades/welders-hero.jpg',
+    heroAlt: 'Welder with face shield welding structural steel at a commercial fabrication workshop, bright arc sparks visible',
     heroSub: 'Commercial fabrication on 30-day terms, structural welding on construction sites, steel stock deposits, and compliance certificate billing. Here\'s the payment setup that works for welders.',
     pick: 'Zeller Terminal 1 + SIM',
     rate: '1.4%',
