@@ -333,7 +333,7 @@ export default function GlaziersPage() {
         </div>
       </section>
 
-      {/* ── Trust Section ──────────────────────────────── */}
+      {/* ── Trust / Proof Section ──────────────────────── */}
       <section className="section bg-white">
         <div className="container-page">
           <motion.div
@@ -343,7 +343,14 @@ export default function GlaziersPage() {
             transition={{ duration: 0.4 }}
             className="max-w-2xl"
           >
-            <h2 className="text-xl font-bold text-brand-dark mb-4">What Matters Most for Glaziers</h2>
+            <h2 className="text-xl font-bold text-brand-dark mb-4">Why This Setup Works in the Real World</h2>
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 mb-4">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2">Example glazing workflow</p>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                For glazing businesses doing emergency callouts, residential installs, or commercial/shopfront work, the main friction is always the same: getting paid fast, on-site, without relying on invoices. A terminal + SIM setup and payment-link fallback solves that cleanly.
+              </p>
+              <p className="text-[10px] text-slate-400 mt-3">Operational example based on real glazing workflow.</p>
+            </div>
             <ul className="space-y-2 mb-4">
               {[
                 'Same-day or next-business-day payouts',
@@ -355,7 +362,7 @@ export default function GlaziersPage() {
                 </li>
               ))}
             </ul>
-            <p className="text-sm text-slate-600 font-medium">For most glaziers, the best setup is the one that gets you paid before you leave the job.</p>
+            <p className="text-xs text-slate-500">Built around real glazing payment workflows.</p>
           </motion.div>
         </div>
       </section>
