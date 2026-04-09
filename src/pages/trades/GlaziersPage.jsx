@@ -158,8 +158,8 @@ export default function GlaziersPage() {
                 ))}
               </ul>
               <p className="text-xs font-semibold text-brand-dark mb-3 pt-3 border-t border-slate-200">Best option: Zeller Terminal + SIM</p>
-              <AffiliateButton providerId="zeller" label="job-type-cta" campaign="glaziers-emergency" intent="signup" className="btn-primary block text-center text-sm">
-                Get Set Up →
+              <AffiliateButton providerId="zeller" label="job-type-cta" campaign="glaziers-emergency" intent="signup" className="btn-tertiary block text-center text-sm">
+                Full review →
               </AffiliateButton>
             </motion.div>
 
@@ -216,7 +216,7 @@ export default function GlaziersPage() {
               <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-1">Best Overall for Glaziers</p>
               <p className="text-lg font-bold text-brand-dark mb-2">Zeller Terminal + SIM</p>
               <ul className="flex flex-wrap gap-x-5 gap-y-1">
-                {['Works anywhere (SIM connectivity)', 'Fastest payouts', 'Lowest friction for on-site jobs'].map(b => (
+                {['Works on-site (SIM connectivity)', 'Fast payouts', 'Low friction for callouts and commercial jobs'].map(b => (
                   <li key={b} className="flex items-center gap-1.5 text-sm text-slate-600">
                     <span className="text-green-500 font-bold text-xs">✔</span>{b}
                   </li>
@@ -333,28 +333,30 @@ export default function GlaziersPage() {
         </div>
       </section>
 
-      {/* ── Testimonial ────────────────────────────────── */}
+      {/* ── Trust Section ──────────────────────────────── */}
       <section className="section bg-white">
         <div className="container-page">
-          <motion.blockquote
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="relative bg-slate-50 border border-slate-200 rounded-2xl px-6 py-5 max-w-2xl"
+            className="max-w-2xl"
           >
-            <svg className="absolute top-4 left-5 w-6 h-6 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <p className="text-slate-700 text-sm leading-relaxed pl-6 mb-4">
-              "Had a shopfront emergency in Parramatta at 11pm — smashed glass, alarm going. Got there, secured the opening, re-glazed the next morning. Sent the property manager a Zeller payment link before I left the site. Money was in my account by lunchtime. That invoice used to take 30 days to get paid."
-            </p>
-            <footer className="flex items-center gap-3 pl-6">
-              <div className="w-8 h-8 rounded-full bg-brand-dark text-white text-xs font-bold flex items-center justify-center flex-shrink-0">MT</div>
-              <div>
-                <p className="text-sm font-semibold text-brand-dark">Marcus T.</p>
-                <p className="text-xs text-slate-500">Glazier · Western Sydney</p>
-              </div>
-            </footer>
-          </motion.blockquote>
+            <h2 className="text-xl font-bold text-brand-dark mb-4">What Matters Most for Glaziers</h2>
+            <ul className="space-y-2 mb-4">
+              {[
+                'Same-day or next-business-day payouts',
+                'On-site payment options (terminal, Tap to Pay, SIM)',
+                'Simple setup with ABN — no bank paperwork',
+              ].map(b => (
+                <li key={b} className="flex items-start gap-2 text-sm text-slate-700">
+                  <span className="text-green-500 font-bold text-xs mt-1">✔</span>{b}
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm text-slate-600 font-medium">For most glaziers, the best setup is the one that gets you paid before you leave the job.</p>
+          </motion.div>
         </div>
       </section>
 
@@ -461,7 +463,7 @@ export default function GlaziersPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <AffiliateButton providerId="zeller" label="final-cta" campaign="glaziers-final" intent="signup" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors">
-                Get the Right EFTPOS Setup →
+                Compare the Best Options →
               </AffiliateButton>
               <Link to="/compare/zeller-vs-square" className="text-white/60 text-sm hover:text-white transition-colors">
                 Or see full comparison →
@@ -559,7 +561,7 @@ export default function GlaziersPage() {
       {/* ── Mobile Sticky CTA ─────────────────────────── */}
       <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-brand-dark/95 backdrop-blur-sm border-t border-white/10 px-4 py-3">
         <AffiliateButton providerId="zeller" label="sticky-cta" campaign="glaziers-sticky" intent="signup" className="btn-primary block text-center text-sm w-full">
-          Get the Right EFTPOS Setup →
+          Compare the Best Options →
         </AffiliateButton>
       </div>
       <div className="h-16 sm:hidden" aria-hidden="true" />
