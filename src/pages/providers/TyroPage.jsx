@@ -74,6 +74,7 @@ export default function TyroPage() {
         ]}
         signupLabel="Apply for Tyro →"
         signupIntent="signup"
+        signupTrust="ABN required · APRA-regulated bank · Volume rates available"
         lastVerifiedDisplay={lastVerifiedDisplay}
         navItems={[
           { href: '#fees', label: 'Fees' },

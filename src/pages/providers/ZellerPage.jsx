@@ -77,6 +77,8 @@ export default function ZellerPage() {
         ]}
         signupLabel="Get Zeller →"
         signupIntent="signup"
+        signupTrust="ABN required · No lock-in · Typically approved within 24 hrs"
+        socialProof="100,000+ Australian businesses"
         lastVerifiedDisplay={lastVerifiedDisplay}
         navItems={[
           { href: '#fees', label: 'Fees' },
@@ -374,6 +376,11 @@ export default function ZellerPage() {
             <div className="flex-1">
               <h2 className="text-xl font-bold text-white mb-1">Ready to get started with Zeller?</h2>
               <p className="text-slate-400 text-sm">Apply online with your ABN — approval typically within 24 hours.</p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
+                {['No monthly fee', 'No lock-in contract', '1.4% in-person rate'].map(t => (
+                  <span key={t} className="text-xs text-slate-500">✓ {t}</span>
+                ))}
+              </div>
             </div>
             <AffiliateButton providerId="zeller" label="page-cta" intent="signup" className="btn-primary flex-shrink-0">
               Create Zeller account →

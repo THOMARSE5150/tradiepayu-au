@@ -196,17 +196,20 @@ export default function Home() {
 
             {/* CTA row */}
             <div className="flex flex-wrap items-center gap-3 mt-5">
-              <Link
-                to="/compare"
+              <AffiliateButton
+                providerId="zeller"
+                label="hero-primary"
+                campaign="homepage-hero"
+                intent="signup"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
               >
-                Compare Providers →
-              </Link>
+                Get Zeller — 1.4% rate →
+              </AffiliateButton>
               <Link
-                to="/providers/zeller"
+                to="/compare"
                 className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
               >
-                See Top Pick (Zeller) →
+                Compare all providers →
               </Link>
             </div>
 
@@ -234,6 +237,20 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* ── Social proof micro-bar ── */}
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 pb-1">
+          {[
+            { value: '100,000+', label: 'AU businesses using Zeller' },
+            { value: 'Apr 2026', label: 'Last verified' },
+            { value: 'Independent', label: 'Editorially independent' },
+          ].map(s => (
+            <div key={s.label} className="flex items-center gap-2">
+              <span className="text-white text-sm font-bold">{s.value}</span>
+              <span className="text-white/40 text-xs">{s.label}</span>
+            </div>
+          ))}
         </div>
 
         {/* ── Trust strip marquee ── */}
@@ -350,11 +367,20 @@ export default function Home() {
                   <p className="text-xs text-slate-500 leading-relaxed mb-3">{s.body}</p>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xs font-semibold text-slate-500">Best pick:</span>
-                    <Link
-                      to={`/providers/${s.pickId}`}
+                    <AffiliateButton
+                      providerId={s.pickId}
+                      label={`usecase-${s.pickId}`}
+                      campaign="homepage-usecase"
+                      intent="signup"
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-blue text-white text-xs font-semibold rounded-xl hover:bg-blue-600 transition-colors"
                     >
-                      {s.pick} details →
+                      Get {s.pick} →
+                    </AffiliateButton>
+                    <Link
+                      to={`/providers/${s.pickId}`}
+                      className="text-xs text-slate-400 hover:text-brand-blue transition-colors"
+                    >
+                      Review ↗
                     </Link>
                     <span className="text-[11px] text-slate-400 hidden sm:inline">{s.why}</span>
                   </div>
@@ -379,22 +405,25 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col sm:items-end gap-2.5 flex-shrink-0">
-              <Link
-                to="/providers/zeller"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors whitespace-nowrap"
+              <AffiliateButton
+                providerId="zeller"
+                label="midpage-cta"
+                campaign="homepage-mid"
+                intent="signup"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors whitespace-nowrap shadow-[0_6px_20px_rgba(0,106,255,0.30)]"
               >
-                Full Zeller review →
-              </Link>
+                Get Zeller →
+              </AffiliateButton>
               <div className="flex items-center gap-3 text-xs text-slate-500">
-                <AffiliateButton providerId="zeller" label="midpage-cta" campaign="homepage-mid" intent="signup" className="hover:text-slate-300 transition-colors">
-                  Visit Zeller ↗
-                </AffiliateButton>
+                <Link to="/providers/zeller" className="hover:text-slate-300 transition-colors">
+                  Full review
+                </Link>
                 <span>·</span>
                 <AffiliateButton providerId="square" label="midpage-alt-square" campaign="homepage-mid" intent="signup" className="hover:text-slate-300 transition-colors">
                   Square ↗
                 </AffiliateButton>
                 <span>·</span>
-                <Link to="/providers" className="hover:text-slate-300 transition-colors">Compare all</Link>
+                <Link to="/providers" className="hover:text-slate-300 transition-colors">All providers</Link>
               </div>
             </div>
           </div>

@@ -74,6 +74,8 @@ export default function StripePage() {
         ]}
         signupLabel="Get Stripe →"
         signupIntent="signup"
+        signupTrust="ABN required · Approval typically same day · No monthly fee"
+        socialProof="Trusted by millions of businesses globally"
         lastVerifiedDisplay={lastVerifiedDisplay}
         navItems={[
           { href: '#fees', label: 'Fees' },

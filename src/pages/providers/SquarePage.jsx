@@ -75,6 +75,8 @@ export default function SquarePage() {
         ]}
         signupLabel="Get Square →"
         signupIntent="signup"
+        signupTrust="ABN required · Fast approval · No lock-in"
+        socialProof="Millions of businesses globally"
         lastVerifiedDisplay={lastVerifiedDisplay}
         navItems={[
           { href: '#fees', label: 'Fees' },
