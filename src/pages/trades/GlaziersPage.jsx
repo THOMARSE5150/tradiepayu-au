@@ -159,7 +159,7 @@ export default function GlaziersPage() {
               </ul>
               <p className="text-xs font-semibold text-brand-dark mb-3 pt-3 border-t border-slate-200">Best option: Zeller Terminal + SIM</p>
               <AffiliateButton providerId="zeller" label="job-type-cta" campaign="glaziers-emergency" intent="signup" className="btn-tertiary block text-center text-sm">
-                Full review →
+                View Best Setup →
               </AffiliateButton>
             </motion.div>
 
@@ -180,7 +180,7 @@ export default function GlaziersPage() {
               </ul>
               <p className="text-xs font-semibold text-brand-dark mb-3 pt-3 border-t border-slate-200">Best option: Zeller Terminal</p>
               <AffiliateButton providerId="zeller" label="job-type-cta" campaign="glaziers-commercial" intent="signup" className="btn-tertiary block text-center text-sm">
-                View Option →
+                View Best Option →
               </AffiliateButton>
             </motion.div>
 
@@ -296,7 +296,7 @@ export default function GlaziersPage() {
                 ))}
               </div>
               <AffiliateButton providerId="square" label="page-cta" campaign="glaziers-picks" intent="signup" className="btn-tertiary block text-center text-sm mb-2">
-                Get Square →
+                Try Square →
               </AffiliateButton>
               <Link to="/providers/square" className="block text-center text-xs text-slate-500 hover:text-brand-blue transition-colors">Full review →</Link>
             </motion.div>
