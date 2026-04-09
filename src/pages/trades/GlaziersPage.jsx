@@ -92,7 +92,7 @@ export default function GlaziersPage() {
               See Pricing & Fees
             </a>
           </div>
-          <p className="mt-3 text-xs text-white/40">No lock-in contracts. No BS. Just what actually works for glaziers.</p>
+          <p className="mt-3 text-xs text-white/50">Most glaziers are set up and taking payments the same day. No lock-in contracts.</p>
         </div>
       </header>
 
@@ -140,50 +140,92 @@ export default function GlaziersPage() {
           >
             Choose the Right EFTPOS Setup for Your Glazing Work
           </motion.h2>
-          <p className="text-sm text-slate-500 mb-6">Different glazing jobs need different setups — pick what matches your work.</p>
+          <p className="text-sm text-slate-500 mb-6">Pick the setup that matches your work.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {[
-              {
-                icon: '🚨',
-                title: 'Emergency Callouts',
-                body: 'No hardware to carry. Zeller Tap to Pay on your phone — 1.4%, same-day settlement, works anywhere there\'s signal.',
-                cta: 'Get Zeller →',
-                providerId: 'zeller',
-                campaign: 'glaziers-emergency',
-              },
-              {
-                icon: '🏢',
-                title: 'Commercial / Shopfront Jobs',
-                body: 'Terminal + SIM for on-site collection, payment links for property manager billing. Both in one Zeller account.',
-                cta: 'Get Zeller →',
-                providerId: 'zeller',
-                campaign: 'glaziers-commercial',
-              },
-              {
-                icon: '🏠',
-                title: 'Residential Installs',
-                body: 'Zeller Terminal for day-to-day jobs. Add Square Terminal as backup for sites with building dead zones.',
-                cta: 'Compare Options →',
-                providerId: 'zeller',
-                campaign: 'glaziers-residential',
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: i * 0.07 }}
-                className="lg-light rounded-2xl p-5"
-              >
-                <div className="text-2xl mb-3">{card.icon}</div>
-                <h3 className="font-semibold text-brand-dark mb-2">{card.title}</h3>
-                <p className="text-sm text-slate-600 mb-4 leading-relaxed">{card.body}</p>
-                <AffiliateButton providerId={card.providerId} label="job-type-cta" campaign={card.campaign} intent="signup" className="btn-tertiary block text-center text-sm">
-                  {card.cta}
-                </AffiliateButton>
-              </motion.div>
-            ))}
+            {/* Card 1 — Emergency */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.35, delay: 0 }}
+              className="lg-light rounded-2xl p-5 flex flex-col"
+            >
+              <div className="text-2xl mb-3">🚨</div>
+              <h3 className="font-semibold text-brand-dark mb-3">Emergency Callouts</h3>
+              <ul className="space-y-1.5 mb-4 flex-1">
+                {['Get paid on-site immediately', 'No WiFi required', 'Ideal for urgent jobs'].map(b => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-brand-blue font-bold mt-0.5">✓</span>{b}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs font-semibold text-brand-dark mb-3 pt-3 border-t border-slate-200">Best option: Zeller Terminal + SIM</p>
+              <AffiliateButton providerId="zeller" label="job-type-cta" campaign="glaziers-emergency" intent="signup" className="btn-primary block text-center text-sm">
+                Get Set Up →
+              </AffiliateButton>
+            </motion.div>
+
+            {/* Card 2 — Commercial */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.35, delay: 0.07 }}
+              className="lg-light rounded-2xl p-5 flex flex-col"
+            >
+              <div className="text-2xl mb-3">🏢</div>
+              <h3 className="font-semibold text-brand-dark mb-3">Commercial / Shopfront Jobs</h3>
+              <ul className="space-y-1.5 mb-4 flex-1">
+                {['Reliable payments for larger invoices', 'Fast settlement', 'Works across sites'].map(b => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-brand-blue font-bold mt-0.5">✓</span>{b}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs font-semibold text-brand-dark mb-3 pt-3 border-t border-slate-200">Best option: Zeller Terminal</p>
+              <AffiliateButton providerId="zeller" label="job-type-cta" campaign="glaziers-commercial" intent="signup" className="btn-tertiary block text-center text-sm">
+                View Option →
+              </AffiliateButton>
+            </motion.div>
+
+            {/* Card 3 — Residential */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.35, delay: 0.14 }}
+              className="lg-light rounded-2xl p-5 flex flex-col"
+            >
+              <div className="text-2xl mb-3">🏠</div>
+              <h3 className="font-semibold text-brand-dark mb-3">Small Residential Jobs</h3>
+              <ul className="space-y-1.5 mb-4 flex-1">
+                {['Simple pricing', 'No ongoing costs', 'Easy setup'].map(b => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="text-brand-blue font-bold mt-0.5">✓</span>{b}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs font-semibold text-brand-dark mb-3 pt-3 border-t border-slate-200">Best option: Square Terminal</p>
+              <AffiliateButton providerId="square" label="job-type-cta" campaign="glaziers-residential" intent="signup" className="btn-tertiary block text-center text-sm">
+                Try Square →
+              </AffiliateButton>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Default Recommendation ──────────────────────── */}
+      <section className="bg-white border-y border-slate-100">
+        <div className="container-page py-6 sm:py-7">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 max-w-3xl">
+            <div className="flex-1">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-1">Best Overall for Glaziers</p>
+              <p className="text-lg font-bold text-brand-dark mb-2">Zeller Terminal + SIM</p>
+              <ul className="flex flex-wrap gap-x-5 gap-y-1">
+                {['Works anywhere (SIM connectivity)', 'Fastest payouts', 'Lowest friction for on-site jobs'].map(b => (
+                  <li key={b} className="flex items-center gap-1.5 text-sm text-slate-600">
+                    <span className="text-green-500 font-bold text-xs">✔</span>{b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <AffiliateButton providerId="zeller" label="default-rec-cta" campaign="glaziers-default-rec" intent="signup" className="btn-primary text-sm whitespace-nowrap flex-shrink-0">
+              Compare the Best Options →
+            </AffiliateButton>
           </div>
         </div>
       </section>
@@ -217,8 +259,8 @@ export default function GlaziersPage() {
                   <span className="badge badge-gold">Best for Glaziers</span>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mb-1 font-medium">Fast setup, clean UX — best all-round option.</p>
-              <p className="text-sm text-slate-500 mb-4">Same-day payouts straight to your account. Works across commercial and residential glazing jobs from day one.</p>
+              <p className="text-sm text-slate-600 mb-1 font-medium">The go-to for most Australian glaziers — fast, low-cost, reliable.</p>
+              <p className="text-sm text-slate-500 mb-4">Same-day payouts. Works on-site across commercial and residential jobs. Set up with just your ABN in minutes.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.4%'], ['Terminal', '$99'], ['SIM', 'Optional'], ['Settlement', 'Same day']].map(([l, v], i) => (
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
@@ -246,8 +288,8 @@ export default function GlaziersPage() {
                   <span className="badge badge-muted">Best for Dead Zones</span>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mb-1 font-medium">Simple pricing, great for smaller jobs.</p>
-              <p className="text-sm text-slate-500 mb-4">No monthly fees — only pay when you process a payment. Includes offline mode for building dead zones.</p>
+              <p className="text-sm text-slate-600 mb-1 font-medium">Best backup for dead zones — offline mode is the difference.</p>
+              <p className="text-sm text-slate-500 mb-4">No monthly fees. Pay only when you process. The only terminal that works in zero-signal basements and lift shafts.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.6%'], ['Terminal', '$329'], ['Offline', '✓ Yes'], ['Settlement', 'Next day']].map(([l, v], i) => (
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
@@ -275,8 +317,8 @@ export default function GlaziersPage() {
                   <span className="badge badge-muted">Works Anywhere</span>
                 </div>
               </div>
-              <p className="text-sm text-slate-600 mb-1 font-medium">No WiFi needed — ideal for emergency callouts.</p>
-              <p className="text-sm text-slate-500 mb-4">Built-in SIM keeps you connected at commercial sites, new estates, and anywhere the customer's WiFi isn't an option.</p>
+              <p className="text-sm text-slate-600 mb-1 font-medium">If you do callouts, this is your setup.</p>
+              <p className="text-sm text-slate-500 mb-4">Built-in SIM means no relying on customer WiFi. Works at commercial sites, new estates, and anywhere you get signal.</p>
               <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
                 {[['Rate', '1.4%'], ['Terminal', '$99'], ['SIM', '$15/mo'], ['Settlement', 'Same day']].map(([l, v], i) => (
                   <div key={i} className="lg-light rounded-lg p-2"><span className="block text-slate-500">{l}</span><span className="font-bold text-brand-dark">{v}</span></div>
