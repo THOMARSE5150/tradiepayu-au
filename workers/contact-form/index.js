@@ -14,9 +14,11 @@
  *
  * Required secrets (wrangler secret put <NAME>):
  *   RESEND_API_KEY
- *   TWILIO_ACCOUNT_SID
- *   TWILIO_AUTH_TOKEN
- *   TWILIO_FROM_NUMBER        e.g. +1415XXXXXXX (your Twilio number)
+ *   TELEGRAM_BOT_TOKEN        from @BotFather
+ *   TELEGRAM_CHAT_ID          your personal chat_id (send /start to bot, then getUpdates)
+ *   TWILIO_ACCOUNT_SID        (optional — SMS fallback)
+ *   TWILIO_AUTH_TOKEN         (optional — SMS fallback)
+ *   TWILIO_FROM_NUMBER        (optional — SMS fallback)
  *
  * Env vars — set in wrangler.toml [vars] or as secrets:
  *   CONTACT_OWNER_SMS    = "+61403803700"
@@ -79,6 +81,23 @@ async function sendSms(env, to, body) {
   if (!res.ok) {
     const err = await res.text()
     throw new Error(`Twilio SMS error ${res.status}: ${err}`)
+  }
+  return res.json()
+}
+
+// ── Telegram ─────────────────────────────────────────────────────────────────
+
+async function sendTelegram(env, text) {
+  const { TELEGRAM_BOT_TOKEN: token, TELEGRAM_CHAT_ID: chatId } = env
+  if (!token || !chatId) throw new Error('Telegram credentials not configured')
+  const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+  })
+  if (!res.ok) {
+    const err = await res.text()
+    throw new Error(`Telegram error ${res.status}: ${err}`)
   }
   return res.json()
 }
@@ -332,7 +351,20 @@ async function sendContactNotifications(env, { name, email, topic, message }) {
     console.log('[BEN-CONTACT] owner sms skipped — CONTACT_OWNER_SMS not set')
   }
 
-  // 4. Owner WhatsApp (optional — requires WHATSAPP_ENABLED=true + approved template)
+  // 4. Owner Telegram
+  if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
+    const tgText = `<b>[TradiePay Contact]</b>\n<b>Topic:</b> ${topicLabel}\n<b>From:</b> ${name} &lt;${email}&gt;\n<pre>${preview}</pre>`
+    try {
+      await sendTelegram(env, tgText)
+      console.log('[BEN-CONTACT] telegram sent')
+    } catch (err) {
+      console.error('[BEN-CONTACT] telegram failed:', err.message)
+    }
+  } else {
+    console.log('[BEN-CONTACT] telegram skipped — credentials not set')
+  }
+
+  // 6. Owner WhatsApp (optional — requires WHATSAPP_ENABLED=true + approved template)
   if (env.WHATSAPP_ENABLED === 'true') {
     if (env.WHATSAPP_TO) {
       const waBody = `[TradiePay Contact]\nTopic: ${topicLabel}\nFrom: ${name} <${email}>\n"${preview}"`
