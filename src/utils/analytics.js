@@ -20,37 +20,37 @@ function deriveComparison(path) {
   return m ? m[1].replace('-vs-', '_vs_') : undefined
 }
 
-// Map legacy label strings to structured location + label fields.
-// Keeps all call sites unchanged while enriching the event payload.
+// Map label strings to structured location + label fields.
 const LABEL_MAP = {
-  'compare-verdict':    { location: 'verdict',     label: 'primary'   },
-  'compare-bestfor':    { location: 'cta_bar',     label: 'primary'   },
-  'page-cta':           { location: 'cta_bar',     label: 'primary'   },
-  'section-nav':        { location: 'section_nav', label: 'primary'   },
-  'sticky-cta':         { location: 'sticky',      label: 'primary'   },
-  'sticky-bar':         { location: 'sticky',      label: 'primary'   },
-  'blog-verdict':       { location: 'blog_cta',    label: 'primary'   },
-  'hero-tertiary':      { location: 'hero',        label: 'secondary' },
-  'hero-fallback':      { location: 'hero',        label: 'secondary' },
-  'midpage-cta':        { location: 'cta_bar',     label: 'primary'   },
-  'midpage-alt-square': { location: 'cta_bar',     label: 'secondary' },
+  'hero-primary':     { location: 'hero',        label: 'primary'   },
+  'hero-cta':         { location: 'hero',        label: 'secondary' },
+  'hero-tertiary':    { location: 'hero',        label: 'secondary' },
+  'hero-fallback':    { location: 'hero',        label: 'secondary' },
+  'compare-verdict':  { location: 'verdict',     label: 'primary'   },
+  'compare-bestfor':  { location: 'cta_bar',     label: 'primary'   },
+  'page-cta':         { location: 'cta_bar',     label: 'primary'   },
+  'section-nav':      { location: 'section_nav', label: 'primary'   },
+  'sticky-cta':       { location: 'sticky',      label: 'primary'   },
+  'sticky-bar':       { location: 'sticky',      label: 'primary'   },
+  'blog-verdict':     { location: 'blog_cta',    label: 'primary'   },
+  'midpage-cta':      { location: 'cta_bar',     label: 'primary'   },
+  'midpage-alt-square': { location: 'cta_bar',   label: 'secondary' },
 }
 
-// ─── click_provider — single event for all provider intent signals ─────────────
+// ─── outbound_affiliate_click — all external provider signup/pricing links ────
 
 /**
- * Fire click_provider for every external provider link click.
+ * Fire outbound_affiliate_click for every external provider link click.
  *
  * Accepts the legacy (providerId, labelString) signature used by
  * AffiliateButton — no call-site changes required.
- * Also accepts (providerId, paramsObject) for future explicit callers.
+ * Also accepts (providerId, paramsObject) for explicit callers.
  *
  * GA4 parameters fired:
  *   provider      — "zeller" | "square" | "stripe" | "tyro" | "shift4"
  *   page_type     — "home" | "providers" | "compare" | "compare_detail" | "blog" | "other"
- *   location      — "verdict" | "cta_bar" | "hero" | "section_nav" | "sticky" | "blog_cta" | "card"
+ *   location      — "hero" | "verdict" | "cta_bar" | "section_nav" | "sticky" | "blog_cta"
  *   label         — "primary" | "secondary"
- *   destination   — "external_signup" (always for outbound clicks)
  *   comparison    — "zeller_vs_square" (only on compare detail pages)
  */
 export function trackOutbound(providerId, labelOrParams = 'cta') {
@@ -65,33 +65,80 @@ export function trackOutbound(providerId, labelOrParams = 'cta') {
   const comparison = deriveComparison(path)
 
   const event = {
-    provider:    providerId,
-    page_type:   params.pageType  ?? derivePageType(path),
-    location:    params.location  ?? mapped.location ?? 'unknown',
-    label:       params.label     ?? mapped.label    ?? 'primary',
-    destination: 'external_signup',
+    provider:  providerId,
+    page_type: params.pageType  ?? derivePageType(path),
+    location:  params.location  ?? mapped.location ?? 'unknown',
+    label:     params.label     ?? mapped.label    ?? 'primary',
   }
   if (comparison)  event.comparison = comparison
   if (params.slug) event.slug = params.slug
 
-  window.gtag('event', 'click_provider', event)
+  window.gtag('event', 'outbound_affiliate_click', event)
+}
+
+// ─── provider_card_click — internal navigation to a provider review page ──────
+
+/**
+ * Fire when a provider card or comparison table link navigates internally to
+ * a review page. Separate from outbound_affiliate_click so the full funnel
+ * (card_click → review page → affiliate_click) is visible in GA4.
+ *
+ * @param {string} providerId
+ * @param {string} location - 'card' | 'compare_table' | 'compare_table_header' | 'finder_result'
+ */
+export function trackProviderClick(providerId, location = 'card') {
+  gtag('event', 'provider_card_click', {
+    provider:  providerId,
+    page_type: derivePageType(window.location.pathname),
+    location,
+  })
+}
+
+// ─── compare_cta_click — clicks on links inside comparison tables ─────────────
+
+/**
+ * Fire when a user clicks a provider link inside a comparison table.
+ *
+ * @param {string} providerId
+ * @param {string} location - 'table_header' | 'table_cta_row' | 'comparison_table'
+ */
+export function trackCompareCta(providerId, location = 'comparison_table') {
+  gtag('event', 'compare_cta_click', {
+    provider:  providerId,
+    page_type: derivePageType(window.location.pathname),
+    location,
+  })
+}
+
+// ─── form events ──────────────────────────────────────────────────────────────
+
+/**
+ * Fire on first field focus in a form.
+ * @param {string} form_id - e.g. 'contact'
+ */
+export function trackFormStart(form_id) {
+  gtag('event', 'form_start', { form_id })
 }
 
 /**
- * Fire when a provider card CTA is clicked (internal navigation to review page).
- * Unified under click_provider so all provider intent is in one event.
- *
- * @param {string} providerId
- * @param {string} source - 'home', 'providers-index', etc.
+ * Fire on successful form submission.
+ * @param {string} form_id - e.g. 'contact' | 'blog_capture'
+ * @param {object} params  - optional additional params (e.g. { topic })
  */
-export function trackProviderClick(providerId, source = 'unknown') {
-  gtag('event', 'click_provider', {
-    provider:    providerId,
-    page_type:   derivePageType(window.location.pathname),
-    location:    'card',
-    label:       'primary',
-    destination: 'internal_review',
-    source,
+export function trackFormSubmit(form_id, params = {}) {
+  gtag('event', 'form_submit', { form_id, ...params })
+}
+
+// ─── finder_complete — ProviderFinder quiz result shown ───────────────────────
+
+/**
+ * Fire when the ProviderFinder quiz reaches a recommendation.
+ * @param {string} recommended_provider - e.g. 'zeller' | 'square'
+ */
+export function trackFinderComplete(recommended_provider) {
+  gtag('event', 'finder_complete', {
+    recommended_provider,
+    page_type: derivePageType(window.location.pathname),
   })
 }
 
@@ -110,10 +157,11 @@ export function trackCalculatorUsed({ monthly, avgTx, winner, winnerCost }) {
 }
 
 /**
- * Fire when a user submits the email capture form.
+ * Fire when a user submits the blog email capture form.
+ * Delegates to trackFormSubmit for consistency.
  */
 export function trackEmailCapture(source = 'unknown') {
-  gtag('event', 'email_capture', { source })
+  gtag('event', 'form_submit', { form_id: 'blog_capture', source })
 }
 
 /**

@@ -10,10 +10,6 @@ import ShareButton from './ShareButton'
  *   Desktop — white content card on the left, provider image panel on the right
  *   Mobile  — white card full-width, image stacked below
  *
- * The image panel uses a subtle 15% black overlay so the face and terminal
- * remain clearly visible. The surrounding dark hero background keeps
- * breadcrumb and jump-nav legible without any additional treatment.
- *
  * Props:
  *   providerId          string   — for AffiliateButton lookup
  *   heading             string   — h1 text (e.g. "Zeller for Tradies — Full Review")
@@ -25,6 +21,8 @@ import ShareButton from './ShareButton'
  *   keyStats            array    — [{label, value}] up to 3 differentiating stats
  *   signupLabel         string   — primary CTA text, e.g. "Get Zeller →"
  *   signupIntent        string   — AffiliateButton intent key ("signup" | "contact")
+ *   signupTrust         string   — optional micro-copy below CTA e.g. "ABN required · No lock-in"
+ *   socialProof         string   — optional trust signal near CTA e.g. "100,000+ AU businesses"
  *   lastVerifiedDisplay string   — e.g. "April 2026"
  *   navItems            array    — [{href, label}] for jump nav
  *   shareTitle          string
@@ -42,6 +40,8 @@ export default function ProviderHero({
   keyStats = [],
   signupLabel = 'Get started →',
   signupIntent = 'signup',
+  signupTrust,
+  socialProof,
   lastVerifiedDisplay,
   navItems = [],
   shareTitle,
@@ -115,7 +115,7 @@ export default function ProviderHero({
                   label="hero-cta"
                   campaign="provider-hero"
                   intent={signupIntent}
-                  className="inline-flex items-center gap-1 px-4 py-2.5 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-600 transition-colors shadow-sm shadow-blue-900/20"
+                  className="inline-flex items-center gap-1 px-4 py-2.5 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-600 transition-colors shadow-[0_6px_20px_rgba(0,106,255,0.28)]"
                 >
                   {signupLabel}
                 </AffiliateButton>
@@ -126,6 +126,18 @@ export default function ProviderHero({
                   See full review ↓
                 </a>
               </div>
+
+              {/* Trust micro-copy */}
+              {(signupTrust || socialProof) && (
+                <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
+                  {socialProof && (
+                    <span className="text-[11px] text-slate-400 font-medium">{socialProof}</span>
+                  )}
+                  {signupTrust && (
+                    <span className="text-[11px] text-slate-400">{signupTrust}</span>
+                  )}
+                </div>
+              )}
 
               {/* Disclaimer + share */}
               <div className="mt-3 flex items-center justify-between gap-3">

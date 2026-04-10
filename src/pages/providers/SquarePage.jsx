@@ -43,7 +43,7 @@ const _p = providers.find(p => p.id === 'square')
 const lastVerified = _p?.lastVerified ?? '2026-04-05'
 const lastVerifiedDisplay = new Date(lastVerified).toLocaleString('en-AU', { month: 'long', year: 'numeric' })
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', inLanguage: 'en-AU', name: 'Square for Australian Tradies — Full Review (2026)', description: 'Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones.', url: `${SITE}/providers/square`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Square', url: 'https://squareup.com/au', description: 'Global payments provider offering EFTPOS terminals with offline payment capability and flat-rate pricing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', inLanguage: 'en-AU', name: 'Square for Australian Tradies — Full Review (2026)', description: 'Strong offline capability for dead-zone job sites. The right backup terminal for Australian tradies who work in areas with no signal.', url: `${SITE}/providers/square`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '4.5', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Square', url: 'https://squareup.com/au', description: 'Global payments provider offering EFTPOS terminals with offline payment capability and flat-rate pricing in Australia.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.5', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Square Review', item: `${SITE}/providers/square` }] },
     { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Square Terminal for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -54,7 +54,7 @@ export default function SquarePage() {
     <>
       <Meta
         title="Square for Australian Tradies — Full Review (2026)"
-        description="Best offline capability in the market. The right backup terminal for Australian tradies who work in dead zones."
+        description="Strong offline capability for dead-zone job sites. The right backup terminal for Australian tradies who work in areas with no signal."
         canonical="/providers/square"
         ogType="article"
         jsonLd={jsonLd}
@@ -63,7 +63,7 @@ export default function SquarePage() {
       <ProviderHero
         providerId="square"
         heading="Square for Tradies — Full Review (2026)"
-        subheading="Best offline capability in the market. The right backup terminal for tradies who work in dead zones."
+        subheading="Strong offline capability for dead-zone job sites. The right backup terminal for tradies who work in areas with no signal."
         bgImage="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=900&h=560&fit=crop&crop=center&q=80"
         bgImageAlt=""
         rating={4.5}
@@ -75,6 +75,8 @@ export default function SquarePage() {
         ]}
         signupLabel="Get Square →"
         signupIntent="signup"
+        signupTrust="ABN required · Fast approval · No lock-in"
+        socialProof="Millions of businesses globally"
         lastVerifiedDisplay={lastVerifiedDisplay}
         navItems={[
           { href: '#fees', label: 'Fees' },
@@ -110,7 +112,7 @@ export default function SquarePage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-2 text-xs">
             <span className="flex-1 bg-green-50 border border-green-200 rounded-xl px-3 py-2 text-green-800">
-              <strong>Best for:</strong> Backup terminal for zero-signal dead zones — offline mode is unique in the market
+              <strong>Best for:</strong> Backup terminal for zero-signal dead zones — offline mode is rare among Australian EFTPOS providers
             </span>
             <span className="flex-1 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-amber-800">
               <strong>Skip if:</strong> You want the lowest rate — Zeller is 1.4% vs Square's 1.6%, and cheaper hardware

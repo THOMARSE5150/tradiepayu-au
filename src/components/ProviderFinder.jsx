@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { trackFinderComplete, trackProviderClick } from '../utils/analytics'
 
 const QUESTIONS = [
   {
@@ -110,7 +111,9 @@ export default function ProviderFinder() {
     if (step < QUESTIONS.length - 1) {
       setStep(s => s + 1)
     } else {
-      setResult(recommend(next))
+      const rec = recommend(next)
+      setResult(rec)
+      trackFinderComplete(rec.id)
     }
   }
 
@@ -191,6 +194,7 @@ export default function ProviderFinder() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
                   to={result.href}
+                  onClick={() => trackProviderClick(result.id, 'finder_result')}
                   className="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-blue-500 text-white font-semibold rounded-xl px-5 py-2.5 text-sm transition-colors"
                 >
                   Full review →
