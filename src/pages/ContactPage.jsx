@@ -209,6 +209,10 @@ export default function ContactPage() {
     }
   }, [])
 
+  const clearError = useCallback(() => {
+    if (status === 'error') { setStatus('idle'); setFieldErrors({}) }
+  }, [status])
+
   useEffect(() => {
     if (status === 'success') { haptic('success'); setShowModal(true) }
   }, [status])
@@ -258,6 +262,7 @@ export default function ContactPage() {
   }
 
   function handleTextareaInput(e) {
+    clearError()
     setMsgLen(e.target.value.length)
     const el = e.target
     el.style.height = 'auto'
@@ -358,6 +363,7 @@ export default function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35 }}
                 onSubmit={handleSubmit}
+                onChange={clearError}
                 className="bg-white rounded-3xl border border-slate-100 p-5 sm:p-7 space-y-4 shadow-sm"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -463,7 +469,7 @@ export default function ContactPage() {
                   type="submit"
                   disabled={submitting}
                   whileTap={{ scale: 0.97 }}
-                  className="w-full flex items-center justify-center gap-2.5 bg-brand-blue hover:bg-blue-600 active:bg-blue-700 text-white font-semibold rounded-xl py-3.5 px-6 text-sm transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2.5 bg-brand-blue hover:bg-blue-600 active:bg-blue-700 text-white font-semibold rounded-xl py-3.5 px-6 text-sm transition-colors duration-150 disabled:opacity-70 disabled:cursor-not-allowed"
                   style={{ boxShadow: '0 4px 16px rgba(0,106,255,0.25)' }}
                 >
                   {submitting ? (
@@ -481,8 +487,8 @@ export default function ContactPage() {
                   )}
                 </motion.button>
 
-                <p className="text-xs text-slate-400 text-center leading-relaxed">
-                  Instant confirmation to your inbox. We don&apos;t share your details with anyone.
+                <p className={`text-xs text-center leading-relaxed transition-colors ${submitting ? 'text-brand-blue font-medium' : 'text-slate-400'}`}>
+                  {submitting ? 'Sending your message — please wait…' : "Instant confirmation to your inbox. We don\u2019t share your details with anyone."}
                 </p>
               </motion.form>
             </div>
