@@ -153,6 +153,7 @@ export default function ContactPage() {
   const handleFirstInteraction = useCallback(() => {
     if (!formStartedRef.current) {
       formStartedRef.current = true
+      console.log('[BEN-GA4] form_start firing', { form_id: 'contact' })
       trackFormStart('contact')
     }
   }, [])
@@ -187,6 +188,7 @@ export default function ContactPage() {
       const json = await res.json()
 
       if (res.ok) {
+        console.log('[BEN-GA4] form_submit firing', { form_id: 'contact', topic: data.topic })
         trackFormSubmit('contact', { topic: data.topic })
         setStatus('success')
         formRef.current?.reset()
