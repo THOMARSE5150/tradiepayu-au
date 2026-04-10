@@ -101,7 +101,7 @@ const heroStats = [
   { icon: TrendingDown, label: 'Lowest rate',  value: '1.4%' },
   { icon: Zap,          label: 'Settlement',   value: 'Same day' },
   { icon: Shield,       label: 'Monthly fee',  value: '$0' },
-  { icon: Wifi,         label: 'SIM plan',     value: 'From $15/mo' },
+  { icon: Wifi,         label: 'SIM-enabled',  value: 'No WiFi needed' },
 ]
 
 const trades = [
@@ -159,7 +159,7 @@ export default function Home() {
               Best EFTPOS for Australian Tradies
             </h1>
             <p className="hero-sub">
-              Compare Zeller, Square, Stripe & more — find what actually works on-site.
+              Independent comparison of EFTPOS fees, SIM coverage, and settlement speed — find the right fit for your trade.
             </p>
 
             {/* ── Verdict-first pill ── */}
@@ -182,16 +182,6 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              {/* CTA */}
-              <AffiliateButton
-                providerId="zeller"
-                label="hero-cta"
-                campaign="homepage-verdict"
-                intent="signup"
-                className="text-xs font-semibold text-brand-blue bg-brand-blue/[0.18] hover:bg-brand-blue/[0.28] border border-brand-blue/30 px-3 py-1.5 rounded-xl transition-colors whitespace-nowrap"
-              >
-                Get Zeller ↗
-              </AffiliateButton>
             </div>
 
             {/* CTA row */}
@@ -211,6 +201,20 @@ export default function Home() {
               >
                 Compare all providers →
               </Link>
+            </div>
+
+            {/* Social proof — directly below CTA for conversion reinforcement */}
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+              {[
+                { value: '100,000+', label: 'AU businesses using Zeller' },
+                { value: 'Apr 2026', label: 'Last verified' },
+                { value: 'Independent', label: 'Editorially independent' },
+              ].map(s => (
+                <div key={s.label} className="flex items-center gap-2">
+                  <span className="text-white text-sm font-bold">{s.value}</span>
+                  <span className="text-white/40 text-xs">{s.label}</span>
+                </div>
+              ))}
             </div>
 
             <HeroTradeSelector />
@@ -237,20 +241,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </div>
-
-        {/* ── Social proof micro-bar ── */}
-        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 pb-1">
-          {[
-            { value: '100,000+', label: 'AU businesses using Zeller' },
-            { value: 'Apr 2026', label: 'Last verified' },
-            { value: 'Independent', label: 'Editorially independent' },
-          ].map(s => (
-            <div key={s.label} className="flex items-center gap-2">
-              <span className="text-white text-sm font-bold">{s.value}</span>
-              <span className="text-white/40 text-xs">{s.label}</span>
-            </div>
-          ))}
         </div>
 
         {/* ── Trust strip marquee ── */}
