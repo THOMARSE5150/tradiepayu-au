@@ -1,0 +1,24 @@
+name = "tradiepay-contact-form"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# After deploying, add your custom domain route in the Cloudflare dashboard
+# or uncomment and configure below:
+# [[routes]]
+# pattern = "contact-form.tradiepayau.directory/*"
+# zone_name = "tradiepayau.directory"
+
+# ── Required secrets (wrangler secret put <NAME>) ────────────────────────────
+#   RESEND_API_KEY          — Resend API key for email sending
+#   TWILIO_ACCOUNT_SID      — Twilio Account SID
+#   TWILIO_AUTH_TOKEN       — Twilio Auth Token
+#   TWILIO_FROM_NUMBER      — Your Twilio phone number (e.g. +1415XXXXXXX)
+
+# ── Env vars ─────────────────────────────────────────────────────────────────
+[vars]
+CONTACT_OWNER_SMS    = "+61403803700"
+WHATSAPP_ENABLED     = "false"
+# WHATSAPP_TO          = "whatsapp:+61403803700"
+# TWILIO_WHATSAPP_FROM = "whatsapp:+14155238886"
+# Note: WhatsApp outbound requires an approved template before enabling.
+#       Use Twilio Sandbox for testing. Set WHATSAPP_ENABLED=true only after approval.
