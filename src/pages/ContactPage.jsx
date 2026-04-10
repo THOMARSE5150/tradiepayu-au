@@ -262,7 +262,7 @@ export default function ContactPage() {
     const el = e.target
     el.style.height = 'auto'
     const isMobile = window.innerWidth < 640
-    el.style.height = `${Math.min(el.scrollHeight, isMobile ? 130 : 260)}px`
+    el.style.height = `${Math.min(el.scrollHeight, isMobile ? 160 : 260)}px`
   }
 
   const submitting = status === 'submitting'
@@ -305,7 +305,7 @@ export default function ContactPage() {
           </p>
 
           {/* Trust signals */}
-          <div className="flex flex-wrap gap-x-5 gap-y-2 mt-5">
+          <div className="flex flex-wrap gap-x-5 gap-y-2 mt-3 sm:mt-5">
             {TRUST_SIGNALS.map(signal => (
               <span key={signal} className="flex items-center gap-1.5 text-sm text-white/65">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0" />
@@ -316,7 +316,7 @@ export default function ContactPage() {
 
           <a
             href="mailto:hello@tradiepayau.directory"
-            className="inline-flex items-center gap-1.5 mt-4 text-sm text-white/40 hover:text-white/70 transition-colors"
+            className="inline-flex items-center gap-1.5 mt-2 sm:mt-4 text-sm text-white/55 hover:text-white/80 transition-colors"
           >
             Prefer email? <ArrowRight size={13} strokeWidth={2} />
           </a>
@@ -324,18 +324,32 @@ export default function ContactPage() {
       </header>
 
       {/* ── Form section ──────────────────────────────────────────────────── */}
-      <section className="section section-alt">
+      <section className="section-alt pt-6 sm:pt-14 pb-10 sm:pb-14">
         <div className="container-page">
           <div className="lg:grid lg:grid-cols-5 lg:gap-12 lg:items-start">
 
             {/* Form — 3 cols */}
             <div className="lg:col-span-3">
-              <div className="mb-5">
+              <div className="mb-3">
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Send us a message</p>
                 <h2 className="text-xl font-bold text-brand-dark">We review every submission</h2>
                 <p className="text-sm text-slate-500 mt-1 leading-relaxed">
                   Rate corrections and data updates are verified and applied promptly.
                 </p>
+              </div>
+
+              {/* Compact pre-form trust strip */}
+              <div className="flex flex-wrap gap-x-5 gap-y-1.5 mb-4 px-0.5">
+                {[
+                  { icon: Zap,        text: 'Instant confirmation' },
+                  { icon: Clock,      text: 'Same-day review' },
+                  { icon: CheckCheck, text: 'Corrections applied' },
+                ].map(({ icon: Icon, text }) => (
+                  <span key={text} className="flex items-center gap-1.5 text-xs text-slate-500">
+                    <Icon size={12} className="text-brand-blue flex-shrink-0" />
+                    {text}
+                  </span>
+                ))}
               </div>
 
               <motion.form
@@ -423,16 +437,24 @@ export default function ContactPage() {
                   <motion.div
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
+                    className="bg-red-50 border border-red-200 rounded-xl px-4 py-3.5"
                   >
-                    Something went wrong — please try again, or{' '}
-                    <a
-                      href="mailto:hello@tradiepayau.directory"
-                      className="underline underline-offset-2 hover:text-red-700"
-                    >
-                      email us directly
-                    </a>
-                    .
+                    <div className="flex items-start gap-2.5">
+                      <AlertCircle size={15} className="text-red-500 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-red-700 leading-tight">Submission failed</p>
+                        <p className="text-xs text-red-600 mt-1 leading-relaxed">
+                          Your details are still in the form — hit the button below to try again. If the problem persists,{' '}
+                          <a
+                            href="mailto:hello@tradiepayau.directory"
+                            className="underline underline-offset-2 font-medium hover:text-red-700"
+                          >
+                            email us directly
+                          </a>
+                          .
+                        </p>
+                      </div>
+                    </div>
                   </motion.div>
                 )}
 
@@ -445,16 +467,21 @@ export default function ContactPage() {
                   style={{ boxShadow: '0 4px 16px rgba(0,106,255,0.25)' }}
                 >
                   {submitting ? (
-                    <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                    </svg>
+                    <>
+                      <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Sending…
+                    </>
+                  ) : status === 'error' && Object.keys(fieldErrors).length === 0 ? (
+                    <>Try again <RefreshCw size={14} strokeWidth={2.5} /></>
                   ) : (
                     <>Send message <ArrowRight size={15} strokeWidth={2.5} /></>
                   )}
                 </motion.button>
 
-                <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                <p className="text-xs text-slate-400 text-center leading-relaxed">
                   Instant confirmation to your inbox. We don&apos;t share your details with anyone.
                 </p>
               </motion.form>
