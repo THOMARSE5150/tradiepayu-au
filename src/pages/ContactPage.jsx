@@ -114,7 +114,7 @@ function SuccessModal({ onClose }) {
 
 const fieldCls = "w-full h-12 bg-slate-50 border border-slate-200 rounded-xl px-4 text-brand-dark text-sm placeholder-slate-400 focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all"
 
-function Field({ id, name, label, placeholder, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, error }) {
+function Field({ id, name, label, placeholder, type = 'text', inputMode, autoComplete, autoCapitalize, autoCorrect, spellCheck, enterKeyHint, error, onFocus }) {
   return (
     <div>
       <label htmlFor={id} className="block text-[11px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5">
@@ -132,7 +132,7 @@ function Field({ id, name, label, placeholder, type = 'text', inputMode, autoCom
         enterKeyHint={enterKeyHint}
         placeholder={placeholder}
         required
-        onFocus={() => haptic('light')}
+        onFocus={() => { haptic('light'); onFocus?.() }}
         className={fieldCls}
       />
       {error && <p className="text-xs text-red-500 mt-1.5">{error}</p>}
@@ -149,6 +149,13 @@ export default function ContactPage() {
   const submitRef      = useRef(null)
   const formRef        = useRef(null)
   const formStartedRef = useRef(false)
+
+  const handleFirstInteraction = useCallback(() => {
+    if (!formStartedRef.current) {
+      formStartedRef.current = true
+      trackFormStart('contact')
+    }
+  }, [])
 
   useEffect(() => {
     if (status === 'success') { haptic('success'); setShowModal(true) }
@@ -252,12 +259,6 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
-              onFocus={() => {
-                if (!formStartedRef.current) {
-                  formStartedRef.current = true
-                  trackFormStart('contact')
-                }
-              }}
               onSubmit={handleSubmit}
               className="bg-white rounded-3xl border border-slate-100 p-5 sm:p-8 space-y-4 shadow-sm"
             >
@@ -266,6 +267,7 @@ export default function ContactPage() {
                 placeholder="Jane Smith"
                 autoComplete="name" autoCapitalize="words"
                 enterKeyHint="next" error={fieldErrors.name}
+                onFocus={handleFirstInteraction}
               />
 
               <Field
@@ -275,6 +277,7 @@ export default function ContactPage() {
                 autoComplete="email" autoCapitalize="none"
                 autoCorrect="off" spellCheck={false}
                 enterKeyHint="next" error={fieldErrors.email}
+                onFocus={handleFirstInteraction}
               />
 
               {/* Topic — native select for iOS picker */}
@@ -286,7 +289,7 @@ export default function ContactPage() {
                   id="topic"
                   name="topic"
                   required
-                  onFocus={() => haptic('light')}
+                  onFocus={() => { haptic('light'); handleFirstInteraction() }}
                   className={`${fieldCls} appearance-none cursor-pointer`}
                   style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 14px center', paddingRight: '40px' }}
                 >
@@ -313,7 +316,7 @@ export default function ContactPage() {
                     enterKeyHint="send"
                     autoComplete="off"
                     onInput={handleTextareaInput}
-                    onFocus={() => { haptic('light'); scrollToSubmit() }}
+                    onFocus={() => { haptic('light'); scrollToSubmit(); handleFirstInteraction() }}
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-brand-dark text-sm placeholder-slate-400 resize-none focus:outline-none focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/15 transition-all pb-7"
                     style={{ minHeight: '88px', maxHeight: '130px' }}
                   />
