@@ -32,7 +32,7 @@ const faqs = [
   { q: 'Is Tyro good for tradies?', a: 'Tyro suits tradies who invoice heavily via payment links rather than tap on site, or those already integrated with a POS system that partners with Tyro (like ServiceM8 or simPRO). For simple on-site payments, Zeller\'s published flat rate is more transparent.' },
   { q: 'Does Tyro have same-day settlement?', a: 'Yes — payments settle same business day into a Tyro transaction account. Next business day to an external bank account.' },
   { q: 'Does Tyro terminal have a built-in SIM?', a: 'Yes — Tyro EFTPOS terminals include built-in connectivity and do not require customer WiFi or a phone hotspot. This makes them suitable for on-site tradie use across metro and regional areas.' },
-  { q: 'Does Tyro have a monthly fee?', a: 'Yes — Tyro charges a monthly terminal rental fee (typically $29–$39/month depending on the plan and contract term). This is different to Zeller and Square where you purchase the hardware outright and pay no ongoing rental.' },
+  { q: 'Does Tyro have a monthly fee?', a: 'Yes — Tyro charges a monthly terminal rental fee that varies by plan and contract term. Confirm the current rate directly with Tyro before signing. This is different to Zeller and Square where you purchase the hardware outright and pay no ongoing rental.' },
   { q: 'Is Tyro regulated as a bank in Australia?', a: 'Yes — Tyro holds an Australian banking licence and is regulated by APRA. This gives it bank-grade security and compliance obligations. For tradies, this means your merchant account is held with a regulated institution — different to Zeller and Square, which are registered payment service providers.' },
   { q: 'What trade software integrates with Tyro?', a: 'Tyro integrates with ServiceM8, simPRO, AroFlo, Fergus, and several other field service management platforms. If you already use one of these tools, Tyro may offer the most seamless payment workflow — invoices and payments sync automatically without manual reconciliation.' },
 ]
@@ -124,7 +124,7 @@ export default function TyroPage() {
             { label: 'In-person rate', value: 'Quote required' },
             { label: 'Payment links', value: '1.4% incl. GST', highlight: true },
             { label: 'Settlement', value: 'Same day (Tyro a/c)' },
-            { label: 'Support', value: '7 days, 7am–9pm' },
+            { label: 'Support', value: '7 days/week' },
           ].map((s, i) => (
             <motion.div
               key={i}
@@ -167,7 +167,7 @@ export default function TyroPage() {
               { title: 'You invoice more than you tap on site', body: 'If 80%+ of your revenue comes via payment links (remote invoicing, quote acceptance deposits), Tyro\'s 1.4% including GST payment links rate is highly competitive.' },
               { title: 'You\'re integrated with a Tyro-partner job management system', body: 'Tyro integrates with job management software like ServiceM8, simPRO, and Fergus. If you\'re already on one of these platforms, the Tyro integration may reduce admin.' },
               { title: 'You want bank-grade security', body: 'Tyro is a fully licensed Australian bank, not just a payment processor. If bank-grade regulatory oversight matters to your business, Tyro provides it.' },
-              { title: 'You need 7-day phone support', body: 'Tyro\'s support is available 7am–9pm Sydney time, 7 days a week, with an emergency after-hours pathway. Better coverage than Zeller\'s business hours.' },
+              { title: 'You need 7-day support', body: 'Tyro\'s support is available 7 days a week with extended hours. Verify current hours with Tyro — generally broader coverage than Zeller\'s business hours.' },
             ].map((item, i) => (
               <motion.div
                 key={i}

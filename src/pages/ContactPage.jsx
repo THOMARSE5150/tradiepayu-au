@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Breadcrumb from '../components/Breadcrumb'
 import Meta from '../components/Meta'
 import { haptic } from '../utils/haptic'
+import { trackFormStart, trackFormSubmit } from '../utils/analytics'
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -144,9 +145,10 @@ export default function ContactPage() {
   const [fieldErrors, setFieldErrors] = useState({})
   const [msgLen, setMsgLen] = useState(0)
   const [showModal, setShowModal] = useState(false)
-  const textareaRef = useRef(null)
-  const submitRef   = useRef(null)
-  const formRef     = useRef(null)
+  const textareaRef    = useRef(null)
+  const submitRef      = useRef(null)
+  const formRef        = useRef(null)
+  const formStartedRef = useRef(false)
 
   useEffect(() => {
     if (status === 'success') { haptic('success'); setShowModal(true) }
@@ -178,6 +180,7 @@ export default function ContactPage() {
       const json = await res.json()
 
       if (res.ok) {
+        trackFormSubmit('contact', { topic: data.topic })
         setStatus('success')
         formRef.current?.reset()
         setMsgLen(0)
@@ -249,6 +252,12 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.35 }}
+              onFocus={() => {
+                if (!formStartedRef.current) {
+                  formStartedRef.current = true
+                  trackFormStart('contact')
+                }
+              }}
               onSubmit={handleSubmit}
               className="bg-white rounded-3xl border border-slate-100 p-5 sm:p-8 space-y-4 shadow-sm"
             >

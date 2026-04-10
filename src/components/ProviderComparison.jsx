@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import providers from '../data/providers.json'
+import { trackCompareCta } from '../utils/analytics'
 
 const BRAND = {
   zeller: '#006aff',
@@ -133,6 +134,7 @@ export default function ProviderComparison() {
 
                     <Link
                       to={`/providers/${p.id}`}
+                      onClick={() => trackCompareCta(p.id, 'table_cta_row')}
                       className={`mt-3.5 block text-center text-[11px] font-semibold px-3 py-2 rounded-xl transition-all ${
                         isTop
                           ? 'bg-brand-blue text-white active:bg-blue-700'
@@ -170,6 +172,7 @@ export default function ProviderComparison() {
                     )}
                     <Link
                       to={`/providers/${p.id}`}
+                      onClick={() => trackCompareCta(p.id, 'table_header')}
                       className={`flex flex-col items-center gap-1.5 py-3 px-2 rounded-none transition-opacity hover:opacity-80 ${
                         isTop ? 'bg-blue-50/60 border-x border-t border-brand-blue/20' : 'bg-slate-50/40'
                       }`}
@@ -239,6 +242,7 @@ export default function ProviderComparison() {
                   >
                     <Link
                       to={`/providers/${p.id}`}
+                      onClick={() => trackCompareCta(p.id, 'table_cta_row')}
                       className={`inline-block text-xs font-semibold px-3 py-1.5 rounded-xl transition-all ${
                         isTop
                           ? 'bg-brand-blue text-white hover:bg-blue-600'

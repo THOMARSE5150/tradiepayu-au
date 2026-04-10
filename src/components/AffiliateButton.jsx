@@ -4,7 +4,7 @@ import { haptic } from '../utils/haptic'
 
 /**
  * Tracked outbound link to a provider's affiliate URL.
- * Fires a GA4 'outbound_click' event and appends UTM params automatically.
+ * Fires a GA4 'outbound_affiliate_click' event and appends UTM params automatically.
  *
  * Props:
  *   providerId  {string}  - matches providers.json id field (e.g. 'zeller')

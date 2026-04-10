@@ -34,7 +34,7 @@ const faqs = [
   { q: 'Does Stripe have a monthly fee?', a: 'No — Stripe charges no monthly fee on standard accounts. You pay only when you process a payment: 1.7% + $0.10 for domestic cards in person, or 1.7% + $0.30 for online/invoice payments. International cards attract a 1.5% additional fee.' },
   { q: 'Can Stripe send automatic invoice reminders?', a: 'Yes — Stripe Invoicing supports automatic payment reminders on unpaid invoices. You can configure reminder sequences (e.g., 3 days before due, on due date, 7 days overdue). This is a significant advantage over Zeller for tradies with 14–30 day commercial invoicing terms.' },
   { q: 'Does Stripe work for taking deposits before a job starts?', a: 'Yes — Stripe payment links are the simplest way to collect a deposit. Send a link via SMS or email at booking confirmation. The customer pays online before you arrive. Funds clear in 2 business days. For same-day-cleared deposits, Zeller payment links settle faster.' },
-  { q: 'Can I use Stripe with my existing website or booking software?', a: 'Yes — Stripe has the most comprehensive API and plugin library of any payment provider in Australia. If your website is on Squarespace, WordPress, or a custom build, Stripe likely has a direct integration. This is its core advantage over Zeller and Square for tradies with an online presence.' },
+  { q: 'Can I use Stripe with my existing website or booking software?', a: 'Yes — Stripe has one of the most comprehensive API and plugin libraries available from any payment provider in Australia. If your website is on Squarespace, WordPress, or a custom build, Stripe likely has a direct integration. This is its core advantage over Zeller and Square for tradies with an online presence.' },
 ]
 
 const SITE = 'https://tradiepayau.directory'
@@ -183,10 +183,10 @@ export default function StripePage() {
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { title: 'You have a website with online booking', body: 'Stripe\'s API is industry-leading. If your booking platform (ServiceM8, Tradify, or a custom site) needs payment integration, Stripe is the standard.' },
+            { title: 'You have a website with online booking', body: 'Stripe\'s API is widely adopted across the industry. If your booking platform (ServiceM8, Tradify, or a custom site) needs payment integration, Stripe is a common standard.' },
             { title: 'You want fully automated recurring billing', body: 'Stripe Billing lets you charge a client\'s card automatically on a schedule — weekly, fortnightly, monthly. Client enters card once; you never manually send a payment link again.' },
             { title: 'You process international clients', body: 'Stripe handles multi-currency and international cards better than Zeller or Square. If you have overseas-based property owners as clients, Stripe handles it cleanly.' },
-            { title: 'You need 24/7 support', body: 'Stripe offers 24/7 phone, chat, and email support. Zeller is business hours only. For high-stakes payment operations, Stripe\'s support coverage is a genuine advantage.' },
+            { title: 'You need extended support hours', body: 'Stripe offers 24/7 chat and email support; phone support is available on higher-tier plans. Zeller is business hours only. For time-sensitive payment operations, Stripe\'s support coverage is a genuine advantage.' },
           ].map((item, i) => (
             <motion.div
               key={i}

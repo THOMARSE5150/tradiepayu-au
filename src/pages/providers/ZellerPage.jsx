@@ -150,7 +150,7 @@ export default function ZellerPage() {
 
         <div className="prose-sm max-w-none text-slate-600 space-y-4">
           <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and same-day settlement into a Zeller account. More than 100,000 Australian businesses are already using it.</p>
-          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval takes minutes online with just your ABN. As of {lastVerifiedDisplay}, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
+          <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval is typically fast — just your ABN, online. As of {lastVerifiedDisplay}, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
         </div>
 
         {/* Product ecosystem */}
@@ -184,7 +184,7 @@ export default function ZellerPage() {
 
         {/* Case study */}
         <div className="mt-6 bg-green-50 border border-green-200 rounded-2xl p-5">
-          <p className="text-xs font-bold uppercase tracking-widest text-green-700 mb-2">Real savings example</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-green-700 mb-2">Illustrative savings example</p>
           <p className="text-sm text-green-900 font-semibold mb-1">Electrician doing $12,000/month in card payments</p>
           <p className="text-sm text-green-800">At Zeller's 1.4%, total processing costs = <strong>$168/month</strong>. At Square's 1.6%, that would be $192/month. Zeller saves <strong>$24/month ($288/year)</strong> — and the $99 terminal pays for itself in under 4 months.</p>
         </div>
