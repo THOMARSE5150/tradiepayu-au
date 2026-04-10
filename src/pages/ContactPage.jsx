@@ -21,8 +21,11 @@ const TOPICS = [
 ]
 const MAX_MSG = 1000
 
+// TODO(backend): verify Worker sends instant confirmation email to sender and owner notification
+//   — check tradiepay-contact-form Worker for sendgrid/mailchannels wiring per topic
 const WORKER_URL    = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev'
-const FORMSPREE_URL = 'https://formspree.io/f/xjgpglnz' // fallback (no user confirmation)
+// TODO(backend): if Worker is down, Formspree fallback needs auto-reply enabled in Formspree dashboard
+const FORMSPREE_URL = 'https://formspree.io/f/xjgpglnz'
 
 const NEXT_STEPS = [
   { label: 'Compare all providers', href: '/providers', note: 'Zeller, Square, Stripe, Tyro, Shift4' },
@@ -73,14 +76,14 @@ function SuccessModal({ onClose }) {
           >
             <CheckCircle2 size={26} className="text-green-500" />
           </motion.div>
-          <h2 className="text-xl font-bold text-brand-dark mb-1">Message sent</h2>
+          <h2 className="text-xl font-bold text-brand-dark mb-1">Confirmation sent</h2>
           <p className="text-slate-500 text-sm leading-relaxed">
-            Check your inbox — we just sent you a confirmation with your message details and next steps. We reply within 2 business days from hello@tradiepayau.directory.
+            Check your inbox — we&apos;ve sent a confirmation with your message details. We&apos;ll review it and follow up as soon as possible.
           </p>
         </div>
 
         <div className="px-6 py-5">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">While you wait</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Explore while we review</p>
           <div className="space-y-2">
             {NEXT_STEPS.map(step => (
               <Link
@@ -247,9 +250,14 @@ export default function ContactPage() {
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight">Get in touch</h1>
           <p className="hero-sub">
-            We respond within 2 business days. Or email us directly at{' '}
-            <a href="mailto:hello@tradiepayau.directory" className="text-brand-blue hover:underline">hello@tradiepayau.directory</a>.
+            Tell us what you need — we&apos;ll confirm instantly and review it as soon as possible. Use the form for the fastest response.
           </p>
+          <a
+            href="mailto:hello@tradiepayau.directory"
+            className="inline-flex items-center gap-1.5 mt-1 text-sm text-white/50 hover:text-white/80 transition-colors"
+          >
+            Prefer email? <ArrowRight size={13} strokeWidth={2} />
+          </a>
         </div>
       </header>
 
@@ -335,7 +343,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
                 >
-                  Something went wrong — please try again or email us directly.
+                  Something went wrong — please try again in a moment.
                 </motion.p>
               )}
 
@@ -357,7 +365,7 @@ export default function ContactPage() {
               </motion.button>
 
               <p className="text-[11px] text-slate-400 text-center">
-                We&apos;ll send a confirmation to your email. We don&apos;t share your details with anyone.
+                Instant confirmation to your inbox. We don&apos;t share your details with anyone.
               </p>
             </motion.form>
           </div>
