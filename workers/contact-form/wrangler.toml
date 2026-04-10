@@ -10,9 +10,11 @@ compatibility_date = "2024-01-01"
 
 # ── Required secrets (wrangler secret put <NAME>) ────────────────────────────
 #   RESEND_API_KEY          — Resend API key for email sending
-#   TWILIO_ACCOUNT_SID      — Twilio Account SID
-#   TWILIO_AUTH_TOKEN       — Twilio Auth Token
-#   TWILIO_FROM_NUMBER      — Your Twilio phone number (e.g. +1415XXXXXXX)
+#   TELEGRAM_BOT_TOKEN      — Telegram bot token from @BotFather
+#   TELEGRAM_CHAT_ID        — Your personal chat_id (send /start to bot, then getUpdates)
+#   TWILIO_ACCOUNT_SID      — Twilio Account SID (optional — SMS fallback)
+#   TWILIO_AUTH_TOKEN       — Twilio Auth Token (optional — SMS fallback)
+#   TWILIO_FROM_NUMBER      — Your Twilio phone number (optional — SMS fallback)
 
 # ── Env vars ─────────────────────────────────────────────────────────────────
 [vars]
