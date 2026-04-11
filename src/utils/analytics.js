@@ -11,6 +11,7 @@ function derivePageType(path) {
   if (/^\/providers\//.test(path))       return 'providers'
   if (/^\/blog\//.test(path))            return 'blog'
   if (path === '/')                      return 'home'
+  if (/^\/glaziers-eftpos/.test(path))   return 'landing_page'
   return 'other'
 }
 
@@ -35,6 +36,8 @@ const LABEL_MAP = {
   'blog-verdict':     { location: 'blog_cta',    label: 'primary'   },
   'midpage-cta':      { location: 'cta_bar',     label: 'primary'   },
   'midpage-alt-square': { location: 'cta_bar',   label: 'secondary' },
+  'bestpick-cta':     { location: 'best_pick',   label: 'primary'   },
+  'final-cta':        { location: 'final',       label: 'primary'   },
 }
 
 // ─── outbound_affiliate_click — all external provider signup/pricing links ────
@@ -48,7 +51,7 @@ const LABEL_MAP = {
  *
  * GA4 parameters fired:
  *   provider      — "zeller" | "square" | "stripe" | "tyro" | "shift4"
- *   page_type     — "home" | "providers" | "compare" | "compare_detail" | "blog" | "other"
+ *   page_type     — "home" | "providers" | "compare" | "compare_detail" | "blog" | "landing_page" | "other"
  *   location      — "hero" | "verdict" | "cta_bar" | "section_nav" | "sticky" | "blog_cta"
  *   label         — "primary" | "secondary"
  *   comparison    — "zeller_vs_square" (only on compare detail pages)
