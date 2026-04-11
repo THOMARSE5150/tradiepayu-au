@@ -11,7 +11,8 @@ function derivePageType(path) {
   if (/^\/providers\//.test(path))       return 'providers'
   if (/^\/blog\//.test(path))            return 'blog'
   if (path === '/')                      return 'home'
-  if (/^\/glaziers-eftpos/.test(path))   return 'landing_page'
+  if (/^\/glaziers-eftpos/.test(path))      return 'landing_page'
+  if (/^\/electricians-eftpos/.test(path)) return 'landing_page'
   return 'other'
 }
 
