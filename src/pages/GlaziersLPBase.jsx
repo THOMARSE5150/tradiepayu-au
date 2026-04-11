@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 import Meta from '../components/Meta'
 import AffiliateButton from '../components/AffiliateButton'
+import { Link } from 'react-router-dom'
 import { tradeHeroUrl, tradeHeroAlt } from '../utils/tradeHero'
 
 // ── Shared data — identical across all glazier LP variants ───────────────────
@@ -104,6 +105,11 @@ export default function GlaziersLPBase({ config }) {
                 </span>
               ))}
             </div>
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+              {['Australian ABN required', 'Same-day AUD settlement', 'No lock-in contracts'].map(t => (
+                <span key={t} className="text-[11px] text-white/40">{t}</span>
+              ))}
+            </div>
 
             {/* Single primary CTA — no competing links above fold */}
             <div className="mt-8">
@@ -116,9 +122,7 @@ export default function GlaziersLPBase({ config }) {
               >
                 {hero.ctaText}
               </AffiliateButton>
-              <p className="mt-2.5 text-xs text-white/45 text-center sm:text-left">
-                {hero.ctaMicrocopy}
-              </p>
+              <p className="mt-2.5 text-xs text-white/45 text-center sm:text-left">Takes 5 minutes. No lock-in.</p>
             </div>
           </motion.div>
         </div>
@@ -210,6 +214,7 @@ export default function GlaziersLPBase({ config }) {
             >
               Get Zeller — 1.4%, set up today →
             </AffiliateButton>
+            <p className="mt-2 text-xs text-slate-400">Takes 5 minutes. No lock-in.</p>
           </div>
         </div>
       </section>
@@ -253,6 +258,7 @@ export default function GlaziersLPBase({ config }) {
           <p className="text-xs text-slate-400 mt-4">
             Rates current April 2026. Verify with providers before signing up. Some links on this page are referral links — this does not affect our recommendations.
           </p>
+          <p className="text-xs mt-3"><Link to="/eftpos-rate-guide" className="text-brand-blue hover:underline font-medium">Full EFTPOS rate guide — all providers, all scenarios →</Link></p>
         </div>
       </section>
 
@@ -326,10 +332,15 @@ export default function GlaziersLPBase({ config }) {
             >
               Get Zeller — 1.4% rate →
             </AffiliateButton>
-            <p className="mt-3 text-xs text-white/35">No lock-in. Approved online with your Australian ABN.</p>
+            <p className="mt-3 text-xs text-white/35">Takes 5 minutes. No lock-in. Approved online with your Australian ABN.</p>
           </div>
         </div>
       </section>
+      <div className="h-16 sm:hidden" aria-hidden="true" />
+      <div className="fixed bottom-0 inset-x-0 z-50 sm:hidden bg-brand-dark/95 backdrop-blur-sm border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3">
+        <span className="text-sm text-white/75 leading-tight">Compare EFTPOS rates in 30 sec</span>
+        <Link to="/eftpos-rate-guide" className="flex-shrink-0 px-4 py-2 bg-brand-blue text-white text-sm font-semibold rounded-xl whitespace-nowrap">View →</Link>
+      </div>
     </>
   )
 }
