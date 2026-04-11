@@ -73,7 +73,7 @@ export default function GlaziersLandingPage() {
             transition={{ duration: 0.45 }}
           >
             <p className="text-xs font-semibold text-brand-blue/80 uppercase tracking-widest mb-3">
-              For Australian Glaziers · 2026
+              Australian Glaziers · EFTPOS Guide 2026
             </p>
 
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.1] max-w-2xl">
@@ -81,8 +81,8 @@ export default function GlaziersLandingPage() {
             </h1>
 
             <p className="hero-sub max-w-xl">
-              The lowest-rate EFTPOS setup for Australian glaziers. Works on emergency callouts,
-              commercial sites, and residential installs — without relying on customer WiFi.
+              The lowest-rate EFTPOS for Australian glaziers. Emergency callouts, high-rise commercial sites,
+              property manager billing — all without relying on customer WiFi.
             </p>
 
             {/* AU trust strip — above fold */}
@@ -91,7 +91,7 @@ export default function GlaziersLandingPage() {
                 '1.4% flat rate',
                 '$0 monthly fee',
                 'Same-day AUD settlement',
-                'ABN signup · no lock-in',
+                'No lock-in contract',
               ].map(t => (
                 <span key={t} className="flex items-center gap-1.5 text-sm text-white/80">
                   <Check size={13} className="text-green-400 flex-shrink-0" strokeWidth={3} />
@@ -111,7 +111,7 @@ export default function GlaziersLandingPage() {
               >
                 Get Zeller — 1.4% rate →
               </AffiliateButton>
-              <p className="mt-2.5 text-xs text-white/45">Set up with your ABN — no lock-in, no bank paperwork.</p>
+              <p className="mt-2.5 text-xs text-white/45">No lock-in. ABN approval online — no bank branch required.</p>
             </div>
           </motion.div>
         </div>
