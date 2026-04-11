@@ -111,7 +111,7 @@ export default function GlaziersLandingPage() {
               >
                 Get Zeller — 1.4% rate →
               </AffiliateButton>
-              <p className="mt-2.5 text-xs text-white/45">Approved online with your Australian ABN. No lock-in contract.</p>
+              <p className="mt-2.5 text-xs text-white/45">Set up with your ABN — no lock-in, no bank paperwork.</p>
             </div>
           </motion.div>
         </div>
@@ -181,11 +181,11 @@ export default function GlaziersLandingPage() {
             <ul className="space-y-2.5 mb-7">
               {[
                 'Built-in Optus SIM — works independently of customer or site WiFi across Australia',
-                'Lowest published flat rate in Australia — 1.4% per tap, swipe, or contactless',
-                '$0 monthly fee (SIM plan optional, cancel any time)',
+                'Lowest published flat rate in Australia — 1.4% per transaction',
+                '$0 monthly fee — SIM plan optional at $15/mo',
                 'Same-day settlement to your Zeller AUD account',
-                'Online ABN approval — no bank branch, no paperwork',
-                'No lock-in contract — cancel or pause any time',
+                'Online ABN approval in minutes — no bank branch, no paperwork',
+                'No lock-in contract — cancel any time',
               ].map(b => (
                 <li key={b} className="flex items-start gap-2.5 text-sm text-slate-700">
                   <Check size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
@@ -201,7 +201,7 @@ export default function GlaziersLandingPage() {
               intent="signup"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors shadow-[0_6px_20px_rgba(0,106,255,0.28)]"
             >
-              Get Zeller — set up in minutes →
+              Get Zeller — 1.4%, set up today →
             </AffiliateButton>
           </div>
         </div>
@@ -252,9 +252,9 @@ export default function GlaziersLandingPage() {
       {/* ── WHAT HAPPENS NEXT ─────────────────────────────── */}
       <section className="section bg-white">
         <div className="container-page">
-          <h2 className="text-xl font-bold text-brand-dark mb-1">What Happens After You Click</h2>
+          <h2 className="text-xl font-bold text-brand-dark mb-1">From Click to First Payment</h2>
           <p className="text-sm text-slate-500 mb-8">
-            Most Australian glaziers are set up and taking payments within a day.
+            Most Australian glaziers are set up and taking card payments within a day.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             {STEPS.map(({ n, title, body }, i) => (
@@ -279,7 +279,7 @@ export default function GlaziersLandingPage() {
 
           {/* Inline reassurance — no competing links */}
           <div className="bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 max-w-lg">
-            <p className="text-sm font-semibold text-brand-dark mb-2">Common questions</p>
+            <p className="text-sm font-semibold text-brand-dark mb-2">Quick answers</p>
             <div className="space-y-3">
               {[
                 { q: 'Do I need a bank merchant account?', a: 'No. Zeller approves online with just your ABN. No bank branch required.' },
@@ -307,8 +307,8 @@ export default function GlaziersLandingPage() {
               Stop chasing invoices.<br className="hidden sm:block" /> Get paid on-site.
             </h2>
             <p className="text-white/55 text-sm mb-7 max-w-sm mx-auto leading-relaxed">
-              Zeller Terminal + SIM. 1.4% rate, $0 monthly fee, same-day settlement to your Australian account.
-              Set up with your ABN — no lock-in.
+              Zeller Terminal + SIM. 1.4% rate. $0 monthly fee. Same-day settlement to your Australian AUD account.
+              ABN approval online — no lock-in, no bank paperwork.
             </p>
             <AffiliateButton
               providerId="zeller"
