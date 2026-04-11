@@ -39,8 +39,8 @@ const COMPARISON = [
 ]
 
 const STEPS = [
-  { n: '1', title: 'Sign up with your ABN', body: 'Online approval in minutes — no bank branch visit, no paperwork, no credit check.' },
-  { n: '2', title: 'Hardware ships fast', body: 'Zeller Terminal despatches from Sydney. Most Australian glaziers receive it in 1–3 business days.' },
+  { n: '1', title: 'Sign up with your ABN', body: 'Online approval in minutes — just your ABN. No bank branch visit, no paperwork.' },
+  { n: '2', title: 'Hardware ships fast', body: 'Zeller Terminal ships within Australia. Most glaziers receive it in 1–3 business days.' },
   { n: '3', title: 'Take payment on your first job', body: 'Tap, swipe, or send a payment link. Funds settle same day to your Zeller AUD account.' },
 ]
 
@@ -244,7 +244,7 @@ export default function GlaziersLandingPage() {
             </table>
           </div>
           <p className="text-xs text-slate-400 mt-4">
-            Rates current April 2026. Verify with providers before signing up.
+            Rates current April 2026. Verify with providers before signing up. Some links on this page are referral links — this does not affect our recommendations.
           </p>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function GlaziersLandingPage() {
         <div className="container-page">
           <h2 className="text-xl font-bold text-brand-dark mb-1">From Click to First Payment</h2>
           <p className="text-sm text-slate-500 mb-8">
-            Most Australian glaziers are set up and taking card payments within a day.
+            Signup takes minutes. Hardware typically arrives within 1–3 business days across Australia.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             {STEPS.map(({ n, title, body }, i) => (
@@ -307,7 +307,7 @@ export default function GlaziersLandingPage() {
               Stop chasing invoices.<br className="hidden sm:block" /> Get paid on-site.
             </h2>
             <p className="text-white/55 text-sm mb-7 max-w-sm mx-auto leading-relaxed">
-              Zeller Terminal + SIM. 1.4% rate. $0 monthly fee. Same-day settlement to your Australian AUD account.
+              Zeller Terminal + SIM. 1.4% rate. $0 monthly fee. Same-day settlement to your Zeller account in AUD.
               ABN approval online — no lock-in, no bank paperwork.
             </p>
             <AffiliateButton

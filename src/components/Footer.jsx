@@ -143,7 +143,7 @@ export default function Footer() {
         <div className="col-span-2 sm:col-span-1">
           <Logo className="mb-4 opacity-75" />
           <p className="text-xs text-slate-500 leading-relaxed">
-            Independent EFTPOS comparison<br className="hidden sm:block" /> for Australian tradies.<br className="hidden sm:block" /> AUD pricing · GST-ready · ABN signup.
+            Independent EFTPOS comparison<br className="hidden sm:block" /> for Australian tradies.<br className="hidden sm:block" /> Pricing in AUD · GST-ready · editorially independent.
           </p>
         </div>
 
@@ -240,7 +240,7 @@ export default function Footer() {
 
       {/* Bottom strip */}
       <div className="border-t border-white/[0.05] py-5 px-4 text-center text-xs text-slate-700">
-        Rates as of {siteMeta.lastVerifiedDisplay} · General information only, not financial advice · TradiePay AU — QUICKFIXCREATIVE ABN 77 133 011 874
+        Rates as of {siteMeta.lastVerifiedDisplay} · General information only, not financial advice · TradiePay AU · ABN 77 133 011 874 · Some links are referral links and do not affect our rankings
       </div>
 
     </footer>
