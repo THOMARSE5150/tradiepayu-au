@@ -13,6 +13,11 @@ function derivePageType(path) {
   if (path === '/')                      return 'home'
   if (/^\/glaziers-eftpos/.test(path))      return 'landing_page'
   if (/^\/electricians-eftpos/.test(path)) return 'landing_page'
+  if (/^\/plumbers-eftpos/.test(path))     return 'landing_page'
+  if (/^\/builders-eftpos/.test(path))     return 'landing_page'
+  if (/^\/cleaners-eftpos/.test(path))     return 'landing_page'
+  if (/^\/concreters-eftpos/.test(path))   return 'landing_page'
+  if (/^\/roofers-eftpos/.test(path))      return 'landing_page'
   if (path === '/eftpos-rate-guide')        return 'rate_guide'
   return 'other'
 }

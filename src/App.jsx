@@ -23,6 +23,21 @@ const ElectriciansPage  = lazy(() => import('./pages/trades/ElectriciansPage'))
 const ElectriciansLandingPage       = lazy(() => import('./pages/ElectriciansLandingPage'))
 const ElectriciansLandingPageGoogle = lazy(() => import('./pages/ElectriciansLandingPageGoogle'))
 const ElectriciansLandingPageSocial = lazy(() => import('./pages/ElectriciansLandingPageSocial'))
+const PlumbersLandingPage           = lazy(() => import('./pages/PlumbersLandingPage'))
+const PlumbersLandingPageGoogle     = lazy(() => import('./pages/PlumbersLandingPageGoogle'))
+const PlumbersLandingPageSocial     = lazy(() => import('./pages/PlumbersLandingPageSocial'))
+const BuildersLandingPage           = lazy(() => import('./pages/BuildersLandingPage'))
+const BuildersLandingPageGoogle     = lazy(() => import('./pages/BuildersLandingPageGoogle'))
+const BuildersLandingPageSocial     = lazy(() => import('./pages/BuildersLandingPageSocial'))
+const CleanersLandingPage           = lazy(() => import('./pages/CleanersLandingPage'))
+const CleanersLandingPageGoogle     = lazy(() => import('./pages/CleanersLandingPageGoogle'))
+const CleanersLandingPageSocial     = lazy(() => import('./pages/CleanersLandingPageSocial'))
+const ConcretersLandingPage         = lazy(() => import('./pages/ConcretersLandingPage'))
+const ConcretersLandingPageGoogle   = lazy(() => import('./pages/ConcretersLandingPageGoogle'))
+const ConcretersLandingPageSocial   = lazy(() => import('./pages/ConcretersLandingPageSocial'))
+const RoofersLandingPage            = lazy(() => import('./pages/RoofersLandingPage'))
+const RoofersLandingPageGoogle      = lazy(() => import('./pages/RoofersLandingPageGoogle'))
+const RoofersLandingPageSocial      = lazy(() => import('./pages/RoofersLandingPageSocial'))
 const EftposRateGuidePage           = lazy(() => import('./pages/EftposRateGuidePage'))
 const PlumbersPage      = lazy(() => import('./pages/trades/PlumbersPage'))
 const BuildersPage      = lazy(() => import('./pages/trades/BuildersPage'))
@@ -279,6 +294,21 @@ export default function App() {
           <Route path="/electricians-eftpos"        element={<ElectriciansLandingPage />} />
           <Route path="/electricians-eftpos-google" element={<ElectriciansLandingPageGoogle />} />
           <Route path="/electricians-eftpos-social" element={<ElectriciansLandingPageSocial />} />
+          <Route path="/plumbers-eftpos"            element={<PlumbersLandingPage />} />
+          <Route path="/plumbers-eftpos-google"     element={<PlumbersLandingPageGoogle />} />
+          <Route path="/plumbers-eftpos-social"     element={<PlumbersLandingPageSocial />} />
+          <Route path="/builders-eftpos"            element={<BuildersLandingPage />} />
+          <Route path="/builders-eftpos-google"     element={<BuildersLandingPageGoogle />} />
+          <Route path="/builders-eftpos-social"     element={<BuildersLandingPageSocial />} />
+          <Route path="/cleaners-eftpos"            element={<CleanersLandingPage />} />
+          <Route path="/cleaners-eftpos-google"     element={<CleanersLandingPageGoogle />} />
+          <Route path="/cleaners-eftpos-social"     element={<CleanersLandingPageSocial />} />
+          <Route path="/concreters-eftpos"          element={<ConcretersLandingPage />} />
+          <Route path="/concreters-eftpos-google"   element={<ConcretersLandingPageGoogle />} />
+          <Route path="/concreters-eftpos-social"   element={<ConcretersLandingPageSocial />} />
+          <Route path="/roofers-eftpos"             element={<RoofersLandingPage />} />
+          <Route path="/roofers-eftpos-google"      element={<RoofersLandingPageGoogle />} />
+          <Route path="/roofers-eftpos-social"      element={<RoofersLandingPageSocial />} />
           <Route path="/eftpos-rate-guide"          element={<EftposRateGuidePage />} />
           <Route path="/trades/electricians" element={<ElectriciansPage />} />
           <Route path="/trades/plumbers" element={<PlumbersPage />} />
