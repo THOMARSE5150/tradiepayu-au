@@ -23,6 +23,7 @@ const ElectriciansPage  = lazy(() => import('./pages/trades/ElectriciansPage'))
 const ElectriciansLandingPage       = lazy(() => import('./pages/ElectriciansLandingPage'))
 const ElectriciansLandingPageGoogle = lazy(() => import('./pages/ElectriciansLandingPageGoogle'))
 const ElectriciansLandingPageSocial = lazy(() => import('./pages/ElectriciansLandingPageSocial'))
+const EftposRateGuidePage           = lazy(() => import('./pages/EftposRateGuidePage'))
 const PlumbersPage      = lazy(() => import('./pages/trades/PlumbersPage'))
 const BuildersPage      = lazy(() => import('./pages/trades/BuildersPage'))
 const CleanersPage      = lazy(() => import('./pages/trades/CleanersPage'))
@@ -278,6 +279,7 @@ export default function App() {
           <Route path="/electricians-eftpos"        element={<ElectriciansLandingPage />} />
           <Route path="/electricians-eftpos-google" element={<ElectriciansLandingPageGoogle />} />
           <Route path="/electricians-eftpos-social" element={<ElectriciansLandingPageSocial />} />
+          <Route path="/eftpos-rate-guide"          element={<EftposRateGuidePage />} />
           <Route path="/trades/electricians" element={<ElectriciansPage />} />
           <Route path="/trades/plumbers" element={<PlumbersPage />} />
           <Route path="/trades/builders" element={<BuildersPage />} />

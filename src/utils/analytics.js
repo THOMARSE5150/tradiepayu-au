@@ -13,6 +13,7 @@ function derivePageType(path) {
   if (path === '/')                      return 'home'
   if (/^\/glaziers-eftpos/.test(path))      return 'landing_page'
   if (/^\/electricians-eftpos/.test(path)) return 'landing_page'
+  if (path === '/eftpos-rate-guide')        return 'rate_guide'
   return 'other'
 }
 
