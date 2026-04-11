@@ -76,7 +76,7 @@ export default function GlaziersLandingPage() {
               Australian Glaziers · EFTPOS Guide 2026
             </p>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.1] max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.1] max-w-2xl">
               Get Paid On the Job —<br className="hidden sm:block" /> No WiFi Needed
             </h1>
 
@@ -86,7 +86,7 @@ export default function GlaziersLandingPage() {
             </p>
 
             {/* AU trust strip — above fold */}
-            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+            <div className="mt-5 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-5 gap-y-2.5">
               {[
                 '1.4% flat rate',
                 'Own SIM — works anywhere',
@@ -94,24 +94,24 @@ export default function GlaziersLandingPage() {
                 'No lock-in',
               ].map(t => (
                 <span key={t} className="flex items-center gap-1.5 text-sm text-white/80">
-                  <Check size={13} className="text-green-400 flex-shrink-0" strokeWidth={3} />
+                  <Check size={15} className="text-green-400 flex-shrink-0" strokeWidth={2.75} />
                   {t}
                 </span>
               ))}
             </div>
 
             {/* Single primary CTA — no competing links above fold */}
-            <div className="mt-7">
+            <div className="mt-8">
               <AffiliateButton
                 providerId="zeller"
                 label="hero-primary"
                 campaign="glaziers-lp"
                 intent="signup"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-brand-blue text-white font-bold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-brand-blue text-white font-bold rounded-2xl text-[15px] hover:bg-blue-600 active:scale-[0.97] transition-all duration-150 shadow-[0_8px_28px_rgba(0,106,255,0.40)] w-full sm:w-auto"
               >
                 Start with Zeller — 1.4% →
               </AffiliateButton>
-              <p className="mt-2.5 text-xs text-white/45">Approved with your ABN in minutes. No lock-in.</p>
+              <p className="mt-2.5 text-xs text-white/45 text-center sm:text-left">Approved with your ABN in minutes. No lock-in.</p>
             </div>
           </motion.div>
         </div>
