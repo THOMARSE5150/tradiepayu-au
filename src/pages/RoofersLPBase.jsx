@@ -84,6 +84,11 @@ export default function RoofersLPBase({ config }) {
 
       <section className="section-alt py-10 sm:py-14">
         <div className="container-page">
+          <div className="mb-8 pb-8 border-b border-slate-200">
+            <h2 className="text-xl font-bold text-brand-dark mb-2">Best EFTPOS for roofers in Australia (2026)</h2>
+            <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">For Australian roofers, choosing the right EFTPOS matters — especially for storm callouts, rural properties, and outer-suburb jobs with variable signal. This guide compares Zeller, Square, Stripe, and other options based on real roofing use cases, including rates, SIM connectivity, and same-day settlement.</p>
+            <p className="text-xs mt-3"><Link to="/eftpos-rate-guide" className="text-brand-blue hover:underline font-medium">See full rate comparison guide →</Link></p>
+          </div>
           <div className="mb-7">
             <h2 className="text-2xl font-bold text-brand-dark">{pain.h2}</h2>
             <p className="text-sm text-slate-500 mt-1.5">{pain.sub}</p>

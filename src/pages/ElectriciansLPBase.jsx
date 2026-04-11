@@ -131,6 +131,11 @@ export default function ElectriciansLPBase({ config }) {
       {/* ── ELECTRICIAN PAIN / FIT ────────────────────────── */}
       <section className="section-alt py-10 sm:py-14">
         <div className="container-page">
+          <div className="mb-8 pb-8 border-b border-slate-200">
+            <h2 className="text-xl font-bold text-brand-dark mb-2">Best EFTPOS for electricians in Australia (2026)</h2>
+            <p className="text-sm text-slate-600 leading-relaxed max-w-2xl">For Australian electricians, choosing the right EFTPOS matters — especially for after-hours callouts, commercial switchrooms, and residential rewires. This guide compares Zeller, Square, Stripe, and other options based on real electrical use cases, including rates, SIM connectivity, and same-day settlement.</p>
+            <p className="text-xs mt-3"><Link to="/eftpos-rate-guide" className="text-brand-blue hover:underline font-medium">See full rate comparison guide →</Link></p>
+          </div>
           <div className="mb-7">
             <h2 className="text-2xl font-bold text-brand-dark">
               {pain.h2}
