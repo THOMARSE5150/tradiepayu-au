@@ -538,9 +538,12 @@ export default function ContactPage() {
               <div className="bg-brand-dark/[0.03] border border-slate-200 rounded-2xl p-4">
                 <div className="flex items-start gap-2.5">
                   <Shield size={14} className="text-brand-blue mt-0.5 flex-shrink-0" />
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    Provider payments do not affect our rankings or editorial decisions. Corrections are always welcomed.
-                  </p>
+                  <div>
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      Provider payments do not affect our rankings or editorial decisions. Corrections are always welcomed.
+                    </p>
+                    <p className="text-xs text-slate-400 mt-2">TradiePay AU · ABN 77 133 011 874</p>
+                  </div>
                 </div>
               </div>
 

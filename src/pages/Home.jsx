@@ -208,7 +208,7 @@ export default function Home() {
               {[
                 { value: '100,000+', label: 'AU businesses using Zeller' },
                 { value: 'Apr 2026', label: 'Last verified' },
-                { value: 'Independent', label: 'Editorially independent' },
+                { value: 'Australian', label: 'ABN 77 133 011 874' },
               ].map(s => (
                 <div key={s.label} className="flex items-center gap-2">
                   <span className="text-white text-sm font-bold">{s.value}</span>
