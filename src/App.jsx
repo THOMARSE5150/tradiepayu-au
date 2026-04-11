@@ -16,6 +16,7 @@ const StripePage        = lazy(() => import('./pages/providers/StripePage'))
 const TyroPage          = lazy(() => import('./pages/providers/TyroPage'))
 const Shift4Page        = lazy(() => import('./pages/providers/Shift4Page'))
 const GlaziersPage      = lazy(() => import('./pages/trades/GlaziersPage'))
+const GlaziersLandingPage = lazy(() => import('./pages/GlaziersLandingPage'))
 const ElectriciansPage  = lazy(() => import('./pages/trades/ElectriciansPage'))
 const PlumbersPage      = lazy(() => import('./pages/trades/PlumbersPage'))
 const BuildersPage      = lazy(() => import('./pages/trades/BuildersPage'))
@@ -266,6 +267,7 @@ export default function App() {
           <Route path="/providers/tyro" element={<TyroPage />} />
           <Route path="/providers/shift4" element={<Shift4Page />} />
           <Route path="/trades/glaziers" element={<GlaziersPage />} />
+          <Route path="/glaziers-eftpos" element={<GlaziersLandingPage />} />
           <Route path="/trades/electricians" element={<ElectriciansPage />} />
           <Route path="/trades/plumbers" element={<PlumbersPage />} />
           <Route path="/trades/builders" element={<BuildersPage />} />
