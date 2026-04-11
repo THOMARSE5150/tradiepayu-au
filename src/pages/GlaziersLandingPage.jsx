@@ -17,7 +17,7 @@ const PAIN_POINTS = [
   },
   {
     emoji: '🏢',
-    title: 'Commercial buildings and dead zones',
+    title: 'High-rises, carparks, and signal dead zones',
     body: 'Stairwells, lift shafts, mechanical rooms, underground carparks — mobile signals die in these environments. Zeller\'s built-in Optus SIM handles most sites. Square\'s offline mode is the backup for genuine zero-signal locations.',
   },
   {
@@ -81,17 +81,17 @@ export default function GlaziersLandingPage() {
             </h1>
 
             <p className="hero-sub max-w-xl">
-              The lowest-rate EFTPOS for Australian glaziers. Emergency callouts, high-rise commercial sites,
-              property manager billing — all without relying on customer WiFi.
+              Zeller runs on its own SIM — takes payment anywhere you work. Emergency callouts, high-rise sites,
+              property manager billing. 1.4% flat rate, same-day settlement.
             </p>
 
             {/* AU trust strip — above fold */}
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
               {[
                 '1.4% flat rate',
-                '$0 monthly fee',
-                'Same-day AUD settlement',
-                'No lock-in contract',
+                'Own SIM — works anywhere',
+                'Same-day settlement',
+                'No lock-in',
               ].map(t => (
                 <span key={t} className="flex items-center gap-1.5 text-sm text-white/80">
                   <Check size={13} className="text-green-400 flex-shrink-0" strokeWidth={3} />
@@ -111,7 +111,7 @@ export default function GlaziersLandingPage() {
               >
                 Get Zeller — 1.4% rate →
               </AffiliateButton>
-              <p className="mt-2.5 text-xs text-white/45">No lock-in. ABN approval online — no bank branch required.</p>
+              <p className="mt-2.5 text-xs text-white/45">Approved with your ABN in minutes. No lock-in.</p>
             </div>
           </motion.div>
         </div>
@@ -125,7 +125,7 @@ export default function GlaziersLandingPage() {
               Why Standard EFTPOS Fails Australian Glaziers
             </h2>
             <p className="text-sm text-slate-500 mt-1.5">
-              Generic terminals are built for shops with reliable WiFi. Glazing work is nothing like that.
+              Generic terminals are built for shops. Here's where they fail on glazing jobs — and what works instead.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
