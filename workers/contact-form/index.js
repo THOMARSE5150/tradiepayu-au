@@ -135,40 +135,59 @@ function escHtml(str) {
     .replace(/"/g, '&quot;')
 }
 
+function brandHeader(title, subtitle) {
+  return `<tr><td style="background:#1a1a2e;padding:24px 32px 22px">
+    <!-- Wordmark -->
+    <table cellpadding="0" cellspacing="0" style="margin-bottom:16px"><tr>
+      <td style="vertical-align:middle;padding-right:8px">
+        <!-- Static tape-hook mark — animations stripped for email-client compat -->
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="4" y1="13" x2="24" y2="13" stroke="#E8EDF2" stroke-width="7" stroke-linecap="round"/>
+          <polyline points="24,13 24,23 16,23" stroke="#2563EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </td>
+      <td style="vertical-align:middle">
+        <span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#F0F4F8">Tradie</span><span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#3B82F6">Pay</span><span style="display:inline-block;margin-left:5px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.06em;background:#162040;color:#93C5FD;padding:2px 5px;border-radius:3px;vertical-align:middle">AU</span>
+      </td>
+    </tr></table>
+    <p style="margin:0;font-size:18px;font-weight:700;color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.3">${title}</p>
+    ${subtitle ? `<p style="margin:5px 0 0;font-size:12px;color:rgba(255,255,255,0.45);font-family:Arial,Helvetica,sans-serif">${subtitle}</p>` : ''}
+  </td></tr>`
+}
+
 function adminHtml({ name, email, topic, message }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:system-ui,-apple-system,sans-serif">
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:Arial,Helvetica,sans-serif">
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px">
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:540px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0">
-        <!-- Header -->
-        <tr><td style="background:#1a1a2e;padding:24px 32px">
-          <p style="margin:0;font-size:13px;font-weight:700;color:#006aff;letter-spacing:0.05em;text-transform:uppercase">TradiePay AU</p>
-          <p style="margin:6px 0 0;font-size:18px;font-weight:700;color:#fff">New contact form submission</p>
-        </td></tr>
-        <!-- Body -->
-        <tr><td style="padding:28px 32px">
+        ${brandHeader('New contact submission', 'tradiepayau.directory/contact')}
+        <!-- Fields -->
+        <tr><td style="padding:24px 32px 8px">
           <table width="100%" cellpadding="0" cellspacing="0">
             <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9">
-              <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em">Name</p>
-              <p style="margin:0;font-size:15px;font-weight:600;color:#0f172a">${escHtml(name)}</p>
+              <p style="margin:0 0 2px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.07em;font-family:Arial,Helvetica,sans-serif">Name</p>
+              <p style="margin:0;font-size:15px;font-weight:600;color:#0f172a;font-family:Arial,Helvetica,sans-serif">${escHtml(name)}</p>
             </td></tr>
             <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9">
-              <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em">Email</p>
-              <p style="margin:0"><a href="mailto:${escHtml(email)}" style="font-size:15px;font-weight:600;color:#006aff;text-decoration:none">${escHtml(email)}</a></p>
+              <p style="margin:0 0 2px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.07em;font-family:Arial,Helvetica,sans-serif">Email</p>
+              <p style="margin:0"><a href="mailto:${escHtml(email)}" style="font-size:15px;font-weight:600;color:#006aff;text-decoration:none;font-family:Arial,Helvetica,sans-serif">${escHtml(email)}</a></p>
             </td></tr>
             <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9">
-              <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em">Topic</p>
-              <p style="margin:0;font-size:15px;font-weight:600;color:#0f172a">${escHtml(topic || 'General')}</p>
+              <p style="margin:0 0 2px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.07em;font-family:Arial,Helvetica,sans-serif">Topic</p>
+              <p style="margin:0;font-size:15px;font-weight:600;color:#0f172a;font-family:Arial,Helvetica,sans-serif">${escHtml(topic || 'General')}</p>
             </td></tr>
-            <tr><td style="padding:10px 0">
-              <p style="margin:0 0 8px;font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.06em">Message</p>
-              <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;font-size:14px;color:#334155;line-height:1.6;white-space:pre-wrap">${escHtml(message)}</div>
+            <tr><td style="padding:12px 0 4px">
+              <p style="margin:0 0 8px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.07em;font-family:Arial,Helvetica,sans-serif">Message</p>
+              <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;font-size:14px;color:#334155;line-height:1.6;white-space:pre-wrap;font-family:Arial,Helvetica,sans-serif">${escHtml(message)}</div>
             </td></tr>
           </table>
-          <p style="margin:20px 0 0;font-size:12px;color:#94a3b8">Reply directly to this email to respond to ${escHtml(name)}.</p>
+        </td></tr>
+        <!-- Reply CTA -->
+        <tr><td style="padding:16px 32px 28px">
+          <a href="mailto:${escHtml(email)}" style="display:inline-block;padding:10px 20px;background:#006aff;color:#fff;font-size:13px;font-weight:700;border-radius:8px;text-decoration:none;font-family:Arial,Helvetica,sans-serif">Reply to ${escHtml(name)} →</a>
         </td></tr>
       </table>
     </td></tr>
@@ -182,19 +201,27 @@ function confirmationHtml({ name, topic, message }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:system-ui,-apple-system,sans-serif">
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:Arial,Helvetica,sans-serif">
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px">
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:540px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0">
 
         <!-- Header -->
-        <tr><td style="background:#1a1a2e;padding:32px 32px 28px">
-          <table cellpadding="0" cellspacing="0"><tr>
-            <td style="width:36px;height:36px;background:rgba(0,106,255,0.15);border:1px solid rgba(0,106,255,0.3);border-radius:10px;text-align:center;vertical-align:middle;font-size:18px;line-height:36px">⚡</td>
-            <td style="padding-left:10px;font-size:15px;font-weight:700;color:rgba(255,255,255,0.75)">TradiePay AU</td>
+        <tr><td style="background:#1a1a2e;padding:24px 32px 26px">
+          <!-- Wordmark -->
+          <table cellpadding="0" cellspacing="0" style="margin-bottom:16px"><tr>
+            <td style="vertical-align:middle;padding-right:8px">
+              <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" y1="13" x2="24" y2="13" stroke="#E8EDF2" stroke-width="7" stroke-linecap="round"/>
+                <polyline points="24,13 24,23 16,23" stroke="#2563EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </td>
+            <td style="vertical-align:middle">
+              <span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#F0F4F8">Tradie</span><span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#3B82F6">Pay</span><span style="display:inline-block;margin-left:5px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.06em;background:#162040;color:#93C5FD;padding:2px 5px;border-radius:3px;vertical-align:middle">AU</span>
+            </td>
           </tr></table>
-          <p style="margin:18px 0 4px;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.3px">Message received</p>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.5">Hi ${escHtml(name)}, we've got your message and will follow up as soon as possible.</p>
+          <p style="margin:0 0 6px;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.3px;font-family:Arial,Helvetica,sans-serif">Got your message, ${escHtml(name)}.</p>
+          <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.5;font-family:Arial,Helvetica,sans-serif">We'll follow up as soon as possible — usually within one business day.</p>
         </td></tr>
 
         <!-- Message summary -->
@@ -251,19 +278,26 @@ function rateAlertWelcomeHtml({ email }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:system-ui,-apple-system,sans-serif">
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:Arial,Helvetica,sans-serif">
   <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px">
     <tr><td align="center">
       <table width="100%" cellpadding="0" cellspacing="0" style="max-width:540px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0">
 
         <!-- Header -->
-        <tr><td style="background:#1a1a2e;padding:32px 32px 28px">
-          <table cellpadding="0" cellspacing="0"><tr>
-            <td style="width:36px;height:36px;background:rgba(0,106,255,0.15);border:1px solid rgba(0,106,255,0.3);border-radius:10px;text-align:center;vertical-align:middle;font-size:18px;line-height:36px">⚡</td>
-            <td style="padding-left:10px;font-size:15px;font-weight:700;color:rgba(255,255,255,0.75)">TradiePay AU</td>
+        <tr><td style="background:#1a1a2e;padding:24px 32px 26px">
+          <table cellpadding="0" cellspacing="0" style="margin-bottom:16px"><tr>
+            <td style="vertical-align:middle;padding-right:8px">
+              <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" y1="13" x2="24" y2="13" stroke="#E8EDF2" stroke-width="7" stroke-linecap="round"/>
+                <polyline points="24,13 24,23 16,23" stroke="#2563EB" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </td>
+            <td style="vertical-align:middle">
+              <span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#F0F4F8">Tradie</span><span style="font-family:Arial,Helvetica,sans-serif;font-weight:800;font-size:15px;letter-spacing:-0.02em;color:#3B82F6">Pay</span><span style="display:inline-block;margin-left:5px;font-family:Arial,Helvetica,sans-serif;font-size:9px;font-weight:700;letter-spacing:0.06em;background:#162040;color:#93C5FD;padding:2px 5px;border-radius:3px;vertical-align:middle">AU</span>
+            </td>
           </tr></table>
-          <p style="margin:18px 0 4px;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.3px">You're on the list</p>
-          <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.5">We'll let you know when any provider changes their rates or hardware pricing.</p>
+          <p style="margin:0 0 6px;font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.3px;font-family:Arial,Helvetica,sans-serif">You're on the list</p>
+          <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.55);line-height:1.5;font-family:Arial,Helvetica,sans-serif">We'll let you know when any provider changes their rates or hardware pricing.</p>
         </td></tr>
 
         <!-- What you'll get -->
@@ -301,6 +335,26 @@ function rateAlertWelcomeHtml({ email }) {
 </html>`
 }
 
+function rateAlertAdminHtml({ email }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:Arial,Helvetica,sans-serif">
+  <table width="100%" cellpadding="0" cellspacing="0" style="padding:32px 16px">
+    <tr><td align="center">
+      <table width="100%" cellpadding="0" cellspacing="0" style="max-width:540px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0">
+        ${brandHeader('New rate alert signup', 'tradiepayau.directory')}
+        <tr><td style="padding:24px 32px 28px">
+          <p style="margin:0 0 6px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.07em;font-family:Arial,Helvetica,sans-serif">Email address</p>
+          <p style="margin:0"><a href="mailto:${escHtml(email)}" style="font-size:16px;font-weight:600;color:#006aff;text-decoration:none;font-family:Arial,Helvetica,sans-serif">${escHtml(email)}</a></p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`
+}
+
 // ── Contact notifications (non-blocking, each failure logged independently) ───
 
 async function sendContactNotifications(env, { name, email, topic, message }) {
@@ -314,7 +368,7 @@ async function sendContactNotifications(env, { name, email, topic, message }) {
         from:     'TradiePay AU <noreply@tradiepayau.directory>',
         to:       [ADMIN_EMAIL],
         reply_to: email,
-        subject:  `Contact: ${topicLabel} — ${name}`,
+        subject:  `[Contact] ${name} · ${topicLabel}`,
         html:     adminHtml({ name, email, topic, message }),
       })
       console.log('[BEN-CONTACT] admin email sent')
@@ -327,7 +381,7 @@ async function sendContactNotifications(env, { name, email, topic, message }) {
       await sendEmail(env.RESEND_API_KEY, {
         from:    FROM_BRANDED,
         to:      [email],
-        subject: 'We received your TradiePay AU message',
+        subject: `Got it, ${name} — we'll be in touch`,
         html:    confirmationHtml({ name, topic, message }),
       })
       console.log('[BEN-CONTACT] confirmation email sent')
@@ -434,8 +488,8 @@ async function handleRateAlerts(request, env) {
     await sendEmail(env.RESEND_API_KEY, {
       from:    'TradiePay AU <noreply@tradiepayau.directory>',
       to:      [ADMIN_EMAIL],
-      subject: `New rate alert signup: ${email}`,
-      html:    `<p style="font-family:sans-serif">New rate alert signup: <strong>${escHtml(email)}</strong></p>`,
+      subject: `[Rate Alert] New signup: ${email}`,
+      html:    rateAlertAdminHtml({ email }),
     })
 
     return json({ ok: true })
