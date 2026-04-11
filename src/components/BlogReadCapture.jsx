@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { trackEmailCapture } from '../utils/analytics'
 
 /**
@@ -63,7 +63,7 @@ export default function BlogReadCapture() {
   return (
     <div
       role="dialog"
-      aria-label="Get the EFTPOS comparison guide"
+      aria-label="Get the free EFTPOS rate guide for Australian tradies"
       className="fixed bottom-16 sm:bottom-0 left-0 right-0 z-40 animate-slide-up"
     >
       <div className="mx-auto max-w-2xl sm:max-w-none sm:mx-0">
@@ -72,34 +72,46 @@ export default function BlogReadCapture() {
 
             {sent ? (
               <p className="text-green-400 text-sm font-semibold text-center sm:text-left flex-1">
-                ✓ You&apos;re in — we&apos;ll send the guide shortly.
+                ✓ Saved —{' '}
+                <Link to="/eftpos-rate-guide" className="underline underline-offset-2 hover:text-green-300 transition-colors">
+                  read the guide now →
+                </Link>
               </p>
             ) : (
               <>
                 <div className="flex-1 min-w-0">
                   <p className="text-white text-sm font-semibold leading-snug">
-                    Free EFTPOS rate comparison guide
+                    Free EFTPOS rate guide — Zeller, Square, Stripe + more
                   </p>
                   <p className="text-white/50 text-xs mt-0.5 hidden sm:block">
-                    Zeller vs Square vs Stripe — all rates, fees, and trade scenarios. One email, no spam.
+                    Rates, hardware, SIM connectivity, and best picks by scenario. Updated April 2026.
                   </p>
                 </div>
-                <form onSubmit={submit} className="flex gap-2 flex-shrink-0">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    placeholder="your@email.com.au"
-                    required
-                    className="flex-1 sm:w-52 px-3 py-2 text-sm rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-brand-blue"
-                  />
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-brand-blue text-white text-sm font-semibold rounded-xl hover:bg-brand-blue/90 transition-colors flex-shrink-0"
-                  >
-                    Send guide
-                  </button>
-                </form>
+                <div className="flex flex-col gap-1.5 flex-shrink-0">
+                  <form onSubmit={submit} className="flex gap-2">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      placeholder="your@email.com.au"
+                      required
+                      className="flex-1 sm:w-52 px-3 py-2 text-sm rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-brand-blue"
+                    />
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-brand-blue text-white text-sm font-semibold rounded-xl hover:bg-brand-blue/90 transition-colors flex-shrink-0"
+                    >
+                      Get guide
+                    </button>
+                  </form>
+                  <p className="text-white/35 text-xs text-right">
+                    or{' '}
+                    <Link to="/eftpos-rate-guide" className="text-white/55 hover:text-white/80 underline underline-offset-2 transition-colors">
+                      read it now
+                    </Link>
+                    {' '}— no email needed
+                  </p>
+                </div>
               </>
             )}
 
