@@ -1,0 +1,110 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - paragraph [ref=e3]: Brand identity · Round 2
+    - heading "TradiePay AU — 3 new directions" [level=1] [ref=e4]
+    - generic [ref=e5]: Bolt lockup spacing also corrected below
+  - generic [ref=e6]:
+    - generic [ref=e7]: Bolt lockup — spacing corrected
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: Before (too wide)
+        - generic [ref=e11]:
+          - img [ref=e12]
+          - generic [ref=e14]:
+            - text: TradiePay
+            - superscript [ref=e15]: AU
+      - generic [ref=e17]:
+        - generic [ref=e18]: After (tight)
+        - generic [ref=e19]:
+          - img [ref=e20]
+          - generic [ref=e22]:
+            - text: TradiePay
+            - superscript [ref=e23]: AU
+      - generic [ref=e25]:
+        - generic [ref=e26]: Small (20px)
+        - generic [ref=e27]:
+          - img [ref=e28]
+          - generic [ref=e30]:
+            - text: TradiePay
+            - superscript [ref=e31]: AU
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: F
+        - generic [ref=e37]: Chevron Mark
+      - paragraph [ref=e38]: A bold double-chevron pointing right. Direction, speed, forward motion — payment processed, job complete, move on. Not a navigation arrow (those are thin and UI-ish) — this is a thick, industrial mark made of two solid wedges. Confident at any size. Reads like a badge stamp or a tick-and-go approval.
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Icon
+          - img [ref=e43]
+        - generic [ref=e46]:
+          - generic [ref=e47]: Lockup
+          - generic [ref=e49]:
+            - img [ref=e50]
+            - generic [ref=e53]:
+              - text: TradiePay
+              - superscript [ref=e54]: AU
+        - generic [ref=e55]:
+          - generic [ref=e56]: Scale test
+          - generic [ref=e58]:
+            - img [ref=e59]
+            - img [ref=e62]
+            - img [ref=e65]
+            - img [ref=e68]
+    - generic [ref=e71]:
+      - generic [ref=e73]:
+        - generic [ref=e74]: G
+        - generic [ref=e75]: Cut Square
+      - paragraph [ref=e76]: A heavy square with its top-right corner cut at a bold 45° angle — like a dog-eared page, a cut tile, a mitred corner. Every trade makes this cut. The geometry is instantly familiar. The blue fill and clean diagonal give it precision and confidence without decoration. Works as an app icon or favicon with no extra detail required.
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - generic [ref=e79]: Icon
+          - img [ref=e81]
+        - generic [ref=e85]:
+          - generic [ref=e86]: Lockup
+          - generic [ref=e88]:
+            - img [ref=e89]
+            - generic [ref=e92]:
+              - text: TradiePay
+              - superscript [ref=e93]: AU
+        - generic [ref=e94]:
+          - generic [ref=e95]: Scale test
+          - generic [ref=e97]:
+            - img [ref=e98]
+            - img [ref=e101]
+            - img [ref=e104]
+            - img [ref=e106]
+    - generic [ref=e108]:
+      - generic [ref=e110]:
+        - generic [ref=e111]: H
+        - generic [ref=e112]: Wordmark only
+      - paragraph [ref=e113]: "No icon. The name IS the mark. \"Tradie\" in heavy white, \"Pay\" in blue, \"AU\" small and muted. Stripe, Wise, Xero — none of them need an icon to feel premium. This approach bets on typographic confidence: tight tracking, bold weight, clean contrast. No icon to get wrong. Scales from nav header down to footer fine print without losing identity."
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - generic [ref=e116]: Large
+          - generic [ref=e118]:
+            - text: TradiePay
+            - superscript [ref=e119]: AU
+        - generic [ref=e120]:
+          - generic [ref=e121]: Medium
+          - generic [ref=e123]:
+            - text: TradiePay
+            - superscript [ref=e124]: AU
+        - generic [ref=e125]:
+          - generic [ref=e126]: Small / nav
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - text: TradiePay
+              - superscript [ref=e130]: AU
+            - generic [ref=e131]: TradiePay
+  - generic [ref=e132]:
+    - paragraph [ref=e133]:
+      - strong [ref=e134]: "F (Chevron):"
+      - text: "Bold, geometric, two-tone. The white/blue pair is scalable and distinctive. Risk: can read as a \"next page\" nav element at very small sizes."
+    - paragraph [ref=e135]:
+      - strong [ref=e136]: "G (Cut Square):"
+      - text: Grounded in trade geometry (mitred corner). Works as app icon and favicon. The blue fill + cut gives it character without relying on metaphor.
+    - paragraph [ref=e137]:
+      - strong [ref=e138]: "H (Wordmark):"
+      - text: Highest confidence. Works across all sizes. Requires the typography to be pixel-perfect in implementation. No icon liability.
+    - paragraph [ref=e139]: If still favouring the bolt — the corrected lockup gap is 4px (down from 14px). The original Concept A bolt path is unchanged.

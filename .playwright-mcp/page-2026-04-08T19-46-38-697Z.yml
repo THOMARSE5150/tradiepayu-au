@@ -1,0 +1,274 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: glass pane suction cup worker
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+        - generic [ref=e58]:
+          - link "Get Unsplash+" [ref=e59] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e60] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker
+        - button "Submit an image" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e69]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Photos 1.5k":
+                - /url: /s/photos/glass-pane-suction-cup-worker
+                - img
+                - text: Photos
+                - generic: 1.5k
+            - listitem [ref=e72]:
+              - link "Illustrations 15" [ref=e73] [cursor=pointer]:
+                - /url: /s/illustrations/glass-pane-suction-cup-worker
+                - img [ref=e74]
+                - text: Illustrations
+                - generic [ref=e76]: "15"
+            - listitem [ref=e77]:
+              - button "More" [ref=e78] [cursor=pointer]
+          - button "Filters" [ref=e80] [cursor=pointer]:
+            - img [ref=e82]
+            - text: Filters
+        - generic [ref=e84]:
+          - heading "Glass pane suction cup worker" [level=1] [ref=e86]
+          - generic [ref=e88]:
+            - button "scroll list to the right" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+            - generic [ref=e94]:
+              - link "skilled trade" [ref=e96] [cursor=pointer]:
+                - /url: /s/photos/skilled-trade
+              - link "manufacturing" [ref=e98] [cursor=pointer]:
+                - /url: /s/photos/manufacturing
+              - link "workshop" [ref=e100] [cursor=pointer]:
+                - /url: /s/photos/workshop
+              - link "person" [ref=e102] [cursor=pointer]:
+                - /url: /s/photos/person
+              - link "diy" [ref=e104] [cursor=pointer]:
+                - /url: /s/photos/diy
+              - link "manual labor" [ref=e106] [cursor=pointer]:
+                - /url: /s/photos/manual-labor
+              - link "factory" [ref=e108] [cursor=pointer]:
+                - /url: /s/photos/factory
+              - link "skilled labor" [ref=e110] [cursor=pointer]:
+                - /url: /s/photos/skilled-labor
+              - link "craftsmanship" [ref=e112] [cursor=pointer]:
+                - /url: /s/photos/craftsmanship
+              - link "mechanic" [ref=e114] [cursor=pointer]:
+                - /url: /s/photos/mechanic
+              - link "car repair" [ref=e116] [cursor=pointer]:
+                - /url: /s/photos/car-repair
+              - link "fabrication" [ref=e118] [cursor=pointer]:
+                - /url: /s/photos/fabrication
+        - generic [ref=e120]:
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - figure [ref=e126]:
+                - generic [ref=e128]:
+                  - link "Mechanic changing glass for car in workshop." [ref=e129]:
+                    - /url: /photos/mechanic-changing-glass-for-car-in-workshop-ZbDEpi7seTU
+                    - img "Mechanic changing glass for car in workshop." [ref=e130]
+                  - link [ref=e131] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmechanic-changing-glass-for-car-in-workshop-ZbDEpi7seTU
+                    - img [ref=e132]
+              - generic [ref=e134]:
+                - heading "Sponsored images" [level=4] [ref=e135]:
+                  - generic [ref=e136]: Sponsored images
+                  - link [ref=e137] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A5385d183-2eb9-46fb-89aa-c651c0f19580&phrase=glass+pane+suction+cup+worker&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e138]
+                - generic [ref=e140]:
+                  - link "The glass technician is installing the glass with suction cups for installation." [ref=e141] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/the-glass-technician-is-installing-the-glass-with-suction-cups-for-installation-gm1142751842-306631903?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A79fcd9e5-f192-4a26-a18e-1375739c06ab
+                    - img "The glass technician is installing the glass with suction cups for installation." [ref=e142]
+                  - link "A glazier in a glass factory removes heavy glass using suction cups, specialized industrial tools" [ref=e143] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/a-glazier-in-a-glass-factory-removes-heavy-glass-using-suction-cups-specialized-gm1484211174-510609458?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A09e83788-0d92-44a8-8f9f-50cde0eeb8e6
+                    - img "A glazier in a glass factory removes heavy glass using suction cups, specialized industrial tools" [ref=e144]
+                  - link "Close up glass suction cups plate tool for installation glass windows" [ref=e145] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/close-up-glass-suction-cups-plate-tool-for-installation-glass-windows-gm910827172-250818328?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3Af458c06a-f421-4932-8358-b3b98163036f
+                    - img "Close up glass suction cups plate tool for installation glass windows" [ref=e146]
+                  - link "Female apprentice engineer working with CNC machine in factory" [ref=e147] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/female-apprentice-engineer-working-with-cnc-machine-in-factory-gm2261150425-674000401?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A93e6d155-f7c9-4b14-88ff-510d8f2b7e12
+                    - img "Female apprentice engineer working with CNC machine in factory" [ref=e148]
+                - link "Get 20% off with code UNSPLASH20" [ref=e149] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A5385d183-2eb9-46fb-89aa-c651c0f19580&phrase=glass+pane+suction+cup+worker&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e150]:
+                - link "A construction worker is examining a door." [ref=e153]:
+                  - /url: /photos/a-construction-worker-is-examining-a-door-K4dBR3TiH4U
+                  - img "A construction worker is examining a door." [ref=e154]
+              - figure [ref=e155]:
+                - generic [ref=e157]:
+                  - link "Mechanic changing glass in his workshop.Focus on hand." [ref=e158]:
+                    - /url: /photos/mechanic-changing-glass-in-his-workshopfocus-on-hand-xJKo-v9sv4s
+                    - img "Mechanic changing glass in his workshop.Focus on hand." [ref=e159]
+                  - link [ref=e160] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmechanic-changing-glass-in-his-workshopfocus-on-hand-xJKo-v9sv4s
+                    - img [ref=e161]
+              - figure [ref=e163]:
+                - link "black and blue handled knife" [ref=e166]:
+                  - /url: /photos/black-and-blue-handled-knife-Mm1q3sjudtA
+                  - img "black and blue handled knife" [ref=e167]
+              - figure [ref=e168]:
+                - link "a man sitting on an escalator in a building" [ref=e171]:
+                  - /url: /photos/a-man-sitting-on-an-escalator-in-a-building-bzoAa6G929M
+                  - img "a man sitting on an escalator in a building" [ref=e172]
+              - figure [ref=e173]:
+                - link "a man working on a machine in a factory" [ref=e176]:
+                  - /url: /photos/a-man-working-on-a-machine-in-a-factory-jXdXDVLpKgw
+                  - img "a man working on a machine in a factory" [ref=e177]
+            - generic [ref=e178]:
+              - figure [ref=e179]:
+                - link "a teddy bear with a screwdriver attached to it" [ref=e182]:
+                  - /url: /photos/a-teddy-bear-with-a-screwdriver-attached-to-it-9yec6B0CSao
+                  - img "a teddy bear with a screwdriver attached to it" [ref=e183]
+              - figure [ref=e184]:
+                - link "A man working on a machine in a factory" [ref=e187]:
+                  - /url: /photos/a-man-working-on-a-machine-in-a-factory-yJKZt5hWp9A
+                  - img "A man working on a machine in a factory" [ref=e188]
+              - figure [ref=e189]:
+                - link "man in black jacket and blue denim jeans sitting on black rolling chair" [ref=e192]:
+                  - /url: /photos/man-in-black-jacket-and-blue-denim-jeans-sitting-on-black-rolling-chair-YgJj0NSL8ak
+                  - img "man in black jacket and blue denim jeans sitting on black rolling chair" [ref=e193]
+              - figure [ref=e194]:
+                - link "Two men working behind a window at night." [ref=e197]:
+                  - /url: /photos/two-men-working-behind-a-window-at-night-kJImWy3Z8No
+                  - img "Two men working behind a window at night." [ref=e198]
+              - figure [ref=e199]:
+                - link "a tall building with a blue sky" [ref=e202]:
+                  - /url: /photos/a-tall-building-with-a-blue-sky-N_bCWRPbBo0
+                  - img "a tall building with a blue sky" [ref=e203]
+              - figure [ref=e204]:
+                - generic [ref=e206]:
+                  - link "Beautiful and diligent middle age handywoman renovating her old home or apartment. She is holding professional grinder and brushing radiator for later painting. Do it yourself housework concept." [ref=e207]:
+                    - /url: /photos/beautiful-and-diligent-middle-age-handywoman-renovating-her-old-home-or-apartment-she-is-holding-professional-grinder-and-brushing-radiator-for-later-painting-do-it-yourself-housework-concept-S8vw72IUIww
+                    - img "Beautiful and diligent middle age handywoman renovating her old home or apartment. She is holding professional grinder and brushing radiator for later painting. Do it yourself housework concept." [ref=e208]
+                  - link [ref=e209] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fbeautiful-and-diligent-middle-age-handywoman-renovating-her-old-home-or-apartment-she-is-holding-professional-grinder-and-brushing-radiator-for-later-painting-do-it-yourself-housework-concept-S8vw72IUIww
+                    - img [ref=e210]
+            - generic [ref=e212]:
+              - link "The site builder loved by designers & teams. Sign Up" [ref=e215] [cursor=pointer]:
+                - /url: https://e-10457.adzerk.net/r?e=eyJ2IjoiMS4xNCIsImF2Ijo2MjAwNTAyLCJhdCI6NSwiYnQiOjAsImNtIjo2NTg1MTczNzksImNoIjo0NTE2MywiY2siOnt9LCJjciI6ODk1MzYyNTYxLCJkaSI6ImRmNmM5NjI1MTE3NTRiYWQ4ZjA2ZjRjZDRjZGFkN2FlIiwiZGoiOjAsImlpIjoiOGZhZTAxNjhiZDlhNDQyZGE2OGI5ZTFkMTA3ZDBhNjkiLCJkbSI6MywiZmMiOjEwNjk5Nzg1ODUsImZsIjo4NjI0OTYwMDUsImlwIjoiMTE2LjkxLjIxMy4yNTQiLCJudyI6MTA0NTcsInBjIjo1LjE5LCJvcCI6NS4xOSwibXAiOjUuMTksImVjIjo1LjE5LCJnbSI6MCwiZXAiOm51bGwsInByIjoxODIxMTYsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTBlOTlkNmE5NDA5OTY4MWQ1Iiwic3AiOjE5Njk2MjYsInN0IjoxMTIxOTU0LCJ0ciI6dHJ1ZSwidWsiOiJiZmExODVmNC04NmI3LTQ2ODktYjg1Mi05NGQwNjVkYzY0YTEiLCJ6biI6MjQxMzQ4LCJ6bSI6WzI0MTM0OF0sInRzIjoxNzc1Njc3NTk4NTQ4LCJwbiI6InNlYXJjaC1pbi1mZWVkIiwiZ3IiOnRydWUsImdjIjp0cnVlLCJnQyI6dHJ1ZSwiZ3MiOiJub25lIiwidHoiOiJBbWVyaWNhL05ld19Zb3JrIiwidXIiOiJodHRwczovL2ZyYW1lci5saW5rL21CNXdJWG4ifQ&s=fpbVDRy9cSF2kfHsOQWK_p0ZsCs
+                - generic [ref=e216]:
+                  - img [ref=e218]
+                  - contentinfo [ref=e219]:
+                    - generic [ref=e220]:
+                      - img [ref=e222]
+                      - generic [ref=e226]: The site builder loved by designers & teams.
+                    - generic [ref=e227]: Sign Up
+              - figure [ref=e228]:
+                - generic [ref=e230]:
+                  - link "Mechanic changing glass in his workshop. Focus is on hand." [ref=e231]:
+                    - /url: /photos/mechanic-changing-glass-in-his-workshop-focus-is-on-hand-gEamNBlNlTw
+                    - img "Mechanic changing glass in his workshop. Focus is on hand." [ref=e232]
+                  - link [ref=e233] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmechanic-changing-glass-in-his-workshop-focus-is-on-hand-gEamNBlNlTw
+                    - img [ref=e234]
+              - figure [ref=e236]:
+                - link "a man with a skateboard is sitting on a ledge" [ref=e239]:
+                  - /url: /photos/a-man-with-a-skateboard-is-sitting-on-a-ledge-EsR6PoMglCw
+                  - img "a man with a skateboard is sitting on a ledge" [ref=e240]
+              - figure [ref=e241]:
+                - link "man in green shirt sitting on the edge of a building looking at the lake during" [ref=e244]:
+                  - /url: /photos/man-in-green-shirt-sitting-on-the-edge-of-a-building-looking-at-the-lake-during-CcYsT6kRlyA
+                  - img "man in green shirt sitting on the edge of a building looking at the lake during" [ref=e245]
+              - figure [ref=e246]:
+                - generic [ref=e248]:
+                  - link "Mechanic fixing glass detail under lathe machine" [ref=e249]:
+                    - /url: /photos/mechanic-fixing-glass-detail-under-lathe-machine-Z01IHiSAQCM
+                    - img "Mechanic fixing glass detail under lathe machine" [ref=e250]
+                  - link [ref=e251] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmechanic-fixing-glass-detail-under-lathe-machine-Z01IHiSAQCM
+                    - img [ref=e252]
+              - figure [ref=e254]:
+                - link "man in black t-shirt and gray pants standing near white wall" [ref=e257]:
+                  - /url: /photos/man-in-black-t-shirt-and-gray-pants-standing-near-white-wall-iEW3iKU9geI
+                  - img "man in black t-shirt and gray pants standing near white wall" [ref=e258]
+              - figure [ref=e259]:
+                - link "man in black jacket and black pants standing beside black metal railings during daytime" [ref=e262]:
+                  - /url: /photos/man-in-black-jacket-and-black-pants-standing-beside-black-metal-railings-during-daytime-Ewq9_e7OQaI
+                  - img "man in black jacket and black pants standing beside black metal railings during daytime" [ref=e263]
+              - figure [ref=e264]:
+                - link "a close up of a blue knob on a door" [ref=e267]:
+                  - /url: /photos/a-close-up-of-a-blue-knob-on-a-door-JCSPZv8Ss0g
+                  - img "a close up of a blue knob on a door" [ref=e268]
+              - figure [ref=e269]:
+                - link "a person working on a machine" [ref=e272]:
+                  - /url: /photos/a-person-working-on-a-machine-6dYVZWX0x3c
+                  - img "a person working on a machine" [ref=e273]
+          - generic [ref=e276]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e277]:
+              - text: Browse premium images on iStock
+              - generic [ref=e278]: "| Claim your discount now"
+            - generic [ref=e280]:
+              - link "Close-up of senior man lifting glass using suction cups in a glass factory workshop" [ref=e281] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/close-up-of-senior-man-lifting-glass-using-suction-cups-in-a-glass-factory-workshop-gm2168875654-588886109?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3Ac9d03ed7-5225-466d-9461-ee94d1231b3f
+                - img "Close-up of senior man lifting glass using suction cups in a glass factory workshop" [ref=e282]
+              - link "Ready to make windows" [ref=e283] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/ready-to-make-windows-gm2199354589-617110614?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A21cced96-5dcb-4d8e-8978-90c3856d31a8
+                - img "Ready to make windows" [ref=e284]
+              - link "Worker carrying window glass panel using suction cup lifter during installation or replacement in apartment. Safe handling, professional equipment and glass transport process concept." [ref=e285] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/worker-carrying-window-glass-panel-using-suction-cup-lifter-during-installation-or-gm2268110257-680715484?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A51c9c80f-ae89-4c19-8d63-2d99df83caa9
+                - img "Worker carrying window glass panel using suction cup lifter during installation or replacement in apartment. Safe handling, professional equipment and glass transport process concept." [ref=e286]
+              - link "A construction worker processes large-format granite tiles with special equipment at a construction site." [ref=e287] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/a-construction-worker-processes-large-format-granite-tiles-with-special-equipment-at-gm1478472409-506736888?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3Ac5f8f592-9bfd-4179-8c1e-988792a39afe
+                - img "A construction worker processes large-format granite tiles with special equipment at a construction site." [ref=e288]
+              - link "The glass technician is installing the glass with suction cups for installation." [ref=e289] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/the-glass-technician-is-installing-the-glass-with-suction-cups-for-installation-gm1135654923-302193597?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A9138e65f-dec5-40f2-9a3a-293ce7d9adab
+                - img "The glass technician is installing the glass with suction cups for installation." [ref=e290]
+              - link "The glazier puts a large glass pane on the glazing table using a specialist suction cup, Industrial-industrial concept" [ref=e291] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/the-glazier-puts-a-large-glass-pane-on-the-glazing-table-using-a-specialist-suction-gm1487328603-512844424?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A4783ed4f-fbb6-4c6d-9131-ae7c10e5c01c
+                - img "The glazier puts a large glass pane on the glazing table using a specialist suction cup, Industrial-industrial concept" [ref=e292]
+              - link "Construction worker measuring in house." [ref=e293] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/construction-worker-measuring-in-house-gm2189406173-607862491?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A0f1350f9-bb38-41c6-a7cd-a2427a75d98f
+                - img "Construction worker measuring in house." [ref=e294]
+              - generic [ref=e295]:
+                - link "Man assembling a machine" [ref=e296] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/man-assembling-a-machine-gm2162547144-582936278?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3Ad989d884-2f4a-4705-8874-0b9bf5ef0a5e
+                  - img "Man assembling a machine" [ref=e297]
+                - link "View more on iStock ↗" [ref=e298] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-pane-suction-cup-worker&utm_term=glass+pane+suction+cup+worker%3A%3A%3A%3A685e6532-9b59-4aee-b861-766913d5d2b1&phrase=glass+pane+suction+cup+worker&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - button "Load more" [ref=e302] [cursor=pointer]
+          - generic [ref=e303]:
+            - link [ref=e304] [cursor=pointer]:
+              - /url: /
+              - img [ref=e305]
+            - paragraph [ref=e307]: Make something awesome
+    - generic:
+      - region "Notifications"

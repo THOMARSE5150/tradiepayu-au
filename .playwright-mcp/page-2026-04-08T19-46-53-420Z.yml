@@ -1,0 +1,274 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fwindow-glass-installation
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: window glass installation
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+        - generic [ref=e58]:
+          - link "Get Unsplash+" [ref=e59] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e60] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fwindow-glass-installation
+        - button "Submit an image" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e69]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Photos 19k":
+                - /url: /s/photos/window-glass-installation
+                - img
+                - text: Photos
+                - generic: 19k
+            - listitem [ref=e72]:
+              - link "Illustrations 57" [ref=e73] [cursor=pointer]:
+                - /url: /s/illustrations/window-glass-installation
+                - img [ref=e74]
+                - text: Illustrations
+                - generic [ref=e76]: "57"
+            - listitem [ref=e77]:
+              - button "More" [ref=e78] [cursor=pointer]
+          - button "Filters" [ref=e80] [cursor=pointer]:
+            - img [ref=e82]
+            - text: Filters
+        - generic [ref=e84]:
+          - heading "Window glass installation" [level=1] [ref=e86]
+          - generic [ref=e88]:
+            - button "scroll list to the right" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+            - generic [ref=e94]:
+              - link "installation" [ref=e96] [cursor=pointer]:
+                - /url: /s/photos/installation
+              - link "broken glass" [ref=e98] [cursor=pointer]:
+                - /url: /s/photos/broken-glass
+              - link "glass" [ref=e100] [cursor=pointer]:
+                - /url: /s/photos/glass
+              - link "green" [ref=e102] [cursor=pointer]:
+                - /url: /s/photos/green
+              - link "purple" [ref=e104] [cursor=pointer]:
+                - /url: /s/photos/purple
+              - link "art" [ref=e106] [cursor=pointer]:
+                - /url: /s/photos/art
+              - link "mirror" [ref=e108] [cursor=pointer]:
+                - /url: /s/photos/mirror
+              - link "border" [ref=e110] [cursor=pointer]:
+                - /url: /s/photos/border
+              - link "destruction" [ref=e112] [cursor=pointer]:
+                - /url: /s/photos/destruction
+              - link "broken" [ref=e114] [cursor=pointer]:
+                - /url: /s/photos/broken
+              - link "mirror reflection" [ref=e116] [cursor=pointer]:
+                - /url: /s/photos/mirror-reflection
+              - link "church" [ref=e118] [cursor=pointer]:
+                - /url: /s/photos/church
+        - generic [ref=e120]:
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - figure [ref=e126]:
+                - generic [ref=e128]:
+                  - link "Workman in overalls installing or adjusting plastic windows in the living room at home" [ref=e129]:
+                    - /url: /photos/workman-in-overalls-installing-or-adjusting-plastic-windows-in-the-living-room-at-home-QzcmBsPBlfE
+                    - img "Workman in overalls installing or adjusting plastic windows in the living room at home" [ref=e130]
+                  - link [ref=e131] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fworkman-in-overalls-installing-or-adjusting-plastic-windows-in-the-living-room-at-home-QzcmBsPBlfE
+                    - img [ref=e132]
+              - generic [ref=e134]:
+                - heading "Sponsored images" [level=4] [ref=e135]:
+                  - generic [ref=e136]: Sponsored images
+                  - link [ref=e137] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A1b2c6b1c-4fae-490e-b1f3-b23ef317af9a&phrase=window+glass+installation&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e138]
+                - generic [ref=e140]:
+                  - link "A skilled repairman is installing a new PVC window frame in a residential building" [ref=e141] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/a-skilled-repairman-is-installing-a-new-pvc-window-frame-in-a-residential-building-gm2234375528-649809796?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Aa7939c68-a391-4f9f-90c5-ab9e02abf3fc
+                    - img "A skilled repairman is installing a new PVC window frame in a residential building" [ref=e142]
+                  - link "Construction worker carrying a panel of a sliding door" [ref=e143] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/construction-worker-carrying-a-panel-of-a-sliding-door-gm1440404317-480402945?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Aa658afdf-73fd-410e-a2b2-b9d18d429903
+                    - img "Construction worker carrying a panel of a sliding door" [ref=e144]
+                  - link "handsome young man installing bay window in new house construction site" [ref=e145] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/handsome-young-man-installing-bay-window-in-new-house-construction-site-gm1452534592-488873735?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Addafe684-356f-4156-af4f-013b628cc04a
+                    - img "handsome young man installing bay window in new house construction site" [ref=e146]
+                  - link "Installation of a mosquito net on a large window outside a modern building" [ref=e147] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/installation-of-a-mosquito-net-on-a-large-window-outside-a-modern-building-gm1452733815-488983229?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A2977e07a-a608-4a9f-835a-d27d61e425e0
+                    - img "Installation of a mosquito net on a large window outside a modern building" [ref=e148]
+                - link "Get 20% off with code UNSPLASH20" [ref=e149] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A1b2c6b1c-4fae-490e-b1f3-b23ef317af9a&phrase=window+glass+installation&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e150]:
+                - generic [ref=e152]:
+                  - link "bearded adult repairman fixing window" [ref=e153]:
+                    - /url: /photos/bearded-adult-repairman-fixing-window-OtAw-G-TwbU
+                    - img "bearded adult repairman fixing window" [ref=e154]
+                  - link [ref=e155] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fbearded-adult-repairman-fixing-window-OtAw-G-TwbU
+                    - img [ref=e156]
+              - figure [ref=e158]:
+                - link "A room that has a lot of glass on the floor" [ref=e161]:
+                  - /url: /photos/a-room-that-has-a-lot-of-glass-on-the-floor-Wkiwfgm2piw
+                  - img "A room that has a lot of glass on the floor" [ref=e162]
+              - figure [ref=e163]:
+                - link "A broken mirror on the floor of a building" [ref=e166]:
+                  - /url: /photos/a-broken-mirror-on-the-floor-of-a-building-UHlW2E-iSPs
+                  - img "A broken mirror on the floor of a building" [ref=e167]
+              - figure [ref=e168]:
+                - generic [ref=e170]:
+                  - link "handsome young man installing bay window in a new house construction site" [ref=e171]:
+                    - /url: /photos/handsome-young-man-installing-bay-window-in-a-new-house-construction-site-yN-ETAdLLsU
+                    - img "handsome young man installing bay window in a new house construction site" [ref=e172]
+                  - link [ref=e173] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fhandsome-young-man-installing-bay-window-in-a-new-house-construction-site-yN-ETAdLLsU
+                    - img [ref=e174]
+              - figure [ref=e176]:
+                - link "A large room with a lot of windows" [ref=e179]:
+                  - /url: /photos/a-large-room-with-a-lot-of-windows-WvEoh3mAgVQ
+                  - img "A large room with a lot of windows" [ref=e180]
+              - figure [ref=e181]:
+                - link "Modern building under construction with unique window design." [ref=e184]:
+                  - /url: /photos/modern-building-under-construction-with-unique-window-design-r8OGtjZeQ3c
+                  - img "Modern building under construction with unique window design." [ref=e185]
+            - generic [ref=e186]:
+              - figure [ref=e187]:
+                - link "Modern building interior with large angled windows and circular decor" [ref=e190]:
+                  - /url: /photos/modern-building-interior-with-large-angled-windows-and-circular-decor-_0Bs8RpyMPQ
+                  - img "Modern building interior with large angled windows and circular decor" [ref=e191]
+              - figure [ref=e192]:
+                - link "Modern building interior with large curved windows" [ref=e195]:
+                  - /url: /photos/modern-building-interior-with-large-curved-windows-LapIjz4pGlE
+                  - img "Modern building interior with large curved windows" [ref=e196]
+              - figure [ref=e197]:
+                - link "A long hallway with a clock on the wall" [ref=e200]:
+                  - /url: /photos/a-long-hallway-with-a-clock-on-the-wall-IPwphLspGEY
+                  - img "A long hallway with a clock on the wall" [ref=e201]
+              - figure [ref=e202]:
+                - generic [ref=e204]:
+                  - link "Close-up Of A Repairman's Hand Fixing Window" [ref=e205]:
+                    - /url: /photos/close-up-of-a-repairmans-hand-fixing-window-xqFquocCtvE
+                    - img "Close-up Of A Repairman's Hand Fixing Window" [ref=e206]
+                  - link [ref=e207] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fclose-up-of-a-repairmans-hand-fixing-window-xqFquocCtvE
+                    - img [ref=e208]
+              - figure [ref=e210]:
+                - link "A group of people standing inside of a building" [ref=e213]:
+                  - /url: /photos/a-group-of-people-standing-inside-of-a-building-hlc_p3xkHpU
+                  - img "A group of people standing inside of a building" [ref=e214]
+              - figure [ref=e215]:
+                - link "A large building with a lot of people inside of it" [ref=e218]:
+                  - /url: /photos/a-large-building-with-a-lot-of-people-inside-of-it-eMRqIZG6iGo
+                  - img "A large building with a lot of people inside of it" [ref=e219]
+              - figure [ref=e220]:
+                - generic [ref=e222]:
+                  - link "The worker installing and checking window in the house." [ref=e223]:
+                    - /url: /photos/the-worker-installing-and-checking-window-in-the-house-njvV_1n7P_w
+                    - img "The worker installing and checking window in the house." [ref=e224]
+                  - link [ref=e225] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fthe-worker-installing-and-checking-window-in-the-house-njvV_1n7P_w
+                    - img [ref=e226]
+              - figure [ref=e228]:
+                - link "Modern circular building interior with glass walls." [ref=e231]:
+                  - /url: /photos/modern-circular-building-interior-with-glass-walls-gHOPgPC2nAA
+                  - img "Modern circular building interior with glass walls." [ref=e232]
+            - generic [ref=e233]:
+              - link "Manage and sell your services Start A Free Trial" [ref=e236] [cursor=pointer]:
+                - /url: https://e-10457.adzerk.net/r?e=eyJ2IjoiMS4xNCIsImF2Ijo4MTA3NTIsImF0Ijo1LCJidCI6MCwiY20iOjE1Nzk5OTMsImNoIjo0NTE2MywiY2siOnt9LCJjciI6ODk1MzYzODAxLCJkaSI6IjJiNWU2OGZmMzYwYzQyMTU4NjNiZDUyZGJkZmU0Zjk0IiwiZGoiOjAsImlpIjoiYWE1ODY3ODViNzU0NDhiMDgwZGRlZjZiNGFhY2QwYzIiLCJkbSI6MywiZmMiOjEwNjk5Nzk4MjcsImZsIjo4NjI0OTYxMDUsImlwIjoiMTE2LjkxLjIxMy4yNTQiLCJudyI6MTA0NTcsInBjIjozLCJvcCI6MywibXAiOjMsImVjIjozLCJnbSI6MCwiZXAiOm51bGwsInByIjoxODIxMTYsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTAyZTI3N2I2NWM3NDdkNDQ5Iiwic3AiOjgxMjA1OCwic3QiOjExMjE5NTQsInVrIjoiYmZhMTg1ZjQtODZiNy00Njg5LWI4NTItOTRkMDY1ZGM2NGExIiwiem4iOjI0MTM0OCwiem0iOlsyNDEzNDhdLCJ0cyI6MTc3NTY3NzYxMTI3MCwicG4iOiJzZWFyY2gtaW4tZmVlZCIsImdyIjp0cnVlLCJnYyI6dHJ1ZSwiZ0MiOnRydWUsImdzIjoibm9uZSIsInR6IjoiQW1lcmljYS9OZXdfWW9yayIsInVyIjoiaHR0cHM6Ly9hZC5kb3VibGVjbGljay5uZXQvZGRtL3RyYWNrY2xrL043MTg2NzkuMzI4Njg5M1VOU1BMQVNIL0IyOTA5MDAwOS4zODgwOTYxMTY7ZGNfdHJrX2FpZD01NzkyNDUwMDg7ZGNfdHJrX2NpZD0yMDY1NjQzODY7ZGNfbGF0PTtkY19yZGlkPTt0YWdfZm9yX2NoaWxkX2RpcmVjdGVkX3RyZWF0bWVudD07dGZ1YT07bHRkPTtkY190ZHY9MSJ9&s=UmsxhzIQEWBsICUHx8Wr6fv9GfM
+                - generic [ref=e237]:
+                  - img [ref=e239]
+                  - contentinfo [ref=e240]:
+                    - generic [ref=e241]:
+                      - img [ref=e243]
+                      - generic [ref=e247]: Manage and sell your services
+                    - generic [ref=e248]: Start A Free Trial
+              - figure [ref=e249]:
+                - link "Modern building interior with spiral staircase and large windows" [ref=e252]:
+                  - /url: /photos/modern-building-interior-with-spiral-staircase-and-large-windows-OizMDVEEcvA
+                  - img "Modern building interior with spiral staircase and large windows" [ref=e253]
+              - figure [ref=e254]:
+                - link "A large glass window with a building in the background" [ref=e257]:
+                  - /url: /photos/a-large-glass-window-with-a-building-in-the-background-JV_GzgLhzws
+                  - img "A large glass window with a building in the background" [ref=e258]
+              - figure [ref=e259]:
+                - link "A shattered glass table in a room" [ref=e262]:
+                  - /url: /photos/a-shattered-glass-table-in-a-room-m8GyCi-JjaE
+                  - img "A shattered glass table in a room" [ref=e263]
+              - figure [ref=e264]:
+                - link "A room with a light shining on the floor" [ref=e267]:
+                  - /url: /photos/a-room-with-a-light-shining-on-the-floor-WwufeqDRAuM
+                  - img "A room with a light shining on the floor" [ref=e268]
+              - figure [ref=e269]:
+                - link "Two arched windows with green lights on sides" [ref=e272]:
+                  - /url: /photos/two-arched-windows-with-green-lights-on-sides-ne5LQwp8Mco
+                  - img "Two arched windows with green lights on sides" [ref=e273]
+          - generic [ref=e276]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e277]:
+              - text: Browse premium images on iStock
+              - generic [ref=e278]: "| Claim your discount now"
+            - generic [ref=e280]:
+              - link "Worker in the removing break down, windows in the home renovation living energy efficiency" [ref=e281] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/worker-in-the-removing-break-down-windows-in-the-home-renovation-living-energy-gm1305805131-396575565?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A0ec0c7db-08b4-4a5b-aec2-4fed1072055b
+                - img "Worker in the removing break down, windows in the home renovation living energy efficiency" [ref=e282]
+              - link "man working at home" [ref=e283] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/man-working-at-home-gm1391550035-448119245?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A024baef7-8a07-4233-b385-73b7bf23537e
+                - img "man working at home" [ref=e284]
+              - link "handsome young man installing bay window in a new house construction site" [ref=e285] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/handsome-young-man-installing-bay-window-in-a-new-house-construction-site-gm1352080264-427610654?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Aa8343818-84b6-486e-9755-3fcfa55097ab
+                - img "handsome young man installing bay window in a new house construction site" [ref=e286]
+              - link "Construction workers installing windows" [ref=e287] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/construction-workers-installing-windows-gm1456258117-491349066?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Ae899f36b-0a66-47dd-99af-0c8038820e60
+                - img "Construction workers installing windows" [ref=e288]
+              - link "Technician inspecting a window frame during home maintenance" [ref=e289] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/technician-inspecting-a-window-frame-during-home-maintenance-gm2260503642-673392508?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Aa93b1681-22b9-4827-855c-1b42eb441f9b
+                - img "Technician inspecting a window frame during home maintenance" [ref=e290]
+              - link "Male Workers Installing Window Glass At Sunset Urban Apartment Exterior" [ref=e291] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/male-workers-installing-window-glass-at-sunset-urban-apartment-exterior-gm2239732471-654531055?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3Ad80e703c-a8aa-4b10-bd4d-eb77fcf7773c
+                - img "Male Workers Installing Window Glass At Sunset Urban Apartment Exterior" [ref=e292]
+              - link "White windows in modern building" [ref=e293] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/white-windows-in-modern-building-gm2158275108-578919005?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A0edca93e-bb4a-4fe6-81f5-9b3dfa0d6151
+                - img "White windows in modern building" [ref=e294]
+              - generic [ref=e295]:
+                - link "Professional installation of protective nets against insects on plastic windows" [ref=e296] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/professional-installation-of-protective-nets-against-insects-on-plastic-windows-gm1452733386-488982897?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A2bbe5ac1-c1bf-48ea-bb74-c147ced35778
+                  - img "Professional installation of protective nets against insects on plastic windows" [ref=e297]
+                - link "View more on iStock ↗" [ref=e298] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fwindow-glass-installation&utm_term=window+glass+installation%3A%3A%3A%3A7c62549c-2dbf-431e-9bce-47272fa69454&phrase=window+glass+installation&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - button "Load more" [ref=e302] [cursor=pointer]
+          - generic [ref=e303]:
+            - link [ref=e304] [cursor=pointer]:
+              - /url: /
+              - img [ref=e305]
+            - paragraph [ref=e307]: Make something awesome
+    - generic:
+      - region "Notifications"

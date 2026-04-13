@@ -1,0 +1,274 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fglass-window-worker-construction
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: glass window worker construction
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+        - generic [ref=e58]:
+          - link "Get Unsplash+" [ref=e59] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e60] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fglass-window-worker-construction
+        - button "Submit an image" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e69]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Photos 18k":
+                - /url: /s/photos/glass-window-worker-construction
+                - img
+                - text: Photos
+                - generic: 18k
+            - listitem [ref=e72]:
+              - link "Illustrations 34" [ref=e73] [cursor=pointer]:
+                - /url: /s/illustrations/glass-window-worker-construction
+                - img [ref=e74]
+                - text: Illustrations
+                - generic [ref=e76]: "34"
+            - listitem [ref=e77]:
+              - button "More" [ref=e78] [cursor=pointer]
+          - button "Filters" [ref=e80] [cursor=pointer]:
+            - img [ref=e82]
+            - text: Filters
+        - generic [ref=e84]:
+          - heading "Glass window worker construction" [level=1] [ref=e86]
+          - generic [ref=e88]:
+            - button "scroll list to the right" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+            - generic [ref=e94]:
+              - link "construction worker" [ref=e96] [cursor=pointer]:
+                - /url: /s/photos/construction-worker
+              - link "working at height" [ref=e98] [cursor=pointer]:
+                - /url: /s/photos/working-at-height
+              - link "exterior cleaning" [ref=e100] [cursor=pointer]:
+                - /url: /s/photos/exterior-cleaning
+              - link "building facade" [ref=e102] [cursor=pointer]:
+                - /url: /s/photos/building-facade
+              - link "professional cleaner" [ref=e104] [cursor=pointer]:
+                - /url: /s/photos/professional-cleaner
+              - link "safety harness" [ref=e106] [cursor=pointer]:
+                - /url: /s/photos/safety-harness
+              - link "rope access" [ref=e108] [cursor=pointer]:
+                - /url: /s/photos/rope-access
+              - link "window cleaner" [ref=e110] [cursor=pointer]:
+                - /url: /s/photos/window-cleaner
+              - link "skilled labor" [ref=e112] [cursor=pointer]:
+                - /url: /s/photos/skilled-labor
+              - link "professional service" [ref=e114] [cursor=pointer]:
+                - /url: /s/photos/professional-service
+              - link "window washing" [ref=e116] [cursor=pointer]:
+                - /url: /s/photos/window-washing
+              - link "building exterior" [ref=e118] [cursor=pointer]:
+                - /url: /s/photos/building-exterior
+        - generic [ref=e120]:
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - figure [ref=e126]:
+                - generic [ref=e128]:
+                  - link "Workers rappelling down a tall building facade" [ref=e129]:
+                    - /url: /photos/workers-rappelling-down-a-tall-building-facade-kgbmtz3hsKQ
+                    - img "Workers rappelling down a tall building facade" [ref=e130]
+                  - link [ref=e131] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fworkers-rappelling-down-a-tall-building-facade-kgbmtz3hsKQ
+                    - img [ref=e132]
+              - generic [ref=e134]:
+                - heading "Sponsored images" [level=4] [ref=e135]:
+                  - generic [ref=e136]: Sponsored images
+                  - link [ref=e137] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A31d87304-1399-49af-bba3-dac5d274ee6f&phrase=glass+window+worker+construction&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e138]
+                - generic [ref=e140]:
+                  - link "Workers packaging glass sheets in warehouse" [ref=e141] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/workers-packaging-glass-sheets-in-warehouse-gm913441706-251442769?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A1ccdd587-cd0c-4c92-b4ae-a38de509031c
+                    - img "Workers packaging glass sheets in warehouse" [ref=e142]
+                  - link "Construction, team and people for building strategy, communication and partnership for civil engineering. Meeting, collaboration and contractor for project management, renovation and infrastructure" [ref=e143] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/construction-team-and-people-for-building-strategy-communication-and-partnership-for-gm2148855676-570059160?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3Af69f95c9-a89f-4e32-bb30-781f597e8c2f
+                    - img "Construction, team and people for building strategy, communication and partnership for civil engineering. Meeting, collaboration and contractor for project management, renovation and infrastructure" [ref=e144]
+                  - link "Glass,Aluminium and PVC industry workers" [ref=e145] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/glass-aluminium-and-pvc-industry-workers-gm1450749807-487592838?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3Ae4fe8a79-7425-4dd3-85c0-dcc46e9fee82
+                    - img "Glass,Aluminium and PVC industry workers" [ref=e146]
+                  - link "Construction worker installing windows on wooden house" [ref=e147] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/construction-worker-installing-windows-on-wooden-house-gm1456185365-491295377?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A7963b184-e5db-4934-8f39-c2b1d1740424
+                    - img "Construction worker installing windows on wooden house" [ref=e148]
+                - link "Get 20% off with code UNSPLASH20" [ref=e149] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A31d87304-1399-49af-bba3-dac5d274ee6f&phrase=glass+window+worker+construction&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e150]:
+                - generic [ref=e152]:
+                  - link "Man cleaning skyscraper windows with safety harness" [ref=e153]:
+                    - /url: /photos/man-cleaning-skyscraper-windows-with-safety-harness-K_aHndZvcfE
+                    - img "Man cleaning skyscraper windows with safety harness" [ref=e154]
+                  - link [ref=e155] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fman-cleaning-skyscraper-windows-with-safety-harness-K_aHndZvcfE
+                    - img [ref=e156]
+              - figure [ref=e158]:
+                - link "Two window cleaners work on a tall building." [ref=e161]:
+                  - /url: /photos/two-window-cleaners-work-on-a-tall-building-BXsBr9a_z7E
+                  - img "Two window cleaners work on a tall building." [ref=e162]
+              - figure [ref=e163]:
+                - link "Apple store building facade with large logo" [ref=e166]:
+                  - /url: /photos/apple-store-building-facade-with-large-logo-ZryVWZetIeI
+                  - img "Apple store building facade with large logo" [ref=e167]
+              - figure [ref=e168]:
+                - generic [ref=e170]:
+                  - link "Roofer working on a tall building with city view" [ref=e171]:
+                    - /url: /photos/roofer-working-on-a-tall-building-with-city-view-RPZGrL_8ZTg
+                    - img "Roofer working on a tall building with city view" [ref=e172]
+                  - link [ref=e173] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Froofer-working-on-a-tall-building-with-city-view-RPZGrL_8ZTg
+                    - img [ref=e174]
+              - figure [ref=e176]:
+                - link "Modern building exterior with orange accents and glass windows" [ref=e179]:
+                  - /url: /photos/modern-building-exterior-with-orange-accents-and-glass-windows-NP-wlPjyVhk
+                  - img "Modern building exterior with orange accents and glass windows" [ref=e180]
+              - figure [ref=e181]:
+                - link "man in red shirt and black pants standing on blue building during daytime" [ref=e184]:
+                  - /url: /photos/man-in-red-shirt-and-black-pants-standing-on-blue-building-during-daytime-tHuqPkYr29Y
+                  - img "man in red shirt and black pants standing on blue building during daytime" [ref=e185]
+              - figure [ref=e186]:
+                - link "A couple of men standing on top of a window sill" [ref=e189]:
+                  - /url: /photos/a-couple-of-men-standing-on-top-of-a-window-sill-Yl4TBgShcao
+                  - img "A couple of men standing on top of a window sill" [ref=e190]
+            - generic [ref=e191]:
+              - figure [ref=e192]:
+                - link "Window cleaners work on a modern glass building" [ref=e195]:
+                  - /url: /photos/window-cleaners-work-on-a-modern-glass-building-tVxKdRAMRXk
+                  - img "Window cleaners work on a modern glass building" [ref=e196]
+              - figure [ref=e197]:
+                - link "Someone climbs a tall, metal structure outdoors." [ref=e200]:
+                  - /url: /photos/someone-climbs-a-tall-metal-structure-outdoors-c_GEk3aMNJc
+                  - img "Someone climbs a tall, metal structure outdoors." [ref=e201]
+              - figure [ref=e202]:
+                - link "Construction inside with mountain view through windows" [ref=e205]:
+                  - /url: /photos/construction-inside-with-mountain-view-through-windows-1Cmirzam7r8
+                  - img "Construction inside with mountain view through windows" [ref=e206]
+              - figure [ref=e207]:
+                - link "Window cleaners work on a modern skyscraper facade." [ref=e210]:
+                  - /url: /photos/window-cleaners-work-on-a-modern-skyscraper-facade-fhdD4w2V06E
+                  - img "Window cleaners work on a modern skyscraper facade." [ref=e211]
+              - figure [ref=e212]:
+                - link "a man in a hard hat and safety gear hanging from a window" [ref=e215]:
+                  - /url: /photos/a-man-in-a-hard-hat-and-safety-gear-hanging-from-a-window-t0Akk70CwSA
+                  - img "a man in a hard hat and safety gear hanging from a window" [ref=e216]
+              - figure [ref=e217]:
+                - link "PWC signage" [ref=e220]:
+                  - /url: /photos/pwc-signage-2FTQo9wmjQM
+                  - img "PWC signage" [ref=e221]
+            - generic [ref=e222]:
+              - 'link "Squarespace: get projects, get paid Get Started" [ref=e225] [cursor=pointer]':
+                - /url: https://e-10457.adzerk.net/r?e=eyJ2IjoiMS4xNCIsImF2Ijo4MTA3NTIsImF0Ijo1LCJidCI6MCwiY20iOjE1Nzk5OTMsImNoIjo0NTE2MywiY2siOnt9LCJjciI6ODk1MzYzODA0LCJkaSI6IjllMmU1YjY0MmU2MDQ5ZWE4ZjFhM2RhZmU5NWY2MDczIiwiZGoiOjAsImlpIjoiYzg5OTkzOWJmM2NmNDMzYWE5Yjk5N2I0MzdkNzk0YzgiLCJkbSI6MywiZmMiOjEwNjk5Nzk4MzAsImZsIjo4NjI0OTYxMDUsImlwIjoiMTE2LjkxLjIxMy4yNTQiLCJudyI6MTA0NTcsInBjIjozLCJvcCI6MywibXAiOjMsImVjIjozLCJnbSI6MCwiZXAiOm51bGwsInByIjoxODIxMTYsInJ0IjoyLCJycyI6NTAwLCJzYSI6Ijk2Iiwic2IiOiJpLTA5MTFhNjUyMGE1ZjU2NzJlIiwic3AiOjE4MDM2NzgsInN0IjoxMTIxOTU0LCJ1ayI6ImJmYTE4NWY0LTg2YjctNDY4OS1iODUyLTk0ZDA2NWRjNjRhMSIsInpuIjoyNDEzNDgsInptIjpbMjQxMzQ4XSwidHMiOjE3NzU2Nzc2NjUzNjYsInBuIjoic2VhcmNoLWluLWZlZWQiLCJnciI6dHJ1ZSwiZ2MiOnRydWUsImdDIjp0cnVlLCJncyI6Im5vbmUiLCJ0eiI6IkFtZXJpY2EvTmV3X1lvcmsiLCJ1ciI6Imh0dHBzOi8vYWQuZG91YmxlY2xpY2submV0L2RkbS90cmFja2Nsay9ONzE4Njc5LjMyODY4OTNVTlNQTEFTSC9CMjkwOTAwMDkuNDIxMjU0MjQ4O2RjX3Rya19haWQ9NjEzOTY1NDcyO2RjX3Rya19jaWQ9MjM1NjI5NzgwO2RjX2xhdD07ZGNfcmRpZD07dGFnX2Zvcl9jaGlsZF9kaXJlY3RlZF90cmVhdG1lbnQ9O3RmdWE9O2dkcHI9JHtHRFBSfTtnZHByX2NvbnNlbnQ9JHtHRFBSX0NPTlNFTlRfNzU1fTtsdGQ9O2RjX3Rkdj0xIn0&s=LkA1jBxxd3q2plmUYdzM3qbeJgY
+                - generic [ref=e226]:
+                  - img [ref=e228]
+                  - contentinfo [ref=e229]:
+                    - generic [ref=e230]:
+                      - img [ref=e232]
+                      - generic [ref=e236]: "Squarespace: get projects, get paid"
+                    - generic [ref=e237]: Get Started
+              - figure [ref=e238]:
+                - link "Young woman in construction uniform holding a tool" [ref=e241]:
+                  - /url: /photos/young-woman-in-construction-uniform-holding-a-tool-Oc9zdOjBO6w
+                  - img "Young woman in construction uniform holding a tool" [ref=e242]
+              - figure [ref=e243]:
+                - generic [ref=e245]:
+                  - link "Window cleaner working high above city buildings" [ref=e246]:
+                    - /url: /photos/window-cleaner-working-high-above-city-buildings-5vimxunuadQ
+                    - img "Window cleaner working high above city buildings" [ref=e247]
+                  - link [ref=e248] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fwindow-cleaner-working-high-above-city-buildings-5vimxunuadQ
+                    - img [ref=e249]
+              - figure [ref=e251]:
+                - link "a person standing in a doorway" [ref=e254]:
+                  - /url: /photos/a-person-standing-in-a-doorway-UZIDuPB8o9Q
+                  - img "a person standing in a doorway" [ref=e255]
+              - figure [ref=e256]:
+                - link "man in yellow shirt standing beside man in black jacket" [ref=e259]:
+                  - /url: /photos/man-in-yellow-shirt-standing-beside-man-in-black-jacket-EfXXEo5CZ74
+                  - img "man in yellow shirt standing beside man in black jacket" [ref=e260]
+              - figure [ref=e261]:
+                - generic [ref=e263]:
+                  - link "Two window cleaners working on a tall building." [ref=e264]:
+                    - /url: /photos/two-window-cleaners-working-on-a-tall-building-Bb4RedvKmtI
+                    - img "Two window cleaners working on a tall building." [ref=e265]
+                  - link [ref=e266] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Ftwo-window-cleaners-working-on-a-tall-building-Bb4RedvKmtI
+                    - img [ref=e267]
+              - figure [ref=e269]:
+                - link "a man and woman looking out a window" [ref=e272]:
+                  - /url: /photos/a-man-and-woman-looking-out-a-window-11En4Ut_cZc
+                  - img "a man and woman looking out a window" [ref=e273]
+          - generic [ref=e276]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e277]:
+              - text: Browse premium images on iStock
+              - generic [ref=e278]: "| Claim your discount now"
+            - generic [ref=e280]:
+              - link "Construction worker carrying a window panel at a building site" [ref=e281] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/construction-worker-carrying-a-window-panel-at-a-building-site-gm1440404382-480402992?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A9c5d7db1-5fac-491f-a509-cae5be0a4289
+                - img "Construction worker carrying a window panel at a building site" [ref=e282]
+              - link "Improving the energy efficiency of the apartment, replacing the carpentry" [ref=e283] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/improving-the-energy-efficiency-of-the-apartment-replacing-the-carpentry-gm2111368574-566972417?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A55d002e4-9a00-4c27-b818-3b5b242c6c37
+                - img "Improving the energy efficiency of the apartment, replacing the carpentry" [ref=e284]
+              - link "Male Workers Installing Window Glass At Sunset Urban Apartment Exterior" [ref=e285] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/male-workers-installing-window-glass-at-sunset-urban-apartment-exterior-gm2239732471-654531055?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A76210054-e9ee-45c2-995e-eb0f1e158233
+                - img "Male Workers Installing Window Glass At Sunset Urban Apartment Exterior" [ref=e286]
+              - link "View on applying silicone sealant with gun on joints between windows" [ref=e287] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/view-on-applying-silicone-sealant-with-gun-on-joints-between-windows-gm962158240-262767683?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A1c677206-adcb-41d0-81ab-8d99b7a5446a
+                - img "View on applying silicone sealant with gun on joints between windows" [ref=e288]
+              - link "Construction Workers Installing New Window in Building" [ref=e289] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/construction-workers-installing-new-window-in-building-gm2088326149-565688167?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A19e887d4-ebed-4740-ae87-bf6efaf3c645
+                - img "Construction Workers Installing New Window in Building" [ref=e290]
+              - link "Glaziers place a large sheet of thick glass on the table by hand. Glass work" [ref=e291] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/glaziers-place-a-large-sheet-of-thick-glass-on-the-table-by-hand-glass-work-gm2167770678-587821092?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3Ab60fff77-e039-48d9-89b5-5d966a52e82d
+                - img "Glaziers place a large sheet of thick glass on the table by hand. Glass work" [ref=e292]
+              - link "Handyman repairing the sliding window. Adjust window hook sliding." [ref=e293] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/handyman-repairing-the-sliding-window-adjust-window-hook-sliding-gm2160402212-580940586?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A7949dca2-df37-46e4-8e3b-b9a33d862a72
+                - img "Handyman repairing the sliding window. Adjust window hook sliding." [ref=e294]
+              - generic [ref=e295]:
+                - link "Construction workers installing windows" [ref=e296] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/construction-workers-installing-windows-gm1456258117-491349066?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3A2f50171f-13bc-4d5b-b83b-6ba73e066d51
+                  - img "Construction workers installing windows" [ref=e297]
+                - link "View more on iStock ↗" [ref=e298] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglass-window-worker-construction&utm_term=glass+window+worker+construction%3A%3A%3A%3Afb77c6de-8e72-42ff-9d88-fe95596cf402&phrase=glass+window+worker+construction&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - button "Load more" [ref=e302] [cursor=pointer]
+          - generic [ref=e303]:
+            - link [ref=e304] [cursor=pointer]:
+              - /url: /
+              - img [ref=e305]
+            - paragraph [ref=e307]: Make something awesome
+    - generic:
+      - region "Notifications"

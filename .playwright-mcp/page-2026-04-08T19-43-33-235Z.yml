@@ -1,0 +1,268 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]
+            - listbox
+          - button "Visual search" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+        - generic [ref=e54]:
+          - link "Get Unsplash+" [ref=e55] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e56] [cursor=pointer]:
+            - /url: /login?referrer=%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ
+        - button "Submit an image" [ref=e58] [cursor=pointer]
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - banner [ref=e62]:
+            - generic [ref=e64]:
+              - link [ref=e65] [cursor=pointer]:
+                - /url: /@shaikhulud
+              - generic [ref=e68]:
+                - link "Maxim Tolchinskiy" [ref=e69] [cursor=pointer]:
+                  - /url: /@shaikhulud
+                - link "shaikhulud" [ref=e71] [cursor=pointer]:
+                  - /url: /@shaikhulud
+            - generic [ref=e72]:
+              - button "Bookmark" [ref=e73] [cursor=pointer]:
+                - img [ref=e74]
+              - button "Add to Collection" [ref=e76] [cursor=pointer]:
+                - img [ref=e77]
+              - button "Edit image" [ref=e79] [cursor=pointer]:
+                - text: Edit image
+                - img [ref=e80]
+              - generic [ref=e83]:
+                - link "Download free" [ref=e84] [cursor=pointer]:
+                  - /url: https://unsplash.com/photos/B9Wf319_-ZQ/download?force=true
+                - button "Choose download size" [ref=e86] [cursor=pointer]:
+                  - img [ref=e87]
+          - button "Zoom in on this image" [ref=e92]:
+            - img "a man standing on a ladder next to a window" [ref=e93]
+            - generic:
+              - generic:
+                - img
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - heading "Views" [level=3] [ref=e98]
+                  - text: 188,356
+                - generic [ref=e99]:
+                  - heading "Downloads" [level=3] [ref=e100]
+                  - text: 1,093
+              - generic [ref=e101]:
+                - button "Share this image" [ref=e102] [cursor=pointer]:
+                  - img [ref=e103]
+                  - generic [ref=e105]: Share
+                - button "Stats about this image" [ref=e106] [cursor=pointer]:
+                  - img [ref=e107]
+                  - generic [ref=e109]: Info
+                - button "More Actions" [ref=e110] [cursor=pointer]:
+                  - img [ref=e111]
+            - generic [ref=e114]:
+              - heading "a man standing on a ladder next to a window" [level=1] [ref=e116]
+              - paragraph [ref=e120]: Download this free HD photo of blue, human, cleaning, and door by Maxim Tolchinskiy (@shaikhulud)
+              - generic [ref=e122]:
+                - generic [ref=e123]:
+                  - img [ref=e124]
+                  - generic [ref=e127]:
+                    - text: Published on
+                    - time [ref=e128]: December 11, 2021
+                - generic [ref=e129]:
+                  - img [ref=e130]
+                  - button "SONY, ILCE-7M3" [ref=e133] [cursor=pointer]
+                - generic [ref=e134]:
+                  - img [ref=e135]
+                  - generic [ref=e137]:
+                    - text: Free to use under the
+                    - link "Unsplash License" [ref=e138] [cursor=pointer]:
+                      - /url: /license
+            - generic [ref=e140]:
+              - link "blue" [ref=e141] [cursor=pointer]:
+                - /url: /s/photos/blue
+              - link "human" [ref=e142] [cursor=pointer]:
+                - /url: /s/photos/human
+              - link "cleaning" [ref=e143] [cursor=pointer]:
+                - /url: /s/photos/cleaning
+              - link "door" [ref=e144] [cursor=pointer]:
+                - /url: /s/photos/door
+              - link "silhouette" [ref=e145] [cursor=pointer]:
+                - /url: /s/photos/silhouette
+              - link "electronics" [ref=e146] [cursor=pointer]:
+                - /url: /s/photos/electronics
+              - link "screen" [ref=e147] [cursor=pointer]:
+                - /url: /s/photos/screen
+              - link "sliding door" [ref=e148] [cursor=pointer]:
+                - /url: /s/photos/sliding-door
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - paragraph [ref=e154]: Browse premium related images on iStock | Save 20% with code UNSPLASH20
+            - generic [ref=e156]:
+              - link "Man is cleaning windows on a highrise building." [ref=e157] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/man-is-cleaning-windows-on-a-highrise-building-gm1189492322-336823204?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3Af8fd5bed-95e7-44d8-a757-e3bde5d570a0
+                - img "Man is cleaning windows on a highrise building." [ref=e158]
+              - link "Window cleaners working together" [ref=e159] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/window-cleaners-working-together-gm1270440711-373388841?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3Aa3aaab0d-a9d3-4277-a75e-3be89d3125dc
+                - img "Window cleaners working together" [ref=e160]
+              - link "High-rise window cleaners." [ref=e161] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/high-rise-window-cleaners-gm154884477-14987253?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3A9af90204-4018-4100-b5c3-f98a14a07c25
+                - img "High-rise window cleaners." [ref=e162]
+              - link "workers on height" [ref=e163] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/workers-on-height-gm90153127-3210119?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3Add6120cb-48b3-4ff8-bdf4-d3a6a313eac4
+                - img "workers on height" [ref=e164]
+              - link "Silhouette of Glass cleaner worker on the ropes washing glass." [ref=e165] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/silhouette-of-glass-cleaner-worker-on-the-ropes-washing-glass-gm1194442769-340110932?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3A8fc7fd2f-105e-4d69-891b-8db03ec2a74a
+                - img "Silhouette of Glass cleaner worker on the ropes washing glass." [ref=e166]
+              - link "Window cleaners working together" [ref=e167] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/window-cleaners-working-together-gm1270437100-373387144?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3Ab87248a6-075f-464c-8ea9-681704be7048
+                - img "Window cleaners working together" [ref=e168]
+              - link "Cleaning windows on a residential building." [ref=e169] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/cleaning-windows-on-a-residential-building-gm1399139030-453082169?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3A08e422a1-24c7-4823-8806-99fa33dd7abe
+                - img "Cleaning windows on a residential building." [ref=e170]
+              - generic [ref=e171]:
+                - link "Two alpinists blue collar workers washing windows of the modern building on high altitude" [ref=e172] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/two-alpinists-blue-collar-workers-washing-windows-of-the-modern-building-on-high-gm2232422045-647981465?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3Af3e1401f-1a4b-4284-a495-3c0acfc43078
+                  - img "Two alpinists blue collar workers washing windows of the modern building on high altitude" [ref=e173]
+                - link "View more on iStock ↗" [ref=e174] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/search-by-image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=adp_photos_sponsored&utm_content=https%3A%2F%2Funsplash.com%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ&utm_term=blue%3A%3A%3A%3Aee7e74e6-92c3-47f3-bcec-7d388cf5e903&mediatype=photography&imageurl=aHR0cHM6Ly9zMy51cy13ZXN0LTIuYW1hem9uYXdzLmNvbS9pbWFnZXMudW5zcGxhc2guY29tL3NtYWxsL3Bob3RvLTE2MzkxNjQ3NTcxMDgtYWFiOTUzNGVmZWZl&assettype=image
+          - generic [ref=e175]:
+            - heading "Related images" [level=4] [ref=e177]
+            - generic [ref=e181]:
+              - generic [ref=e182]:
+                - figure [ref=e183]:
+                  - link "man in black jacket standing on black ladder" [ref=e186]:
+                    - /url: /photos/man-in-black-jacket-standing-on-black-ladder-d1svyyw_9-s
+                    - img "man in black jacket standing on black ladder" [ref=e187]
+                - figure [ref=e188]:
+                  - link "a man standing on a ladder in a dark room" [ref=e191]:
+                    - /url: /photos/a-man-standing-on-a-ladder-in-a-dark-room-daAILn5wupg
+                    - img "a man standing on a ladder in a dark room" [ref=e192]
+                - figure [ref=e193]:
+                  - link "a man standing on a ladder in a dark room" [ref=e196]:
+                    - /url: /photos/a-man-standing-on-a-ladder-in-a-dark-room-_QL_w3kTg1U
+                    - img "a man standing on a ladder in a dark room" [ref=e197]
+                - figure [ref=e198]:
+                  - link "a man on a ladder working on a large screen" [ref=e201]:
+                    - /url: /photos/a-man-on-a-ladder-working-on-a-large-screen-BGq0qzhqD7g
+                    - img "a man on a ladder working on a large screen" [ref=e202]
+                - figure [ref=e203]:
+                  - generic [ref=e205]:
+                    - link "A person standing in a room with blue walls" [ref=e206]:
+                      - /url: /photos/a-person-standing-in-a-room-with-blue-walls-lyhH3QNYn88
+                      - img "A person standing in a room with blue walls" [ref=e207]
+                    - link [ref=e208] [cursor=pointer]:
+                      - /url: /plus?referrer=%2Fphotos%2Fa-person-standing-in-a-room-with-blue-walls-lyhH3QNYn88
+                      - img [ref=e209]
+                - figure [ref=e211]:
+                  - link "a crane is hanging from the side of a building" [ref=e214]:
+                    - /url: /photos/a-crane-is-hanging-from-the-side-of-a-building-pskEwdIICkg
+                    - img "a crane is hanging from the side of a building" [ref=e215]
+                - figure [ref=e216]:
+                  - link "man in black jacket standing near blue wall" [ref=e219]:
+                    - /url: /photos/man-in-black-jacket-standing-near-blue-wall-YAuMut3SIVE
+                    - img "man in black jacket standing near blue wall" [ref=e220]
+              - generic [ref=e221]:
+                - figure [ref=e222]:
+                  - link "man and woman painting wall" [ref=e225]:
+                    - /url: /photos/man-and-woman-painting-wall-d6YyP28-Ycw
+                    - img "man and woman painting wall" [ref=e226]
+                - figure [ref=e227]:
+                  - link "six bullet surveillance cameras" [ref=e230]:
+                    - /url: /photos/six-bullet-surveillance-cameras-MEDHUqvH0tA
+                    - img "six bullet surveillance cameras" [ref=e231]
+                - figure [ref=e232]:
+                  - link "Silhouetted people stand in a red lit area." [ref=e235]:
+                    - /url: /photos/silhouetted-people-stand-in-a-red-lit-area-Ib_n9eXNugs
+                    - img "Silhouetted people stand in a red lit area." [ref=e236]
+                - figure [ref=e237]:
+                  - link "blue and white glass window" [ref=e240]:
+                    - /url: /photos/blue-and-white-glass-window-R7Hy5sYvtW4
+                    - img "blue and white glass window" [ref=e241]
+                - figure [ref=e242]:
+                  - generic [ref=e244]:
+                    - link "Light from an open door" [ref=e245]:
+                      - /url: /photos/light-from-an-open-door-Ih2bMhdpqzk
+                      - img "Light from an open door" [ref=e246]
+                    - link [ref=e247] [cursor=pointer]:
+                      - /url: /plus?referrer=%2Fphotos%2Flight-from-an-open-door-Ih2bMhdpqzk
+                      - img [ref=e248]
+                - figure [ref=e250]:
+                  - link "A man taking a picture of himself in a mirror" [ref=e253]:
+                    - /url: /photos/a-man-taking-a-picture-of-himself-in-a-mirror-ukMH1wLNF-Q
+                    - img "A man taking a picture of himself in a mirror" [ref=e254]
+              - generic [ref=e255]:
+                - figure [ref=e256]:
+                  - link "a person standing in a room with a blue light" [ref=e259]:
+                    - /url: /photos/a-person-standing-in-a-room-with-a-blue-light-DKJUT-lIaHA
+                    - img "a person standing in a room with a blue light" [ref=e260]
+                - figure [ref=e261]:
+                  - generic [ref=e263]:
+                    - link "A couple of people that are standing in a room" [ref=e264]:
+                      - /url: /photos/a-couple-of-people-that-are-standing-in-a-room-d8H2k9SkWPQ
+                      - img "A couple of people that are standing in a room" [ref=e265]
+                    - link [ref=e266] [cursor=pointer]:
+                      - /url: /plus?referrer=%2Fphotos%2Fa-couple-of-people-that-are-standing-in-a-room-d8H2k9SkWPQ
+                      - img [ref=e267]
+                - figure [ref=e269]:
+                  - generic [ref=e271]:
+                    - link "A couple of people that are standing in a room" [ref=e272]:
+                      - /url: /photos/a-couple-of-people-that-are-standing-in-a-room-KcFEmL05iR8
+                      - img "A couple of people that are standing in a room" [ref=e273]
+                    - link [ref=e274] [cursor=pointer]:
+                      - /url: /plus?referrer=%2Fphotos%2Fa-couple-of-people-that-are-standing-in-a-room-KcFEmL05iR8
+                      - img [ref=e275]
+                - figure [ref=e277]:
+                  - link "two men are painting a wall with ladders" [ref=e280]:
+                    - /url: /photos/two-men-are-painting-a-wall-with-ladders-VRr-a_5Jre0
+                    - img "two men are painting a wall with ladders" [ref=e281]
+                - figure [ref=e282]:
+                  - link "silhouette of people walking on stage" [ref=e285]:
+                    - /url: /photos/silhouette-of-people-walking-on-stage-unvGTVX7moQ
+                    - img "silhouette of people walking on stage" [ref=e286]
+                - figure [ref=e287]:
+                  - link "person sitting on swing chair" [ref=e290]:
+                    - /url: /photos/person-sitting-on-swing-chair-nuS-c9-ioIU
+                    - img "person sitting on swing chair" [ref=e291]
+                - figure [ref=e292]:
+                  - generic [ref=e294]:
+                    - link "Two people standing in front of a large screen" [ref=e295]:
+                      - /url: /photos/two-people-standing-in-front-of-a-large-screen-l4Mk33w8vDw
+                      - img "Two people standing in front of a large screen" [ref=e296]
+                    - link [ref=e297] [cursor=pointer]:
+                      - /url: /plus?referrer=%2Fphotos%2Ftwo-people-standing-in-front-of-a-large-screen-l4Mk33w8vDw
+                      - img [ref=e298]
+    - generic:
+      - region "Notifications"

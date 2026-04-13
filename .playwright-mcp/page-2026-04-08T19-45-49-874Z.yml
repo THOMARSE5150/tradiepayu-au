@@ -1,0 +1,130 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]
+            - listbox
+          - button "Visual search" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+        - generic [ref=e54]:
+          - link "Get Unsplash+" [ref=e55] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e56] [cursor=pointer]:
+            - /url: /login?referrer=%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ
+        - button "Submit an image" [ref=e58] [cursor=pointer]
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - banner [ref=e62]:
+            - generic [ref=e64]:
+              - link [ref=e65] [cursor=pointer]:
+                - /url: /@shaikhulud
+              - generic [ref=e68]:
+                - link "Maxim Tolchinskiy" [ref=e69] [cursor=pointer]:
+                  - /url: /@shaikhulud
+                - link "shaikhulud" [ref=e71] [cursor=pointer]:
+                  - /url: /@shaikhulud
+            - generic [ref=e72]:
+              - button "Bookmark" [ref=e73] [cursor=pointer]:
+                - img [ref=e74]
+              - button "Add to Collection" [ref=e76] [cursor=pointer]:
+                - img [ref=e77]
+              - link "Edit image" [ref=e79] [cursor=pointer]:
+                - /url: /plus?referrer=%2Fphotos%2Fa-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ
+                - text: Edit image
+                - img [ref=e80]
+              - generic [ref=e83]:
+                - link "Download free" [ref=e84] [cursor=pointer]:
+                  - /url: https://unsplash.com/photos/B9Wf319_-ZQ/download?force=true
+                - button "Choose download size" [ref=e86] [cursor=pointer]:
+                  - img [ref=e87]
+          - button "Zoom in on this image" [disabled] [ref=e92]:
+            - img "a man standing on a ladder next to a window" [ref=e93]
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - generic [ref=e98]: ––– –– ––
+                  - text: ––– –––– ––––
+                - generic [ref=e99]:
+                  - generic [ref=e100]: ––– –– ––
+                  - text: ––– –––– ––––
+              - generic [ref=e101]:
+                - button "Share this image" [ref=e102] [cursor=pointer]:
+                  - img [ref=e103]
+                  - generic [ref=e105]: Share
+                - button "Stats about this image" [ref=e106] [cursor=pointer]:
+                  - img [ref=e107]
+                  - generic [ref=e109]: Info
+                - button "More Actions" [ref=e110] [cursor=pointer]:
+                  - img [ref=e111]
+            - generic [ref=e114]:
+              - heading "a man standing on a ladder next to a window" [level=1] [ref=e116]
+              - paragraph [ref=e120]: Download this free HD photo of blue, human, cleaning, and door by Maxim Tolchinskiy (@shaikhulud)
+              - generic [ref=e122]:
+                - generic [ref=e123]:
+                  - img [ref=e124]
+                  - generic [ref=e127]:
+                    - text: Published on
+                    - time [ref=e128]: December 10, 2021 (UTC)
+                - generic [ref=e129]:
+                  - img [ref=e130]
+                  - button "SONY, ILCE-7M3" [ref=e133] [cursor=pointer]
+                - generic [ref=e134]:
+                  - img [ref=e135]
+                  - generic [ref=e137]:
+                    - text: Free to use under the
+                    - link "Unsplash License" [ref=e138] [cursor=pointer]:
+                      - /url: /license
+            - generic [ref=e140]:
+              - link "blue" [ref=e141] [cursor=pointer]:
+                - /url: /s/photos/blue
+              - link "human" [ref=e142] [cursor=pointer]:
+                - /url: /s/photos/human
+              - link "cleaning" [ref=e143] [cursor=pointer]:
+                - /url: /s/photos/cleaning
+              - link "door" [ref=e144] [cursor=pointer]:
+                - /url: /s/photos/door
+              - link "silhouette" [ref=e145] [cursor=pointer]:
+                - /url: /s/photos/silhouette
+              - link "electronics" [ref=e146] [cursor=pointer]:
+                - /url: /s/photos/electronics
+              - link "screen" [ref=e147] [cursor=pointer]:
+                - /url: /s/photos/screen
+              - link "sliding door" [ref=e148] [cursor=pointer]:
+                - /url: /s/photos/sliding-door
+        - paragraph [ref=e154]: Browse premium related images on iStock | Save 20% with code UNSPLASH20
+    - generic:
+      - region "Notifications"

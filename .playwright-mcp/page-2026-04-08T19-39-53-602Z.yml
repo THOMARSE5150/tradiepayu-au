@@ -1,0 +1,267 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fglazier-glass-installation
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: glazier glass installation
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+        - generic [ref=e58]:
+          - link "Get Unsplash+" [ref=e59] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e60] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fglazier-glass-installation
+        - button "Submit an image" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e69]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Photos 14k":
+                - /url: /s/photos/glazier-glass-installation
+                - img
+                - text: Photos
+                - generic: 14k
+            - listitem [ref=e72]:
+              - link "Illustrations 4" [ref=e73] [cursor=pointer]:
+                - /url: /s/illustrations/glazier-glass-installation
+                - img [ref=e74]
+                - text: Illustrations
+                - generic [ref=e76]: "4"
+            - listitem [ref=e77]:
+              - button "More" [ref=e78] [cursor=pointer]
+          - button "Filters" [ref=e80] [cursor=pointer]:
+            - img [ref=e82]
+            - text: Filters
+        - generic [ref=e84]:
+          - heading "Glazier glass installation" [level=1] [ref=e86]
+          - generic [ref=e88]:
+            - button "scroll list to the right" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+            - generic [ref=e94]:
+              - link "person" [ref=e96] [cursor=pointer]:
+                - /url: /s/photos/person
+              - link "building" [ref=e98] [cursor=pointer]:
+                - /url: /s/photos/building
+              - link "human" [ref=e100] [cursor=pointer]:
+                - /url: /s/photos/human
+              - link "grey" [ref=e102] [cursor=pointer]:
+                - /url: /s/photos/grey
+              - link "window" [ref=e104] [cursor=pointer]:
+                - /url: /s/photos/window
+              - link "reflection" [ref=e106] [cursor=pointer]:
+                - /url: /s/photos/reflection
+              - link "cleaning" [ref=e108] [cursor=pointer]:
+                - /url: /s/photos/cleaning
+              - link "crane" [ref=e110] [cursor=pointer]:
+                - /url: /s/photos/crane
+              - link "architecture" [ref=e112] [cursor=pointer]:
+                - /url: /s/photos/architecture
+              - link "housing" [ref=e114] [cursor=pointer]:
+                - /url: /s/photos/housing
+              - link "angle" [ref=e116] [cursor=pointer]:
+                - /url: /s/photos/angle
+              - link "construction worker" [ref=e118] [cursor=pointer]:
+                - /url: /s/photos/construction-worker
+        - generic [ref=e120]:
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - figure [ref=e126]:
+                - generic [ref=e128]:
+                  - link "Mechanic changing glass for car in workshop." [ref=e129]:
+                    - /url: /photos/mechanic-changing-glass-for-car-in-workshop-ZbDEpi7seTU
+                    - img "Mechanic changing glass for car in workshop." [ref=e130]
+                  - link [ref=e131] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmechanic-changing-glass-for-car-in-workshop-ZbDEpi7seTU
+                    - img [ref=e132]
+              - generic [ref=e134]:
+                - heading "Sponsored images" [level=4] [ref=e135]:
+                  - generic [ref=e136]: Sponsored images
+                  - link [ref=e137] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A8b03ad9f-1efc-4cce-9547-ff88371a5a4c&phrase=glazier+glass+installation&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e138]
+                - generic [ref=e140]:
+                  - link "The glazier carries the glass in the glass factory" [ref=e141] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/the-glazier-carries-the-glass-in-the-glass-factory-gm1331323774-414499548?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3Ae1cf64a6-e718-47cf-8b59-da425fada87a
+                    - img "The glazier carries the glass in the glass factory" [ref=e142]
+                  - link "Time to make windows" [ref=e143] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/time-to-make-windows-gm2199354881-617112066?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A8e5bf20f-a190-41a8-8c6d-b400d21d474e
+                    - img "Time to make windows" [ref=e144]
+                  - link "Smiling handyman worker installing or repairing window" [ref=e145] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/smiling-handyman-worker-installing-or-repairing-window-gm2260503613-673392477?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A66211604-0c85-40ed-934d-b57ca68cb706
+                    - img "Smiling handyman worker installing or repairing window" [ref=e146]
+                  - link "Worker installing plastic window indoors." [ref=e147] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/worker-installing-plastic-window-indoors-gm1499647556-521294716?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A0bf4603b-d79e-45e7-b283-c54a7e48d596
+                    - img "Worker installing plastic window indoors." [ref=e148]
+                - link "Get 20% off with code UNSPLASH20" [ref=e149] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A8b03ad9f-1efc-4cce-9547-ff88371a5a4c&phrase=glazier+glass+installation&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e150]:
+                - link "gray building" [ref=e153]:
+                  - /url: /photos/gray-building-cQge4kBFY0M
+                  - img "gray building" [ref=e154]
+              - figure [ref=e155]:
+                - link "man in yellow shirt standing beside man in black jacket" [ref=e158]:
+                  - /url: /photos/man-in-yellow-shirt-standing-beside-man-in-black-jacket-EfXXEo5CZ74
+                  - img "man in yellow shirt standing beside man in black jacket" [ref=e159]
+              - figure [ref=e160]:
+                - generic [ref=e162]:
+                  - link "An empty room with glass doors and a staircase" [ref=e163]:
+                    - /url: /photos/an-empty-room-with-glass-doors-and-a-staircase-HGQwReCbmY0
+                    - img "An empty room with glass doors and a staircase" [ref=e164]
+                  - link [ref=e165] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fan-empty-room-with-glass-doors-and-a-staircase-HGQwReCbmY0
+                    - img [ref=e166]
+              - figure [ref=e168]:
+                - link "building with glass window" [ref=e171]:
+                  - /url: /photos/building-with-glass-window-Y7UPK8ENlZg
+                  - img "building with glass window" [ref=e172]
+              - figure [ref=e173]:
+                - link "A close up of a glass window with metal bars" [ref=e176]:
+                  - /url: /photos/a-close-up-of-a-glass-window-with-metal-bars-lV7NsP7l4oU
+                  - img "A close up of a glass window with metal bars" [ref=e177]
+              - figure [ref=e178]:
+                - link "Colorful stained glass is displayed in a geometric frame." [ref=e181]:
+                  - /url: /photos/colorful-stained-glass-is-displayed-in-a-geometric-frame-PRi5zk6p0YE
+                  - img "Colorful stained glass is displayed in a geometric frame." [ref=e182]
+            - generic [ref=e183]:
+              - figure [ref=e184]:
+                - link "a man standing on a ladder next to a window" [ref=e187]:
+                  - /url: /photos/a-man-standing-on-a-ladder-next-to-a-window-B9Wf319_-ZQ
+                  - img "a man standing on a ladder next to a window" [ref=e188]
+              - figure [ref=e189]:
+                - link "A man standing on top of a ladder" [ref=e192]:
+                  - /url: /photos/a-man-standing-on-top-of-a-ladder-2N_ymElGM4A
+                  - img "A man standing on top of a ladder" [ref=e193]
+              - figure [ref=e194]:
+                - generic [ref=e196]:
+                  - link "Modern airport terminal with a jet bridge" [ref=e197]:
+                    - /url: /photos/modern-airport-terminal-with-a-jet-bridge-V4Fr6BalZYs
+                    - img "Modern airport terminal with a jet bridge" [ref=e198]
+                  - link [ref=e199] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmodern-airport-terminal-with-a-jet-bridge-V4Fr6BalZYs
+                    - img [ref=e200]
+              - figure [ref=e202]:
+                - link "gray framed glass window" [ref=e205]:
+                  - /url: /photos/gray-framed-glass-window-OJ1uobMWpHo
+                  - img "gray framed glass window" [ref=e206]
+              - figure [ref=e207]:
+                - link "a reflection of a person jumping into the water" [ref=e210]:
+                  - /url: /photos/a-reflection-of-a-person-jumping-into-the-water-RzIvOOdv6pA
+                  - img "a reflection of a person jumping into the water" [ref=e211]
+              - figure [ref=e212]:
+                - link "a close-up of a metal structure" [ref=e215]:
+                  - /url: /photos/a-close-up-of-a-metal-structure-8XnytMGfbQk
+                  - img "a close-up of a metal structure" [ref=e216]
+              - figure [ref=e217]:
+                - link "man in black jacket and pants standing on glass window" [ref=e220]:
+                  - /url: /photos/man-in-black-jacket-and-pants-standing-on-glass-window-WbD9JkkqU6Y
+                  - img "man in black jacket and pants standing on glass window" [ref=e221]
+            - generic [ref=e222]:
+              - contentinfo [ref=e227]:
+                - generic [ref=e233]: –– ––– ––– –– ––– – ––– ––– –––– – – –– ––– – – ––– –– –– –––– ––
+              - figure [ref=e235]:
+                - link "utility man standing in scissor platform cleaning glass window" [ref=e238]:
+                  - /url: /photos/utility-man-standing-in-scissor-platform-cleaning-glass-window-BuDD1HGco-4
+                  - img "utility man standing in scissor platform cleaning glass window" [ref=e239]
+              - figure [ref=e240]:
+                - link "A person hangs art in a storefront window." [ref=e243]:
+                  - /url: /photos/a-person-hangs-art-in-a-storefront-window-o9LDo4f3xHo
+                  - img "A person hangs art in a storefront window." [ref=e244]
+              - figure [ref=e245]:
+                - generic [ref=e247]:
+                  - link "a man holding a large white board next to another man" [ref=e248]:
+                    - /url: /photos/a-man-holding-a-large-white-board-next-to-another-man-t7ngOUoH9-M
+                    - img "a man holding a large white board next to another man" [ref=e249]
+                  - link [ref=e250] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fa-man-holding-a-large-white-board-next-to-another-man-t7ngOUoH9-M
+                    - img [ref=e251]
+              - figure [ref=e253]:
+                - link "white and red store front" [ref=e256]:
+                  - /url: /photos/white-and-red-store-front-neccM9AyeSY
+                  - img "white and red store front" [ref=e257]
+              - figure [ref=e258]:
+                - link "glass wall house" [ref=e261]:
+                  - /url: /photos/glass-wall-house-1Qz_6GZmhKk
+                  - img "glass wall house" [ref=e262]
+              - figure [ref=e263]:
+                - generic [ref=e265]:
+                  - link "Car detailing - Man with sandpaper in auto repair shop sanding polishing and preparing car parts for painting. Selective focus on man's hand." [ref=e266]:
+                    - /url: /photos/car-detailing-man-with-sandpaper-in-auto-repair-shop-sanding-polishing-and-preparing-car-parts-for-painting-selective-focus-on-mans-hand-ttiq5DWn8dY
+                    - img "Car detailing - Man with sandpaper in auto repair shop sanding polishing and preparing car parts for painting. Selective focus on man's hand." [ref=e267]
+                  - link [ref=e268] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fcar-detailing-man-with-sandpaper-in-auto-repair-shop-sanding-polishing-and-preparing-car-parts-for-painting-selective-focus-on-mans-hand-ttiq5DWn8dY
+                    - img [ref=e269]
+          - generic [ref=e273]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e274]:
+              - text: Browse premium images on iStock
+              - generic [ref=e275]: "| Claim your discount now"
+            - generic [ref=e277]:
+              - link "Mature worker carefully placing a glass piece on workbench in workshop" [ref=e278] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/mature-worker-carefully-placing-a-glass-piece-on-workbench-in-workshop-gm2172175001-591965803?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3Ad3d8ec04-4f71-4504-9055-ed756bf4bb98
+                - img "Mature worker carefully placing a glass piece on workbench in workshop" [ref=e279]
+              - link "GLAZIER" [ref=e280] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/glazier-gm139957573-2038659?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A8eb32aaa-12de-4816-a28d-eb6551d5764d
+                - img "GLAZIER" [ref=e281]
+              - link "Man replacing broken window glass" [ref=e282] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/man-replacing-broken-window-glass-gm2257922850-670960717?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3Ad94a7bb0-dbe4-4a11-b23d-08052daba8b0
+                - img "Man replacing broken window glass" [ref=e283]
+              - link "man working at home" [ref=e284] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/man-working-at-home-gm1391550035-448119245?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3Ac2dea25e-167f-4fc3-8f2b-eff8ebea6c85
+                - img "man working at home" [ref=e285]
+              - link "The Glazier uses a sucker for windows. Glass making workshop, The man lifts the pane of thick glass on the table with the help of specialized tools" [ref=e286] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/the-glazier-uses-a-sucker-for-windows-glass-making-workshop-the-man-lifts-the-pane-gm1280791005-379014192?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A16d418b7-ed9b-4d36-ace1-d02e8cd2a0a5
+                - img "The Glazier uses a sucker for windows. Glass making workshop, The man lifts the pane of thick glass on the table with the help of specialized tools" [ref=e287]
+              - link "Image of fitting double glazing sliding doors, thin aluminium frames / modern patio, balcony installation, energy-efficient living spaces" [ref=e288] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/image-of-fitting-double-glazing-sliding-doors-thin-aluminium-frames-modern-patio-gm2197717216-615657006?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A85324f92-d86b-4283-9443-024addee17f9
+                - img "Image of fitting double glazing sliding doors, thin aluminium frames / modern patio, balcony installation, energy-efficient living spaces" [ref=e289]
+              - link "mechanic in a garage replaces defective windshield of a car" [ref=e290] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/mechanic-in-a-garage-replaces-defective-windshield-of-a-car-gm2260272657-673162214?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A634daa37-d08c-4d2c-abdf-77b715d2a5ed
+                - img "mechanic in a garage replaces defective windshield of a car" [ref=e291]
+              - generic [ref=e292]:
+                - link "Young female artist working in a warehouse" [ref=e293] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/young-female-artist-working-in-a-warehouse-gm2199354534-617110600?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A156a9a9e-ed82-4c70-bad5-d0c2e5c0a69e
+                  - img "Young female artist working in a warehouse" [ref=e294]
+                - link "View more on iStock ↗" [ref=e295] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier-glass-installation&utm_term=glazier+glass+installation%3A%3A%3A%3A3fa1c731-94ff-41fa-b6f2-5e0e6d615124&phrase=glazier+glass+installation&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - button "Load more" [ref=e299] [cursor=pointer]
+          - generic [ref=e300]:
+            - link [ref=e301] [cursor=pointer]:
+              - /url: /
+              - img [ref=e302]
+            - paragraph [ref=e304]: Make something awesome
+    - generic:
+      - region "Notifications"

@@ -154,6 +154,21 @@ function resolveOgImage(canonical, ogImageOverride) {
     return `${SITE_URL}/og-provider.svg`
   }
 
+  // Trade LP pages (e.g. /glaziers-eftpos, /plumbers-eftpos-google, /roofers-eftpos-social)
+  const lpMatch = canonical?.match(/^\/(.+)-eftpos/)
+  if (lpMatch) {
+    const tradeSlug = lpMatch[1]
+    const trade = TRADE_MAP[tradeSlug]
+    if (trade) {
+      if (trade.heroImage?.startsWith('/')) {
+        const ogPath = trade.heroImage.replace(/(-hero)(\.\w+)$/, '-og$2')
+        return `${SITE_URL}${ogPath}`
+      }
+      return `https://images.unsplash.com/${trade.heroImage}?w=1200&h=630&fit=crop&crop=center&q=80`
+    }
+    return `${SITE_URL}/og-trade.svg`
+  }
+
   // Static index pages
   const INDEX_IMAGES = {
     '/providers':  'photo-1556742049-0cfed4f6a45d',

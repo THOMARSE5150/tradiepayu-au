@@ -1,0 +1,170 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Unsplash Home" [ref=e9]
+        - link "Photos" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img [ref=e12]
+        - link "Illustrations" [ref=e14] [cursor=pointer]:
+          - /url: /illustrations
+          - img [ref=e15]
+      - generic [ref=e17]:
+        - button "Explore" [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+        - button "Collections" [ref=e21] [cursor=pointer]:
+          - img [ref=e22]
+        - button "Download History" [ref=e24] [cursor=pointer]:
+          - img [ref=e25]
+      - button "Bookmarks" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+    - generic [ref=e31]:
+      - link "Log in / Sign up" [ref=e32] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Fglazier
+        - img [ref=e33]
+      - button "Language" [ref=e35] [cursor=pointer]:
+        - img [ref=e36]
+      - button "Menu" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - navigation [ref=e43]:
+        - search "Find visuals sitewide" [ref=e45]:
+          - button "Search Unsplash" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - combobox [ref=e49]:
+            - searchbox "Search Unsplash" [ref=e50]: glazier
+            - listbox
+          - button "Clear" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Visual search" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+        - generic [ref=e58]:
+          - link "Get Unsplash+" [ref=e59] [cursor=pointer]:
+            - /url: /plus
+          - link "Log in" [ref=e60] [cursor=pointer]:
+            - /url: /login?referrer=%2Fs%2Fphotos%2Fglazier
+        - button "Submit an image" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e69]:
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Photos 5":
+                - /url: /s/photos/glazier
+                - img
+                - text: Photos
+                - generic: "5"
+            - listitem [ref=e72]:
+              - link "Illustrations 0" [ref=e73] [cursor=pointer]:
+                - /url: /s/illustrations/glazier
+                - img [ref=e74]
+                - text: Illustrations
+                - generic [ref=e76]: "0"
+            - listitem [ref=e77]:
+              - button "More" [ref=e78] [cursor=pointer]
+          - button "Filters" [ref=e80] [cursor=pointer]:
+            - img [ref=e82]
+            - text: Filters
+        - generic [ref=e84]:
+          - heading "Glazier" [level=1] [ref=e86]
+          - generic [ref=e88]:
+            - button "scroll list to the right" [ref=e90] [cursor=pointer]:
+              - img [ref=e91]
+            - generic [ref=e94]:
+              - link "glass" [ref=e96] [cursor=pointer]:
+                - /url: /s/photos/glass
+              - link "professional service" [ref=e98] [cursor=pointer]:
+                - /url: /s/photos/professional-service
+              - link "skilled labor" [ref=e100] [cursor=pointer]:
+                - /url: /s/photos/skilled-labor
+              - link "glaziers hall" [ref=e102] [cursor=pointer]:
+                - /url: /s/photos/glaziers-hall
+              - link "london" [ref=e104] [cursor=pointer]:
+                - /url: /s/photos/london
+              - link "london bridge" [ref=e106] [cursor=pointer]:
+                - /url: /s/photos/london-bridge
+              - link "melting ice" [ref=e108] [cursor=pointer]:
+                - /url: /s/photos/melting-ice
+              - link "photography" [ref=e110] [cursor=pointer]:
+                - /url: /s/photos/photography
+              - link "blue water" [ref=e112] [cursor=pointer]:
+                - /url: /s/photos/blue-water
+              - link "granite stone" [ref=e114] [cursor=pointer]:
+                - /url: /s/photos/granite-stone
+              - link "blue sky with white cloud" [ref=e116] [cursor=pointer]:
+                - /url: /s/photos/blue-sky-with-white-cloud
+              - link "blue sky with cloud" [ref=e118] [cursor=pointer]:
+                - /url: /s/photos/blue-sky-with-cloud
+        - generic [ref=e120]:
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - figure [ref=e126]:
+                - generic [ref=e128]:
+                  - link "The worker installing and checking window in the house." [ref=e129]:
+                    - /url: /photos/the-worker-installing-and-checking-window-in-the-house-Dq6xMG4mXso
+                    - img "The worker installing and checking window in the house." [ref=e130]
+                  - link [ref=e131] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fthe-worker-installing-and-checking-window-in-the-house-Dq6xMG4mXso
+                    - img [ref=e132]
+              - figure [ref=e134]:
+                - link "a mountain range in the distance with a body of water in the foreground" [ref=e137]:
+                  - /url: /photos/a-mountain-range-in-the-distance-with-a-body-of-water-in-the-foreground-gGnq3Ulfemg
+                  - img "a mountain range in the distance with a body of water in the foreground" [ref=e138]
+            - generic [ref=e139]:
+              - figure [ref=e140]:
+                - link "a bridge over a body of water with buildings in the background" [ref=e143]:
+                  - /url: /photos/a-bridge-over-a-body-of-water-with-buildings-in-the-background-FblVr-9F8Ak
+                  - img "a bridge over a body of water with buildings in the background" [ref=e144]
+              - figure [ref=e145]:
+                - generic [ref=e147]:
+                  - link "Mechanic changing glass workshop.Looking at camera." [ref=e148]:
+                    - /url: /photos/mechanic-changing-glass-workshoplooking-at-camera-qGSBLA2LzgY
+                    - img "Mechanic changing glass workshop.Looking at camera." [ref=e149]
+                  - link [ref=e150] [cursor=pointer]:
+                    - /url: /plus?referrer=%2Fphotos%2Fmechanic-changing-glass-workshoplooking-at-camera-qGSBLA2LzgY
+                    - img [ref=e151]
+            - figure [ref=e154]:
+              - link "a bird flying over a river next to a bridge" [ref=e157]:
+                - /url: /photos/a-bird-flying-over-a-river-next-to-a-bridge-O7J68TWB00A
+                - img "a bird flying over a river next to a bridge" [ref=e158]
+          - generic [ref=e161]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e162]:
+              - text: Browse premium images on iStock
+              - generic [ref=e163]: "| Claim your discount now"
+            - generic [ref=e165]:
+              - link "Ready to see a new owner" [ref=e166] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/ready-to-see-a-new-owner-gm2199354721-617110638?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A253057e0-2585-48ff-a0e3-28ee8fa53160
+                - img "Ready to see a new owner" [ref=e167]
+              - link "Glaziers place a large sheet of thick glass on the table by hand. Glass work" [ref=e168] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/glaziers-place-a-large-sheet-of-thick-glass-on-the-table-by-hand-glass-work-gm2167770678-587821092?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3Ab6d94ec8-cba3-4c09-a264-7c80843027d3
+                - img "Glaziers place a large sheet of thick glass on the table by hand. Glass work" [ref=e169]
+              - link "I should change their place" [ref=e170] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/i-should-change-their-place-gm2199355283-617112148?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A836245a4-ba69-4fe3-abd5-a38d3db82613
+                - img "I should change their place" [ref=e171]
+              - link "Time to make windows" [ref=e172] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/time-to-make-windows-gm2199354881-617112066?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A595220d0-f454-481d-9419-94952b8b6caf
+                - img "Time to make windows" [ref=e173]
+              - link "The Glazier uses a sucker for windows. Glass making workshop, The man lifts the pane of thick glass on the table with the help of specialized tools" [ref=e174] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/the-glazier-uses-a-sucker-for-windows-glass-making-workshop-the-man-lifts-the-pane-gm1280791005-379014192?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A26d4efb5-0e18-42ee-a687-df0492fbcb6a
+                - img "The Glazier uses a sucker for windows. Glass making workshop, The man lifts the pane of thick glass on the table with the help of specialized tools" [ref=e175]
+              - link "A glazier cuts thick glass on a specialized table, Concept, Work in a glass factory" [ref=e176] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/a-glazier-cuts-thick-glass-on-a-specialized-table-concept-work-in-a-glass-factory-gm1985223758-559252927?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3Aadafeb98-a555-41b6-8b8e-b311804b36a7
+                - img "A glazier cuts thick glass on a specialized table, Concept, Work in a glass factory" [ref=e177]
+              - link "Glass cutter having a portrait in a warehouse" [ref=e178] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/glass-cutter-having-a-portrait-in-a-warehouse-gm2199354498-617110588?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A5a92e51f-654f-45b7-9445-73f478ce5657
+                - img "Glass cutter having a portrait in a warehouse" [ref=e179]
+              - generic [ref=e180]:
+                - link "Handyman fixing the window" [ref=e181] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/handyman-fixing-the-window-gm1308384529-398378675?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A31d2f298-2bb7-4d10-9843-23a80546f9d9
+                  - img "Handyman fixing the window" [ref=e182]
+                - link "View more on iStock ↗" [ref=e183] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fglazier&utm_term=glazier%3A%3A%3A%3A3688146f-23f4-4261-962a-68b20bb42da9&phrase=glazier&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - generic [ref=e185]:
+            - link [ref=e186] [cursor=pointer]:
+              - /url: /
+              - img [ref=e187]
+            - paragraph [ref=e189]: Make something awesome
+    - generic:
+      - region "Notifications"
