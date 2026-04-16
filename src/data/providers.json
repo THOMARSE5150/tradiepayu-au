@@ -8,18 +8,18 @@
     "badge_class": "badge-gold",
     "logo_text": "Z",
     "logo_colour": "#1a1a2e",
-    "product_image": "https://www.myzeller.com/_next/image?url=https%3A%2F%2Fa-us.storyblok.com%2Ff%2F1006306%2F2747x2000%2F2c2b3bb60d%2Fs-202408-terminal-t2-front-right-white-medium.png%2Fm%2F&w=1080&q=75",
-    "product_image_alt": "Zeller Terminal \u2014 white EFTPOS terminal front view",
+    "product_image": "/images/zeller-terminal-t2.jpg",
+    "product_image_alt": "Zeller Terminal — white EFTPOS terminal front view",
     "product_image_bg": "#eef2f7",
     "website": "https://www.myzeller.com/au",
     "affiliate_url": "https://www.myzeller.com/au",
     "urls": {
-      "signup":    "https://dashboard.myzeller.com/signup",
-      "pricing":   "https://www.myzeller.com/au/pricing",
-      "hardware":  "https://www.myzeller.com/au/eftpos-terminal-machines",
+      "signup": "https://dashboard.myzeller.com/signup",
+      "pricing": "https://www.myzeller.com/au/pricing",
+      "hardware": "https://www.myzeller.com/au/eftpos-terminal-machines",
       "invoicing": "https://www.myzeller.com/au/invoices",
-      "tap_to_pay":"https://www.myzeller.com/au/zeller-app/tap-to-pay",
-      "contact":   "https://www.myzeller.com/au/sales-form"
+      "tap_to_pay": "https://www.myzeller.com/au/zeller-app/tap-to-pay",
+      "contact": "https://www.myzeller.com/au/sales-form"
     },
     "lastVerified": "2026-04-05",
     "founded": 2020,
@@ -103,16 +103,16 @@
     "support_hours": "Business hours (verify for 24/7)",
     "pros": [
       "Lowest published in-person rate (1.4%)",
-      "SIM-enabled terminals \u2014 not dependent on customer WiFi",
+      "SIM-enabled terminals — not dependent on customer WiFi",
       "Fast same-day settlement to Zeller account",
       "Mobile invoicing and payment links built in",
       "No monthly fees, no lock-in",
       "Australian company with local support"
     ],
     "cons": [
-      "No offline mode \u2014 requires active internet",
+      "No offline mode — requires active internet",
       "Terminal 2 is paperless only (may not suit commercial clients)",
-      "Newer brand \u2014 less brand recognition than Square/Stripe"
+      "Newer brand — less brand recognition than Square/Stripe"
     ],
     "best_for": [
       "Most tradies",
@@ -140,16 +140,16 @@
     "logo_text": "Sq",
     "logo_colour": "#006aff",
     "product_image": "/images/square-terminal.png",
-    "product_image_alt": "Square Terminal \u2014 white EFTPOS terminal with receipt printer",
+    "product_image_alt": "Square Terminal — white EFTPOS terminal with receipt printer",
     "product_image_bg": "#f8fafc",
     "website": "https://squareup.com/au",
     "affiliate_url": "https://squareup.com/au",
     "urls": {
-      "signup":    "https://squareup.com/au/en/register",
-      "pricing":   "https://squareup.com/au/en/payments/pricing",
-      "hardware":  "https://squareup.com/au/en/hardware/terminal",
+      "signup": "https://squareup.com/au/en/register",
+      "pricing": "https://squareup.com/au/en/payments/pricing",
+      "hardware": "https://squareup.com/au/en/hardware/terminal",
       "invoicing": "https://squareup.com/au/en/invoices",
-      "contact":   "https://squareup.com/au/en/help/contact"
+      "contact": "https://squareup.com/au/en/help/contact"
     },
     "lastVerified": "2026-04-05",
     "founded": 2009,
@@ -212,19 +212,19 @@
     "google_pay": true,
     "ios_app": true,
     "android_app": true,
-    "support_hours": "Mon\u2013Fri 9am\u20135pm AET (live). Some 24/7 pathways exist.",
+    "support_hours": "Mon–Fri 9am–5pm AET (live). Some 24/7 pathways exist.",
     "pros": [
-      "Offline payment mode \u2014 works with zero connectivity",
+      "Offline payment mode — works with zero connectivity",
       "Built-in receipt printer on Terminal",
       "Mature platform with strong invoicing tools",
       "Excellent developer API if you need website integration",
       "No monthly fees, no lock-in",
-      "Well-known brand \u2014 customers trust the terminal"
+      "Well-known brand — customers trust the terminal"
     ],
     "cons": [
       "Higher in-person rate (1.6% vs Zeller's 1.4%)",
       "Terminal is expensive ($329)",
-      "No built-in SIM \u2014 WiFi/hotspot only",
+      "No built-in SIM — WiFi/hotspot only",
       "Offline mode has 24-hour window and declined-payment risk"
     ],
     "best_for": [
@@ -257,11 +257,11 @@
     "website": "https://stripe.com/au",
     "affiliate_url": "https://stripe.com/au",
     "urls": {
-      "signup":    "https://dashboard.stripe.com/register",
-      "pricing":   "https://stripe.com/au/pricing",
-      "hardware":  "https://stripe.com/au/terminal",
+      "signup": "https://dashboard.stripe.com/register",
+      "pricing": "https://stripe.com/au/pricing",
+      "hardware": "https://stripe.com/au/terminal",
       "invoicing": "https://stripe.com/au/invoicing",
-      "contact":   "https://stripe.com/au/contact"
+      "contact": "https://stripe.com/au/contact"
     },
     "lastVerified": "2026-04-05",
     "founded": 2010,
@@ -302,7 +302,7 @@
       "available": true,
       "device": "Compatible iPhone/Android",
       "surcharge_per_auth_cents": 15,
-      "notes": "Tap to Pay adds $0.15 per authorisation \u2014 use a reader above ~650 transactions to save money"
+      "notes": "Tap to Pay adds $0.15 per authorisation — use a reader above ~650 transactions to save money"
     },
     "sim_plan": {
       "available": true,
@@ -331,14 +331,14 @@
       "Best-in-class API and website integration",
       "Payment Links, Invoicing and Billing all excellent",
       "24/7 support",
-      "Trusted globally \u2014 good for mixed AU/international payments",
+      "Trusted globally — good for mixed AU/international payments",
       "No monthly fees"
     ],
     "cons": [
       "Highest in-person rate among the main three (1.7% + $0.10)",
-      "Tap to Pay adds $0.15/auth \u2014 can be expensive at volume",
+      "Tap to Pay adds $0.15/auth — can be expensive at volume",
       "2-day settlement is slower than Zeller/Square",
-      "More 'developer-first' \u2014 less tradie-friendly out of the box",
+      "More 'developer-first' — less tradie-friendly out of the box",
       "No offline mode"
     ],
     "best_for": [
@@ -366,17 +366,17 @@
     "badge_class": "badge-green",
     "logo_text": "Ty",
     "logo_colour": "#00a651",
-    "product_image": "https://www.tyro.com/wp-content/uploads/2026/02/pro-key-and-touch-product.png",
+    "product_image": null,
     "product_image_alt": "Tyro Pro Key and Touch EFTPOS terminal",
     "product_image_bg": "#f0faf4",
     "website": "https://www.tyro.com",
     "affiliate_url": "https://www.tyro.com",
     "urls": {
-      "signup":    "https://www.tyro.com/apply/",
-      "pricing":   "https://www.tyro.com/pricing/",
-      "hardware":  "https://www.tyro.com/eftpos-terminals/",
+      "signup": "https://www.tyro.com/apply/",
+      "pricing": "https://www.tyro.com/pricing/",
+      "hardware": "https://www.tyro.com/eftpos-terminals/",
       "invoicing": "https://www.tyro.com/invoicing/",
-      "contact":   "https://www.tyro.com/contact-us/"
+      "contact": "https://www.tyro.com/contact-us/"
     },
     "lastVerified": "2026-04-05",
     "founded": 2003,
@@ -391,7 +391,7 @@
     "fees": {
       "in_person_percent": null,
       "payment_links_percent": 1.4,
-      "notes": "In-person merchant service fee is turnover/card-mix dependent \u2014 not a single published flat rate. Payment Links: 1.4% incl. GST including premium and international cards."
+      "notes": "In-person merchant service fee is turnover/card-mix dependent — not a single published flat rate. Payment Links: 1.4% incl. GST including premium and international cards."
     },
     "hardware": [
       {
@@ -434,7 +434,7 @@
     "google_pay": true,
     "ios_app": true,
     "android_app": true,
-    "support_hours": "7am\u20139pm Sydney time, 7 days. Emergency after-hours pathway available.",
+    "support_hours": "7am–9pm Sydney time, 7 days. Emergency after-hours pathway available.",
     "pros": [
       "Strong Australian bank-grade footprint",
       "Payment Links at competitive 1.4% incl. GST",
@@ -444,7 +444,7 @@
       "7-day support including evenings"
     ],
     "cons": [
-      "In-person rate not publicly listed \u2014 requires quote",
+      "In-person rate not publicly listed — requires quote",
       "No offline mode",
       "No recurring billing",
       "Less transparent on hardware pricing",
@@ -475,16 +475,16 @@
     "badge_class": "badge-orange",
     "logo_text": "S4",
     "logo_colour": "#f26522",
-    "product_image": "https://www.shift4-au.com.au/wp-content/uploads/Shift4-A920-AngleLeft.webp",
+    "product_image": "/images/shift4-terminal.webp",
     "product_image_alt": "Shift4 PAX A920 Android EFTPOS terminal",
     "product_image_bg": "#f0f0ee",
     "website": "https://www.shift4-au.com.au",
     "affiliate_url": "https://www.shift4-au.com.au",
     "urls": {
-      "signup":    "https://www.shift4-au.com.au/get-started/",
-      "pricing":   "https://www.shift4-au.com.au/eftpos-solutions/",
-      "hardware":  "https://www.shift4-au.com.au/eftpos-solutions/",
-      "contact":   "https://www.shift4-au.com.au/get-started/"
+      "signup": "https://www.shift4-au.com.au/get-started/",
+      "pricing": "https://www.shift4-au.com.au/eftpos-solutions/",
+      "hardware": "https://www.shift4-au.com.au/eftpos-solutions/",
+      "contact": "https://www.shift4-au.com.au/get-started/"
     },
     "lastVerified": "2026-04-05",
     "founded": null,
@@ -498,7 +498,7 @@
     "score_settlement": 6.0,
     "fees": {
       "in_person_percent": null,
-      "notes": "Surcharging-led model \u2014 fees passed to customer. Merchant rate is quote-dependent. 'Zero cost EFTPOS' positioning means you pay nothing but customers pay a surcharge."
+      "notes": "Surcharging-led model — fees passed to customer. Merchant rate is quote-dependent. 'Zero cost EFTPOS' positioning means you pay nothing but customers pay a surcharge."
     },
     "hardware": [
       {
@@ -509,7 +509,7 @@
           "Mobile (built-in)",
           "WiFi"
         ],
-        "notes": "Rental model \u2014 no upfront purchase. Built-in mobile connectivity promoted."
+        "notes": "Rental model — no upfront purchase. Built-in mobile connectivity promoted."
       }
     ],
     "tap_to_pay": {
@@ -519,16 +519,16 @@
     "sim_plan": {
       "available": true,
       "cost_monthly_aud": null,
-      "notes": "Built-in cellular connectivity included in rental \u2014 no separate SIM cost"
+      "notes": "Built-in cellular connectivity included in rental — no separate SIM cost"
     },
     "offline_mode": {
       "available": false,
-      "notes": "PAX A920 requires connectivity \u2014 no documented offline mode"
+      "notes": "PAX A920 requires connectivity — no documented offline mode"
     },
     "settlement": {
       "same_day_available": null,
       "standard_days": null,
-      "notes": "Settlement timing not specified in available sources \u2014 request in writing before signing"
+      "notes": "Settlement timing not specified in available sources — request in writing before signing"
     },
     "invoicing": null,
     "payment_links": null,
@@ -541,12 +541,12 @@
     "support_hours": "Not specified in available sources",
     "pros": [
       "Zero out-of-pocket processing cost (surcharging model)",
-      "Rental hardware \u2014 no upfront capital",
+      "Rental hardware — no upfront capital",
       "Built-in cellular connectivity on promoted terminals"
     ],
     "cons": [
-      "Customers pay the surcharge \u2014 some tradies' customers won't accept this",
-      "Fee specifics are not publicly transparent \u2014 requires quote",
+      "Customers pay the surcharge — some tradies' customers won't accept this",
+      "Fee specifics are not publicly transparent — requires quote",
       "Contract terms less clear than flat-rate providers",
       "Limited public information on invoicing, payment links, or settlement"
     ],

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Check, X, Wifi, Clock } from 'lucide-react'
@@ -52,6 +53,7 @@ function StarRating({ rating }) {
 
 export default function ProviderCard({ provider, featured = false, index = 0, source = 'providers-index' }) {
   const reduced = useReducedMotion()
+  const [imgFailed, setImgFailed] = useState(false)
   const {
     id, name, badge, badge_class, logo_text, logo_colour, tagline,
     fees, settlement, sim_plan, offline_mode, pros, cons,
@@ -78,13 +80,13 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
         className="h-44 flex items-center justify-center overflow-hidden relative"
         style={{ background: product_image_bg || '#f1f5f9' }}
       >
-        {product_image ? (
+        {(product_image && !imgFailed) ? (
           <img
             src={product_image}
             alt={product_image_alt || `${name} hardware`}
             loading="lazy"
             className="h-full w-full object-contain p-6 drop-shadow-xl"
-            onError={e => { e.currentTarget.style.display = 'none' }}
+            onError={() => setImgFailed(true)}
           />
         ) : (
           <span className="text-6xl font-black select-none" style={{ color: `${logo_colour}22` }}>{logo_text}</span>
