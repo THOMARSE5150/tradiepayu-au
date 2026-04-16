@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import RelatedLinks from '../../components/RelatedLinks'
 import TradeCompareLinks from '../../components/TradeCompareLinks'
 import { STATES } from '../../data/states'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
@@ -45,6 +45,7 @@ const jsonLd = [
 ]
 
 export default function GlaziersPage() {
+  const reduced = useReducedMotion()
   return (
     <>
       <Meta
@@ -84,12 +85,22 @@ export default function GlaziersPage() {
               <span key={t} className="flex items-center gap-1.5"><span className="text-green-400 font-bold">✔</span> {t}</span>
             ))}
           </div>
-          <div className="mt-5 flex flex-col sm:flex-row items-start gap-3">
-            <a href="#picks" className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors shadow-lg shadow-brand-blue/25">
-              Compare the Best Options →
-            </a>
-            <a href="#comparison" className="inline-flex items-center px-5 py-3 bg-white/10 text-white font-semibold text-sm rounded-xl hover:bg-white/20 transition-colors border border-white/20">
-              See Pricing & Fees
+          <p className="mt-4 text-sm text-white/65 max-w-lg">
+            Check what EFTPOS fees actually cost you across callouts, deposits, and larger invoice jobs.
+          </p>
+          <div className="mt-4 flex flex-col sm:flex-row items-start gap-3">
+            <motion.div
+              whileHover={reduced ? undefined : { y: -2 }}
+              whileTap={reduced  ? undefined : { scale: 0.95, y: 0 }}
+              transition={{ duration: 0.14, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="inline-block"
+            >
+              <Link to="/calculator" className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors shadow-lg shadow-brand-blue/25">
+                Calculate your cost →
+              </Link>
+            </motion.div>
+            <a href="#picks" className="inline-flex items-center px-5 py-3 bg-white/10 text-white/80 font-semibold text-sm rounded-xl hover:bg-white/20 transition-colors border border-white/20">
+              Compare options
             </a>
           </div>
           <p className="mt-3 text-xs text-white/50">Most glaziers are set up and taking payments the same day. No lock-in contracts.</p>
