@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Meta from '../components/Meta'
 import Breadcrumb from '../components/Breadcrumb'
 import FaqSection from '../components/FaqSection'
@@ -126,6 +126,7 @@ function rateLabel(p) {
 }
 
 export default function CompareIndexPage() {
+  const reduced = useReducedMotion()
   return (
     <>
       <Meta
@@ -159,8 +160,13 @@ export default function CompareIndexPage() {
         <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">Quick rate reference</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-10">
           {providers.map(p => (
-            <Link
+            <motion.div
               key={p.id}
+              whileHover={reduced ? undefined : { y: -2 }}
+              whileTap={reduced  ? undefined : { scale: 0.97 }}
+              transition={{ duration: 0.14, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+            <Link
               to={`/providers/${p.id}`}
               className="flex flex-col gap-1.5 p-4 bg-white border border-slate-200 rounded-2xl hover:border-brand-blue hover:shadow-sm transition-all group"
             >
@@ -174,6 +180,7 @@ export default function CompareIndexPage() {
               <p className="text-lg font-bold text-brand-blue">{rateLabel(p)}</p>
               <p className="text-[11px] text-slate-500 font-medium leading-tight">{POSITION_LABEL[p.id]}</p>
             </Link>
+            </motion.div>
           ))}
         </div>
 
@@ -189,6 +196,8 @@ export default function CompareIndexPage() {
                 key={slug}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={reduced ? undefined : { y: -2 }}
+                whileTap={reduced  ? undefined : { scale: 0.98 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
               >

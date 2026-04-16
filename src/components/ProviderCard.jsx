@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Check, X, Wifi, Clock } from 'lucide-react'
 import { trackProviderClick } from '../utils/analytics'
 
@@ -51,6 +51,7 @@ function StarRating({ rating }) {
 }
 
 export default function ProviderCard({ provider, featured = false, index = 0, source = 'providers-index' }) {
+  const reduced = useReducedMotion()
   const {
     id, name, badge, badge_class, logo_text, logo_colour, tagline,
     fees, settlement, sim_plan, offline_mode, pros, cons,
@@ -64,11 +65,12 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
     <motion.article
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={reduced ? undefined : { y: featured ? -3 : -4 }}
       transition={{ duration: 0.4, delay: index * 0.08, ease: 'easeOut' }}
-      className={`relative rounded-2xl overflow-hidden flex flex-col transition-all duration-300 ${
+      className={`relative rounded-2xl overflow-hidden flex flex-col transition-shadow duration-300 ${
         featured
-          ? 'lg-blue lg-sheen shadow-[0_16px_48px_rgba(0,106,255,0.13)]'
-          : 'bg-white border border-slate-200 hover:shadow-[0_12px_32px_rgba(0,0,0,0.09),inset_0_1px_0_rgba(255,255,255,1)] hover:-translate-y-1'
+          ? 'lg-blue lg-sheen shadow-[0_16px_48px_rgba(0,106,255,0.13)] hover:shadow-[0_20px_56px_rgba(0,106,255,0.18)]'
+          : 'bg-white border border-slate-200 hover:shadow-[0_12px_32px_rgba(0,0,0,0.09),inset_0_1px_0_rgba(255,255,255,1)]'
       }`}
     >
       {/* Product image */}
@@ -178,17 +180,23 @@ export default function ProviderCard({ provider, featured = false, index = 0, so
         </div>
 
         {/* CTA — featured gets primary; secondary for all others to reinforce ranking */}
-        <Link
-          to={`/providers/${id}`}
-          onClick={() => trackProviderClick(id, source)}
-          className={`mt-auto block text-center font-semibold px-4 py-2.5 rounded-xl transition-all text-sm ${
-            featured
-              ? 'bg-brand-blue hover:bg-blue-600 text-white shadow-md shadow-blue-900/20'
-              : 'bg-slate-50 border border-slate-200 text-brand-dark hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/40'
-          }`}
+        <motion.div
+          whileTap={reduced ? undefined : { scale: 0.97 }}
+          transition={{ duration: 0.1, ease: 'easeOut' }}
+          className="mt-auto"
         >
-          {featured ? `Why ${name} is #1 →` : `Full ${name} review →`}
-        </Link>
+          <Link
+            to={`/providers/${id}`}
+            onClick={() => trackProviderClick(id, source)}
+            className={`block text-center font-semibold px-4 py-2.5 rounded-xl transition-all text-sm ${
+              featured
+                ? 'bg-brand-blue hover:bg-blue-600 text-white shadow-md shadow-blue-900/20'
+                : 'bg-slate-50 border border-slate-200 text-brand-dark hover:border-brand-blue hover:text-brand-blue hover:bg-blue-50/40'
+            }`}
+          >
+            {featured ? `Why ${name} is #1 →` : `Full ${name} review →`}
+          </Link>
+        </motion.div>
       </div>
     </motion.article>
   )

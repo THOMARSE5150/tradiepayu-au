@@ -22,8 +22,13 @@ export default function StickySignUpBar({ providerId, providerName }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white border-t border-slate-200 px-4 py-3 flex items-center justify-between"
-          style={{ boxShadow: '0 -4px 24px rgba(0,0,0,0.10)' }}
+          className="fixed bottom-0 left-0 right-0 z-50 sm:hidden border-t border-slate-200/70 px-4 py-3 flex items-center justify-between"
+          style={{
+            background: 'rgba(255,255,255,0.88)',
+            backdropFilter: 'blur(20px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(20px) saturate(160%)',
+            boxShadow: '0 -4px 32px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.9)',
+          }}
         >
           <div>
             <p className="text-xs text-slate-500 leading-none mb-0.5">Ready to set up?</p>
