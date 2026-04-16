@@ -174,6 +174,24 @@ export function trackEmailCapture(source = 'unknown') {
   gtag('event', 'form_submit', { form_id: 'blog_capture', source })
 }
 
+// ─── hero image split test ────────────────────────────────────────────────────
+
+/**
+ * Fire on homepage hero render — records which image variant was shown.
+ * @param {'A'|'B'|'C'} variant
+ */
+export function trackHeroVariantView(variant) {
+  gtag('event', 'hero_variant_view', { variant })
+}
+
+/**
+ * Fire when the homepage primary CTA is clicked during the split test.
+ * @param {'A'|'B'|'C'} variant
+ */
+export function trackHeroCTAClick(variant) {
+  gtag('event', 'hero_cta_click', { variant, cta: 'calculator' })
+}
+
 /**
  * Append UTM params to a provider affiliate URL.
  */

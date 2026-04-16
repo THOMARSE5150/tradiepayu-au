@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Check, X, Zap, Shield, Wifi, TrendingDown } from 'lucide-react'
@@ -12,6 +13,7 @@ import HeroTradeSelector from '../components/HeroTradeSelector'
 import AffiliateButton from '../components/AffiliateButton'
 import { STATES } from '../data/states'
 import { SITE_URL, BRAND_NAME } from '../constants/brand'
+import { trackHeroVariantView, trackHeroCTAClick } from '../utils/analytics'
 
 const jsonLd = [
   {
@@ -125,14 +127,50 @@ const faqs = [
   { q: 'What is the best EFTPOS for emergency call-outs?', a: 'For emergency work like glaziers, plumbers, and electricians, you need a payment system that works at any hour without WiFi. Zeller Terminal 1 with SIM (Optus, $15/mo) is the primary pick. Square Terminal with offline mode is the backup for known dead zones.' },
 ]
 
+const HERO_IMAGES = {
+  A: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=700&fit=crop&crop=center&q=80',
+  B: '/images/hero-variant-b.jpg',
+  C: '/images/trades/plumbers-hero.jpg',
+}
+
+// OG images map 1:1 with hero variants.
+// Note: social crawlers see the static fallback (og-default.svg) since they
+// don't execute JS. Real users who share from a loaded page get the variant
+// image. True per-user OG swapping requires SSR — not available in this CSR SPA.
+const OG_IMAGES = {
+  A: `${SITE_URL}/og-default.svg`,
+  B: `${SITE_URL}/images/hero-variant-b.jpg`,
+  C: `${SITE_URL}/images/trades/plumbers-hero.jpg`,
+}
+
 export default function Home() {
   const reduced = useReducedMotion()
+
+  // ── Hero image split test ──────────────────────────────────────────────────
+  // Assign once per browser, persist in localStorage. Equal 33/33/33 split.
+  const [heroVariant] = useState(() => {
+    try {
+      const stored = localStorage.getItem('hero_variant')
+      if (stored && ['A', 'B', 'C'].includes(stored)) return stored
+      const v = ['A', 'B', 'C'][Math.floor(Math.random() * 3)]
+      localStorage.setItem('hero_variant', v)
+      return v
+    } catch {
+      return 'A'  // SSR / storage-blocked fallback
+    }
+  })
+
+  useEffect(() => {
+    trackHeroVariantView(heroVariant)
+  }, [heroVariant])
+
   return (
     <>
       <Meta
         title="Best EFTPOS for Australian Tradies (2026) — Zeller vs Square vs Stripe"
         description="Compare the best EFTPOS for Australian tradies. Zeller (1.4%), Square, and Stripe compared on fees, portability, offline mode, and getting paid on-site — updated April 2026."
         canonical="/"
+        ogImage={OG_IMAGES[heroVariant]}
         jsonLd={jsonLd}
       />
 
@@ -140,7 +178,7 @@ export default function Home() {
       <section className="hero relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=700&fit=crop&crop=center&q=80"
+            src={HERO_IMAGES[heroVariant]}
             alt=""
             fetchPriority="high"
             className="w-full h-full object-cover"
@@ -193,6 +231,7 @@ export default function Home() {
               >
                 <Link
                   to="/calculator"
+                  onClick={() => trackHeroCTAClick(heroVariant)}
                   className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
                 >
                   Calculate your cost →
