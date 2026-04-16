@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import RelatedLinks from '../../components/RelatedLinks'
 import TradeCompareLinks from '../../components/TradeCompareLinks'
 import { STATES } from '../../data/states'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Breadcrumb from '../../components/Breadcrumb'
 import FaqSection from '../../components/FaqSection'
 import ComparisonTable from '../../components/ComparisonTable'
@@ -43,6 +43,7 @@ const jsonLd = [
 ]
 
 export default function PoolBuildersPage() {
+  const reduced = useReducedMotion()
   return (
     <>
       <Meta
@@ -62,6 +63,24 @@ export default function PoolBuildersPage() {
           <div className="hero-meta"><span className="inline-block px-2 py-0.5 bg-white/10 text-white/70 rounded text-xs font-semibold">Trade Guide</span><span>·</span><span>Updated April 2026</span></div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">Best EFTPOS for Pool Builders in Australia (2026)</h1>
           <p className="hero-sub">$30k–$100k+ jobs with five payment stages, remote new estate sites, and council hold-points. Here's the payment setup that works for pool builders.</p>
+          <p className="mt-4 text-sm text-white/65 max-w-lg">
+            Check what EFTPOS fees actually cost you across multi-stage pool payments, large deposits, and remote estate sites.
+          </p>
+          <div className="mt-4 flex flex-col sm:flex-row items-start gap-3">
+            <motion.div
+              whileHover={reduced ? undefined : { y: -2 }}
+              whileTap={reduced  ? undefined : { scale: 0.95, y: 0 }}
+              transition={{ duration: 0.14, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="inline-block"
+            >
+              <Link to="/calculator" className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white font-semibold text-sm rounded-xl hover:bg-blue-500 transition-colors shadow-lg shadow-brand-blue/25">
+                Calculate your cost →
+              </Link>
+            </motion.div>
+            <a href="#picks" className="inline-flex items-center px-5 py-3 bg-white/10 text-white/80 font-semibold text-sm rounded-xl hover:bg-white/20 transition-colors border border-white/20">
+              Compare options
+            </a>
+          </div>
           <nav className="jump-links"><a href="#picks">Comparison</a><a href="#challenges">Context</a><a href="#scenarios">Job Scenarios</a><a href="#faq">FAQ</a></nav>
         </div>
       </header>
