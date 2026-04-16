@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Check, X, Zap, Shield, Wifi, TrendingDown } from 'lucide-react'
 import providers from '../data/providers.json'
 import CostCalculator from '../components/CostCalculator'
@@ -126,6 +126,7 @@ const faqs = [
 ]
 
 export default function Home() {
+  const reduced = useReducedMotion()
   return (
     <>
       <Meta
@@ -156,17 +157,16 @@ export default function Home() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter leading-[1.08] max-w-2xl">
-              Best EFTPOS for Australian Tradies
+              How much are you actually losing in EFTPOS fees?
             </h1>
             <p className="hero-sub">
-              Independent comparison of EFTPOS fees, SIM coverage, and settlement speed — find the right fit for your trade.
+              Most tradies don't realise how much fees eat into jobs. Check your real monthly cost in under 30 seconds.
             </p>
 
-            {/* ── Verdict-first pill ── */}
+            {/* ── Verdict-first pill — stays as trust context ── */}
             <div className="mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-2
               bg-white/[0.07] border border-white/[0.14] rounded-2xl
               px-4 py-3 backdrop-blur-sm">
-              {/* Label + provider */}
               <div className="flex items-center gap-2">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400">
                   2026 Top Pick
@@ -174,7 +174,6 @@ export default function Home() {
                 <span className="text-white/20 text-xs">·</span>
                 <span className="text-white font-bold text-sm">Zeller Terminal 1</span>
               </div>
-              {/* Stat chips */}
               <div className="flex items-center gap-1.5 flex-wrap">
                 {['1.4% rate', '$0/mo fee', 'SIM-enabled', 'Same-day pay'].map(tag => (
                   <span key={tag} className="text-[11px] text-white/55 bg-white/[0.07] border border-white/[0.10] px-2 py-0.5 rounded-lg">
@@ -184,22 +183,26 @@ export default function Home() {
               </div>
             </div>
 
-            {/* CTA row */}
+            {/* CTA row — calculator is the single primary action */}
             <div className="flex flex-wrap items-center gap-3 mt-5">
-              <AffiliateButton
-                providerId="zeller"
-                label="hero-primary"
-                campaign="homepage-hero"
-                intent="signup"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
+              <motion.div
+                whileHover={reduced ? undefined : { y: -2 }}
+                whileTap={reduced  ? undefined : { scale: 0.95, y: 0 }}
+                transition={{ duration: 0.14, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="inline-block"
               >
-                Get Zeller — 1.4% rate →
-              </AffiliateButton>
+                <Link
+                  to="/calculator"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-semibold rounded-2xl text-[15px] hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.40)]"
+                >
+                  Calculate your cost →
+                </Link>
+              </motion.div>
               <Link
                 to="/compare"
                 className="text-white/70 text-sm font-semibold hover:text-white transition-colors underline underline-offset-2"
               >
-                Compare all providers →
+                Compare providers
               </Link>
             </div>
 
