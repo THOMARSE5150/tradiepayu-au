@@ -7,13 +7,22 @@ import { trackEmailCapture } from '../utils/analytics'
  * /blog/* article. Slides up from the bottom on mobile, appears as a fixed
  * bar at the bottom on desktop. Only shown once per session.
  */
+const INTENTS = [
+  { value: 'cheapest',       label: 'Cheapest' },
+  { value: 'no-monthly-fee', label: 'No monthly fees' },
+  { value: 'best-overall',   label: 'Best overall' },
+  { value: 'unsure',         label: 'Not sure' },
+]
+
 export default function BlogReadCapture() {
   const { pathname } = useLocation()
   const isBlogPost = /^\/blog\/[^/]+/.test(pathname)
 
-  const [visible, setVisible]   = useState(false)
-  const [email, setEmail]       = useState('')
-  const [sent, setSent]         = useState(false)
+  const [visible, setVisible]     = useState(false)
+  const [email, setEmail]         = useState('')
+  const [intent, setIntent]       = useState('unsure')
+  const [sent, setSent]           = useState(false)
+  const [loading, setLoading]     = useState(false)
   const [dismissed, setDismissed] = useState(false)
 
   // Reset per post, but not if already dismissed this session
@@ -42,11 +51,11 @@ export default function BlogReadCapture() {
 
   const submit = async (e) => {
     e.preventDefault()
-    if (!email) return
-    // Configure VITE_EMAIL_ENDPOINT in .env (e.g. a Cloudflare Worker or Resend webhook)
+    if (!email || loading) return
+    setLoading(true)
     const endpoint = import.meta.env.VITE_EMAIL_ENDPOINT
     if (endpoint) {
-      try { await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: pathname }) }) } catch {}
+      try { await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: pathname, intent }) }) } catch {}
     }
     // Always persist locally as fallback
     try {
@@ -55,6 +64,7 @@ export default function BlogReadCapture() {
     } catch {}
     trackEmailCapture(pathname)
     setSent(true)
+    setLoading(false)
     setTimeout(dismiss, 2500)
   }
 
@@ -88,6 +98,22 @@ export default function BlogReadCapture() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-1.5 flex-shrink-0">
+                  <div className="flex flex-wrap gap-1">
+                    {INTENTS.map(({ value, label }) => (
+                      <button
+                        key={value}
+                        type="button"
+                        onClick={() => setIntent(value)}
+                        className={`px-2.5 py-1 rounded-lg text-[11px] font-medium border transition-colors ${
+                          intent === value
+                            ? 'bg-white/15 border-white/40 text-white'
+                            : 'bg-white/5 border-white/15 text-white/45 hover:text-white/65 hover:border-white/25'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
                   <form onSubmit={submit} className="flex gap-2">
                     <input
                       type="email"
@@ -99,9 +125,10 @@ export default function BlogReadCapture() {
                     />
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-brand-blue text-white text-sm font-semibold rounded-xl hover:bg-brand-blue/90 transition-colors flex-shrink-0"
+                      disabled={loading}
+                      className="px-4 py-2 bg-brand-blue text-white text-sm font-semibold rounded-xl hover:bg-brand-blue/90 transition-colors flex-shrink-0 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Get guide
+                      {loading ? '…' : 'Get guide'}
                     </button>
                   </form>
                   <p className="text-white/35 text-xs text-right">
