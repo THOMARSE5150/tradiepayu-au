@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'framer-motion'
 import providers from '../data/providers.json'
 import { trackOutbound, affiliateUrl } from '../utils/analytics'
 import { haptic } from '../utils/haptic'
@@ -17,6 +18,7 @@ import { haptic } from '../utils/haptic'
  */
 export default function AffiliateButton({ providerId, label = 'cta', campaign = 'review', intent, className = '', children }) {
   const p = providers.find(x => x.id === providerId)
+  const reduced = useReducedMotion()
   if (!p) return null
 
   const baseUrl = (intent && p.urls?.[intent]) ?? p.affiliate_url
@@ -31,13 +33,16 @@ export default function AffiliateButton({ providerId, label = 'cta', campaign = 
   }
 
   return (
-    <a
+    <motion.a
       href={href}
       rel="noopener noreferrer"
       className={className}
       onClick={handleClick}
+      whileHover={reduced ? undefined : { y: -2 }}
+      whileTap={reduced  ? undefined : { scale: 0.95, y: 0 }}
+      transition={{ duration: 0.14, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       {children}
-    </a>
+    </motion.a>
   )
 }

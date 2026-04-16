@@ -171,7 +171,7 @@ export default function CostCalculator() {
         <h2 className="text-2xl font-bold text-brand-dark mb-2">Monthly Cost Calculator</h2>
         <p className="text-slate-500 mb-8">Enter your expected monthly card turnover to compare real costs.</p>
 
-        <div className="bg-white rounded-xl border border-slate-200 p-6 mb-8">
+        <div className="bg-white rounded-xl border border-slate-200 p-6 mb-8" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.055), inset 0 1px 0 rgba(255,255,255,0.9)' }}>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div>
               <label className="block text-sm font-semibold text-brand-dark mb-1.5">
@@ -179,14 +179,16 @@ export default function CostCalculator() {
               </label>
               <div className="flex gap-2 mb-2">
                 {PRESETS.map(p => (
-                  <button
+                  <motion.button
                     key={p.value}
                     type="button"
                     onClick={() => { haptic('light'); setMonthly(p.value) }}
+                    whileTap={{ scale: 0.91 }}
+                    transition={{ duration: 0.1, ease: 'easeOut' }}
                     className={`text-xs px-2 py-1 rounded-lg border transition-all ${monthly === p.value ? 'bg-brand-blue text-white border-brand-blue' : 'border-slate-200 text-slate-500 hover:border-brand-blue hover:text-brand-blue'}`}
                   >
                     {p.label}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
               <div className="relative">
