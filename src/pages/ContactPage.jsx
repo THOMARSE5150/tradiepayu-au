@@ -25,7 +25,7 @@ const TOPICS = [
 ]
 const MAX_MSG = 1000
 
-const WORKER_URL = 'https://tradiepay-contact-form.5p5ccbcgnr.workers.dev'
+const WORKER_URL = 'https://contact-form.tradiepayau.directory'
 
 const NEXT_STEPS = [
   { label: 'Compare all providers', href: '/providers', note: 'Zeller, Square, Stripe, Tyro, Shift4' },
