@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Meta from '../components/Meta'
 import Breadcrumb from '../components/Breadcrumb'
 import CostCalculator from '../components/CostCalculator'
 import { Link } from 'react-router-dom'
+import { resolveEntrySource } from '../utils/entrySource'
 
 import siteMeta from '../data/site-meta.json'
 
@@ -125,6 +126,10 @@ function FaqItem({ q, a }) {
 }
 
 export default function CalculatorPage() {
+  // Resolve and persist entry_source once on calculator mount — read by
+  // trackCalculatorEngage / trackCalculatorUsed in CostCalculator.
+  useEffect(() => { resolveEntrySource() }, [])
+
   return (
     <>
       <Meta

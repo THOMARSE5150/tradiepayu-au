@@ -155,14 +155,28 @@ export function trackFinderComplete(recommended_provider) {
 // ─── other events ─────────────────────────────────────────────────────────────
 
 /**
+ * Fire on FIRST user interaction with the calculator (focus, preset click,
+ * or form-control change). Guarded once-per-session by caller via useRef.
+ * @param {'homepage'|'trade_page'|'blog'|'direct'|'unknown'} source
+ */
+export function trackCalculatorEngage(source) {
+  gtag('event', 'calculator_engage', { source: source || 'unknown' })
+}
+
+/**
  * Fire when the calculator produces results (on input blur).
+ * entry_source is read from sessionStorage (set by entrySource.js) so the
+ * event answers "which surface produced this completion?"
  */
 export function trackCalculatorUsed({ monthly, avgTx, winner, winnerCost }) {
+  let entry_source = 'unknown'
+  try { entry_source = sessionStorage.getItem('entry_source') || 'unknown' } catch { /* storage blocked */ }
   gtag('event', 'calculator_used', {
     monthly_revenue:       monthly,
     avg_transaction:       avgTx,
     cheapest_provider:     winner,
     cheapest_monthly_cost: Math.round(winnerCost * 100) / 100,
+    entry_source,
   })
 }
 

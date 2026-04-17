@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Check, Link2, CheckCheck } from 'lucide-react'
 import { haptic } from '../utils/haptic'
-import { trackCalculatorUsed } from '../utils/analytics'
+import { trackCalculatorUsed, trackCalculatorEngage } from '../utils/analytics'
+import { getEntrySource } from '../utils/entrySource'
 import rawProviders from '../data/providers.json'
 
 const PRESETS = [
@@ -137,6 +138,15 @@ export default function CostCalculator() {
   const [includeSim, setIncludeSim] = useState(init.includeSim)
   const [copied, setCopied] = useState(false)
 
+  // One-shot engage beacon — fires on the first interaction with any form
+  // control, before the user completes enough input to fire calculator_used.
+  const engagedRef = useRef(false)
+  const markEngaged = () => {
+    if (engagedRef.current) return
+    engagedRef.current = true
+    trackCalculatorEngage(getEntrySource())
+  }
+
   function copyShareLink() {
     const url = new URL(window.location.href.split('?')[0])
     url.searchParams.set('monthly', monthly)
@@ -182,7 +192,7 @@ export default function CostCalculator() {
                   <motion.button
                     key={p.value}
                     type="button"
-                    onClick={() => { haptic('light'); setMonthly(p.value) }}
+                    onClick={() => { markEngaged(); haptic('light'); setMonthly(p.value) }}
                     whileTap={{ scale: 0.91 }}
                     transition={{ duration: 0.1, ease: 'easeOut' }}
                     className={`text-xs px-2 py-1 rounded-lg border transition-all ${monthly === p.value ? 'bg-brand-blue text-white border-brand-blue' : 'border-slate-200 text-slate-500 hover:border-brand-blue hover:text-brand-blue'}`}
@@ -199,6 +209,7 @@ export default function CostCalculator() {
                   pattern="[0-9]*"
                   enterKeyHint="done"
                   value={monthly}
+                  onFocus={markEngaged}
                   onChange={e => { haptic('light'); setMonthly(+e.target.value.replace(/[^0-9]/g, '')) }}
                   onBlur={() => {
                     if (monthly > 0 && results[0]) {
@@ -221,6 +232,7 @@ export default function CostCalculator() {
                   pattern="[0-9]*"
                   enterKeyHint="done"
                   value={avgTx}
+                  onFocus={markEngaged}
                   onChange={e => { haptic('light'); setAvgTx(+e.target.value.replace(/[^0-9]/g, '') || 1) }}
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
@@ -230,14 +242,14 @@ export default function CostCalculator() {
               <label className="block text-sm font-semibold text-brand-dark mb-1.5">
                 Hardware amortised over
               </label>
-              <AmortSelect value={amortMonths} onChange={setAmortMonths} />
+              <AmortSelect value={amortMonths} onChange={v => { markEngaged(); setAmortMonths(v) }} />
             </div>
           </div>
           <label className="flex items-center gap-2 mt-4 text-sm text-slate-600 cursor-pointer">
             <input
               type="checkbox"
               checked={includeSim}
-              onChange={e => { haptic('light'); setIncludeSim(e.target.checked) }}
+              onChange={e => { markEngaged(); haptic('light'); setIncludeSim(e.target.checked) }}
               className="rounded"
             />
             Include SIM plan cost where available
