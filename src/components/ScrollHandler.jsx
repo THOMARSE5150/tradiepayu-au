@@ -8,12 +8,16 @@ export default function ScrollHandler() {
 
   // Fire a GA4 page_view on every SPA route change (including initial load).
   // send_page_view is disabled in index.html so this is the single source
-  // of truth for all page_view events — fired after React has set the title.
+  // of truth for all page_view events. Must be gtag('event', 'page_view', …) —
+  // repeated gtag('config', …) calls reinitialise the stream and race with
+  // events dispatched in the same commit tick (e.g. hero_variant_view).
   useEffect(() => {
     if (typeof window.gtag === 'function') {
-      window.gtag('config', GA_ID, {
+      window.gtag('event', 'page_view', {
         page_path: pathname,
         page_title: document.title,
+        page_location: window.location.href,
+        send_to: GA_ID,
       })
     }
   }, [pathname])
