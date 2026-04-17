@@ -147,6 +147,13 @@ export default function CostCalculator() {
     trackCalculatorEngage(getEntrySource())
   }
 
+  // One-shot used beacon — fires once per calculator mount after the user
+  // has engaged AND inputs have settled with valid values. Debounced so
+  // mid-typing keystrokes don't fire. Replaces the previous onBlur-only
+  // trigger, which missed preset-button users, avg-tx-only edits, and
+  // had flaky mobile blur behaviour (iOS Done / tap-outside).
+  const usedRef = useRef(false)
+
   function copyShareLink() {
     const url = new URL(window.location.href.split('?')[0])
     url.searchParams.set('monthly', monthly)
@@ -174,6 +181,24 @@ export default function CostCalculator() {
 
   const cheapest = results[0]?.total
   const secondCost = results[1]?.total
+
+  useEffect(() => {
+    if (usedRef.current) return
+    if (!engagedRef.current) return
+    if (!(monthly > 0 && avgTx > 0)) return
+    const winner = results[0]
+    if (!winner) return
+    const t = setTimeout(() => {
+      usedRef.current = true
+      trackCalculatorUsed({
+        monthly,
+        avgTx,
+        winner: winner.id,
+        winnerCost: winner.total,
+      })
+    }, 600)
+    return () => clearTimeout(t)
+  }, [monthly, avgTx, amortMonths, includeSim, results])
 
   return (
     <section id="calculator" className="section section-alt">
@@ -211,11 +236,6 @@ export default function CostCalculator() {
                   value={monthly}
                   onFocus={markEngaged}
                   onChange={e => { haptic('light'); setMonthly(+e.target.value.replace(/[^0-9]/g, '')) }}
-                  onBlur={() => {
-                    if (monthly > 0 && results[0]) {
-                      trackCalculatorUsed({ monthly, avgTx, winner: results[0].id, winnerCost: results[0].total })
-                    }
-                  }}
                   className="w-full pl-7 pr-3 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
                 />
               </div>
