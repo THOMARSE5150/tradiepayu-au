@@ -21,11 +21,40 @@
     <meta name="google-site-verification" content="ap4znuhkVDlf4jGeR6NzuhdhaPrzRu_jvn7zfyDpodk" />
     <meta name="impact-site-verification" value="b324d6e3-e82e-4e63-a539-4234da46779e" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DW6EPTN6N1"></script>
-    <script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // GA4 DebugView visibility (opt-in via ?debug=1, persists via sessionStorage)
+  var __gaDbg = false;
+
+  try {
+    __gaDbg = /[?&]debug=1\b/.test(location.search);
+
+    if (__gaDbg) {
+      sessionStorage.setItem('ga_debug', '1');
+    } else {
+      __gaDbg = sessionStorage.getItem('ga_debug') === '1';
+    }
+  } catch (e) {
+    __gaDbg = false;
+  }
+
+  gtag('config', 'G-DW6EPTN6N1', {
+    send_page_view: false,
+    debug_mode: __gaDbg
+  });
+</script>    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-DW6EPTN6N1', { send_page_view: false });
+      // GA4 DebugView visibility: opt-in via ?debug=1 (persists in sessionStorage
+      // for SPA navigation). Production visitors without the flag see no change.
+      var __gaDbg = /[?&]debug=1\b/.test(location.search);
+      if (__gaDbg) { try { sessionStorage.setItem('ga_debug', '1'); } catch(e){} }
+      else { try { __gaDbg = sessionStorage.getItem('ga_debug') === '1'; } catch(e){} }
+      gtag('config', 'G-DW6EPTN6N1', { send_page_view: false, debug_mode: __gaDbg });
     </script>
   </head>
   <body>
