@@ -52,7 +52,7 @@ function Bullets({ items }) {
 
 function Insight({ children }) {
   return (
-    <p className="text-lg font-semibold text-brand-dark leading-snug border-l-2 border-brand-blue pl-5">
+    <p className="text-lg font-semibold text-brand-dark leading-snug border-l-2 border-brand-blue pl-5 sm:pl-6 tracking-tight">
       {children}
     </p>
   )
@@ -75,24 +75,24 @@ function NumberedList({ items }) {
 
 function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel, breaks, footnote }) {
   return (
-    <div className="lg-light rounded-2xl p-5 flex flex-col gap-4">
+    <div className="lg-light rounded-2xl p-5 sm:p-6 flex flex-col gap-5">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-lg bg-brand-blue/10 flex items-center justify-center flex-shrink-0">
           <Icon size={15} className="text-brand-blue" />
         </div>
         <div className="min-w-0">
-          <h3 className="font-semibold text-brand-dark text-sm">{title}</h3>
-          <p className="text-xs text-slate-500 leading-snug">{tagline}</p>
+          <h3 className="font-semibold text-brand-dark text-[15px] leading-tight tracking-tight">{title}</h3>
+          <p className="text-xs text-slate-500 leading-snug mt-0.5">{tagline}</p>
         </div>
       </div>
 
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-2">{likeLabel}</p>
+        <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-2">{likeLabel}</p>
         <Bullets items={likes} />
       </div>
 
       <div>
-        <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-2">{breakLabel}</p>
+        <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500 mb-2">{breakLabel}</p>
         <Bullets items={breaks} />
       </div>
 
@@ -117,8 +117,8 @@ function ScaleStep({ jobs, label, tone }) {
         <span className={`w-2 h-2 rounded-full ${dotMap[tone]}`} />
         <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500">{label}</span>
       </div>
-      <div className="text-2xl font-bold text-brand-dark leading-none">{jobs}</div>
-      <div className="text-xs text-slate-500 mt-1">jobs / week</div>
+      <div className="text-3xl font-bold text-brand-dark leading-none tracking-tight">{jobs}</div>
+      <div className="text-xs text-slate-500 mt-1.5">jobs / week</div>
     </div>
   )
 }
@@ -144,8 +144,9 @@ export default function HowTradiesGetPaid() {
             <span className="text-white/30">·</span>
             <span>8 min read</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
-            How Tradies Actually Get Paid in Australia <span className="text-brand-blue/90">(And Where It Goes Wrong)</span>
+          <h1 className="text-2xl sm:text-4xl font-bold text-white leading-[1.15] tracking-tight mt-4">
+            How Tradies Actually Get Paid in Australia
+            <span className="block text-white/55 font-semibold mt-1.5">(And Where It Goes Wrong)</span>
           </h1>
           <p className="hero-sub">
             Cash, PayID, tap-and-go. The real reasons each one works — and the exact point each one quietly stops working.
@@ -156,7 +157,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 1. THE REALITY ───────────────────────────────────── */}
       <section className="section container-page">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">The reality (not the theory)</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">The reality (not the theory)</h2>
           <div className="space-y-4 text-slate-600 leading-relaxed">
             <p className="text-lg font-semibold text-brand-dark leading-snug">
               Most tradies don’t “choose a payment system.” They just use whatever works in the moment.
@@ -173,7 +174,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 2. WHAT TRADIES CARE ABOUT ───────────────────────── */}
       <section className="section section-alt">
         <div className="container-page max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">What tradies actually care about</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">What tradies actually care about</h2>
           <p className="text-slate-600 leading-relaxed mb-5">Forget marketing claims. In the real world, tradies care about:</p>
           <NumberedList items={[
             'Will it work on-site?',
@@ -195,7 +196,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 3. COMMON PAYMENT SETUPS ─────────────────────────── */}
       <section className="section container-page">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">The common payment setups</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">The common payment setups</h2>
           <p className="text-slate-600 leading-relaxed">
             Three systems do almost all the work. Each one has a clear sweet spot — and a clear point where it quietly stops working.
           </p>
@@ -267,7 +268,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 4. THE MISTAKE ───────────────────────────────────── */}
       <section className="section section-alt">
         <div className="container-page max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">The mistake most tradies make</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">The mistake most tradies make</h2>
 
           <Insight>They optimise for the moment, not the system.</Insight>
 
@@ -295,7 +296,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 5. THE SCALING PROBLEM ───────────────────────────── */}
       <section className="section container-page">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">The scaling problem</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">The scaling problem</h2>
           <p className="text-slate-600 leading-relaxed">
             What works at one volume breaks at another. The transition is almost always invisible until it hurts.
           </p>
@@ -316,7 +317,7 @@ export default function HowTradiesGetPaid() {
           ]} />
         </div>
 
-        <div className="max-w-2xl mt-6">
+        <div className="max-w-2xl mt-8">
           <Insight>What works at 5 jobs breaks at 50+.</Insight>
         </div>
       </section>
@@ -324,7 +325,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 6. WHAT ACTUALLY WORKS ───────────────────────────── */}
       <section className="section section-alt">
         <div className="container-page max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">What actually works</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">What actually works</h2>
           <p className="text-slate-600 leading-relaxed mb-5">The best setups usually combine:</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -354,7 +355,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 7. WHERE TRADIEPAY FITS ──────────────────────────── */}
       <section className="section container-page">
         <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">Where TradiePay AU fits</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">Where TradiePay AU fits</h2>
           <div className="bg-brand-dark rounded-2xl px-6 py-8 sm:px-8 sm:py-10">
             <p className="text-[11px] font-bold uppercase tracking-widest text-brand-blue/90 mb-3">Our job</p>
             <p className="text-lg font-semibold text-white leading-snug">
@@ -380,7 +381,7 @@ export default function HowTradiesGetPaid() {
       {/* ── 8. PRACTICAL TAKEAWAY ────────────────────────────── */}
       <section className="section section-alt">
         <div className="container-page max-w-2xl">
-          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight">Practical takeaway</h2>
+          <h2 className="text-2xl font-bold text-brand-dark mb-4 leading-tight tracking-tight">Practical takeaway</h2>
           <p className="text-slate-600 leading-relaxed mb-5">If you’re a tradie, ask yourself:</p>
           <NumberedList items={[
             'Am I wasting time matching payments?',
@@ -395,11 +396,11 @@ export default function HowTradiesGetPaid() {
 
       {/* ── FINAL CTA ────────────────────────────────────────── */}
       <section className="section container-page">
-        <div className="max-w-2xl mx-auto bg-brand-dark rounded-3xl px-6 py-10 sm:px-10 sm:py-12 text-center">
-          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">
+        <div className="max-w-2xl mx-auto bg-brand-dark rounded-3xl px-6 py-12 sm:px-10 sm:py-14 text-center">
+          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-4">
             Run the numbers
           </p>
-          <h2 className="text-2xl font-bold text-white mb-3 leading-tight">
+          <h2 className="text-2xl font-bold text-white mb-3 leading-tight tracking-tight">
             See how different setups actually compare — based on your numbers.
           </h2>
           <p className="text-white/55 text-sm mb-7 max-w-sm mx-auto leading-relaxed">
