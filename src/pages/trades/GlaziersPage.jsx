@@ -404,6 +404,10 @@ export default function GlaziersPage() {
             ))}
           </ul>
           <p className="text-sm font-medium text-slate-600">The right EFTPOS setup means you get paid before you leave the job.</p>
+          <p className="text-slate-600 text-sm mt-4">Most tradies don't realise where they're losing money until they scale.</p>
+          <Link to="/how-tradies-get-paid" className="text-brand-blue font-semibold text-sm mt-4 inline-block">
+            How tradies actually get paid (and where it goes wrong) →
+          </Link>
         </div>
       </section>
 
