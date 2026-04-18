@@ -206,6 +206,28 @@ export function trackHeroCTAClick(variant) {
   gtag('event', 'hero_cta_click', { variant, cta: 'calculator' })
 }
 
+// ─── how_tradies_get_paid CTA click ───────────────────────────────────────────
+
+/**
+ * Fire when a CTA on /how-tradies-get-paid is clicked. Captures which CTA
+ * (hero / card_payid / card_eftpos / mid_page / final), destination, and the
+ * feeder source stashed in sessionStorage on page mount.
+ *
+ * @param {Object} params
+ * @param {'hero'|'card_payid'|'card_eftpos'|'mid_page'|'final'} params.cta_position
+ * @param {string} params.destination — target route (e.g. '/calculator')
+ */
+export function trackHtgpCta({ cta_position, destination }) {
+  let feeder_source = 'unknown'
+  try { feeder_source = sessionStorage.getItem('htgp_source') || 'unknown' } catch { /* storage blocked */ }
+  gtag('event', 'htgp_cta_click', {
+    page: 'how_tradies_get_paid',
+    cta_position,
+    destination,
+    feeder_source,
+  })
+}
+
 /**
  * Append UTM params to a provider affiliate URL.
  */

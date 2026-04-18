@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Banknote, Smartphone, CreditCard, ArrowRight } from 'lucide-react'
 import Meta from '../components/Meta'
 import Breadcrumb from '../components/Breadcrumb'
+import { trackHtgpCta } from '../utils/analytics'
 
 const SITE = 'https://tradiepayau.directory'
 
@@ -73,7 +75,7 @@ function NumberedList({ items }) {
   )
 }
 
-function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel, breaks, footnote, ctaLabel, ctaTo }) {
+function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel, breaks, footnote, ctaLabel, ctaTo, onCtaClick }) {
   return (
     <div className="lg-light rounded-2xl p-5 sm:p-6 flex flex-col gap-5">
       <div className="flex items-center gap-3">
@@ -105,6 +107,7 @@ function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel,
       {ctaTo && ctaLabel && (
         <Link
           to={ctaTo}
+          onClick={onCtaClick}
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline mt-auto"
         >
           {ctaLabel} <ArrowRight size={13} />
@@ -132,7 +135,29 @@ function ScaleStep({ jobs, label, tone }) {
   )
 }
 
+function resolveHtgpFeederSource() {
+  const ref = typeof document !== 'undefined' ? document.referrer : ''
+  if (!ref) return 'direct'
+  try {
+    const url = new URL(ref)
+    if (url.hostname !== window.location.hostname) return 'direct'
+    if (url.pathname === '/trades/glaziers')      return 'trade_glaziers'
+    if (url.pathname === '/trades/electricians')  return 'trade_electricians'
+    if (url.pathname === '/trades/plumbers')      return 'trade_plumbers'
+    if (url.pathname === '/')                     return 'homepage'
+    return 'other'
+  } catch { return 'unknown' }
+}
+
 export default function HowTradiesGetPaid() {
+  useEffect(() => {
+    try {
+      if (!sessionStorage.getItem('htgp_source')) {
+        sessionStorage.setItem('htgp_source', resolveHtgpFeederSource())
+      }
+    } catch { /* storage blocked */ }
+  }, [])
+
   return (
     <>
       <Meta
@@ -164,6 +189,7 @@ export default function HowTradiesGetPaid() {
           </p>
           <Link
             to="/calculator"
+            onClick={() => trackHtgpCta({ cta_position: 'hero', destination: '/calculator' })}
             className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors"
           >
             Run the numbers <ArrowRight size={14} />
@@ -249,6 +275,7 @@ export default function HowTradiesGetPaid() {
             footnote="At that point, “free” isn’t actually free."
             ctaLabel="Run your numbers"
             ctaTo="/calculator"
+            onCtaClick={() => trackHtgpCta({ cta_position: 'card_payid', destination: '/calculator' })}
           />
           <PaymentCard
             icon={CreditCard}
@@ -269,6 +296,7 @@ export default function HowTradiesGetPaid() {
             ]}
             ctaLabel="Compare EFTPOS rates"
             ctaTo="/eftpos-rate-guide"
+            onCtaClick={() => trackHtgpCta({ cta_position: 'card_eftpos', destination: '/eftpos-rate-guide' })}
           />
         </div>
 
@@ -325,6 +353,7 @@ export default function HowTradiesGetPaid() {
             </p>
             <Link
               to="/calculator"
+              onClick={() => trackHtgpCta({ cta_position: 'mid_page', destination: '/calculator' })}
               className="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-bold rounded-2xl text-sm hover:bg-blue-600 transition-colors shadow-[0_4px_16px_rgba(0,106,255,0.30)]"
             >
               Use the calculator <ArrowRight size={14} />
@@ -448,6 +477,7 @@ export default function HowTradiesGetPaid() {
           </p>
           <Link
             to="/calculator"
+            onClick={() => trackHtgpCta({ cta_position: 'final', destination: '/calculator' })}
             className="inline-flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-bold rounded-2xl text-base hover:bg-blue-600 transition-colors shadow-[0_8px_28px_rgba(0,106,255,0.45)]"
           >
             Use the calculator <ArrowRight size={16} />
