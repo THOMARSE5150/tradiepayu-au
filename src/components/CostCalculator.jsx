@@ -6,6 +6,7 @@ import { haptic } from '../utils/haptic'
 import { trackCalculatorUsed, trackCalculatorEngage } from '../utils/analytics'
 import { getEntrySource } from '../utils/entrySource'
 import rawProviders from '../data/providers.json'
+import DecisionLayer from './DecisionLayer'
 
 const PRESETS = [
   { label: '~$3k/mo', value: 3000 },
@@ -141,9 +142,11 @@ export default function CostCalculator() {
   // One-shot engage beacon — fires on the first interaction with any form
   // control, before the user completes enough input to fire calculator_used.
   const engagedRef = useRef(false)
+  const [engaged, setEngaged] = useState(false)
   const markEngaged = () => {
     if (engagedRef.current) return
     engagedRef.current = true
+    setEngaged(true)
     trackCalculatorEngage(getEntrySource())
   }
 
@@ -354,6 +357,9 @@ export default function CostCalculator() {
             })}
           </AnimatePresence>
         </motion.div>
+
+        <DecisionLayer monthly={monthly} avgTx={avgTx} engaged={engaged} />
+
         <div className="flex items-center justify-end mt-4 mb-1">
           <button
             onClick={copyShareLink}

@@ -206,6 +206,42 @@ export function trackHeroCTAClick(variant) {
   gtag('event', 'hero_cta_click', { variant, cta: 'calculator' })
 }
 
+// ─── calculator decision layer ────────────────────────────────────────────────
+
+/**
+ * Fire once per mount when the decision layer becomes visible (after the
+ * user has actually engaged with the calculator).
+ */
+export function trackDecisionLayerView({ recommended_provider, recommendation_reason, confidence_level }) {
+  gtag('event', 'decision_layer_view', {
+    recommended_provider,
+    recommendation_reason,
+    confidence_level,
+  })
+}
+
+/**
+ * Fire each time the resolved recommendation changes (user changes inputs
+ * enough to flip which provider is recommended).
+ */
+export function trackDecisionLayerRecShown({ recommended_provider, recommendation_reason, confidence_level }) {
+  gtag('event', 'decision_layer_recommendation_shown', {
+    recommended_provider,
+    recommendation_reason,
+    confidence_level,
+  })
+}
+
+/**
+ * Fire when the user clicks the "Want help choosing" CTA (opens the panel).
+ */
+export function trackDecisionLayerHelpClick({ recommended_provider, recommendation_reason }) {
+  gtag('event', 'decision_layer_help_click', {
+    recommended_provider,
+    recommendation_reason,
+  })
+}
+
 // ─── how_tradies_get_paid CTA click ───────────────────────────────────────────
 
 /**
