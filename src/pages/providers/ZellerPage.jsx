@@ -22,7 +22,7 @@ const crumbs = [
 const faqs = [
   { q: 'Does Zeller work without WiFi?', a: 'Yes — Zeller Terminal 1 supports an optional SIM plan (Optus, $15/month, no lock-in). The terminal operates on Optus mobile data, independently of any customer WiFi or phone hotspot.' },
   { q: 'What is Zeller\'s in-person rate?', a: '1.4% flat for in-person tap, chip, or swipe. No fixed per-transaction fee. Remote payments (payment links, invoices) are 1.7% + $0.25.' },
-  { q: 'Does Zeller have same-day settlement?', a: 'Yes — payments settle same business day into your Zeller Transaction Account. Transfers to an external bank account are next business day.' },
+  { q: 'Does Zeller have nightly, next business day settlement?', a: 'Yes — payments settle same business day into your Zeller Transaction Account. Transfers to an external bank account are next business day.' },
   { q: 'What is the Zeller Terminal 1 price?', a: '$99 AUD. The Terminal 2 (paperless, no receipt printer) is $199. Tap to Pay on your phone is $0 hardware cost.' },
   { q: 'Is Zeller good for glaziers and electricians?', a: 'Yes — the SIM plan is the key advantage. Dead zones in buildings are a reality for glaziers (high floors, mechanical rooms) and electricians (switchboards, underground). The SIM terminal eliminates WiFi dependency.' },
   { q: 'Can my whole team use Zeller?', a: 'Yes — you can issue multiple Zeller Terminals to different team members. All payments settle centrally into your Zeller Transaction Account, with a full transaction log per device. No expensive per-terminal rental fees — you just buy the hardware outright.' },
@@ -34,7 +34,7 @@ const faqs = [
 const setupSteps = [
   { title: 'Sign up online', body: 'Create your Zeller account at myzeller.com/au. Australian business (ABN required). Approval typically within 24 hours.' },
   { title: 'Order Terminal 1', body: 'Add Terminal 1 ($99) to your cart. Add the SIM plan ($15/mo, Optus) at checkout if you work on sites without reliable WiFi.' },
-  { title: 'Set up your Zeller Transaction Account', body: 'This is where same-day settlement goes. Set it as your primary settlement account in the dashboard.' },
+  { title: 'Set up your Zeller Transaction Account', body: 'This is where nightly, next business day settlement goes. Set it as your primary settlement account in the dashboard.' },
   { title: 'Set up Tap to Pay (optional)', body: 'Download the Zeller app on your iPhone or Android. Enable Tap to Pay — accept cards on your phone immediately, no hardware wait.' },
   { title: 'Configure payment links', body: 'In the dashboard, set up your payment link template. Send via SMS or email for remote payment. Useful for deposits, absent clients, and after-hours invoicing.' },
   { title: 'Add Zeller Invoice (optional)', body: 'Enable invoicing from the dashboard. Send itemised tax invoices with a built-in payment link — client pays directly from the invoice.' },
@@ -45,7 +45,7 @@ const _p = providers.find(p => p.id === 'zeller')
 const lastVerified = _p?.lastVerified ?? '2026-04-05'
 const lastVerifiedDisplay = new Date(lastVerified).toLocaleString('en-AU', { month: 'long', year: 'numeric' })
 const jsonLd = [
-  { '@context': 'https://schema.org', '@type': 'Review', inLanguage: 'en-AU', name: 'Zeller for Australian Tradies — Full Review (2026)', description: 'Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.', url: `${SITE}/providers/zeller`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Zeller', url: 'https://www.myzeller.com/au', description: 'Australian EFTPOS and business banking provider offering flat-rate card payments, SIM-enabled terminals, and same-day settlement.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
+  { '@context': 'https://schema.org', '@type': 'Review', inLanguage: 'en-AU', name: 'Zeller for Australian Tradies — Full Review (2026)', description: 'Lowest rate, SIM-enabled terminals, and nightly, next business day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS.', url: `${SITE}/providers/zeller`, datePublished: '2026-01-15', dateModified: lastVerified, reviewRating: { '@type': 'Rating', ratingValue: '4.8', bestRating: '5', worstRating: '1' }, itemReviewed: { '@type': 'FinancialService', name: 'Zeller', url: 'https://www.myzeller.com/au', description: 'Australian EFTPOS and business banking provider offering flat-rate card payments, SIM-enabled terminals, and nightly, next business day settlement.', aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '3', bestRating: '5', worstRating: '1' } }, author: { '@type': 'Organization', name: 'TradiePay AU Editorial Team', url: `${SITE}/about` }, publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` }, { '@type': 'ListItem', position: 2, name: 'All Providers', item: `${SITE}/providers` }, { '@type': 'ListItem', position: 3, name: 'Zeller Review', item: `${SITE}/providers/zeller` }] },
   { '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to set up Zeller for your trade business', step: setupSteps.map((s, i) => ({ '@type': 'HowToStep', position: i + 1, name: s.title, text: s.body })) },
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -56,7 +56,7 @@ export default function ZellerPage() {
     <>
       <Meta
         title="Zeller for Australian Tradies — Full Review (2026)"
-        description="Lowest rate, SIM-enabled terminals, and same-day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS."
+        description="Lowest rate, SIM-enabled terminals, and nightly, next business day settlement. Everything an Australian tradie needs to know about Zeller EFTPOS."
         canonical="/providers/zeller"
         ogType="article"
         jsonLd={jsonLd}
@@ -65,7 +65,7 @@ export default function ZellerPage() {
       <ProviderHero
         providerId="zeller"
         heading="Zeller for Tradies — Full Review (2026)"
-        subheading="Lowest rate. SIM-enabled terminals. Same-day settlement. Here's everything a tradie needs to know about Zeller."
+        subheading="Lowest rate. SIM-enabled terminals. Nightly, next business day settlement. Here's everything a tradie needs to know about Zeller."
         bgImage="/zeller-hero.webp"
         bgImageAlt="Tradie holding a Zeller Terminal beside his work ute"
         rating={4.8}
@@ -89,7 +89,7 @@ export default function ZellerPage() {
           { href: '#faq', label: 'FAQ' },
         ]}
         shareTitle="Zeller for Tradies — Full Review (2026)"
-        shareText="Lowest rate, SIM-enabled terminals, and same-day settlement. See if Zeller is right for your trade."
+        shareText="Lowest rate, SIM-enabled terminals, and nightly, next business day settlement. See if Zeller is right for your trade."
         shareUrl="https://tradiepayau.directory/providers/zeller"
       />
       <StickyProviderBar providerId="zeller" />
@@ -149,7 +149,7 @@ export default function ZellerPage() {
         </div>
 
         <div className="prose-sm max-w-none text-slate-600 space-y-4">
-          <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and same-day settlement into a Zeller account. More than 100,000 Australian businesses are already using it.</p>
+          <p>Zeller is an Australian fintech (Melbourne, founded 2020) built specifically for the Australian market. For tradies, it ticks the three boxes that matter most: the lowest published flat rate (1.4%), SIM-enabled terminals that don't rely on customer WiFi, and nightly, next business day settlement into a Zeller account. More than 100,000 Australian businesses are already using it.</p>
           <p>Unlike setting up merchant facilities with a bank — which is complex, slow, and often requires paperwork — Zeller approval is typically fast — just your ABN, online. As of {lastVerifiedDisplay}, Zeller is our top pick for most Australian tradies doing on-site work where connectivity is variable.</p>
         </div>
 
@@ -157,7 +157,7 @@ export default function ZellerPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
           {[
             { emoji: '📱', title: 'Free invoicing', body: 'Send itemised tax invoices with a built-in pay-now link' },
-            { emoji: '🏦', title: 'Transaction account', body: 'Free business account — same-day settlement lands here' },
+            { emoji: '🏦', title: 'Transaction account', body: 'Free business account — nightly, next business day settlement lands here' },
             { emoji: '💳', title: 'Debit card', body: 'Free Mastercard to spend your settled funds immediately' },
             { emoji: '👥', title: 'Team terminals', body: 'Multiple devices, one account — no per-terminal rental' },
           ].map((p, i) => (
@@ -341,7 +341,7 @@ export default function ZellerPage() {
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="bg-green-50 border border-green-200 rounded-xl p-5">
-            <h3 className="font-bold text-green-800 mb-2">Same-day settlement ✓</h3>
+            <h3 className="font-bold text-green-800 mb-2">Nightly, next business day settlement ✓</h3>
             <p className="text-sm text-green-700">Payments settle same business day into your <strong>Zeller Transaction Account</strong>. If you buy materials same-day as your client pays, the funds are available when you need them.</p>
           </div>
           <div className="lg-light rounded-xl p-5">
