@@ -10,10 +10,20 @@
 const KEY = 'entry_source'
 const VALID = new Set(['homepage', 'trade_page', 'blog', 'direct', 'unknown'])
 
+const HTGP_KEY = 'htgp_source'
+
 function sourceFromPath(path) {
   if (path === '/') return 'homepage'
   if (path.startsWith('/trades/')) return 'trade_page'
   if (path.startsWith('/blog/')) return 'blog'
+  return null
+}
+
+function htgpSourceFromPath(path) {
+  if (path === '/trades/glaziers')     return 'trade_glaziers'
+  if (path === '/trades/electricians') return 'trade_electricians'
+  if (path === '/trades/plumbers')     return 'trade_plumbers'
+  if (path === '/')                    return 'homepage'
   return null
 }
 
@@ -22,6 +32,9 @@ function readSafe() {
 }
 function writeSafe(val) {
   try { sessionStorage.setItem(KEY, val) } catch { /* storage blocked */ }
+}
+function writeHtgpSafe(val) {
+  try { sessionStorage.setItem(HTGP_KEY, val) } catch { /* storage blocked */ }
 }
 
 // Single document-level click listener — no per-CTA changes. Capture phase so
@@ -32,15 +45,26 @@ export function initEntrySourceListener() {
     const anchor = e.target instanceof Element ? e.target.closest('a[href]') : null
     if (!anchor) return
     const href = anchor.getAttribute('href') || ''
+
     const isCalcLink =
       href === '/calculator' ||
       href.startsWith('/calculator?') ||
       href.startsWith('/calculator#')
-    if (!isCalcLink) return
-    const source = sourceFromPath(window.location.pathname)
-    if (source) writeSafe(source)
-    // Unmapped origin (e.g. /compare, /providers/*) — leave flag alone so
-    // resolveEntrySource() can fall back to referrer on calculator mount.
+    if (isCalcLink) {
+      const source = sourceFromPath(window.location.pathname)
+      if (source) writeSafe(source)
+      // Unmapped origin (e.g. /compare, /providers/*) — leave flag alone so
+      // resolveEntrySource() can fall back to referrer on calculator mount.
+    }
+
+    const isHtgpLink =
+      href === '/how-tradies-get-paid' ||
+      href.startsWith('/how-tradies-get-paid?') ||
+      href.startsWith('/how-tradies-get-paid#')
+    if (isHtgpLink) {
+      const htgpSource = htgpSourceFromPath(window.location.pathname)
+      if (htgpSource) writeHtgpSafe(htgpSource)
+    }
   }, true)
 }
 
