@@ -154,12 +154,23 @@ export default function HowTradiesGetPaid() {
             <span>8 min read</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-[1.15] tracking-tight mt-4">
-            How Tradies Actually Get Paid in Australia
-            <span className="block text-white/55 font-semibold mt-1.5">(And Where It Goes Wrong)</span>
+            How Tradies Actually Get Paid
           </h1>
-          <p className="hero-sub">
-            Cash, PayID, tap-and-go. The real reasons each one works — and the exact point each one quietly stops working.
+          <p className="text-white/60 text-lg sm:text-xl font-medium mt-2">
+            And where it goes wrong
           </p>
+          <p className="text-white/80 text-base sm:text-lg mt-4 max-w-xl">
+            Most tradies don’t realise where they’re losing money until it’s too late.
+          </p>
+          <p className="text-white/50 text-sm mt-2">
+            Cash → PayID → EFTPOS — what works at 5 jobs breaks at 50+.
+          </p>
+          <Link
+            to="/calculator"
+            className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 bg-brand-blue text-white font-semibold rounded-xl text-sm hover:bg-blue-600 transition-colors"
+          >
+            Run the numbers <ArrowRight size={14} />
+          </Link>
         </div>
       </header>
 
