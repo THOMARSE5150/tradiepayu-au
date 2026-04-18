@@ -156,9 +156,6 @@ export default function HowTradiesGetPaid() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-[1.15] tracking-tight mt-4">
             How Tradies Actually Get Paid
           </h1>
-          <p className="text-white/60 text-lg sm:text-xl font-medium mt-2">
-            And where it goes wrong
-          </p>
           <p className="text-white/80 text-base sm:text-lg mt-4 max-w-xl">
             Most tradies don’t realise where they’re losing money until it’s too late.
           </p>
