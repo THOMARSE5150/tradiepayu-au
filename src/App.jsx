@@ -65,6 +65,7 @@ const ContactPage       = lazy(() => import('./pages/ContactPage'))
 const PrivacyPage       = lazy(() => import('./pages/PrivacyPage'))
 const DisclaimerPage    = lazy(() => import('./pages/DisclaimerPage'))
 const GlossaryPage      = lazy(() => import('./pages/GlossaryPage'))
+const HowTradiesGetPaid = lazy(() => import('./pages/HowTradiesGetPaid'))
 const StateTradePage    = lazy(() => import('./pages/StateTradePage'))
 const StateIndexPage    = lazy(() => import('./pages/StateIndexPage'))
 const StatesIndexPage   = lazy(() => import('./pages/StatesIndexPage'))
@@ -495,6 +496,7 @@ export default function App() {
           <Route path="/blog/best-eftpos-concreters-perth-2026" element={<BestEftposConcretersPerth />} />
           <Route path="/blog/best-eftpos-concreters-adelaide-2026" element={<BestEftposConcretersAdelaide />} />
           <Route path="/calculator" element={<CalculatorPage />} />
+          <Route path="/how-tradies-get-paid" element={<HowTradiesGetPaid />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
