@@ -73,7 +73,7 @@ function NumberedList({ items }) {
   )
 }
 
-function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel, breaks, footnote }) {
+function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel, breaks, footnote, ctaLabel, ctaTo }) {
   return (
     <div className="lg-light rounded-2xl p-5 sm:p-6 flex flex-col gap-5">
       <div className="flex items-center gap-3">
@@ -100,6 +100,15 @@ function PaymentCard({ icon: Icon, title, tagline, likeLabel, likes, breakLabel,
         <p className="text-sm text-slate-500 italic border-t border-slate-200/70 pt-3">
           {footnote}
         </p>
+      )}
+
+      {ctaTo && ctaLabel && (
+        <Link
+          to={ctaTo}
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline mt-auto"
+        >
+          {ctaLabel} <ArrowRight size={13} />
+        </Link>
       )}
     </div>
   )
@@ -230,6 +239,8 @@ export default function HowTradiesGetPaid() {
               'wasting admin time',
             ]}
             footnote="At that point, “free” isn’t actually free."
+            ctaLabel="Run your numbers"
+            ctaTo="/calculator"
           />
           <PaymentCard
             icon={CreditCard}
@@ -248,10 +259,12 @@ export default function HowTradiesGetPaid() {
               'easier accounting',
               'scalable',
             ]}
+            ctaLabel="Compare EFTPOS rates"
+            ctaTo="/eftpos-rate-guide"
           />
         </div>
 
-        <div className="max-w-2xl mt-10 space-y-4 text-slate-600 leading-relaxed">
+        <div className="max-w-2xl mt-8 space-y-4 text-slate-600 leading-relaxed">
           <h3 className="font-semibold text-brand-dark">Why PayID breaks at volume</h3>
           <p>When volume increases. If you’re doing:</p>
           <Bullets items={[
@@ -289,6 +302,20 @@ export default function HowTradiesGetPaid() {
             <p className="text-base sm:text-lg font-semibold text-white leading-snug">
               Friction, time, and reliability — not the headline fee.
             </p>
+          </div>
+
+          {/* Mid-page bridge — epiphany → action */}
+          <div className="mt-6 lg-blue rounded-2xl px-5 py-5 sm:px-6 sm:py-6">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-2">Put real numbers to it</p>
+            <p className="text-brand-dark leading-snug font-semibold">
+              See what each setup actually costs you, using your numbers.
+            </p>
+            <Link
+              to="/calculator"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
+            >
+              Use the calculator <ArrowRight size={13} />
+            </Link>
           </div>
         </div>
       </section>
