@@ -304,17 +304,19 @@ export default function HowTradiesGetPaid() {
             </p>
           </div>
 
-          {/* Mid-page bridge — epiphany → action */}
-          <div className="mt-6 lg-blue rounded-2xl px-5 py-5 sm:px-6 sm:py-6">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-brand-blue mb-2">Put real numbers to it</p>
-            <p className="text-brand-dark leading-snug font-semibold">
-              See what each setup actually costs you, using your numbers.
+          {/* Mid-page mini-CTA — matches site dark CTA system, smaller than final CTA */}
+          <div className="mt-6 bg-brand-dark rounded-2xl px-6 py-7 sm:px-8 sm:py-8 text-center">
+            <p className="text-amber-400 text-[11px] font-bold uppercase tracking-widest mb-3">
+              Run the numbers
+            </p>
+            <p className="text-lg sm:text-xl font-bold text-white leading-tight tracking-tight mb-6">
+              See what this actually costs you.
             </p>
             <Link
               to="/calculator"
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:underline"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-bold rounded-2xl text-sm hover:bg-blue-600 transition-colors shadow-[0_6px_20px_rgba(0,106,255,0.40)]"
             >
-              Use the calculator <ArrowRight size={13} />
+              Use the calculator <ArrowRight size={14} />
             </Link>
           </div>
         </div>
