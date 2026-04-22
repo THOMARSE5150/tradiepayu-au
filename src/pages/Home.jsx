@@ -13,7 +13,7 @@ import HeroTradeSelector from '../components/HeroTradeSelector'
 import AffiliateButton from '../components/AffiliateButton'
 import { STATES } from '../data/states'
 import { SITE_URL, BRAND_NAME } from '../constants/brand'
-import { trackHeroVariantView, trackHeroCTAClick } from '../utils/analytics'
+import { trackHeroVariantView, trackHeroCTAClick, trackHomepageFlowRouterView, trackHomepageFlowRouterClick } from '../utils/analytics'
 
 const jsonLd = [
   {
@@ -164,6 +164,10 @@ export default function Home() {
     trackHeroVariantView(heroVariant)
   }, [heroVariant])
 
+  useEffect(() => {
+    trackHomepageFlowRouterView(heroVariant)
+  }, [])
+
   return (
     <>
       <Meta
@@ -243,6 +247,38 @@ export default function Home() {
               >
                 Compare providers
               </Link>
+            </div>
+
+            {/* Flow router — guidance block for visitors who aren't sure which path to take */}
+            <div className="mt-6 max-w-2xl">
+              <p className="text-white text-sm font-semibold">How do you usually get paid?</p>
+              <p className="text-white/60 text-xs mt-1">Pick the path that matches how you actually get paid.</p>
+              <div className="mt-3 flex flex-col md:flex-row gap-2">
+                <Link
+                  to="/calculator"
+                  onClick={() => trackHomepageFlowRouterClick({ route_choice: 'onsite', destination: '/calculator', variant: heroVariant })}
+                  className="flex-1 inline-flex items-center justify-between gap-2 px-4 py-3 bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 rounded-2xl text-white text-sm font-medium transition-colors"
+                >
+                  <span>I take payment on site</span>
+                  <span className="text-white/40">→</span>
+                </Link>
+                <Link
+                  to="/calculator"
+                  onClick={() => trackHomepageFlowRouterClick({ route_choice: 'invoice', destination: '/calculator', variant: heroVariant })}
+                  className="flex-1 inline-flex items-center justify-between gap-2 px-4 py-3 bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 rounded-2xl text-white text-sm font-medium transition-colors"
+                >
+                  <span>I send invoices / get paid later</span>
+                  <span className="text-white/40">→</span>
+                </Link>
+                <Link
+                  to="/how-tradies-get-paid"
+                  onClick={() => trackHomepageFlowRouterClick({ route_choice: 'unsure', destination: '/how-tradies-get-paid', variant: heroVariant })}
+                  className="flex-1 inline-flex items-center justify-between gap-2 px-4 py-3 bg-white/5 border border-white/15 hover:bg-white/10 hover:border-white/30 rounded-2xl text-white text-sm font-medium transition-colors"
+                >
+                  <span>Not sure — show me how tradies get paid</span>
+                  <span className="text-white/40">→</span>
+                </Link>
+              </div>
             </div>
 
             {/* Social proof — directly below CTA for conversion reinforcement */}

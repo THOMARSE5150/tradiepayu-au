@@ -206,6 +206,29 @@ export function trackHeroCTAClick(variant) {
   gtag('event', 'hero_cta_click', { variant, cta: 'calculator' })
 }
 
+/**
+ * Fire on mount when the homepage flow router block is shown.
+ * @param {'A'|'B'|'C'} variant
+ */
+export function trackHomepageFlowRouterView(variant) {
+  gtag('event', 'homepage_flow_router_view', { hero_variant: variant })
+}
+
+/**
+ * Fire when a user clicks one of the three flow router options.
+ * @param {Object} params
+ * @param {'onsite'|'invoice'|'unsure'} params.route_choice
+ * @param {string} params.destination
+ * @param {'A'|'B'|'C'} params.variant
+ */
+export function trackHomepageFlowRouterClick({ route_choice, destination, variant }) {
+  gtag('event', 'homepage_flow_router_click', {
+    route_choice,
+    destination,
+    hero_variant: variant,
+  })
+}
+
 // ─── calculator decision layer ────────────────────────────────────────────────
 
 /**
