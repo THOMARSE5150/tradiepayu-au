@@ -56,7 +56,7 @@ const jsonLd = [
     url: `${SITE}/calculator`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Web',
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'AUD', availability: 'https://schema.org/InStock' },
     publisher: { '@type': 'Organization', name: 'TradiePay AU', url: SITE },
   },
   {

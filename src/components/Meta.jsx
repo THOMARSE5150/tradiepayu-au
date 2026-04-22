@@ -35,6 +35,15 @@ const PROVIDER_PRODUCT_NAMES = {
   shift4: 'Shift4 EFTPOS',
 }
 
+// Maps provider slug → absolute product image URL (required by Google merchant listings)
+const PROVIDER_PRODUCT_IMAGE = {
+  zeller: `${SITE_URL}/images/zeller-terminal-t2.jpg`,
+  square: `${SITE_URL}/images/square-terminal.png`,
+  stripe: `${SITE_URL}/images/stripe-reader.png`,
+  tyro:   `${SITE_URL}/images/tyro-terminal.png`,
+  shift4: `${SITE_URL}/images/shift4-terminal.webp`,
+}
+
 /**
  * Builds an ItemList + Product schema for a trade page.
  * Maps the trade entity to its recommended EFTPOS product so AI crawlers
@@ -68,10 +77,12 @@ function buildTradeListingSchema(tradeSlug) {
           '@id':   `${SITE_URL}/providers/${trade.providerSlug}#product`,
           name:    productName,
           description: `Best EFTPOS for ${trade.label} in Australia. ${trade.reason}`,
+          image:   PROVIDER_PRODUCT_IMAGE[trade.providerSlug] ?? `${SITE_URL}/images/providers/${trade.providerSlug}.jpg`,
           brand: { '@type': 'Brand', name: capitalised(trade.providerSlug) },
           ...(rateNumeric !== null && {
             offers: {
               '@type': 'Offer',
+              availability: 'https://schema.org/InStock',
               seller: { '@type': 'Organization', name: BRAND_NAME, url: SITE_URL },
               priceSpecification: {
                 '@type':        'UnitPriceSpecification',

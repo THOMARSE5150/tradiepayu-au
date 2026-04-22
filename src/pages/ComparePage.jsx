@@ -202,10 +202,12 @@ export default function ComparePage() {
             '@id':    `${SITE}/providers/${winner.id}#product`,
             name:     winner.name,
             description: `${winner.best_for.slice(0, 2).join('. ')}.`,
+            image:    `${SITE}${winner.product_image ?? `/images/providers/${winner.id}.jpg`}`,
             brand:    { '@type': 'Brand', name: winner.name },
             ...(winner.fees?.in_person_percent && {
               offers: {
                 '@type':  'Offer',
+                availability: 'https://schema.org/InStock',
                 seller:   { '@type': 'Organization', name: BRAND_NAME, url: SITE },
                 priceSpecification: {
                   '@type':       'UnitPriceSpecification',
@@ -225,6 +227,7 @@ export default function ComparePage() {
             '@id':    `${SITE}/providers/${(winner.id === p1.id ? p2 : p1).id}#product`,
             name:     (winner.id === p1.id ? p2 : p1).name,
             description: `${(winner.id === p1.id ? p2 : p1).best_for.slice(0, 2).join('. ')}.`,
+            image:    `${SITE}${(winner.id === p1.id ? p2 : p1).product_image ?? `/images/providers/${(winner.id === p1.id ? p2 : p1).id}.jpg`}`,
             brand:    { '@type': 'Brand', name: (winner.id === p1.id ? p2 : p1).name },
           },
         },
