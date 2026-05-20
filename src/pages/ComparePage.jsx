@@ -11,6 +11,117 @@ import AffiliateButton from '../components/AffiliateButton'
 import siteMeta from '../data/site-meta.json'
 import { SITE_URL as SITE, BRAND_NAME } from '../constants/brand'
 
+const PAIR_SEO = {
+  'zeller-vs-tyro': {
+    title: 'Zeller vs Tyro (2026): Which EFTPOS Costs Less for Tradies?',
+    description: 'Compare Zeller and Tyro on published rates, quote-based pricing, contracts, surcharging, SIM connectivity, settlement timing, and mobile tradie fit.',
+  },
+  'zeller-vs-square': {
+    title: 'Zeller vs Square for Tradies: Fees, Hardware & Payout Speed Compared',
+    description: 'Compare Zeller and Square on published rates, hardware costs, payout timing, offline mode, SIM options, surcharging, and mobile tradie fit.',
+  },
+  'square-vs-tyro': {
+    title: 'Square vs Tyro (2026): Which EFTPOS Fits Mobile Tradies?',
+    description: 'Square offers offline mode for zero-signal jobs; Tyro suits higher-volume operators. Compare fees, surcharging, hardware, contracts, settlement, and mobile fit.',
+  },
+}
+
+function providerRank(providerId) {
+  return providers.findIndex(provider => provider.id === providerId)
+}
+
+function canonicalPair(providerA, providerB) {
+  return providerRank(providerA.id) <= providerRank(providerB.id)
+    ? [providerA, providerB]
+    : [providerB, providerA]
+}
+
+function rateText(provider) {
+  const rate = provider.fees?.in_person_percent
+  if (!rate) return 'quote required'
+
+  const fixedCents = provider.fees?.in_person_fixed_cents
+  return fixedCents ? `${rate}% + $${(fixedCents / 100).toFixed(2)}` : `${rate}%`
+}
+
+function feeDifferenceText(providerA, providerB) {
+  const rateA = providerA.fees?.in_person_percent
+  const rateB = providerB.fees?.in_person_percent
+
+  if (!rateA || !rateB) {
+    return `${providerA.name}: ${rateText(providerA)}. ${providerB.name}: ${rateText(providerB)}.`
+  }
+
+  const cheaper = rateA <= rateB ? providerA : providerB
+  const difference = Math.abs(rateA - rateB).toFixed(1)
+  return `${cheaper.name} is ${difference}% lower on published in-person rates.`
+}
+
+function hardwareText(provider) {
+  const firstTerminal = provider.hardware?.[0]
+  if (firstTerminal?.price_aud) return `$${firstTerminal.price_aud} terminal`
+  if (firstTerminal?.rental) return 'terminal rental'
+  return 'quote required'
+}
+
+function settlementText(provider) {
+  if (provider.settlement?.same_day_available) return 'same-day settlement available'
+  if (provider.settlement?.standard_days != null) {
+    const days = provider.settlement.standard_days
+    return `${days} business day${days === 1 ? '' : 's'}`
+  }
+
+  return 'check settlement timing'
+}
+
+function mobileText(provider) {
+  if (provider.sim_plan?.available && provider.offline_mode?.available) return 'SIM plus offline mode'
+  if (provider.sim_plan?.available) {
+    return provider.sim_plan.cost_monthly_aud
+      ? `$${provider.sim_plan.cost_monthly_aud}/mo SIM option`
+      : 'SIM option'
+  }
+  if (provider.offline_mode?.available) return 'offline mode for zero-signal jobs'
+  return 'WiFi or hotspot required'
+}
+
+function comparisonTitle(canonicalSlug, providerA, providerB) {
+  return PAIR_SEO[canonicalSlug]?.title || `${providerA.name} vs ${providerB.name} for Australian Tradies — Full Comparison (2026)`
+}
+
+function comparisonDescription(canonicalSlug, providerA, providerB) {
+  return PAIR_SEO[canonicalSlug]?.description || `${providerA.name} vs ${providerB.name}: side-by-side rates, hardware, SIM connectivity, offline mode, and settlement speed for Australian tradies. Which one is right for your trade?`
+}
+
+function quickAnswerRows(providerA, providerB, winner, loser) {
+  return [
+    {
+      label: 'Quick answer',
+      text: `${winner.name} is the stronger default; ${loser.name} fits ${loser.best_for[0].toLowerCase()}.`,
+    },
+    {
+      label: 'Fees',
+      text: feeDifferenceText(providerA, providerB),
+    },
+    {
+      label: 'Hardware',
+      text: `${providerA.name}: ${hardwareText(providerA)}. ${providerB.name}: ${hardwareText(providerB)}.`,
+    },
+    {
+      label: 'Biggest downside',
+      text: `${winner.name}: ${winner.cons[0] || 'check current terms before signing'}.`,
+    },
+    {
+      label: 'Terms',
+      text: `${providerA.name}: ${providerA.contract || 'check contract terms'}. ${providerB.name}: ${providerB.contract || 'check contract terms'}.`,
+    },
+    {
+      label: 'Mobile fit',
+      text: `${providerA.name}: ${mobileText(providerA)}, ${settlementText(providerA)}. ${providerB.name}: ${mobileText(providerB)}, ${settlementText(providerB)}.`,
+    },
+  ]
+}
+
 function Cell({ value, positive, className = '' }) {
   if (value === true)  return <span className={`flex items-center gap-1 font-semibold text-green-600 ${className}`}><Check size={14} strokeWidth={2.5} /> Yes</span>
   if (value === false) return <span className={`flex items-center gap-1 text-slate-400 ${className}`}><X size={14} strokeWidth={2.5} /> No</span>
@@ -33,10 +144,10 @@ function CompareRow({ label, note, v1, v2, pos1, pos2 }) {
 export default function ComparePage() {
   const { slug } = useParams()
   const parts = (slug || '').split('-vs-')
-  const p1 = providers.find(p => p.id === parts[0])
-  const p2 = providers.find(p => p.id === parts[1])
+  const rawP1 = providers.find(p => p.id === parts[0])
+  const rawP2 = providers.find(p => p.id === parts[1])
 
-  if (!p1 || !p2) {
+  if (!rawP1 || !rawP2) {
     return (
       <div className="container-page py-20 text-center">
         <h1 className="text-2xl font-bold text-brand-dark mb-3">Comparison not found</h1>
@@ -46,9 +157,14 @@ export default function ComparePage() {
     )
   }
 
-  const title = `${p1.name} vs ${p2.name} for Australian Tradies — Full Comparison (2026)`
-  const description = `${p1.name} vs ${p2.name}: side-by-side rates, hardware, SIM connectivity, offline mode, and settlement speed for Australian tradies. Which one is right for your trade?`
-  const canonical = `/compare/${slug}`
+  const [p1, p2] = canonicalPair(rawP1, rawP2)
+  const canonicalSlug = `${p1.id}-vs-${p2.id}`
+  const title = comparisonTitle(canonicalSlug, p1, p2)
+  const description = comparisonDescription(canonicalSlug, p1, p2)
+  const canonical = `/compare/${canonicalSlug}`
+  const winner = p1.score_overall >= p2.score_overall ? p1 : p2
+  const loser = winner.id === p1.id ? p2 : p1
+  const quickRows = quickAnswerRows(p1, p2, winner, loser)
 
   const crumbs = [
     { label: 'Home', href: '/' },
@@ -150,8 +266,6 @@ export default function ComparePage() {
 
     return items
   })()
-
-  const winner = p1.score_overall >= p2.score_overall ? p1 : p2
 
   const jsonLd = [
     {
@@ -268,7 +382,7 @@ export default function ComparePage() {
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
             {p1.name} vs {p2.name} for Australian Tradies
           </h1>
-          <p className="hero-sub">Side-by-side rates, hardware, connectivity, and settlement. Which one wins for tradies?</p>
+          <p className="hero-sub">Fees, hardware, settlement, contracts, and mobile job-site fit — the quick answer before you choose.</p>
 
           {/* Provider name chips */}
           <div className="flex items-center gap-3 mt-5">
@@ -285,6 +399,15 @@ export default function ComparePage() {
             >
               {p2.logo_text} {p2.name}
             </span>
+          </div>
+
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-w-4xl">
+            {quickRows.map(row => (
+              <div key={row.label} className="bg-white/[0.08] border border-white/[0.14] rounded-xl px-3 py-2">
+                <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45">{row.label}</span>
+                <span className="block text-sm font-semibold text-white leading-snug mt-0.5">{row.text}</span>
+              </div>
+            ))}
           </div>
         </div>
       </header>
