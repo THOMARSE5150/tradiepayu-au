@@ -401,14 +401,6 @@ export default function ComparePage() {
             </span>
           </div>
 
-          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-w-4xl">
-            {quickRows.map(row => (
-              <div key={row.label} className="bg-white/[0.08] border border-white/[0.14] rounded-xl px-3 py-2">
-                <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45">{row.label}</span>
-                <span className="block text-sm font-semibold text-white leading-snug mt-0.5">{row.text}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </header>
 
@@ -445,6 +437,20 @@ export default function ComparePage() {
           </section>
         )
       })()}
+
+      {/* Quick answer strip */}
+      <section className="bg-brand-dark border-b border-white/10">
+        <div className="container-page max-w-4xl py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {quickRows.map(row => (
+              <div key={row.label} className="bg-white/[0.08] border border-white/[0.14] rounded-xl px-3 py-2">
+                <span className="block text-[10px] font-bold uppercase tracking-widest text-white/45">{row.label}</span>
+                <span className="block text-sm font-semibold text-white leading-snug mt-0.5">{row.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Quick stats strip */}
       <div className="bg-white border-b border-slate-100">
