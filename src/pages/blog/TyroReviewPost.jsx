@@ -10,11 +10,13 @@ import siteMeta from '../../data/site-meta.json'
 import { blogHeroUrl, blogOgUrl } from '../../utils/blogImage'
 
 const SITE = 'https://tradiepayau.directory'
+const PAGE_TITLE = 'Tyro EFTPOS Review (2026): Fees, Contracts & Alternatives'
+const PAGE_DESCRIPTION = 'Tyro suits high-volume tradies using ServiceM8 or simPRO, but fees, surcharging, rental, and contracts need a quote. See settlement, payment links, and Zeller/Square alternatives.'
 
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Tyro EFTPOS Review (2026) — Is It Worth It for High-Volume Tradies?' },
+  { label: PAGE_TITLE },
 ]
 
 const comparisonHeaders = ['', 'Cost']
@@ -68,8 +70,8 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Tyro EFTPOS Review (2026) — Is It Worth It for High-Volume Tradies?',
-    description: 'Independent review of Tyro EFTPOS for Australian tradies. Quote-based pricing, built-in SIM, same-day settlement, strong trade software integrations. Best for high-volume operators — not for small businesses.',
+    headline: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     image: {
       '@type': 'ImageObject',
       url: blogOgUrl('tyro-eftpos-review-2026'),
@@ -96,7 +98,7 @@ const jsonLd = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
-      { '@type': 'ListItem', position: 3, name: 'Tyro EFTPOS Review (2026) — Is It Worth It for High-Volume Tradies?', item: `${SITE}/blog/tyro-eftpos-review-2026` },
+      { '@type': 'ListItem', position: 3, name: PAGE_TITLE, item: `${SITE}/blog/tyro-eftpos-review-2026` },
     ],
   },
   {
@@ -114,8 +116,8 @@ export default function TyroReviewPost() {
   return (
     <>
       <Meta
-        title="Tyro EFTPOS Review (2026) — Is It Worth It for High-Volume Tradies?"
-        description="Independent review of Tyro EFTPOS for Australian tradies. Quote-based pricing, built-in SIM, same-day settlement, strong trade software integrations. Best for high-volume operators — not for small businesses."
+        title={PAGE_TITLE}
+        description={PAGE_DESCRIPTION}
         canonical="/blog/tyro-eftpos-review-2026"
         ogType="article"
         ogImage={blogOgUrl('tyro-eftpos-review-2026')}
@@ -143,11 +145,25 @@ export default function TyroReviewPost() {
             <span>8 min read</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-white leading-tight mt-3">
-            Tyro EFTPOS Review (2026) — Is It Worth It for High-Volume Tradies?
+            {PAGE_TITLE}
           </h1>
           <p className="hero-sub">
-            NAB-backed, integrates with simPRO and ServiceM8, negotiated rates that can beat Zeller at volume. But no published pricing, contract lock-in, and monthly rental mean it's not for everyone.
+            Tyro can suit high-volume tradies who need ServiceM8 or simPRO integrations, bank-backed EFTPOS, or published payment links. Biggest catches: in-person fees, surcharging, and rental need a quote, contract terms need checking, and Zeller or Square is simpler for most mobile operators.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2 max-w-3xl">
+            {[
+              'In-person fees: quote required',
+              'Payment links: published rate',
+              'Best for: high-volume + integrations',
+              'Surcharging: ask before signing',
+              'Watch: rental and contract terms',
+              'Alternatives: Zeller or Square',
+            ].map(item => (
+              <span key={item} className="inline-flex rounded-lg bg-white/10 px-3 py-1.5 text-xs font-semibold text-white/80 border border-white/10">
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </header>
 

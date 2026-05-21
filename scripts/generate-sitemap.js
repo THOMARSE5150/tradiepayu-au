@@ -70,6 +70,7 @@ const parts = [
   ``,
   `  <!-- Static pages -->`,
   url(`${BASE}/calculator`, { priority: 0.7 }),
+  url(`${BASE}/eftpos-rate-guide`, { priority: 0.7 }),
   url(`${BASE}/glossary`, { priority: 0.7 }),
   url(`${BASE}/about`, { priority: 0.6 }),
   url(`${BASE}/contact`, { priority: 0.4, changefreq: 'yearly' }),

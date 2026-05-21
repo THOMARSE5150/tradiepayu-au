@@ -109,8 +109,8 @@ export const posts = [
   },
   {
     slug: 'tyro-eftpos-review-2026',
-    title: 'Tyro EFTPOS Review (2026) — Is Tyro Good for Tradies?',
-    description: 'Tyro is a fully licensed Australian bank with competitive payment links (1.4% incl. GST). But the in-person rate requires a quote. Full review for tradies.',
+    title: 'Tyro EFTPOS Review (2026): Fees, Contracts & Alternatives',
+    description: 'Tyro suits high-volume tradies using ServiceM8 or simPRO, but fees, surcharging, rental, and contracts need a quote. See settlement, payment links, and Zeller/Square alternatives.',
     date: '2 Apr 2026',
     readTime: '7 min read',
     category: 'providers',
